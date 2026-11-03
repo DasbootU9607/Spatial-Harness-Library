@@ -9,7 +9,7 @@ const out = path.resolve(argument);
 fs.mkdirSync(out, { recursive: true });
 if (fs.readdirSync(out).length) throw new Error('Select an empty directory for the Pages artifact');
 
-for (const file of ['index.html', 'library.css']) {
+for (const file of ['index.html', 'library.css', 'chooser.js']) {
   fs.copyFileSync(path.join(root, file), path.join(out, file));
 }
 for (const harness of ['maze-harness', 'spatialviz-harness', 'babyvision-harness', 'spatialb-harness']) {

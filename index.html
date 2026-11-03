@@ -8,30 +8,31 @@
   <link rel="stylesheet" href="./library.css">
 </head>
 <body>
+  <div class="scenes" aria-hidden="true">
+    <img id="maze-scene" class="room" src="./maze-harness/assets/thumbnails/official-hxh.png" alt="">
+    <img id="spatialviz-scene" src="./spatialviz-harness/paper-folding.png" alt="">
+    <img id="babyvision-scene" src="./babyvision-harness/find-the-different.jpg" alt="">
+    <img id="spatialb-scene" src="./spatialb-harness/path-tracing.png" alt="">
+  </div>
   <main>
     <h1>Spatial Harness Library</h1>
     <p>A library for creating and testing spatial reasoning tasks.</p>
-    <details class="chooser">
-      <summary aria-label="Choose a harness">Choose <span class="slot" aria-hidden="true">(<svg viewBox="0 0 12 8" width="12" height="8"><path d="m1 1 5 5 5-5"/></svg>)</span> Harness</summary>
-      <nav aria-label="Harnesses">
-        <a href="./maze-harness/">Maze Harness</a>
-        <a href="./spatialviz-harness/">SpatialViz Harness</a>
-        <a href="./babyvision-harness/">BabyVision Harness</a>
-        <a href="./spatialb-harness/">SpatialB Harness</a>
-      </nav>
-    </details>
+    <div class="sentence">
+      Choose
+      <details class="picker">
+        <summary aria-label="Choose a harness" aria-describedby="picker-help"><span id="picked"></span></summary>
+        <nav aria-label="Harnesses">
+          <a href="./maze-harness/" data-scene="maze-scene" data-description="for 3D mazes on" data-source="MazeBench" data-url="https://mazebench.com/">Maze</a>
+          <a href="./spatialviz-harness/" data-scene="spatialviz-scene" data-description="for paper folding on" data-source="SpatialViz-Bench" data-url="https://wangst0181.github.io/SpatialViz-Bench/">SpatialViz</a>
+          <a href="./babyvision-harness/" data-scene="babyvision-scene" data-description="for visual puzzles on" data-source="BabyVision" data-url="https://unipat.ai/blog/BabyVision">BabyVision</a>
+          <a href="./spatialb-harness/" data-scene="spatialb-scene" data-description="for path tracing on" data-source="SpatialBench" data-url="https://spicylemonade.github.io/spatialbench/">SpatialB</a>
+        </nav>
+      </details>
+      <a id="enter">Harness</a><span id="comma" hidden>,</span>
+      <span class="completion" aria-live="polite"></span>
+    </div>
+    <span class="sr-only" id="picker-help">Scroll, swipe vertically or use the up and down arrow keys to preview. Open the box to choose a harness.</span>
   </main>
-  <script>
-    const chooser = document.querySelector('.chooser');
-    document.addEventListener('click', event => {
-      if (!chooser.contains(event.target)) chooser.open = false;
-    });
-    document.addEventListener('keydown', event => {
-      if (event.key === 'Escape' && chooser.open) {
-        chooser.open = false;
-        chooser.querySelector('summary').focus();
-      }
-    });
-  </script>
+  <script type="module" src="./chooser.js"></script>
 </body>
 </html>
