@@ -1,0 +1,53 @@
+# Skill authoring conventions
+
+These instructions and relative paths apply within the `maze-harness/` directory of Spatial Harness Library.
+
+For creating or extending a mechanism skill from official cases or human-provided variants, use `skills/mazebench-case-workflow/SKILL.md`. Each newly introduced case requires the human's own core operating logic before case-specific extraction and synthesis; reuse relevant explicit input already supplied. Maintain a source-qualified reference catalog, variant lineage and an explained relative difficulty ladder when adding this feature; distinguish human assignments, structural estimates, playtest evidence and unranked cases. Preserve unaffected references and never infer difficulty from raw input counts alone. The workflow package itself uses templates and record-gate tests rather than invented gameplay cases. Run `node scripts/test-case-workflow.cjs` when changing its helper or record behavior. All mechanism skills retain the source, reading, contract and gameplay checks below.
+
+These rules apply when creating or updating skills in this repository. Follow explicit user instructions when they override a convention.
+
+## Git workflow
+
+- Commit and push routine changes directly to `main` after the relevant checks pass.
+- Create a separate branch or pull request only when the user explicitly requests one. This replaces any inherited branch-first or mandatory pull-request workflow for this repository.
+- Synchronize with `origin/main` before committing. Preserve existing work and published history; do not force-push or rewrite remote commits.
+- Routine publication of completed skills and verified playable examples to this repository's GitHub Pages is authorized by the project owner. It is part of task completion and needs no additional website prompt. Other package releases and deployments require their own authorization.
+
+## Automatic website completion
+
+After completing a mechanism skill, adding official references, or generating a verified playable trial, read `docs/website.md` and run `scripts/publish-site.cjs`. It discovers official references, preserves previous trials, captures missing real 3D thumbnails, checks the site, commits and pushes to `main`, triggering Pages. Supply the actual design, build manifest and matching successful verification report for every new trial. Finish the skill's own required gameplay checks first; unfinished scaffolds and failed/unknown trials are not publication candidates.
+
+Do this in the same task without waiting for another request. The owner has explicitly authorized this ongoing workflow. Do not silently omit website updates or substitute a local Play link for publication. Check the Pages run for the pushed commit before reporting it live; if synchronization or deployment fails, retain the work and report the concrete failure. Do not force-push, overwrite unrelated work, or retry a failed deployment indefinitely.
+
+## Names and source provenance
+
+- Use `skills/mazebench-<mechanism>/` with lowercase ASCII letters, digits, and single hyphens; keep the complete name under 64 characters. The folder name and frontmatter `name` must match.
+- Use `MazeBench <Mechanism in Title Case>` for the `SKILL.md` H1 and `agents/openai.yaml` display name. Use that same title in the README skill table. The default prompt must invoke the current `$mazebench-<mechanism>` name.
+- Use lowercase, hyphen-separated resource filenames. Keep the conventional names `SKILL.md`, `AGENTS.md`, `README.md`, `LICENSE`, `THIRD_PARTY_NOTICES.md`, and `agents/openai.yaml` where applicable.
+- Identify case provenance in resource names: `official-*` for upstream official cases, `user-*` for user-authored cases, and `authored-*` for newly created fixtures. A case family uses `<source>-case.md`, `<source>-world-map.txt`, `<source>-design.json`, `<source>-states.json`, and `<source>-checks.json` (use a room-qualified source such as `official-fxe` for additional cases) when those artifacts are needed.
+- Calling the official parser, engine, or solver does not make a user-authored map official. Describe modified excerpts, reconstructions, and generated fixtures accurately; do not label them as unmodified official cases.
+- When renaming, update local links, code paths, JSON source paths, README entries, and invocation prompts together. Preserve existing engine profile identifiers and schema keys unless the task explicitly changes their interface.
+
+## Language and files
+
+- Write maintained instructions, metadata, comments, JSON explanatory strings, and repository documentation in English. User-facing conversation may follow the user's language. Preserve original source-map bytes and necessary literal quotations instead of translating evidence.
+- Write UTF-8 without a BOM, use LF and a final newline, and format JSON with two-space indentation. Raw `*-world-map.txt` source evidence is exempt from text normalization.
+- Use YAML frontmatter with a concise `name` and `description`. Quote string values in `agents/openai.yaml`; keep its title and prompt consistent with the entrypoint. Use a short UI description of 25-64 characters.
+- Keep packages self-contained. Use relative links, put detailed guidance in `references/`, and add helpers in `scripts/` only when they support actual repeated work. Exclude personal identifiers, absolute local paths, dates added for authoring history, reports, build outputs, archives, and credentials from distribution.
+
+## Evidence and licenses
+
+- Preserve original maps, coordinates, mechanics, goals, replay routes, counterexamples, search results, and scope when editing wording or names. Record source paths, engine commits, and map SHA256 values in case documentation.
+- Identify each official case's original room using the upstream world-map index. For a user-provided reconstruction with a known original room, record that relationship and its differences without relabeling the reconstruction as unmodified official evidence.
+- Refresh a runnable design's `readReceipt` after its case document changes. Preserve historical report fingerprints; record the current packaged design separately in `packagedDesign` with `cells`, `contract`, and `case` SHA256 values. Do not claim old checks were rerun merely because wording changed.
+- New authoring reads extracted `references/mechanism-logic.md` before geometry and records that document's current version. Maintainers analyze complete cases; reproductions may retain current case receipts. Receipts establish version consistency, not reading, understanding, or necessity. Keep complete case designs as regression evidence and new-map scaffolds free of case cells, coordinates, events, and routes.
+- Retain applicable license text and copyright notices for adapted material. Add a separate third-party notice only when it contains necessary information not already preserved in the package license or case provenance. Generated drafts carry the licensing requirements of resources copied from the separate engine installation.
+- Preserve scope and uncertainty: legal completion, mechanism necessity, preparation dependencies, and human difficulty are separate claims. Search caps, exceptions, and unsupported profiles remain unknown.
+
+## Required checks
+
+Run `node scripts/check-skills.cjs` from the `maze-harness/` directory before completing any skill edit. It checks names, language, encodings, metadata, local links, case families, map hashes, reading receipts, and current package fingerprints. The same command runs in GitHub Actions.
+
+Run `node scripts/test-read-records.cjs` for reading/contract changes. Add `--repo ENGINE --out NEW_OUTPUT` for complete original-route replay through the separate official engine. Format acceptance does not establish the migrated declarations or physical stage semantics; affected gameplay claims still need their scoped verifier.
+
+For helper or behavior changes, also run the affected helper and replay or verify the relevant case using a separate MazeBenchEngine checkout and fresh output directories. For wording and naming changes, check that the original maps and mechanical JSON fields are unchanged and replay the existing complete routes. Report what was checked and any limits; do not launch paid evaluations or publish generated game content without authorization.

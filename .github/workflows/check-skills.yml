@@ -2,6 +2,10 @@ name: Check skill conventions
 
 on: [push, pull_request, workflow_dispatch]
 
+defaults:
+  run:
+    working-directory: maze-harness
+
 permissions:
   contents: read
 

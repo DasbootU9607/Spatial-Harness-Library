@@ -3,26 +3,12 @@ name: Deploy GitHub Pages
 on:
   push:
     branches: [main]
-    paths:
-      - 'skills/**'
-      - 'site/**'
-      - 'scripts/*site*.cjs'
-      - 'scripts/*build*.cjs'
-      - 'scripts/*authoring*.cjs'
-      - 'scripts/*process*.cjs'
-      - 'tools/authoring-observatory/**'
-      - '.github/workflows/pages.yml'
   pull_request:
-    paths:
-      - 'skills/**'
-      - 'site/**'
-      - 'scripts/*site*.cjs'
-      - 'scripts/*build*.cjs'
-      - 'scripts/*authoring*.cjs'
-      - 'scripts/*process*.cjs'
-      - 'tools/authoring-observatory/**'
-      - '.github/workflows/pages.yml'
   workflow_dispatch:
+
+defaults:
+  run:
+    working-directory: maze-harness
 
 permissions:
   contents: read
@@ -57,11 +43,14 @@ jobs:
           node scripts/test-process-uncertain-history.cjs
           node scripts/test-process-recovery.cjs
           node scripts/test-process-actions.cjs
+      - name: Assemble the library and four harness sites
+        working-directory: .
+        run: node .github/scripts/build-pages.cjs "${{ runner.temp }}/library-pages"
       - name: Upload static site
         if: github.event_name != 'pull_request'
         uses: actions/upload-pages-artifact@v4
         with:
-          path: site
+          path: ${{ runner.temp }}/library-pages
   deploy:
     if: github.event_name != 'pull_request'
     needs: validate
