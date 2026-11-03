@@ -44,7 +44,7 @@ Difficulty is an **l3 planning structural estimate**, with no human playtests. I
 - [Complete solution and fingerprints](solution.json)
 - [Design brief and lineage](brief.json)
 - [Saved map](../../../site/data/maps/authored-hook-transfer-1bf88985df5b-world-map.txt)
-- [Online trial](https://dasbootu9607.github.io/spatial-harness-library/maze-harness/player.html?world=authored-hook-transfer-1bf88985df5b&room=AxA&case=authored-hook-transfer-1bf88985df5b)
+- [Online trial](https://dasbootu9607.github.io/Spatial-Harness-Library/maze-harness/player.html?world=authored-hook-transfer-1bf88985df5b&room=AxA&case=authored-hook-transfer-1bf88985df5b)
 
 Full working reports and local build outputs remain outside the distributed source tree. Reproduce the acceptance checks with the commands below.
 

@@ -1,6 +1,6 @@
 # Maze Harness website
 
-The buildless website lives in `site/`. GitHub Actions validates it and publishes it at the Maze entry in [GitHub Pages](https://dasbootu9607.github.io/spatial-harness-library/maze-harness/). No backend, remote game server, CDN, or runtime package installation is required. All asset and navigation URLs work beneath the `/spatial-harness-library/maze-harness/` project path.
+The buildless website lives in `site/`. GitHub Actions validates it and publishes it at the Maze entry in [GitHub Pages](https://dasbootu9607.github.io/Spatial-Harness-Library/maze-harness/). No backend, remote game server, CDN, or runtime package installation is required. All asset and navigation URLs work beneath the `/Spatial-Harness-Library/maze-harness/` project path.
 
 ## Automatic task completion
 
@@ -136,7 +136,7 @@ Run from the `maze-harness/` directory:
 node scripts/serve-site.cjs
 ```
 
-Open `http://127.0.0.1:4173/spatial-harness-library/maze-harness/`. Set `PORT` to choose a different port. The preview intentionally serves a project subpath so broken absolute URLs are caught locally. Opening HTML files through `file://` is not supported because the player fetches room JSON and ES modules.
+Open `http://127.0.0.1:4173/Spatial-Harness-Library/maze-harness/`. Set `PORT` to choose a different port. The preview intentionally serves a project subpath so broken absolute URLs are caught locally. Opening HTML files through `file://` is not supported because the player fetches room JSON and ES modules.
 
 ## Validation
 
@@ -183,4 +183,4 @@ The white interface uses self-hosted Geist Sans, Mono, and Pixel fonts. Their li
 
 ## GitHub Pages
 
-Repository Settings → Pages must use **GitHub Actions** as its source. The library workflow at `.github/workflows/pages.yml` validates the Maze site, assembles the library landing page and the four harness sites, uploads that public artifact, and deploys through `actions/deploy-pages`. A successful deployment is available at `https://dasbootu9607.github.io/spatial-harness-library/maze-harness/`. No custom domain or server credentials are needed.
+Repository Settings → Pages must use **GitHub Actions** as its source. The library workflow at `.github/workflows/pages.yml` validates the Maze site, assembles the library landing page and the four harness sites, uploads that public artifact, and deploys through `actions/deploy-pages`. A successful deployment is available at `https://dasbootu9607.github.io/Spatial-Harness-Library/maze-harness/`. No custom domain or server credentials are needed.

@@ -4,9 +4,9 @@ Agent skills for designing, building, and verifying MazeBench puzzles. Run the c
 
 ## Source
 
-The official MazeBench rooms, game rules, parser and 3D player come from [MazeBenchEngine](https://github.com/mazebench/MazeBenchEngine). The mechanism skills, authored trials and website were developed in the [original Maze Harness project](https://github.com/DasbootU9607/spatial-harness-library/tree/4e1bd2f). [Source versions and notices](THIRD_PARTY_NOTICES.md).
+The official MazeBench rooms, game rules, parser and 3D player come from [MazeBenchEngine](https://github.com/mazebench/MazeBenchEngine). The mechanism skills, authored trials and website were developed in the [original Maze Harness project](https://github.com/DasbootU9607/Spatial-Harness-Library/tree/4e1bd2f). [Source versions and notices](THIRD_PARTY_NOTICES.md).
 
-[Explore the website](https://dasbootu9607.github.io/spatial-harness-library/maze-harness/) · [256-room world map](https://dasbootu9607.github.io/spatial-harness-library/maze-harness/world.html) · [Play the full maze](https://dasbootu9607.github.io/spatial-harness-library/maze-harness/player.html)
+[Explore the website](https://dasbootu9607.github.io/Spatial-Harness-Library/maze-harness/) · [256-room world map](https://dasbootu9607.github.io/Spatial-Harness-Library/maze-harness/world.html) · [Play the full maze](https://dasbootu9607.github.io/Spatial-Harness-Library/maze-harness/player.html)
 
 The website pairs mechanism skills with complete official references and existing agent-authored trials. Every room thumbnail opens the 3D player; highlighted tiles on the 16 × 16 world map link to the associated skill. The playground includes room search, an unrestricted room picker, keyboard and touch controls, undo/reset, and saved solution playback. See [website maintenance](docs/website.md) for local preview, data provenance, and GitHub Pages publishing.
 

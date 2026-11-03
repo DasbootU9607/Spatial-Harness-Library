@@ -46,7 +46,7 @@ Difficulty is an **l3 planning structural estimate**, with no human playtests. I
 - [Complete solution and fingerprints](solution.json)
 - [Design brief and lineage](brief.json)
 - [Saved map](../../../site/data/maps/authored-constrained-transport-a6eaf6caf274-world-map.txt)
-- [Online trial](https://dasbootu9607.github.io/spatial-harness-library/maze-harness/player.html?world=authored-constrained-transport-a6eaf6caf274&room=AxA&case=authored-constrained-transport-a6eaf6caf274)
+- [Online trial](https://dasbootu9607.github.io/Spatial-Harness-Library/maze-harness/player.html?world=authored-constrained-transport-a6eaf6caf274&room=AxA&case=authored-constrained-transport-a6eaf6caf274)
 
 Full working reports and local build outputs remain outside the distributed source tree. Reproduce the acceptance checks with the commands below.
 

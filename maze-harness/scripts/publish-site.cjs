@@ -13,7 +13,7 @@ function publish(options, run = (file, args, capture = false) => execFileSync(fi
   if (options.skill) scope.push('skills/mazebench-' + options.skill.replace(/^mazebench-/, ''), 'README.md');
   if (!options['prepare-only']) {
     assert.equal(git('branch', '--show-current'), 'main', 'Publish from main');
-    assert(/^(?:https:\/\/github\.com\/|git@github\.com:)DasbootU9607\/spatial-harness-library(?:\.git)?$/i.test(git('remote', 'get-url', 'origin')), 'Unexpected publication repository');
+    assert(/^(?:https:\/\/github\.com\/|git@github\.com:)DasbootU9607\/Spatial-Harness-Library(?:\.git)?$/i.test(git('remote', 'get-url', 'origin')), 'Unexpected publication repository');
     assert.equal(git('diff', '--cached', '--name-only'), '', 'Commit or unstage existing staged work before automated publication');
     const prefix = git('rev-parse', '--show-prefix');
     const top = git('rev-parse', '--show-toplevel');
@@ -33,7 +33,7 @@ function publish(options, run = (file, args, capture = false) => execFileSync(fi
   run('git', ['add', '--', ...scope]);
   if (git('diff', '--cached', '--name-only')) run('git', ['commit', '-m', 'Publish verified Maze Harness skills and playtests']);
   run('git', ['push', 'origin', 'HEAD:main']);
-  return { ...result, pushed: true, commit: git('rev-parse', 'HEAD'), url: 'https://dasbootu9607.github.io/spatial-harness-library/maze-harness/', next: 'Check the Deploy GitHub Pages run for this commit before reporting the site as live.' };
+  return { ...result, pushed: true, commit: git('rev-parse', 'HEAD'), url: 'https://dasbootu9607.github.io/Spatial-Harness-Library/maze-harness/', next: 'Check the Deploy GitHub Pages run for this commit before reporting the site as live.' };
 }
 if (require.main === module) {
   try { console.log(JSON.stringify(publish(parseArgs(process.argv.slice(2))), null, 2)); }

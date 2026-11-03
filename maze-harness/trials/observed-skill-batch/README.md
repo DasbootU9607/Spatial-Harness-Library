@@ -4,11 +4,11 @@ This batch exercises authoring and automatic process capture with five existing 
 
 | Skill | New room | Saved versions | Geometry versions | Complete inputs | Browser frames |
 | --- | --- | ---: | ---: | ---: | ---: |
-| Boundary Stagger | [Offset Foundry](https://dasbootu9607.github.io/spatial-harness-library/maze-harness/process.html?case=authored-boundary-stagger-2f5622cc46de) | 3 | 2 | 27 | 28 |
-| Hook Transfer | [Forklift Courtyard](https://dasbootu9607.github.io/spatial-harness-library/maze-harness/process.html?case=authored-hook-transfer-5e3a324db881) | 4 | 2 | 16 | 17 |
-| Constrained Transport | [Switchyard Tool Delivery](https://dasbootu9607.github.io/spatial-harness-library/maze-harness/process.html?case=authored-constrained-transport-60b4a35f5a3f) | 2 | 2 | 28 | 29 |
-| Skating Cross | [Frost Compass](https://dasbootu9607.github.io/spatial-harness-library/maze-harness/process.html?case=authored-skating-cross-942ab792fe79) | 3 | 2 | 19 | 20 |
-| Block Coordination | [Relay Court](https://dasbootu9607.github.io/spatial-harness-library/maze-harness/process.html?case=authored-block-coordination-030c8da1aa61) | 2 | 2 | 37 | 38 |
+| Boundary Stagger | [Offset Foundry](https://dasbootu9607.github.io/Spatial-Harness-Library/maze-harness/process.html?case=authored-boundary-stagger-2f5622cc46de) | 3 | 2 | 27 | 28 |
+| Hook Transfer | [Forklift Courtyard](https://dasbootu9607.github.io/Spatial-Harness-Library/maze-harness/process.html?case=authored-hook-transfer-5e3a324db881) | 4 | 2 | 16 | 17 |
+| Constrained Transport | [Switchyard Tool Delivery](https://dasbootu9607.github.io/Spatial-Harness-Library/maze-harness/process.html?case=authored-constrained-transport-60b4a35f5a3f) | 2 | 2 | 28 | 29 |
+| Skating Cross | [Frost Compass](https://dasbootu9607.github.io/Spatial-Harness-Library/maze-harness/process.html?case=authored-skating-cross-942ab792fe79) | 3 | 2 | 19 | 20 |
+| Block Coordination | [Relay Court](https://dasbootu9607.github.io/Spatial-Harness-Library/maze-harness/process.html?case=authored-block-coordination-030c8da1aa61) | 2 | 2 | 37 | 38 |
 
 The complete contracts are in the adjacent skill-named JSON files. The public index records stable case IDs and concise counts. Original references were actually delivered through recorded reads before the first geometry: HxH, GxE, GxG/GxF, JxG, and BxB/BxC respectively. These access records establish which bytes were provided; they do not prove understanding or private internal reasoning.
 
@@ -22,4 +22,4 @@ For every trial, the skill observer started the session, resource reads were rec
 
 Candidate nodes open playable 3D versions. Each replay node opens only its own saved, fingerprint-bound playback. Other events show their evidence without a repeated map. Supporting events retain their original order within collapsible groups; no artificial branch or merge is inferred.
 
-Run `node scripts/test-observed-skill-batch.cjs --engine ENGINE` for local public-page regression. Add `--base-url https://dasbootu9607.github.io/spatial-harness-library/maze-harness/` to verify the deployment. These checks are author self-tests, not a blind model evaluation, a human difficulty ranking or an exhaustive deadlock certificate.
+Run `node scripts/test-observed-skill-batch.cjs --engine ENGINE` for local public-page regression. Add `--base-url https://dasbootu9607.github.io/Spatial-Harness-Library/maze-harness/` to verify the deployment. These checks are author self-tests, not a blind model evaluation, a human difficulty ranking or an exhaustive deadlock certificate.

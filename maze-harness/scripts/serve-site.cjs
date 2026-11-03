@@ -3,7 +3,7 @@ const http = require('node:http');
 const fs = require('node:fs');
 const path = require('node:path');
 const site = path.resolve(__dirname, '../site');
-const prefix = '/spatial-harness-library/maze-harness/';
+const prefix = '/Spatial-Harness-Library/maze-harness/';
 const types = { '.html':'text/html', '.js':'text/javascript', '.css':'text/css', '.json':'application/json', '.svg':'image/svg+xml', '.png':'image/png', '.webp':'image/webp', '.webm':'video/webm', '.woff2':'font/woff2', '.glb':'model/gltf-binary', '.gltf':'model/gltf+json', '.txt':'text/plain' };
 function createServer() {
   return http.createServer((req, res) => {

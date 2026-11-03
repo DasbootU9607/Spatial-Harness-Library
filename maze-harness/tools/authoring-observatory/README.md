@@ -25,7 +25,7 @@ For example, in the directory containing the runtime and repository:
 ```json
 {
   "runtime": "./authoring-observatory",
-  "publicSiteDir": "./spatial-harness-library/maze-harness/site"
+  "publicSiteDir": "./Spatial-Harness-Library/maze-harness/site"
 }
 ```
 

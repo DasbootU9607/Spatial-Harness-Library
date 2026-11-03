@@ -44,7 +44,7 @@ Difficulty is an **l3 planning structural estimate**, with no human playtests. I
 - [Complete solution and fingerprints](solution.json)
 - [Design brief and lineage](brief.json)
 - [Saved map](../../../site/data/maps/authored-clear-ground-turning-3a7a7a80206c-world-map.txt)
-- [Online trial](https://dasbootu9607.github.io/spatial-harness-library/maze-harness/player.html?world=authored-clear-ground-turning-3a7a7a80206c&room=AxA&case=authored-clear-ground-turning-3a7a7a80206c)
+- [Online trial](https://dasbootu9607.github.io/Spatial-Harness-Library/maze-harness/player.html?world=authored-clear-ground-turning-3a7a7a80206c&room=AxA&case=authored-clear-ground-turning-3a7a7a80206c)
 
 Full working reports and local build outputs remain outside the distributed source tree. Reproduce the acceptance checks with the commands below.
 
