@@ -1,57 +1,59 @@
 const picker = document.querySelector('.picker');
-const trigger = picker.querySelector('summary');
-const label = document.querySelector('#picked');
 const enter = document.querySelector('#enter');
 const comma = document.querySelector('#comma');
 const completion = document.querySelector('.completion');
-const options = [...picker.querySelectorAll('nav a')];
-const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
-let current = -1;
+const options = [...picker.querySelectorAll('[role="option"]')];
+const scenes = [...document.querySelectorAll('.scenes img')];
+let current = 0;
 
-function preview(index, direction = index < current ? -1 : 1) {
-  if (current === index) return;
-  current = index;
-  const option = options[index];
-  const name = option.textContent;
-  label.textContent = name;
-  trigger.setAttribute('aria-label', name + ' selected. Choose a harness');
-  enter.href = option.href;
-  enter.setAttribute('aria-label', 'Open ' + name + ' Harness');
-  comma.hidden = false;
-  const source = document.createElement('a');
-  source.href = option.dataset.url;
-  source.textContent = option.dataset.source;
-  completion.replaceChildren(option.dataset.description + ' ', source, '.');
-  for (const item of options) {
-    const active = item === option;
-    item.classList.toggle('current', active);
-    document.getElementById(item.dataset.scene).classList.toggle('active', active);
+function preview(index) {
+  const next = Math.max(0, Math.min(options.length - 1, index));
+  if (next === current) return;
+  options[current].setAttribute('aria-selected', 'false');
+  current = next;
+  const option = options[current];
+  option.setAttribute('aria-selected', 'true');
+  picker.setAttribute('aria-activedescendant', option.id);
+  picker.closest('.sentence').style.setProperty('--index', current);
+  for (const scene of scenes) scene.classList.toggle('active', scene.id === option.dataset.scene);
+
+  const {path, description, source, url} = option.dataset;
+  comma.hidden = !path;
+  if (!path) {
+    enter.removeAttribute('href');
+    enter.removeAttribute('aria-label');
+    completion.replaceChildren();
+    return;
   }
-  if (!reducedMotion.matches) {
-    label.getAnimations().forEach(animation => animation.cancel());
-    label.animate([{transform: 'translateY(' + direction * 65 + '%)', opacity: 0},
-                   {transform: 'translateY(0)', opacity: 1}], {duration: 170, easing: 'ease-out'});
-  }
+
+  enter.href = path;
+  enter.setAttribute('aria-label', 'Open ' + option.textContent + ' Harness');
+  const link = document.createElement('a');
+  link.href = url;
+  link.textContent = source;
+  completion.replaceChildren(description + ' ', link, '.');
 }
 
-function step(direction) {
-  const origin = current === -1 && direction < 0 ? 0 : current;
-  preview((origin + direction + options.length) % options.length, direction);
-}
-
-options.forEach((option, index) => {
-  option.addEventListener('pointerenter', event => {
-    if (event.pointerType !== 'touch') preview(index);
-  });
-  option.addEventListener('focus', () => preview(index));
-});
+function step(direction) { preview(current + direction); }
 
 picker.addEventListener('keydown', event => {
-  if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {
-    event.preventDefault();
-    step(event.key === 'ArrowDown' ? 1 : -1);
-    if (picker.open) options[current].focus({preventScroll: true});
+  if (event.metaKey || event.ctrlKey || event.altKey) return;
+  switch (event.key) {
+    case 'ArrowDown': step(1); break;
+    case 'ArrowUp': step(-1); break;
+    case 'Home': preview(0); break;
+    case 'End': preview(options.length - 1); break;
+    case 'Enter': if (enter.hasAttribute('href')) enter.click(); break;
+    default: return;
   }
+  event.preventDefault();
+});
+
+picker.addEventListener('click', event => {
+  const option = event.target.closest('[role="option"]');
+  if (!option) return;
+  if (option === options[current] && option.dataset.path) enter.click();
+  else preview(options.indexOf(option));
 });
 
 // Accumulate precision-trackpad deltas; one small movement should yield one name.
@@ -91,14 +93,3 @@ picker.addEventListener('touchmove', event => {
 for (const type of ['touchend', 'touchcancel']) {
   picker.addEventListener(type, () => { swipeStart = null; }, {passive: true});
 }
-for (const type of ['click', 'focusin']) {
-  document.addEventListener(type, event => {
-    if (!picker.contains(event.target)) picker.open = false;
-  });
-}
-document.addEventListener('keydown', event => {
-  if (event.key === 'Escape' && picker.open) {
-    picker.open = false;
-    trigger.focus();
-  }
-});

@@ -18,20 +18,21 @@
     <h1>Spatial Harness Library</h1>
     <p>A library for creating and testing spatial reasoning tasks.</p>
     <div class="sentence">
-      Choose
-      <details class="picker">
-        <summary aria-label="Choose a harness" aria-describedby="picker-help"><span id="picked"></span></summary>
-        <nav aria-label="Harnesses">
-          <a href="./maze-harness/" data-scene="maze-scene" data-description="for 3D mazes on" data-source="MazeBench" data-url="https://mazebench.com/">Maze</a>
-          <a href="./spatialviz-harness/" data-scene="spatialviz-scene" data-description="for paper folding on" data-source="SpatialViz-Bench" data-url="https://wangst0181.github.io/SpatialViz-Bench/">SpatialViz</a>
-          <a href="./babyvision-harness/" data-scene="babyvision-scene" data-description="for visual puzzles on" data-source="BabyVision" data-url="https://unipat.ai/blog/BabyVision">BabyVision</a>
-          <a href="./spatialb-harness/" data-scene="spatialb-scene" data-description="for path tracing on" data-source="SpatialBench" data-url="https://spicylemonade.github.io/spatialbench/">SpatialB</a>
-        </nav>
-      </details>
-      <a id="enter">Harness</a><span id="comma" hidden>,</span>
+      <span>Choose</span>
+      <div class="picker" tabindex="0" role="listbox" aria-label="Choose a harness" aria-orientation="vertical" aria-describedby="picker-help" aria-activedescendant="wheel-0">
+        <div class="wheel-track" role="presentation">
+          <span id="wheel-0" aria-selected="true" role="option" aria-label="Start, no harness selected"></span>
+          <span id="wheel-1" aria-selected="false" role="option" data-path="./maze-harness/" data-scene="maze-scene" data-description="for 3D mazes on" data-source="MazeBench" data-url="https://mazebench.com/">Maze</span>
+          <span id="wheel-2" aria-selected="false" role="option" data-path="./spatialviz-harness/" data-scene="spatialviz-scene" data-description="for paper folding on" data-source="SpatialViz-Bench" data-url="https://wangst0181.github.io/SpatialViz-Bench/">SpatialViz</span>
+          <span id="wheel-3" aria-selected="false" role="option" data-path="./babyvision-harness/" data-scene="babyvision-scene" data-description="for visual puzzles on" data-source="BabyVision" data-url="https://unipat.ai/blog/BabyVision">BabyVision</span>
+          <span id="wheel-4" aria-selected="false" role="option" data-path="./spatialb-harness/" data-scene="spatialb-scene" data-description="for path tracing on" data-source="SpatialBench" data-url="https://spicylemonade.github.io/spatialbench/">SpatialB</span>
+          <span id="wheel-5" aria-selected="false" role="option" aria-label="End, no harness selected"></span>
+        </div>
+      </div>
+      <span><a id="enter">Harness</a><span id="comma" hidden>,</span></span>
       <span class="completion" aria-live="polite"></span>
     </div>
-    <span class="sr-only" id="picker-help">Scroll, swipe vertically or use the up and down arrow keys to preview. Open the box to choose a harness.</span>
+    <span class="sr-only" id="picker-help">Scroll, swipe or use the arrow keys to align a name with the underline. Press Enter or tap the selected name to open its harness. The first and last positions are blank.</span>
   </main>
   <script type="module" src="./chooser.js"></script>
 </body>
