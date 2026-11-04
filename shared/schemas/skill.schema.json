@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "$id": "https://dasbootu9607.github.io/Spatial-Harness-Library/shared/schemas/skill.schema.json",
+  "required": [
+    "schemaVersion",
+    "id",
+    "name",
+    "harnessId",
+    "status",
+    "officialReferences"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "status": {
+      "enum": [
+        "draft",
+        "complete"
+      ]
+    },
+    "officialReferences": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

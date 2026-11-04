@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "$id": "https://dasbootu9607.github.io/Spatial-Harness-Library/shared/schemas/verification.schema.json",
+  "required": [
+    "candidateId",
+    "actionId",
+    "testedFingerprints",
+    "verifier",
+    "reportSha256",
+    "verdict",
+    "checks",
+    "scope",
+    "commandExitStatus",
+    "binding",
+    "bindingBasis"
+  ],
+  "properties": {
+    "verdict": {
+      "enum": [
+        "passed",
+        "failed",
+        "unknown",
+        "error"
+      ]
+    },
+    "binding": {
+      "enum": [
+        "exact",
+        "missing",
+        "mismatch"
+      ]
+    },
+    "checks": {
+      "type": "array"
+    }
+  }
+}

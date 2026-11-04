@@ -45,12 +45,25 @@ jobs:
           node scripts/test-process-actions.cjs
       - name: Assemble the library and four harness sites
         working-directory: .
-        run: node .github/scripts/build-pages.cjs "${{ runner.temp }}/library-pages"
+        run: node .github/scripts/build-pages.cjs "${{ runner.temp }}/library-preview/Spatial-Harness-Library"
+      - name: Verify shared schemas, evidence and immutable publication
+        working-directory: .
+        run: |
+          node tools/check.cjs
+          node --test tools/observatory/tests/*.test.cjs
+      - name: Install browser checks
+        working-directory: .
+        run: |
+          npm ci
+          npx playwright install --with-deps chromium
+      - name: Check all harnesses under the actual Pages subpath
+        working-directory: .
+        run: node tools/browser-check.cjs --root "${{ runner.temp }}/library-preview" --out "${{ runner.temp }}/browser-evidence"
       - name: Upload static site
         if: github.event_name != 'pull_request'
         uses: actions/upload-pages-artifact@v4
         with:
-          path: ${{ runner.temp }}/library-pages
+          path: ${{ runner.temp }}/library-preview/Spatial-Harness-Library
   deploy:
     if: github.event_name != 'pull_request'
     needs: validate

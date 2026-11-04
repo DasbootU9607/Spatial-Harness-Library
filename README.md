@@ -21,3 +21,11 @@ python -m http.server 4173 --bind 127.0.0.1 --directory outputs/pages
 ```
 
 The Pages workflow runs the Maze checks, assembles the four harness sites and shared question collections, and publishes them on pushes to `main`.
+
+Construction now uses a shared build observatory, immutable versions, passive
+current-session usage and an audited publication pipeline. See
+[setup, supported capture and publication](docs/observability.md). The completed
+SpatialViz discrete-rotation demonstration skill provides a recorded failed
+attempt, corrected candidate, exact verification and public process example.
+All four exhibition entrypoints are assembled from shared components and catalogs;
+the original source browser and Maze gameplay routes remain available.

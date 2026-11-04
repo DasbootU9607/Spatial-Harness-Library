@@ -46,7 +46,9 @@ function install({skills, runtime, backup, dryRun = false}) {
       propose(destination, text);
     }
   }
-  propose(path.join(skills, '.mazebench-observatory.json'), JSON.stringify({runtime}, null, 2) + '\n');
+  const settings = path.join(skills, '.mazebench-observatory.json');
+  const existingSettings = fs.existsSync(settings) ? JSON.parse(fs.readFileSync(settings, 'utf8')) : {};
+  propose(settings, JSON.stringify({...existingSettings, runtime}, null, 2) + '\n');
   if (dryRun) return {dryRun: true, skills: available.length, files: changes.map(c => c.file)};
   fs.mkdirSync(backup); // Backups must be new and are never overwritten.
   for (const change of changes) {

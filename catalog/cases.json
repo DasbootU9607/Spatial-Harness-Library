@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "cases": [
+    {
+      "schemaVersion": 1,
+      "id": "authored-48a0f3e7f31c9841a9bd7e2f",
+      "harnessId": "spatialviz-harness",
+      "skillIds": [
+        "discrete-rotation"
+      ],
+      "sourceKind": "demonstration",
+      "sourceCaseIds": [
+        "spatialviz-bench:vqa:MentalRotation:2DRotation:Level0:0-2-3"
+      ],
+      "category": "MentalRotation",
+      "taskType": "discrete-rotation-demo",
+      "difficulty": {
+        "label": "Unranked demonstration",
+        "basis": "No human difficulty assessment"
+      },
+      "title": "Quarter-turn on a grid",
+      "description": "Demonstration fixture: rotate an asymmetric six-cell figure.",
+      "contentSha256": "48a0f3e7f31c9841a9bd7e2faf3842e717cabad51c633a52a8b1a0e3efbaf3d3",
+      "thumbnail": "records/authored-48a0f3e7f31c9841a9bd7e2f/v002-d689b786f59419dc.svg",
+      "taskArtifact": "records/authored-48a0f3e7f31c9841a9bd7e2f/task.json",
+      "verification": {
+        "verdict": "passed",
+        "candidateId": "v002",
+        "fingerprints": {
+          "specification": "48a0f3e7f31c9841a9bd7e2faf3842e717cabad51c633a52a8b1a0e3efbaf3d3",
+          "geometry": "894eeb8c0a3bb0ec1f5ac40f298a447765a59a973eb96e3de974e45ec5e6462a",
+          "question": "b434453e17a06906c29654892e767250becb6868464f29180fdb91e70ad7f620",
+          "options": "5c44a8423c5dacb5bdb78ae5a9873bf08c1a5c79e25c4c8a6fa2f09a6d47c104",
+          "answer": "f3656d763a19aa513e2966809d0ccc0ac7c8262a1f087223a03f57c11bce1acb",
+          "contract": "a55a52a0061b63f5b95b2e8809ed64d69c891cf8d6be9dfc83fdcec786fb697b",
+          "rendering": "70b0a1b3e4112b6ae8bd4fda926124704dd2832d5c2b5a97d2314ee1e152f00d",
+          "generator": "499243351d9059da67f13c84cbe5df84c97dc40379547094d72c9de799c8f312"
+        },
+        "report": "records/authored-48a0f3e7f31c9841a9bd7e2f/verification.json"
+      },
+      "build": {
+        "runId": "build-73f197a9-ea87-4563-96ba-74e3097551f3",
+        "candidateId": "v002",
+        "usage": {
+          "schemaVersion": 2,
+          "runId": "build-73f197a9-ea87-4563-96ba-74e3097551f3",
+          "source": "codex",
+          "runtime": "Codex Desktop",
+          "status": "partial",
+          "startedAt": "2026-11-04T01:58:49.612Z",
+          "finishedAt": "2026-11-04T02:00:46.453Z",
+          "lastObservedAt": "2026-11-04T02:00:28.755Z",
+          "elapsedMs": 116862,
+          "elapsedKind": "wall-clock",
+          "scope": "Runtime-reported usage between the start baseline and finish snapshot of this session. In-flight or delayed usage, earlier conversation, other agents and later delivery are excluded. This is an observed interval, not a complete billed task total.",
+          "scopeComplete": false,
+          "observedTokens": {
+            "input_tokens": 810329,
+            "cached_input_tokens": 798080,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 4567,
+            "reasoning_output_tokens": 566,
+            "total_tokens": 814896
+          },
+          "tokens": {
+            "input_tokens": null,
+            "cached_input_tokens": null,
+            "cache_write_input_tokens": null,
+            "output_tokens": null,
+            "reasoning_output_tokens": null,
+            "total_tokens": null
+          },
+          "models": [
+            {
+              "provider": "openai",
+              "model": "gpt-6-astra",
+              "reasoningEffort": "xhigh",
+              "tokens": {
+                "input_tokens": 810329,
+                "cached_input_tokens": 798080,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 4567,
+                "reasoning_output_tokens": 566,
+                "total_tokens": 814896
+              },
+              "observations": 6
+            }
+          ],
+          "missingFields": [],
+          "issues": [
+            "Smoke interval includes interleaved recorder and exhibition validation in the same client."
+          ],
+          "observations": 6
+        }
+      },
+      "process": "records/authored-48a0f3e7f31c9841a9bd7e2f/process.json",
+      "eventsCsv": "records/authored-48a0f3e7f31c9841a9bd7e2f/events.csv"
+    }
+  ]
+}

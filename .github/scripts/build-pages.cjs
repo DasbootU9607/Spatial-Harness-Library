@@ -18,5 +18,6 @@ for (const harness of ['maze-harness', 'spatialviz-harness', 'babyvision-harness
   fs.cpSync(site, path.join(out, harness), { recursive: true });
 }
 fs.cpSync(path.join(root, 'questions'), path.join(out, 'questions'), { recursive: true });
+require('../../tools/build-exhibition.cjs').build(out);
 fs.writeFileSync(path.join(out, '.nojekyll'), '');
 console.log('Library, four harness sites, and question collections assembled at ' + out);

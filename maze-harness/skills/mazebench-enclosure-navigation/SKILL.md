@@ -26,6 +26,15 @@ Record concise design goals and revision reasons with `note --spec SPEC.json --j
 
 The bridge discovers an optional local runtime through configuration or a surrounding checkout. An unavailable or failed recorder is reported explicitly. Continue the authorized design work when recording is unavailable, disclose the missing coverage, and never claim that unrecorded reads or commands were captured. Keep machine-specific runtime configuration and generated sessions outside the distributed skill package.
 
+The library-level publisher and exhibition share the same recorder and passive
+collector. After sealing a verified task, invoke the library's
+`tools/publish.cjs --harness maze-harness` interface with the existing Maze
+publication arguments. It preserves the Maze domain checks, prepares the public
+process, commits intended changes and observes the matching Pages deployment.
+Publication is authorized as normal completion; honor explicit local-only or
+prepare-only instructions. Use explicit `resume` for an interrupted task and
+`start` for an independent task. A sealed record cannot silently reopen.
+
 ## Required reading and modes
 
 For new authoring read [mechanism logic](references/mechanism-logic.md), then [design guidance](references/design.md). Select a compatible reference through the [catalog](references/reference-catalog.json) and [difficulty guide](references/difficulty.md). For maintenance or reproduction read the complete case and its evidence: [CxB](references/official-case.md), [DxB](references/official-dxb-case.md). Preserve complete objectives and all original members. Record the current required document SHA256 in contract.readReceipt; this checks version consistency, not understanding.

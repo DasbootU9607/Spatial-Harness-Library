@@ -129,6 +129,7 @@ async function navigate(){
     if(requested&&rows.some(r=>r.id===requested)&&requested!==state().id){states.set(page,{...newState(),id:requested});}
     el('reader').hidden=false;el('archive-status').textContent='';
     refreshFilters();
+    if(new URLSearchParams(query).get('answer')==='1')el('answer').open=true;
   }catch{if(number===requestNo)el('archive-status').textContent='The collection could not be loaded. Check your connection and refresh the page.';}
 }
 drawPlates();

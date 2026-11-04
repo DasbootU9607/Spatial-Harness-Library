@@ -9,7 +9,7 @@ const json = file => JSON.parse(fs.readFileSync(file, 'utf8').replace(/^\uFEFF/,
 function atomic(file, value) {
   const temp = file + '.' + crypto.randomUUID() + '.tmp';
   fs.writeFileSync(temp, JSON.stringify(value, null, 2) + '\n');
-  fs.renameSync(temp, file);
+  require('./atomic.cjs').replace(temp, file);
 }
 function withLock(dir, fn) {
   const lock = path.join(dir, '.write-lock');
@@ -27,11 +27,12 @@ function mutate(dir, fn) {
     const index = json(path.join(dir, 'index.json'));
     const manifest = json(path.join(dir, 'manifest.json'));
     const emit = (type, details, opts = {}) => {
+      if (manifest.finishedAt) throw new Error('Run is sealed; events cannot be appended.');
       const seq = index.nextSeq++;
       const origin = opts.origin || (manifest.mode === 'historical' ? 'historical' : 'observed');
       const event = {id: 'e' + String(seq).padStart(6, '0'), seq, runId: manifest.id,
         at: origin === 'historical' ? null : (opts.at === undefined ? now() : opts.at), recordedAt: now(),
-        type, actor: opts.actor || 'recorder', origin, candidateId: opts.candidateId || null,
+        type, actor: opts.actor || 'recorder', origin, actionId: opts.actionId || details?.actionId || details?.commandEventId || (type === 'command.started' ? 'e' + String(seq).padStart(6, '0') : null), candidateId: opts.candidateId || null,
         details, evidenceRefs: opts.evidenceRefs || []};
       fs.appendFileSync(path.join(dir, 'events.jsonl'), JSON.stringify(event) + '\n');
       return event;
@@ -148,6 +149,7 @@ function addTest(dir, test) {
 function updateManifest(dir, patch) {
   return withLock(dir, () => {
     const current = json(path.join(dir, 'manifest.json'));
+    if (current.finishedAt) throw new Error('Run is sealed; its manifest cannot change.');
     const next = {...current, ...patch, id: current.id, schemaVersion: current.schemaVersion};
     atomic(path.join(dir, 'manifest.json'), next); return next;
   });

@@ -1,0 +1,53 @@
+{
+  "id": "t002",
+  "actionId": "d004c08d-e1d2-4c68-a558-0cf3e98c81bf",
+  "candidateId": "v002",
+  "testedFingerprints": {
+    "specification": "48a0f3e7f31c9841a9bd7e2faf3842e717cabad51c633a52a8b1a0e3efbaf3d3",
+    "geometry": "894eeb8c0a3bb0ec1f5ac40f298a447765a59a973eb96e3de974e45ec5e6462a",
+    "question": "b434453e17a06906c29654892e767250becb6868464f29180fdb91e70ad7f620",
+    "options": "5c44a8423c5dacb5bdb78ae5a9873bf08c1a5c79e25c4c8a6fa2f09a6d47c104",
+    "answer": "f3656d763a19aa513e2966809d0ccc0ac7c8262a1f087223a03f57c11bce1acb",
+    "contract": "a55a52a0061b63f5b95b2e8809ed64d69c891cf8d6be9dfc83fdcec786fb697b",
+    "rendering": "70b0a1b3e4112b6ae8bd4fda926124704dd2832d5c2b5a97d2314ee1e152f00d",
+    "generator": "499243351d9059da67f13c84cbe5df84c97dc40379547094d72c9de799c8f312"
+  },
+  "verifier": {
+    "id": "discrete-quarter-turn",
+    "revision": "16c1295d868218526ed73f7aee785d8428fceec3c3d23c0f704ba0611a48d3fe"
+  },
+  "reportSha256": "2af647d46c938cb16b49cc1bd6a44f3b950698d15091f543201e738dc51391f8",
+  "verdict": "passed",
+  "status": "passed",
+  "checks": [
+    {
+      "name": "Supported exact construction contract",
+      "verdict": "passed"
+    },
+    {
+      "name": "Six unique integer cells within bounds",
+      "verdict": "passed"
+    },
+    {
+      "name": "Four distinct options",
+      "verdict": "passed"
+    },
+    {
+      "name": "Unique correct answer in recorded option order",
+      "verdict": "passed"
+    },
+    {
+      "name": "Reproducible seed and tool revisions",
+      "verdict": "passed"
+    },
+    {
+      "name": "Generator replay matches task payload",
+      "verdict": "passed"
+    }
+  ],
+  "scope": "Exact discrete quarter-turn, answer uniqueness, option order, generator replay and rendering parameters. No general SpatialViz or difficulty claim.",
+  "commandExitStatus": 0,
+  "binding": "exact",
+  "bindingBasis": "exact candidate and full input fingerprints",
+  "commandEventId": "e000017"
+}

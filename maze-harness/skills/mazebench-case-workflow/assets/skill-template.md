@@ -9,6 +9,17 @@ description: "[TODO: Describe this mechanism, its authoring use and supported sc
 
 Reference cases: {{ROOMS}}. Preserve each case's official, user or authored provenance.
 
+## Automatic authoring record
+
+Start the shared observer before task-specific reads or geometry, bind it to the
+exact task and current client, and retain all revisions in one run. Use the
+packaged read, note, build, render, verify, review and finish boundaries. Keep the
+current model and client; never delegate to obtain usage. Preserve failed attempts
+and unknown fields. After exact passing verification, seal the run and invoke the
+library publisher in the same task. Public export is allowlisted; local session
+bindings and raw logs remain private. Honor local-only and prepare-only requests.
+Add the library construction bridge to the package alongside its domain helpers.
+
 ## Required reading and modes
 
 [TODO: Link mechanism logic for new authoring and complete cases/evidence for maintenance and reproduction. Explain the receipt and complex/compact modes actually supported.]

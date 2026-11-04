@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "$id": "https://dasbootu9607.github.io/Spatial-Harness-Library/shared/schemas/catalog.schema.json",
+  "required": [
+    "schemaVersion",
+    "harnesses",
+    "skills",
+    "cases",
+    "official"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "harnesses": {
+      "type": "array"
+    },
+    "skills": {
+      "type": "array"
+    },
+    "cases": {
+      "type": "array"
+    },
+    "official": {
+      "type": "array"
+    }
+  }
+}

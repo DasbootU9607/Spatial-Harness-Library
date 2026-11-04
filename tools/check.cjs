@@ -1,0 +1,13 @@
+'use strict';
+const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict');
+const R=require('./observatory/runtime.cjs'),data=require('./build-exhibition.cjs').discover();
+const validate=(value,name)=>require('./schema.cjs').validate(value,R.read(path.join(R.ROOT,'shared/schemas',name+'.schema.json')),name);
+validate(data,'catalog');
+assert.equal(R.read(path.join(R.ROOT,'questions/data/spatialviz.json')).length,1180);
+const baby=R.read(path.join(R.ROOT,'questions/data/babyvision.json'));assert.equal(baby.filter(x=>x.track==='vqa').length,388);assert.equal(baby.filter(x=>x.track!=='vqa').length,280);
+const registered=R.read(path.join(R.ROOT,'catalog/cases.json')).cases;
+for(const c of registered){validate(c,'case');const process=R.read(path.join(R.ROOT,c.harnessId,'site',c.process));if(process.usage)validate(process.usage,'usage');for(const event of process.events)validate(event,'event');for(const test of process.tests)validate(test,'verification');}
+assert.equal(new Set(registered.map(c=>c.harnessId+':'+c.id)).size,registered.length);
+for(const s of data.skills){assert(s.name&&s.harnessId);for(const id of s.officialReferences||[])assert(data.official.some(c=>c.id===id&&c.harnessId===s.harnessId),'Missing official reference '+id);}
+for(const c of registered){const base=path.join(R.ROOT,c.harnessId,'site'),read=ref=>R.read(path.join(base,ref));assert.equal(R.sha(fs.readFileSync(path.join(base,c.taskArtifact))),c.contentSha256);assert.equal(c.verification.verdict,'passed');const p=read(c.process),v=read(c.verification.report);assert.equal(p.manifest.status,'accepted');assert.equal(p.manifest.finalCandidateId,c.verification.candidateId);assert.equal(v.verdict,'passed');assert.equal(v.testedFingerprints.specification,c.contentSha256);assert.equal(p.events.at(-1).type,'run.finished');assert.equal(p.events.length,new Set(p.events.map(e=>e.id)).size);assert(p.events.every((e,i)=>e.seq===i+1));if(p.usage){assert.equal(p.usage.scopeComplete,false);assert(Object.values(p.usage.tokens).every(x=>x===null));}for(const candidate of p.candidates){if(candidate.preview){assert.equal(candidate.preview.specification,candidate.sha256);assert.equal(R.sha(fs.readFileSync(path.join(base,candidate.preview.path))),candidate.preview.sha256);}}const serialized=JSON.stringify(p);assert(!/[a-z]:\\|"sessionId"|"transcript"|"stdoutPath"|"stderrPath"/.test(serialized),'Private public evidence');}
+console.log(`Integrity passed: ${data.harnesses.length} harnesses, ${data.skills.length} completed skills, ${registered.length} new accepted tasks; official collections intact.`);

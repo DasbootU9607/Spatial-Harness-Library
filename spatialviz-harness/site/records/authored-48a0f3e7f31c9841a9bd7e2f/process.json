@@ -1,0 +1,925 @@
+{
+  "schemaVersion": 1,
+  "manifest": {
+    "id": "build-73f197a9-ea87-4563-96ba-74e3097551f3",
+    "title": "Quarter-turn construction · current-client smoke",
+    "runKind": "[private value omitted]",
+    "harness": "spatialviz-harness",
+    "benchmark": "SpatialViz-Bench",
+    "category": "MentalRotation",
+    "taskType": "discrete-rotation-demo",
+    "skill": {
+      "id": "spatialviz-discrete-rotation",
+      "sha256": "766e76ff1084fb331f73e4ceb5f4ecf6f65ff5aef1ea910a4c423cea7ec1fb1b"
+    },
+    "status": "accepted",
+    "createdAt": "2026-11-04T01:58:49.591Z",
+    "finishedAt": "2026-11-04T02:00:46.461Z",
+    "finalCandidateId": "v002",
+    "limitations": [
+      "Only recorder-mediated deliveries, commands and saved boundaries are observed; direct function calls, unwrapped commands and unsaved editor states are excluded.",
+      "Design notes are explicit author annotations, not internal reasoning."
+    ],
+    "captureGaps": []
+  },
+  "events": [
+    {
+      "id": "e000001",
+      "seq": 1,
+      "runId": "build-73f197a9-ea87-4563-96ba-74e3097551f3",
+      "at": "2026-11-04T01:58:49.601Z",
+      "recordedAt": "2026-11-04T01:58:49.601Z",
+      "type": "run.created",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": null,
+      "details": {},
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000002",
+      "seq": 2,
+      "runId": "build-73f197a9-ea87-4563-96ba-74e3097551f3",
+      "at": "2026-11-04T01:58:49.696Z",
+      "recordedAt": "2026-11-04T01:58:49.696Z",
+      "type": "collector.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": null,
+      "details": {},
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000003",
+      "seq": 3,
+      "runId": "build-73f197a9-ea87-4563-96ba-74e3097551f3",
+      "at": "2026-11-04T01:58:49.735Z",
+      "recordedAt": "2026-11-04T01:58:49.735Z",
+      "type": "skill.attached",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": null,
+      "details": {
+        "sha256": "766e76ff1084fb331f73e4ceb5f4ecf6f65ff5aef1ea910a4c423cea7ec1fb1b",
+        "skill": "spatialviz-discrete-rotation"
+      },
+      "evidenceRefs": [
+        {
+          "id": "10fbf2a3f9c75581",
+          "sha256": "766e76ff1084fb331f73e4ceb5f4ecf6f65ff5aef1ea910a4c423cea7ec1fb1b",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000004",
+      "seq": 4,
+      "runId": "build-73f197a9-ea87-4563-96ba-74e3097551f3",
+      "at": "2026-11-04T01:58:49.817Z",
+      "recordedAt": "2026-11-04T01:58:49.817Z",
+      "type": "resource.read",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "ecfde810-eb3a-4467-98a2-a3a87c030b44",
+      "candidateId": null,
+      "details": {
+        "outcome": "delivered",
+        "label": "construction.md",
+        "start": 1,
+        "end": 15,
+        "sha256": "543b389e7bb5369f4f353e14d3ade11bb96afa82daccb2ef57e49bb1095089be",
+        "sourceSha256": "543b389e7bb5369f4f353e14d3ade11bb96afa82daccb2ef57e49bb1095089be"
+      },
+      "evidenceRefs": [
+        {
+          "id": "f389004b4fe64487",
+          "sha256": "543b389e7bb5369f4f353e14d3ade11bb96afa82daccb2ef57e49bb1095089be",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000005",
+      "seq": 5,
+      "runId": "build-73f197a9-ea87-4563-96ba-74e3097551f3",
+      "at": "2026-11-04T01:58:49.863Z",
+      "recordedAt": "2026-11-04T01:58:49.863Z",
+      "type": "design.note",
+      "actor": "author",
+      "origin": "agent_statement",
+      "actionId": null,
+      "candidateId": null,
+      "details": {
+        "goal": "Exercise candidate revision and exact verification in a bounded demonstration.",
+        "sources": [
+          "Packaged discrete quarter-turn construction contract"
+        ],
+        "change": "Create a seeded figure and intentionally incorrect answer for the first verification attempt.",
+        "reason": "Check that failed evidence remains visible and cannot be accepted.",
+        "expectedChecks": [
+          "First answer check fails",
+          "Corrected revision passes independently"
+        ]
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000006",
+      "seq": 6,
+      "runId": "build-73f197a9-ea87-4563-96ba-74e3097551f3",
+      "at": "2026-11-04T01:58:49.928Z",
+      "recordedAt": "2026-11-04T01:58:49.928Z",
+      "type": "candidate.saved",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "59135583-1789-4f2b-8f1b-a0e1702545a6",
+      "candidateId": "v001",
+      "details": {
+        "sha256": "a4d5d9c0b1bba8da49ebf98004710fe2396ff5bafa5e6e0a42cc922cc1e55984",
+        "parentId": null,
+        "parentBasis": null,
+        "changes": [
+          "specification",
+          "geometry",
+          "question",
+          "options",
+          "answer",
+          "contract",
+          "rendering",
+          "generator"
+        ],
+        "fingerprints": {
+          "specification": "a4d5d9c0b1bba8da49ebf98004710fe2396ff5bafa5e6e0a42cc922cc1e55984",
+          "geometry": "894eeb8c0a3bb0ec1f5ac40f298a447765a59a973eb96e3de974e45ec5e6462a",
+          "question": "b434453e17a06906c29654892e767250becb6868464f29180fdb91e70ad7f620",
+          "options": "5c44a8423c5dacb5bdb78ae5a9873bf08c1a5c79e25c4c8a6fa2f09a6d47c104",
+          "answer": "241aa3698c14920a6f93a5c362e9d9fcef2a0e46ef6819a206b863ccc5708f2a",
+          "contract": "a55a52a0061b63f5b95b2e8809ed64d69c891cf8d6be9dfc83fdcec786fb697b",
+          "rendering": "70b0a1b3e4112b6ae8bd4fda926124704dd2832d5c2b5a97d2314ee1e152f00d",
+          "generator": "499243351d9059da67f13c84cbe5df84c97dc40379547094d72c9de799c8f312"
+        },
+        "previewUnavailable": null
+      },
+      "evidenceRefs": [
+        {
+          "id": "3c8848bff7d3c0b7",
+          "sha256": "a4d5d9c0b1bba8da49ebf98004710fe2396ff5bafa5e6e0a42cc922cc1e55984",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000007",
+      "seq": 7,
+      "runId": "build-73f197a9-ea87-4563-96ba-74e3097551f3",
+      "at": "2026-11-04T01:58:49.988Z",
+      "recordedAt": "2026-11-04T01:58:49.988Z",
+      "type": "render.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "5ed60fce-2ac9-426b-bfcc-1ea7b21c7005",
+      "candidateId": "v001",
+      "details": {
+        "renderer": {
+          "id": "discrete-quarter-turn",
+          "revision": "16c1295d868218526ed73f7aee785d8428fceec3c3d23c0f704ba0611a48d3fe"
+        }
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000008",
+      "seq": 8,
+      "runId": "build-73f197a9-ea87-4563-96ba-74e3097551f3",
+      "at": "2026-11-04T01:58:50.031Z",
+      "recordedAt": "2026-11-04T01:58:50.031Z",
+      "type": "render.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "5ed60fce-2ac9-426b-bfcc-1ea7b21c7005",
+      "candidateId": "v001",
+      "details": {
+        "sha256": "d689b786f59419dcc59c1c1ef997e59dd09b24e3a69624da5babe60e29c15b44",
+        "renderer": {
+          "id": "discrete-quarter-turn",
+          "revision": "16c1295d868218526ed73f7aee785d8428fceec3c3d23c0f704ba0611a48d3fe"
+        },
+        "specification": "a4d5d9c0b1bba8da49ebf98004710fe2396ff5bafa5e6e0a42cc922cc1e55984",
+        "rendering": "70b0a1b3e4112b6ae8bd4fda926124704dd2832d5c2b5a97d2314ee1e152f00d"
+      },
+      "evidenceRefs": [
+        {
+          "id": "9c95d79da1f24a6f",
+          "sha256": "d689b786f59419dcc59c1c1ef997e59dd09b24e3a69624da5babe60e29c15b44",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000009",
+      "seq": 9,
+      "runId": "build-73f197a9-ea87-4563-96ba-74e3097551f3",
+      "at": "2026-11-04T01:58:50.091Z",
+      "recordedAt": "2026-11-04T01:58:50.091Z",
+      "type": "command.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "4e73f2d9-31cd-4dc7-96c1-19eac85f6115",
+      "candidateId": "v001",
+      "details": {
+        "label": "node.exe",
+        "kind": "verification"
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000010",
+      "seq": 10,
+      "runId": "build-73f197a9-ea87-4563-96ba-74e3097551f3",
+      "at": "2026-11-04T01:58:50.325Z",
+      "recordedAt": "2026-11-04T01:58:50.325Z",
+      "type": "command.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "4e73f2d9-31cd-4dc7-96c1-19eac85f6115",
+      "candidateId": "v001",
+      "details": {
+        "commandEventId": "e000009",
+        "kind": "verification",
+        "exitCode": 1,
+        "signal": null
+      },
+      "evidenceRefs": [
+        {
+          "id": "32ca7a8115427826",
+          "sha256": "3815dac4aff9b76b88be851e3cf0ac537677496fedf8b53f9a9497feca47e4d2",
+          "availability": "local evidence; hash published"
+        },
+        {
+          "id": "c771616f462ce0fa",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000011",
+      "seq": 11,
+      "runId": "build-73f197a9-ea87-4563-96ba-74e3097551f3",
+      "at": "2026-11-04T01:58:50.370Z",
+      "recordedAt": "2026-11-04T01:58:50.370Z",
+      "type": "test.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "4e73f2d9-31cd-4dc7-96c1-19eac85f6115",
+      "candidateId": "v001",
+      "details": {
+        "commandEventId": "e000009",
+        "completedEventId": "e000010",
+        "verdict": "failed",
+        "status": "failed",
+        "checks": [
+          {
+            "name": "Supported exact construction contract",
+            "verdict": "passed"
+          },
+          {
+            "name": "Six unique integer cells within bounds",
+            "verdict": "passed"
+          },
+          {
+            "name": "Four distinct options",
+            "verdict": "passed"
+          },
+          {
+            "name": "Unique correct answer in recorded option order",
+            "verdict": "failed"
+          },
+          {
+            "name": "Reproducible seed and tool revisions",
+            "verdict": "passed"
+          },
+          {
+            "name": "Generator replay matches task payload",
+            "verdict": "failed"
+          }
+        ],
+        "scope": "Exact discrete quarter-turn, answer uniqueness, option order, generator replay and rendering parameters. No general SpatialViz or difficulty claim.",
+        "binding": "exact",
+        "bindingBasis": "exact candidate and full input fingerprints",
+        "testedFingerprints": {
+          "specification": "a4d5d9c0b1bba8da49ebf98004710fe2396ff5bafa5e6e0a42cc922cc1e55984",
+          "geometry": "894eeb8c0a3bb0ec1f5ac40f298a447765a59a973eb96e3de974e45ec5e6462a",
+          "question": "b434453e17a06906c29654892e767250becb6868464f29180fdb91e70ad7f620",
+          "options": "5c44a8423c5dacb5bdb78ae5a9873bf08c1a5c79e25c4c8a6fa2f09a6d47c104",
+          "answer": "241aa3698c14920a6f93a5c362e9d9fcef2a0e46ef6819a206b863ccc5708f2a",
+          "contract": "a55a52a0061b63f5b95b2e8809ed64d69c891cf8d6be9dfc83fdcec786fb697b",
+          "rendering": "70b0a1b3e4112b6ae8bd4fda926124704dd2832d5c2b5a97d2314ee1e152f00d",
+          "generator": "499243351d9059da67f13c84cbe5df84c97dc40379547094d72c9de799c8f312"
+        },
+        "verifier": {
+          "id": "discrete-quarter-turn",
+          "revision": "16c1295d868218526ed73f7aee785d8428fceec3c3d23c0f704ba0611a48d3fe"
+        },
+        "reportSha256": "ef6d4c5d4ef344ade9dabaaa2d05bc55d92c6746cc5472b7dc1b0ecfd2a0d77c"
+      },
+      "evidenceRefs": [
+        {
+          "id": "b23ad7d7d7225e39",
+          "sha256": "ef6d4c5d4ef344ade9dabaaa2d05bc55d92c6746cc5472b7dc1b0ecfd2a0d77c",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000012",
+      "seq": 12,
+      "runId": "build-73f197a9-ea87-4563-96ba-74e3097551f3",
+      "at": "2026-11-04T01:58:50.481Z",
+      "recordedAt": "2026-11-04T01:58:50.481Z",
+      "type": "design.note",
+      "actor": "author",
+      "origin": "agent_statement",
+      "actionId": null,
+      "candidateId": "v001",
+      "details": {
+        "goal": "Deliver the verified quarter-turn task.",
+        "sources": [
+          "Failed v001 report"
+        ],
+        "change": "Correct the designated answer without changing geometry or option order.",
+        "reason": "The independent rotation matrix identifies the unique matching option.",
+        "expectedChecks": [
+          "Unique answer",
+          "Exact generator replay",
+          "Version-bound rendering"
+        ]
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000013",
+      "seq": 13,
+      "runId": "build-73f197a9-ea87-4563-96ba-74e3097551f3",
+      "at": "2026-11-04T01:58:50.535Z",
+      "recordedAt": "2026-11-04T01:58:50.535Z",
+      "type": "candidate.saved",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "5d99f1d9-7b95-40ad-b2ed-fbac1782a55c",
+      "candidateId": "v002",
+      "details": {
+        "sha256": "48a0f3e7f31c9841a9bd7e2faf3842e717cabad51c633a52a8b1a0e3efbaf3d3",
+        "parentId": "v001",
+        "parentBasis": "Explicit answer correction following failed v001 verification",
+        "changes": [
+          "specification",
+          "answer"
+        ],
+        "fingerprints": {
+          "specification": "48a0f3e7f31c9841a9bd7e2faf3842e717cabad51c633a52a8b1a0e3efbaf3d3",
+          "geometry": "894eeb8c0a3bb0ec1f5ac40f298a447765a59a973eb96e3de974e45ec5e6462a",
+          "question": "b434453e17a06906c29654892e767250becb6868464f29180fdb91e70ad7f620",
+          "options": "5c44a8423c5dacb5bdb78ae5a9873bf08c1a5c79e25c4c8a6fa2f09a6d47c104",
+          "answer": "f3656d763a19aa513e2966809d0ccc0ac7c8262a1f087223a03f57c11bce1acb",
+          "contract": "a55a52a0061b63f5b95b2e8809ed64d69c891cf8d6be9dfc83fdcec786fb697b",
+          "rendering": "70b0a1b3e4112b6ae8bd4fda926124704dd2832d5c2b5a97d2314ee1e152f00d",
+          "generator": "499243351d9059da67f13c84cbe5df84c97dc40379547094d72c9de799c8f312"
+        },
+        "previewUnavailable": null
+      },
+      "evidenceRefs": [
+        {
+          "id": "d1da4bef126a6a92",
+          "sha256": "48a0f3e7f31c9841a9bd7e2faf3842e717cabad51c633a52a8b1a0e3efbaf3d3",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000014",
+      "seq": 14,
+      "runId": "build-73f197a9-ea87-4563-96ba-74e3097551f3",
+      "at": "2026-11-04T01:58:50.665Z",
+      "recordedAt": "2026-11-04T01:58:50.665Z",
+      "type": "render.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "6826abd3-d6cf-43a8-80dc-1cde231f230b",
+      "candidateId": "v002",
+      "details": {
+        "renderer": {
+          "id": "discrete-quarter-turn",
+          "revision": "16c1295d868218526ed73f7aee785d8428fceec3c3d23c0f704ba0611a48d3fe"
+        }
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000015",
+      "seq": 15,
+      "runId": "build-73f197a9-ea87-4563-96ba-74e3097551f3",
+      "at": "2026-11-04T01:58:50.727Z",
+      "recordedAt": "2026-11-04T01:58:50.727Z",
+      "type": "render.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "6826abd3-d6cf-43a8-80dc-1cde231f230b",
+      "candidateId": "v002",
+      "details": {
+        "sha256": "d689b786f59419dcc59c1c1ef997e59dd09b24e3a69624da5babe60e29c15b44",
+        "renderer": {
+          "id": "discrete-quarter-turn",
+          "revision": "16c1295d868218526ed73f7aee785d8428fceec3c3d23c0f704ba0611a48d3fe"
+        },
+        "specification": "48a0f3e7f31c9841a9bd7e2faf3842e717cabad51c633a52a8b1a0e3efbaf3d3",
+        "rendering": "70b0a1b3e4112b6ae8bd4fda926124704dd2832d5c2b5a97d2314ee1e152f00d"
+      },
+      "evidenceRefs": [
+        {
+          "id": "17b23488fe27efd3",
+          "sha256": "d689b786f59419dcc59c1c1ef997e59dd09b24e3a69624da5babe60e29c15b44",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000016",
+      "seq": 16,
+      "runId": "build-73f197a9-ea87-4563-96ba-74e3097551f3",
+      "at": "2026-11-04T01:58:50.846Z",
+      "recordedAt": "2026-11-04T01:58:50.846Z",
+      "type": "report.previous",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "d004c08d-e1d2-4c68-a558-0cf3e98c81bf",
+      "candidateId": null,
+      "details": {
+        "sha256": "ef6d4c5d4ef344ade9dabaaa2d05bc55d92c6746cc5472b7dc1b0ecfd2a0d77c"
+      },
+      "evidenceRefs": [
+        {
+          "id": "15cacbcff2fb0ad1",
+          "sha256": "ef6d4c5d4ef344ade9dabaaa2d05bc55d92c6746cc5472b7dc1b0ecfd2a0d77c",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000017",
+      "seq": 17,
+      "runId": "build-73f197a9-ea87-4563-96ba-74e3097551f3",
+      "at": "2026-11-04T01:58:50.907Z",
+      "recordedAt": "2026-11-04T01:58:50.907Z",
+      "type": "command.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "d004c08d-e1d2-4c68-a558-0cf3e98c81bf",
+      "candidateId": "v002",
+      "details": {
+        "label": "node.exe",
+        "kind": "verification"
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000018",
+      "seq": 18,
+      "runId": "build-73f197a9-ea87-4563-96ba-74e3097551f3",
+      "at": "2026-11-04T01:58:51.165Z",
+      "recordedAt": "2026-11-04T01:58:51.165Z",
+      "type": "command.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "d004c08d-e1d2-4c68-a558-0cf3e98c81bf",
+      "candidateId": "v002",
+      "details": {
+        "commandEventId": "e000017",
+        "kind": "verification",
+        "exitCode": 0,
+        "signal": null
+      },
+      "evidenceRefs": [
+        {
+          "id": "3302a70891d7e60a",
+          "sha256": "f9f05ce0eb57487e690084904c07095e34754f2ec8dbdf14438b66380c038eb2",
+          "availability": "local evidence; hash published"
+        },
+        {
+          "id": "3dd8832da24dd36e",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000019",
+      "seq": 19,
+      "runId": "build-73f197a9-ea87-4563-96ba-74e3097551f3",
+      "at": "2026-11-04T01:58:51.179Z",
+      "recordedAt": "2026-11-04T01:58:51.179Z",
+      "type": "test.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "d004c08d-e1d2-4c68-a558-0cf3e98c81bf",
+      "candidateId": "v002",
+      "details": {
+        "commandEventId": "e000017",
+        "completedEventId": "e000018",
+        "verdict": "passed",
+        "status": "passed",
+        "checks": [
+          {
+            "name": "Supported exact construction contract",
+            "verdict": "passed"
+          },
+          {
+            "name": "Six unique integer cells within bounds",
+            "verdict": "passed"
+          },
+          {
+            "name": "Four distinct options",
+            "verdict": "passed"
+          },
+          {
+            "name": "Unique correct answer in recorded option order",
+            "verdict": "passed"
+          },
+          {
+            "name": "Reproducible seed and tool revisions",
+            "verdict": "passed"
+          },
+          {
+            "name": "Generator replay matches task payload",
+            "verdict": "passed"
+          }
+        ],
+        "scope": "Exact discrete quarter-turn, answer uniqueness, option order, generator replay and rendering parameters. No general SpatialViz or difficulty claim.",
+        "binding": "exact",
+        "bindingBasis": "exact candidate and full input fingerprints",
+        "testedFingerprints": {
+          "specification": "48a0f3e7f31c9841a9bd7e2faf3842e717cabad51c633a52a8b1a0e3efbaf3d3",
+          "geometry": "894eeb8c0a3bb0ec1f5ac40f298a447765a59a973eb96e3de974e45ec5e6462a",
+          "question": "b434453e17a06906c29654892e767250becb6868464f29180fdb91e70ad7f620",
+          "options": "5c44a8423c5dacb5bdb78ae5a9873bf08c1a5c79e25c4c8a6fa2f09a6d47c104",
+          "answer": "f3656d763a19aa513e2966809d0ccc0ac7c8262a1f087223a03f57c11bce1acb",
+          "contract": "a55a52a0061b63f5b95b2e8809ed64d69c891cf8d6be9dfc83fdcec786fb697b",
+          "rendering": "70b0a1b3e4112b6ae8bd4fda926124704dd2832d5c2b5a97d2314ee1e152f00d",
+          "generator": "499243351d9059da67f13c84cbe5df84c97dc40379547094d72c9de799c8f312"
+        },
+        "verifier": {
+          "id": "discrete-quarter-turn",
+          "revision": "16c1295d868218526ed73f7aee785d8428fceec3c3d23c0f704ba0611a48d3fe"
+        },
+        "reportSha256": "2af647d46c938cb16b49cc1bd6a44f3b950698d15091f543201e738dc51391f8"
+      },
+      "evidenceRefs": [
+        {
+          "id": "41df7df41cbc36ce",
+          "sha256": "2af647d46c938cb16b49cc1bd6a44f3b950698d15091f543201e738dc51391f8",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000020",
+      "seq": 20,
+      "runId": "build-73f197a9-ea87-4563-96ba-74e3097551f3",
+      "at": "2026-11-04T02:00:17.770Z",
+      "recordedAt": "2026-11-04T02:00:17.770Z",
+      "type": "browser.attempt",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "5d3d9c64-da4d-4471-a5d0-7b7947ad5795",
+      "candidateId": "v002",
+      "details": {
+        "outcome": "started",
+        "inputs": {
+          "candidateId": "v002",
+          "specification": "48a0f3e7f31c9841a9bd7e2faf3842e717cabad51c633a52a8b1a0e3efbaf3d3",
+          "viewport": {
+            "width": 1000,
+            "height": 560
+          }
+        }
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000021",
+      "seq": 21,
+      "runId": "build-73f197a9-ea87-4563-96ba-74e3097551f3",
+      "at": "2026-11-04T02:00:18.837Z",
+      "recordedAt": "2026-11-04T02:00:18.837Z",
+      "type": "screenshot.saved",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "5d3d9c64-da4d-4471-a5d0-7b7947ad5795",
+      "candidateId": "v002",
+      "details": {
+        "sha256": "4caa68c5142f3b4ffa87184348c64f3753a864677e4c9fdbc49642d4dc9010cd",
+        "specification": "48a0f3e7f31c9841a9bd7e2faf3842e717cabad51c633a52a8b1a0e3efbaf3d3"
+      },
+      "evidenceRefs": [
+        {
+          "id": "3d9c7b022c323666",
+          "sha256": "4caa68c5142f3b4ffa87184348c64f3753a864677e4c9fdbc49642d4dc9010cd",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000022",
+      "seq": 22,
+      "runId": "build-73f197a9-ea87-4563-96ba-74e3097551f3",
+      "at": "2026-11-04T02:00:46.284Z",
+      "recordedAt": "2026-11-04T02:00:46.284Z",
+      "type": "visual.review",
+      "actor": "author",
+      "origin": "agent_statement",
+      "actionId": null,
+      "candidateId": "v002",
+      "details": {
+        "outcome": "passed",
+        "review": "Inspected the exact v002 screenshot: all six cells, origin markers, x/y axes and A-D labels are visible. The clockwise result is option B. No clipping or overlapping choices."
+      },
+      "evidenceRefs": [
+        {
+          "id": "3d9c7b022c323666",
+          "sha256": "4caa68c5142f3b4ffa87184348c64f3753a864677e4c9fdbc49642d4dc9010cd",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000023",
+      "seq": 23,
+      "runId": "build-73f197a9-ea87-4563-96ba-74e3097551f3",
+      "at": "2026-11-04T02:00:46.323Z",
+      "recordedAt": "2026-11-04T02:00:46.323Z",
+      "type": "capture.gap",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": null,
+      "details": {
+        "reason": "This smoke interval shares the current client session with recorder and exhibition validation work. Observed tokens include that interleaved work; no task-exclusive or stage-exclusive usage is claimed."
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000024",
+      "seq": 24,
+      "runId": "build-73f197a9-ea87-4563-96ba-74e3097551f3",
+      "at": "2026-11-04T02:00:46.422Z",
+      "recordedAt": "2026-11-04T02:00:46.422Z",
+      "type": "run.finished",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": "v002",
+      "details": {
+        "outcome": "accepted",
+        "finalCandidateId": "v002"
+      },
+      "evidenceRefs": []
+    }
+  ],
+  "candidates": [
+    {
+      "id": "v001",
+      "parentId": null,
+      "parentBasis": null,
+      "sha256": "a4d5d9c0b1bba8da49ebf98004710fe2396ff5bafa5e6e0a42cc922cc1e55984",
+      "fingerprints": {
+        "specification": "a4d5d9c0b1bba8da49ebf98004710fe2396ff5bafa5e6e0a42cc922cc1e55984",
+        "geometry": "894eeb8c0a3bb0ec1f5ac40f298a447765a59a973eb96e3de974e45ec5e6462a",
+        "question": "b434453e17a06906c29654892e767250becb6868464f29180fdb91e70ad7f620",
+        "options": "5c44a8423c5dacb5bdb78ae5a9873bf08c1a5c79e25c4c8a6fa2f09a6d47c104",
+        "answer": "241aa3698c14920a6f93a5c362e9d9fcef2a0e46ef6819a206b863ccc5708f2a",
+        "contract": "a55a52a0061b63f5b95b2e8809ed64d69c891cf8d6be9dfc83fdcec786fb697b",
+        "rendering": "70b0a1b3e4112b6ae8bd4fda926124704dd2832d5c2b5a97d2314ee1e152f00d",
+        "generator": "499243351d9059da67f13c84cbe5df84c97dc40379547094d72c9de799c8f312"
+      },
+      "previewUnavailable": null,
+      "changes": [
+        "specification",
+        "geometry",
+        "question",
+        "options",
+        "answer",
+        "contract",
+        "rendering",
+        "generator"
+      ],
+      "preview": {
+        "candidateId": "v001",
+        "specification": "a4d5d9c0b1bba8da49ebf98004710fe2396ff5bafa5e6e0a42cc922cc1e55984",
+        "rendering": "70b0a1b3e4112b6ae8bd4fda926124704dd2832d5c2b5a97d2314ee1e152f00d",
+        "renderer": {
+          "id": "discrete-quarter-turn",
+          "revision": "16c1295d868218526ed73f7aee785d8428fceec3c3d23c0f704ba0611a48d3fe"
+        },
+        "sha256": "d689b786f59419dcc59c1c1ef997e59dd09b24e3a69624da5babe60e29c15b44",
+        "path": "records/authored-48a0f3e7f31c9841a9bd7e2f/v001-d689b786f59419dc.svg",
+        "origin": "delivery-render"
+      }
+    },
+    {
+      "id": "v002",
+      "parentId": "v001",
+      "parentBasis": "Explicit answer correction following failed v001 verification",
+      "sha256": "48a0f3e7f31c9841a9bd7e2faf3842e717cabad51c633a52a8b1a0e3efbaf3d3",
+      "fingerprints": {
+        "specification": "48a0f3e7f31c9841a9bd7e2faf3842e717cabad51c633a52a8b1a0e3efbaf3d3",
+        "geometry": "894eeb8c0a3bb0ec1f5ac40f298a447765a59a973eb96e3de974e45ec5e6462a",
+        "question": "b434453e17a06906c29654892e767250becb6868464f29180fdb91e70ad7f620",
+        "options": "5c44a8423c5dacb5bdb78ae5a9873bf08c1a5c79e25c4c8a6fa2f09a6d47c104",
+        "answer": "f3656d763a19aa513e2966809d0ccc0ac7c8262a1f087223a03f57c11bce1acb",
+        "contract": "a55a52a0061b63f5b95b2e8809ed64d69c891cf8d6be9dfc83fdcec786fb697b",
+        "rendering": "70b0a1b3e4112b6ae8bd4fda926124704dd2832d5c2b5a97d2314ee1e152f00d",
+        "generator": "499243351d9059da67f13c84cbe5df84c97dc40379547094d72c9de799c8f312"
+      },
+      "previewUnavailable": null,
+      "changes": [
+        "specification",
+        "answer"
+      ],
+      "preview": {
+        "candidateId": "v002",
+        "specification": "48a0f3e7f31c9841a9bd7e2faf3842e717cabad51c633a52a8b1a0e3efbaf3d3",
+        "rendering": "70b0a1b3e4112b6ae8bd4fda926124704dd2832d5c2b5a97d2314ee1e152f00d",
+        "renderer": {
+          "id": "discrete-quarter-turn",
+          "revision": "16c1295d868218526ed73f7aee785d8428fceec3c3d23c0f704ba0611a48d3fe"
+        },
+        "sha256": "d689b786f59419dcc59c1c1ef997e59dd09b24e3a69624da5babe60e29c15b44",
+        "path": "records/authored-48a0f3e7f31c9841a9bd7e2f/v002-d689b786f59419dc.svg",
+        "origin": "delivery-render"
+      }
+    }
+  ],
+  "tests": [
+    {
+      "id": "t001",
+      "actionId": "4e73f2d9-31cd-4dc7-96c1-19eac85f6115",
+      "candidateId": "v001",
+      "testedFingerprints": {
+        "specification": "a4d5d9c0b1bba8da49ebf98004710fe2396ff5bafa5e6e0a42cc922cc1e55984",
+        "geometry": "894eeb8c0a3bb0ec1f5ac40f298a447765a59a973eb96e3de974e45ec5e6462a",
+        "question": "b434453e17a06906c29654892e767250becb6868464f29180fdb91e70ad7f620",
+        "options": "5c44a8423c5dacb5bdb78ae5a9873bf08c1a5c79e25c4c8a6fa2f09a6d47c104",
+        "answer": "241aa3698c14920a6f93a5c362e9d9fcef2a0e46ef6819a206b863ccc5708f2a",
+        "contract": "a55a52a0061b63f5b95b2e8809ed64d69c891cf8d6be9dfc83fdcec786fb697b",
+        "rendering": "70b0a1b3e4112b6ae8bd4fda926124704dd2832d5c2b5a97d2314ee1e152f00d",
+        "generator": "499243351d9059da67f13c84cbe5df84c97dc40379547094d72c9de799c8f312"
+      },
+      "verifier": {
+        "id": "discrete-quarter-turn",
+        "revision": "16c1295d868218526ed73f7aee785d8428fceec3c3d23c0f704ba0611a48d3fe"
+      },
+      "reportSha256": "ef6d4c5d4ef344ade9dabaaa2d05bc55d92c6746cc5472b7dc1b0ecfd2a0d77c",
+      "verdict": "failed",
+      "status": "failed",
+      "checks": [
+        {
+          "name": "Supported exact construction contract",
+          "verdict": "passed"
+        },
+        {
+          "name": "Six unique integer cells within bounds",
+          "verdict": "passed"
+        },
+        {
+          "name": "Four distinct options",
+          "verdict": "passed"
+        },
+        {
+          "name": "Unique correct answer in recorded option order",
+          "verdict": "failed"
+        },
+        {
+          "name": "Reproducible seed and tool revisions",
+          "verdict": "passed"
+        },
+        {
+          "name": "Generator replay matches task payload",
+          "verdict": "failed"
+        }
+      ],
+      "scope": "Exact discrete quarter-turn, answer uniqueness, option order, generator replay and rendering parameters. No general SpatialViz or difficulty claim.",
+      "commandExitStatus": 1,
+      "binding": "exact",
+      "bindingBasis": "exact candidate and full input fingerprints",
+      "commandEventId": "e000009"
+    },
+    {
+      "id": "t002",
+      "actionId": "d004c08d-e1d2-4c68-a558-0cf3e98c81bf",
+      "candidateId": "v002",
+      "testedFingerprints": {
+        "specification": "48a0f3e7f31c9841a9bd7e2faf3842e717cabad51c633a52a8b1a0e3efbaf3d3",
+        "geometry": "894eeb8c0a3bb0ec1f5ac40f298a447765a59a973eb96e3de974e45ec5e6462a",
+        "question": "b434453e17a06906c29654892e767250becb6868464f29180fdb91e70ad7f620",
+        "options": "5c44a8423c5dacb5bdb78ae5a9873bf08c1a5c79e25c4c8a6fa2f09a6d47c104",
+        "answer": "f3656d763a19aa513e2966809d0ccc0ac7c8262a1f087223a03f57c11bce1acb",
+        "contract": "a55a52a0061b63f5b95b2e8809ed64d69c891cf8d6be9dfc83fdcec786fb697b",
+        "rendering": "70b0a1b3e4112b6ae8bd4fda926124704dd2832d5c2b5a97d2314ee1e152f00d",
+        "generator": "499243351d9059da67f13c84cbe5df84c97dc40379547094d72c9de799c8f312"
+      },
+      "verifier": {
+        "id": "discrete-quarter-turn",
+        "revision": "16c1295d868218526ed73f7aee785d8428fceec3c3d23c0f704ba0611a48d3fe"
+      },
+      "reportSha256": "2af647d46c938cb16b49cc1bd6a44f3b950698d15091f543201e738dc51391f8",
+      "verdict": "passed",
+      "status": "passed",
+      "checks": [
+        {
+          "name": "Supported exact construction contract",
+          "verdict": "passed"
+        },
+        {
+          "name": "Six unique integer cells within bounds",
+          "verdict": "passed"
+        },
+        {
+          "name": "Four distinct options",
+          "verdict": "passed"
+        },
+        {
+          "name": "Unique correct answer in recorded option order",
+          "verdict": "passed"
+        },
+        {
+          "name": "Reproducible seed and tool revisions",
+          "verdict": "passed"
+        },
+        {
+          "name": "Generator replay matches task payload",
+          "verdict": "passed"
+        }
+      ],
+      "scope": "Exact discrete quarter-turn, answer uniqueness, option order, generator replay and rendering parameters. No general SpatialViz or difficulty claim.",
+      "commandExitStatus": 0,
+      "binding": "exact",
+      "bindingBasis": "exact candidate and full input fingerprints",
+      "commandEventId": "e000017"
+    }
+  ],
+  "usage": {
+    "schemaVersion": 2,
+    "runId": "build-73f197a9-ea87-4563-96ba-74e3097551f3",
+    "source": "codex",
+    "runtime": "Codex Desktop",
+    "status": "partial",
+    "startedAt": "2026-11-04T01:58:49.612Z",
+    "finishedAt": "2026-11-04T02:00:46.453Z",
+    "lastObservedAt": "2026-11-04T02:00:28.755Z",
+    "elapsedMs": 116862,
+    "elapsedKind": "wall-clock",
+    "scope": "Runtime-reported usage between the start baseline and finish snapshot of this session. In-flight or delayed usage, earlier conversation, other agents and later delivery are excluded. This is an observed interval, not a complete billed task total.",
+    "scopeComplete": false,
+    "observedTokens": {
+      "input_tokens": 810329,
+      "cached_input_tokens": 798080,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 4567,
+      "reasoning_output_tokens": 566,
+      "total_tokens": 814896
+    },
+    "tokens": {
+      "input_tokens": null,
+      "cached_input_tokens": null,
+      "cache_write_input_tokens": null,
+      "output_tokens": null,
+      "reasoning_output_tokens": null,
+      "total_tokens": null
+    },
+    "models": [
+      {
+        "provider": "openai",
+        "model": "gpt-6-astra",
+        "reasoningEffort": "xhigh",
+        "tokens": {
+          "input_tokens": 810329,
+          "cached_input_tokens": 798080,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 4567,
+          "reasoning_output_tokens": 566,
+          "total_tokens": 814896
+        },
+        "observations": 6
+      }
+    ],
+    "missingFields": [],
+    "issues": [
+      "Smoke interval includes interleaved recorder and exhibition validation in the same client."
+    ],
+    "observations": 6
+  },
+  "caseId": "authored-48a0f3e7f31c9841a9bd7e2f"
+}

@@ -73,7 +73,9 @@ function session({skillRoot, spec, cwd = process.cwd(), config = {}, fresh = fal
     if (existing) {
       const record = S.readRun(existing.runDir);
       if (record.manifest.watchSpec !== spec) throw new Error('Session marker points to another spec. Start a fresh task.');
-      if (!['running', 'active'].includes(record.manifest.status)) existing = null;
+      if (!['running', 'active'].includes(record.manifest.status)) throw new Error('Run is sealed. Use an explicit start for an independent task.');
+      const sessionId = process.env.CODEX_THREAD_ID || process.env.CODEX_SESSION_ID || config.usageBinding?.sessionId;
+      if (record.manifest.clientSessionId && sessionId !== record.manifest.clientSessionId) throw new Error('This task belongs to another client session; start a separate run.');
     }
     let selectedRun = existing?.runDir;
     if (!selectedRun) {
@@ -85,6 +87,7 @@ function session({skillRoot, spec, cwd = process.cwd(), config = {}, fresh = fal
         task: task || 'Skill authoring session', watchSpec: spec, limitations,
         configuration: {skill: skillRoot ? path.basename(skillRoot) : null, integration: 'automatic-skill-cli'}});
       writeMarkerUnlocked(path.dirname(spec), selectedRun, spec);
+      S.updateManifest(selectedRun, {runKind: config.runKind || 'task-generation', harness: 'maze-harness', benchmark: 'MazeBench', category: null, taskType: 'maze', finishedAt: null, captureGaps: [], clientSessionId: process.env.CODEX_THREAD_ID || process.env.CODEX_SESSION_ID || config.usageBinding?.sessionId || null});
       S.appendEvent(selectedRun, 'collector.started', {mode: 'automatic-skill-cli'});
       require('./lib/session-usage.cjs').begin(selectedRun, {binding: config.usageBinding});
     }
@@ -204,7 +207,7 @@ function main({skillRoot, argv, cwd = process.cwd(), config = {}}) {
   }
   const current = session({skillRoot, spec, cwd, config, fresh: action === 'start',
     title: option(options, 'title'), task: option(options, 'task')});
-  if (action === 'start') {
+  if (action === 'start' || action === 'resume') {
     console.log(JSON.stringify({runDir: current.runDir, spec: current.spec, viewer: current.url}, null, 2));
     return {handled: true, exitCode: 0};
   }

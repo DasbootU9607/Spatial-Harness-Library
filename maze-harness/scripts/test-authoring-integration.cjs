@@ -193,13 +193,18 @@ test('concurrent builds of the same spec create only one session and one depende
   assert.equal(recorded[0].events.filter(event => event.type === 'skill.attached').length, 1);
 });
 
-test('a completed task starts a new session for the next ordinary build', t => {
+test('a sealed task requires explicit start for an independent build', t => {
   const f = fixture(t);
   assert.equal(call(f, f.build, ['--spec', f.spec, '--out', f.out]).status, 0);
   const before = runs(f)[0].manifest.id;
   const finished = call(f, path.join(f.scripts, 'authoring-observer.cjs'), ['finish', '--spec', f.spec]);
   assert.equal(finished.status, 0, finished.stderr);
   const nextOut = path.join(f.directory, 'next-build');
+  const rejected = call(f, f.build, ['--spec', f.spec, '--out', nextOut]);
+  assert.equal(rejected.status, 1);
+  assert.match(rejected.stderr, /sealed/);
+  assert.equal(runs(f).length, 1);
+  assert.equal(call(f, path.join(f.scripts, 'authoring-observer.cjs'), ['start', '--spec', f.spec]).status, 0);
   assert.equal(call(f, f.build, ['--spec', f.spec, '--out', nextOut]).status, 0);
   const recorded = runs(f);
   assert.equal(recorded.length, 2);

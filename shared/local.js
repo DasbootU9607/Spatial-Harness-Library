@@ -1,0 +1,4 @@
+import {renderProcess} from '/process.js';
+const selector=document.querySelector('#runs');
+async function refresh(){try{const runs=await fetch('/api/runs').then(r=>r.json()),selected=selector.value||new URLSearchParams(location.search).get('run');selector.replaceChildren(...runs.map(r=>new Option(r.title,r.id)));if(runs.some(r=>r.id===selected))selector.value=selected;if(!selector.value)return;const data=await fetch('/api/run/'+selector.value).then(r=>r.json());document.querySelector('#status').textContent=data.manifest.status+(data.manifest.finishedAt?' · sealed':' · unfinished');const stamp=JSON.stringify([selector.value,data.events.length,data.usage?.lastObservedAt]);if(stamp!==window.lastStamp){renderProcess(document.querySelector('#process'),data);window.lastStamp=stamp;}}catch{document.querySelector('#status').textContent='Evidence unavailable. Retry after the active write finishes.';}}
+selector.onchange=refresh;refresh();setInterval(refresh,5000);

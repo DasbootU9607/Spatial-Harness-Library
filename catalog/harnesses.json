@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "harnesses": [
+    {
+      "id": "maze-harness",
+      "name": "Maze Harness",
+      "title": "MAZE\nHARNESS.",
+      "description": "Reusable construction skills for a world of spatial mechanisms. Study the original. Play what the agent built.",
+      "benchmark": "MazeBench",
+      "source": "https://github.com/mazebench/MazeBenchEngine",
+      "browser": "world.html",
+      "browserLabel": "Official rooms",
+      "playground": "player.html",
+      "legacy": true,
+      "sourceRoute": null
+    },
+    {
+      "id": "spatialviz-harness",
+      "name": "SpatialViz Harness",
+      "title": "SPATIALVIZ\nHARNESS.",
+      "description": "Turn visual relationships into reproducible tasks. Explore rotation, folding, cross-sections and motion, from official references to verified constructions.",
+      "benchmark": "SpatialViz-Bench",
+      "source": "https://github.com/wangst0181/SpatialViz-Bench",
+      "collection": "spatialviz",
+      "browser": "../questions/#/spatialviz",
+      "browserLabel": "Official questions",
+      "playground": "#cases",
+      "sourceRoute": "spatialviz"
+    },
+    {
+      "id": "babyvision-harness",
+      "name": "BabyVision Harness",
+      "title": "BABYVISION\nHARNESS.",
+      "description": "Look closely. Follow a line. Find the relation. Explore the original visual questions and annotated-image answers with their source evidence.",
+      "benchmark": "BabyVision",
+      "source": "https://github.com/UniPat-AI/BabyVision",
+      "collection": "babyvision",
+      "browser": "../questions/#/babyvision",
+      "browserLabel": "Official questions",
+      "playground": "../questions/#/babyvision",
+      "sourceRoute": "babyvision"
+    },
+    {
+      "id": "spatialb-harness",
+      "name": "SpatialB Harness",
+      "title": "SPATIALB\nHARNESS.",
+      "description": "Practice spatial reasoning through generated paths and rotations. Frozen, verified constructions have their own durable history.",
+      "benchmark": "spatialbench",
+      "source": "https://github.com/spicylemonade/spatialbench",
+      "browser": "../questions/#/spatialbench",
+      "browserLabel": "Practice collection",
+      "playground": "../questions/#/spatialbench",
+      "sourceRoute": "spatialbench"
+    }
+  ]
+}

@@ -14,7 +14,7 @@ const sum = values => values.every(v => number(v) !== null) && Number.isSafeInte
 const read = file => JSON.parse(fs.readFileSync(file, 'utf8').replace(/^\uFEFF/, ''));
 function atomic(file, data) {
   const temp = file + '.' + crypto.randomUUID() + '.tmp';
-  fs.writeFileSync(temp, JSON.stringify(data, null, 2) + '\n'); fs.renameSync(temp, file);
+  fs.writeFileSync(temp, JSON.stringify(data, null, 2) + '\n'); require('./atomic.cjs').replace(temp, file);
 }
 function tokens(raw, runtime) {
   const t = empty();

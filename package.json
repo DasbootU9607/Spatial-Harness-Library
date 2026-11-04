@@ -1,0 +1,11 @@
+{
+  "name": "spatial-harness-library",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "check": "node tools/check.cjs",
+    "test": "node --test tools/observatory/tests/*.test.cjs",
+    "browser": "node tools/browser-check.cjs"
+  },
+  "devDependencies": {"playwright": "1.60.0"}
+}

@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "$id": "https://dasbootu9607.github.io/Spatial-Harness-Library/shared/schemas/usage.schema.json",
+  "required": [
+    "schemaVersion",
+    "runId",
+    "source",
+    "runtime",
+    "status",
+    "startedAt",
+    "finishedAt",
+    "lastObservedAt",
+    "elapsedMs",
+    "elapsedKind",
+    "scope",
+    "scopeComplete",
+    "observedTokens",
+    "tokens",
+    "models",
+    "missingFields",
+    "issues",
+    "observations"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": 2
+    },
+    "status": {
+      "enum": [
+        "collecting",
+        "measured",
+        "partial",
+        "unavailable"
+      ]
+    },
+    "scopeComplete": {
+      "const": false
+    },
+    "elapsedKind": {
+      "const": "wall-clock"
+    },
+    "tokens": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "null"
+      }
+    },
+    "observedTokens": {
+      "type": "object",
+      "additionalProperties": {
+        "type": [
+          "integer",
+          "null"
+        ],
+        "minimum": 0
+      }
+    }
+  }
+}

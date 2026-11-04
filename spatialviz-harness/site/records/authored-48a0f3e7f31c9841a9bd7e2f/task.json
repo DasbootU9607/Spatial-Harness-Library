@@ -1,0 +1,188 @@
+{
+  "schemaVersion": 1,
+  "title": "Quarter-turn on a grid",
+  "description": "Demonstration fixture: rotate an asymmetric six-cell figure.",
+  "category": "MentalRotation",
+  "taskType": "discrete-rotation-demo",
+  "difficulty": {
+    "label": "Unranked demonstration",
+    "basis": "No human difficulty assessment"
+  },
+  "question": "Which option is the original figure rotated 90 degrees clockwise about the marked origin? Keep the grid axes fixed.",
+  "polarity": "positive",
+  "geometry": {
+    "points": [
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        3
+      ]
+    ],
+    "rotationDegrees": 90,
+    "direction": "clockwise"
+  },
+  "options": [
+    [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        -1,
+        0
+      ],
+      [
+        -2,
+        0
+      ],
+      [
+        -3,
+        0
+      ]
+    ],
+    [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        -1
+      ],
+      [
+        0,
+        -2
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        3,
+        0
+      ]
+    ],
+    [
+      [
+        0,
+        0
+      ],
+      [
+        -1,
+        0
+      ],
+      [
+        -2,
+        0
+      ],
+      [
+        0,
+        -1
+      ],
+      [
+        0,
+        -2
+      ],
+      [
+        0,
+        -3
+      ]
+    ],
+    [
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        3
+      ]
+    ]
+  ],
+  "answer": {
+    "index": 1,
+    "explanation": "A clockwise quarter-turn maps each cell coordinate (x, y) to (y, -x)."
+  },
+  "generator": {
+    "id": "discrete-quarter-turn",
+    "revision": "16c1295d868218526ed73f7aee785d8428fceec3c3d23c0f704ba0611a48d3fe",
+    "seed": 17,
+    "parameters": {
+      "family": "asymmetric-six-cell"
+    }
+  },
+  "rendering": {
+    "id": "discrete-quarter-turn",
+    "revision": "16c1295d868218526ed73f7aee785d8428fceec3c3d23c0f704ba0611a48d3fe",
+    "width": 1000,
+    "height": 560,
+    "cellSize": 28,
+    "camera": "orthographic-front",
+    "axes": "x-right-y-up"
+  },
+  "verifier": {
+    "id": "discrete-quarter-turn",
+    "revision": "16c1295d868218526ed73f7aee785d8428fceec3c3d23c0f704ba0611a48d3fe"
+  },
+  "contract": {
+    "answerUnique": true,
+    "rotationOnly": true,
+    "translation": false,
+    "reflection": false,
+    "coordinateRange": [
+      -4,
+      4
+    ]
+  },
+  "provenance": {
+    "sourceKind": "demonstration",
+    "note": "Agent-authored fixture; not an official benchmark question."
+  }
+}
