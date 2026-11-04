@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="Browse the official SpatialViz-Bench and BabyVision collections and try interactive spatialbench exercises.">
+  <title>Spatial Index — Visual reasoning archive</title>
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="sitehead">
+    <div class="frame mast">
+      <a class="brand" href="#/" aria-label="Spatial Index home"><img src="icon.svg" width="29" height="29" alt="">Spatial Index<span class="brand-dot">.</span></a>
+      <nav aria-label="Collections"><a href="#/spatialviz">SpatialViz-Bench</a><a href="#/babyvision">BabyVision</a><a href="#/spatialbench">spatialbench</a></nav>
+    </div>
+  </header>
+  <main id="main" tabindex="-1">
+    <section id="home" class="frame">
+      <div class="hero">
+        <div class="hero-copy"><p class="eyebrow"><i></i> VISUAL REASONING ARCHIVE</p>
+          <h1>A Spatial Reasoning Atlas.</h1>
+          <p class="hero-sub">Original puzzles and interactive exercises.</p>
+          <a class="textlink" href="#collections">Browse collections <span>↓</span></a>
+        </div>
+        <figure class="hero-art"><div id="specimen" aria-hidden="true"></div><figcaption>FIG. 01 / TOROIDAL STUDY</figcaption></figure>
+      </div>
+      <section id="collections" aria-labelledby="collections-heading">
+        <div class="section-head"><div><p class="eyebrow">COLLECTIONS / 01—03</p><h2 id="collections-heading">Collection index</h2></div><span class="meta">1,848 official records / 2 practice modes</span></div>
+        <div class="collections">
+          <a class="collection" href="#/spatialviz"><div class="plate plate-a"><span>PL. 01</span><div id="cover-cubes"></div></div><div class="collection-meta">01 / OFFICIAL QUESTIONS</div><h3>SpatialViz-Bench</h3><p>Explore rotation, folding, cross-sections, and motion in 1,180 questions organized by task and difficulty.</p><b>Browse questions <span>↗</span></b></a>
+          <a class="collection" href="#/babyvision"><div class="plate plate-b"><span>PL. 02</span><div id="cover-eyes"></div></div><div class="collection-meta">02 / OFFICIAL QUESTIONS</div><h3>BabyVision</h3><p>Browse 388 visual questions or compare each puzzle with its annotated solution in 280 image tasks.</p><b>Browse questions <span>↗</span></b></a>
+          <a class="collection" href="#/spatialbench"><div class="plate plate-c"><span>PL. 03</span><div id="cover-path"></div></div><div class="collection-meta">03 / GENERATED PRACTICE</div><h3>spatialbench</h3><p>Trace a curve to its destination or identify a rotated shape. Each round uses the original spatialbench generator.</p><b>Start practice <span>↗</span></b></a>
+        </div>
+      </section>
+    </section>
+    <section id="archive" class="frame inner" hidden>
+      <div class="topline"><a id="archive-harness" href="../">← Harness library</a><a id="archive-source" target="_blank" rel="noopener">Project website ↗</a></div>
+      <div class="section-head intro"><div><p id="archive-kicker" class="eyebrow"></p><h1 id="archive-name"></h1></div><p id="archive-count" class="meta"></p></div>
+      <p id="archive-status" role="status"></p>
+      <div id="reader" class="reader" hidden>
+        <aside class="filters"><p class="eyebrow">CATALOGUE</p><h2>Find a question</h2>
+          <label id="track-field">Response format<select id="track"></select></label>
+          <label>Category<select id="category"></select></label>
+          <label>Task<select id="type"></select></label>
+          <label id="level-field">Difficulty level<select id="level"></select></label>
+          <label>Search<input id="search" type="search" placeholder="Question, task, or case ID" autocomplete="off"></label>
+          <button id="clear" class="plain">Reset filters</button>
+          <div class="jump"><label>Jump to a result<select id="jump"></select></label><span id="matches" class="meta"></span></div>
+        </aside>
+        <article id="case-panel">
+          <div id="case-empty" class="empty" hidden>No matching questions. Try another search term or reset the filters.</div>
+          <div id="case-body">
+            <div class="casebar"><div><span id="position" class="eyebrow"></span><h2 id="case-heading"></h2></div><div class="arrows"><button id="prev" title="Previous question" aria-label="Previous question">←</button><button id="next" title="Next question" aria-label="Next question">→</button></div></div>
+            <p class="tags" id="tags"></p>
+            <button id="zoom" class="original" aria-label="Enlarge question image"><img id="pic" alt=""><span>Enlarge image ⤢</span></button>
+            <div class="question"><p class="eyebrow">QUESTION</p><p id="prompt" lang="en"></p><ol id="options" lang="en"></ol></div>
+            <details id="answer"><summary>Show answer and explanation</summary><div id="answer-content"></div></details>
+            <p class="case-id" id="case-id"></p>
+          </div>
+        </article>
+      </div>
+    </section>
+    <section id="practice" class="frame inner" hidden>
+      <div class="topline"><a href="../spatialb-harness/">← SpatialB Harness</a><a href="https://github.com/spicylemonade/spatialbench" target="_blank" rel="noopener">Project website ↗</a></div>
+      <div class="section-head intro"><div><p class="eyebrow">COLLECTION 03 / PRACTICE</p><h1>spatialbench</h1></div><span class="meta">Live practice / 2 modes</span></div>
+      <div class="practice-layout"><aside class="filters"><p class="eyebrow">EXERCISES</p><h2>Choose a mode</h2><div class="modes"><button id="mode2">01 2D path tracing</button><button id="mode3">02 3D mental rotation</button></div><p class="source-note">These rounds use the spatialbench generator. The leaderboard uses a separate set of 50 questions.</p></aside>
+      <article class="exercise"><div class="casebar"><div><p id="round" class="eyebrow"></p><h2 id="exercise-name"></h2></div><button id="new-round" class="plain">New question ↻</button></div><p id="exercise-prompt"></p><div id="play"></div><p id="feedback" aria-live="polite"></p></article></div>
+    </section>
+  </main>
+  <footer class="frame foot"><a class="brand" href="#/">Spatial Index.</a><a href="../">Harness library ↗</a><a href="sources.html">Sources and credits ↗</a></footer>
+  <dialog id="lightbox"><div class="dialog-head"><a id="raw" target="_blank" rel="noopener">Open original image ↗</a><button id="close-dialog" class="plain">Close ×</button></div><img id="large-pic" alt="Original image"></dialog>
+</body></html>

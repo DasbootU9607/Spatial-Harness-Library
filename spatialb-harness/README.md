@@ -2,7 +2,9 @@
 
 A planned authoring harness for procedural path tracing and voxel rotation tasks.
 
-**Status** · Under construction
+**Status** · Interactive practice available. Construction skills and task verification are in development.
+
+[Start 2D path tracing or 3D rotation practice](https://dasbootu9607.github.io/Spatial-Harness-Library/questions/#/spatialbench). Questions are generated on demand using the pinned upstream generator. These practice rounds are separate from the official 50-question leaderboard set.
 
 ## Source
 

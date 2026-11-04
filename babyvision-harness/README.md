@@ -2,7 +2,9 @@
 
 A planned authoring harness for visual reasoning tasks with written answers or annotated images.
 
-**Status** · Under construction
+**Status** · Official question browser available. Construction skills and task verification are in development.
+
+[Browse the official collections](https://dasbootu9607.github.io/Spatial-Harness-Library/questions/#/babyvision), including 388 visual questions and 280 image annotation tasks. The image tasks share their case IDs with the visual question collection. Switch response formats to view annotated answer images.
 
 ## Source
 

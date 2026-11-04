@@ -2,7 +2,9 @@
 
 A planned authoring harness for generating and checking spatial visualization tasks.
 
-**Status** · Under construction
+**Status** · Official question browser available. Construction skills and task verification are in development.
+
+[Browse all 1,180 official questions](https://dasbootu9607.github.io/Spatial-Harness-Library/questions/#/spatialviz) with filters for the four categories, 12 task types and source difficulty levels. Each case includes its original figure, question, answer and stable case ID.
 
 ## Source
 

@@ -93,6 +93,10 @@ main { position: relative; z-index: 1; }
 .completion a { text-decoration-thickness: 1px; }
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 .back { display: inline-block; margin-top: 2rem; padding: .6rem; }
+.question-entry { display: inline-flex; align-items: center; gap: 1rem; margin-top: 1.5rem; padding: .8rem 1.2rem; border: 1px solid #111; background: #111; color: #fff; text-decoration: none; font-size: 1.05rem; }
+.question-entry:hover { background: #333; }
+.question-entry:focus-visible { outline-color: #111; }
+.harness-status { max-width: 38em; font-family: ui-monospace, Consolas, monospace; font-size: .8rem; color: #606060; line-height: 1.7; }
 ::selection { color: #fff; background: #111; }
 @media (max-width: 63rem) {
   .sentence { width: 100%; }

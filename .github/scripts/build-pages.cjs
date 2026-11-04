@@ -17,4 +17,6 @@ for (const harness of ['maze-harness', 'spatialviz-harness', 'babyvision-harness
   if (!fs.statSync(path.join(site, 'index.html')).isFile()) throw new Error('Missing site for ' + harness);
   fs.cpSync(site, path.join(out, harness), { recursive: true });
 }
-console.log('Library and four harness sites assembled at ' + out);
+fs.cpSync(path.join(root, 'questions'), path.join(out, 'questions'), { recursive: true });
+fs.writeFileSync(path.join(out, '.nojekyll'), '');
+console.log('Library, four harness sites, and question collections assembled at ' + out);
