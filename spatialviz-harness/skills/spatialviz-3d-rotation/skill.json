@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "id": "3d-rotation",
+  "packageName": "spatialviz-3d-rotation",
+  "name": "3D Rotation",
+  "harnessId": "spatialviz-harness",
+  "status": "complete",
+  "adapter": "rotation-3d",
+  "requiresVisualReview": true,
+  "description": "Construct connected lattice-cube models with can/cannot questions, proper spatial rotations, paired views and complete layers.",
+  "officialReferences": [
+    "spatialviz-bench:vqa:MentalRotation:3DRotation:Level0:0-3-3-1-5",
+    "spatialviz-bench:vqa:MentalRotation:3DRotation:Level1:0-3-2-2-5"
+  ],
+  "steps": [
+    "Inspect packaged official evidence",
+    "Generate seeded structural candidates",
+    "Independently solve every option",
+    "Inspect the final diagram and publish"
+  ]
+}

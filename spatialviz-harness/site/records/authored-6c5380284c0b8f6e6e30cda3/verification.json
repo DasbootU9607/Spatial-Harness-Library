@@ -1,0 +1,71 @@
+{
+  "id": "t002",
+  "actionId": "1787d11c-5381-4190-bed2-22f548b599d5",
+  "candidateId": "v003",
+  "testedFingerprints": {
+    "specification": "6c5380284c0b8f6e6e30cda3213e5fc8ba0a44439c6a3a33edb8e744ffecf0e3",
+    "geometry": "155fe872b79c7e958bf1df6ba95fc176fcc2650f0da011ee4292ad99fafd2896",
+    "question": "6fb78d83c21f6c7367a9f0d86bf07738b05cb9ad8cee45070b2a6f8f51bbaeb0",
+    "options": "5ca9dc3a79f90071930129bb319bcb25b9f6b5c18cfb560ff89ebc832e43ccc2",
+    "answer": "495f5f7e4ab9fd165ca5d13d0a23cc1c2353c7d30dd7081536400be197b57658",
+    "contract": "94edaede1a1ffa2a8704f7c893d6ca75990e9a94dca29bdab1647dde8862d4e9",
+    "rendering": "d4348cfd0be511ee0c293fb68421468863ac87f2ed1c13fe2b80df756c17d833",
+    "generator": "e0c5f6ae08ad48435296190c688ff438c408b4f941bb24ac3ddf7bb33a3ccaf4"
+  },
+  "verifier": {
+    "id": "spatialviz-2d-rotation",
+    "revision": "87fb1484d28457f047be805ffaa03c82cc194c8f2f77e277157f1b2b4342e309"
+  },
+  "reportSha256": "1f80db034a1a287238df1721508f87ae3a2e706c89321f0ea4235e47d5434be2",
+  "verdict": "passed",
+  "status": "passed",
+  "checks": [
+    {
+      "name": "Supported task and question polarity",
+      "verdict": "passed"
+    },
+    {
+      "name": "Final A-C figures and D text semantics",
+      "verdict": "passed"
+    },
+    {
+      "name": "Bounded rectangular grids, motifs and corner coordinates",
+      "verdict": "passed"
+    },
+    {
+      "name": "Explicit unique A-C rotation contract",
+      "verdict": "passed"
+    },
+    {
+      "name": "Exact renderer and verifier revisions",
+      "verdict": "passed"
+    },
+    {
+      "name": "Declared grid mode agrees with actual geometry",
+      "verdict": "passed"
+    },
+    {
+      "name": "Distinct displayed A-C options",
+      "verdict": "passed"
+    },
+    {
+      "name": "Independent rotation enumeration and unique final answer",
+      "verdict": "passed",
+      "detail": "Qualifying labels: B."
+    },
+    {
+      "name": "Per-option explanations agree with computed structural witnesses",
+      "verdict": "passed"
+    },
+    {
+      "name": "Unoccluded geometry at declared minimum display size",
+      "verdict": "passed",
+      "detail": "Every cell, motif and external red corner is drawn; inspect the final SVG at full size."
+    }
+  ],
+  "scope": "Independent four planar rotations, structural validity, option semantics and uniqueness, label/explanation consistency, exact rendering contract. Geometry and diagram coverage do not replace recorded human/agent visual review; no difficulty claim.",
+  "commandExitStatus": 0,
+  "binding": "exact",
+  "bindingBasis": "exact candidate and full input fingerprints",
+  "commandEventId": "e000020"
+}

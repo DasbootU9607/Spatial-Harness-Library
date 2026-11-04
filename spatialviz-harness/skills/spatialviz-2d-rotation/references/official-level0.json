@@ -1,0 +1,49 @@
+{
+  "id": "spatialviz-bench:vqa:MentalRotation:2DRotation:Level0:0-2-3",
+  "sourceId": "MentalRotation/2DRotation/Level0/0-2-3",
+  "benchmark": "spatialviz-bench",
+  "track": "vqa",
+  "category": "MentalRotation",
+  "type": "2DRotation",
+  "level": "Level0",
+  "question": "The left image shows a colored grid with a red square marking one corner. Which grid can be obtained by rotating the left grid only, without flipping or other changes? Please answer from options A, B, C, or D.",
+  "options": [
+    "A",
+    "B",
+    "C",
+    "All three other options are incorrect"
+  ],
+  "answer": "A",
+  "answerKind": "choice",
+  "answerIndex": 0,
+  "explanation": "Option A is correct because it was obtained by rotating the original image 90 degrees.\nOption C is incorrect because it was obtained by rotating the original image 180 degrees and then flipping it horizontally.\nOption B is incorrect because it was obtained by rotating the original image 180 degrees and then flipping it vertically.",
+  "image": "media/0e/0eef5314540730470afa183b51d4720cebba763ba6d68565670a30e4480a862c.png",
+  "width": 3090,
+  "height": 1128,
+  "answerImage": null,
+  "original": {
+    "Category": "MentalRotation",
+    "Task": "2DRotation",
+    "Level": "Level0",
+    "Image_id": "0-2-3",
+    "Question": "The left image shows a colored grid with a red square marking one corner. Which grid can be obtained by rotating the left grid only, without flipping or other changes? Please answer from options A, B, C, or D.",
+    "Choices": [
+      "A",
+      "B",
+      "C",
+      "All three other options are incorrect"
+    ],
+    "Answer": "A",
+    "Explanation": "{'A': 'Option A is correct because it was obtained by rotating the original image 90 degrees.', 'C': 'Option C is incorrect because it was obtained by rotating the original image 180 degrees and then flipping it horizontally.', 'B': 'Option B is incorrect because it was obtained by rotating the original image 180 degrees and then flipping it vertically.'}"
+  },
+  "provenance": {
+    "annotation": "official/downloads/spatialviz-bench/test-00000-of-00001.parquet",
+    "row_index": 600,
+    "annotation_sha256": "df7adb86ece21b31a0d9bf928bd76715d075283d298ae02361112ede913a01af",
+    "dataset_repository": "PLM-Team/Spatial-Visualization-Benchmark",
+    "dataset_revision": "c722d00b2f740eacb1b56f4cbcd3af47bbbe40b8",
+    "code_revision": "c27f9111a2674f2ea03e2ca1f5833326cf1eec1a"
+  },
+  "packagedImage": "official-level0.png",
+  "imageSha256": "0eef5314540730470afa183b51d4720cebba763ba6d68565670a30e4480a862c"
+}

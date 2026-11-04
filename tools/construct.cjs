@@ -12,7 +12,7 @@ function main(){
   if(command==='resume')return R.resume(run,need('task'));
   if(command==='read')return R.deliver(run,need('file'),{start:Number(get('start',1)),end:get('end')?Number(get('end')):undefined});
   if(command==='note')return R.note(run,R.read(need('file')),get('candidate'));
-  if(command==='generate'){const a=adapter(),file=need('task');R.active(run);R.atomic(file,a.generate(Number(get('seed',17))));const c=R.save(run,file,{parentId:get('parent'),parentBasis:get('basis')});R.event(run,'build.saved',{generator:a.identity},{actionId:c.actionId,candidateId:c.id});return c;}
+  if(command==='generate'){const a=adapter(),file=need('task');R.active(run);R.atomic(file,a.generate(Number(get('seed',17)),get('params')?R.read(get('params')):{}));const c=R.save(run,file,{parentId:get('parent'),parentBasis:get('basis')});R.event(run,'build.saved',{generator:a.identity},{actionId:c.actionId,candidateId:c.id});return c;}
   if(command==='save')return R.save(run,need('task'),{parentId:get('parent'),parentBasis:get('basis')});
   if(command==='render')return R.render(run,need('candidate'),adapter());
   if(command==='verify'){const t=verify(run,need('candidate'));process.exitCode=t.verdict==='passed'?0:1;return t;}

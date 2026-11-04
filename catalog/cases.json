@@ -95,6 +95,384 @@
       },
       "process": "records/authored-48a0f3e7f31c9841a9bd7e2f/process.json",
       "eventsCsv": "records/authored-48a0f3e7f31c9841a9bd7e2f/events.csv"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "authored-fdb5690e9420f87ba277605a",
+      "harnessId": "spatialviz-harness",
+      "skillIds": [
+        "2d-rotation"
+      ],
+      "sourceKind": "agent-authored",
+      "sourceCaseIds": [
+        "spatialviz-bench:vqa:MentalRotation:2DRotation:Level0:0-2-3",
+        "spatialviz-bench:vqa:MentalRotation:2DRotation:Level1:0-2-3",
+        "spatialviz-bench:vqa:MentalRotation:2DRotation:Level1:1-2-3"
+      ],
+      "category": "MentalRotation",
+      "taskType": "2d-rotation",
+      "difficulty": {
+        "label": "Unranked",
+        "basis": "No human difficulty calibration; official source levels are not inherited."
+      },
+      "title": "2D rotation / colored",
+      "description": "Newly constructed and independently verified rotation task.",
+      "contentSha256": "fdb5690e9420f87ba277605a8756a7464c6278c0cc97bc3b7ab1e60ae8fd1f9d",
+      "thumbnail": "records/authored-fdb5690e9420f87ba277605a/v001-abb120b9d2d50044.svg",
+      "taskArtifact": "records/authored-fdb5690e9420f87ba277605a/task.json",
+      "verification": {
+        "verdict": "passed",
+        "candidateId": "v001",
+        "fingerprints": {
+          "specification": "fdb5690e9420f87ba277605a8756a7464c6278c0cc97bc3b7ab1e60ae8fd1f9d",
+          "geometry": "48334516e8b15fa608f8638c4c08a67bd1ec8e2aa8bba28ba9231c388c23507d",
+          "question": "3cb364566bd58adaf4c247b0da332481cedbb9b5191c385944f589be8297c2f4",
+          "options": "e80d1f7682779b3f32c6c5bda2c69cd619d60b09bb6c1b1376b458855b4fe2c2",
+          "answer": "102e44c2e55a5d7fc7c9a0b50c75e3987642e2447430b6447addc29fd5bfedff",
+          "contract": "94edaede1a1ffa2a8704f7c893d6ca75990e9a94dca29bdab1647dde8862d4e9",
+          "rendering": "d4348cfd0be511ee0c293fb68421468863ac87f2ed1c13fe2b80df756c17d833",
+          "generator": "76105d1ad185a6e11b72bdcad4dfb39e18129f042e2f27e7697253d8f9978482"
+        },
+        "report": "records/authored-fdb5690e9420f87ba277605a/verification.json"
+      },
+      "build": {
+        "runId": "build-86ff3f5a-77ad-4c97-a4b6-51ce7d4113c6",
+        "candidateId": "v001",
+        "usage": {
+          "schemaVersion": 2,
+          "runId": "build-86ff3f5a-77ad-4c97-a4b6-51ce7d4113c6",
+          "source": "codex",
+          "runtime": "Codex Desktop",
+          "status": "measured",
+          "startedAt": "2026-11-04T04:58:24.948Z",
+          "finishedAt": "2026-11-04T05:03:46.260Z",
+          "lastObservedAt": "2026-11-04T05:03:17.843Z",
+          "elapsedMs": 321330,
+          "elapsedKind": "wall-clock",
+          "scope": "Runtime-reported usage between the start baseline and finish snapshot of this session. In-flight or delayed usage, earlier conversation, other agents and later delivery are excluded. This is an observed interval, not a complete billed task total.",
+          "scopeComplete": false,
+          "observedTokens": {
+            "input_tokens": 1848820,
+            "cached_input_tokens": 1819520,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 9319,
+            "reasoning_output_tokens": 3377,
+            "total_tokens": 1858139
+          },
+          "tokens": {
+            "input_tokens": null,
+            "cached_input_tokens": null,
+            "cache_write_input_tokens": null,
+            "output_tokens": null,
+            "reasoning_output_tokens": null,
+            "total_tokens": null
+          },
+          "models": [
+            {
+              "provider": "openai",
+              "model": "gpt-6-astra",
+              "reasoningEffort": "xhigh",
+              "tokens": {
+                "input_tokens": 1848820,
+                "cached_input_tokens": 1819520,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 9319,
+                "reasoning_output_tokens": 3377,
+                "total_tokens": 1858139
+              },
+              "observations": 16
+            }
+          ],
+          "missingFields": [],
+          "issues": [],
+          "observations": 16
+        }
+      },
+      "process": "records/authored-fdb5690e9420f87ba277605a/process.json",
+      "eventsCsv": "records/authored-fdb5690e9420f87ba277605a/events.csv"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "authored-6c5380284c0b8f6e6e30cda3",
+      "harnessId": "spatialviz-harness",
+      "skillIds": [
+        "2d-rotation"
+      ],
+      "sourceKind": "agent-authored",
+      "sourceCaseIds": [
+        "spatialviz-bench:vqa:MentalRotation:2DRotation:Level0:0-2-3",
+        "spatialviz-bench:vqa:MentalRotation:2DRotation:Level1:0-2-3",
+        "spatialviz-bench:vqa:MentalRotation:2DRotation:Level1:1-2-3"
+      ],
+      "category": "MentalRotation",
+      "taskType": "2d-rotation",
+      "difficulty": {
+        "label": "Unranked",
+        "basis": "No human difficulty calibration; official source levels are not inherited."
+      },
+      "title": "2D rotation / patterned",
+      "description": "Newly constructed and independently verified rotation task.",
+      "contentSha256": "6c5380284c0b8f6e6e30cda3213e5fc8ba0a44439c6a3a33edb8e744ffecf0e3",
+      "thumbnail": "records/authored-6c5380284c0b8f6e6e30cda3/v003-745c5a360538cc85.svg",
+      "taskArtifact": "records/authored-6c5380284c0b8f6e6e30cda3/task.json",
+      "verification": {
+        "verdict": "passed",
+        "candidateId": "v003",
+        "fingerprints": {
+          "specification": "6c5380284c0b8f6e6e30cda3213e5fc8ba0a44439c6a3a33edb8e744ffecf0e3",
+          "geometry": "155fe872b79c7e958bf1df6ba95fc176fcc2650f0da011ee4292ad99fafd2896",
+          "question": "6fb78d83c21f6c7367a9f0d86bf07738b05cb9ad8cee45070b2a6f8f51bbaeb0",
+          "options": "5ca9dc3a79f90071930129bb319bcb25b9f6b5c18cfb560ff89ebc832e43ccc2",
+          "answer": "495f5f7e4ab9fd165ca5d13d0a23cc1c2353c7d30dd7081536400be197b57658",
+          "contract": "94edaede1a1ffa2a8704f7c893d6ca75990e9a94dca29bdab1647dde8862d4e9",
+          "rendering": "d4348cfd0be511ee0c293fb68421468863ac87f2ed1c13fe2b80df756c17d833",
+          "generator": "e0c5f6ae08ad48435296190c688ff438c408b4f941bb24ac3ddf7bb33a3ccaf4"
+        },
+        "report": "records/authored-6c5380284c0b8f6e6e30cda3/verification.json"
+      },
+      "build": {
+        "runId": "build-9b0197d1-4d11-4680-8127-ebf46ad43c40",
+        "candidateId": "v003",
+        "usage": {
+          "schemaVersion": 2,
+          "runId": "build-9b0197d1-4d11-4680-8127-ebf46ad43c40",
+          "source": "codex",
+          "runtime": "Codex Desktop",
+          "status": "measured",
+          "startedAt": "2026-11-04T04:58:26.787Z",
+          "finishedAt": "2026-11-04T05:03:46.572Z",
+          "lastObservedAt": "2026-11-04T05:03:17.843Z",
+          "elapsedMs": 319804,
+          "elapsedKind": "wall-clock",
+          "scope": "Runtime-reported usage between the start baseline and finish snapshot of this session. In-flight or delayed usage, earlier conversation, other agents and later delivery are excluded. This is an observed interval, not a complete billed task total.",
+          "scopeComplete": false,
+          "observedTokens": {
+            "input_tokens": 1848820,
+            "cached_input_tokens": 1819520,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 9319,
+            "reasoning_output_tokens": 3377,
+            "total_tokens": 1858139
+          },
+          "tokens": {
+            "input_tokens": null,
+            "cached_input_tokens": null,
+            "cache_write_input_tokens": null,
+            "output_tokens": null,
+            "reasoning_output_tokens": null,
+            "total_tokens": null
+          },
+          "models": [
+            {
+              "provider": "openai",
+              "model": "gpt-6-astra",
+              "reasoningEffort": "xhigh",
+              "tokens": {
+                "input_tokens": 1848820,
+                "cached_input_tokens": 1819520,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 9319,
+                "reasoning_output_tokens": 3377,
+                "total_tokens": 1858139
+              },
+              "observations": 16
+            }
+          ],
+          "missingFields": [],
+          "issues": [],
+          "observations": 16
+        }
+      },
+      "process": "records/authored-6c5380284c0b8f6e6e30cda3/process.json",
+      "eventsCsv": "records/authored-6c5380284c0b8f6e6e30cda3/events.csv"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "authored-9fbe9af571d1fbcb2850bf19",
+      "harnessId": "spatialviz-harness",
+      "skillIds": [
+        "3d-rotation"
+      ],
+      "sourceKind": "agent-authored",
+      "sourceCaseIds": [
+        "spatialviz-bench:vqa:MentalRotation:3DRotation:Level0:0-3-3-1-5",
+        "spatialviz-bench:vqa:MentalRotation:3DRotation:Level1:0-3-2-2-5"
+      ],
+      "category": "MentalRotation",
+      "taskType": "3d-rotation",
+      "difficulty": {
+        "label": "Unranked",
+        "basis": "No human difficulty calibration; official source levels are not inherited."
+      },
+      "title": "3D rotation / find the matching solid",
+      "description": "Newly constructed and independently verified rotation task.",
+      "contentSha256": "9fbe9af571d1fbcb2850bf197fc821e69f9f6c297e530009ee95886434a56727",
+      "thumbnail": "records/authored-9fbe9af571d1fbcb2850bf19/v002-107efd3a5bfcd5f4.svg",
+      "taskArtifact": "records/authored-9fbe9af571d1fbcb2850bf19/task.json",
+      "verification": {
+        "verdict": "passed",
+        "candidateId": "v002",
+        "fingerprints": {
+          "specification": "9fbe9af571d1fbcb2850bf197fc821e69f9f6c297e530009ee95886434a56727",
+          "geometry": "ff1c8d203b104a1340d3b6a1fb46aa561c300dbe5ac720d225d5ca40328c1ab3",
+          "question": "c804e4e9d8e7c7fd34f88d1a1f80e3d442b1c106e3b016d4baf09e350414d177",
+          "options": "47deb95928f2bf2cdf911522fae4aa7af9e293db6d75e080eb75b9819c5a0813",
+          "answer": "19da81a05531191bfb1f9fb218bf1e6bee4f331a3332148e00ab62f00ed432d3",
+          "contract": "e8967f9ba11482069273b9041a2022fc46783d4a407d4df6d299e414dee74974",
+          "rendering": "4bea3eb672e0ac526e947f57c377bed59828bfe3a4e1f30a703646921487ade6",
+          "generator": "2c57c24fb6f42000b7f6e07ec021d0d81dd2d488d6e91b4428d9e1c0f2789355"
+        },
+        "report": "records/authored-9fbe9af571d1fbcb2850bf19/verification.json"
+      },
+      "build": {
+        "runId": "build-f0095fb7-ccb5-4262-95bb-3ab5dac29541",
+        "candidateId": "v002",
+        "usage": {
+          "schemaVersion": 2,
+          "runId": "build-f0095fb7-ccb5-4262-95bb-3ab5dac29541",
+          "source": "codex",
+          "runtime": "Codex Desktop",
+          "status": "measured",
+          "startedAt": "2026-11-04T04:58:28.830Z",
+          "finishedAt": "2026-11-04T05:03:46.828Z",
+          "lastObservedAt": "2026-11-04T05:03:17.843Z",
+          "elapsedMs": 318017,
+          "elapsedKind": "wall-clock",
+          "scope": "Runtime-reported usage between the start baseline and finish snapshot of this session. In-flight or delayed usage, earlier conversation, other agents and later delivery are excluded. This is an observed interval, not a complete billed task total.",
+          "scopeComplete": false,
+          "observedTokens": {
+            "input_tokens": 1848820,
+            "cached_input_tokens": 1819520,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 9319,
+            "reasoning_output_tokens": 3377,
+            "total_tokens": 1858139
+          },
+          "tokens": {
+            "input_tokens": null,
+            "cached_input_tokens": null,
+            "cache_write_input_tokens": null,
+            "output_tokens": null,
+            "reasoning_output_tokens": null,
+            "total_tokens": null
+          },
+          "models": [
+            {
+              "provider": "openai",
+              "model": "gpt-6-astra",
+              "reasoningEffort": "xhigh",
+              "tokens": {
+                "input_tokens": 1848820,
+                "cached_input_tokens": 1819520,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 9319,
+                "reasoning_output_tokens": 3377,
+                "total_tokens": 1858139
+              },
+              "observations": 16
+            }
+          ],
+          "missingFields": [],
+          "issues": [],
+          "observations": 16
+        }
+      },
+      "process": "records/authored-9fbe9af571d1fbcb2850bf19/process.json",
+      "eventsCsv": "records/authored-9fbe9af571d1fbcb2850bf19/events.csv"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "authored-fe43c745dcc327aa423dc573",
+      "harnessId": "spatialviz-harness",
+      "skillIds": [
+        "3d-rotation"
+      ],
+      "sourceKind": "agent-authored",
+      "sourceCaseIds": [
+        "spatialviz-bench:vqa:MentalRotation:3DRotation:Level0:0-3-3-1-5",
+        "spatialviz-bench:vqa:MentalRotation:3DRotation:Level1:0-3-2-2-5"
+      ],
+      "category": "MentalRotation",
+      "taskType": "3d-rotation",
+      "difficulty": {
+        "label": "Unranked",
+        "basis": "No human difficulty calibration; official source levels are not inherited."
+      },
+      "title": "3D rotation / find the changed solid",
+      "description": "Newly constructed and independently verified rotation task.",
+      "contentSha256": "fe43c745dcc327aa423dc5734a1e74cea053a0622abefbcc50504e8fca90ed59",
+      "thumbnail": "records/authored-fe43c745dcc327aa423dc573/v002-5f03ea282015d067.svg",
+      "taskArtifact": "records/authored-fe43c745dcc327aa423dc573/task.json",
+      "verification": {
+        "verdict": "passed",
+        "candidateId": "v002",
+        "fingerprints": {
+          "specification": "fe43c745dcc327aa423dc5734a1e74cea053a0622abefbcc50504e8fca90ed59",
+          "geometry": "f173066fd12a6389f8ee445f4793ed8375db4b5c0a1de493aa4907051f902756",
+          "question": "ef220357effc70e9bc91edf1ba98da43e892eced5a2ab9a83851bc9afff8351a",
+          "options": "57308d0887b0c602116b479c14923b515d621760cdc6773e7f6da48a4f86e083",
+          "answer": "bb97d1cbb561ec2e8228f57bc735dcb45667c3b622371c4fab63a7754fec10ae",
+          "contract": "e8967f9ba11482069273b9041a2022fc46783d4a407d4df6d299e414dee74974",
+          "rendering": "4bea3eb672e0ac526e947f57c377bed59828bfe3a4e1f30a703646921487ade6",
+          "generator": "0044ff4d9fde0785de25390711216b7f383c89b95f77b41088035f9dd5dcc7b2"
+        },
+        "report": "records/authored-fe43c745dcc327aa423dc573/verification.json"
+      },
+      "build": {
+        "runId": "build-efc650ea-ec2e-467a-8203-95c001726fda",
+        "candidateId": "v002",
+        "usage": {
+          "schemaVersion": 2,
+          "runId": "build-efc650ea-ec2e-467a-8203-95c001726fda",
+          "source": "codex",
+          "runtime": "Codex Desktop",
+          "status": "measured",
+          "startedAt": "2026-11-04T04:58:30.655Z",
+          "finishedAt": "2026-11-04T05:03:47.122Z",
+          "lastObservedAt": "2026-11-04T05:03:17.843Z",
+          "elapsedMs": 316493,
+          "elapsedKind": "wall-clock",
+          "scope": "Runtime-reported usage between the start baseline and finish snapshot of this session. In-flight or delayed usage, earlier conversation, other agents and later delivery are excluded. This is an observed interval, not a complete billed task total.",
+          "scopeComplete": false,
+          "observedTokens": {
+            "input_tokens": 1848820,
+            "cached_input_tokens": 1819520,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 9319,
+            "reasoning_output_tokens": 3377,
+            "total_tokens": 1858139
+          },
+          "tokens": {
+            "input_tokens": null,
+            "cached_input_tokens": null,
+            "cache_write_input_tokens": null,
+            "output_tokens": null,
+            "reasoning_output_tokens": null,
+            "total_tokens": null
+          },
+          "models": [
+            {
+              "provider": "openai",
+              "model": "gpt-6-astra",
+              "reasoningEffort": "xhigh",
+              "tokens": {
+                "input_tokens": 1848820,
+                "cached_input_tokens": 1819520,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 9319,
+                "reasoning_output_tokens": 3377,
+                "total_tokens": 1858139
+              },
+              "observations": 16
+            }
+          ],
+          "missingFields": [],
+          "issues": [],
+          "observations": 16
+        }
+      },
+      "process": "records/authored-fe43c745dcc327aa423dc573/process.json",
+      "eventsCsv": "records/authored-fe43c745dcc327aa423dc573/events.csv"
     }
   ]
 }

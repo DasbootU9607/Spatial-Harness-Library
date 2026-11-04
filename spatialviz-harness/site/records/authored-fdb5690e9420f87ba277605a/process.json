@@ -1,0 +1,624 @@
+{
+  "schemaVersion": 1,
+  "manifest": {
+    "id": "build-86ff3f5a-77ad-4c97-a4b6-51ce7d4113c6",
+    "title": "colored-grid",
+    "runKind": "[private value omitted]",
+    "harness": "spatialviz-harness",
+    "benchmark": null,
+    "category": null,
+    "taskType": null,
+    "skill": {
+      "id": "spatialviz-2d-rotation",
+      "sha256": "afe03c827a2a56a132794881b70db9e91631017a0d96a09be12540d01b051d87"
+    },
+    "status": "accepted",
+    "createdAt": "2026-11-04T04:58:24.930Z",
+    "finishedAt": "2026-11-04T05:03:46.278Z",
+    "finalCandidateId": "v001",
+    "limitations": [
+      "Only recorder-mediated deliveries, commands and saved boundaries are observed; direct function calls, unwrapped commands and unsaved editor states are excluded.",
+      "Design notes are explicit author annotations, not internal reasoning."
+    ],
+    "captureGaps": []
+  },
+  "events": [
+    {
+      "id": "e000001",
+      "seq": 1,
+      "runId": "build-86ff3f5a-77ad-4c97-a4b6-51ce7d4113c6",
+      "at": "2026-11-04T04:58:24.941Z",
+      "recordedAt": "2026-11-04T04:58:24.941Z",
+      "type": "run.created",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": null,
+      "details": {},
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000002",
+      "seq": 2,
+      "runId": "build-86ff3f5a-77ad-4c97-a4b6-51ce7d4113c6",
+      "at": "2026-11-04T04:58:25.050Z",
+      "recordedAt": "2026-11-04T04:58:25.050Z",
+      "type": "collector.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": null,
+      "details": {},
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000003",
+      "seq": 3,
+      "runId": "build-86ff3f5a-77ad-4c97-a4b6-51ce7d4113c6",
+      "at": "2026-11-04T04:58:25.096Z",
+      "recordedAt": "2026-11-04T04:58:25.096Z",
+      "type": "skill.attached",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": null,
+      "details": {
+        "sha256": "afe03c827a2a56a132794881b70db9e91631017a0d96a09be12540d01b051d87",
+        "skill": "spatialviz-2d-rotation"
+      },
+      "evidenceRefs": [
+        {
+          "id": "419c13c40cb6e0be",
+          "sha256": "afe03c827a2a56a132794881b70db9e91631017a0d96a09be12540d01b051d87",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000004",
+      "seq": 4,
+      "runId": "build-86ff3f5a-77ad-4c97-a4b6-51ce7d4113c6",
+      "at": "2026-11-04T04:58:25.157Z",
+      "recordedAt": "2026-11-04T04:58:25.157Z",
+      "type": "design.note",
+      "actor": "author",
+      "origin": "agent_statement",
+      "actionId": null,
+      "candidateId": null,
+      "details": {
+        "goal": "Construct an independently verified colored-grid example",
+        "sources": [
+          "official-level0.json"
+        ],
+        "change": "Use this installed skill and the shared library recorder, solver, renderer and publisher.",
+        "reason": "Exercise a supported parameterized family with complete visible structural evidence.",
+        "expectedChecks": [
+          "Unique A-C answer",
+          "Correct D semantics",
+          "Structural solver",
+          "Final diagram inspection"
+        ]
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000005",
+      "seq": 5,
+      "runId": "build-86ff3f5a-77ad-4c97-a4b6-51ce7d4113c6",
+      "at": "2026-11-04T04:58:30.944Z",
+      "recordedAt": "2026-11-04T04:58:30.944Z",
+      "type": "resource.read",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "d41f14e2-d826-4f03-a86f-dd57270f8712",
+      "candidateId": null,
+      "details": {
+        "outcome": "delivered",
+        "label": "official-level0.json",
+        "start": 1,
+        "end": 50,
+        "sha256": "20f0d4c1715f8c826b989e201f9b04de5050f58eb3f1bde7e09eeb3ce2f300b5",
+        "sourceSha256": "20f0d4c1715f8c826b989e201f9b04de5050f58eb3f1bde7e09eeb3ce2f300b5"
+      },
+      "evidenceRefs": [
+        {
+          "id": "0757102a64e64d53",
+          "sha256": "20f0d4c1715f8c826b989e201f9b04de5050f58eb3f1bde7e09eeb3ce2f300b5",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000006",
+      "seq": 6,
+      "runId": "build-86ff3f5a-77ad-4c97-a4b6-51ce7d4113c6",
+      "at": "2026-11-04T04:58:38.862Z",
+      "recordedAt": "2026-11-04T04:58:38.862Z",
+      "type": "resource.reused",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": null,
+      "details": {
+        "reason": "Original PNG visually inspected during the still-recorded development run before these sample runs; same immutable image bytes.",
+        "outcome": "previously-viewed-reference",
+        "label": "MentalRotation/2DRotation/Level0/0-2-3",
+        "sha256": "0eef5314540730470afa183b51d4720cebba763ba6d68565670a30e4480a862c"
+      },
+      "evidenceRefs": [
+        {
+          "id": "525318eb6668d20e",
+          "sha256": "0eef5314540730470afa183b51d4720cebba763ba6d68565670a30e4480a862c",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000007",
+      "seq": 7,
+      "runId": "build-86ff3f5a-77ad-4c97-a4b6-51ce7d4113c6",
+      "at": "2026-11-04T04:58:58.122Z",
+      "recordedAt": "2026-11-04T04:58:58.122Z",
+      "type": "candidate.saved",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "3e9bdef0-8aea-4066-9d42-dadf073a3f8a",
+      "candidateId": "v001",
+      "details": {
+        "sha256": "fdb5690e9420f87ba277605a8756a7464c6278c0cc97bc3b7ab1e60ae8fd1f9d",
+        "parentId": null,
+        "parentBasis": null,
+        "changes": [
+          "specification",
+          "geometry",
+          "question",
+          "options",
+          "answer",
+          "contract",
+          "rendering",
+          "generator"
+        ],
+        "fingerprints": {
+          "specification": "fdb5690e9420f87ba277605a8756a7464c6278c0cc97bc3b7ab1e60ae8fd1f9d",
+          "geometry": "48334516e8b15fa608f8638c4c08a67bd1ec8e2aa8bba28ba9231c388c23507d",
+          "question": "3cb364566bd58adaf4c247b0da332481cedbb9b5191c385944f589be8297c2f4",
+          "options": "e80d1f7682779b3f32c6c5bda2c69cd619d60b09bb6c1b1376b458855b4fe2c2",
+          "answer": "102e44c2e55a5d7fc7c9a0b50c75e3987642e2447430b6447addc29fd5bfedff",
+          "contract": "94edaede1a1ffa2a8704f7c893d6ca75990e9a94dca29bdab1647dde8862d4e9",
+          "rendering": "d4348cfd0be511ee0c293fb68421468863ac87f2ed1c13fe2b80df756c17d833",
+          "generator": "76105d1ad185a6e11b72bdcad4dfb39e18129f042e2f27e7697253d8f9978482"
+        },
+        "previewUnavailable": null
+      },
+      "evidenceRefs": [
+        {
+          "id": "0c270ff4024ce18b",
+          "sha256": "fdb5690e9420f87ba277605a8756a7464c6278c0cc97bc3b7ab1e60ae8fd1f9d",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000008",
+      "seq": 8,
+      "runId": "build-86ff3f5a-77ad-4c97-a4b6-51ce7d4113c6",
+      "at": "2026-11-04T04:58:58.179Z",
+      "recordedAt": "2026-11-04T04:58:58.179Z",
+      "type": "build.saved",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "3e9bdef0-8aea-4066-9d42-dadf073a3f8a",
+      "candidateId": "v001",
+      "details": {},
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000009",
+      "seq": 9,
+      "runId": "build-86ff3f5a-77ad-4c97-a4b6-51ce7d4113c6",
+      "at": "2026-11-04T04:58:58.289Z",
+      "recordedAt": "2026-11-04T04:58:58.289Z",
+      "type": "render.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "3969f473-dc1a-4766-a7ce-5a79a6678947",
+      "candidateId": "v001",
+      "details": {
+        "renderer": {
+          "id": "spatialviz-2d-rotation",
+          "revision": "87fb1484d28457f047be805ffaa03c82cc194c8f2f77e277157f1b2b4342e309"
+        }
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000010",
+      "seq": 10,
+      "runId": "build-86ff3f5a-77ad-4c97-a4b6-51ce7d4113c6",
+      "at": "2026-11-04T04:58:58.343Z",
+      "recordedAt": "2026-11-04T04:58:58.343Z",
+      "type": "render.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "3969f473-dc1a-4766-a7ce-5a79a6678947",
+      "candidateId": "v001",
+      "details": {
+        "sha256": "abb120b9d2d500440f9b5e165a17a3e3d15f6d3fa60c070c95556cba3f118137",
+        "renderer": {
+          "id": "spatialviz-2d-rotation",
+          "revision": "87fb1484d28457f047be805ffaa03c82cc194c8f2f77e277157f1b2b4342e309"
+        },
+        "specification": "fdb5690e9420f87ba277605a8756a7464c6278c0cc97bc3b7ab1e60ae8fd1f9d",
+        "rendering": "d4348cfd0be511ee0c293fb68421468863ac87f2ed1c13fe2b80df756c17d833"
+      },
+      "evidenceRefs": [
+        {
+          "id": "2a1ffe4f77c57779",
+          "sha256": "abb120b9d2d500440f9b5e165a17a3e3d15f6d3fa60c070c95556cba3f118137",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000011",
+      "seq": 11,
+      "runId": "build-86ff3f5a-77ad-4c97-a4b6-51ce7d4113c6",
+      "at": "2026-11-04T04:58:58.407Z",
+      "recordedAt": "2026-11-04T04:58:58.407Z",
+      "type": "command.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "654dc931-8f59-49c3-8152-fd635fb4f1fb",
+      "candidateId": "v001",
+      "details": {
+        "label": "node.exe",
+        "kind": "verification"
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000012",
+      "seq": 12,
+      "runId": "build-86ff3f5a-77ad-4c97-a4b6-51ce7d4113c6",
+      "at": "2026-11-04T04:58:58.594Z",
+      "recordedAt": "2026-11-04T04:58:58.594Z",
+      "type": "command.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "654dc931-8f59-49c3-8152-fd635fb4f1fb",
+      "candidateId": "v001",
+      "details": {
+        "commandEventId": "e000011",
+        "kind": "verification",
+        "exitCode": 0,
+        "signal": null
+      },
+      "evidenceRefs": [
+        {
+          "id": "3d097a66bc6f7b15",
+          "sha256": "40e8d974a84f6a678ef2dc96469ac52f6531baab143b2767b6d0b70997b0d01e",
+          "availability": "local evidence; hash published"
+        },
+        {
+          "id": "5cc7f8bcc4cd73a1",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000013",
+      "seq": 13,
+      "runId": "build-86ff3f5a-77ad-4c97-a4b6-51ce7d4113c6",
+      "at": "2026-11-04T04:58:58.608Z",
+      "recordedAt": "2026-11-04T04:58:58.608Z",
+      "type": "test.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "654dc931-8f59-49c3-8152-fd635fb4f1fb",
+      "candidateId": "v001",
+      "details": {
+        "commandEventId": "e000011",
+        "completedEventId": "e000012",
+        "verdict": "passed",
+        "status": "passed",
+        "checks": [
+          {
+            "name": "Supported task and question polarity",
+            "verdict": "passed"
+          },
+          {
+            "name": "Final A-C figures and D text semantics",
+            "verdict": "passed"
+          },
+          {
+            "name": "Bounded rectangular grids, motifs and corner coordinates",
+            "verdict": "passed"
+          },
+          {
+            "name": "Explicit unique A-C rotation contract",
+            "verdict": "passed"
+          },
+          {
+            "name": "Exact renderer and verifier revisions",
+            "verdict": "passed"
+          },
+          {
+            "name": "Declared grid mode agrees with actual geometry",
+            "verdict": "passed"
+          },
+          {
+            "name": "Distinct displayed A-C options",
+            "verdict": "passed"
+          },
+          {
+            "name": "Independent rotation enumeration and unique final answer",
+            "verdict": "passed",
+            "detail": "Qualifying labels: A."
+          },
+          {
+            "name": "Per-option explanations agree with computed structural witnesses",
+            "verdict": "passed"
+          },
+          {
+            "name": "Unoccluded geometry at declared minimum display size",
+            "verdict": "passed",
+            "detail": "Every cell, motif and external red corner is drawn; inspect the final SVG at full size."
+          }
+        ],
+        "scope": "Independent four planar rotations, structural validity, option semantics and uniqueness, label/explanation consistency, exact rendering contract. Geometry and diagram coverage do not replace recorded human/agent visual review; no difficulty claim.",
+        "binding": "exact",
+        "bindingBasis": "exact candidate and full input fingerprints",
+        "testedFingerprints": {
+          "specification": "fdb5690e9420f87ba277605a8756a7464c6278c0cc97bc3b7ab1e60ae8fd1f9d",
+          "geometry": "48334516e8b15fa608f8638c4c08a67bd1ec8e2aa8bba28ba9231c388c23507d",
+          "question": "3cb364566bd58adaf4c247b0da332481cedbb9b5191c385944f589be8297c2f4",
+          "options": "e80d1f7682779b3f32c6c5bda2c69cd619d60b09bb6c1b1376b458855b4fe2c2",
+          "answer": "102e44c2e55a5d7fc7c9a0b50c75e3987642e2447430b6447addc29fd5bfedff",
+          "contract": "94edaede1a1ffa2a8704f7c893d6ca75990e9a94dca29bdab1647dde8862d4e9",
+          "rendering": "d4348cfd0be511ee0c293fb68421468863ac87f2ed1c13fe2b80df756c17d833",
+          "generator": "76105d1ad185a6e11b72bdcad4dfb39e18129f042e2f27e7697253d8f9978482"
+        },
+        "verifier": {
+          "id": "spatialviz-2d-rotation",
+          "revision": "87fb1484d28457f047be805ffaa03c82cc194c8f2f77e277157f1b2b4342e309"
+        },
+        "reportSha256": "b8ee000306506e27ca97fde53f9611ccfae87552bc6fd80b2de31cd058af2b00"
+      },
+      "evidenceRefs": [
+        {
+          "id": "7b6dd70722d574c0",
+          "sha256": "b8ee000306506e27ca97fde53f9611ccfae87552bc6fd80b2de31cd058af2b00",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000014",
+      "seq": 14,
+      "runId": "build-86ff3f5a-77ad-4c97-a4b6-51ce7d4113c6",
+      "at": "2026-11-04T05:03:46.130Z",
+      "recordedAt": "2026-11-04T05:03:46.130Z",
+      "type": "screenshot.saved",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": "v001",
+      "details": {
+        "sha256": "84dd00b6a4b9e6545c937a58e03844e60edf5f0cb7282440344a68cdd94829ef",
+        "specification": "fdb5690e9420f87ba277605a8756a7464c6278c0cc97bc3b7ab1e60ae8fd1f9d"
+      },
+      "evidenceRefs": [
+        {
+          "id": "2e09c45412f6d704",
+          "sha256": "84dd00b6a4b9e6545c937a58e03844e60edf5f0cb7282440344a68cdd94829ef",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000015",
+      "seq": 15,
+      "runId": "build-86ff3f5a-77ad-4c97-a4b6-51ce7d4113c6",
+      "at": "2026-11-04T05:03:46.189Z",
+      "recordedAt": "2026-11-04T05:03:46.189Z",
+      "type": "visual.review",
+      "actor": "author",
+      "origin": "agent_statement",
+      "actionId": null,
+      "candidateId": "v001",
+      "details": {
+        "outcome": "passed",
+        "review": "Viewed the 1200 by 650 PNG. All 12 cells and four red markers are visible, uncut, and share a 46-pixel unit scale. A exchanges 3-by-4 to 4-by-3 with a clockwise turn. B swaps two colors; C changes handedness. The repeated green cells remain distinguishable by neighboring colors and the corner. A-C labels and D text are readable."
+      },
+      "evidenceRefs": [
+        {
+          "id": "2e09c45412f6d704",
+          "sha256": "84dd00b6a4b9e6545c937a58e03844e60edf5f0cb7282440344a68cdd94829ef",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000016",
+      "seq": 16,
+      "runId": "build-86ff3f5a-77ad-4c97-a4b6-51ce7d4113c6",
+      "at": "2026-11-04T05:03:46.274Z",
+      "recordedAt": "2026-11-04T05:03:46.274Z",
+      "type": "run.finished",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": "v001",
+      "details": {
+        "outcome": "accepted",
+        "finalCandidateId": "v001"
+      },
+      "evidenceRefs": []
+    }
+  ],
+  "candidates": [
+    {
+      "id": "v001",
+      "parentId": null,
+      "parentBasis": null,
+      "sha256": "fdb5690e9420f87ba277605a8756a7464c6278c0cc97bc3b7ab1e60ae8fd1f9d",
+      "fingerprints": {
+        "specification": "fdb5690e9420f87ba277605a8756a7464c6278c0cc97bc3b7ab1e60ae8fd1f9d",
+        "geometry": "48334516e8b15fa608f8638c4c08a67bd1ec8e2aa8bba28ba9231c388c23507d",
+        "question": "3cb364566bd58adaf4c247b0da332481cedbb9b5191c385944f589be8297c2f4",
+        "options": "e80d1f7682779b3f32c6c5bda2c69cd619d60b09bb6c1b1376b458855b4fe2c2",
+        "answer": "102e44c2e55a5d7fc7c9a0b50c75e3987642e2447430b6447addc29fd5bfedff",
+        "contract": "94edaede1a1ffa2a8704f7c893d6ca75990e9a94dca29bdab1647dde8862d4e9",
+        "rendering": "d4348cfd0be511ee0c293fb68421468863ac87f2ed1c13fe2b80df756c17d833",
+        "generator": "76105d1ad185a6e11b72bdcad4dfb39e18129f042e2f27e7697253d8f9978482"
+      },
+      "previewUnavailable": null,
+      "changes": [
+        "specification",
+        "geometry",
+        "question",
+        "options",
+        "answer",
+        "contract",
+        "rendering",
+        "generator"
+      ],
+      "preview": {
+        "candidateId": "v001",
+        "specification": "fdb5690e9420f87ba277605a8756a7464c6278c0cc97bc3b7ab1e60ae8fd1f9d",
+        "rendering": "d4348cfd0be511ee0c293fb68421468863ac87f2ed1c13fe2b80df756c17d833",
+        "renderer": {
+          "id": "spatialviz-2d-rotation",
+          "revision": "87fb1484d28457f047be805ffaa03c82cc194c8f2f77e277157f1b2b4342e309"
+        },
+        "sha256": "abb120b9d2d500440f9b5e165a17a3e3d15f6d3fa60c070c95556cba3f118137",
+        "path": "records/authored-fdb5690e9420f87ba277605a/v001-abb120b9d2d50044.svg",
+        "origin": "recorded-render"
+      }
+    }
+  ],
+  "tests": [
+    {
+      "id": "t001",
+      "actionId": "654dc931-8f59-49c3-8152-fd635fb4f1fb",
+      "candidateId": "v001",
+      "testedFingerprints": {
+        "specification": "fdb5690e9420f87ba277605a8756a7464c6278c0cc97bc3b7ab1e60ae8fd1f9d",
+        "geometry": "48334516e8b15fa608f8638c4c08a67bd1ec8e2aa8bba28ba9231c388c23507d",
+        "question": "3cb364566bd58adaf4c247b0da332481cedbb9b5191c385944f589be8297c2f4",
+        "options": "e80d1f7682779b3f32c6c5bda2c69cd619d60b09bb6c1b1376b458855b4fe2c2",
+        "answer": "102e44c2e55a5d7fc7c9a0b50c75e3987642e2447430b6447addc29fd5bfedff",
+        "contract": "94edaede1a1ffa2a8704f7c893d6ca75990e9a94dca29bdab1647dde8862d4e9",
+        "rendering": "d4348cfd0be511ee0c293fb68421468863ac87f2ed1c13fe2b80df756c17d833",
+        "generator": "76105d1ad185a6e11b72bdcad4dfb39e18129f042e2f27e7697253d8f9978482"
+      },
+      "verifier": {
+        "id": "spatialviz-2d-rotation",
+        "revision": "87fb1484d28457f047be805ffaa03c82cc194c8f2f77e277157f1b2b4342e309"
+      },
+      "reportSha256": "b8ee000306506e27ca97fde53f9611ccfae87552bc6fd80b2de31cd058af2b00",
+      "verdict": "passed",
+      "status": "passed",
+      "checks": [
+        {
+          "name": "Supported task and question polarity",
+          "verdict": "passed"
+        },
+        {
+          "name": "Final A-C figures and D text semantics",
+          "verdict": "passed"
+        },
+        {
+          "name": "Bounded rectangular grids, motifs and corner coordinates",
+          "verdict": "passed"
+        },
+        {
+          "name": "Explicit unique A-C rotation contract",
+          "verdict": "passed"
+        },
+        {
+          "name": "Exact renderer and verifier revisions",
+          "verdict": "passed"
+        },
+        {
+          "name": "Declared grid mode agrees with actual geometry",
+          "verdict": "passed"
+        },
+        {
+          "name": "Distinct displayed A-C options",
+          "verdict": "passed"
+        },
+        {
+          "name": "Independent rotation enumeration and unique final answer",
+          "verdict": "passed",
+          "detail": "Qualifying labels: A."
+        },
+        {
+          "name": "Per-option explanations agree with computed structural witnesses",
+          "verdict": "passed"
+        },
+        {
+          "name": "Unoccluded geometry at declared minimum display size",
+          "verdict": "passed",
+          "detail": "Every cell, motif and external red corner is drawn; inspect the final SVG at full size."
+        }
+      ],
+      "scope": "Independent four planar rotations, structural validity, option semantics and uniqueness, label/explanation consistency, exact rendering contract. Geometry and diagram coverage do not replace recorded human/agent visual review; no difficulty claim.",
+      "commandExitStatus": 0,
+      "binding": "exact",
+      "bindingBasis": "exact candidate and full input fingerprints",
+      "commandEventId": "e000011"
+    }
+  ],
+  "usage": {
+    "schemaVersion": 2,
+    "runId": "build-86ff3f5a-77ad-4c97-a4b6-51ce7d4113c6",
+    "source": "codex",
+    "runtime": "Codex Desktop",
+    "status": "measured",
+    "startedAt": "2026-11-04T04:58:24.948Z",
+    "finishedAt": "2026-11-04T05:03:46.260Z",
+    "lastObservedAt": "2026-11-04T05:03:17.843Z",
+    "elapsedMs": 321330,
+    "elapsedKind": "wall-clock",
+    "scope": "Runtime-reported usage between the start baseline and finish snapshot of this session. In-flight or delayed usage, earlier conversation, other agents and later delivery are excluded. This is an observed interval, not a complete billed task total.",
+    "scopeComplete": false,
+    "observedTokens": {
+      "input_tokens": 1848820,
+      "cached_input_tokens": 1819520,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 9319,
+      "reasoning_output_tokens": 3377,
+      "total_tokens": 1858139
+    },
+    "tokens": {
+      "input_tokens": null,
+      "cached_input_tokens": null,
+      "cache_write_input_tokens": null,
+      "output_tokens": null,
+      "reasoning_output_tokens": null,
+      "total_tokens": null
+    },
+    "models": [
+      {
+        "provider": "openai",
+        "model": "gpt-6-astra",
+        "reasoningEffort": "xhigh",
+        "tokens": {
+          "input_tokens": 1848820,
+          "cached_input_tokens": 1819520,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 9319,
+          "reasoning_output_tokens": 3377,
+          "total_tokens": 1858139
+        },
+        "observations": 16
+      }
+    ],
+    "missingFields": [],
+    "issues": [],
+    "observations": 16
+  },
+  "caseId": "authored-fdb5690e9420f87ba277605a"
+}

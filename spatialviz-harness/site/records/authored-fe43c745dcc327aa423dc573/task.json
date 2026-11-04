@@ -1,0 +1,306 @@
+{
+  "schemaVersion": 1,
+  "title": "3D rotation / find the changed solid",
+  "description": "Newly constructed and independently verified rotation task.",
+  "category": "MentalRotation",
+  "taskType": "3d-rotation",
+  "difficulty": {
+    "label": "Unranked",
+    "basis": "No human difficulty calibration; official source levels are not inherited."
+  },
+  "question": "Which cube model cannot be obtained by rotating the original model only, without reflection or structural changes? Use the paired views and complete layer diagrams. Choose A, B, C, or D.",
+  "polarity": "cannot",
+  "geometry": [
+    [
+      0,
+      1,
+      1
+    ],
+    [
+      1,
+      1,
+      0
+    ],
+    [
+      1,
+      1,
+      1
+    ],
+    [
+      1,
+      2,
+      0
+    ],
+    [
+      2,
+      1,
+      1
+    ],
+    [
+      3,
+      0,
+      0
+    ],
+    [
+      3,
+      0,
+      1
+    ],
+    [
+      3,
+      1,
+      1
+    ],
+    [
+      3,
+      1,
+      2
+    ]
+  ],
+  "options": [
+    {
+      "label": "A",
+      "type": "figure",
+      "geometry": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          2
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          0
+        ],
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          2
+        ],
+        [
+          1,
+          1,
+          3
+        ],
+        [
+          2,
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "label": "B",
+      "type": "figure",
+      "geometry": [
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          1
+        ],
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          2
+        ],
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          2,
+          1,
+          1
+        ],
+        [
+          2,
+          2,
+          0
+        ],
+        [
+          2,
+          2,
+          1
+        ],
+        [
+          3,
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "label": "C",
+      "type": "figure",
+      "geometry": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1
+        ],
+        [
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          2,
+          0,
+          1
+        ],
+        [
+          2,
+          0,
+          2
+        ],
+        [
+          2,
+          1,
+          1
+        ],
+        [
+          3,
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "label": "D",
+      "type": "text",
+      "text": "All three other options are incorrect"
+    }
+  ],
+  "answer": {
+    "index": 0,
+    "explanation": "Option A is the unique option satisfying the not rotation-equivalent condition.",
+    "options": [
+      {
+        "label": "A",
+        "equivalent": false,
+        "qualifies": true,
+        "explanation": "Cube count differs: original 9, option 8. Rotation preserves cube count. This satisfies the request for a model that cannot be obtained by rotation."
+      },
+      {
+        "label": "B",
+        "equivalent": true,
+        "qualifies": false,
+        "explanation": "A proper spatial rotation maps all 9 cubes exactly. Matrix rows: [-1,0,0] [0,0,-1] [0,-1,0]; translate each model to its minimum corner. This does not satisfy the request for a model that cannot be obtained by rotation."
+      },
+      {
+        "label": "C",
+        "equivalent": true,
+        "qualifies": false,
+        "explanation": "A proper spatial rotation maps all 9 cubes exactly. Matrix rows: [-1,0,0] [0,0,1] [0,1,0]; translate each model to its minimum corner. This does not satisfy the request for a model that cannot be obtained by rotation."
+      },
+      {
+        "label": "D",
+        "qualifies": false,
+        "explanation": "D means none of A, B, C satisfies the question. 1 graphical option(s) satisfy it, so D is not selected."
+      }
+    ]
+  },
+  "generator": {
+    "id": "spatialviz-3d-rotation",
+    "revision": "dae30b785885fbd49e9cee2be7b0648f6d83003ef4adceb22b156712df27d4d5",
+    "seed": 89,
+    "parameters": {
+      "cubes": 9,
+      "polarity": "cannot",
+      "distractors": [
+        "delete"
+      ]
+    },
+    "operations": [
+      {
+        "kind": "delete"
+      },
+      {
+        "kind": "rotation"
+      },
+      {
+        "kind": "rotation"
+      }
+    ]
+  },
+  "rendering": {
+    "id": "spatialviz-3d-rotation",
+    "revision": "dae30b785885fbd49e9cee2be7b0648f6d83003ef4adceb22b156712df27d4d5",
+    "width": 1200,
+    "height": 1150,
+    "layout": "paired-isometric-and-complete-layers",
+    "cubeSize": 28,
+    "layerCellSize": 18,
+    "cameras": [
+      [
+        1,
+        1,
+        1
+      ],
+      [
+        -1,
+        -1,
+        1
+      ]
+    ],
+    "axes": "right-handed-x-y-z",
+    "layers": "z-ascending-x-right-y-up"
+  },
+  "contract": {
+    "answerMode": "unique-A-C",
+    "graphicalOptions": 3,
+    "textOptionD": "All three other options are incorrect",
+    "properRotations": 24,
+    "translation": true,
+    "reflection": false
+  },
+  "verifier": {
+    "id": "spatialviz-3d-rotation",
+    "revision": "dae30b785885fbd49e9cee2be7b0648f6d83003ef4adceb22b156712df27d4d5"
+  },
+  "provenance": {
+    "sourceKind": "agent-authored",
+    "note": "Constructed example, separate from official reference questions."
+  }
+}

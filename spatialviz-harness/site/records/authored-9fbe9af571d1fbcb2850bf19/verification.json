@@ -1,0 +1,67 @@
+{
+  "id": "t002",
+  "actionId": "05dd0c22-01ae-43f2-b9a8-a3f7debcf44f",
+  "candidateId": "v002",
+  "testedFingerprints": {
+    "specification": "9fbe9af571d1fbcb2850bf197fc821e69f9f6c297e530009ee95886434a56727",
+    "geometry": "ff1c8d203b104a1340d3b6a1fb46aa561c300dbe5ac720d225d5ca40328c1ab3",
+    "question": "c804e4e9d8e7c7fd34f88d1a1f80e3d442b1c106e3b016d4baf09e350414d177",
+    "options": "47deb95928f2bf2cdf911522fae4aa7af9e293db6d75e080eb75b9819c5a0813",
+    "answer": "19da81a05531191bfb1f9fb218bf1e6bee4f331a3332148e00ab62f00ed432d3",
+    "contract": "e8967f9ba11482069273b9041a2022fc46783d4a407d4df6d299e414dee74974",
+    "rendering": "4bea3eb672e0ac526e947f57c377bed59828bfe3a4e1f30a703646921487ade6",
+    "generator": "2c57c24fb6f42000b7f6e07ec021d0d81dd2d488d6e91b4428d9e1c0f2789355"
+  },
+  "verifier": {
+    "id": "spatialviz-3d-rotation",
+    "revision": "dae30b785885fbd49e9cee2be7b0648f6d83003ef4adceb22b156712df27d4d5"
+  },
+  "reportSha256": "0858e4757dc5a99382ebe8d940aba70fc80ce2ce5bceafacd798ce1d74f1c899",
+  "verdict": "passed",
+  "status": "passed",
+  "checks": [
+    {
+      "name": "Supported task and question polarity",
+      "verdict": "passed"
+    },
+    {
+      "name": "Final A-C figures and D text semantics",
+      "verdict": "passed"
+    },
+    {
+      "name": "Unique equal lattice cubes, bounded extent and face connectivity",
+      "verdict": "passed"
+    },
+    {
+      "name": "Explicit unique A-C rotation contract",
+      "verdict": "passed"
+    },
+    {
+      "name": "Exact renderer and verifier revisions",
+      "verdict": "passed"
+    },
+    {
+      "name": "Distinct displayed A-C options",
+      "verdict": "passed"
+    },
+    {
+      "name": "Independent rotation enumeration and unique final answer",
+      "verdict": "passed",
+      "detail": "Qualifying labels: A."
+    },
+    {
+      "name": "Per-option explanations agree with computed structural witnesses",
+      "verdict": "passed"
+    },
+    {
+      "name": "Complete layer encoding independently round-trips to all cubes",
+      "verdict": "passed",
+      "detail": "[{\"complete\":true,\"cubesDecoded\":8,\"layers\":4,\"minimumCellPixels\":18,\"method\":\"Complete z slices, all occupied and empty cells; paired isometric views for spatial perception. Human inspection still required.\"},{\"complete\":true,\"cubesDecoded\":8,\"layers\":2,\"minimumCellPixels\":18,\"method\":\"Complete z slices, all occupied and empty cells; paired isometric views for spatial perception. Human inspection still required.\"},{\"complete\":true,\"cubesDecoded\":8,\"layers\":2,\"minimumCellPixels\":18,\"method\":\"Complete z slices, all occupied and empty cells; paired isometric views for spatial perception. Human inspection still required.\"},{\"complete\":true,\"cubesDecoded\":8,\"layers\":2,\"minimumCellPixels\":18,\"method\":\"Complete z slices, all occupied and empty cells; paired isometric views for spatial perception. Human inspection still required.\"}]"
+    }
+  ],
+  "scope": "Independent 24 proper spatial rotations, structural validity, option semantics and uniqueness, label/explanation consistency, exact rendering contract and complete layer encoding. Geometry and diagram coverage do not replace recorded human/agent visual review; no difficulty claim.",
+  "commandExitStatus": 0,
+  "binding": "exact",
+  "bindingBasis": "exact candidate and full input fingerprints",
+  "commandEventId": "e000020"
+}

@@ -1,0 +1,49 @@
+{
+  "id": "spatialviz-bench:vqa:MentalRotation:3DRotation:Level0:0-3-3-1-5",
+  "sourceId": "MentalRotation/3DRotation/Level0/0-3-3-1-5",
+  "benchmark": "spatialviz-bench",
+  "track": "vqa",
+  "category": "MentalRotation",
+  "type": "3DRotation",
+  "level": "Level0",
+  "question": "The left image shows the original cube stack made of equal-sized small cubes. Which of the options on the right cannot be obtained by rotating the original cube stack? Please answer from options A, B, C, or D.",
+  "options": [
+    "A",
+    "B",
+    "C",
+    "All three other options are incorrect"
+  ],
+  "answer": "A",
+  "answerKind": "choice",
+  "answerIndex": 0,
+  "explanation": "Option A is correct because it was obtained by removing one small cube from the original stack.\nOption B is incorrect because the cube stack can be obtained by rotating the original stack around the y-axis by 270 degrees.\nOption C is incorrect because the cube stack can be obtained by rotating the original stack around the y-axis by 180 degrees.",
+  "image": "media/cd/cde37f9b4c86c798efb70a3d1f89ca137c9f90f2de7d5645532a188fc94d7423.png",
+  "width": 3639,
+  "height": 1034,
+  "answerImage": null,
+  "original": {
+    "Category": "MentalRotation",
+    "Task": "3DRotation",
+    "Level": "Level0",
+    "Image_id": "0-3-3-1-5",
+    "Question": "The left image shows the original cube stack made of equal-sized small cubes. Which of the options on the right cannot be obtained by rotating the original cube stack? Please answer from options A, B, C, or D.",
+    "Choices": [
+      "A",
+      "B",
+      "C",
+      "All three other options are incorrect"
+    ],
+    "Answer": "A",
+    "Explanation": "{'A': 'Option A is correct because it was obtained by removing one small cube from the original stack.', 'B': 'Option B is incorrect because the cube stack can be obtained by rotating the original stack around the y-axis by 270 degrees.', 'C': 'Option C is incorrect because the cube stack can be obtained by rotating the original stack around the y-axis by 180 degrees.'}"
+  },
+  "provenance": {
+    "annotation": "official/downloads/spatialviz-bench/test-00000-of-00001.parquet",
+    "row_index": 680,
+    "annotation_sha256": "df7adb86ece21b31a0d9bf928bd76715d075283d298ae02361112ede913a01af",
+    "dataset_repository": "PLM-Team/Spatial-Visualization-Benchmark",
+    "dataset_revision": "c722d00b2f740eacb1b56f4cbcd3af47bbbe40b8",
+    "code_revision": "c27f9111a2674f2ea03e2ca1f5833326cf1eec1a"
+  },
+  "packagedImage": "official-level0.png",
+  "imageSha256": "cde37f9b4c86c798efb70a3d1f89ca137c9f90f2de7d5645532a188fc94d7423"
+}

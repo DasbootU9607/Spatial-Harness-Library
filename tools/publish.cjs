@@ -5,11 +5,19 @@ const R=require('./observatory/runtime.cjs'),P=require('./observatory/projection
 const repo='DasbootU9607/Spatial-Harness-Library',remote='https://github.com/'+repo+'.git',base='https://dasbootu9607.github.io/Spatial-Harness-Library/';
 function command(bin,args,cwd=R.ROOT){const r=spawnSync(bin,args,{cwd,encoding:'utf8',windowsHide:true,maxBuffer:64*1024*1024});if(r.status!==0)throw Error(`${bin} ${args[0]} failed: ${r.stderr||r.stdout||r.error}`);return r.stdout.trim();}
 function locked(fn){const lock=path.join(R.ROOT,'catalog/.publish-lock');const wait=new Int32Array(new SharedArrayBuffer(4)),end=Date.now()+15000;while(true){try{fs.mkdirSync(lock);break;}catch(e){if(e.code!=='EEXIST'||Date.now()>end)throw Error('Catalog locked by another publisher');Atomics.wait(wait,0,0,30);}}try{return fn();}finally{fs.rmdirSync(lock);}}
+function previewBytes(run,version,events,adapter){
+  const recorded=events.findLast(e=>e.type==='render.completed'&&e.candidateId===version.id&&e.details.specification===version.sha256&&e.details.rendering===version.fingerprints.rendering);
+  if(recorded){const file=path.resolve(run,recorded.details.artifactPath),relative=path.relative(run,file);if(relative.startsWith('..')||path.isAbsolute(relative))throw Error('Preview path escapes run');const bytes=fs.readFileSync(file);if(R.sha(bytes)!==recorded.details.sha256)throw Error('Recorded preview bytes changed');return {bytes,renderer:recorded.details.renderer,origin:'recorded-render'};}
+  const original=R.read(path.join(run,version.specPath));
+  if(original.rendering?.revision!==adapter.identity.revision)return null;
+  return {bytes:adapter.render(original),renderer:adapter.identity,origin:'delivery-render'};
+}
 function prepare({run,task,skill}){
   const checked=P.audit(run,task),m=checked.run.manifest,c=checked.candidate,harness=m.harness;
   if(!R.read(path.join(R.ROOT,'catalog/harnesses.json')).harnesses.some(h=>h.id===harness))throw Error('Unknown harness');
   const skillDir=path.resolve(skill),meta=R.read(path.join(skillDir,'skill.json'));
   if(meta.status!=='complete'||meta.harnessId!==harness||m.skill?.id!==path.basename(skillDir)||m.skill?.sha256!==R.sha(fs.readFileSync(path.join(skillDir,'SKILL.md'))))throw Error('Completed matching skill and recorded source fingerprint required');
+  if(meta.requiresVisualReview){const review=checked.run.events.findLast(e=>e.type==='visual.review'&&e.candidateId===c.id);if(review?.details?.outcome!=='passed')throw Error('This skill requires a passed visual review of the exact final candidate');}
   const spec=R.read(task);
   if(JSON.stringify(P.safe(spec))!==JSON.stringify(spec))throw Error('Task contains private fields; fix the public specification before authoring');
   const adapter=require('./observatory/adapters/'+meta.adapter+'.cjs');
@@ -24,11 +32,11 @@ function prepare({run,task,skill}){
     const previews=[];
     for(const version of checked.run.candidates){
       if(version.previewUnavailable)continue;
-      const original=R.read(path.join(run,version.specPath));
-      let bytes;try{bytes=adapter.render(original);}catch{continue;}
+      let source;try{source=previewBytes(run,version,checked.run.events,adapter);}catch{continue;}
+      if(!source)continue;const bytes=source.bytes;
       const asset=`${version.id}-${R.sha(bytes).slice(0,16)}.svg`;
       fs.writeFileSync(path.join(dir,asset),bytes,{flag:'wx'});
-      const preview={candidateId:version.id,specification:version.sha256,rendering:version.fingerprints.rendering,renderer:adapter.identity,sha256:R.sha(bytes),path:`records/${id}/${asset}`,origin:'delivery-render'};
+      const preview={candidateId:version.id,specification:version.sha256,rendering:version.fingerprints.rendering,renderer:source.renderer,sha256:R.sha(bytes),path:`records/${id}/${asset}`,origin:source.origin};
       previews.push(preview);process.candidates.find(x=>x.id===version.id).preview=preview;
     }
     if(!previews.some(x=>x.candidateId===c.id))throw Error('Final preview unavailable');
@@ -108,4 +116,4 @@ if(require.main===module){const args=process.argv.slice(2),get=k=>args[args.inde
  }
  const p=prepare({run:get('run'),task:get('task'),skill:get('skill')});const result=publish(p,{prepareOnly:args.includes('--prepare-only')});console.log(JSON.stringify(result,null,2));if(!args.includes('--prepare-only'))return observe(result.commit,p.urls);return result;
 })().then(r=>console.log(JSON.stringify(r,null,2))).catch(e=>{console.error(e.message);process.exitCode=1;});}
-module.exports={prepare,publish,synchronize,validate,observe};
+module.exports={prepare,publish,synchronize,validate,observe,previewBytes};
