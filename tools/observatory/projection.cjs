@@ -3,7 +3,7 @@ const fs = require('node:fs'), path = require('node:path');
 const R = require('./runtime.cjs');
 const select = (o, keys) => Object.fromEntries(keys.filter(k => o && Object.hasOwn(o,k)).map(k => [k,o[k]]));
 function safe(value) {
-  if (typeof value === 'string') return /[a-z]:[\\/]|(?:^|\s)\/(?:Users|home|tmp|workspace)\/|(?:sk-|gh[pousr]_)[a-zA-Z0-9_-]{10,}|(?:password|api[_-]?key|authorization|bearer)\s*[:=]/i.test(value) ? '[private value omitted]' : value;
+  if (typeof value === 'string') return /(?:^|[\s"\x27])[a-z]:[\\/]|\\\\[^\\\s]+\\|(?:^|\s|["'])\/(?!\/)[a-z0-9_.-]+(?:\/[a-z0-9_.-]+)+|(?:sk-|gh[pousr]_)[a-zA-Z0-9_-]{10,}|(?:password|api[_-]?key|authorization|bearer)\s*[:=]/i.test(value) ? '[private value omitted]' : value;
   if (Array.isArray(value)) return value.map(safe);
   if (value && typeof value === 'object') return Object.fromEntries(Object.entries(value).filter(([k]) => !/session|transcript|prompt|rawResponse|command$|args$|cwd$|sourcePath/i.test(k)).map(([k,v]) => [k,safe(v)]));
   return value;
@@ -26,7 +26,10 @@ function audit(dir, delivered) {
   if (run.events.some((e,i) => e.seq !== i+1 || e.id !== 'e'+String(i+1).padStart(6,'0') || e.runId !== m.id) || new Set(run.events.map(e=>e.id)).size !== run.events.length) throw new Error('Invalid event ordering');
   if (run.events.at(-1)?.type !== 'run.finished') throw new Error('Missing final event');
   const index=R.read(path.join(dir,'index.json')); if (index.nextSeq !== run.events.length+1) throw new Error('Journal/index interrupted write');
-  for(const e of run.events) for(const ref of e.evidenceRefs) contained(dir,ref);
+  for(const e of run.events) {
+    for(const ref of e.evidenceRefs) contained(dir,ref);
+    if(['resource.read','screenshot.saved'].includes(e.type)&&e.details.sha256&&e.evidenceRefs.length===1&&R.sha(fs.readFileSync(contained(dir,e.evidenceRefs[0])))!==e.details.sha256)throw new Error('Recorded evidence fingerprint changed');
+  }
   for(const version of run.candidates) R.candidate(dir,version.id);
   const t=run.tests.findLast(t=>t.candidateId===c.id && t.verdict==='passed' && t.binding==='exact');
   if (!t || JSON.stringify(t.testedFingerprints)!==JSON.stringify(c.fingerprints) || R.sha(fs.readFileSync(contained(dir,t.reportPath)))!==t.reportSha256) throw new Error('Missing or altered verification evidence');
