@@ -7,10 +7,10 @@ function command(bin,args,cwd=R.ROOT){const r=spawnSync(bin,args,{cwd,encoding:'
 function locked(fn){const lock=path.join(R.ROOT,'catalog/.publish-lock');const wait=new Int32Array(new SharedArrayBuffer(4)),end=Date.now()+15000;while(true){try{fs.mkdirSync(lock);break;}catch(e){if(e.code!=='EEXIST'||Date.now()>end)throw Error('Catalog locked by another publisher');Atomics.wait(wait,0,0,30);}}try{return fn();}finally{fs.rmdirSync(lock);}}
 function previewBytes(run,version,events,adapter){
   const recorded=events.findLast(e=>e.type==='render.completed'&&e.candidateId===version.id&&e.details.specification===version.sha256&&e.details.rendering===version.fingerprints.rendering);
-  if(recorded){const file=path.resolve(run,recorded.details.artifactPath),relative=path.relative(run,file);if(relative.startsWith('..')||path.isAbsolute(relative))throw Error('Preview path escapes run');const bytes=fs.readFileSync(file);if(R.sha(bytes)!==recorded.details.sha256)throw Error('Recorded preview bytes changed');return {bytes,renderer:recorded.details.renderer,origin:'recorded-render'};}
+  if(recorded){const file=path.resolve(run,recorded.details.artifactPath),relative=path.relative(run,file);if(relative.startsWith('..')||path.isAbsolute(relative))throw Error('Preview path escapes run');const bytes=fs.readFileSync(file);if(R.sha(bytes)!==recorded.details.sha256)throw Error('Recorded preview bytes changed');return {bytes,renderer:recorded.details.renderer,origin:'recorded-render',extension:path.extname(file).slice(1)};}
   const original=R.read(path.join(run,version.specPath));
   if(original.rendering?.revision!==adapter.identity.revision)return null;
-  return {bytes:adapter.render(original),renderer:adapter.identity,origin:'delivery-render'};
+  return {bytes:adapter.render(original),renderer:adapter.identity,origin:'delivery-render',extension:adapter.imageFormat?.extension||'svg'};
 }
 function prepare({run,task,skill}){
   const checked=P.audit(run,task),m=checked.run.manifest,c=checked.candidate,harness=m.harness;
@@ -34,7 +34,8 @@ function prepare({run,task,skill}){
       if(version.previewUnavailable)continue;
       let source;try{source=previewBytes(run,version,checked.run.events,adapter);}catch{continue;}
       if(!source)continue;const bytes=source.bytes;
-      const asset=`${version.id}-${R.sha(bytes).slice(0,16)}.svg`;
+      if(!['png','svg'].includes(source.extension))throw Error('Unsupported preview format');
+      const asset=`${version.id}-${R.sha(bytes).slice(0,16)}.${source.extension}`;
       fs.writeFileSync(path.join(dir,asset),bytes,{flag:'wx'});
       const preview={candidateId:version.id,specification:version.sha256,rendering:version.fingerprints.rendering,renderer:source.renderer,sha256:R.sha(bytes),path:`records/${id}/${asset}`,origin:source.origin};
       previews.push(preview);process.candidates.find(x=>x.id===version.id).preview=preview;

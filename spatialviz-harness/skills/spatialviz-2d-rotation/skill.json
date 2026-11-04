@@ -5,18 +5,18 @@
   "name": "2D Rotation",
   "harnessId": "spatialviz-harness",
   "status": "complete",
-  "adapter": "rotation-2d",
+  "adapter": "official-rotation-2d",
   "requiresVisualReview": true,
-  "description": "Construct colored or directional rectangular grids with a red corner and independently verified rotation choices.",
+  "description": "Construct colored or directional grids through the official FreeCAD pipeline, with independent geometry and pixel validation.",
   "officialReferences": [
     "spatialviz-bench:vqa:MentalRotation:2DRotation:Level0:0-2-3",
     "spatialviz-bench:vqa:MentalRotation:2DRotation:Level1:0-2-3",
     "spatialviz-bench:vqa:MentalRotation:2DRotation:Level1:1-2-3"
   ],
   "steps": [
-    "Inspect packaged official evidence",
-    "Generate seeded structural candidates",
-    "Independently solve every option",
-    "Inspect the final diagram and publish"
+    "Read official evidence in the shared run",
+    "Build and render in the FreeCAD application",
+    "Compose through official generate_data",
+    "Independently verify pixels and geometry, visually inspect, then publish"
   ]
 }

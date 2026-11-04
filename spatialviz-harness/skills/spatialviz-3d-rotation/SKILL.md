@@ -1,62 +1,59 @@
 ---
 name: spatialviz-3d-rotation
-description: Construct, render, independently verify and publish new 3D rotation questions from seeded parameters using the Spatial Harness recorder. For question authoring, not model evaluation.
+description: Author new 3D rotation questions through SpatialViz-Bench's actual FreeCAD modeling and official image-composition pipeline, with independent geometry and pixel validation, recorded revisions and publication.
 ---
 
 # SpatialViz 3D Rotation
 
-Build actual new tasks, not copies of the reference questions. Preserve the official question identities and original difficulty annotations only in references. Generated tasks are unranked. Keep maintained files and generated task text in English.
+Create new unranked questions. Default to the pinned official FreeCAD pipeline; never silently substitute the legacy JavaScript/SVG generator or reuse official question images. Keep maintained instructions and generated questions in English. Original annotations remain unchanged in packaged references.
 
-## Start recording before reference use
+## Prepare and record
 
-Run this package's bridge from any working directory, using its actual absolute path. The installed package needs the shared library checkout bound by `tools/install.cjs`; it has no separate recorder or publisher.
+Keep the shared library checkout available. Installed packages bind to it through `node tools/install.cjs --harness spatialviz-harness --destination EMPTY_DIRECTORY`. Read `references/official-pipeline.md` for actual dependencies, source version, patches and limits. A real FreeCAD GUI application is required; host Python cannot import its GUI modules. Set `SPATIALVIZ_FREECAD` to the executable and install the host dependencies described there. Failure to launch or render is a concrete blocker, not permission to switch renderers.
 
-```text
-node SKILL_DIRECTORY/scripts/construct.cjs start --task TASK.json --title "3D rotation construction"
-```
-
-Retain the returned run directory. Before reading task-specific references, explicitly start or `resume --run RUN --task TASK.json`. Read `references/cases.md` and the relevant packaged JSON using `read --run RUN --file FILE`. Open the matching original PNG directly with the available image viewer, and record the delivered image and actual findings in the run. The original PNGs and full official annotations travel with this package. Read the limitations and fact/rule distinction in `references/cases.md`.
-
-Use `note --run RUN --file NOTE.json` for public `goal`, `sources`, `change`, `reason`, and `expectedChecks`. Record concise design decisions, not private reasoning. Passive usage capture retains the current client/model and reports missing coverage honestly; never launch or change a model just to collect usage.
-
-## Supported construction
-
-Generate 6 to 12 cubes with at most four lattice positions along each axis. Local edits may give options 5 to 13 cubes. Every model is unique-position and face connected. Both `can` and `cannot` question polarities are supported.
-
-Parameters: `{"cubes":8,"polarity":"can","distractors":["mirror","move"]}` or `{"cubes":9,"polarity":"cannot","distractors":["delete"]}`. Supply two distractor methods for `can`, one for `cannot`; `add`, `delete`, `move`, and `mirror` are supported. Recheck connectivity and all 24 proper rotations after every edit. Some reflections are rotation equivalent and must be rejected. The generator retries a bounded number of times and explicitly fails if it cannot satisfy the request.
-
-Output uses paired isometric views plus complete, consistently oriented z-layer grids. The layers are part of the question and disclose every occupied and empty position. This is not an unaided single-view reconstruction task. Arbitrary meshes, arbitrary camera poses, unequal cubes, continuous rotations outside this lattice representation, internally hidden evidence without layer disclosure, D-answer tasks and calibrated difficulty are not supported.
-
-All seeds must be safe integers. Variation changes geometry, poses, edits and option order. A, B and C are the three graphical choices. D is the text `All three other options are incorrect`: none of A-C satisfies the current question. Exactly one A-C choice must qualify. D is never the correct answer in this version. Reject duplicate displayed options and multiple or zero qualifying choices.
-
-Use a right-handed integer lattice. The solver independently enumerates signed permutation matrices of determinant +1, exactly 24, and normalizes translation before comparing occupied coordinates. Determinant -1 reflections are excluded. A 180-degree turn about an axis is a valid rotation. Different cube counts prove inequivalence; equal counts require the full structural comparison. For negative questions, a non-equivalent model is the qualifying answer; keep equivalence and correctness distinct.
-
-## Construct, inspect and revise
-
-Write parameters to a JSON file, then use the shared interface:
+Use this package's bridge (substitute absolute paths). Start before task-specific reference reads or generation:
 
 ```text
-node SKILL_DIRECTORY/scripts/construct.cjs generate --run RUN --task TASK.json --seed 71 --params PARAMETERS.json
-node SKILL_DIRECTORY/scripts/construct.cjs render --run RUN --candidate v001
-node SKILL_DIRECTORY/scripts/construct.cjs verify --run RUN --candidate v001
+node SKILL_DIRECTORY/scripts/construct.cjs start --task TASK.json --title "Official 3D rotation construction"
+node SKILL_DIRECTORY/scripts/construct.cjs read --run RUN --file SKILL_DIRECTORY/references/cases.md
 ```
 
-Verification reads the saved structural candidate and recomputes equivalence, answer polarity, final labels, uniqueness, per-option witnesses and rendering contract. It does not trust constructor operation labels. See `scripts/solve.cjs`; `scripts/model.cjs` uses a separate construction transform. The adapter report binds the exact specification and tool revision.
+Retain RUN. For an existing active run, explicitly `resume --run RUN --task TASK.json`. Read the relevant packaged JSON through `read`, and directly inspect its original PNG. The JSON/PNG resources are included in the installed skill. Record source findings and design choices with `note --run RUN --file NOTE.json` using goal, sources, change, reason and expectedChecks. Do not present unwrapped commands as recorder-observed work.
 
-Open the final SVG at full size or rasterize it with a browser and inspect the PNG. Check labels A-C, D text, uncut geometry, consistent scale, readable details and the actual distinguishing evidence for each option. Compare the two views with every z layer. Layer origin is bottom left, x increases right and y increases up; z increases from left to right. Verify no layer is clipped or missing. The complete-layer round-trip check proves encoding coverage, not human legibility. Do not accept hidden differences on the strength of the 3D solver alone.
+## Supported inputs
+
+Use `{"count":8,"polarity":"can"}` or `{"count":9,"polarity":"cannot"}`. Default `sourceMode` is `controlled-coordinates`: the adapter proposes new face-connected coordinates, and passes them to the official cube creation, compound, rotation, removal and FreeCAD rendering functions. Optional `cubes` supplies complete integer coordinates. Originals support 5–16 cubes within six positions per axis; an official removal can leave four cubes. These are local validation bounds, not official rules.
+
+`sourceMode:"upstream-random"` retains the upstream placement algorithm with local connectivity fixes; optional `spaceSize:[3,3,2]` and `cubeRange:[8,10]` expose its defaults. It may exhaust bounded rejection sampling. The can mode selects one proper rotation, a verified image mirror and a removed-cube option. The cannot mode selects the removed-cube model and two proper rotations. Add/move edits from the previous JS generator are not exposed by this official adapter.
+
+Use only the official single isometric view of each object in the task image. No paired views or layer diagrams. Enumerate the 24 determinant-positive lattice rotations after translation normalization. Every displayed cube must have a fully visible face, checked by projected-face occlusion and actual image inspection. Reject disconnected removals and rotation-equivalent mirrors. The official vertical screen flip is not lattice-preserving at this camera and is rejected; horizontal flips are interpreted using the actual camera reflection matrix. A single view cannot establish uniqueness for unrestricted unseen geometry: the task explicitly states the full-face visibility condition.
+
+A, B and C are graphical options. D is the text `All three other options are incorrect`, meaning no A-C option satisfies the current question. Exactly one A-C answer is required; D-answer tasks are outside this release. All seeds must be safe integers. The controller bounds both object generation and option resampling and preserves rejected output. A proposed operation alone never establishes a distractor's validity.
+
+## Generate, validate and inspect
+
+Write the chosen parameters to PARAMETERS.json:
 
 ```text
-node SKILL_DIRECTORY/scripts/construct.cjs review --run RUN --candidate v001 --outcome passed --review "Actual visual findings for this exact candidate"
+node SKILL_DIRECTORY/scripts/construct.cjs generate --run RUN --task TASK.json --seed 81 --params PARAMETERS.json
+node SKILL_DIRECTORY/scripts/construct.cjs render --run RUN --candidate VERSION
+node SKILL_DIRECTORY/scripts/construct.cjs verify --run RUN --candidate VERSION
 ```
 
-Do not record a passed visual review without inspecting the image. Preserve failed versions. Edit TASK.json, save a new candidate with `save --run RUN --task TASK.json --parent v001 --basis "Specific correction"`, then render, verify and visually review that new version. For an intentional change to geometry or option order, recompute the answer using the domain solver rather than editing labels by hand. Reports for old versions do not validate new bytes.
+Use the returned VERSION: rejected fully composited candidates may precede it. The bridge invokes the official modeling script inside FreeCAD, captures actual document geometry and camera at each render, and executes the official `generate_data.py` dispatch and compositor. The shared run records the actual command. The independent verifier recomputes rotation relations, question polarity, answer uniqueness, labels, per-option explanations, connectivity, model-to-pixel correspondence, actual crop/rotation/flip operations and final composite pixels. Verifier identity covers local runtime source, vendored source and font bytes.
 
-## Deliver through the existing workflow
+Open the exact final PNG at full size. Inspect Original/A/B/C labels, clear and complete geometry, red markers or cube faces, and visible evidence for each answer relation. D remains text in the task interface, matching the official layout. No internal auxiliary image may replace this final-image inspection.
+
+```text
+node SKILL_DIRECTORY/scripts/construct.cjs review --run RUN --candidate VERSION --outcome passed --review "Specific findings from the actual PNG"
+```
+
+Record a failed review if the image is ambiguous and generate a new candidate in the same run using `--parent VERSION --basis "Specific correction"`. Retain rejected versions and their reports. Do not hand-edit an answer or label to fit the intended result. Re-run verification and visual review for revised bytes.
+
+## Deliver
 
 ```text
 node SKILL_DIRECTORY/scripts/construct.cjs finish --run RUN --candidate VERSION --task TASK.json
 ```
 
-The normal completion seals the run, verifies exact evidence, registers the task in the common catalog, publishes to the authorized library and checks deployment. Honor explicit `--local-only` or `--prepare-only` requests. Never reopen a sealed run. Return task, skill and process URLs and actual test results. Deliver the SVG, exact JSON, answer and A-D explanations, independent verification report, candidate history and available usage evidence. The publisher requires a passed visual review for the final candidate of this skill.
-
-For implementation changes and regression commands, read `MAINTENANCE.md`. Reads or commands outside the bridge remain outside automatic recorder coverage and must not be described as fully observed.
+The existing publisher seals, registers, checks, publishes and observes Pages deployment; honor explicit local-only or prepare-only requests. A sealed run cannot reopen. Deliver the PNG, exact task JSON (including raw render images, model/camera data, source/adaptation receipts and CAD snapshot), answers, independent verification and build-process links. Usage is passive current-session evidence with coverage limitations. Preserve historical JS/SVG cases and their original links and generation labels. See `MAINTENANCE.md` before implementation changes.

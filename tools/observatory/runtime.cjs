@@ -94,7 +94,8 @@ function execute(dir, command, args = [], {candidateId = null, cwd = ROOT, kind 
 function render(dir, id, adapter) {
   active(dir); const c = candidate(dir,id), actionId = crypto.randomUUID();
   event(dir,'render.started',{renderer:adapter.identity}, {actionId,candidateId:id});
-  const bytes = adapter.render(read(path.join(dir,c.specPath))), file = path.join(dir,'artifacts',`${id}-${sha(bytes)}.svg`); if(!fs.existsSync(file)) fs.writeFileSync(file, bytes, {flag:'wx'});
+  const extension=adapter.imageFormat?.extension || 'svg'; if(!['png','svg'].includes(extension))throw Error('Unsupported preview format');
+  const bytes = adapter.render(read(path.join(dir,c.specPath))), file = path.join(dir,'artifacts',`${id}-${sha(bytes)}.${extension}`); if(!fs.existsSync(file)) fs.writeFileSync(file, bytes, {flag:'wx'});
   const ref = path.relative(dir,file).replaceAll('\\','/');
   const details = {sha256:sha(bytes), specification:c.sha256, rendering:c.fingerprints.rendering, renderer:adapter.identity, artifactPath:ref};
   event(dir,'render.completed',details,{actionId,candidateId:id,evidenceRefs:[ref]}); return details;

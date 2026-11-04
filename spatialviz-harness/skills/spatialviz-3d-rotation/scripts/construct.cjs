@@ -7,7 +7,7 @@ if(!root)throw Error('Install this package using the library tools/install.cjs c
 const forwarded=process.argv.slice(2),command=forwarded[0];
 if(['generate','render','verify'].includes(command)){
  if(forwarded.includes('--adapter'))throw Error('This skill selects its own domain adapter.');
- forwarded.push('--adapter','rotation-3d');
+ forwarded.push('--adapter','official-rotation-3d');
 }
 if(command==='start'&&!forwarded.includes('--harness'))forwarded.push('--harness','spatialviz-harness');
 if(['start','finish'].includes(command)&&!forwarded.includes('--skill'))forwarded.push('--skill',path.resolve(__dirname,'..'));

@@ -1,0 +1,172 @@
+{
+  "id": "t001",
+  "actionId": "79b137c8-90e7-4ccf-ba9c-faf83952a478",
+  "candidateId": "v001",
+  "testedFingerprints": {
+    "specification": "1ffc3acd58a1ff99886e687dc9f8970d1e02135e7ad48e7852486681b01589c3",
+    "geometry": "bd20c9d6f261c8f49db051aed1736abec7a31fd2b29a336a9f85e6eb786caca5",
+    "question": "b56a8cafd9cfbec8237b784847e877aa859b1e676eb3b5250a05177816c6655b",
+    "options": "bd6fd33ca3704edca7c8657080c30ad835522fd896e81bd751f412ca17c06420",
+    "answer": "a67f52840143e057438ddb0b742279d90ad662afa0d0a5b59327549f8307800b",
+    "contract": "58655f62a41d60bfdccfb2bb87b2b8ed2334e7ce074c54ec4da5f989253d5b4d",
+    "rendering": "1d4e69072dd5c091a338bbe9228dd6c885ec1241016d895d054d15d0ca9469d1",
+    "generator": "afa21b57ccb71badcbe332f6f2ccee39119d868ad800c665c0f6b433acc8098b"
+  },
+  "verifier": {
+    "id": "spatialviz-official-2d-rotation",
+    "revision": "26e6f34800be39437be0f705831d54918ae1f8244205f9c63b6f20247396673b"
+  },
+  "reportSha256": "0077817bb7666afc598fd2cd0b543aa705e39075e7bd0ab579765bc13b97781e",
+  "verdict": "passed",
+  "status": "passed",
+  "checks": [
+    {
+      "name": "Supported dimensionality and polarity",
+      "verdict": "passed"
+    },
+    {
+      "name": "Original and A-C in final compositor order",
+      "verdict": "passed"
+    },
+    {
+      "name": "Official annotation has A-C plus requested text D",
+      "verdict": "passed"
+    },
+    {
+      "name": "Exact supported question and single-view contract",
+      "verdict": "passed"
+    },
+    {
+      "name": "Official dispatch wording agrees with the delivered question",
+      "verdict": "passed"
+    },
+    {
+      "name": "Pinned official source and actual FreeCAD version are recorded",
+      "verdict": "passed"
+    },
+    {
+      "name": "Model, utilities and official dispatch adaptation receipts",
+      "verdict": "passed"
+    },
+    {
+      "name": "Question wording agrees with polarity",
+      "verdict": "passed"
+    },
+    {
+      "name": "Valid decorated grids or unique face-connected unit cubes",
+      "verdict": "passed"
+    },
+    {
+      "name": "Independent rotation group yields exactly one A-C answer",
+      "verdict": "passed",
+      "detail": "[0]"
+    },
+    {
+      "name": "Official output label agrees with independent answer",
+      "verdict": "passed"
+    },
+    {
+      "name": "Final answer and all explanations are independently reproducible",
+      "verdict": "passed"
+    },
+    {
+      "name": "No duplicate displayed structural options",
+      "verdict": "passed"
+    },
+    {
+      "name": "Original supported settled orthographic camera",
+      "verdict": "passed"
+    },
+    {
+      "name": "Original only traced official image operations",
+      "verdict": "passed"
+    },
+    {
+      "name": "Original structure follows actual image transforms",
+      "verdict": "passed"
+    },
+    {
+      "name": "Original pixels exactly replay official crop/rotation/reflection",
+      "verdict": "passed"
+    },
+    {
+      "name": "A supported settled orthographic camera",
+      "verdict": "passed"
+    },
+    {
+      "name": "A only traced official image operations",
+      "verdict": "passed"
+    },
+    {
+      "name": "A structure follows actual image transforms",
+      "verdict": "passed"
+    },
+    {
+      "name": "A pixels exactly replay official crop/rotation/reflection",
+      "verdict": "passed"
+    },
+    {
+      "name": "B supported settled orthographic camera",
+      "verdict": "passed"
+    },
+    {
+      "name": "B only traced official image operations",
+      "verdict": "passed"
+    },
+    {
+      "name": "B structure follows actual image transforms",
+      "verdict": "passed"
+    },
+    {
+      "name": "B pixels exactly replay official crop/rotation/reflection",
+      "verdict": "passed"
+    },
+    {
+      "name": "C supported settled orthographic camera",
+      "verdict": "passed"
+    },
+    {
+      "name": "C only traced official image operations",
+      "verdict": "passed"
+    },
+    {
+      "name": "C structure follows actual image transforms",
+      "verdict": "passed"
+    },
+    {
+      "name": "C pixels exactly replay official crop/rotation/reflection",
+      "verdict": "passed"
+    },
+    {
+      "name": "FreeCAD model-to-pixel correspondence: grid_top_left_incorrect_transform.png",
+      "verdict": "passed",
+      "detail": "{'passed': True, 'errors': [], 'minimumCellPixels': 212.94089361768937}"
+    },
+    {
+      "name": "FreeCAD model-to-pixel correspondence: grid_top_left.png",
+      "verdict": "passed",
+      "detail": "{'passed': True, 'errors': [], 'minimumCellPixels': 212.94089361768937}"
+    },
+    {
+      "name": "A-C panels have distinct pixel arrays",
+      "verdict": "passed"
+    },
+    {
+      "name": "Final PNG exactly matches independent reconstruction of official layout and labels",
+      "verdict": "passed"
+    },
+    {
+      "name": "Delivered labels, structure and final rendering agree",
+      "verdict": "passed"
+    },
+    {
+      "name": "Exact current official adapter revision and dimension",
+      "verdict": "passed"
+    }
+  ],
+  "scope": "Independent four/24-rotation geometry, label/polarity uniqueness, connectivity, FreeCAD geometry-to-pixel correspondence, exact image-operation and compositor replay, full-face visibility and visible non-equivalence. Human visual review is additionally required; no universal single-view reconstruction or difficulty claim.",
+  "commandExitStatus": 0,
+  "binding": "exact",
+  "bindingBasis": "exact candidate and full input fingerprints",
+  "commandEventId": "e000013"
+}

@@ -5,17 +5,17 @@
   "name": "3D Rotation",
   "harnessId": "spatialviz-harness",
   "status": "complete",
-  "adapter": "rotation-3d",
+  "adapter": "official-rotation-3d",
   "requiresVisualReview": true,
-  "description": "Construct connected lattice-cube models with can/cannot questions, proper spatial rotations, paired views and complete layers.",
+  "description": "Construct can/cannot single-view cube rotation questions through the official FreeCAD pipeline, with independent geometry and pixel validation.",
   "officialReferences": [
     "spatialviz-bench:vqa:MentalRotation:3DRotation:Level0:0-3-3-1-5",
     "spatialviz-bench:vqa:MentalRotation:3DRotation:Level1:0-3-2-2-5"
   ],
   "steps": [
-    "Inspect packaged official evidence",
-    "Generate seeded structural candidates",
-    "Independently solve every option",
-    "Inspect the final diagram and publish"
+    "Read official evidence in the shared run",
+    "Build and render in the FreeCAD application",
+    "Compose through official generate_data",
+    "Independently verify pixels and geometry, visually inspect, then publish"
   ]
 }

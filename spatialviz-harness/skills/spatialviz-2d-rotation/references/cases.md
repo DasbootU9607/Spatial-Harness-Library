@@ -26,6 +26,10 @@ Visual inspection: A, B and C are visibly distinct. The original's top-left hori
 
 Derived rules: generate local orientation errors and corner displacement separately, and then verify the entire decorated grid. Reject swaps of identical cells, rotations of symmetric motifs that change nothing, equivalent mirrors, and duplicate displays. References motivate the family; they do not restrict generation to these six cells, this dot vocabulary or these answer positions.
 
+## Current generator and historical implementation
+
+The default now uses the actual official FreeCAD and composition pipeline. See `official-pipeline.md`. Earlier JS/SVG generator rules below are historical design analysis; only the supported inputs in SKILL.md apply to the new default. Packaged official annotations and PNGs remain byte-identical.
+
 ## Provenance boundary
 
-All five source fields (sourceId, original annotation, annotation hash, dataset revision, code revision) remain in each JSON. This package proposes its own seeded palette/motif generator, bounded dimensions, independent matrix solver, SVG layout and validation requirements. Those implementation choices are not claims about the official generator. Official Level0/Level1 are source metadata only.
+All five source fields (sourceId, original annotation, annotation hash, dataset revision, code revision) remain in each JSON. The earlier JS/SVG adapter proposed its own seeded palette/motif generator, bounds and SVG layout. Those historical implementation choices are not official-generator facts. The current official pipeline and its separately documented local patches are described in `official-pipeline.md`. Official Level0/Level1 are source metadata only.

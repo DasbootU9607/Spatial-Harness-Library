@@ -49,6 +49,7 @@ jobs:
       - name: Verify shared schemas, evidence and immutable publication
         working-directory: .
         run: |
+          python -m pip install -r spatialviz-harness/official-rotation/requirements.txt
           node tools/check.cjs
           node --test tools/observatory/tests/*.test.cjs
       - name: Install browser checks

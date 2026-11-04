@@ -1,60 +1,57 @@
 ---
 name: spatialviz-2d-rotation
-description: Construct, render, independently verify and publish new 2D rotation questions from seeded parameters using the Spatial Harness recorder. For question authoring, not model evaluation.
+description: Author new 2D rotation questions through SpatialViz-Bench's actual FreeCAD modeling and official image-composition pipeline, with independent geometry and pixel validation, recorded revisions and publication.
 ---
 
 # SpatialViz 2D Rotation
 
-Build actual new tasks, not copies of the reference questions. Preserve the official question identities and original difficulty annotations only in references. Generated tasks are unranked. Keep maintained files and generated task text in English.
+Create new unranked questions. Default to the pinned official FreeCAD pipeline; never silently substitute the legacy JavaScript/SVG generator or reuse official question images. Keep maintained instructions and generated questions in English. Original annotations remain unchanged in packaged references.
 
-## Start recording before reference use
+## Prepare and record
 
-Run this package's bridge from any working directory, using its actual absolute path. The installed package needs the shared library checkout bound by `tools/install.cjs`; it has no separate recorder or publisher.
+Keep the shared library checkout available. Installed packages bind to it through `node tools/install.cjs --harness spatialviz-harness --destination EMPTY_DIRECTORY`. Read `references/official-pipeline.md` for actual dependencies, source version, patches and limits. A real FreeCAD GUI application is required; host Python cannot import its GUI modules. Set `SPATIALVIZ_FREECAD` to the executable and install the host dependencies described there. Failure to launch or render is a concrete blocker, not permission to switch renderers.
 
-```text
-node SKILL_DIRECTORY/scripts/construct.cjs start --task TASK.json --title "2D rotation construction"
-```
-
-Retain the returned run directory. Before reading task-specific references, explicitly start or `resume --run RUN --task TASK.json`. Read `references/cases.md` and the relevant packaged JSON using `read --run RUN --file FILE`. Open the matching original PNG directly with the available image viewer, and record the delivered image and actual findings in the run. The original PNGs and full official annotations travel with this package. Read the limitations and fact/rule distinction in `references/cases.md`.
-
-Use `note --run RUN --file NOTE.json` for public `goal`, `sources`, `change`, `reason`, and `expectedChecks`. Record concise design decisions, not private reasoning. Passive usage capture retains the current client/model and reports missing coverage honestly; never launch or change a model just to collect usage.
-
-## Supported construction
-
-Rows and columns independently range from 2 to 5. `mode` is `colored` or `patterned`. Colored cells use a five-color palette; patterned cells use directional dot sets or filled triangles. Arbitrary images, custom palettes, line motifs, free-angle rotation and D-answer tasks are not supported. The independent solver nevertheless includes the identity rotation.
-
-Parameters: `{"rows":3,"cols":2,"mode":"colored","distractors":["mirror","swap"]}`. Exactly two distractor methods are required. Supported methods: `mirror`, `swap`, `orientation` (patterned only), `marker`. Use `{"rows":2,"cols":4,"mode":"patterned","distractors":["orientation","marker"]}` to exercise directional geometry. A method is only a proposal: reject any result that is still rotation equivalent or duplicates a displayed option.
-
-All seeds must be safe integers. Variation changes geometry, poses, edits and option order. A, B and C are the three graphical choices. D is the text `All three other options are incorrect`: none of A-C satisfies the current question. Exactly one A-C choice must qualify. D is never the correct answer in this version. Reject duplicate displayed options and multiple or zero qualifying choices.
-
-Use screen coordinates: x right, y down. One clockwise turn maps `(x,y)` to `(-y,x)` before translating the grid bounds to zero. Rotate cell centers, local motif coordinates and boundary-corner coordinates together. A quarter-turn exchanges rows and columns. Match actual point/edge geometry, not motif names or generation labels. Dots are unordered; closed polygon edges are invariant to vertex start and traversal direction.
-
-## Construct, inspect and revise
-
-Write parameters to a JSON file, then use the shared interface:
+Use this package's bridge (substitute absolute paths). Start before task-specific reference reads or generation:
 
 ```text
-node SKILL_DIRECTORY/scripts/construct.cjs generate --run RUN --task TASK.json --seed 71 --params PARAMETERS.json
-node SKILL_DIRECTORY/scripts/construct.cjs render --run RUN --candidate v001
-node SKILL_DIRECTORY/scripts/construct.cjs verify --run RUN --candidate v001
+node SKILL_DIRECTORY/scripts/construct.cjs start --task TASK.json --title "Official 2D rotation construction"
+node SKILL_DIRECTORY/scripts/construct.cjs read --run RUN --file SKILL_DIRECTORY/references/cases.md
 ```
 
-Verification reads the saved structural candidate and recomputes equivalence, answer polarity, final labels, uniqueness, per-option witnesses and rendering contract. It does not trust constructor operation labels. See `scripts/solve.cjs`; `scripts/model.cjs` uses a separate construction transform. The adapter report binds the exact specification and tool revision.
+Retain RUN. For an existing active run, explicitly `resume --run RUN --task TASK.json`. Read the relevant packaged JSON through `read`, and directly inspect its original PNG. The JSON/PNG resources are included in the installed skill. Record source findings and design choices with `note --run RUN --file NOTE.json` using goal, sources, change, reason and expectedChecks. Do not present unwrapped commands as recorder-observed work.
 
-Open the final SVG at full size or rasterize it with a browser and inspect the PNG. Check labels A-C, D text, uncut geometry, consistent scale, readable details and the actual distinguishing evidence for each option. Inspect every motif direction and corner; do not treat a motif identifier as visible proof.
+## Supported inputs
+
+Use `{"rows":3,"cols":2,"mode":"colored"}` or `{"rows":3,"cols":2,"mode":"patterned"}`. Optional `matrix` is a rows-by-cols binary placement mask; upstream selects the colors or dot textures and the red corner. Rows and columns each support 1–8, with at least four cells. These are tested adapter bounds, not benchmark rules. The six-color upstream palette and six local dot textures are supported. The official compositor proposes rotated image mirrors and, when available, a separately rendered local-pattern orientation error. It does not expose the legacy swap or marker-displacement methods.
+
+Rotate all cell positions, internal dot geometry and the red corner together; quarter-turns exchange row and column counts. The independent solver enumerates all four orientations including identity. Match point geometry rather than pattern IDs. Equivalent mirrors and duplicate displays are rejected. Arbitrary textures, polygons, custom palettes and non-right-angle rotations are outside this adapter's supported scope.
+
+A, B and C are graphical options. D is the text `All three other options are incorrect`, meaning no A-C option satisfies the current question. Exactly one A-C answer is required; D-answer tasks are outside this release. All seeds must be safe integers. The controller bounds both object generation and option resampling and preserves rejected output. A proposed operation alone never establishes a distractor's validity.
+
+## Generate, validate and inspect
+
+Write the chosen parameters to PARAMETERS.json:
 
 ```text
-node SKILL_DIRECTORY/scripts/construct.cjs review --run RUN --candidate v001 --outcome passed --review "Actual visual findings for this exact candidate"
+node SKILL_DIRECTORY/scripts/construct.cjs generate --run RUN --task TASK.json --seed 81 --params PARAMETERS.json
+node SKILL_DIRECTORY/scripts/construct.cjs render --run RUN --candidate VERSION
+node SKILL_DIRECTORY/scripts/construct.cjs verify --run RUN --candidate VERSION
 ```
 
-Do not record a passed visual review without inspecting the image. Preserve failed versions. Edit TASK.json, save a new candidate with `save --run RUN --task TASK.json --parent v001 --basis "Specific correction"`, then render, verify and visually review that new version. For an intentional change to geometry or option order, recompute the answer using the domain solver rather than editing labels by hand. Reports for old versions do not validate new bytes.
+Use the returned VERSION: rejected fully composited candidates may precede it. The bridge invokes the official modeling script inside FreeCAD, captures actual document geometry and camera at each render, and executes the official `generate_data.py` dispatch and compositor. The shared run records the actual command. The independent verifier recomputes rotation relations, question polarity, answer uniqueness, labels, per-option explanations, connectivity, model-to-pixel correspondence, actual crop/rotation/flip operations and final composite pixels. Verifier identity covers local runtime source, vendored source and font bytes.
 
-## Deliver through the existing workflow
+Open the exact final PNG at full size. Inspect Original/A/B/C labels, clear and complete geometry, red markers or cube faces, and visible evidence for each answer relation. D remains text in the task interface, matching the official layout. No internal auxiliary image may replace this final-image inspection.
+
+```text
+node SKILL_DIRECTORY/scripts/construct.cjs review --run RUN --candidate VERSION --outcome passed --review "Specific findings from the actual PNG"
+```
+
+Record a failed review if the image is ambiguous and generate a new candidate in the same run using `--parent VERSION --basis "Specific correction"`. Retain rejected versions and their reports. Do not hand-edit an answer or label to fit the intended result. Re-run verification and visual review for revised bytes.
+
+## Deliver
 
 ```text
 node SKILL_DIRECTORY/scripts/construct.cjs finish --run RUN --candidate VERSION --task TASK.json
 ```
 
-The normal completion seals the run, verifies exact evidence, registers the task in the common catalog, publishes to the authorized library and checks deployment. Honor explicit `--local-only` or `--prepare-only` requests. Never reopen a sealed run. Return task, skill and process URLs and actual test results. Deliver the SVG, exact JSON, answer and A-D explanations, independent verification report, candidate history and available usage evidence. The publisher requires a passed visual review for the final candidate of this skill.
-
-For implementation changes and regression commands, read `MAINTENANCE.md`. Reads or commands outside the bridge remain outside automatic recorder coverage and must not be described as fully observed.
+The existing publisher seals, registers, checks, publishes and observes Pages deployment; honor explicit local-only or prepare-only requests. A sealed run cannot reopen. Deliver the PNG, exact task JSON (including raw render images, model/camera data, source/adaptation receipts and CAD snapshot), answers, independent verification and build-process links. Usage is passive current-session evidence with coverage limitations. Preserve historical JS/SVG cases and their original links and generation labels. See `MAINTENANCE.md` before implementation changes.

@@ -1,4 +1,10 @@
-# Formal rotation construction skills
+# Rotation construction skills
+
+The default two skills now run the actual official FreeCAD and image-composition pipeline. See [integration and limitations](../spatialviz-harness/official-rotation/README.md) and each current SKILL.md for setup and parameters. New official-pipeline examples are listed in `official-rotation-examples.md`.
+
+## Historical JavaScript/SVG implementation
+
+The following describes the first published batch. These immutable cases and their links remain available. Their bounds, SVG renderer and paired-view/layer presentation are historical, not the current default.
 
 Two independent packages extend the shared SpatialViz authoring workflow:
 

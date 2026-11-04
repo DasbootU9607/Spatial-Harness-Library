@@ -473,6 +473,384 @@
       },
       "process": "records/authored-fe43c745dcc327aa423dc573/process.json",
       "eventsCsv": "records/authored-fe43c745dcc327aa423dc573/events.csv"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "authored-0dd9dde74dafe28bbfdc8e59",
+      "harnessId": "spatialviz-harness",
+      "skillIds": [
+        "3d-rotation"
+      ],
+      "sourceKind": "agent-authored",
+      "sourceCaseIds": [
+        "spatialviz-bench:vqa:MentalRotation:3DRotation:Level0:0-3-3-1-5",
+        "spatialviz-bench:vqa:MentalRotation:3DRotation:Level1:0-3-2-2-5"
+      ],
+      "category": "MentalRotation",
+      "taskType": "3d-rotation",
+      "difficulty": {
+        "label": "Unranked",
+        "basis": "No human calibration; official difficulty levels are not inherited."
+      },
+      "title": "3D rotation / cannot / official FreeCAD",
+      "description": "New construction through the pinned official FreeCAD modeling and image-composition pipeline.",
+      "contentSha256": "0dd9dde74dafe28bbfdc8e59982ef836b66f9bcb9826341e0db7dfb7eaaa536d",
+      "thumbnail": "records/authored-0dd9dde74dafe28bbfdc8e59/v148-7c80a37d86b65f85.png",
+      "taskArtifact": "records/authored-0dd9dde74dafe28bbfdc8e59/task.json",
+      "verification": {
+        "verdict": "passed",
+        "candidateId": "v148",
+        "fingerprints": {
+          "specification": "0dd9dde74dafe28bbfdc8e59982ef836b66f9bcb9826341e0db7dfb7eaaa536d",
+          "geometry": "096849d7adbc6b065640d76ace9563cfcad42072cab68a0bb0032baf925dd998",
+          "question": "a0b8fff2315950742f565a76ab80c5dfaddd059beb813ac45691a314babb2a71",
+          "options": "af971a438b610355509c07d49707651e8339d2bbae76e732f5c5a1afe7ef80e5",
+          "answer": "b356ef91dcc2efe72caa84e44db92b27abc417fd5a6fdb2133869a2354fa6700",
+          "contract": "3afca890523207fdcc3ae4e2c90f4b5e5b7ef8733c884d618d753fa8add5d029",
+          "rendering": "3ab5588d7971ff7c8f82c8ee4cddba71301a3c82e3006a36bd328246947cb090",
+          "generator": "87405dc9771dbc0519155083fb5e1c483650fc5d32a5438d7afbc5d6e322b24f"
+        },
+        "report": "records/authored-0dd9dde74dafe28bbfdc8e59/verification.json"
+      },
+      "build": {
+        "runId": "build-2be3c811-f982-4506-ad20-f5ff2738f615",
+        "candidateId": "v148",
+        "usage": {
+          "schemaVersion": 2,
+          "runId": "build-2be3c811-f982-4506-ad20-f5ff2738f615",
+          "source": "codex",
+          "runtime": "Codex Desktop",
+          "status": "measured",
+          "startedAt": "2026-11-04T06:58:20.532Z",
+          "finishedAt": "2026-11-04T07:08:51.694Z",
+          "lastObservedAt": "2026-11-04T07:08:39.181Z",
+          "elapsedMs": 631174,
+          "elapsedKind": "wall-clock",
+          "scope": "Runtime-reported usage between the start baseline and finish snapshot of this session. In-flight or delayed usage, earlier conversation, other agents and later delivery are excluded. This is an observed interval, not a complete billed task total.",
+          "scopeComplete": false,
+          "observedTokens": {
+            "input_tokens": 3639614,
+            "cached_input_tokens": 3615872,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 15017,
+            "reasoning_output_tokens": 8663,
+            "total_tokens": 3654631
+          },
+          "tokens": {
+            "input_tokens": null,
+            "cached_input_tokens": null,
+            "cache_write_input_tokens": null,
+            "output_tokens": null,
+            "reasoning_output_tokens": null,
+            "total_tokens": null
+          },
+          "models": [
+            {
+              "provider": "openai",
+              "model": "gpt-6-astra",
+              "reasoningEffort": "xhigh",
+              "tokens": {
+                "input_tokens": 3639614,
+                "cached_input_tokens": 3615872,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 15017,
+                "reasoning_output_tokens": 8663,
+                "total_tokens": 3654631
+              },
+              "observations": 23
+            }
+          ],
+          "missingFields": [],
+          "issues": [],
+          "observations": 23
+        }
+      },
+      "process": "records/authored-0dd9dde74dafe28bbfdc8e59/process.json",
+      "eventsCsv": "records/authored-0dd9dde74dafe28bbfdc8e59/events.csv"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "authored-f79db8d6a2473b80ac1a9005",
+      "harnessId": "spatialviz-harness",
+      "skillIds": [
+        "3d-rotation"
+      ],
+      "sourceKind": "agent-authored",
+      "sourceCaseIds": [
+        "spatialviz-bench:vqa:MentalRotation:3DRotation:Level0:0-3-3-1-5",
+        "spatialviz-bench:vqa:MentalRotation:3DRotation:Level1:0-3-2-2-5"
+      ],
+      "category": "MentalRotation",
+      "taskType": "3d-rotation",
+      "difficulty": {
+        "label": "Unranked",
+        "basis": "No human calibration; official difficulty levels are not inherited."
+      },
+      "title": "3D rotation / can / official FreeCAD",
+      "description": "New construction through the pinned official FreeCAD modeling and image-composition pipeline.",
+      "contentSha256": "f79db8d6a2473b80ac1a9005cbd9ae41eda5d8e84c624da9c42d283106167f27",
+      "thumbnail": "records/authored-f79db8d6a2473b80ac1a9005/v002-9bbc8822c5d87aa8.png",
+      "taskArtifact": "records/authored-f79db8d6a2473b80ac1a9005/task.json",
+      "verification": {
+        "verdict": "passed",
+        "candidateId": "v002",
+        "fingerprints": {
+          "specification": "f79db8d6a2473b80ac1a9005cbd9ae41eda5d8e84c624da9c42d283106167f27",
+          "geometry": "ecb980d6f2022911c459cb402074b6e6bc7b6bc1308e04ebe7766d1684627893",
+          "question": "e74665088b8af5cfe63420b6c84020a97deee40f195082e891f88650056c4c9e",
+          "options": "5c5fc2d4a9bfdba12755f19a01ebdbfdea71703c027254141a90d166e3270070",
+          "answer": "00cb0dd6aef222b04d28e9206115958f61d85e02483fbd5d178d8cc8b91a5534",
+          "contract": "3afca890523207fdcc3ae4e2c90f4b5e5b7ef8733c884d618d753fa8add5d029",
+          "rendering": "8aa1794276292fba07ff1096408048ad17fa5689c8242a316c0b4410d814a57c",
+          "generator": "d08d68fff0008d20a9ef3c5ce930cc1b414d582bd74774bf5490bafd105271d2"
+        },
+        "report": "records/authored-f79db8d6a2473b80ac1a9005/verification.json"
+      },
+      "build": {
+        "runId": "build-eb78b02f-19ba-4fda-8fd9-88919395fb20",
+        "candidateId": "v002",
+        "usage": {
+          "schemaVersion": 2,
+          "runId": "build-eb78b02f-19ba-4fda-8fd9-88919395fb20",
+          "source": "codex",
+          "runtime": "Codex Desktop",
+          "status": "measured",
+          "startedAt": "2026-11-04T07:08:58.809Z",
+          "finishedAt": "2026-11-04T07:10:16.499Z",
+          "lastObservedAt": "2026-11-04T07:10:02.854Z",
+          "elapsedMs": 77703,
+          "elapsedKind": "wall-clock",
+          "scope": "Runtime-reported usage between the start baseline and finish snapshot of this session. In-flight or delayed usage, earlier conversation, other agents and later delivery are excluded. This is an observed interval, not a complete billed task total.",
+          "scopeComplete": false,
+          "observedTokens": {
+            "input_tokens": 537745,
+            "cached_input_tokens": 531712,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 1861,
+            "reasoning_output_tokens": 1101,
+            "total_tokens": 539606
+          },
+          "tokens": {
+            "input_tokens": null,
+            "cached_input_tokens": null,
+            "cache_write_input_tokens": null,
+            "output_tokens": null,
+            "reasoning_output_tokens": null,
+            "total_tokens": null
+          },
+          "models": [
+            {
+              "provider": "openai",
+              "model": "gpt-6-astra",
+              "reasoningEffort": "xhigh",
+              "tokens": {
+                "input_tokens": 537745,
+                "cached_input_tokens": 531712,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 1861,
+                "reasoning_output_tokens": 1101,
+                "total_tokens": 539606
+              },
+              "observations": 3
+            }
+          ],
+          "missingFields": [],
+          "issues": [],
+          "observations": 3
+        }
+      },
+      "process": "records/authored-f79db8d6a2473b80ac1a9005/process.json",
+      "eventsCsv": "records/authored-f79db8d6a2473b80ac1a9005/events.csv"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "authored-b951b5f3f5b0adbf7edb6ef8",
+      "harnessId": "spatialviz-harness",
+      "skillIds": [
+        "2d-rotation"
+      ],
+      "sourceKind": "agent-authored",
+      "sourceCaseIds": [
+        "spatialviz-bench:vqa:MentalRotation:2DRotation:Level0:0-2-3",
+        "spatialviz-bench:vqa:MentalRotation:2DRotation:Level1:0-2-3",
+        "spatialviz-bench:vqa:MentalRotation:2DRotation:Level1:1-2-3"
+      ],
+      "category": "MentalRotation",
+      "taskType": "2d-rotation",
+      "difficulty": {
+        "label": "Unranked",
+        "basis": "No human calibration; official difficulty levels are not inherited."
+      },
+      "title": "2D rotation / colored / official FreeCAD",
+      "description": "New construction through the pinned official FreeCAD modeling and image-composition pipeline.",
+      "contentSha256": "b951b5f3f5b0adbf7edb6ef87d67d8c79a7096f3ea21eda75fc278a5e8428d10",
+      "thumbnail": "records/authored-b951b5f3f5b0adbf7edb6ef8/v001-6fa64e4d77bb94cb.png",
+      "taskArtifact": "records/authored-b951b5f3f5b0adbf7edb6ef8/task.json",
+      "verification": {
+        "verdict": "passed",
+        "candidateId": "v001",
+        "fingerprints": {
+          "specification": "b951b5f3f5b0adbf7edb6ef87d67d8c79a7096f3ea21eda75fc278a5e8428d10",
+          "geometry": "14254d8c97861b58e6a956a2ea23ff1a13dfbc23b6ce84f1cd86a01e99eb0edb",
+          "question": "3f836a511a92fd42bf270d38ed6a882277acddfa87b751c527617dec9da147a8",
+          "options": "52e48d7e67fd35bbd18d51d47339833c84a517a2372b1ae02236350767fc3a4e",
+          "answer": "048dd0e85e34972dd3f6716118dd6ff26d0601b0681184b85e7b68fb654493de",
+          "contract": "58655f62a41d60bfdccfb2bb87b2b8ed2334e7ce074c54ec4da5f989253d5b4d",
+          "rendering": "dffaca4e9e17651f509b2e2315f14c56a5b99725fccdc60130676a92d88aa431",
+          "generator": "a70e955fb4c09e69af050d4b6512d186681e00817b111b37a2f2cb86d47bc3d5"
+        },
+        "report": "records/authored-b951b5f3f5b0adbf7edb6ef8/verification.json"
+      },
+      "build": {
+        "runId": "build-7d8ddb2c-3e35-497f-8455-27f3304f00d8",
+        "candidateId": "v001",
+        "usage": {
+          "schemaVersion": 2,
+          "runId": "build-7d8ddb2c-3e35-497f-8455-27f3304f00d8",
+          "source": "codex",
+          "runtime": "Codex Desktop",
+          "status": "measured",
+          "startedAt": "2026-11-04T07:10:18.386Z",
+          "finishedAt": "2026-11-04T07:11:11.784Z",
+          "lastObservedAt": "2026-11-04T07:10:58.776Z",
+          "elapsedMs": 53424,
+          "elapsedKind": "wall-clock",
+          "scope": "Runtime-reported usage between the start baseline and finish snapshot of this session. In-flight or delayed usage, earlier conversation, other agents and later delivery are excluded. This is an observed interval, not a complete billed task total.",
+          "scopeComplete": false,
+          "observedTokens": {
+            "input_tokens": 367586,
+            "cached_input_tokens": 361856,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 1324,
+            "reasoning_output_tokens": 624,
+            "total_tokens": 368910
+          },
+          "tokens": {
+            "input_tokens": null,
+            "cached_input_tokens": null,
+            "cache_write_input_tokens": null,
+            "output_tokens": null,
+            "reasoning_output_tokens": null,
+            "total_tokens": null
+          },
+          "models": [
+            {
+              "provider": "openai",
+              "model": "gpt-6-astra",
+              "reasoningEffort": "xhigh",
+              "tokens": {
+                "input_tokens": 367586,
+                "cached_input_tokens": 361856,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 1324,
+                "reasoning_output_tokens": 624,
+                "total_tokens": 368910
+              },
+              "observations": 2
+            }
+          ],
+          "missingFields": [],
+          "issues": [],
+          "observations": 2
+        }
+      },
+      "process": "records/authored-b951b5f3f5b0adbf7edb6ef8/process.json",
+      "eventsCsv": "records/authored-b951b5f3f5b0adbf7edb6ef8/events.csv"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "authored-1ffc3acd58a1ff99886e687d",
+      "harnessId": "spatialviz-harness",
+      "skillIds": [
+        "2d-rotation"
+      ],
+      "sourceKind": "agent-authored",
+      "sourceCaseIds": [
+        "spatialviz-bench:vqa:MentalRotation:2DRotation:Level0:0-2-3",
+        "spatialviz-bench:vqa:MentalRotation:2DRotation:Level1:0-2-3",
+        "spatialviz-bench:vqa:MentalRotation:2DRotation:Level1:1-2-3"
+      ],
+      "category": "MentalRotation",
+      "taskType": "2d-rotation",
+      "difficulty": {
+        "label": "Unranked",
+        "basis": "No human calibration; official difficulty levels are not inherited."
+      },
+      "title": "2D rotation / patterned / official FreeCAD",
+      "description": "New construction through the pinned official FreeCAD modeling and image-composition pipeline.",
+      "contentSha256": "1ffc3acd58a1ff99886e687dc9f8970d1e02135e7ad48e7852486681b01589c3",
+      "thumbnail": "records/authored-1ffc3acd58a1ff99886e687d/v001-425af22aea25abce.png",
+      "taskArtifact": "records/authored-1ffc3acd58a1ff99886e687d/task.json",
+      "verification": {
+        "verdict": "passed",
+        "candidateId": "v001",
+        "fingerprints": {
+          "specification": "1ffc3acd58a1ff99886e687dc9f8970d1e02135e7ad48e7852486681b01589c3",
+          "geometry": "bd20c9d6f261c8f49db051aed1736abec7a31fd2b29a336a9f85e6eb786caca5",
+          "question": "b56a8cafd9cfbec8237b784847e877aa859b1e676eb3b5250a05177816c6655b",
+          "options": "bd6fd33ca3704edca7c8657080c30ad835522fd896e81bd751f412ca17c06420",
+          "answer": "a67f52840143e057438ddb0b742279d90ad662afa0d0a5b59327549f8307800b",
+          "contract": "58655f62a41d60bfdccfb2bb87b2b8ed2334e7ce074c54ec4da5f989253d5b4d",
+          "rendering": "1d4e69072dd5c091a338bbe9228dd6c885ec1241016d895d054d15d0ca9469d1",
+          "generator": "afa21b57ccb71badcbe332f6f2ccee39119d868ad800c665c0f6b433acc8098b"
+        },
+        "report": "records/authored-1ffc3acd58a1ff99886e687d/verification.json"
+      },
+      "build": {
+        "runId": "build-7b0d6e1e-f947-4fcb-811a-fe1cae80ab3f",
+        "candidateId": "v001",
+        "usage": {
+          "schemaVersion": 2,
+          "runId": "build-7b0d6e1e-f947-4fcb-811a-fe1cae80ab3f",
+          "source": "codex",
+          "runtime": "Codex Desktop",
+          "status": "measured",
+          "startedAt": "2026-11-04T07:11:13.497Z",
+          "finishedAt": "2026-11-04T07:12:44.354Z",
+          "lastObservedAt": "2026-11-04T07:12:31.560Z",
+          "elapsedMs": 90872,
+          "elapsedKind": "wall-clock",
+          "scope": "Runtime-reported usage between the start baseline and finish snapshot of this session. In-flight or delayed usage, earlier conversation, other agents and later delivery are excluded. This is an observed interval, not a complete billed task total.",
+          "scopeComplete": false,
+          "observedTokens": {
+            "input_tokens": 573432,
+            "cached_input_tokens": 568192,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 1824,
+            "reasoning_output_tokens": 1154,
+            "total_tokens": 575256
+          },
+          "tokens": {
+            "input_tokens": null,
+            "cached_input_tokens": null,
+            "cache_write_input_tokens": null,
+            "output_tokens": null,
+            "reasoning_output_tokens": null,
+            "total_tokens": null
+          },
+          "models": [
+            {
+              "provider": "openai",
+              "model": "gpt-6-astra",
+              "reasoningEffort": "xhigh",
+              "tokens": {
+                "input_tokens": 573432,
+                "cached_input_tokens": 568192,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 1824,
+                "reasoning_output_tokens": 1154,
+                "total_tokens": 575256
+              },
+              "observations": 3
+            }
+          ],
+          "missingFields": [],
+          "issues": [],
+          "observations": 3
+        }
+      },
+      "process": "records/authored-1ffc3acd58a1ff99886e687d/process.json",
+      "eventsCsv": "records/authored-1ffc3acd58a1ff99886e687d/events.csv"
     }
   ]
 }
