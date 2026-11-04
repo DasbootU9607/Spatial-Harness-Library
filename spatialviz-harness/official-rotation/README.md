@@ -14,6 +14,8 @@ python -m pip install -r spatialviz-harness/official-rotation/requirements.txt
 
 Use the skill's `scripts/construct.cjs` entrypoint so recording starts before task-specific resources. Direct `generate.py --dimension 2 --seed 81 --params PARAMETERS.json --out NEW_DIRECTORY` is a development entrypoint, not an accepted recorded build. FreeCAD must run in a desktop/application environment. `FreeCADCmd` and importing FreeCADGui into host Python are not substitutes. Each job has an isolated configuration, a 150-second application timeout and retained logs. Generation bounds 12 object attempts and 24 official selection attempts each; unavailable rendering or exhausted sampling stops explicitly.
 
+Exact label-pixel replay currently requires the validated Windows Pillow BASIC font backend (FreeType 2.13.3). Linux Pillow 11.3 wheels enable RAQM and produce different label pixels with the same font; pinning Pillow alone does not remove that difference. CI runs all official geometry/pixel tests on Windows, and retains the existing Linux site/browser/recorder suites. Both jobs gate deployment. Cross-platform label-pixel equivalence is not claimed.
+
 ## Source and adaptations
 
 Upstream: [SpatialViz-Bench](https://github.com/wangst0181/SpatialViz-Bench/tree/c27f9111a2674f2ea03e2ca1f5833326cf1eec1a), MIT, copyright 2025 wangst0181. Eight selected files are byte-preserved under `../vendor/SpatialViz-Bench-c27f9111a267`, with archive and individual hashes in SOURCE.json. Original source and license are distinct from this local adapter. `upstream.py` applies asserted text patches in memory and records original/adapted hashes, reasons and occurrence counts per invocation.

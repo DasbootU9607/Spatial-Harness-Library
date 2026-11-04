@@ -49,9 +49,8 @@ jobs:
       - name: Verify shared schemas, evidence and immutable publication
         working-directory: .
         run: |
-          python -m pip install -r spatialviz-harness/official-rotation/requirements.txt
           node tools/check.cjs
-          node --test tools/observatory/tests/*.test.cjs
+          node --test tools/observatory/tests/runtime.test.cjs tools/observatory/tests/schema.test.cjs tools/observatory/tests/rotation-domains.test.cjs
       - name: Install browser checks
         working-directory: .
         run: |
@@ -65,9 +64,28 @@ jobs:
         uses: actions/upload-pages-artifact@v4
         with:
           path: ${{ runner.temp }}/library-preview/Spatial-Harness-Library
+  official-rotation:
+    runs-on: windows-latest
+    defaults:
+      run:
+        working-directory: .
+        shell: bash
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Replay official output on the validated Windows font backend
+        run: |
+          python -m pip install -r spatialviz-harness/official-rotation/requirements.txt
+          python -c "from PIL import features; print('RAQM:', features.check('raqm'), 'FreeType:', features.version('freetype2'))"
+          node --test tools/observatory/tests/official-rotation.test.cjs
   deploy:
     if: github.event_name != 'pull_request'
-    needs: validate
+    needs: [validate, official-rotation]
     runs-on: ubuntu-latest
     permissions:
       pages: write
