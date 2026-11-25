@@ -30,7 +30,7 @@ try {
       (skills.length?'<p class="harness-summary"><strong>'+skills.length+' skills</strong> · '+e(tokens)+'<br>Models: '+e(models.length?models.join(', '):'Not recorded')+'<small>Recorded build intervals only; '+summary.tokens.coverage+'/'+summary.rows.length+' have token data. Not total billed usage.</small></p>':'<p><span class="upcoming">Upcoming</span></p>')+'<a class="benchmark-source" href="'+e(h.benchmarkUrl||h.source)+'">View '+e(h.benchmark)+' ↗</a></div></article>';
   }).join('');
   let current=0;
-  function alignArrows(){const img=slides.children[current]?.querySelector('img');if(img)document.querySelector('.carousel-stage').style.setProperty('--preview-height',img.getBoundingClientRect().height+'px');}
+  function alignArrows(){const preview=slides.children[current]?.querySelector('.preview-image');if(preview)document.querySelector('.carousel-stage').style.setProperty('--preview-height',preview.getBoundingClientRect().height+'px');}
   function reflect(){
     slides.dataset.current=String(current);
     slides.querySelectorAll('.harness-slide').forEach((slide,i)=>{slide.inert=i!==current;});

@@ -1,27 +1,58 @@
-.library-intro{text-align:center;padding:64px 0 32px}
-.library-intro h1{font-family:GeistPixel,GeistMono,monospace;font-size:clamp(32px,5.1vw,70px);font-weight:700;line-height:1.1;letter-spacing:-.045em;text-transform:uppercase;margin-bottom:14px}
-.library-github{display:inline-block;font-size:14px;margin-bottom:24px}
-.library-intro>p{margin:0 auto 12px;font-size:18px}
-.library-intro .library-explainer{color:var(--muted);font-size:15px;max-width:none;white-space:nowrap}
-.library-carousel{max-width:960px;margin:0 auto 60px;text-align:center}
-.carousel-stage{display:grid;grid-template-columns:44px minmax(0,1fr) 44px;gap:16px;align-items:start}
-.carousel-arrow{margin-top:calc(var(--preview-height,350px)/2 - 22px);font-size:24px;min-width:44px;height:44px;border:0;background:transparent;padding:0}
-.harness-slides{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;overscroll-behavior-x:contain;cursor:grab}
+/* Use the available viewport for the image after reserving space for all text. */
+#main{height:100svh;min-height:480px;display:flex;flex-direction:column;padding:clamp(16px,4svh,40px) 0 clamp(12px,2svh,24px)}
+.library-intro{text-align:center;flex:none;padding:0 0 clamp(12px,2.5svh,24px)}
+.library-intro h1{font-family:GeistPixel,GeistMono,monospace;font-size:clamp(32px,4.8vw,64px);font-weight:700;line-height:1.1;letter-spacing:-.045em;text-transform:uppercase;margin-bottom:clamp(10px,2svh,20px)}
+.library-intro h1 a{text-decoration:none}
+.library-intro h1 a:hover{opacity:.75}
+.library-intro>p{margin:0 auto 8px;font-size:17px;line-height:1.45}
+.library-intro .library-explainer{color:var(--muted);font-size:14px;max-width:none;white-space:nowrap}
+.library-carousel{width:100%;max-width:960px;flex:1;min-height:0;margin:0 auto;text-align:center}
+.carousel-stage{height:100%;display:grid;grid-template-columns:44px minmax(0,1fr) 44px;gap:16px;align-items:start}
+.carousel-arrow{margin-top:calc(var(--preview-height,200px)/2 - 22px);font-size:24px;min-width:44px;height:44px;border:0;background:transparent;padding:0}
+.harness-slides{height:100%;display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;overscroll-behavior-x:contain;cursor:grab}
 .harness-slides::-webkit-scrollbar{display:none}
 .harness-slides.is-dragging{scroll-snap-type:none;cursor:grabbing;user-select:none}
-.harness-slide{flex:0 0 100%;min-width:0;scroll-snap-align:start;scroll-snap-stop:always}
-.preview-image{display:flex;align-items:center;justify-content:center}
-.preview-image img{display:block;width:auto;height:auto;max-width:100%;max-height:350px;pointer-events:none;user-select:none}
-.harness-detail{padding:24px 8px 0;cursor:auto}
-.harness-detail h2{font-size:27px;margin-bottom:10px}
+.harness-slide{flex:0 0 100%;min-width:0;height:100%;display:grid;grid-template-rows:minmax(70px,1fr) auto;scroll-snap-align:start;scroll-snap-stop:always}
+.preview-image{min-height:0;display:flex;align-items:center;justify-content:center}
+.preview-image img{display:block;width:auto;height:auto;max-width:100%;max-height:100%;object-fit:contain;pointer-events:none;user-select:none}
+.harness-detail{padding:clamp(10px,2svh,20px) 8px 0;cursor:auto}
+.harness-detail h2{font-size:26px;margin-bottom:8px}
 .harness-detail h2 a{text-decoration:none}
 .harness-detail h2 a:hover{text-decoration:underline}
-.harness-detail p{margin:0 auto 12px;max-width:720px}
-.harness-summary{font:13px/1.8 GeistMono,monospace;color:var(--muted)}
+.harness-detail p{margin:0 auto 8px;max-width:720px;font-size:14px;line-height:1.5}
+.harness-detail .harness-summary{font:13px/1.65 GeistMono,monospace;color:var(--muted)}
 .harness-summary strong{color:var(--ink);font-weight:500}
-.harness-summary small{display:block;font:12px/1.6 Geist,Arial,sans-serif}
-.benchmark-source{display:inline-block;margin-top:5px;font-size:14px}
+.harness-summary small{display:block;font:12px/1.5 Geist,Arial,sans-serif}
+.benchmark-source{display:inline-block;margin-top:2px;font-size:14px}
 .upcoming{font:13px GeistMono,monospace}
 .visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
 @media(max-width:1000px){.library-intro .library-explainer{white-space:normal;max-width:760px}}
-@media(max-width:680px){.library-intro{padding:40px 0 24px}.library-intro h1{font-size:clamp(30px,8.4vw,54px)}.library-intro>p{font-size:16px}.carousel-stage{grid-template-columns:28px minmax(0,1fr) 28px;gap:4px}.carousel-arrow{min-width:28px;height:36px;margin-top:calc(var(--preview-height,245px)/2 - 18px)}.preview-image img{max-height:245px}.harness-detail{padding:18px 0 0}.harness-detail h2{font-size:24px}.harness-detail p{font-size:14px}.library-carousel{overflow:hidden}}
+@media(max-width:680px){
+ #main{width:calc(100% - 24px);padding:16px 0 12px}
+ .library-intro{padding-bottom:12px}
+ .library-intro h1{font-size:clamp(28px,8vw,42px);margin-bottom:12px}
+ .library-intro>p{font-size:15px;margin-bottom:6px}
+ .library-intro .library-explainer{font-size:13px}
+ .carousel-stage{grid-template-columns:24px minmax(0,1fr) 24px;gap:2px}
+ .carousel-arrow{min-width:24px;height:36px;margin-top:calc(var(--preview-height,180px)/2 - 18px)}
+ .harness-detail{padding:10px 0 0}
+ .harness-detail h2{font-size:22px;margin-bottom:6px}
+ .harness-detail p{font-size:13px;margin-bottom:6px}
+ .harness-detail .harness-summary{font-size:12px;line-height:1.55;overflow-wrap:anywhere}
+ .harness-summary small{font-size:11px}
+ .benchmark-source{font-size:13px}
+}
+@media(max-height:500px) and (min-width:680px){
+ #main{min-height:320px;padding:12px 0}
+ .library-intro{padding-bottom:10px}
+ .library-intro h1{font-size:36px;margin-bottom:8px}
+ .library-intro>p{font-size:14px;margin-bottom:4px}
+ .library-intro .library-explainer{font-size:12px}
+ .harness-slide{grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-rows:1fr;gap:20px;align-items:center}
+ .preview-image{height:100%}
+ .harness-detail{padding:0}
+ .harness-detail h2{font-size:22px}
+ .harness-detail p{font-size:12px}
+ .harness-detail .harness-summary{font-size:11px}
+ .harness-summary small{font-size:10px}
+}

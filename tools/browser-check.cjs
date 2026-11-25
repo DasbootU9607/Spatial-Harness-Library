@@ -42,6 +42,22 @@ const server=http.createServer((req,res)=>{try{const u=new URL(req.url,'http://l
   await page.locator('#harness-slides').evaluate(el=>el.blur());await page.screenshot({path:path.join(output,`library-${width}.png`),fullPage:true});
   results.push({page:'library carousel, mouse drag, keyboard, natural image proportions and benchmark links',width,passed:true});
  }
+ // Every harness must fit without vertical scrolling at ordinary desktop and phone sizes.
+ for(const [width,height] of [[1440,900],[1366,768],[1280,720],[390,844],[375,667],[320,568],[844,390]]){
+  await page.setViewportSize({width,height});await page.goto(origin);await page.waitForSelector('.harness-slide');
+  assert.equal(await page.locator('h1 a').getAttribute('href'),'https://github.com/DasbootU9607/Spatial-Harness-Library');
+  assert.equal(await page.locator('.library-github').count(),0);
+  for(let i=0;i<4;i++){
+   await waitSlide(page,i);
+   const layout=await page.evaluate(i=>{const track=document.querySelector('#harness-slides'),slide=track.children[i],img=slide.querySelector('img').getBoundingClientRect(),link=slide.querySelector('.benchmark-source').getBoundingClientRect();return {pageHeight:document.documentElement.scrollHeight,trackHeight:track.clientHeight,contentHeight:track.scrollHeight,imageHeight:img.height,bottom:link.bottom};},i);
+   assert(layout.pageHeight<=height+1,`Page scrolls at ${width}x${height}: ${JSON.stringify(layout)}`);
+   assert(layout.contentHeight<=layout.trackHeight+1,`Carousel scrolls vertically at ${width}x${height}: ${JSON.stringify(layout)}`);
+   assert(layout.imageHeight>=50&&layout.bottom<=height,`Content clipped at ${width}x${height}: ${JSON.stringify(layout)}`);
+   await page.screenshot({path:path.join(output,`single-screen-${i}-${width}x${height}.png`)});
+   await page.locator('#next').click();
+  }
+  results.push({page:'single-screen layout and linked title',width,height,passed:true});
+ }
  // Exercise a real touch sequence, not just programmatic scrollLeft updates.
  const touchContext=await browser.newContext({viewport:{width:390,height:844},hasTouch:true,isMobile:true,reducedMotion:'reduce'});
  try{
