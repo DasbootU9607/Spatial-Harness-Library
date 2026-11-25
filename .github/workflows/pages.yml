@@ -19,7 +19,8 @@ concurrency:
 
 jobs:
   validate:
-    runs-on: ubuntu-latest
+    # Playwright 1.60 supports Ubuntu 24.04; do not follow ubuntu-latest to 26.04.
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
