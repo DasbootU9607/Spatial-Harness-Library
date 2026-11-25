@@ -1,95 +1,48 @@
-const picker = document.querySelector('.picker');
-const enter = document.querySelector('#enter');
-const comma = document.querySelector('#comma');
-const completion = document.querySelector('.completion');
-const options = [...picker.querySelectorAll('[role="option"]')];
-const scenes = [...document.querySelectorAll('.scenes img')];
-let current = 0;
+import {aggregate, exhibited, modelNames} from './shared/build-summary.js';
+import {escapeHtml as e} from './shared/process.js';
 
-function preview(index) {
-  const next = Math.max(0, Math.min(options.length - 1, index));
-  if (next === current) return;
-  options[current].setAttribute('aria-selected', 'false');
-  current = next;
-  const option = options[current];
-  option.setAttribute('aria-selected', 'true');
-  picker.setAttribute('aria-activedescendant', option.id);
-  picker.closest('.sentence').style.setProperty('--index', current);
-  for (const scene of scenes) scene.classList.toggle('active', scene.id === option.dataset.scene);
-
-  const {path, description, source, url} = option.dataset;
-  comma.hidden = !path;
-  if (!path) {
-    enter.removeAttribute('href');
-    enter.removeAttribute('aria-label');
-    completion.replaceChildren();
-    return;
+const slides=document.querySelector('#harness-slides');
+const picker=document.querySelector('#harness-picker');
+const descriptions={
+  'maze-harness':'Plan routes through 3D mazes by pushing blocks, opening gates, and coordinating spatial mechanisms.',
+  'spatialviz-harness':'Reason about 2D and 3D rotation, paper folding, cross-sections, and object motion.',
+  'babyvision-harness':'Solve visual puzzles involving patterns, counting, spatial relationships, and tracing lines.',
+  'spatialb-harness':'Track paths and compare shapes under spatial rotations.'
+};
+const previews={
+  'maze-harness':['assets/thumbnails/official-hxh.png','An official MazeBench room with blocks and gates'],
+  'spatialviz-harness':['paper-folding.png','An official SpatialViz paper-folding question'],
+  'babyvision-harness':['find-the-different.jpg','A BabyVision find-the-different visual puzzle'],
+  'spatialb-harness':['path-tracing.png','A SpatialBench path-tracing example']
+};
+try {
+  const response=await fetch('./shared/catalog.json',{cache:'no-cache'});
+  if(!response.ok)throw Error('The harness catalog could not be loaded.');
+  const data=await response.json();
+  slides.innerHTML=data.harnesses.map(h=>{
+    const skills=data.skills.filter(s=>s.harnessId===h.id),cases=exhibited(data.cases.filter(c=>c.harnessId===h.id));
+    const summary=aggregate(cases),models=[...new Set(cases.flatMap(modelNames))];
+    const sample=h.id==='spatialviz-harness'?cases[0]:null;
+    const [image,alt]=sample?[sample.thumbnail,sample.title+' — generated with official FreeCAD tools']:previews[h.id];
+    const tokens=summary.tokens.value===null?'Tokens not recorded':summary.tokens.value.toLocaleString('en-US')+' observed tokens';
+    return '<article class="harness-slide" data-harness="'+e(h.id)+'" aria-roledescription="slide" aria-label="'+e(h.name)+'">'+
+      '<a class="preview-image '+(h.id==='maze-harness'?'maze':'')+'" href="./'+e(h.id)+'/" tabindex="-1"><img src="./'+e(h.id)+'/'+e(image)+'" alt="'+e(alt)+'"></a>'+
+      '<div class="harness-detail"><h2><a href="./'+e(h.id)+'/">'+e(h.name)+' ↗</a></h2><p>'+e(descriptions[h.id])+'</p>'+
+      (skills.length?'<p class="harness-summary"><strong>'+skills.length+' skills</strong> · '+e(tokens)+'<br>Models: '+e(models.length?models.join(', '):'Not recorded')+'<small>Recorded build intervals only; '+summary.tokens.coverage+'/'+summary.rows.length+' have token data. Not total billed usage.</small></p>':'<p><span class="upcoming">Upcoming</span></p>')+'</div></article>';
+  }).join('');
+  picker.innerHTML=data.harnesses.map((h,i)=>'<button type="button" data-slide="'+i+'" aria-controls="harness-slides" aria-pressed="'+(i===0)+'">'+e(h.name.replace(' Harness',''))+'</button>').join('');
+  let current=0;
+  function reflect(){
+    picker.querySelectorAll('button').forEach((b,i)=>b.setAttribute('aria-pressed',String(i===current)));
+    slides.querySelectorAll('.harness-slide').forEach((slide,i)=>{slide.inert=i!==current;});
+    document.querySelector('#carousel-status').textContent=(current+1)+' / '+data.harnesses.length+' · '+data.harnesses[current].benchmark;
   }
-
-  enter.href = path;
-  enter.setAttribute('aria-label', 'Open ' + option.textContent + ' Harness');
-  const link = document.createElement('a');
-  link.href = url;
-  link.textContent = source;
-  completion.replaceChildren(description + ' ', link, '.');
-}
-
-function step(direction) { preview(current + direction); }
-
-picker.addEventListener('keydown', event => {
-  if (event.metaKey || event.ctrlKey || event.altKey) return;
-  switch (event.key) {
-    case 'ArrowDown': step(1); break;
-    case 'ArrowUp': step(-1); break;
-    case 'Home': preview(0); break;
-    case 'End': preview(options.length - 1); break;
-    case 'Enter': if (enter.hasAttribute('href')) enter.click(); break;
-    default: return;
-  }
-  event.preventDefault();
-});
-
-picker.addEventListener('click', event => {
-  const option = event.target.closest('[role="option"]');
-  if (!option) return;
-  if (option === options[current] && option.dataset.path) enter.click();
-  else preview(options.indexOf(option));
-});
-
-// Accumulate precision-trackpad deltas; one small movement should yield one name.
-let accumulated = 0, lastStep = -Infinity, lastWheel = -Infinity;
-picker.addEventListener('wheel', event => {
-  if (event.ctrlKey || !event.deltaY || Math.abs(event.deltaX) > Math.abs(event.deltaY)) return;
-  event.preventDefault();
-  const now = performance.now();
-  const delta = event.deltaY * [1, 16, window.innerHeight][event.deltaMode];
-  if (now - lastWheel > 180 || Math.sign(delta) !== Math.sign(accumulated)) accumulated = 0;
-  lastWheel = now;
-  if (now - lastStep < 160) return;
-  accumulated += delta;
-  if (Math.abs(accumulated) >= 22) {
-    step(Math.sign(accumulated));
-    accumulated = 0;
-    lastStep = now;
-  }
-}, {passive: false});
-
-// Consume a vertical swipe on the field before the browser starts a page fling.
-let swipeStart = null;
-picker.addEventListener('touchstart', event => {
-  swipeStart = event.touches.length === 1 ? event.touches[0] : null;
-}, {passive: true});
-picker.addEventListener('touchmove', event => {
-  if (!swipeStart || event.touches.length !== 1) return;
-  const point = event.touches[0];
-  const distance = swipeStart.clientY - point.clientY;
-  if (Math.abs(distance) < 5 || Math.abs(distance) < Math.abs(swipeStart.clientX - point.clientX)) return;
-  if (event.cancelable) event.preventDefault();
-  if (Math.abs(distance) >= 32) {
-    step(Math.sign(distance));
-    swipeStart = point;
-  }
-}, {passive: false});
-for (const type of ['touchend', 'touchcancel']) {
-  picker.addEventListener(type, () => { swipeStart = null; }, {passive: true});
-}
+  function show(index){current=(index+data.harnesses.length)%data.harnesses.length;slides.scrollTo({left:current*slides.clientWidth,behavior:'instant'});reflect();}
+  picker.addEventListener('click',event=>{const b=event.target.closest('[data-slide]');if(b)show(Number(b.dataset.slide));});
+  document.querySelector('#previous').onclick=()=>show(current-1);
+  document.querySelector('#next').onclick=()=>show(current+1);
+  slides.addEventListener('keydown',event=>{if(['ArrowLeft','ArrowRight','Home','End'].includes(event.key)){event.preventDefault();show(event.key==='Home'?0:event.key==='End'?data.harnesses.length-1:current+(event.key==='ArrowRight'?1:-1));}});
+  slides.addEventListener('scroll',()=>{const next=Math.round(slides.scrollLeft/slides.clientWidth);if(next!==current&&next>=0&&next<data.harnesses.length){current=next;reflect();}},{passive:true});
+  new ResizeObserver(()=>slides.scrollTo({left:current*slides.clientWidth,behavior:'instant'})).observe(slides);
+  reflect();
+} catch(error){slides.innerHTML='<p role="alert">'+e(error.message)+' <a href="https://github.com/DasbootU9607/Spatial-Harness-Library">Browse on GitHub</a>.</p>';}

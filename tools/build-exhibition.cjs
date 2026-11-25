@@ -7,6 +7,13 @@ function discover(){
   const dir=path.join(root,h.id,'skills');if(fs.existsSync(dir))for(const e of fs.readdirSync(dir,{withFileTypes:true})){const file=path.join(dir,e.name,'skill.json');if(!fs.existsSync(file))continue;const s=R.read(file);if(s.status==='complete'){if(!fs.existsSync(path.join(dir,e.name,'SKILL.md')))throw Error('Missing completed skill');skills.push({...s,source:`https://github.com/DasbootU9607/Spatial-Harness-Library/tree/main/${h.id}/skills/${e.name}`,install:`node tools/install.cjs --harness ${h.id} --destination YOUR_SKILLS_DIRECTORY`});}}
   if(h.collection){const source=R.read(path.join(root,'questions/data',h.collection+'.json'));h.officialCount=source.length;h.categories=[...new Set(source.map(s=>s.category))];h.tracks=Object.fromEntries([...new Set(source.map(s=>s.track))].map(t=>[t,source.filter(s=>s.track===t).length]));const refs=new Set(skills.filter(s=>s.harnessId===h.id).flatMap(s=>s.officialReferences||[]));for(const s of source.filter((s,i)=>i===0||refs.has(s.id)))official.push({id:s.id,harnessId:h.id,sourceKind:'official',title:s.type+' · '+(s.level||s.sourceId),description:s.question,thumbnail:'../questions/'+s.image,taskUrl:'../questions/#/'+h.collection+'?case='+encodeURIComponent(s.id),category:s.category,taskType:s.type,difficulty:s.level,source:s.provenance});}
  }
+ // Keep archived routes and immutable evidence, but only exhibit official-tool SpatialViz builds.
+ for(const c of cases){
+  if(c.harnessId!=='spatialviz-harness')continue;
+  const task=R.read(path.join(root,c.harnessId,'site',c.taskArtifact));
+  c.generationMethod=task.provenance?.generationMethod||'Legacy JavaScript/SVG generator';
+  c.exhibit=c.verification?.verdict==='passed'&&task.provenance?.generationMethod==='SpatialViz-Bench official FreeCAD + OpenCV/Pillow pipeline'&&Boolean(task.provenance?.sourceRevision);
+ }
  const maze=R.read(path.join(root,'maze-harness/site/data/catalog.json'));
  for(const s of maze.skills)if(!skills.some(x=>x.id===s.id&&x.harnessId==='maze-harness'))skills.push({...s,harnessId:'maze-harness',status:'complete',officialReferences:s.officialCases,install:'node tools/install.cjs --harness maze-harness --destination YOUR_SKILLS_DIRECTORY'});
  for(const c of maze.cases){const item={...c,harnessId:'maze-harness',skillIds:[c.skill],sourceKind:c.kind==='official'?'official':'agent-authored',taskType:'maze',taskUrl:`player.html?world=${c.world}&room=${c.room}`,processUrl:c.process?`process.html?case=${c.id}`:null,taskArtifact:c.map,solution:c.witness,legacy:true};if(c.kind==='official')official.push(item);else cases.push(item);}
@@ -16,7 +23,7 @@ function discover(){
 function build(out){
  const data=discover(),shared=path.join(out,'shared');fs.cpSync(path.join(root,'shared'),shared,{recursive:true});
  fs.cpSync(path.join(root,'maze-harness/site/assets/fonts'),path.join(shared,'fonts'),{recursive:true});
- const revision=R.sha(JSON.stringify(data)+['exhibition.css','exhibition.js','process.js'].map(f=>fs.readFileSync(path.join(root,'shared',f))).join('')).slice(0,16);
+ const revision=R.sha(JSON.stringify(data)+['exhibition.css','exhibition.js','process.js','build-summary.js'].map(f=>fs.readFileSync(path.join(root,'shared',f))).join('')).slice(0,16);
  fs.copyFileSync(path.join(shared,'process.js'),path.join(shared,`process.${revision}.js`));
  fs.writeFileSync(path.join(shared,'exhibition.js'),fs.readFileSync(path.join(shared,'exhibition.js'),'utf8').replace("'./process.js'",`'./process.${revision}.js'`).replace("'../shared/catalog.json'",`'../shared/catalog.json?v=${revision}'`));
  R.atomic(path.join(shared,'catalog.json'),data);

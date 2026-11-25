@@ -10,17 +10,59 @@ const server=http.createServer((req,res)=>{try{const u=new URL(req.url,'http://l
 (async()=>{await new Promise(r=>server.listen(0,'127.0.0.1',r));const origin=`http://127.0.0.1:${server.address().port}/Spatial-Harness-Library/`;let browser;try{
  browser=await playwright.chromium.launch({...(process.platform==='win32'?{channel:'chrome'}:{}),headless:true,args:['--enable-unsafe-swiftshader']});const page=await browser.newPage({reducedMotion:'reduce'});const errors=[];page.on('pageerror',e=>errors.push(e.message));
  const results=[];
+ const catalog=R.read(path.join(root,'Spatial-Harness-Library/shared/catalog.json'));
+ const shown=catalog.cases.filter(c=>c.exhibit!==false);
+ for(const width of [1440,390]){
+  await page.setViewportSize({width,height:1000});await page.goto(origin);await page.waitForSelector('.harness-slide');
+  assert.equal(await page.locator('.harness-slide').count(),4);
+  for(let i=0;i<4;i++){
+   await page.locator(`[data-slide="${i}"]`).click();
+   await page.waitForFunction(index=>document.querySelector(`[data-slide="${index}"]`).getAttribute('aria-pressed')==='true',i);
+   const slide=page.locator('.harness-slide').nth(i),h=catalog.harnesses[i];
+   assert.equal(await slide.getAttribute('inert'),null);assert.equal(await slide.locator('h2 a').getAttribute('href'),'./'+h.id+'/');
+   assert(await slide.locator('img').evaluate(img=>img.complete&&img.naturalWidth>0));
+   if(!catalog.skills.some(s=>s.harnessId===h.id))assert.equal(await slide.locator('.upcoming').innerText(),'Upcoming');
+  }
+  await page.locator('#next').click();assert.equal(await page.locator('[data-slide="0"]').getAttribute('aria-pressed'),'true');
+  await page.locator('#harness-slides').focus();await page.keyboard.press('ArrowRight');assert.equal(await page.locator('[data-slide="1"]').getAttribute('aria-pressed'),'true');
+  await page.locator('#harness-slides').evaluate(el=>el.scrollTo({left:2*el.clientWidth,behavior:'instant'}));
+  await page.waitForFunction(()=>document.querySelector('[data-slide="2"]').getAttribute('aria-pressed')==='true');
+  await page.locator('[data-slide="0"]').click();
+  assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false,'Library overflows');
+  await page.screenshot({path:path.join(output,`library-${width}.png`),fullPage:true});
+  results.push({page:'library carousel, keyboard, scroll, links and upcoming',width,passed:true});
+ }
+
  for(const width of [1440,390]){await page.setViewportSize({width,height:1000});for(const harness of ['maze-harness','spatialviz-harness','babyvision-harness','spatialb-harness']){
   await page.goto(origin+harness+'/');await page.waitForSelector('#skills');await page.locator('#leaderboard select').first().selectOption('total_tokens');
-  assert(await page.locator('h1').innerText());assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false,harness+' overflows');
+  assert(await page.locator('h1').innerText());
+  assert.equal(await page.locator('#header nav a').first().getAttribute('href'),'../');
+  assert.equal(await page.locator('#header nav a').last().getAttribute('href'),'https://github.com/DasbootU9607/Spatial-Harness-Library/tree/main/'+harness);
+  const harnessSkills=catalog.skills.filter(s=>s.harnessId===harness),all=shown.filter(c=>c.harnessId===harness);
+  assert.equal(await page.locator('#skill-filters button').count(),harnessSkills.length+1);
+  assert.equal(await page.locator('#case-gallery .card').count(),all.length);
+  for(const skill of harnessSkills){
+   await page.locator(`[data-filter="${skill.id}"]`).click();
+   const expected=all.filter(c=>c.skillIds.includes(skill.id)).map(c=>c.id).sort();
+   assert.deepEqual((await page.locator('#case-gallery .card').evaluateAll(cards=>cards.map(c=>c.dataset.case))).sort(),expected);
+   assert.equal(await page.locator(`[data-filter="${skill.id}"]`).getAttribute('aria-pressed'),'true');
+  }
+  await page.locator('[data-filter="all"]').click();
+  if(harness==='spatialviz-harness'){
+   assert(all.length>=4);assert.equal(catalog.cases.filter(c=>c.harnessId===harness&&c.exhibit===false).length,5);
+   assert.equal(await page.locator('#case-gallery img').evaluateAll(imgs=>imgs.every(i=>i.src.endsWith('.png'))),true);
+   await page.locator('[data-filter="2d-rotation"]').click();await page.reload();await page.waitForSelector('#case-gallery .card');assert.equal(await page.locator('#case-gallery .card').count(),all.filter(c=>c.skillIds.includes('2d-rotation')).length);await page.locator('[data-filter="all"]').click();
+  }
+assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false,harness+' overflows');
   assert.equal(await page.locator('img').evaluateAll(images=>images.filter(i=>i.complete&&i.naturalWidth===0).length),0,'Broken task image');
   await page.evaluate(()=>window.scrollTo({top:0,behavior:'instant'}));await page.screenshot({path:path.join(output,`${harness}-${width}.png`),fullPage:true});results.push({harness,width,page:'home',passed:true});
  }}
+ for(const width of [1440,390]){await page.setViewportSize({width,height:1000});await page.goto(origin+'maze-harness/world.html');await page.waitForSelector('#site-header nav');assert(await page.locator('#site-header nav a').first().isVisible());assert.equal(await page.locator('#site-header nav a').first().getAttribute('href'),'../');assert(await page.locator('#site-header .github-link').isVisible());assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);results.push({page:'retained Maze navigation',width,passed:true});}
  await page.setViewportSize({width:1440,height:1000});
- for(const route of ['spatialviz','babyvision']){await page.goto(origin+'questions/#/'+route);await page.waitForSelector('#pic[src]');await page.locator('#answer summary').click();assert(await page.locator('#answer').getAttribute('open')!==null);await page.locator('#search').fill('no-such-question-982374');await page.waitForSelector('#case-empty:not([hidden])');await page.locator('#clear').click();await page.waitForSelector('#case-body:not([hidden])');results.push({page:route+' official filters and answer',passed:true});}
+ for(const route of ['spatialviz','babyvision']){await page.goto(origin+'questions/#/'+route);await page.waitForSelector('#pic[src]');await page.locator('#answer summary').click();assert(await page.locator('#answer').getAttribute('open')!==null);await page.locator('#search').fill('no-such-question-982374');await page.waitForSelector('#case-empty:not([hidden])');await page.locator('#clear').click();await page.waitForSelector('#case-body:not([hidden])');assert.equal(await page.locator('.sitehead nav a').first().getAttribute('href'),'../');assert.match(await page.locator('.sitehead nav a').last().getAttribute('href'),/tree\/main\//);results.push({page:route+' official filters and answer',passed:true});}
  await page.goto(origin+'questions/#/spatialbench');await page.waitForSelector('#play svg');await page.locator('#mode3').click();await page.waitForSelector('#play .pick');await page.locator('#mode2').click();await page.waitForSelector('#play input');results.push({page:'spatialbench practice',passed:true});
- const catalog=R.read(path.join(root,'Spatial-Harness-Library/shared/catalog.json'));const c=catalog.cases.find(c=>c.harnessId==='spatialviz-harness');
- if(c){await page.goto(origin+'spatialviz-harness/skill.html?id='+c.skillIds[0]);await page.waitForSelector('#authored .card');await page.locator('#model-filter').selectOption({index:1});await page.goto(origin+'spatialviz-harness/task.html?id='+c.id);await page.waitForSelector('[data-answer]');assert.equal(await page.locator('#answer').getAttribute('open'),null);await page.locator('[data-answer]').first().click();assert(await page.locator('#feedback').innerText());await page.evaluate(()=>window.scrollTo({top:0,behavior:'instant'}));await page.screenshot({path:path.join(output,'task-desktop.png'),fullPage:true});await page.goto(origin+'spatialviz-harness/process.html?id='+c.id);await page.waitForSelector('.timeline button');await page.locator('[data-view]').selectOption('versions');await page.locator('[data-version]').selectOption('v002');await page.waitForSelector('.detail img');await page.evaluate(()=>window.scrollTo({top:0,behavior:'instant'}));await page.screenshot({path:path.join(output,'process-desktop.png'),fullPage:true});await page.locator('[data-view]').selectOption('evidence');assert(await page.locator('.evidence-table tbody tr').count()>10);for(const file of [c.process,c.eventsCsv,c.taskArtifact])assert((await page.request.get(origin+'spatialviz-harness/'+file)).ok());results.push({page:'skill, task, version preview, evidence and downloads',passed:true});await page.setViewportSize({width:390,height:844});await page.locator('[data-view]').selectOption('versions');assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);await page.evaluate(()=>window.scrollTo({top:0,behavior:'instant'}));await page.screenshot({path:path.join(output,'process-mobile.png'),fullPage:true});}
+ const c=catalog.cases.find(c=>c.harnessId==='spatialviz-harness');
+ if(c){await page.goto(origin+'spatialviz-harness/skill.html?id=2d-rotation');await page.waitForSelector('#authored .card');await page.locator('#model-filter').selectOption({index:1});await page.goto(origin+'spatialviz-harness/task.html?id='+c.id);await page.waitForSelector('[data-answer]');assert.equal(await page.locator('#answer').getAttribute('open'),null);await page.locator('[data-answer]').first().click();assert(await page.locator('#feedback').innerText());await page.evaluate(()=>window.scrollTo({top:0,behavior:'instant'}));await page.screenshot({path:path.join(output,'task-desktop.png'),fullPage:true});await page.goto(origin+'spatialviz-harness/process.html?id='+c.id);await page.waitForSelector('.timeline button');await page.locator('[data-view]').selectOption('versions');await page.locator('[data-version]').selectOption('v002');await page.waitForSelector('.detail img');await page.evaluate(()=>window.scrollTo({top:0,behavior:'instant'}));await page.screenshot({path:path.join(output,'process-desktop.png'),fullPage:true});await page.locator('[data-view]').selectOption('evidence');assert(await page.locator('.evidence-table tbody tr').count()>10);for(const file of [c.process,c.eventsCsv,c.taskArtifact])assert((await page.request.get(origin+'spatialviz-harness/'+file)).ok());results.push({page:'skill, task, version preview, evidence and downloads',passed:true});await page.setViewportSize({width:390,height:844});await page.locator('[data-view]').selectOption('versions');assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);await page.evaluate(()=>window.scrollTo({top:0,behavior:'instant'}));await page.screenshot({path:path.join(output,'process-mobile.png'),fullPage:true});}
  for(const example of catalog.cases.filter(c=>['2d-rotation','3d-rotation'].some(id=>c.skillIds.includes(id)))){
   const spec=R.read(path.join(root,'Spatial-Harness-Library',example.harnessId,example.taskArtifact));
   for(const width of [1440,390]){await page.setViewportSize({width,height:1000});await page.goto(origin+example.harnessId+'/task.html?id='+example.id);await page.waitForSelector('[data-answer]');assert.equal(await page.locator('[data-answer]').count(),4);assert.match(await page.locator('[data-answer="3"]').innerText(),/All three other options are incorrect/);await page.locator(`[data-answer="${spec.answer.index}"]`).click();assert.match(await page.locator('#feedback').innerText(),/^Correct\./);await page.locator('[data-answer="3"]').click();assert.match(await page.locator('#feedback').innerText(),/D means none/);await page.locator('#answer summary').click();assert.equal(await page.locator('#answer p').count(),5);assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);assert.equal(await page.locator('.task-figure img').evaluate(img=>img.complete&&img.naturalWidth>0),true);await page.evaluate(()=>window.scrollTo({top:0,behavior:'instant'}));await page.screenshot({path:path.join(output,example.id+'-'+width+'.png'),fullPage:true});results.push({page:'formal rotation task, D semantics and explanations',id:example.id,width,passed:true});}
