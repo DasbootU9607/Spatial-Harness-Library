@@ -1,25 +1,27 @@
-.library-intro{text-align:center;padding:55px 0 26px}
-.library-intro h1{font-size:clamp(32px,4.5vw,54px);margin-bottom:18px;letter-spacing:-.045em}
-.library-intro>p:not(.eyebrow){margin:0 auto 10px;max-width:700px;font-size:18px}
-.library-intro .library-explainer{color:var(--muted);font-size:15px!important;max-width:640px!important}
-.library-carousel{max-width:850px;margin:auto;text-align:center}
-.library-carousel .skill-filters{justify-content:center;border:0;margin:0 0 18px}
-.carousel-stage{display:grid;grid-template-columns:44px minmax(0,1fr) 44px;gap:18px;align-items:start}
-.carousel-arrow{margin-top:150px;font-size:22px;min-width:44px;height:44px;border-radius:50%;padding:0}
-.harness-slides{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;overscroll-behavior-x:contain;border-radius:6px}
+.library-intro{text-align:center;padding:64px 0 32px}
+.library-intro h1{font-family:GeistPixel,GeistMono,monospace;font-size:clamp(32px,5.1vw,70px);font-weight:700;line-height:1.1;letter-spacing:-.045em;text-transform:uppercase;margin-bottom:14px}
+.library-github{display:inline-block;font-size:14px;margin-bottom:24px}
+.library-intro>p{margin:0 auto 12px;font-size:18px}
+.library-intro .library-explainer{color:var(--muted);font-size:15px;max-width:none;white-space:nowrap}
+.library-carousel{max-width:960px;margin:0 auto 60px;text-align:center}
+.carousel-stage{display:grid;grid-template-columns:44px minmax(0,1fr) 44px;gap:16px;align-items:start}
+.carousel-arrow{margin-top:calc(var(--preview-height,350px)/2 - 22px);font-size:24px;min-width:44px;height:44px;border:0;background:transparent;padding:0}
+.harness-slides{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;overscroll-behavior-x:contain;cursor:grab}
 .harness-slides::-webkit-scrollbar{display:none}
+.harness-slides.is-dragging{scroll-snap-type:none;cursor:grabbing;user-select:none}
 .harness-slide{flex:0 0 100%;min-width:0;scroll-snap-align:start;scroll-snap-stop:always}
-.preview-image{display:block;border:1px solid var(--line);border-radius:6px;overflow:hidden;background:var(--surface)}
-.preview-image img{display:block;width:100%;height:310px;object-fit:contain}
-.preview-image.maze img{background:#08090a}
-.harness-detail{padding:22px 8px 0}
+.preview-image{display:flex;align-items:center;justify-content:center}
+.preview-image img{display:block;width:auto;height:auto;max-width:100%;max-height:350px;pointer-events:none;user-select:none}
+.harness-detail{padding:24px 8px 0;cursor:auto}
 .harness-detail h2{font-size:27px;margin-bottom:10px}
 .harness-detail h2 a{text-decoration:none}
 .harness-detail h2 a:hover{text-decoration:underline}
-.harness-detail p{margin:0 auto 12px;max-width:640px}
+.harness-detail p{margin:0 auto 12px;max-width:720px}
 .harness-summary{font:13px/1.8 GeistMono,monospace;color:var(--muted)}
 .harness-summary strong{color:var(--ink);font-weight:500}
 .harness-summary small{display:block;font:12px/1.6 Geist,Arial,sans-serif}
-.upcoming{display:inline-block;font:13px GeistMono,monospace;border:1px solid var(--line);padding:7px 12px;border-radius:4px}
-#carousel-status{margin-top:20px}
-@media(max-width:680px){.library-intro{padding:32px 0 20px}.library-intro>p:not(.eyebrow){font-size:16px}.carousel-stage{grid-template-columns:32px minmax(0,1fr) 32px;gap:6px}.carousel-arrow{min-width:32px;height:36px;margin-top:95px}.preview-image img{height:225px}.harness-detail{padding:18px 0 0}.harness-detail h2{font-size:24px}.harness-detail p{font-size:14px}.library-carousel .skill-filters{justify-content:flex-start}.library-carousel{overflow:hidden}}
+.benchmark-source{display:inline-block;margin-top:5px;font-size:14px}
+.upcoming{font:13px GeistMono,monospace}
+.visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+@media(max-width:1000px){.library-intro .library-explainer{white-space:normal;max-width:760px}}
+@media(max-width:680px){.library-intro{padding:40px 0 24px}.library-intro h1{font-size:clamp(30px,8.4vw,54px)}.library-intro>p{font-size:16px}.carousel-stage{grid-template-columns:28px minmax(0,1fr) 28px;gap:4px}.carousel-arrow{min-width:28px;height:36px;margin-top:calc(var(--preview-height,245px)/2 - 18px)}.preview-image img{max-height:245px}.harness-detail{padding:18px 0 0}.harness-detail h2{font-size:24px}.harness-detail p{font-size:14px}.library-carousel{overflow:hidden}}
