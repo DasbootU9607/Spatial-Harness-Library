@@ -20,7 +20,10 @@ module.exports=async function checkOfficialQuestions({page,origin,root,output,re
   assert.equal(await page.locator('.question-card').count(),rows.length,'All matching questions are available without pagination');
   const controls=await page.locator('#archive-controls').boundingBox(),reader=await page.locator('#reader').boundingBox();
   assert(controls.y+controls.height<=reader.y,'Search and filters belong in the heading above the reader');
+  assert.equal(await page.locator('#question-filters select:visible').count(),3,'Filters are always displayed');
   if(width===1440){
+   const filterBoxes=await page.locator('#question-filters select:visible').evaluateAll(selects=>selects.map(el=>el.getBoundingClientRect().top));
+   assert(filterBoxes.every(top=>Math.abs(top-filterBoxes[0])<1),'Filters are arranged side by side');
    const left=await page.locator('.question-catalogue').boundingBox(),question=await page.locator('.official-question').boundingBox(),answer=await page.locator('#official-response').boundingBox();
    assert(left.x+left.width<=question.x&&question.x+question.width<=answer.x,'Catalogue, question and answer must occupy separate columns');
   }else assert.equal(await page.locator('#catalogue-panel').getAttribute('open'),null);
@@ -65,12 +68,10 @@ module.exports=async function checkOfficialQuestions({page,origin,root,output,re
   assert(await page.locator('#case-empty').isVisible());assert.equal(await page.locator('.question-card').count(),0);
   await page.locator('#clear').click();assert(await page.locator('#case-body').isVisible());
   if(route==='spatialviz'){
-   await page.locator('#question-filters>summary').click();await page.locator('#category').selectOption('MentalRotation');await page.locator('#type').selectOption('2DRotation');
+   await page.locator('#category').selectOption('MentalRotation');await page.locator('#type').selectOption('2DRotation');
    assert((await page.locator('.question-card-title').allTextContents()).every(t=>t.includes('2D rotation')));
    assert.equal(await page.locator('#matches').textContent(),rows.filter(r=>r.type==='2DRotation').length+' results');
    await page.screenshot({path:path.join(output,`official-filters-${width}.png`),fullPage:true});
-   await page.keyboard.press('Escape');assert.equal(await page.locator('#question-filters').getAttribute('open'),null);
-   assert(await page.locator('#question-filters>summary').evaluate(el=>el===document.activeElement));
   }
   assert.equal(await page.locator('.sitehead nav a').first().getAttribute('href'),'../');
   assert.equal(await page.locator('.sitehead .benchmark-link').getAttribute('href'),catalog.harnesses.find(h=>h.sourceRoute===route).benchmarkUrl);

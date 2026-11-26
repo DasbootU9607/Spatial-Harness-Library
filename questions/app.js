@@ -84,8 +84,6 @@ function revealQuestionCard(){
   else if(item.bottom>box.bottom)list.scrollTop+=item.bottom-box.bottom+3;
 }
 el('catalogue-panel').addEventListener('toggle',revealQuestionCard);
-document.addEventListener('click',event=>{if(!el('question-filters').contains(event.target))el('question-filters').open=false;});
-document.addEventListener('keydown',event=>{if(event.key==='Escape'&&el('question-filters').open){el('question-filters').open=false;el('question-filters').querySelector('summary').focus();}});
 function applyChoiceState(record,selected){
   const correct=choiceIndex(record);
   el('options').querySelectorAll('[data-answer]').forEach((option,index)=>{
@@ -197,7 +195,7 @@ async function navigate(){
   el('archive-harness').textContent='← '+(page==='spatialviz'?'SpatialViz':'BabyVision')+' Harness';
   el('archive-kicker').textContent='OFFICIAL QUESTIONS';
   el('archive-name').textContent=c.name;el('archive-count').textContent=c.count;el('archive-source').href=c.link;
-  el('reader').hidden=true;el('archive-controls').hidden=true;el('question-filters').open=false;el('archive-status').textContent='Loading questions…';
+  el('reader').hidden=true;el('archive-controls').hidden=true;el('archive-status').textContent='Loading questions…';
   try{
     if(!cache.has(page))cache.set(page,fetch('data/'+page+'.json').then(res=>{
       if(!res.ok)throw Error('HTTP '+res.status);return res.json();
