@@ -3,6 +3,7 @@ const fs=require('node:fs'),path=require('node:path'),assert=require('node:asser
 const R=require('./observatory/runtime.cjs'),data=require('./build-exhibition.cjs').discover();
 const validate=(value,name)=>require('./schema.cjs').validate(value,R.read(path.join(R.ROOT,'shared/schemas',name+'.schema.json')),name);
 validate(data,'catalog');
+require('./redact-public-times.cjs').check();
 assert.equal(R.read(path.join(R.ROOT,'questions/data/spatialviz.json')).length,1180);
 const baby=R.read(path.join(R.ROOT,'questions/data/babyvision.json'));assert.equal(baby.filter(x=>x.track==='vqa').length,388);assert.equal(baby.filter(x=>x.track!=='vqa').length,280);
 const registered=R.read(path.join(R.ROOT,'catalog/cases.json')).cases;

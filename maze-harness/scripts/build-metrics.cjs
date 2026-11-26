@@ -43,8 +43,6 @@ function summarizeBuild(usage, declared = {}) {
     reasoningMixed: efforts.length > 1 || !!effortMissing,
     attributionNote: declarationMatches ? declared.note || null : null,
     attributionEvidenceSha256: declarationMatches ? declared.evidenceSha256 || null : null,
-    startedAt: usage?.startedAt || declared.startedAt || null,
-    finishedAt: usage?.finishedAt || declared.finishedAt || null,
     models,
     runtime: ['codex-tui', 'codex_exec', 'codex-exec'].includes(label(usage?.runtime)) ? 'Codex CLI' : label(usage?.runtime),
     elapsedMs: typeof usage?.elapsedMs === 'number' && Number.isFinite(usage.elapsedMs) && usage.elapsedMs >= 0 ? usage.elapsedMs : null,

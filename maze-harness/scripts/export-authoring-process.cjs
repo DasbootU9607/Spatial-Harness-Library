@@ -4,6 +4,7 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const assert = require('node:assert/strict');
+const {withoutAbsoluteTimes, assertNoAbsoluteTimes} = require('../../tools/observatory/time-privacy.cjs');
 const { hash } = require('./site-content.cjs');
 const { completeRecordedEvents } = require('./process-events.cjs');
 const { explainProcess } = require('./process-explanations.cjs');
@@ -112,6 +113,7 @@ function assertAcyclic(nodes, edges) {
 }
 
 function assertPublicPrivacy(document, identities = []) {
+  assertNoAbsoluteTimes(document);
   const fields = (value, allowed, label) => {
     assert(value && typeof value === 'object' && !Array.isArray(value), 'Invalid public object: ' + label);
     for (const key of Object.keys(value)) assert(allowed.includes(key), 'Non-allowlisted public field: ' + label + '.' + key);
@@ -121,8 +123,7 @@ function assertPublicPrivacy(document, identities = []) {
   fields(document, ['schemaVersion', 'caseId', 'title', 'skill', 'finalCandidateId', 'summary', 'coverage', 'nodes', 'edges', 'candidates', 'tests', 'notes', 'resources', 'operations', 'replays', 'records', 'explanations', 'usage'], 'process');
   if (document.usage) {
     const usage = document.usage;
-    fields(usage, ['schemaVersion', 'status', 'runtime', 'elapsedMs', 'startedAt', 'finishedAt', 'scope', 'scopeComplete', 'observedTokens', 'models', 'evidenceSha256'], 'usage');
-    for (const key of ['startedAt', 'finishedAt']) if (usage[key] !== undefined) assert(typeof usage[key] === 'string' && /^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d\.\d{3}Z$/.test(usage[key]), 'Invalid public usage timestamp');
+    fields(usage, ['schemaVersion', 'status', 'runtime', 'elapsedMs', 'scope', 'scopeComplete', 'observedTokens', 'models', 'evidenceSha256'], 'usage');
     assert.equal(usage.schemaVersion, 2); assert.equal(usage.scopeComplete, false);
     assert(['measured', 'partial', 'unavailable'].includes(usage.status));
     assert(Number.isFinite(usage.elapsedMs) && usage.elapsedMs >= 0); hashOf(usage.evidenceSha256);
@@ -389,8 +390,9 @@ function exportProcess(runDirectory, { caseId, expectedCellsSha256, expectedCont
   if (usage) document.usage = usage;
   completeRecordedEvents(document, events, { clean, savedFile, runDir });
   explainProcess(document, { index, events, savedFile, runDir });
-  assertAcyclic(nodes, edges); assertPublicPrivacy(document, identities);
-  return document;
+  const published = withoutAbsoluteTimes(document);
+  assertAcyclic(nodes, edges); assertPublicPrivacy(published, identities);
+  return published;
 }
 
 function discoverAuthoringRun(options) {

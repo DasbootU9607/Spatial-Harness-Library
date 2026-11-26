@@ -209,7 +209,6 @@ function publicSummary(dir) {
   const report = reportFor(state, manifest);
   const label = value => typeof value === 'string' && /^[a-zA-Z0-9 ._:/()-]{1,100}$/.test(value) && !/[:][\\/]|https?:|secret|password/i.test(value) ? value : null;
   return {schemaVersion: 2, status: report.status, runtime: label(report.runtime), elapsedMs: report.elapsedMs,
-    startedAt: manifest.createdAt, finishedAt: state.finishedAt,
     scope: report.scope, scopeComplete: false, observedTokens: report.observedTokens,
     models: report.models.map(m => ({model: label(m.model), provider: label(m.provider), reasoningEffort: m.reasoningEffort, tokens: m.tokens, observations: m.observations})),
     evidenceSha256: S.hash({startedAt: state.startedAt, finishedAt: state.finishedAt, baseline: state.baseline, observed: state.observed})};

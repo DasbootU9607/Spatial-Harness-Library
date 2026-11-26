@@ -1,6 +1,7 @@
 'use strict';
 const fs = require('node:fs'), path = require('node:path');
 const R = require('./runtime.cjs');
+const {withoutAbsoluteTimes} = require('./time-privacy.cjs');
 const select = (o, keys) => Object.fromEntries(keys.filter(k => o && Object.hasOwn(o,k)).map(k => [k,o[k]]));
 function safe(value) {
   if (typeof value === 'string') return /(?:^|[\s"\x27])[a-z]:[\\/]|\\\\[^\\\s]+\\|(?:^|\s|["'])\/(?!\/)[a-z0-9_.-]+(?:\/[a-z0-9_.-]+)+|(?:sk-|gh[pousr]_)[a-zA-Z0-9_-]{10,}|(?:password|api[_-]?key|authorization|bearer)\s*[:=]/i.test(value) ? '[private value omitted]' : value;
@@ -15,7 +16,7 @@ function project(dir, {local = false} = {}) {
   const usage = run.tokenUsage ? safe(select(run.tokenUsage,['schemaVersion','runId','source','runtime','status','startedAt','finishedAt','lastObservedAt','elapsedMs','elapsedKind','scope','scopeComplete','observedTokens','tokens','models','missingFields','issues','observations'])) : null;
   const candidates=run.candidates.map(c => select(c,['id','parentId','parentBasis','sha256','fingerprints','previewUnavailable','changes']));
   if(local)for(const c of candidates){const rendering=run.events.findLast(e=>e.type==='render.completed'&&e.candidateId===c.id&&e.details.specification===c.sha256);if(rendering)c.preview={path:`/api/preview/${run.manifest.id}/${c.id}`,sha256:rendering.details.sha256};}
-  return {schemaVersion:1,manifest:safe(select(run.manifest,['id','title','runKind','harness','benchmark','category','taskType','skill','status','createdAt','finishedAt','finalCandidateId','limitations','captureGaps'])),events,candidates,tests:run.tests.map(t => safe(select(t,['id','actionId','candidateId','testedFingerprints','verifier','reportSha256','verdict','status','checks','scope','commandExitStatus','binding','bindingBasis','commandEventId']))),usage};
+  return withoutAbsoluteTimes({schemaVersion:1,manifest:{sealed:Boolean(run.manifest.finishedAt),...safe(select(run.manifest,['id','title','runKind','harness','benchmark','category','taskType','skill','status','createdAt','finishedAt','finalCandidateId','limitations','captureGaps']))},events,candidates,tests:run.tests.map(t => safe(select(t,['id','actionId','candidateId','testedFingerprints','verifier','reportSha256','verdict','status','checks','scope','commandExitStatus','binding','bindingBasis','commandEventId']))),usage});
 }
 function contained(dir, ref) {const root=fs.realpathSync(dir), file=fs.realpathSync(path.join(dir,ref)), rel=path.relative(root,file); if (rel.startsWith('..') || path.isAbsolute(rel)) throw new Error('Evidence escapes run'); return file;}
 function audit(dir, delivered) {
@@ -39,8 +40,8 @@ function audit(dir, delivered) {
   return {run,candidate:c,test:t,process:project(dir)};
 }
 function csv(process) {
-  const keys=['id','seq','runId','at','recordedAt','type','actor','origin','actionId','candidateId','details','evidenceRefs'];
+  const keys=['id','seq','runId','type','actor','origin','actionId','candidateId','details','evidenceRefs'];
   const cell=v=>'"'+(v==null?'':typeof v==='object'?JSON.stringify(v):String(v)).replaceAll('"','""')+'"';
-  return [keys.join(','),...process.events.map(e=>keys.map(k=>cell(e[k])).join(','))].join('\n')+'\n';
+  return [keys.join(','),...withoutAbsoluteTimes(process).events.map(e=>keys.map(k=>cell(e[k])).join(','))].join('\n')+'\n';
 }
 module.exports={project,audit,csv,safe};

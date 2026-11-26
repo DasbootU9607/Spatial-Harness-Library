@@ -38,7 +38,8 @@ test('client reasoning settings are recorded independently of model identity and
   assert.deepEqual(report.models.map(row=>[row.model,row.reasoningEffort,row.tokens.total_tokens]),[['model-a','high',24],['model-a','xhigh',36]]);
   assert.equal(report.observedTokens.total_tokens,60);
   const summary=U.publicSummary(f.run);assert.equal(summary.models[1].reasoningEffort,'xhigh');
-  assert.equal(Date.parse(summary.finishedAt)-Date.parse(summary.startedAt),summary.elapsedMs);
+  assert(Number.isFinite(summary.elapsedMs)&&summary.elapsedMs>=0);
+  assert(!Object.hasOwn(summary,'startedAt'));assert(!Object.hasOwn(summary,'finishedAt'));
 });
 test('missing or unsafe effort fields do not inherit another model setting', t => {
   const f=fixture(t,'codex',[meta,{type:'turn_context',payload:{model:'model-a',effort:'ultra'}},counter(100,10)]);

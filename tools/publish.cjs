@@ -44,7 +44,7 @@ function prepare({run,task,skill}){
     fs.copyFileSync(task,path.join(dir,'task.json'));
     R.atomic(path.join(dir,'process.json'),process);fs.writeFileSync(path.join(dir,'events.csv'),P.csv(process));
     R.atomic(path.join(dir,'verification.json'),process.tests.find(x=>x.id===checked.test.id));
-    R.atomic(path.join(dir,'delivery.json'),{schemaVersion:1,runId:m.id,caseId:id,createdAt:new Date().toISOString(),kind:'prepared-public-export',previews,taskSha256:c.sha256,processSha256:R.sha(fs.readFileSync(path.join(dir,'process.json')))});
+    R.atomic(path.join(dir,'delivery.json'),{schemaVersion:1,runId:m.id,caseId:id,kind:'prepared-public-export',previews,taskSha256:c.sha256,processSha256:R.sha(fs.readFileSync(path.join(dir,'process.json')))});
     const item={schemaVersion:1,id,harnessId:harness,skillIds:[meta.id],sourceKind:spec.provenance?.sourceKind||'agent-authored',sourceCaseIds:meta.officialReferences||[],category:spec.category,taskType:spec.taskType,difficulty:spec.difficulty||null,title:spec.title,description:spec.description,contentSha256:c.sha256,thumbnail:previews.find(x=>x.candidateId===c.id).path,taskArtifact:`records/${id}/task.json`,verification:{verdict:'passed',candidateId:c.id,fingerprints:c.fingerprints,report:`records/${id}/verification.json`},build:{runId:m.id,candidateId:c.id,usage:process.usage},process:`records/${id}/process.json`,eventsCsv:`records/${id}/events.csv`};
     catalog.cases.push(item);R.atomic(catalogFile,catalog);
     return {case:item,urls,run,prepared:true,repeated:false,paths:['catalog/cases.json',relative,path.relative(R.ROOT,skillDir).replaceAll('\\','/')]};

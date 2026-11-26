@@ -44,7 +44,7 @@ export function normalizeProcess(data) {
   const add=(n,type,{label,summary,basis='observed',candidateId}={})=>{
     const r=record(n.id),action={id:n.id,sourceNodeId:n.id,type,label:label||actionNames[type],summary:summary||n.summary||'',
       status:n.status||'unknown',candidateId:candidateId??r?.candidateId??(n.kind==='candidate'?r?.id:null)??n.details?.candidateId??null,
-      order:n.order,evidenceIds:[n.id],contextIds:[],basis,association:'source-record',recordedAt:r?.recovery?.source?.recordedAt||null};
+      order:n.order,evidenceIds:[n.id],contextIds:[],basis,association:'source-record'};
     actions.push(action);owner.set(n.id,action.id);return action;
   };
   for(const n of data.nodes){
@@ -154,7 +154,7 @@ export function normalizeProcess(data) {
     return {id,label:r?.label||n.label,actionId:owner.get(id)||null,contextActionId:context.get(id)||null,
       kind:client?'client-tool':n.kind==='replay'?'replay':r?.recovery?.media?.length?'video':n.kind==='resource'?'resource':'source-record',
       basis:client&&r.recovery.projection.readRequested?'request-only':n.kind==='note'?'agent-stated':r?.recovery?'recovered-artifact':'source-record',
-      tool:client?r.recovery.projection.tool:null,files:client?r.recovery.projection.files:[],recordedAt:r?.recovery?.source.recordedAt||null};
+      tool:client?r.recovery.projection.tool:null,files:client?r.recovery.projection.files:[]};
   });
   return {schema:ACTION_SCHEMA,caseId:data.caseId,sourceScope:'Public observer records and saved recovery evidence. Missing activity is unknown.',
     countingRules:'A command start, completion and result share one action only when source IDs establish their association. Client calls remain a separate evidence series. Reported reads, unique files, saved versions and test runs are separate counts.',

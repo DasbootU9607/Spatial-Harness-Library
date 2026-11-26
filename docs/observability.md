@@ -109,6 +109,14 @@ fields; authors must not put private information in public notes or task payload
 Hashes of private evidence establish consistency, not public access to its bytes.
 The audit is not cryptographic authentication against a malicious local rewriter.
 
+Absolute activity dates and times are private. Public pages, process JSON, event
+CSV, usage summaries and recovered evidence omit them, including timestamps in
+nested records and author text. Event sequence numbers and elapsed durations
+remain available. Private collection logs keep their timing evidence for local
+accounting. Run `node tools/redact-public-times.cjs` to check the public files;
+`--write` redacts existing exports and updates their public integrity fingerprints
+without editing task specifications or private logs. Git history is not rewritten.
+
 The publisher checks the expected remote, synchronizes with origin/main, validates,
 commits intended paths and pushes without force. It preserves unrelated working
 files and staged work. Preparation, push and deployment are separate states.

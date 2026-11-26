@@ -1,6 +1,7 @@
 'use strict';
 const fs=require('node:fs'),path=require('node:path'),http=require('node:http'),assert=require('node:assert/strict');
 const R=require('./observatory/runtime.cjs');
+const {assertNoAbsoluteTimes,hasAbsoluteTime}=require('./observatory/time-privacy.cjs');
 const args=process.argv.slice(2),get=(key,fallback)=>{const i=args.indexOf('--'+key);return i<0?fallback:args[i+1];};
 const root=path.resolve(get('root','.harness/preview')),output=path.resolve(get('out','.harness/browser'));
 fs.mkdirSync(output,{recursive:true});
@@ -98,13 +99,14 @@ assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerW
  }}
  for(const width of [1440,390]){await page.setViewportSize({width,height:1000});await page.goto(origin+'maze-harness/world.html');await page.waitForSelector('#site-header nav');assert(await page.locator('#site-header nav a').first().isVisible());assert.equal(await page.locator('#site-header nav a').first().getAttribute('href'),'../');assert(await page.locator('#site-header .github-link').isVisible());assert.equal(await page.locator('#site-header .benchmark-link').getAttribute('href'),'https://mazebench.com/');assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);results.push({page:'retained Maze navigation',width,passed:true});}
  await page.setViewportSize({width:1440,height:1000});
- for(const route of ['spatialviz','babyvision']){await page.goto(origin+'questions/#/'+route);await page.waitForSelector('#pic[src]');await page.locator('#answer summary').click();assert(await page.locator('#answer').getAttribute('open')!==null);await page.locator('#search').fill('no-such-question-982374');await page.waitForSelector('#case-empty:not([hidden])');await page.locator('#clear').click();await page.waitForSelector('#case-body:not([hidden])');assert.equal(await page.locator('.sitehead nav a').first().getAttribute('href'),'../');assert.match(await page.locator('.sitehead nav a').last().getAttribute('href'),/tree\/main\//);assert.equal(await page.locator('.sitehead .benchmark-link').getAttribute('href'),catalog.harnesses.find(h=>h.sourceRoute===route).benchmarkUrl);results.push({page:route+' official filters and answer',passed:true});}
+ await require('./official-questions-browser.cjs')({page,origin,root,output,results,catalog});
  await page.goto(origin+'questions/#/spatialbench');await page.waitForSelector('#play svg');await page.locator('#mode3').click();await page.waitForSelector('#play .pick');await page.locator('#mode2').click();await page.waitForSelector('#play input');results.push({page:'spatialbench practice',passed:true});
  const c=catalog.cases.find(c=>c.harnessId==='spatialviz-harness');
  if(c){await page.goto(origin+'spatialviz-harness/skill.html?id=2d-rotation');await page.waitForSelector('#authored .card');await page.locator('#model-filter').selectOption({index:1});await page.goto(origin+'spatialviz-harness/task.html?id='+c.id);await page.waitForSelector('[data-answer]');assert.equal(await page.locator('#answer').getAttribute('open'),null);await page.locator('[data-answer]').first().click();assert(await page.locator('#answer-status').textContent());await page.evaluate(()=>window.scrollTo({top:0,behavior:'instant'}));await page.screenshot({path:path.join(output,'task-desktop.png'),fullPage:true});}
  // Shared process pages use the Maze orbit, version browser, and evidence inspector.
  for(const example of catalog.cases.filter(c=>c.harnessId==='spatialviz-harness'&&(c.exhibit!==false||c===catalog.cases.find(x=>x.harnessId==='spatialviz-harness')))){
   const process=R.read(path.join(root,'Spatial-Harness-Library',example.harnessId,example.process));
+  assertNoAbsoluteTimes(process);
   for(const width of [1440,390]){
    await page.setViewportSize({width,height:1000});await page.goto(origin+example.harnessId+'/process.html?id='+example.id);await page.waitForSelector('#process-orbit');
    assert.equal(await page.locator('.process-view-tabs button').count(),3);
@@ -135,7 +137,8 @@ assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerW
    await page.locator('[data-view="actions"]').click();
    assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false,'Process overflow');
    await page.evaluate(()=>window.scrollTo({top:0,behavior:'instant'}));await page.screenshot({path:path.join(output,`process-${example.id}-${width}.png`),fullPage:true});
-   for(const file of [example.process,example.eventsCsv])assert((await page.request.get(origin+example.harnessId+'/'+file)).ok());
+   assert.equal(hasAbsoluteTime(await page.locator('#main').innerText()),false);
+   for(const file of [example.process,example.eventsCsv]){const response=await page.request.get(origin+example.harnessId+'/'+file);assert(response.ok());assert.equal(hasAbsoluteTime(await response.text()),false);}
    results.push({page:'Maze-style process timeline, exact previews, evidence search and pagination',id:example.id,width,passed:true});
   }
  }

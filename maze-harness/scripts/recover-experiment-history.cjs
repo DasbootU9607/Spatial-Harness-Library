@@ -4,6 +4,7 @@
 // rewrite an observer run. Paths below are relative to the experiment archive.
 const fs = require('node:fs'), path = require('node:path'), assert = require('node:assert/strict');
 const {hash} = require('./site-content.cjs');
+const {withoutAbsoluteTimes} = require('../../tools/observatory/time-privacy.cjs');
 const {exportProcess, sanitizeText} = require('./export-authoring-process.cjs');
 const {buildLevel, engineFactory} = require('./process-previews.cjs');
 const {thumbnailPath,rendererFingerprint} = require('./process-thumbnails.cjs');
@@ -36,8 +37,8 @@ function project(value, key='') {
   if(value && typeof value==='object') return Object.fromEntries(Object.entries(value).map(([k,v])=>[clean(k),project(v,k)]).filter(([,v])=>v!==undefined));
 }
 function reportProjection(data) {
-  if(Array.isArray(data)) return {observations:project(data)};
-  return Object.fromEntries(Object.entries(data).filter(([key])=>rootFields.has(key)).map(([key,value])=>[key,project(value,key)]).filter(([,v])=>v!==undefined));
+  if(Array.isArray(data)) return withoutAbsoluteTimes({observations:project(data)});
+  return withoutAbsoluteTimes(Object.fromEntries(Object.entries(data).filter(([key])=>rootFields.has(key)).map(([key,value])=>[key,project(value,key)]).filter(([,v])=>v!==undefined)));
 }
 function walk(dir, rel='') {
   return fs.readdirSync(path.join(dir,rel),{withFileTypes:true}).flatMap(e=>e.isDirectory()&&!excludedDirs.has(e.name)?walk(dir,path.join(rel,e.name)):e.isFile()?[path.join(rel,e.name).replaceAll('\\','/')]:[]);
@@ -170,6 +171,7 @@ function recover({experiments,observer,engine,site=path.resolve(__dirname,'../si
     recovery.audit.client={status:client.status,toolCalls:client.items.length,skillReadRequests:client.items.filter(i=>i.kind==='read'&&i.projection.files.includes('SKILL.md')).length,sources:client.sources||[],scope:client.scope||'No client evidence available'};
     recovery.audit.unrecoverable.push('Uninstrumented reads, overwritten transient drafts, model-internal processing and complete per-stage time/token attribution cannot be recovered from these files.');
     if(!recovery.audit.directSkillReads)recovery.audit.unrecoverable.push(recovery.audit.client.skillReadRequests?'The observer has no direct SKILL.md read event; recovered client read requests are shown separately from verified resource deliveries.':'No direct SKILL.md read event or client read request was identified; an attached snapshot does not prove reading.');
+    Object.assign(recovery,withoutAbsoluteTimes(recovery));
     checkRecovery(site,base,recovery);
     const data=`data/process-recovery/${entry.id}.json`;write(data,recovery);
     index.cases.push({caseId:entry.id,data,sha256:hash(fs.readFileSync(path.join(site,data)))});

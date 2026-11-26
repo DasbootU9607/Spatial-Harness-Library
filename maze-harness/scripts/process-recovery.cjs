@@ -44,6 +44,7 @@ function checkRecovery(site, base, recovery) {
   // This supplement deliberately contains no usage totals. It cannot be added
   // to the original interval or create another leaderboard build.
   assert(!Object.hasOwn(recovery, 'usage'));
+  require('../../tools/observatory/time-privacy.cjs').assertNoAbsoluteTimes(recovery);
   const text = JSON.stringify(recovery);
   assert(!/(?:[A-Za-z]:[\\/]|Bearer\s|sk-[A-Za-z0-9_-]{12,}|github_pat_)/.test(text), 'Private data in recovery');
   return {sessions:recovery.sessions.length, records:recovery.items.length};

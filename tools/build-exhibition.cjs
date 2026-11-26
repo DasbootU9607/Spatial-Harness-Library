@@ -18,7 +18,7 @@ function discover(){
  for(const s of maze.skills)if(!skills.some(x=>x.id===s.id&&x.harnessId==='maze-harness'))skills.push({...s,harnessId:'maze-harness',status:'complete',officialReferences:s.officialCases,install:'node tools/install.cjs --harness maze-harness --destination YOUR_SKILLS_DIRECTORY'});
  for(const c of maze.cases){const item={...c,harnessId:'maze-harness',skillIds:[c.skill],sourceKind:c.kind==='official'?'official':'agent-authored',taskType:'maze',taskUrl:`player.html?world=${c.world}&room=${c.room}`,processUrl:c.process?`process.html?case=${c.id}`:null,taskArtifact:c.map,solution:c.witness,legacy:true};if(c.kind==='official')official.push(item);else cases.push(item);}
  config.harnesses.find(h=>h.id==='maze-harness').officialCount=256;
- return {schemaVersion:1,harnesses:config.harnesses,skills,cases,official};
+ return {schemaVersion:1,harnesses:config.harnesses,skills,cases:require('./observatory/time-privacy.cjs').withoutAbsoluteTimes(cases),official};
 }
 function build(out){
  const data=discover(),shared=path.join(out,'shared');fs.cpSync(path.join(root,'shared'),shared,{recursive:true});

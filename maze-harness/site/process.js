@@ -1,4 +1,4 @@
-import {buildLabel, effortLabel, attributionLabel, buildDate, clientLabel, duration, tokenCount} from './build-data.js';
+import {buildLabel, effortLabel, attributionLabel, clientLabel, duration, tokenCount} from './build-data.js';
 import {downloadBuilds} from './build-downloads.js';
 import { loadCatalog, shell, playUrl, showError } from './ui.js';
 import { createOrbitTimeline } from './process-orbit.js?v=a8bdc9e954a1';
@@ -452,7 +452,6 @@ function renderUsage(usage) {
   grid.append(metric('Model', buildLabel(build)), metric('Reasoning setting', effortLabel(build)), metric('Client', clientLabel(usage?.runtime)), metric('Build wall time', duration(usage?.elapsedMs)), metric('Observed total tokens', tokenCount(values.total_tokens)));
   host.append(heading, grid);
   const meta=el('div','usage-session-line'); meta.append(el('span','',attributionLabel(build)));
-  if(build?.startedAt) meta.append(el('span','',`Started ${buildDate(build.startedAt)}`));
   host.append(meta);
   const details = el('details', 'usage-details');
   details.append(el('summary', '', 'Token breakdown and provenance'));
