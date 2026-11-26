@@ -51,34 +51,31 @@ async function taskPage(){
   <section class="task-question" aria-labelledby="question-heading"><h2 id="question-heading" class="task-eyebrow">The question</h2><p class="question-copy">${e(s.question)}</p>
    <figure class="task-figure"><button type="button" class="diagram-open" aria-label="Enlarge question diagram" aria-haspopup="dialog"><img src="${e(c.thumbnail)}" alt="Original figure and answer options for ${e(title)}"></button><figcaption><span>Compare the original with each option.</span><button type="button" class="diagram-enlarge" aria-haspopup="dialog">Enlarge diagram</button></figcaption></figure>
   </section>
-  <form class="answer-panel" aria-labelledby="answer-heading"><h2 id="answer-heading">Your answer</h2><p id="answer-hint">Select one option, then check your answer.</p>
+  <form class="answer-panel" aria-labelledby="answer-heading"><h2 id="answer-heading">Your answer</h2><p id="answer-hint">Select an option to see if it is correct.</p>
    <fieldset class="options" aria-describedby="answer-hint"><legend class="visually-hidden">Answer choices</legend>${s.options.map((option,i)=>`<label class="answer-choice" data-answer="${i}"><input type="radio" name="answer" value="${i}" aria-label="Option ${e(label(i))}${option.type==='text'?`. ${e(option.text)}`:''}" required><span class="choice-letter" aria-hidden="true">${e(label(i))}</span><span class="choice-copy">${option.type==='text'?e(option.text):`Option ${e(label(i))}`}<span class="choice-state"></span></span></label>`).join('')}</fieldset>
-   <button class="check-answer" type="submit" disabled>Check answer</button><p id="feedback" role="status" aria-live="polite" aria-atomic="true"></p><button class="retry-answer" type="button" hidden>Try again</button>
-   <a class="solution-link" href="#answer">View explanation</a>
+   <p id="feedback" role="status" aria-live="polite" aria-atomic="true"></p><button class="retry-answer" type="button" hidden>Try again</button>
   </form>
  </div>
  <details id="answer" class="task-solution"><summary>Answer &amp; explanation</summary><p class="solution-verdict"><strong>Correct answer: ${e(label(s.answer.index))}.</strong> ${e(s.answer.explanation)}</p><div class="option-explanations">${(s.answer.options||[]).map(o=>`<p class="option-explanation ${o.label===label(s.answer.index)?'is-correct':''}"><strong>${e(o.label)}${o.label===label(s.answer.index)?' · Correct answer':''}</strong><span>${e(o.explanation)}</span></p>`).join('')}</div></details>
  <details class="task-provenance"><summary>Build details &amp; downloads</summary><p>${e(c.title)}</p><div class="actions"><a href="${e(processUrl(c))}">Build process</a><a href="${e(c.verification.report)}">Verification summary</a><a href="${e(c.taskArtifact)}" download>Download exact task</a></div><p class="source-note">${e(method)}</p><p class="source-note">Immutable specification SHA-256: <code>${e(c.contentSha256)}</code></p></details>
  <dialog class="diagram-dialog" aria-labelledby="diagram-title"><div class="diagram-toolbar"><h2 id="diagram-title">Question diagram</h2><div><button type="button" class="diagram-zoom" aria-pressed="false">Zoom in</button><button type="button" class="diagram-close" autofocus>Close</button></div></div><div class="diagram-scroll" tabindex="0" aria-label="Question diagram; scroll to inspect when zoomed"><img src="${e(c.thumbnail)}" alt="Enlarged original figure and answer options"></div><p>Zoom in to inspect details. Scroll to move around the image.</p></dialog>`;
- const form=main.querySelector('form'),fieldset=form.querySelector('fieldset'),choices=[...form.querySelectorAll('[data-answer]')],submit=form.querySelector('[type=submit]'),retry=form.querySelector('.retry-answer'),feedback=main.querySelector('#feedback'),solution=main.querySelector('#answer');
- let graded=false;
- form.addEventListener('change',()=>{if(!graded)submit.disabled=!form.querySelector('input:checked');});
- form.addEventListener('submit',event=>{
-  event.preventDefault();const selected=form.querySelector('input:checked');if(!selected||graded)return;
-  const index=Number(selected.value),correct=index===s.answer.index;graded=true;fieldset.disabled=true;submit.hidden=true;retry.hidden=false;
+ const form=main.querySelector('form'),choices=[...form.querySelectorAll('[data-answer]')],retry=form.querySelector('.retry-answer'),feedback=main.querySelector('#feedback'),solution=main.querySelector('#answer');
+ form.addEventListener('submit',event=>event.preventDefault());
+ form.addEventListener('change',()=>{
+  const selected=form.querySelector('input:checked');if(!selected)return;
+  const index=Number(selected.value),correct=index===s.answer.index;retry.hidden=false;
   feedback.className=correct?'feedback-correct':'feedback-incorrect';
   feedback.innerHTML=`<strong>${correct?'Correct.':'Incorrect.'}</strong><span>${correct?`You chose ${e(label(index))}.`:`You chose ${e(label(index))}. The correct answer is ${e(label(s.answer.index))}.`}</span><span>${e(explanation(index))}</span>`;
   choices.forEach((choice,i)=>{const right=i===s.answer.index,wrong=i===index&&!correct;choice.classList.toggle('is-correct',right);choice.classList.toggle('is-incorrect',wrong);choice.querySelector('.choice-state').textContent=right?'Correct answer':wrong?'Your answer · Incorrect':'';});
-  retry.focus({preventScroll:true});
  });
  retry.addEventListener('click',()=>{
-  graded=false;form.reset();fieldset.disabled=false;submit.disabled=true;submit.hidden=false;retry.hidden=true;feedback.textContent='';feedback.className='';solution.open=false;
+  form.reset();retry.hidden=true;feedback.textContent='';feedback.className='';solution.open=false;
   choices.forEach(choice=>{choice.classList.remove('is-correct','is-incorrect');choice.querySelector('.choice-state').textContent='';});
   if(location.hash==='#answer')history.replaceState(null,'',location.pathname+location.search);
   choices[0].querySelector('input').focus({preventScroll:true});
  });
  const reveal=()=>{if(location.hash==='#answer'){solution.open=true;requestAnimationFrame(()=>solution.scrollIntoView({block:'nearest'}));}};
- main.querySelector('.solution-link').addEventListener('click',()=>{solution.open=true;});window.addEventListener('hashchange',reveal);reveal();
+ window.addEventListener('hashchange',reveal);reveal();
  const dialog=main.querySelector('dialog'),zoom=dialog.querySelector('.diagram-zoom'),scroll=dialog.querySelector('.diagram-scroll');
  main.querySelectorAll('.diagram-open,.diagram-enlarge').forEach(button=>button.addEventListener('click',()=>dialog.showModal()));
  dialog.querySelector('.diagram-close').addEventListener('click',()=>dialog.close());
