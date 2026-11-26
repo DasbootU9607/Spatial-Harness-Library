@@ -1,0 +1,80 @@
+/* Official collections share the authored-task choice cards and status colors. */
+body.archive-page{--line:#e3e3e3;--pale:#fafafa;font:16px/1.6 Geist,Arial,sans-serif}
+body.archive-page :focus-visible{outline-color:#171717}
+body.archive-page #main,body.archive-page .sitehead .wrap{width:min(1440px,calc(100% - 48px));max-width:none;margin:auto}
+body.archive-page .sitehead{position:static}
+body.archive-page .sitehead .brand{font:650 16px/1.4 Geist,Arial,sans-serif;letter-spacing:0}
+#archive.frame{max-width:none;width:100%;padding:20px 0 0}
+#archive>.topline{display:none}
+#archive>.intro{padding:0 0 18px;margin:0;border-bottom:1px solid var(--line);align-items:center;gap:20px}
+#archive>.intro h1{font:650 clamp(25px,2.6vw,34px)/1.2 Geist,Arial,sans-serif;font-variant:normal;letter-spacing:-.035em}
+#archive>.intro .eyebrow{font-size:12px;margin:0 0 6px;letter-spacing:.06em}
+#archive>.intro .meta{font-size:13px}
+#archive .reader{grid-template-columns:224px minmax(0,1fr);gap:28px;padding-top:24px;align-items:start}
+#archive .question-catalogue{display:block;border:1px solid var(--line);border-radius:10px;background:#fafafa;padding:0;min-width:0;position:sticky;top:20px;max-height:calc(100dvh - 40px);overflow:auto}
+#archive #catalogue-panel{margin:0;padding:16px;border:0;border-radius:0}
+#archive #catalogue-panel>summary{font:600 16px/1.5 Geist,Arial,sans-serif}
+#archive #matches{display:block;font-size:12px;color:#666;font-weight:400;margin-top:4px}
+#archive .catalogue-body{padding-top:16px}
+#archive .catalogue-search{font-size:13px;margin:0 0 6px}
+#archive .filters input,#archive .filters select{margin:0;min-height:40px;padding:8px;background:#fff;border:1px solid #ddd;border-radius:5px;font-size:14px;width:100%}
+#archive #question-filters{margin:12px 0 8px;padding:0;border:0;background:transparent}
+#archive #question-filters>summary{font-size:13px;font-weight:500;padding:4px 0}
+#archive .filter-fields{padding-top:6px}
+#archive .filter-fields label{font-size:13px;margin:0 0 10px}
+#archive .filter-fields select{margin-top:5px}
+#archive #clear{font:13px/1.4 Geist,Arial,sans-serif;min-height:36px;margin:0 0 14px;padding:6px 9px;background:#fff;border-color:#ddd}
+#archive #question-list{display:grid;gap:7px;max-height:clamp(160px,calc(100dvh - 540px),410px);min-height:160px;overflow:auto;overscroll-behavior:contain;padding:3px;margin:0 -3px;scrollbar-width:thin}
+#archive .question-card{display:block;text-align:left;padding:10px;width:100%;min-width:0;border:1px solid #dedede;border-radius:7px;background:#fff;color:#171717;cursor:pointer}
+#archive .question-card:hover{border-color:#888;background:#f2f2f2}
+#archive .question-card[aria-current=true]{background:#171717;border-color:#171717;color:white}
+#archive .question-card-title{display:block;font-size:14px;font-weight:600;line-height:1.4}
+#archive .question-card-meta{display:block;font-size:12px;color:#666;line-height:1.5;overflow-wrap:anywhere;margin-top:4px}
+#archive .question-card[aria-current=true] .question-card-meta{color:#ddd}
+#archive .question-card-state{display:block;font-size:12px;font-weight:600;margin-top:4px}
+#archive .question-card-state.correct{color:#237442}
+#archive .question-card-state.incorrect{color:#a33428}
+#archive .question-card[aria-current=true] .question-card-state{color:white}
+#archive .catalogue-range{font-size:12px;color:#666;text-align:center;margin:12px 0 8px}
+#archive .catalogue-pages{display:flex;gap:8px}
+#archive .catalogue-pages button{flex:1;min-width:0;min-height:36px;padding:5px;font-size:13px;background:#fff}
+#archive #case-panel,#archive #case-body{min-width:0}
+#archive .casebar{align-items:center;margin-bottom:8px}
+#archive .casebar h2{font:600 clamp(22px,2vw,28px)/1.3 Geist,Arial,sans-serif;letter-spacing:-.025em;margin:4px 0 0}
+#archive .casebar .eyebrow{font-size:12px;letter-spacing:.04em}
+#archive .arrows button{width:auto;height:auto;min-height:40px;padding:8px 10px;font-size:13px;background:#fff;border-radius:5px}
+#archive .tags{font:13px/1.5 GeistMono,monospace;color:#666;margin:0 0 22px;overflow-wrap:anywhere}
+#archive .official-task-layout{display:grid;grid-template-columns:minmax(0,1fr) 272px;gap:24px;align-items:start}
+#archive .official-question{min-width:0}
+#archive .question{margin:0 0 20px}
+#archive .question>.eyebrow{font-size:12px;margin:0 0 8px}
+#archive #prompt{font:16px/1.7 Geist,Arial,sans-serif;margin:0;white-space:pre-line;overflow-wrap:anywhere}
+#archive #zoom.original{padding:14px;border:1px solid var(--line);border-radius:10px;background:#fff;color:#171717}
+#archive #pic{max-height:360px;min-height:120px;width:100%;object-fit:contain}
+#archive #zoom>span{display:block;margin-top:12px;padding-top:10px;border-top:1px solid var(--line);font:13px/1.4 Geist,Arial,sans-serif;text-align:right;text-decoration:underline;text-underline-offset:3px}
+#archive .answer-panel{padding:18px;margin:0;min-width:0}
+#archive .answer-panel h2{font:600 20px/1.3 Geist,Arial,sans-serif;margin:0 0 8px}
+#archive .answer-panel #answer-hint{margin:0 0 16px}
+#archive #options{display:grid;gap:9px;padding:0;margin:0;min-width:0;border:0;list-style:none}
+#archive .answer-choice{gap:10px;padding:11px;min-height:54px}
+#archive .choice-copy{min-width:0;overflow-wrap:anywhere;font-size:14px;line-height:1.5}
+#archive .choice-letter{width:28px;height:28px}
+#archive #retry-answer{margin-top:16px}
+#archive #response-note{font-size:14px;line-height:1.6;color:#555;margin:0}
+#archive #answer{margin:24px 0 0;border:1px solid var(--line);border-radius:9px;padding:16px}
+#archive #answer summary{font:500 14px/1.5 Geist,Arial,sans-serif}
+#archive #answer-content{font-size:15px;padding:16px 0 0}
+#archive .case-id{font-size:12px;color:#666;margin:16px 0 0}
+body.archive-page .foot{display:block;width:min(1440px,calc(100% - 48px));max-width:none;padding-inline:0;border-top:0;margin-top:32px;min-height:0}
+body.archive-page .foot .footer-inner{width:100%;margin-top:0;padding:24px 0}
+#lightbox{width:min(1280px,calc(100% - 32px));max-width:none;max-height:calc(100dvh - 32px);border-radius:10px;padding:12px 16px}
+#lightbox .dialog-head{margin:0 0 10px;padding:0;font-size:14px}
+#lightbox .dialog-head>div{display:flex;gap:8px}
+#lightbox .dialog-head button{font:14px/1.4 Geist,Arial,sans-serif;min-height:44px;padding:8px 12px;background:white}
+#image-scroll{overflow:auto;max-height:calc(100dvh - 140px);overscroll-behavior:contain}
+#lightbox #large-pic{display:block;max-width:100%;max-height:calc(100dvh - 140px);margin:auto;object-fit:contain}
+#image-scroll.is-zoomed #large-pic{width:max(100%,1400px);max-width:none;max-height:none}
+@media(max-width:1150px){#archive .reader{grid-template-columns:204px minmax(0,1fr);gap:20px}#archive .official-task-layout{grid-template-columns:minmax(0,1fr) 244px;gap:18px}#archive .answer-panel{padding:14px}}
+@media(max-width:1000px){#archive .official-task-layout{grid-template-columns:1fr}#archive #pic{max-height:360px}#archive .answer-panel{padding:18px}#archive #options{grid-template-columns:1fr 1fr}}
+@media(max-width:760px){body.archive-page #main,body.archive-page .sitehead .wrap,body.archive-page .foot{width:calc(100% - 32px)}#archive.frame{padding-top:16px}#archive>.intro{padding:18px 0;gap:8px;align-items:start}#archive>.intro h1{font-size:28px}#archive .reader{grid-template-columns:1fr;padding-top:18px;gap:22px}#archive .question-catalogue{position:static}#archive #catalogue-panel{padding:14px}#archive #matches{display:inline;margin-left:8px}#archive #question-list{max-height:280px;min-height:0;grid-template-columns:1fr 1fr}#archive .casebar{align-items:start;gap:8px}#archive .arrows button{font-size:12px;padding:8px;min-height:40px}#archive .casebar h2{font-size:23px}#archive .tags{font-size:12px;margin-bottom:18px}#archive #options{grid-template-columns:1fr}#archive #zoom.original{padding:10px}#archive #pic{max-height:340px}#archive #prompt{line-height:1.65}#lightbox .dialog-head{align-items:start;font-size:12px}#lightbox .dialog-head button{padding:8px;font-size:13px}}
+@media(max-width:380px){#archive .casebar{flex-direction:column}#archive #question-list{grid-template-columns:1fr}}

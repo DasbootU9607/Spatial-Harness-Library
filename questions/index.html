@@ -8,7 +8,8 @@
   <title>Spatial Index — Visual reasoning archive</title>
   <link rel="icon" href="icon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="style.css">
-  <script type="module" src="app.js"></script>
+  <link rel="stylesheet" href="reader.css?v=1">
+  <script type="module" src="app.js?v=2"></script>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -42,23 +43,43 @@
       <div class="section-head intro"><div><p id="archive-kicker" class="eyebrow"></p><h1 id="archive-name"></h1></div><p id="archive-count" class="meta"></p></div>
       <p id="archive-status" role="status"></p>
       <div id="reader" class="reader" hidden>
-        <aside class="filters"><p class="eyebrow">CATALOGUE</p><h2>Find a question</h2>
-          <label id="track-field">Response format<select id="track"></select></label>
-          <label>Category<select id="category"></select></label>
-          <label>Task<select id="type"></select></label>
-          <label id="level-field">Difficulty level<select id="level"></select></label>
-          <label>Search<input id="search" type="search" placeholder="Question, task, or case ID" autocomplete="off"></label>
-          <button id="clear" class="plain">Reset filters</button>
-          <div class="jump"><label>Jump to a result<select id="jump"></select></label><span id="matches" class="meta"></span></div>
+        <aside class="filters question-catalogue" aria-label="Question catalogue">
+          <details id="catalogue-panel" open>
+            <summary>Choose a question <span id="matches"></span></summary>
+            <div class="catalogue-body">
+              <label class="catalogue-search" for="search">Search questions</label><input id="search" type="search" placeholder="Task, question, or ID" autocomplete="off">
+              <details id="question-filters"><summary>Filter questions</summary><div class="filter-fields">
+                <label id="track-field">Response format<select id="track"></select></label>
+                <label>Category<select id="category"></select></label>
+                <label>Task<select id="type"></select></label>
+                <label id="level-field">Difficulty level<select id="level"></select></label>
+              </div></details>
+              <button id="clear" class="plain" type="button">Reset filters</button>
+              <nav id="question-list" aria-label="Select a question"></nav>
+              <p id="list-range" class="catalogue-range" role="status"></p>
+              <div class="catalogue-pages"><button id="list-prev" type="button" aria-label="Previous question list page">Previous</button><button id="list-next" type="button" aria-label="Next question list page">Next</button></div>
+            </div>
+          </details>
         </aside>
         <article id="case-panel">
           <div id="case-empty" class="empty" hidden>No matching questions. Try another search term or reset the filters.</div>
           <div id="case-body">
-            <div class="casebar"><div><span id="position" class="eyebrow"></span><h2 id="case-heading"></h2></div><div class="arrows"><button id="prev" title="Previous question" aria-label="Previous question">←</button><button id="next" title="Next question" aria-label="Next question">→</button></div></div>
+            <div class="casebar"><div><span id="position" class="eyebrow"></span><h2 id="case-heading" tabindex="-1"></h2></div><div class="arrows"><button id="prev" type="button" aria-label="Previous question">Previous</button><button id="next" type="button" aria-label="Next question">Next</button></div></div>
             <p class="tags" id="tags"></p>
-            <button id="zoom" class="original" aria-label="Enlarge question image"><img id="pic" alt=""><span>Enlarge image ⤢</span></button>
-            <div class="question"><p class="eyebrow">QUESTION</p><p id="prompt" lang="en"></p><ol id="options" lang="en"></ol></div>
-            <details id="answer"><summary>Show answer and explanation</summary><div id="answer-content"></div></details>
+            <div class="official-task-layout">
+              <section class="official-question" aria-label="Question and diagram">
+                <div class="question"><p class="eyebrow">QUESTION</p><p id="prompt" lang="en"></p></div>
+                <button id="zoom" class="original" aria-label="Enlarge question image" aria-haspopup="dialog"><img id="pic" alt=""><span>Enlarge image</span></button>
+              </section>
+              <form id="official-response" class="answer-panel" aria-labelledby="response-heading">
+                <h2 id="response-heading">Your answer</h2><p id="answer-hint">Select an option to see if it is correct.</p>
+                <fieldset id="options" class="options" aria-describedby="answer-hint"><legend class="visually-hidden">Answer choices</legend></fieldset>
+                <p id="official-answer-status" class="visually-hidden" role="status" aria-live="polite" aria-atomic="true"></p>
+                <button id="retry-answer" class="retry-answer" type="button" hidden>Try again</button>
+                <p id="response-note" hidden></p>
+              </form>
+            </div>
+            <details id="answer"><summary>Official answer &amp; explanation</summary><div id="answer-content"></div></details>
             <p class="case-id" id="case-id"></p>
           </div>
         </article>
@@ -72,5 +93,5 @@
     </section>
   </main>
   <footer class="frame foot"><a class="brand" href="#/">Spatial Index.</a><a href="../">Harness library ↗</a><a href="sources.html">Sources and credits ↗</a></footer>
-  <dialog id="lightbox"><div class="dialog-head"><a id="raw" target="_blank" rel="noopener">Open original image ↗</a><button id="close-dialog" class="plain">Close ×</button></div><img id="large-pic" alt="Original image"></dialog>
+  <dialog id="lightbox" aria-label="Enlarged question image"><div class="dialog-head"><a id="raw" target="_blank" rel="noopener">Open original image</a><div><button id="zoom-detail" type="button" aria-pressed="false">Zoom in</button><button id="close-dialog" class="plain" type="button" autofocus>Close</button></div></div><div id="image-scroll" tabindex="0" aria-label="Image; scroll to inspect when zoomed"><img id="large-pic" alt="Original image"></div></dialog>
 </body></html>
