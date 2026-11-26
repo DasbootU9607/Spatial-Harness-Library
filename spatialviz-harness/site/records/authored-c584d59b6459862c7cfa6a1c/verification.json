@@ -1,0 +1,45 @@
+{
+  "id": "t001",
+  "actionId": "e4cfc739-679f-4454-b90f-758a15f83795",
+  "candidateId": "v002",
+  "testedFingerprints": {
+    "specification": "c584d59b6459862c7cfa6a1c228cdca44c07ceffdc1ce36aa16ac8ba90958eb8",
+    "geometry": "b17f9efad94ef359c1f7b5f58d1abe79b7fa83d6a58515018a2a9015e264a9e6",
+    "question": "5c1def863acd768f5d42d35c09bd121142121aaef55323612b9273de381676e8",
+    "options": "2a02ee37206c0089bd193ad678330e2d408634d0befda3fcfdf1fc7c1b232c15",
+    "answer": "169536d54abfd7de9390a0c0977821dd4dd28713a5f9cfc1557163111649d7f1",
+    "contract": "692ead6dbb48f2495f17965d52c5199610428afd6407ef40162db56af7672f37",
+    "rendering": "0dcb57dd9aef6c2fdc9b63d1cb1274d184b27a5bd864edc99e9ca72ee83e0d2a",
+    "generator": "45db59963798dee1a823afd0d8cf30510d753279c4e162c36d817a0408be5c08"
+  },
+  "verifier": {
+    "id": "official-projection",
+    "revision": "ace70cd91ed55fb6bb2da245ac6fbdc8890dfdc71ecdbaab330a47d99bee356e"
+  },
+  "reportSha256": "7e36cf46e8e66465a2736e2532f0ac20853e02ff6c22fced64273a45e9339dcd",
+  "verdict": "passed",
+  "status": "passed",
+  "checks": [
+    {
+      "name": "World geometry, construction parameters, viewing contract and question",
+      "verdict": "passed"
+    },
+    {
+      "name": "Independent projected answer, released choice semantics and per-option explanations",
+      "verdict": "passed"
+    },
+    {
+      "name": "Visible surfaces, occlusion, distinctive options, crop and final labeled composition",
+      "verdict": "passed"
+    },
+    {
+      "name": "Current projection adapter and pinned upstream manifest",
+      "verdict": "passed"
+    }
+  ],
+  "scope": "Discrete nearest-surface projection or face-mesh depth testing, displayed option uniqueness and exact composite replay.",
+  "commandExitStatus": 0,
+  "binding": "exact",
+  "bindingBasis": "exact candidate and full input fingerprints",
+  "commandEventId": "e000019"
+}

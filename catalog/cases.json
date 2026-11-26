@@ -824,6 +824,378 @@
       },
       "process": "records/authored-1ffc3acd58a1ff99886e687d/process.json",
       "eventsCsv": "records/authored-1ffc3acd58a1ff99886e687d/events.csv"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "authored-c584d59b6459862c7cfa6a1c",
+      "harnessId": "spatialviz-harness",
+      "skillIds": [
+        "3view-projection"
+      ],
+      "sourceKind": "agent-authored",
+      "sourceCaseIds": [
+        "spatialviz-bench:vqa:MentalRotation:3ViewProjection:Level0-Cubes3View:0-3-3-3-15",
+        "spatialviz-bench:vqa:MentalRotation:3ViewProjection:Level0-Cubes3View:10-3-3-3-11",
+        "spatialviz-bench:vqa:MentalRotation:3ViewProjection:Level1-CAD3View:00001009",
+        "spatialviz-bench:vqa:MentalRotation:3ViewProjection:Level1-CAD3View:00001614"
+      ],
+      "category": "MentalRotation",
+      "taskType": "3ViewProjection",
+      "difficulty": {
+        "label": "Unranked",
+        "basis": "No calibration."
+      },
+      "title": "Colored cube stack / Left view",
+      "description": "Select the requested orthographic projection.",
+      "contentSha256": "c584d59b6459862c7cfa6a1c228cdca44c07ceffdc1ce36aa16ac8ba90958eb8",
+      "thumbnail": "records/authored-c584d59b6459862c7cfa6a1c/v002-7e8c8ed81aca3973.png",
+      "taskArtifact": "records/authored-c584d59b6459862c7cfa6a1c/task.json",
+      "verification": {
+        "verdict": "passed",
+        "candidateId": "v002",
+        "fingerprints": {
+          "specification": "c584d59b6459862c7cfa6a1c228cdca44c07ceffdc1ce36aa16ac8ba90958eb8",
+          "geometry": "b17f9efad94ef359c1f7b5f58d1abe79b7fa83d6a58515018a2a9015e264a9e6",
+          "question": "5c1def863acd768f5d42d35c09bd121142121aaef55323612b9273de381676e8",
+          "options": "2a02ee37206c0089bd193ad678330e2d408634d0befda3fcfdf1fc7c1b232c15",
+          "answer": "169536d54abfd7de9390a0c0977821dd4dd28713a5f9cfc1557163111649d7f1",
+          "contract": "692ead6dbb48f2495f17965d52c5199610428afd6407ef40162db56af7672f37",
+          "rendering": "0dcb57dd9aef6c2fdc9b63d1cb1274d184b27a5bd864edc99e9ca72ee83e0d2a",
+          "generator": "45db59963798dee1a823afd0d8cf30510d753279c4e162c36d817a0408be5c08"
+        },
+        "report": "records/authored-c584d59b6459862c7cfa6a1c/verification.json"
+      },
+      "build": {
+        "runId": "build-f24dce40-071b-41b8-ba41-2ce51103d1c6",
+        "candidateId": "v002",
+        "usage": {
+          "schemaVersion": 2,
+          "runId": "build-f24dce40-071b-41b8-ba41-2ce51103d1c6",
+          "source": "codex",
+          "runtime": "Codex Desktop",
+          "status": "measured",
+          "elapsedMs": 686879,
+          "elapsedKind": "wall-clock",
+          "scope": "Runtime-reported usage between the start baseline and finish snapshot of this session. In-flight or delayed usage, earlier conversation, other agents and later delivery are excluded. This is an observed interval, not a complete billed task total.",
+          "scopeComplete": false,
+          "observedTokens": {
+            "input_tokens": 8448809,
+            "cached_input_tokens": 8411904,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 13401,
+            "reasoning_output_tokens": 2430,
+            "total_tokens": 8462210
+          },
+          "tokens": {
+            "input_tokens": null,
+            "cached_input_tokens": null,
+            "cache_write_input_tokens": null,
+            "output_tokens": null,
+            "reasoning_output_tokens": null,
+            "total_tokens": null
+          },
+          "models": [
+            {
+              "provider": "openai",
+              "model": "gpt-6.2-astra",
+              "reasoningEffort": "xhigh",
+              "tokens": {
+                "input_tokens": 8448809,
+                "cached_input_tokens": 8411904,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 13401,
+                "reasoning_output_tokens": 2430,
+                "total_tokens": 8462210
+              },
+              "observations": 45
+            }
+          ],
+          "missingFields": [],
+          "issues": [],
+          "observations": 45
+        }
+      },
+      "process": "records/authored-c584d59b6459862c7cfa6a1c/process.json",
+      "eventsCsv": "records/authored-c584d59b6459862c7cfa6a1c/events.csv"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "authored-df78d1587dd8312db22834fe",
+      "harnessId": "spatialviz-harness",
+      "skillIds": [
+        "3view-projection"
+      ],
+      "sourceKind": "agent-authored",
+      "sourceCaseIds": [
+        "spatialviz-bench:vqa:MentalRotation:3ViewProjection:Level0-Cubes3View:0-3-3-3-15",
+        "spatialviz-bench:vqa:MentalRotation:3ViewProjection:Level0-Cubes3View:10-3-3-3-11",
+        "spatialviz-bench:vqa:MentalRotation:3ViewProjection:Level1-CAD3View:00001009",
+        "spatialviz-bench:vqa:MentalRotation:3ViewProjection:Level1-CAD3View:00001614"
+      ],
+      "category": "MentalRotation",
+      "taskType": "3ViewProjection",
+      "difficulty": {
+        "label": "Unranked",
+        "basis": "No calibration."
+      },
+      "title": "Colored cube stack / Left view",
+      "description": "Select the requested orthographic projection.",
+      "contentSha256": "df78d1587dd8312db22834fed12e82036b74d1d5824a2ae9006b3d19a209d800",
+      "thumbnail": "records/authored-df78d1587dd8312db22834fe/v002-e7cf856075ad9c44.png",
+      "taskArtifact": "records/authored-df78d1587dd8312db22834fe/task.json",
+      "verification": {
+        "verdict": "passed",
+        "candidateId": "v002",
+        "fingerprints": {
+          "specification": "df78d1587dd8312db22834fed12e82036b74d1d5824a2ae9006b3d19a209d800",
+          "geometry": "835a97fc65772666ddf7921598451e4a8deb84c2d48d3541361920094f8b100a",
+          "question": "5c1def863acd768f5d42d35c09bd121142121aaef55323612b9273de381676e8",
+          "options": "2a02ee37206c0089bd193ad678330e2d408634d0befda3fcfdf1fc7c1b232c15",
+          "answer": "eff9f7a8e7fbd4a459d126cee3a3b6b8e8ea4e2c37716b2a4d23ea53b06cff10",
+          "contract": "692ead6dbb48f2495f17965d52c5199610428afd6407ef40162db56af7672f37",
+          "rendering": "95a4520ef557d9f45814afa8cc46ff1a9f9fe672c359276c43c12144bb505622",
+          "generator": "cff23ddb48eca2f5a509bcbae46a4092a0c88375610eabf5a5f4dbc0c37d51c7"
+        },
+        "report": "records/authored-df78d1587dd8312db22834fe/verification.json"
+      },
+      "build": {
+        "runId": "build-eb0f621e-b221-4494-a685-8bbdcb6de1d8",
+        "candidateId": "v002",
+        "usage": {
+          "schemaVersion": 2,
+          "runId": "build-eb0f621e-b221-4494-a685-8bbdcb6de1d8",
+          "source": "codex",
+          "runtime": "Codex Desktop",
+          "status": "measured",
+          "elapsedMs": 684965,
+          "elapsedKind": "wall-clock",
+          "scope": "Runtime-reported usage between the start baseline and finish snapshot of this session. In-flight or delayed usage, earlier conversation, other agents and later delivery are excluded. This is an observed interval, not a complete billed task total.",
+          "scopeComplete": false,
+          "observedTokens": {
+            "input_tokens": 8448809,
+            "cached_input_tokens": 8411904,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 13401,
+            "reasoning_output_tokens": 2430,
+            "total_tokens": 8462210
+          },
+          "tokens": {
+            "input_tokens": null,
+            "cached_input_tokens": null,
+            "cache_write_input_tokens": null,
+            "output_tokens": null,
+            "reasoning_output_tokens": null,
+            "total_tokens": null
+          },
+          "models": [
+            {
+              "provider": "openai",
+              "model": "gpt-6.2-astra",
+              "reasoningEffort": "xhigh",
+              "tokens": {
+                "input_tokens": 8448809,
+                "cached_input_tokens": 8411904,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 13401,
+                "reasoning_output_tokens": 2430,
+                "total_tokens": 8462210
+              },
+              "observations": 45
+            }
+          ],
+          "missingFields": [],
+          "issues": [],
+          "observations": 45
+        }
+      },
+      "process": "records/authored-df78d1587dd8312db22834fe/process.json",
+      "eventsCsv": "records/authored-df78d1587dd8312db22834fe/events.csv"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "authored-de5cb480b5961b20dd56ecd3",
+      "harnessId": "spatialviz-harness",
+      "skillIds": [
+        "3view-projection"
+      ],
+      "sourceKind": "agent-authored",
+      "sourceCaseIds": [
+        "spatialviz-bench:vqa:MentalRotation:3ViewProjection:Level0-Cubes3View:0-3-3-3-15",
+        "spatialviz-bench:vqa:MentalRotation:3ViewProjection:Level0-Cubes3View:10-3-3-3-11",
+        "spatialviz-bench:vqa:MentalRotation:3ViewProjection:Level1-CAD3View:00001009",
+        "spatialviz-bench:vqa:MentalRotation:3ViewProjection:Level1-CAD3View:00001614"
+      ],
+      "category": "MentalRotation",
+      "taskType": "3ViewProjection",
+      "difficulty": {
+        "label": "Unranked",
+        "basis": "No calibration."
+      },
+      "title": "Machined plate / step / Front view",
+      "description": "Select the requested orthographic projection.",
+      "contentSha256": "de5cb480b5961b20dd56ecd3445d5289b0cbe0411b64f6ea82168b440e5bf8f9",
+      "thumbnail": "records/authored-de5cb480b5961b20dd56ecd3/v002-fed037dd69f52c74.png",
+      "taskArtifact": "records/authored-de5cb480b5961b20dd56ecd3/task.json",
+      "verification": {
+        "verdict": "passed",
+        "candidateId": "v002",
+        "fingerprints": {
+          "specification": "de5cb480b5961b20dd56ecd3445d5289b0cbe0411b64f6ea82168b440e5bf8f9",
+          "geometry": "515b511984d767a066ed76eb33892b73cccbfe353e1fd24c1493624df9417b42",
+          "question": "93cb94c8db62399b9668738e5e0ab6dc308e3790d790a62ca9b590596bc0b0f9",
+          "options": "884fd32b53d57f0d59c10148508f191e6119117a3d170442019143574543a1e3",
+          "answer": "d5014321bd7e7c9a7e1e3c4b8a4ccdc8a2dc9281cf5d71c0d062efd00f226721",
+          "contract": "9b0a82fd6cc23e047ae2753865ee290e773e48d911276235e388d97e1aa426db",
+          "rendering": "4c8e0a7d341e0a8777a6aa2ae71bebfa619daf83cbcd6f9f90a8d15b6eff753e",
+          "generator": "247e6387d36cccb9c303cd8778259ee607f1c9101f4e8a17bc02147866557c37"
+        },
+        "report": "records/authored-de5cb480b5961b20dd56ecd3/verification.json"
+      },
+      "build": {
+        "runId": "build-49e3e6fb-b20f-43a9-8e69-d067854d433c",
+        "candidateId": "v002",
+        "usage": {
+          "schemaVersion": 2,
+          "runId": "build-49e3e6fb-b20f-43a9-8e69-d067854d433c",
+          "source": "codex",
+          "runtime": "Codex Desktop",
+          "status": "measured",
+          "elapsedMs": 681008,
+          "elapsedKind": "wall-clock",
+          "scope": "Runtime-reported usage between the start baseline and finish snapshot of this session. In-flight or delayed usage, earlier conversation, other agents and later delivery are excluded. This is an observed interval, not a complete billed task total.",
+          "scopeComplete": false,
+          "observedTokens": {
+            "input_tokens": 8448809,
+            "cached_input_tokens": 8411904,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 13401,
+            "reasoning_output_tokens": 2430,
+            "total_tokens": 8462210
+          },
+          "tokens": {
+            "input_tokens": null,
+            "cached_input_tokens": null,
+            "cache_write_input_tokens": null,
+            "output_tokens": null,
+            "reasoning_output_tokens": null,
+            "total_tokens": null
+          },
+          "models": [
+            {
+              "provider": "openai",
+              "model": "gpt-6.2-astra",
+              "reasoningEffort": "xhigh",
+              "tokens": {
+                "input_tokens": 8448809,
+                "cached_input_tokens": 8411904,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 13401,
+                "reasoning_output_tokens": 2430,
+                "total_tokens": 8462210
+              },
+              "observations": 45
+            }
+          ],
+          "missingFields": [],
+          "issues": [],
+          "observations": 45
+        }
+      },
+      "process": "records/authored-de5cb480b5961b20dd56ecd3/process.json",
+      "eventsCsv": "records/authored-de5cb480b5961b20dd56ecd3/events.csv"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "authored-3fd24385eefbe6dcd4e8f848",
+      "harnessId": "spatialviz-harness",
+      "skillIds": [
+        "3view-projection"
+      ],
+      "sourceKind": "agent-authored",
+      "sourceCaseIds": [
+        "spatialviz-bench:vqa:MentalRotation:3ViewProjection:Level0-Cubes3View:0-3-3-3-15",
+        "spatialviz-bench:vqa:MentalRotation:3ViewProjection:Level0-Cubes3View:10-3-3-3-11",
+        "spatialviz-bench:vqa:MentalRotation:3ViewProjection:Level1-CAD3View:00001009",
+        "spatialviz-bench:vqa:MentalRotation:3ViewProjection:Level1-CAD3View:00001614"
+      ],
+      "category": "MentalRotation",
+      "taskType": "3ViewProjection",
+      "difficulty": {
+        "label": "Unranked",
+        "basis": "No calibration."
+      },
+      "title": "Machined plate / bores / Top view",
+      "description": "Select the requested orthographic projection.",
+      "contentSha256": "3fd24385eefbe6dcd4e8f8480093d9b413696cc5b75ff291badee8602626cecf",
+      "thumbnail": "records/authored-3fd24385eefbe6dcd4e8f848/v002-6cfe5ceba6c30897.png",
+      "taskArtifact": "records/authored-3fd24385eefbe6dcd4e8f848/task.json",
+      "verification": {
+        "verdict": "passed",
+        "candidateId": "v002",
+        "fingerprints": {
+          "specification": "3fd24385eefbe6dcd4e8f8480093d9b413696cc5b75ff291badee8602626cecf",
+          "geometry": "df60c14e0cb818430b5a9f9c5b3375413873dac24837f9b6f1e74f40ff8bb1ee",
+          "question": "ba093778036c516812c957cfac8867b3452e921caf7c3e3e17d551b610c6e89c",
+          "options": "884fd32b53d57f0d59c10148508f191e6119117a3d170442019143574543a1e3",
+          "answer": "8562eedec0b215140cde044116d711c8584aa819594b7974715c81d78c0356a0",
+          "contract": "b03b07d0fd811b7feb8dbd8170d01e57885cc6ae94a4ae11f7356faedf64d7f0",
+          "rendering": "2804edfcbd4f7453133cca36d77fe0727b17c3a1814ff9a2fb2200dfd970b5e4",
+          "generator": "cc3c03eb7bc84a85f378f9a32d42ec94ff967fff7ec5fa5b9f3d111378914050"
+        },
+        "report": "records/authored-3fd24385eefbe6dcd4e8f848/verification.json"
+      },
+      "build": {
+        "runId": "build-9e7afda8-f767-4880-9907-4c57b17debff",
+        "candidateId": "v002",
+        "usage": {
+          "schemaVersion": 2,
+          "runId": "build-9e7afda8-f767-4880-9907-4c57b17debff",
+          "source": "codex",
+          "runtime": "Codex Desktop",
+          "status": "measured",
+          "elapsedMs": 683569,
+          "elapsedKind": "wall-clock",
+          "scope": "Runtime-reported usage between the start baseline and finish snapshot of this session. In-flight or delayed usage, earlier conversation, other agents and later delivery are excluded. This is an observed interval, not a complete billed task total.",
+          "scopeComplete": false,
+          "observedTokens": {
+            "input_tokens": 8448809,
+            "cached_input_tokens": 8411904,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 13401,
+            "reasoning_output_tokens": 2430,
+            "total_tokens": 8462210
+          },
+          "tokens": {
+            "input_tokens": null,
+            "cached_input_tokens": null,
+            "cache_write_input_tokens": null,
+            "output_tokens": null,
+            "reasoning_output_tokens": null,
+            "total_tokens": null
+          },
+          "models": [
+            {
+              "provider": "openai",
+              "model": "gpt-6.2-astra",
+              "reasoningEffort": "xhigh",
+              "tokens": {
+                "input_tokens": 8448809,
+                "cached_input_tokens": 8411904,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 13401,
+                "reasoning_output_tokens": 2430,
+                "total_tokens": 8462210
+              },
+              "observations": 45
+            }
+          ],
+          "missingFields": [],
+          "issues": [],
+          "observations": 45
+        }
+      },
+      "process": "records/authored-3fd24385eefbe6dcd4e8f848/process.json",
+      "eventsCsv": "records/authored-3fd24385eefbe6dcd4e8f848/events.csv"
     }
   ]
 }

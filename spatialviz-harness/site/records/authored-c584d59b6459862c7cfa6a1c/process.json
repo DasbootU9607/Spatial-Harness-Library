@@ -1,0 +1,737 @@
+{
+  "schemaVersion": 1,
+  "manifest": {
+    "sealed": true,
+    "id": "build-f24dce40-071b-41b8-ba41-2ce51103d1c6",
+    "title": "Orthographic projection / tower",
+    "runKind": "[private value omitted]",
+    "harness": "spatialviz-harness",
+    "benchmark": "SpatialViz-Bench",
+    "category": "MentalRotation",
+    "taskType": "3ViewProjection",
+    "skill": {
+      "id": "spatialviz-3view-projection",
+      "sha256": "a9c8edee1dd5aa0643e0d6178574966a4499c2f85da123002ba46630679a5867"
+    },
+    "status": "accepted",
+    "finalCandidateId": "v002",
+    "limitations": [
+      "Only recorder-mediated deliveries, commands and saved boundaries are observed; direct function calls, unwrapped commands and unsaved editor states are excluded.",
+      "Design notes are explicit author annotations, not internal reasoning."
+    ],
+    "captureGaps": []
+  },
+  "events": [
+    {
+      "id": "e000001",
+      "seq": 1,
+      "runId": "build-f24dce40-071b-41b8-ba41-2ce51103d1c6",
+      "type": "run.created",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": null,
+      "details": {},
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000002",
+      "seq": 2,
+      "runId": "build-f24dce40-071b-41b8-ba41-2ce51103d1c6",
+      "type": "collector.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": null,
+      "details": {},
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000003",
+      "seq": 3,
+      "runId": "build-f24dce40-071b-41b8-ba41-2ce51103d1c6",
+      "type": "skill.attached",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": null,
+      "details": {
+        "sha256": "a9c8edee1dd5aa0643e0d6178574966a4499c2f85da123002ba46630679a5867",
+        "skill": "spatialviz-3view-projection"
+      },
+      "evidenceRefs": [
+        {
+          "id": "dc927765fb53cfeb",
+          "sha256": "a9c8edee1dd5aa0643e0d6178574966a4499c2f85da123002ba46630679a5867",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000004",
+      "seq": 4,
+      "runId": "build-f24dce40-071b-41b8-ba41-2ce51103d1c6",
+      "type": "resource.read",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "21ce9f68-5a4d-4cee-b612-7a6c61ad02fb",
+      "candidateId": null,
+      "details": {
+        "outcome": "delivered",
+        "label": "inventory.json",
+        "start": 1,
+        "end": 40,
+        "sha256": "6b66531989045080816c77b3e9ec5df11b1c6c683f526b8b571ed30727c56f51",
+        "sourceSha256": "51a8c87c7ec5f17ff3d402c582474acc9ef0f91f9656c9359d85d9e7cc645ebe"
+      },
+      "evidenceRefs": [
+        {
+          "id": "07cfb79b84035be9",
+          "sha256": "6b66531989045080816c77b3e9ec5df11b1c6c683f526b8b571ed30727c56f51",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000005",
+      "seq": 5,
+      "runId": "build-f24dce40-071b-41b8-ba41-2ce51103d1c6",
+      "type": "design.note",
+      "actor": "author",
+      "origin": "agent_statement",
+      "actionId": null,
+      "candidateId": null,
+      "details": {
+        "goal": "Build a new cubes question",
+        "sources": "Pinned 100-item projection inventory and official FreeCAD scripts.",
+        "change": "Use a fresh seeded model and the released subclass layout.",
+        "reason": "Test visibility and depth using distinct projected choices.",
+        "expectedChecks": "World geometry, visible surfaces, exact question composite and separate visual review."
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000006",
+      "seq": 6,
+      "runId": "build-f24dce40-071b-41b8-ba41-2ce51103d1c6",
+      "type": "command.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "3052dfb0-4cfa-4798-ab6e-17e763fdf747",
+      "candidateId": null,
+      "details": {
+        "label": "python",
+        "kind": "official-freecad-generation"
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000007",
+      "seq": 7,
+      "runId": "build-f24dce40-071b-41b8-ba41-2ce51103d1c6",
+      "type": "command.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "3052dfb0-4cfa-4798-ab6e-17e763fdf747",
+      "candidateId": null,
+      "details": {
+        "commandEventId": "e000006",
+        "kind": "official-freecad-generation",
+        "exitCode": 1,
+        "signal": null
+      },
+      "evidenceRefs": [
+        {
+          "id": "aa5649a9eb920eab",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "availability": "local evidence; hash published"
+        },
+        {
+          "id": "4f442d8c592cf8fe",
+          "sha256": "335b6ce812f684e8528d05089292382f1cb48c736372fbd64491e4a9aac0354b",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000008",
+      "seq": 8,
+      "runId": "build-f24dce40-071b-41b8-ba41-2ce51103d1c6",
+      "type": "candidate.saved",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "4a8d2b05-b299-47c3-bbff-fb9ec0875a63",
+      "candidateId": "v001",
+      "details": {
+        "sha256": "caec21e02ef351a405f1138b288ca5232c30cfd5d4d3d48d2d1c7f33d7f7a98f",
+        "parentId": null,
+        "parentBasis": null,
+        "changes": [
+          "specification",
+          "geometry",
+          "question",
+          "options",
+          "answer",
+          "rendering"
+        ],
+        "fingerprints": {
+          "specification": "caec21e02ef351a405f1138b288ca5232c30cfd5d4d3d48d2d1c7f33d7f7a98f",
+          "geometry": "f6cedc576b9e2ec30824f71e23346939ff7e9439ec5b14c263543a091fb92515",
+          "question": "8bf83bb0b7fff59f866cae607223d0cf81c3e4dfe42c39a8dc6e97661dd3c799",
+          "options": "503f248273fbb6c6e85a2ff9ee75283178b009f3ca92b4c98a72958393bccd1a",
+          "answer": "3f39d5c348e5b79d06e842c114e6cc571583bbf44e4b0ebfda1a01ec05745d43",
+          "contract": null,
+          "rendering": "f333c394bb3de1905cc90c52eea2fa78ff5929edce60aa0037d9b0f5a72e46a3",
+          "generator": null
+        },
+        "previewUnavailable": null
+      },
+      "evidenceRefs": [
+        {
+          "id": "878b0bc8941eece3",
+          "sha256": "caec21e02ef351a405f1138b288ca5232c30cfd5d4d3d48d2d1c7f33d7f7a98f",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000009",
+      "seq": 9,
+      "runId": "build-f24dce40-071b-41b8-ba41-2ce51103d1c6",
+      "type": "render.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "9b7ebcbb-dd08-48be-a3c5-f74f8e603e0b",
+      "candidateId": "v001",
+      "details": {
+        "renderer": {
+          "id": "official-projection",
+          "revision": "14b57dc7fc09177312fa4d9fe8556b2832a6d7ba79e0e1c3b1246bb73405530a"
+        }
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000010",
+      "seq": 10,
+      "runId": "build-f24dce40-071b-41b8-ba41-2ce51103d1c6",
+      "type": "render.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "9b7ebcbb-dd08-48be-a3c5-f74f8e603e0b",
+      "candidateId": "v001",
+      "details": {
+        "sha256": "7e8c8ed81aca3973584ea77096f1f8a6916b42349b073da6006c0590ca9a1140",
+        "renderer": {
+          "id": "official-projection",
+          "revision": "14b57dc7fc09177312fa4d9fe8556b2832a6d7ba79e0e1c3b1246bb73405530a"
+        },
+        "specification": "caec21e02ef351a405f1138b288ca5232c30cfd5d4d3d48d2d1c7f33d7f7a98f",
+        "rendering": "f333c394bb3de1905cc90c52eea2fa78ff5929edce60aa0037d9b0f5a72e46a3"
+      },
+      "evidenceRefs": [
+        {
+          "id": "e6d462ead6ba8113",
+          "sha256": "7e8c8ed81aca3973584ea77096f1f8a6916b42349b073da6006c0590ca9a1140",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000011",
+      "seq": 11,
+      "runId": "build-f24dce40-071b-41b8-ba41-2ce51103d1c6",
+      "type": "design.note",
+      "actor": "author",
+      "origin": "agent_statement",
+      "actionId": null,
+      "candidateId": "v001",
+      "details": {
+        "goal": "Retain original failed composite",
+        "sources": null,
+        "change": "Recovered the image and annotation from the original failed generation command.",
+        "reason": "The packaging import resolved to the rotation verifier. The CAD reference also collapsed to one pixel due to the upstream resize arguments.",
+        "expectedChecks": "Rebuild and verify the complete task."
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000012",
+      "seq": 12,
+      "runId": "build-f24dce40-071b-41b8-ba41-2ce51103d1c6",
+      "type": "visual.review",
+      "actor": "author",
+      "origin": "agent_statement",
+      "actionId": null,
+      "candidateId": "v001",
+      "details": {
+        "outcome": "failed",
+        "review": "Incomplete task packaging; recovered image retained for comparison."
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000013",
+      "seq": 13,
+      "runId": "build-f24dce40-071b-41b8-ba41-2ce51103d1c6",
+      "type": "command.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "d45afd14-8194-4f62-8943-2e71e46fc134",
+      "candidateId": null,
+      "details": {
+        "label": "python",
+        "kind": "official-freecad-generation"
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000014",
+      "seq": 14,
+      "runId": "build-f24dce40-071b-41b8-ba41-2ce51103d1c6",
+      "type": "command.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "d45afd14-8194-4f62-8943-2e71e46fc134",
+      "candidateId": null,
+      "details": {
+        "commandEventId": "e000013",
+        "kind": "official-freecad-generation",
+        "exitCode": 0,
+        "signal": null
+      },
+      "evidenceRefs": [
+        {
+          "id": "594648f66abaa8da",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "availability": "local evidence; hash published"
+        },
+        {
+          "id": "f77adb0a8bc00420",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000015",
+      "seq": 15,
+      "runId": "build-f24dce40-071b-41b8-ba41-2ce51103d1c6",
+      "type": "candidate.saved",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "9033b37b-7247-404e-8326-9e79d31ffef5",
+      "candidateId": "v002",
+      "details": {
+        "sha256": "c584d59b6459862c7cfa6a1c228cdca44c07ceffdc1ce36aa16ac8ba90958eb8",
+        "parentId": "v001",
+        "parentBasis": "Rebuilt with the corrected projection pipeline and fresh inspection evidence.",
+        "changes": [
+          "specification",
+          "geometry",
+          "question",
+          "options",
+          "answer",
+          "contract",
+          "rendering",
+          "generator"
+        ],
+        "fingerprints": {
+          "specification": "c584d59b6459862c7cfa6a1c228cdca44c07ceffdc1ce36aa16ac8ba90958eb8",
+          "geometry": "b17f9efad94ef359c1f7b5f58d1abe79b7fa83d6a58515018a2a9015e264a9e6",
+          "question": "5c1def863acd768f5d42d35c09bd121142121aaef55323612b9273de381676e8",
+          "options": "2a02ee37206c0089bd193ad678330e2d408634d0befda3fcfdf1fc7c1b232c15",
+          "answer": "169536d54abfd7de9390a0c0977821dd4dd28713a5f9cfc1557163111649d7f1",
+          "contract": "692ead6dbb48f2495f17965d52c5199610428afd6407ef40162db56af7672f37",
+          "rendering": "0dcb57dd9aef6c2fdc9b63d1cb1274d184b27a5bd864edc99e9ca72ee83e0d2a",
+          "generator": "45db59963798dee1a823afd0d8cf30510d753279c4e162c36d817a0408be5c08"
+        },
+        "previewUnavailable": null
+      },
+      "evidenceRefs": [
+        {
+          "id": "96160235c45f048d",
+          "sha256": "c584d59b6459862c7cfa6a1c228cdca44c07ceffdc1ce36aa16ac8ba90958eb8",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000016",
+      "seq": 16,
+      "runId": "build-f24dce40-071b-41b8-ba41-2ce51103d1c6",
+      "type": "build.saved",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "9033b37b-7247-404e-8326-9e79d31ffef5",
+      "candidateId": "v002",
+      "details": {},
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000017",
+      "seq": 17,
+      "runId": "build-f24dce40-071b-41b8-ba41-2ce51103d1c6",
+      "type": "render.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "5b50b14c-a4c9-4e21-b847-bf43c3481047",
+      "candidateId": "v002",
+      "details": {
+        "renderer": {
+          "id": "official-projection",
+          "revision": "ace70cd91ed55fb6bb2da245ac6fbdc8890dfdc71ecdbaab330a47d99bee356e"
+        }
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000018",
+      "seq": 18,
+      "runId": "build-f24dce40-071b-41b8-ba41-2ce51103d1c6",
+      "type": "render.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "5b50b14c-a4c9-4e21-b847-bf43c3481047",
+      "candidateId": "v002",
+      "details": {
+        "sha256": "7e8c8ed81aca3973584ea77096f1f8a6916b42349b073da6006c0590ca9a1140",
+        "renderer": {
+          "id": "official-projection",
+          "revision": "ace70cd91ed55fb6bb2da245ac6fbdc8890dfdc71ecdbaab330a47d99bee356e"
+        },
+        "specification": "c584d59b6459862c7cfa6a1c228cdca44c07ceffdc1ce36aa16ac8ba90958eb8",
+        "rendering": "0dcb57dd9aef6c2fdc9b63d1cb1274d184b27a5bd864edc99e9ca72ee83e0d2a"
+      },
+      "evidenceRefs": [
+        {
+          "id": "dee72f5366cfc833",
+          "sha256": "7e8c8ed81aca3973584ea77096f1f8a6916b42349b073da6006c0590ca9a1140",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000019",
+      "seq": 19,
+      "runId": "build-f24dce40-071b-41b8-ba41-2ce51103d1c6",
+      "type": "command.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "e4cfc739-679f-4454-b90f-758a15f83795",
+      "candidateId": "v002",
+      "details": {
+        "label": "node.exe",
+        "kind": "verification"
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000020",
+      "seq": 20,
+      "runId": "build-f24dce40-071b-41b8-ba41-2ce51103d1c6",
+      "type": "command.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "e4cfc739-679f-4454-b90f-758a15f83795",
+      "candidateId": "v002",
+      "details": {
+        "commandEventId": "e000019",
+        "kind": "verification",
+        "exitCode": 0,
+        "signal": null
+      },
+      "evidenceRefs": [
+        {
+          "id": "93494b161927cbd1",
+          "sha256": "3e77416882dbec0cea74b15551c923a703693c0e1c397eae1f3f2a971d1261f7",
+          "availability": "local evidence; hash published"
+        },
+        {
+          "id": "5a07d14a5a0dea95",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000021",
+      "seq": 21,
+      "runId": "build-f24dce40-071b-41b8-ba41-2ce51103d1c6",
+      "type": "test.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "e4cfc739-679f-4454-b90f-758a15f83795",
+      "candidateId": "v002",
+      "details": {
+        "commandEventId": "e000019",
+        "completedEventId": "e000020",
+        "verdict": "passed",
+        "status": "passed",
+        "checks": [
+          {
+            "name": "World geometry, construction parameters, viewing contract and question",
+            "verdict": "passed"
+          },
+          {
+            "name": "Independent projected answer, released choice semantics and per-option explanations",
+            "verdict": "passed"
+          },
+          {
+            "name": "Visible surfaces, occlusion, distinctive options, crop and final labeled composition",
+            "verdict": "passed"
+          },
+          {
+            "name": "Current projection adapter and pinned upstream manifest",
+            "verdict": "passed"
+          }
+        ],
+        "scope": "Discrete nearest-surface projection or face-mesh depth testing, displayed option uniqueness and exact composite replay.",
+        "binding": "exact",
+        "bindingBasis": "exact candidate and full input fingerprints",
+        "testedFingerprints": {
+          "specification": "c584d59b6459862c7cfa6a1c228cdca44c07ceffdc1ce36aa16ac8ba90958eb8",
+          "geometry": "b17f9efad94ef359c1f7b5f58d1abe79b7fa83d6a58515018a2a9015e264a9e6",
+          "question": "5c1def863acd768f5d42d35c09bd121142121aaef55323612b9273de381676e8",
+          "options": "2a02ee37206c0089bd193ad678330e2d408634d0befda3fcfdf1fc7c1b232c15",
+          "answer": "169536d54abfd7de9390a0c0977821dd4dd28713a5f9cfc1557163111649d7f1",
+          "contract": "692ead6dbb48f2495f17965d52c5199610428afd6407ef40162db56af7672f37",
+          "rendering": "0dcb57dd9aef6c2fdc9b63d1cb1274d184b27a5bd864edc99e9ca72ee83e0d2a",
+          "generator": "45db59963798dee1a823afd0d8cf30510d753279c4e162c36d817a0408be5c08"
+        },
+        "verifier": {
+          "id": "official-projection",
+          "revision": "ace70cd91ed55fb6bb2da245ac6fbdc8890dfdc71ecdbaab330a47d99bee356e"
+        },
+        "reportSha256": "7e36cf46e8e66465a2736e2532f0ac20853e02ff6c22fced64273a45e9339dcd"
+      },
+      "evidenceRefs": [
+        {
+          "id": "7c99b7eadb611a91",
+          "sha256": "7e36cf46e8e66465a2736e2532f0ac20853e02ff6c22fced64273a45e9339dcd",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000022",
+      "seq": 22,
+      "runId": "build-f24dce40-071b-41b8-ba41-2ce51103d1c6",
+      "type": "design.note",
+      "actor": "author",
+      "origin": "agent_statement",
+      "actionId": null,
+      "candidateId": "v002",
+      "details": {
+        "goal": "Verify the exact delivered image",
+        "sources": "Source census, original drawings and exact final FreeCAD preview.",
+        "change": "Reviewed labels, nearest surfaces and visible edge structure.",
+        "reason": "An independent reader also solved a shuffled, relabeled copy. Passive usage windows overlap across the four samples.",
+        "expectedChecks": "Only accept the audited candidate."
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000023",
+      "seq": 23,
+      "runId": "build-f24dce40-071b-41b8-ba41-2ce51103d1c6",
+      "type": "visual.review",
+      "actor": "author",
+      "origin": "agent_statement",
+      "actionId": null,
+      "candidateId": "v002",
+      "details": {
+        "outcome": "passed",
+        "review": "The three-level gray tower appears on the right of D. Only the rear red cube remains visible at lower left. The front, top and four labeled choices are complete on white."
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000024",
+      "seq": 24,
+      "runId": "build-f24dce40-071b-41b8-ba41-2ce51103d1c6",
+      "type": "run.finished",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": "v002",
+      "details": {
+        "outcome": "accepted",
+        "finalCandidateId": "v002"
+      },
+      "evidenceRefs": []
+    }
+  ],
+  "candidates": [
+    {
+      "id": "v001",
+      "parentId": null,
+      "parentBasis": null,
+      "sha256": "caec21e02ef351a405f1138b288ca5232c30cfd5d4d3d48d2d1c7f33d7f7a98f",
+      "fingerprints": {
+        "specification": "caec21e02ef351a405f1138b288ca5232c30cfd5d4d3d48d2d1c7f33d7f7a98f",
+        "geometry": "f6cedc576b9e2ec30824f71e23346939ff7e9439ec5b14c263543a091fb92515",
+        "question": "8bf83bb0b7fff59f866cae607223d0cf81c3e4dfe42c39a8dc6e97661dd3c799",
+        "options": "503f248273fbb6c6e85a2ff9ee75283178b009f3ca92b4c98a72958393bccd1a",
+        "answer": "3f39d5c348e5b79d06e842c114e6cc571583bbf44e4b0ebfda1a01ec05745d43",
+        "contract": null,
+        "rendering": "f333c394bb3de1905cc90c52eea2fa78ff5929edce60aa0037d9b0f5a72e46a3",
+        "generator": null
+      },
+      "previewUnavailable": null,
+      "changes": [
+        "specification",
+        "geometry",
+        "question",
+        "options",
+        "answer",
+        "rendering"
+      ],
+      "preview": {
+        "candidateId": "v001",
+        "specification": "caec21e02ef351a405f1138b288ca5232c30cfd5d4d3d48d2d1c7f33d7f7a98f",
+        "rendering": "f333c394bb3de1905cc90c52eea2fa78ff5929edce60aa0037d9b0f5a72e46a3",
+        "renderer": {
+          "id": "official-projection",
+          "revision": "14b57dc7fc09177312fa4d9fe8556b2832a6d7ba79e0e1c3b1246bb73405530a"
+        },
+        "sha256": "7e8c8ed81aca3973584ea77096f1f8a6916b42349b073da6006c0590ca9a1140",
+        "path": "records/authored-c584d59b6459862c7cfa6a1c/v001-7e8c8ed81aca3973.png",
+        "origin": "recorded-render"
+      }
+    },
+    {
+      "id": "v002",
+      "parentId": "v001",
+      "parentBasis": "Rebuilt with the corrected projection pipeline and fresh inspection evidence.",
+      "sha256": "c584d59b6459862c7cfa6a1c228cdca44c07ceffdc1ce36aa16ac8ba90958eb8",
+      "fingerprints": {
+        "specification": "c584d59b6459862c7cfa6a1c228cdca44c07ceffdc1ce36aa16ac8ba90958eb8",
+        "geometry": "b17f9efad94ef359c1f7b5f58d1abe79b7fa83d6a58515018a2a9015e264a9e6",
+        "question": "5c1def863acd768f5d42d35c09bd121142121aaef55323612b9273de381676e8",
+        "options": "2a02ee37206c0089bd193ad678330e2d408634d0befda3fcfdf1fc7c1b232c15",
+        "answer": "169536d54abfd7de9390a0c0977821dd4dd28713a5f9cfc1557163111649d7f1",
+        "contract": "692ead6dbb48f2495f17965d52c5199610428afd6407ef40162db56af7672f37",
+        "rendering": "0dcb57dd9aef6c2fdc9b63d1cb1274d184b27a5bd864edc99e9ca72ee83e0d2a",
+        "generator": "45db59963798dee1a823afd0d8cf30510d753279c4e162c36d817a0408be5c08"
+      },
+      "previewUnavailable": null,
+      "changes": [
+        "specification",
+        "geometry",
+        "question",
+        "options",
+        "answer",
+        "contract",
+        "rendering",
+        "generator"
+      ],
+      "preview": {
+        "candidateId": "v002",
+        "specification": "c584d59b6459862c7cfa6a1c228cdca44c07ceffdc1ce36aa16ac8ba90958eb8",
+        "rendering": "0dcb57dd9aef6c2fdc9b63d1cb1274d184b27a5bd864edc99e9ca72ee83e0d2a",
+        "renderer": {
+          "id": "official-projection",
+          "revision": "ace70cd91ed55fb6bb2da245ac6fbdc8890dfdc71ecdbaab330a47d99bee356e"
+        },
+        "sha256": "7e8c8ed81aca3973584ea77096f1f8a6916b42349b073da6006c0590ca9a1140",
+        "path": "records/authored-c584d59b6459862c7cfa6a1c/v002-7e8c8ed81aca3973.png",
+        "origin": "recorded-render"
+      }
+    }
+  ],
+  "tests": [
+    {
+      "id": "t001",
+      "actionId": "e4cfc739-679f-4454-b90f-758a15f83795",
+      "candidateId": "v002",
+      "testedFingerprints": {
+        "specification": "c584d59b6459862c7cfa6a1c228cdca44c07ceffdc1ce36aa16ac8ba90958eb8",
+        "geometry": "b17f9efad94ef359c1f7b5f58d1abe79b7fa83d6a58515018a2a9015e264a9e6",
+        "question": "5c1def863acd768f5d42d35c09bd121142121aaef55323612b9273de381676e8",
+        "options": "2a02ee37206c0089bd193ad678330e2d408634d0befda3fcfdf1fc7c1b232c15",
+        "answer": "169536d54abfd7de9390a0c0977821dd4dd28713a5f9cfc1557163111649d7f1",
+        "contract": "692ead6dbb48f2495f17965d52c5199610428afd6407ef40162db56af7672f37",
+        "rendering": "0dcb57dd9aef6c2fdc9b63d1cb1274d184b27a5bd864edc99e9ca72ee83e0d2a",
+        "generator": "45db59963798dee1a823afd0d8cf30510d753279c4e162c36d817a0408be5c08"
+      },
+      "verifier": {
+        "id": "official-projection",
+        "revision": "ace70cd91ed55fb6bb2da245ac6fbdc8890dfdc71ecdbaab330a47d99bee356e"
+      },
+      "reportSha256": "7e36cf46e8e66465a2736e2532f0ac20853e02ff6c22fced64273a45e9339dcd",
+      "verdict": "passed",
+      "status": "passed",
+      "checks": [
+        {
+          "name": "World geometry, construction parameters, viewing contract and question",
+          "verdict": "passed"
+        },
+        {
+          "name": "Independent projected answer, released choice semantics and per-option explanations",
+          "verdict": "passed"
+        },
+        {
+          "name": "Visible surfaces, occlusion, distinctive options, crop and final labeled composition",
+          "verdict": "passed"
+        },
+        {
+          "name": "Current projection adapter and pinned upstream manifest",
+          "verdict": "passed"
+        }
+      ],
+      "scope": "Discrete nearest-surface projection or face-mesh depth testing, displayed option uniqueness and exact composite replay.",
+      "commandExitStatus": 0,
+      "binding": "exact",
+      "bindingBasis": "exact candidate and full input fingerprints",
+      "commandEventId": "e000019"
+    }
+  ],
+  "usage": {
+    "schemaVersion": 2,
+    "runId": "build-f24dce40-071b-41b8-ba41-2ce51103d1c6",
+    "source": "codex",
+    "runtime": "Codex Desktop",
+    "status": "measured",
+    "elapsedMs": 686879,
+    "elapsedKind": "wall-clock",
+    "scope": "Runtime-reported usage between the start baseline and finish snapshot of this session. In-flight or delayed usage, earlier conversation, other agents and later delivery are excluded. This is an observed interval, not a complete billed task total.",
+    "scopeComplete": false,
+    "observedTokens": {
+      "input_tokens": 8448809,
+      "cached_input_tokens": 8411904,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 13401,
+      "reasoning_output_tokens": 2430,
+      "total_tokens": 8462210
+    },
+    "tokens": {
+      "input_tokens": null,
+      "cached_input_tokens": null,
+      "cache_write_input_tokens": null,
+      "output_tokens": null,
+      "reasoning_output_tokens": null,
+      "total_tokens": null
+    },
+    "models": [
+      {
+        "provider": "openai",
+        "model": "gpt-6.2-astra",
+        "reasoningEffort": "xhigh",
+        "tokens": {
+          "input_tokens": 8448809,
+          "cached_input_tokens": 8411904,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 13401,
+          "reasoning_output_tokens": 2430,
+          "total_tokens": 8462210
+        },
+        "observations": 45
+      }
+    ],
+    "missingFields": [],
+    "issues": [],
+    "observations": 45
+  },
+  "caseId": "authored-c584d59b6459862c7cfa6a1c"
+}
