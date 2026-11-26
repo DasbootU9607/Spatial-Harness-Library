@@ -40,11 +40,15 @@ async function taskPage(){
  if(!c){main.innerHTML=empty('Task not found.');return;}
  const s=await fetch(c.taskArtifact).then(r=>{if(!r.ok)throw Error('Task unavailable');return r.json();});
  const skill=skills.find(x=>x.id===c.skillIds[0]);
+ const buildProcess=processUrl(c);
  const title=({'2d-rotation':'2D rotation','3d-rotation':'3D rotation'})[s.taskType]||c.title;
  const label=i=>s.options[i].label||String.fromCharCode(65+i);
  const method=s.provenance?.generationMethod||(['2d-rotation','3d-rotation'].includes(s.taskType)?'Legacy JavaScript/SVG generator':'Recorded construction');
  document.title=`${title} · ${h.name}`;
- main.innerHTML=`<nav class="crumb task-crumb" aria-label="Breadcrumb"><a href="index.html">${e(h.name)}</a><span>/</span><a href="skill.html?id=${e(c.skillIds[0])}">${e(skill?.name||'Skill')}</a><span>/</span><span>Practice</span></nav>
+ main.innerHTML=`<nav class="task-crumb" aria-label="Task navigation">
+  ${skill?`<a class="button" href="skill.html?id=${e(encodeURIComponent(skill.id))}">← Back to ${e(skill.name)} skill</a>`:''}
+  ${buildProcess?`<a class="button" href="${e(buildProcess)}">View build process</a>`:''}
+ </nav>
  <header class="task-heading"><div><p class="task-eyebrow">Agent-built practice</p><h1>${e(title)}</h1></div><span class="task-format">Single choice · ${s.options.length} options</span></header>
  <div class="task-layout">
   <section class="task-question" aria-labelledby="question-heading"><h2 id="question-heading" class="task-eyebrow">The question</h2><p class="question-copy">${e(s.question)}</p>
@@ -56,7 +60,7 @@ async function taskPage(){
   </form>
  </div>
  <details id="answer" class="task-solution"><summary>Answer &amp; explanation</summary><p class="solution-verdict"><strong>Correct answer: ${e(label(s.answer.index))}.</strong> ${e(s.answer.explanation)}</p><div class="option-explanations">${(s.answer.options||[]).map(o=>`<p class="option-explanation ${o.label===label(s.answer.index)?'is-correct':''}"><strong>${e(o.label)}${o.label===label(s.answer.index)?' · Correct answer':''}</strong><span>${e(o.explanation)}</span></p>`).join('')}</div></details>
- <details class="task-provenance"><summary>Build details &amp; downloads</summary><p>${e(c.title)}</p><div class="actions"><a href="${e(processUrl(c))}">Build process</a><a href="${e(c.verification.report)}">Verification summary</a><a href="${e(c.taskArtifact)}" download>Download exact task</a></div><p class="source-note">${e(method)}</p><p class="source-note">Immutable specification SHA-256: <code>${e(c.contentSha256)}</code></p></details>
+ <details class="task-provenance"><summary>Build details &amp; downloads</summary><p>${e(c.title)}</p><div class="actions"><a href="${e(c.verification.report)}">Verification summary</a><a href="${e(c.taskArtifact)}" download>Download exact task</a></div><p class="source-note">${e(method)}</p><p class="source-note">Immutable specification SHA-256: <code>${e(c.contentSha256)}</code></p></details>
  <dialog class="diagram-dialog" aria-labelledby="diagram-title"><div class="diagram-toolbar"><h2 id="diagram-title">Question diagram</h2><div><button type="button" class="diagram-zoom" aria-pressed="false">Zoom in</button><button type="button" class="diagram-close" autofocus>Close</button></div></div><div class="diagram-scroll" tabindex="0" aria-label="Question diagram; scroll to inspect when zoomed"><img src="${e(c.thumbnail)}" alt="Enlarged original figure and answer options"></div><p>Zoom in to inspect details. Scroll to move around the image.</p></dialog>`;
  const form=main.querySelector('form'),choices=[...form.querySelectorAll('[data-answer]')],retry=form.querySelector('.retry-answer'),status=main.querySelector('#answer-status'),solution=main.querySelector('#answer');
  form.addEventListener('submit',event=>event.preventDefault());
