@@ -51,6 +51,7 @@ export function createOrbitTimeline({ container, getData, onSelect, onDetails })
   timeline.append(header, stage, footer, live); container.replaceChildren(timeline);
   document.body.append(markerTooltip);
 
+  const lifecycle = new AbortController();
   const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
   const state = { all: [], events: [], selectedId: null, selectedIndex: 0, position: 0, target: 0, frame: 0, lastTime: 0, snapTimer: null, dragging: null, suppressClickUntil: 0, items: new Map(), markers: [], tooltipTarget: null };
   let geometry = { width: 1, height: 1, radius: 600, centerX: -360, centerY: 1, step: .2, row: 132, leader: 64, cardWidth: 500, cardHeight: 116, visibleAngle: .5 };
@@ -276,20 +277,20 @@ export function createOrbitTimeline({ container, getData, onSelect, onDetails })
   };
   stage.addEventListener('pointerup', endDrag); stage.addEventListener('pointercancel', endDrag);
   stage.addEventListener('lostpointercapture', event => { if (event.target === stage) endDrag(event); });
-  window.addEventListener('pointerup', endDrag); window.addEventListener('pointercancel', endDrag);
-  window.addEventListener('blur', () => { if (state.dragging) endDrag({ pointerId: state.dragging.id }); });
+  window.addEventListener('pointerup', endDrag, { signal:lifecycle.signal }); window.addEventListener('pointercancel', endDrag, { signal:lifecycle.signal });
+  window.addEventListener('blur', () => { if (state.dragging) endDrag({ pointerId: state.dragging.id }); }, { signal:lifecycle.signal });
   window.addEventListener('scroll', () => {
     const marker = state.tooltipTarget, rect = marker?.getBoundingClientRect();
     if (marker && rect.bottom > 0 && rect.top < innerHeight && (marker.matches(':hover') || document.activeElement === marker)) showMarkerTooltip(marker);
     else hideMarkerTooltip();
-  }, { capture: true, passive: true });
-  new ResizeObserver(measure).observe(stage);
-  reducedMotion.addEventListener('change', () => { if (timeline.isConnected) requestRender(); });
+  }, { capture: true, passive: true, signal:lifecycle.signal });
+  const resizeObserver = new ResizeObserver(measure); resizeObserver.observe(stage);
+  reducedMotion.addEventListener('change', () => { if (timeline.isConnected) requestRender(); }, { signal:lifecycle.signal });
   const data = getData?.() || {}, seen = new Set();
   state.all = (Array.isArray(data.events) ? data.events : []).filter(event => event && typeof event.id === 'string' && !seen.has(event.id) && seen.add(event.id));
   const keyCount = state.all.filter(event => event.isKey).length;
   keysOption.textContent = `Key actions (${keyCount})`; keysOption.disabled = !keyCount; allOption.textContent = `All actions (${state.all.length})`;
   const initial = state.all.find(event => event.id === data.selectedId);
   measure(); chooseMode(initial && !initial.isKey ? 'all' : 'keys', data.selectedId, false);
-  return { select };
+  return { select, destroy() { lifecycle.abort(); resizeObserver.disconnect(); cancelSnap(); if (state.frame) cancelAnimationFrame(state.frame); markerTooltip.remove(); timeline.remove(); } };
 }

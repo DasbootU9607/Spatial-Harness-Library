@@ -101,7 +101,45 @@ assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerW
  for(const route of ['spatialviz','babyvision']){await page.goto(origin+'questions/#/'+route);await page.waitForSelector('#pic[src]');await page.locator('#answer summary').click();assert(await page.locator('#answer').getAttribute('open')!==null);await page.locator('#search').fill('no-such-question-982374');await page.waitForSelector('#case-empty:not([hidden])');await page.locator('#clear').click();await page.waitForSelector('#case-body:not([hidden])');assert.equal(await page.locator('.sitehead nav a').first().getAttribute('href'),'../');assert.match(await page.locator('.sitehead nav a').last().getAttribute('href'),/tree\/main\//);assert.equal(await page.locator('.sitehead .benchmark-link').getAttribute('href'),catalog.harnesses.find(h=>h.sourceRoute===route).benchmarkUrl);results.push({page:route+' official filters and answer',passed:true});}
  await page.goto(origin+'questions/#/spatialbench');await page.waitForSelector('#play svg');await page.locator('#mode3').click();await page.waitForSelector('#play .pick');await page.locator('#mode2').click();await page.waitForSelector('#play input');results.push({page:'spatialbench practice',passed:true});
  const c=catalog.cases.find(c=>c.harnessId==='spatialviz-harness');
- if(c){await page.goto(origin+'spatialviz-harness/skill.html?id=2d-rotation');await page.waitForSelector('#authored .card');await page.locator('#model-filter').selectOption({index:1});await page.goto(origin+'spatialviz-harness/task.html?id='+c.id);await page.waitForSelector('[data-answer]');assert.equal(await page.locator('#answer').getAttribute('open'),null);await page.locator('[data-answer]').first().click();assert(await page.locator('#feedback').innerText());await page.evaluate(()=>window.scrollTo({top:0,behavior:'instant'}));await page.screenshot({path:path.join(output,'task-desktop.png'),fullPage:true});await page.goto(origin+'spatialviz-harness/process.html?id='+c.id);await page.waitForSelector('.timeline button');await page.locator('[data-view]').selectOption('versions');await page.locator('[data-version]').selectOption('v002');await page.waitForSelector('.detail img');await page.evaluate(()=>window.scrollTo({top:0,behavior:'instant'}));await page.screenshot({path:path.join(output,'process-desktop.png'),fullPage:true});await page.locator('[data-view]').selectOption('evidence');assert(await page.locator('.evidence-table tbody tr').count()>10);for(const file of [c.process,c.eventsCsv,c.taskArtifact])assert((await page.request.get(origin+'spatialviz-harness/'+file)).ok());results.push({page:'skill, task, version preview, evidence and downloads',passed:true});await page.setViewportSize({width:390,height:844});await page.locator('[data-view]').selectOption('versions');assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);await page.evaluate(()=>window.scrollTo({top:0,behavior:'instant'}));await page.screenshot({path:path.join(output,'process-mobile.png'),fullPage:true});}
+ if(c){await page.goto(origin+'spatialviz-harness/skill.html?id=2d-rotation');await page.waitForSelector('#authored .card');await page.locator('#model-filter').selectOption({index:1});await page.goto(origin+'spatialviz-harness/task.html?id='+c.id);await page.waitForSelector('[data-answer]');assert.equal(await page.locator('#answer').getAttribute('open'),null);await page.locator('[data-answer]').first().click();assert(await page.locator('#feedback').innerText());await page.evaluate(()=>window.scrollTo({top:0,behavior:'instant'}));await page.screenshot({path:path.join(output,'task-desktop.png'),fullPage:true});}
+ // Shared process pages use the Maze orbit, version browser, and evidence inspector.
+ for(const example of catalog.cases.filter(c=>c.harnessId==='spatialviz-harness'&&(c.exhibit!==false||c===catalog.cases.find(x=>x.harnessId==='spatialviz-harness')))){
+  const process=R.read(path.join(root,'Spatial-Harness-Library',example.harnessId,example.process));
+  for(const width of [1440,390]){
+   await page.setViewportSize({width,height:1000});await page.goto(origin+example.harnessId+'/process.html?id='+example.id);await page.waitForSelector('#process-orbit');
+   assert.equal(await page.locator('.process-view-tabs button').count(),3);
+   await page.locator('#orbit-mode').selectOption('all');
+   assert.equal(Number(await page.locator('#process-orbit').getAttribute('data-event-count')),process.events.length);
+   assert(await page.locator('.orbit-stage').evaluate(el=>el.clientHeight>=280),'Timeline must show neighboring events');
+   await page.locator('.orbit-stage').focus();await page.keyboard.press('Home');assert.equal(await page.locator('#operation-detail').getAttribute('data-event-id'),process.events[0].id);
+   await page.keyboard.press('ArrowDown');assert.equal(await page.locator('#operation-detail').getAttribute('data-event-id'),process.events[1].id);
+   await page.locator('[data-view="versions"]').click();assert.equal(await page.locator('.version-option').count(),process.candidates.length);
+   const version=process.candidates.find(c=>c.preview);
+   if(version){
+    await page.locator(`[data-version="${version.id}"]`).click();
+    const node=new URL(page.url()).searchParams.get('node');assert.equal(node,process.events.find(e=>e.type==='candidate.saved'&&e.candidateId===version.id).id);
+    assert((await page.locator('.operation-detail .preview-image').getAttribute('src')).endsWith(version.preview.path));
+    await page.locator('[data-expand]').click();await page.waitForSelector('dialog[open]');
+    assert((await page.locator('dialog img').getAttribute('src')).endsWith(version.preview.path));
+    await page.keyboard.press('Escape');assert.equal(await page.locator('dialog[open]').count(),0);
+   }
+   await page.locator('[data-view="evidence"]').click();
+   const read=process.events.find(e=>e.type==='resource.read');
+   await page.locator('[aria-label="Search evidence"]').fill(read.id);
+   await page.locator(`.evidence-results [data-event="${read.id}"]`).click();assert.equal(await page.locator('#operation-detail').getAttribute('data-event-id'),read.id);
+   await page.locator('[aria-label="Search evidence"]').fill('no-such-record-837329');assert.match(await page.locator('.evidence-results').innerText(),/No matching evidence/);
+   await page.locator('[aria-label="Search evidence"]').fill('');await page.locator('[aria-label="Evidence type"]').selectOption('test.completed');
+   assert.equal(await page.locator('.evidence-results button').count(),Math.min(30,process.events.filter(e=>e.type==='test.completed').length));
+   await page.locator('.evidence-results button').first().click();assert(await page.locator('.process-checks li').count()>0);
+   if(process.events.filter(e=>e.type==='test.completed').length>30){await page.locator('[data-page-step="1"]').click();assert.match(await page.locator('.evidence-count').innerText(),/31–60/);}
+   await page.locator('[data-view="actions"]').click();
+   assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false,'Process overflow');
+   await page.evaluate(()=>window.scrollTo({top:0,behavior:'instant'}));await page.screenshot({path:path.join(output,`process-${example.id}-${width}.png`),fullPage:true});
+   for(const file of [example.process,example.eventsCsv])assert((await page.request.get(origin+example.harnessId+'/'+file)).ok());
+   results.push({page:'Maze-style process timeline, exact previews, evidence search and pagination',id:example.id,width,passed:true});
+  }
+ }
+
  for(const example of catalog.cases.filter(c=>['2d-rotation','3d-rotation'].some(id=>c.skillIds.includes(id)))){
   const spec=R.read(path.join(root,'Spatial-Harness-Library',example.harnessId,example.taskArtifact));
   for(const width of [1440,390]){

@@ -83,6 +83,13 @@ async function taskPage(){
  zoom.addEventListener('click',()=>{const enlarged=scroll.classList.toggle('is-zoomed');zoom.setAttribute('aria-pressed',String(enlarged));zoom.textContent=enlarged?'Fit diagram':'Zoom in';});
  dialog.addEventListener('close',()=>{scroll.classList.remove('is-zoomed');zoom.setAttribute('aria-pressed','false');zoom.textContent='Zoom in';});
 }
-async function processPage(){const c=allCases.find(x=>x.id===new URLSearchParams(location.search).get('id'));if(!c){main.innerHTML=empty('Build process not found.');return;}const p=await fetch(c.process).then(r=>r.json());main.innerHTML=`<p class="crumb"><a href="index.html">${e(h.name)}</a> / <a href="${e(taskUrl(c))}">${e(c.title)}</a> / Build process</p><h1>Build process.</h1><p>${e(c.title)} · <a href="${e(taskUrl(c))}">Open final task ↗</a></p><div id="process"></div>`;renderProcess(document.querySelector('#process'),p,{json:c.process,csv:c.eventsCsv});}
+async function processPage(){
+ const c=allCases.find(x=>x.id===new URLSearchParams(location.search).get('id'));
+ if(!c){main.innerHTML=empty('Build process not found.');return;}
+ const p=await fetch(c.process).then(r=>{if(!r.ok)throw Error('Process record unavailable');return r.json();});
+ main.classList.add('process-page');
+ main.innerHTML=`<p class="crumb"><a href="index.html">${e(h.name)}</a> / <a href="skill.html?id=${e(c.skillIds[0])}">Skill</a> / Build process</p><header class="process-intro"><div><h1>From a skill to a task.</h1><p>${e(c.title)}</p></div><div class="process-actions"><a class="button primary" href="${e(taskUrl(c))}">Open final task ↗</a><a class="text-link" href="${e(c.process)}" download>Evidence JSON ↓</a><a class="text-link" href="${e(c.eventsCsv)}" download>Events CSV ↓</a></div></header><div id="process"></div>`;
+ await renderProcess(document.querySelector('#process'),p,{json:c.process,csv:c.eventsCsv});
+}
 try{if(mode==='home')home();else if(mode==='skill')skillPage();else if(mode==='task')await taskPage();else if(mode==='process')await processPage();}catch(error){main.innerHTML=`<p role="alert">${e(error.message)}. <a href="index.html">Return to the exhibition</a>.</p>`;}
 document.addEventListener('click',async event=>{const b=event.target.closest('[data-copy]');if(b){try{await navigator.clipboard.writeText(b.dataset.copy);document.querySelector('#notice').textContent='Installation command copied';}catch{document.querySelector('#notice').textContent='Select and copy the command above.';}setTimeout(()=>document.querySelector('#notice').textContent='',2500);}});

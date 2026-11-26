@@ -129,6 +129,15 @@ content. The official collections remain 1,180 SpatialViz questions, 388 BabyVis
 visual questions and 280 image tasks. Generated spatialbench practice remains
 separate from its official leaderboard set.
 
+Shared build-process pages and the local viewer reuse Maze's orbit timeline and
+workspace styles. The timeline keeps every saved event in order; key events are
+only a navigation subset. Versions show exact recorded previews, including failed
+candidates, and verification badges require a matching specification fingerprint.
+The evidence tab searches all public records with pagination. Selecting an event
+updates the `node` query parameter for a direct link. Author notes, command exits,
+verification results and visual reviews remain distinct, with original JSON and
+CSV downloads available. This view does not reconstruct missing agent activity.
+
 ```text
 node --test tools/observatory/tests/*.test.cjs
 node --test maze-harness/tools/authoring-observatory/tests/*.test.cjs
