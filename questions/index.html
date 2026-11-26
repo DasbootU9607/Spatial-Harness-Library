@@ -40,24 +40,29 @@
     </section>
     <section id="archive" class="frame inner" hidden>
       <div class="topline"><a id="archive-harness" href="../">← Harness library</a><a id="archive-source" target="_blank" rel="noopener">Project website ↗</a></div>
-      <div class="section-head intro"><div><p id="archive-kicker" class="eyebrow"></p><h1 id="archive-name"></h1></div><p id="archive-count" class="meta"></p></div>
+      <div class="section-head intro">
+        <div><p id="archive-kicker" class="eyebrow"></p><h1 id="archive-name"></h1></div>
+        <div class="archive-tools">
+          <p id="archive-count" class="meta"></p>
+          <div id="archive-controls" class="archive-controls" role="search" aria-label="Find a question" hidden>
+            <label class="search-field" for="search">Search questions<input id="search" type="search" placeholder="Task, question, or ID" autocomplete="off"></label>
+            <div id="question-filters" class="filter-fields" role="group" aria-label="Question filters">
+              <label id="track-field">Response format<select id="track"></select></label>
+              <label>Category<select id="category"></select></label>
+              <label>Task<select id="type"></select></label>
+              <label id="level-field">Difficulty level<select id="level"></select></label>
+            </div>
+            <button id="clear" class="plain" type="button">Reset filters</button>
+          </div>
+        </div>
+      </div>
       <p id="archive-status" role="status"></p>
       <div id="reader" class="reader" hidden>
-        <aside class="filters question-catalogue" aria-label="Question catalogue">
+        <aside class="question-catalogue" aria-label="Question catalogue">
           <details id="catalogue-panel" open>
             <summary>Choose a question <span id="matches"></span></summary>
             <div class="catalogue-body">
-              <label class="catalogue-search" for="search">Search questions</label><input id="search" type="search" placeholder="Task, question, or ID" autocomplete="off">
-              <details id="question-filters"><summary>Filter questions</summary><div class="filter-fields">
-                <label id="track-field">Response format<select id="track"></select></label>
-                <label>Category<select id="category"></select></label>
-                <label>Task<select id="type"></select></label>
-                <label id="level-field">Difficulty level<select id="level"></select></label>
-              </div></details>
-              <button id="clear" class="plain" type="button">Reset filters</button>
               <nav id="question-list" aria-label="Select a question"></nav>
-              <p id="list-range" class="catalogue-range" role="status"></p>
-              <div class="catalogue-pages"><button id="list-prev" type="button" aria-label="Previous question list page">Previous</button><button id="list-next" type="button" aria-label="Next question list page">Next</button></div>
             </div>
           </details>
         </aside>

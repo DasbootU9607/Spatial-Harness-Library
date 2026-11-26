@@ -15,7 +15,15 @@ module.exports=async function checkOfficialQuestions({page,origin,root,output,re
   assert.equal(await page.locator('#prompt').textContent(),record.question);
   assert((await page.locator('#pic').getAttribute('src')).endsWith(record.image));
   assert.equal(await page.locator('#official-response [type=submit],#official-response .solution-link').count(),0);
+  assert.equal(await page.locator('#archive>.intro #search,#archive>.intro #question-filters').count(),2);
+  assert.equal(await page.locator('.question-catalogue input,.question-catalogue select,.catalogue-pages').count(),0);
+  assert.equal(await page.locator('.question-card').count(),rows.length,'All matching questions are available without pagination');
+  const controls=await page.locator('#archive-controls').boundingBox(),reader=await page.locator('#reader').boundingBox();
+  assert(controls.y+controls.height<=reader.y,'Search and filters belong in the heading above the reader');
+  assert.equal(await page.locator('#question-filters select:visible').count(),3,'Filters are always displayed');
   if(width===1440){
+   const filterBoxes=await page.locator('#question-filters select:visible').evaluateAll(selects=>selects.map(el=>el.getBoundingClientRect().top));
+   assert(filterBoxes.every(top=>Math.abs(top-filterBoxes[0])<1),'Filters are arranged side by side');
    const left=await page.locator('.question-catalogue').boundingBox(),question=await page.locator('.official-question').boundingBox(),answer=await page.locator('#official-response').boundingBox();
    assert(left.x+left.width<=question.x&&question.x+question.width<=answer.x,'Catalogue, question and answer must occupy separate columns');
   }else assert.equal(await page.locator('#catalogue-panel').getAttribute('open'),null);
@@ -35,6 +43,7 @@ module.exports=async function checkOfficialQuestions({page,origin,root,output,re
   assert(await page.locator(`#options input[value="${record.answerIndex}"]`).isChecked(),'Answers survive navigation within the collection');
   await openCatalogue();
   assert.equal(await page.locator('.question-card[aria-current=true] .question-card-state').textContent(),'Correct');
+  assert(await page.locator('.question-card').evaluateAll(cards=>cards.every(card=>{const box=card.getBoundingClientRect();return [...card.children].every(child=>child.getBoundingClientRect().bottom<=box.bottom);})), 'Question labels and answer states fit inside their cards');
   await page.locator('#retry-answer').click();assert.equal(await page.locator('#options input:checked').count(),0);
   await page.locator('#options input').first().focus();await page.keyboard.press('ArrowRight');
   assert(await page.locator('#options input[value="1"]').isChecked());
@@ -45,23 +54,29 @@ module.exports=async function checkOfficialQuestions({page,origin,root,output,re
   await page.keyboard.press('Escape');assert.equal(await page.locator('#lightbox').getAttribute('open'),null);
   await page.locator('#answer summary').click();await page.waitForFunction(()=>document.querySelector('#answer-content').childElementCount>0);assert(await page.locator('#answer-content').innerText());
   await openCatalogue();await page.locator('#clear').click();
-  const firstId=await page.locator('.question-card').first().getAttribute('data-case');
-  await page.locator('#list-next').click();const nextId=await page.locator('.question-card').first().getAttribute('data-case');assert.notEqual(nextId,firstId);
-  await page.locator('.question-card').first().click();await waitCase(nextId);
+  const list=page.locator('#question-list'),nextId=rows.at(-1).id;
+  assert(await list.evaluate(el=>el.scrollHeight>el.clientHeight),'Question list must scroll vertically');
+  await list.evaluate(el=>{el.scrollTop=el.scrollHeight;});
+  await page.locator('.question-card').last().click();await waitCase(nextId);
   assert(new URL(await page.url()).hash.includes(encodeURIComponent(nextId)));
   if(width===390)assert.equal(await page.locator('#catalogue-panel').getAttribute('open'),null);
+  await openCatalogue();
+  assert(await list.evaluate(el=>el.scrollTop>0),'Selecting a question preserves list position');
+  await page.locator('#prev').click();
+  assert(await list.evaluate(el=>{const active=el.querySelector('[aria-current=true]').getBoundingClientRect(),box=el.getBoundingClientRect();return active.top>=box.top&&active.bottom<=box.bottom;}),'Previous/next navigation keeps the selected card visible');
   await openCatalogue();await page.locator('#search').fill('no-such-question-982374');
   assert(await page.locator('#case-empty').isVisible());assert.equal(await page.locator('.question-card').count(),0);
   await page.locator('#clear').click();assert(await page.locator('#case-body').isVisible());
   if(route==='spatialviz'){
-   await page.locator('#question-filters>summary').click();await page.locator('#category').selectOption('MentalRotation');await page.locator('#type').selectOption('2DRotation');
+   await page.locator('#category').selectOption('MentalRotation');await page.locator('#type').selectOption('2DRotation');
    assert((await page.locator('.question-card-title').allTextContents()).every(t=>t.includes('2D rotation')));
    assert.equal(await page.locator('#matches').textContent(),rows.filter(r=>r.type==='2DRotation').length+' results');
+   await page.screenshot({path:path.join(output,`official-filters-${width}.png`),fullPage:true});
   }
   assert.equal(await page.locator('.sitehead nav a').first().getAttribute('href'),'../');
   assert.equal(await page.locator('.sitehead .benchmark-link').getAttribute('href'),catalog.harnesses.find(h=>h.sourceRoute===route).benchmarkUrl);
   assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false,'Official reader overflows');
-  results.push({page:'official question cards, filters, instant grading, navigation, keyboard and image zoom',route,width,passed:true});
+  results.push({page:'official header filters, continuous question list, instant grading, navigation, keyboard and image zoom',route,width,passed:true});
  }
  for(const kind of ['text','image']){
   const record=records.babyvision.find(r=>r.answerKind===kind);
