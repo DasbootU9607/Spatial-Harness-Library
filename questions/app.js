@@ -17,9 +17,7 @@ const label=s=>names[s]||s;
 const cache=new Map();
 const filters=['track','category','type','level'];
 let route='',requestNo=0,rows=[],matches=[],current=null;
-const states=new Map(),answers=new Map();
-const pageSize=12;
-let listPage=0;
+const states=new Map(),answers=new Map(),questionCards=new Map();
 const answerKey=record=>route+':'+record.id;
 const mobile=window.matchMedia('(max-width:760px)');
 const syncCatalogue=()=>{el('catalogue-panel').open=!mobile.matches;};
@@ -46,6 +44,7 @@ function refreshFilters(){
     return terms.every(t=>text.includes(t));
   });
   el('matches').textContent=matches.length.toLocaleString('en-US')+(matches.length===1?' result':' results');
+  renderQuestionList();
   renderCase(matches.find(r=>r.id===s.id)||matches[0]||null);
 }
 function choiceIndex(record){
@@ -56,24 +55,37 @@ function choiceIndex(record){
   return index===record.answerIndex&&index<record.options.length?index:-1;
 }
 function renderQuestionList(){
-  const list=el('question-list'),scroll=list.scrollTop;
-  const pages=Math.ceil(matches.length/pageSize);listPage=Math.max(0,Math.min(listPage,pages-1));
-  const start=listPage*pageSize;
-  list.replaceChildren(...matches.slice(start,start+pageSize).map((record,index)=>{
+  const list=el('question-list');questionCards.clear();
+  list.replaceChildren(...matches.map((record,index)=>{
     const button=document.createElement('button');button.type='button';button.className='question-card';button.dataset.case=record.id;
     button.setAttribute('aria-current',String(record.id===current?.id));
-    const title=document.createElement('span');title.className='question-card-title';title.textContent=String(start+index+1).padStart(3,'0')+' · '+label(record.type);
+    const title=document.createElement('span');title.className='question-card-title';title.textContent=String(index+1).padStart(3,'0')+' · '+label(record.type);
     const meta=document.createElement('span');meta.className='question-card-meta';meta.textContent=[record.level||label(record.track),String(record.sourceId).split('/').pop()].join(' · ');
     button.append(title,meta);
-    const selected=answers.get(answerKey(record));
-    if(selected!==undefined){const result=document.createElement('span'),correct=selected===choiceIndex(record);result.className='question-card-state '+(correct?'correct':'incorrect');result.textContent=correct?'Correct':'Incorrect';button.append(result);}
+    questionCards.set(record.id,button);updateQuestionCard(record);
     button.onclick=()=>{renderCase(record);if(mobile.matches)el('catalogue-panel').open=false;el('case-heading').focus({preventScroll:true});};
     return button;
   }));
-  list.scrollTop=scroll;
-  el('list-range').textContent=matches.length?`${start+1}–${Math.min(start+pageSize,matches.length)} of ${matches.length.toLocaleString('en-US')}`:'No matching questions';
-  el('list-prev').disabled=listPage===0;el('list-next').disabled=!pages||listPage===pages-1;
+  list.scrollTop=0;
 }
+function updateQuestionCard(record){
+  const button=questionCards.get(record?.id);if(!button)return;
+  button.setAttribute('aria-current',String(record.id===current?.id));
+  const selected=answers.get(answerKey(record));let result=button.querySelector('.question-card-state');
+  if(selected===undefined){result?.remove();return;}
+  if(!result){result=document.createElement('span');button.append(result);}
+  const correct=selected===choiceIndex(record);result.className='question-card-state '+(correct?'correct':'incorrect');result.textContent=correct?'Correct':'Incorrect';
+}
+function revealQuestionCard(){
+  const card=questionCards.get(current?.id),list=el('question-list');
+  if(!card||!el('catalogue-panel').open)return;
+  const item=card.getBoundingClientRect(),box=list.getBoundingClientRect();
+  if(item.top<box.top)list.scrollTop+=item.top-box.top-3;
+  else if(item.bottom>box.bottom)list.scrollTop+=item.bottom-box.bottom+3;
+}
+el('catalogue-panel').addEventListener('toggle',revealQuestionCard);
+document.addEventListener('click',event=>{if(!el('question-filters').contains(event.target))el('question-filters').open=false;});
+document.addEventListener('keydown',event=>{if(event.key==='Escape'&&el('question-filters').open){el('question-filters').open=false;el('question-filters').querySelector('summary').focus();}});
 function applyChoiceState(record,selected){
   const correct=choiceIndex(record);
   el('options').querySelectorAll('[data-answer]').forEach((option,index)=>{
@@ -108,13 +120,11 @@ function renderChoices(record){
 el('official-response').onsubmit=event=>event.preventDefault();
 el('official-response').onchange=event=>{
   if(!current||!event.target.matches('input[name="official-answer"]')||choiceIndex(current)<0)return;
-  const selected=Number(event.target.value);answers.set(answerKey(current),selected);applyChoiceState(current,selected);renderQuestionList();
+  const selected=Number(event.target.value);answers.set(answerKey(current),selected);applyChoiceState(current,selected);updateQuestionCard(current);
 };
 el('retry-answer').onclick=()=>{
-  if(!current)return;answers.delete(answerKey(current));applyChoiceState(current,undefined);renderQuestionList();el('options').querySelector('input')?.focus({preventScroll:true});
+  if(!current)return;answers.delete(answerKey(current));applyChoiceState(current,undefined);updateQuestionCard(current);el('options').querySelector('input')?.focus({preventScroll:true});
 };
-el('list-prev').onclick=()=>{listPage--;renderQuestionList();el('question-list').scrollTop=0;};
-el('list-next').onclick=()=>{listPage++;renderQuestionList();el('question-list').scrollTop=0;};
 function closeZoom(){if(el('lightbox').open)el('lightbox').close();}
 function zoom(url,name){el('large-pic').src=url;el('large-pic').alt=name;el('raw').href=url;el('lightbox').showModal();}
 el('close-dialog').onclick=closeZoom;
@@ -122,13 +132,14 @@ el('lightbox').onclick=event=>{if(event.target===el('lightbox')){const box=el('l
 el('zoom-detail').onclick=()=>{const expanded=el('image-scroll').classList.toggle('is-zoomed');el('zoom-detail').setAttribute('aria-pressed',String(expanded));el('zoom-detail').textContent=expanded?'Fit image':'Zoom in';};
 el('lightbox').addEventListener('close',()=>{el('image-scroll').classList.remove('is-zoomed');el('zoom-detail').setAttribute('aria-pressed','false');el('zoom-detail').textContent='Zoom in';});
 function renderCase(record){
-  current=record;const s=state();s.id=record?.id||'';
+  const previous=current;current=record;const s=state();s.id=record?.id||'';
+  updateQuestionCard(previous);updateQuestionCard(current);revealQuestionCard();
   el('case-body').hidden=!record;el('case-empty').hidden=Boolean(record);
   const url=new URL(location.href);
   url.hash='/'+route+(record?'?case='+encodeURIComponent(record.id):'');
   history.replaceState(null,'',url);
-  if(!record){listPage=0;renderQuestionList();return;}
-  const i=matches.indexOf(record);listPage=Math.floor(i/pageSize);renderQuestionList();
+  if(!record)return;
+  const i=matches.indexOf(record);
   el('position').textContent='CASE '+String(i+1).padStart(3,'0')+' / '+matches.length.toLocaleString();
   el('case-heading').textContent=label(record.type);
   el('tags').textContent=[label(record.category),record.type,record.level||label(record.track)].join(' · ');
@@ -186,7 +197,7 @@ async function navigate(){
   el('archive-harness').textContent='← '+(page==='spatialviz'?'SpatialViz':'BabyVision')+' Harness';
   el('archive-kicker').textContent='OFFICIAL QUESTIONS';
   el('archive-name').textContent=c.name;el('archive-count').textContent=c.count;el('archive-source').href=c.link;
-  el('reader').hidden=true;el('archive-status').textContent='Loading questions…';
+  el('reader').hidden=true;el('archive-controls').hidden=true;el('question-filters').open=false;el('archive-status').textContent='Loading questions…';
   try{
     if(!cache.has(page))cache.set(page,fetch('data/'+page+'.json').then(res=>{
       if(!res.ok)throw Error('HTTP '+res.status);return res.json();
@@ -196,7 +207,7 @@ async function navigate(){
     rows=data;
     const requested=new URLSearchParams(query).get('case');
     if(requested&&rows.some(r=>r.id===requested)&&requested!==state().id){states.set(page,{...newState(),id:requested});}
-    el('reader').hidden=false;el('archive-status').textContent='';
+    el('reader').hidden=false;el('archive-controls').hidden=false;el('archive-status').textContent='';
     refreshFilters();
     if(new URLSearchParams(query).get('answer')==='1')el('answer').open=true;
   }catch{if(number===requestNo)el('archive-status').textContent='The collection could not be loaded. Check your connection and refresh the page.';}
