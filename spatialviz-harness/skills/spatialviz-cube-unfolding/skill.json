@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "id": "cube-unfolding",
+  "packageName": "spatialviz-cube-unfolding",
+  "name": "Cube Unfolding",
+  "harnessId": "spatialviz-harness",
+  "status": "complete",
+  "adapter": "official-cube-unfolding",
+  "requiresVisualReview": true,
+  "description": "Generate and verify four candidate cube nets against the visible corner of a colored or patterned cube.",
+  "officialReferences": [
+    "spatialviz-bench:vqa:MentalFolding:CubeUnfolding:Level0:0",
+    "spatialviz-bench:vqa:MentalFolding:CubeUnfolding:Level1:0",
+    "spatialviz-bench:vqa:MentalFolding:CubeUnfolding:Level1:20",
+    "spatialviz-bench:vqa:MentalFolding:CubeUnfolding:Level2:0"
+  ],
+  "steps": [
+    "Inspect official examples and select the question form",
+    "Create six marked faces and render the net and cube in FreeCAD",
+    "Solve the displayed options and verify the final PNG",
+    "Review the visible evidence and publish the verified candidate"
+  ]
+}

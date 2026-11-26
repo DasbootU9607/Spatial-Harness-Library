@@ -1196,6 +1196,843 @@
       },
       "process": "records/authored-3fd24385eefbe6dcd4e8f848/process.json",
       "eventsCsv": "records/authored-3fd24385eefbe6dcd4e8f848/events.csv"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "authored-2511a9b635397c10c445ac83",
+      "harnessId": "spatialviz-harness",
+      "skillIds": [
+        "cube-unfolding"
+      ],
+      "sourceKind": "agent-authored",
+      "sourceCaseIds": [
+        "spatialviz-bench:vqa:MentalFolding:CubeUnfolding:Level0:0",
+        "spatialviz-bench:vqa:MentalFolding:CubeUnfolding:Level1:0",
+        "spatialviz-bench:vqa:MentalFolding:CubeUnfolding:Level1:20",
+        "spatialviz-bench:vqa:MentalFolding:CubeUnfolding:Level2:0"
+      ],
+      "category": "MentalFolding",
+      "taskType": "CubeUnfolding",
+      "difficulty": {
+        "label": "Uncalibrated",
+        "basis": "Track face identities and the cyclic order at a vertex."
+      },
+      "title": "Cube Unfolding / color / cannot",
+      "description": "Fold the six exterior faces and compare the printed markings.",
+      "contentSha256": "2511a9b635397c10c445ac832300df481f7e4c7a71d2ef2a511bb31c641adf73",
+      "thumbnail": "records/authored-2511a9b635397c10c445ac83/v003-25e2446d0d448534.png",
+      "taskArtifact": "records/authored-2511a9b635397c10c445ac83/task.json",
+      "verification": {
+        "verdict": "passed",
+        "candidateId": "v003",
+        "fingerprints": {
+          "specification": "2511a9b635397c10c445ac832300df481f7e4c7a71d2ef2a511bb31c641adf73",
+          "geometry": "b2cd13986c5036e8c503d55281cd7d7e85537afa12b6c62868a25cb4b09d4af4",
+          "question": "e7c99231ec6290780f44b0505ca5b51dd4417b67a68019394ecd5de670491b70",
+          "options": "9a7e4f89a3fb23827280c341572fdb5b64ae3ab48b572d660a54a2c08329ce0e",
+          "answer": "04a7ab4e9b7f5e6c5fb8306e8238322cca292d1f19eb3a78eb6b4e2f46ca983c",
+          "contract": "a242a71078e1915731e799821e2eaf246c47567d5fd5b7e0661b516e7bd551e9",
+          "rendering": "057f6a9605a1aa32d4565891c6a10d97a25a1085d3db14d4ff701007d1cc7ad9",
+          "generator": "c478d331830f67b967db810f15020365e9562f0d32605fe5de5fb708cd306e88"
+        },
+        "report": "records/authored-2511a9b635397c10c445ac83/verification.json"
+      },
+      "build": {
+        "runId": "build-b9e9ced6-5e34-42bc-9cbe-5393866efdef",
+        "candidateId": "v003",
+        "usage": {
+          "schemaVersion": 2,
+          "runId": "build-b9e9ced6-5e34-42bc-9cbe-5393866efdef",
+          "source": "codex",
+          "runtime": "Codex Desktop",
+          "status": "measured",
+          "elapsedMs": 869715,
+          "elapsedKind": "wall-clock",
+          "scope": "Runtime-reported usage between the start baseline and finish snapshot of this session. In-flight or delayed usage, earlier conversation, other agents and later delivery are excluded. This is an observed interval, not a complete billed task total.",
+          "scopeComplete": false,
+          "observedTokens": {
+            "input_tokens": 7987005,
+            "cached_input_tokens": 7927424,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 21386,
+            "reasoning_output_tokens": 3151,
+            "total_tokens": 8008391
+          },
+          "tokens": {
+            "input_tokens": null,
+            "cached_input_tokens": null,
+            "cache_write_input_tokens": null,
+            "output_tokens": null,
+            "reasoning_output_tokens": null,
+            "total_tokens": null
+          },
+          "models": [
+            {
+              "provider": "openai",
+              "model": "gpt-6.2-astra",
+              "reasoningEffort": "xhigh",
+              "tokens": {
+                "input_tokens": 7987005,
+                "cached_input_tokens": 7927424,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 21386,
+                "reasoning_output_tokens": 3151,
+                "total_tokens": 8008391
+              },
+              "observations": 40
+            }
+          ],
+          "missingFields": [],
+          "issues": [],
+          "observations": 40
+        }
+      },
+      "process": "records/authored-2511a9b635397c10c445ac83/process.json",
+      "eventsCsv": "records/authored-2511a9b635397c10c445ac83/events.csv"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "authored-9f0b65010e6d637d01189a9f",
+      "harnessId": "spatialviz-harness",
+      "skillIds": [
+        "cube-unfolding"
+      ],
+      "sourceKind": "agent-authored",
+      "sourceCaseIds": [
+        "spatialviz-bench:vqa:MentalFolding:CubeUnfolding:Level0:0",
+        "spatialviz-bench:vqa:MentalFolding:CubeUnfolding:Level1:0",
+        "spatialviz-bench:vqa:MentalFolding:CubeUnfolding:Level1:20",
+        "spatialviz-bench:vqa:MentalFolding:CubeUnfolding:Level2:0"
+      ],
+      "category": "MentalFolding",
+      "taskType": "CubeUnfolding",
+      "difficulty": {
+        "label": "Uncalibrated",
+        "basis": "Track an ordered corner and transport the orientation of individual motifs."
+      },
+      "title": "Cube Unfolding / lines / cannot",
+      "description": "Fold the six exterior faces and compare the printed markings.",
+      "contentSha256": "9f0b65010e6d637d01189a9f92d32f04af1d8cf84eabafa3fa3c3a465119608a",
+      "thumbnail": "records/authored-9f0b65010e6d637d01189a9f/v003-80dc75b7f5116d46.png",
+      "taskArtifact": "records/authored-9f0b65010e6d637d01189a9f/task.json",
+      "verification": {
+        "verdict": "passed",
+        "candidateId": "v003",
+        "fingerprints": {
+          "specification": "9f0b65010e6d637d01189a9f92d32f04af1d8cf84eabafa3fa3c3a465119608a",
+          "geometry": "77f26c0789f004663b12eace0f58b651b9ee1f80fd2cdf9f106647fb41a475b1",
+          "question": "a3584f51ad6974c888c4dedff4d1cb293cecc241be4a6d4352608743635cb2e6",
+          "options": "9a7e4f89a3fb23827280c341572fdb5b64ae3ab48b572d660a54a2c08329ce0e",
+          "answer": "40b3c304ea2eebcda55497534b66ca9fbb85307c1eba4ef544faee9e7c277b1f",
+          "contract": "a242a71078e1915731e799821e2eaf246c47567d5fd5b7e0661b516e7bd551e9",
+          "rendering": "a28dc9e4b67a5ec15c975e533ccd2d7f9a5129ee8d834ebc995d07598f7cffff",
+          "generator": "53200d7304a51d58a122f3142064c279bb63c759d95d5e38320fd9a512fc612a"
+        },
+        "report": "records/authored-9f0b65010e6d637d01189a9f/verification.json"
+      },
+      "build": {
+        "runId": "build-db5a229a-6526-4819-b8ad-3d911b34da67",
+        "candidateId": "v003",
+        "usage": {
+          "schemaVersion": 2,
+          "runId": "build-db5a229a-6526-4819-b8ad-3d911b34da67",
+          "source": "codex",
+          "runtime": "Codex Desktop",
+          "status": "measured",
+          "elapsedMs": 865457,
+          "elapsedKind": "wall-clock",
+          "scope": "Runtime-reported usage between the start baseline and finish snapshot of this session. In-flight or delayed usage, earlier conversation, other agents and later delivery are excluded. This is an observed interval, not a complete billed task total.",
+          "scopeComplete": false,
+          "observedTokens": {
+            "input_tokens": 7987005,
+            "cached_input_tokens": 7927424,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 21386,
+            "reasoning_output_tokens": 3151,
+            "total_tokens": 8008391
+          },
+          "tokens": {
+            "input_tokens": null,
+            "cached_input_tokens": null,
+            "cache_write_input_tokens": null,
+            "output_tokens": null,
+            "reasoning_output_tokens": null,
+            "total_tokens": null
+          },
+          "models": [
+            {
+              "provider": "openai",
+              "model": "gpt-6.2-astra",
+              "reasoningEffort": "xhigh",
+              "tokens": {
+                "input_tokens": 7987005,
+                "cached_input_tokens": 7927424,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 21386,
+                "reasoning_output_tokens": 3151,
+                "total_tokens": 8008391
+              },
+              "observations": 40
+            }
+          ],
+          "missingFields": [],
+          "issues": [],
+          "observations": 40
+        }
+      },
+      "process": "records/authored-9f0b65010e6d637d01189a9f/process.json",
+      "eventsCsv": "records/authored-9f0b65010e6d637d01189a9f/events.csv"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "authored-182e7cf1d982848ca4b56d40",
+      "harnessId": "spatialviz-harness",
+      "skillIds": [
+        "cube-unfolding"
+      ],
+      "sourceKind": "agent-authored",
+      "sourceCaseIds": [
+        "spatialviz-bench:vqa:MentalFolding:CubeUnfolding:Level0:0",
+        "spatialviz-bench:vqa:MentalFolding:CubeUnfolding:Level1:0",
+        "spatialviz-bench:vqa:MentalFolding:CubeUnfolding:Level1:20",
+        "spatialviz-bench:vqa:MentalFolding:CubeUnfolding:Level2:0"
+      ],
+      "category": "MentalFolding",
+      "taskType": "CubeUnfolding",
+      "difficulty": {
+        "label": "Uncalibrated",
+        "basis": "Track an ordered corner and transport the orientation of individual motifs."
+      },
+      "title": "Cube Unfolding / mosaic / cannot",
+      "description": "Fold the six exterior faces and compare the printed markings.",
+      "contentSha256": "182e7cf1d982848ca4b56d40bdf758b7ccf46a66f6f14447232d23bd2bf1671b",
+      "thumbnail": "records/authored-182e7cf1d982848ca4b56d40/v003-c8973acbb763d781.png",
+      "taskArtifact": "records/authored-182e7cf1d982848ca4b56d40/task.json",
+      "verification": {
+        "verdict": "passed",
+        "candidateId": "v003",
+        "fingerprints": {
+          "specification": "182e7cf1d982848ca4b56d40bdf758b7ccf46a66f6f14447232d23bd2bf1671b",
+          "geometry": "11fda49a61b3ef753b009e6fb408b3b651286a29f7de63fdecfcbf0b81aee980",
+          "question": "a3584f51ad6974c888c4dedff4d1cb293cecc241be4a6d4352608743635cb2e6",
+          "options": "9a7e4f89a3fb23827280c341572fdb5b64ae3ab48b572d660a54a2c08329ce0e",
+          "answer": "6e3ca643aedc5a7fa3a64baa9113fbb93be8aa0381e0b549f5e7fb465a1b98f7",
+          "contract": "a242a71078e1915731e799821e2eaf246c47567d5fd5b7e0661b516e7bd551e9",
+          "rendering": "ca47f37655ae70f78eca1d48acd8c6ce954017fcc8a9913abfaec9a0f48b2229",
+          "generator": "dcdf641f2d772ffad4ae65eb0390cbf8d12f4d70ae02aa76106e8a85ad0bd6a2"
+        },
+        "report": "records/authored-182e7cf1d982848ca4b56d40/verification.json"
+      },
+      "build": {
+        "runId": "build-9c580ff4-06ed-4d32-9043-b401a77cfab8",
+        "candidateId": "v003",
+        "usage": {
+          "schemaVersion": 2,
+          "runId": "build-9c580ff4-06ed-4d32-9043-b401a77cfab8",
+          "source": "codex",
+          "runtime": "Codex Desktop",
+          "status": "measured",
+          "elapsedMs": 863316,
+          "elapsedKind": "wall-clock",
+          "scope": "Runtime-reported usage between the start baseline and finish snapshot of this session. In-flight or delayed usage, earlier conversation, other agents and later delivery are excluded. This is an observed interval, not a complete billed task total.",
+          "scopeComplete": false,
+          "observedTokens": {
+            "input_tokens": 7827045,
+            "cached_input_tokens": 7767808,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 19018,
+            "reasoning_output_tokens": 3096,
+            "total_tokens": 7846063
+          },
+          "tokens": {
+            "input_tokens": null,
+            "cached_input_tokens": null,
+            "cache_write_input_tokens": null,
+            "output_tokens": null,
+            "reasoning_output_tokens": null,
+            "total_tokens": null
+          },
+          "models": [
+            {
+              "provider": "openai",
+              "model": "gpt-6.2-astra",
+              "reasoningEffort": "xhigh",
+              "tokens": {
+                "input_tokens": 7827045,
+                "cached_input_tokens": 7767808,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 19018,
+                "reasoning_output_tokens": 3096,
+                "total_tokens": 7846063
+              },
+              "observations": 39
+            }
+          ],
+          "missingFields": [],
+          "issues": [],
+          "observations": 39
+        }
+      },
+      "process": "records/authored-182e7cf1d982848ca4b56d40/process.json",
+      "eventsCsv": "records/authored-182e7cf1d982848ca4b56d40/events.csv"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "authored-bb348ceb2351f866084b53fe",
+      "harnessId": "spatialviz-harness",
+      "skillIds": [
+        "cube-unfolding"
+      ],
+      "sourceKind": "agent-authored",
+      "sourceCaseIds": [
+        "spatialviz-bench:vqa:MentalFolding:CubeUnfolding:Level0:0",
+        "spatialviz-bench:vqa:MentalFolding:CubeUnfolding:Level1:0",
+        "spatialviz-bench:vqa:MentalFolding:CubeUnfolding:Level1:20",
+        "spatialviz-bench:vqa:MentalFolding:CubeUnfolding:Level2:0"
+      ],
+      "category": "MentalFolding",
+      "taskType": "CubeUnfolding",
+      "difficulty": {
+        "label": "Uncalibrated",
+        "basis": "Track an ordered corner and transport the orientation of individual motifs."
+      },
+      "title": "Cube Unfolding / pips / can",
+      "description": "Fold the six exterior faces and compare the printed markings.",
+      "contentSha256": "bb348ceb2351f866084b53fefb9be15b000898d8822e4cae1f62c027e5d80dda",
+      "thumbnail": "records/authored-bb348ceb2351f866084b53fe/v003-91a2e8e74b33771c.png",
+      "taskArtifact": "records/authored-bb348ceb2351f866084b53fe/task.json",
+      "verification": {
+        "verdict": "passed",
+        "candidateId": "v003",
+        "fingerprints": {
+          "specification": "bb348ceb2351f866084b53fefb9be15b000898d8822e4cae1f62c027e5d80dda",
+          "geometry": "8c36575ff4ce4ea25686e34bbcb33ea8729a788a30a0482dbab89253387a92d7",
+          "question": "20f710edbc8f42ac1d050f60b9efea44147ca96bcc701a6a29f5e3155604287f",
+          "options": "9a7e4f89a3fb23827280c341572fdb5b64ae3ab48b572d660a54a2c08329ce0e",
+          "answer": "a3e5d764aadbe1442974e8e9c9277f132f9b929bef59eb1d42c2747137f01e80",
+          "contract": "a242a71078e1915731e799821e2eaf246c47567d5fd5b7e0661b516e7bd551e9",
+          "rendering": "6bc6fb510d53c213da8a83bc9f433a6090116014e233b5cb4425d6f3d8e3d672",
+          "generator": "fb80144213d49731661441565d409e297bfbe181058e366a5d2da9592f2e36eb"
+        },
+        "report": "records/authored-bb348ceb2351f866084b53fe/verification.json"
+      },
+      "build": {
+        "runId": "build-8f63a87e-88b0-4253-a76f-8d4d2ba3f4e3",
+        "candidateId": "v003",
+        "usage": {
+          "schemaVersion": 2,
+          "runId": "build-8f63a87e-88b0-4253-a76f-8d4d2ba3f4e3",
+          "source": "codex",
+          "runtime": "Codex Desktop",
+          "status": "measured",
+          "elapsedMs": 868207,
+          "elapsedKind": "wall-clock",
+          "scope": "Runtime-reported usage between the start baseline and finish snapshot of this session. In-flight or delayed usage, earlier conversation, other agents and later delivery are excluded. This is an observed interval, not a complete billed task total.",
+          "scopeComplete": false,
+          "observedTokens": {
+            "input_tokens": 7987005,
+            "cached_input_tokens": 7927424,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 21386,
+            "reasoning_output_tokens": 3151,
+            "total_tokens": 8008391
+          },
+          "tokens": {
+            "input_tokens": null,
+            "cached_input_tokens": null,
+            "cache_write_input_tokens": null,
+            "output_tokens": null,
+            "reasoning_output_tokens": null,
+            "total_tokens": null
+          },
+          "models": [
+            {
+              "provider": "openai",
+              "model": "gpt-6.2-astra",
+              "reasoningEffort": "xhigh",
+              "tokens": {
+                "input_tokens": 7987005,
+                "cached_input_tokens": 7927424,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 21386,
+                "reasoning_output_tokens": 3151,
+                "total_tokens": 8008391
+              },
+              "observations": 40
+            }
+          ],
+          "missingFields": [],
+          "issues": [],
+          "observations": 40
+        }
+      },
+      "process": "records/authored-bb348ceb2351f866084b53fe/process.json",
+      "eventsCsv": "records/authored-bb348ceb2351f866084b53fe/events.csv"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "authored-4650b452cbccb5d947d2b7a8",
+      "harnessId": "spatialviz-harness",
+      "skillIds": [
+        "cube-reconstruction"
+      ],
+      "sourceKind": "agent-authored",
+      "sourceCaseIds": [
+        "spatialviz-bench:vqa:MentalFolding:CubeReconstruction:Level0:0",
+        "spatialviz-bench:vqa:MentalFolding:CubeReconstruction:Level1:0",
+        "spatialviz-bench:vqa:MentalFolding:CubeReconstruction:Level1:20",
+        "spatialviz-bench:vqa:MentalFolding:CubeReconstruction:Level2:0"
+      ],
+      "category": "MentalFolding",
+      "taskType": "CubeReconstruction",
+      "difficulty": {
+        "label": "Uncalibrated",
+        "basis": "Track an opposite normal across the net."
+      },
+      "title": "Cube Reconstruction / color / opposite",
+      "description": "Fold the six exterior faces and compare the printed markings.",
+      "contentSha256": "4650b452cbccb5d947d2b7a81cf5f90c63a79ebf54d338162a04eb0ed69b63a8",
+      "thumbnail": "records/authored-4650b452cbccb5d947d2b7a8/v003-06bb8c534df839c9.png",
+      "taskArtifact": "records/authored-4650b452cbccb5d947d2b7a8/task.json",
+      "verification": {
+        "verdict": "passed",
+        "candidateId": "v003",
+        "fingerprints": {
+          "specification": "4650b452cbccb5d947d2b7a81cf5f90c63a79ebf54d338162a04eb0ed69b63a8",
+          "geometry": "2dfa2f2780c6cb7df8a1277079c01ab0b35bbb2f18d5bebfc4cc68100a49f8c1",
+          "question": "2bb717476b73aa6d01c130fb78a89cab735aeca2d72854622073fad567f48cd6",
+          "options": "ecea7018c2223b987675e9904c40075bad7bba20854ccf73726e6c55b758423d",
+          "answer": "e4b7a4558fb0558e59f64b2e0a17861766389b43b1e598debe7a6150bc966814",
+          "contract": "a242a71078e1915731e799821e2eaf246c47567d5fd5b7e0661b516e7bd551e9",
+          "rendering": "e50a6e4c7b4e4897acb0af1f011be25f1b0716b6e16f5732fa52fb39d520b025",
+          "generator": "5d03f7993ccfce49eea4ede30d538ca902a1d8e2f783ed80ae952e4238a9550b"
+        },
+        "report": "records/authored-4650b452cbccb5d947d2b7a8/verification.json"
+      },
+      "build": {
+        "runId": "build-87064e6d-e3e1-428f-833c-17b463b68515",
+        "candidateId": "v003",
+        "usage": {
+          "schemaVersion": 2,
+          "runId": "build-87064e6d-e3e1-428f-833c-17b463b68515",
+          "source": "codex",
+          "runtime": "Codex Desktop",
+          "status": "measured",
+          "elapsedMs": 861654,
+          "elapsedKind": "wall-clock",
+          "scope": "Runtime-reported usage between the start baseline and finish snapshot of this session. In-flight or delayed usage, earlier conversation, other agents and later delivery are excluded. This is an observed interval, not a complete billed task total.",
+          "scopeComplete": false,
+          "observedTokens": {
+            "input_tokens": 7827045,
+            "cached_input_tokens": 7767808,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 19018,
+            "reasoning_output_tokens": 3096,
+            "total_tokens": 7846063
+          },
+          "tokens": {
+            "input_tokens": null,
+            "cached_input_tokens": null,
+            "cache_write_input_tokens": null,
+            "output_tokens": null,
+            "reasoning_output_tokens": null,
+            "total_tokens": null
+          },
+          "models": [
+            {
+              "provider": "openai",
+              "model": "gpt-6.2-astra",
+              "reasoningEffort": "xhigh",
+              "tokens": {
+                "input_tokens": 7827045,
+                "cached_input_tokens": 7767808,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 19018,
+                "reasoning_output_tokens": 3096,
+                "total_tokens": 7846063
+              },
+              "observations": 39
+            }
+          ],
+          "missingFields": [],
+          "issues": [],
+          "observations": 39
+        }
+      },
+      "process": "records/authored-4650b452cbccb5d947d2b7a8/process.json",
+      "eventsCsv": "records/authored-4650b452cbccb5d947d2b7a8/events.csv"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "authored-e1021b79ff687920a48a05ab",
+      "harnessId": "spatialviz-harness",
+      "skillIds": [
+        "cube-reconstruction"
+      ],
+      "sourceKind": "agent-authored",
+      "sourceCaseIds": [
+        "spatialviz-bench:vqa:MentalFolding:CubeReconstruction:Level0:0",
+        "spatialviz-bench:vqa:MentalFolding:CubeReconstruction:Level1:0",
+        "spatialviz-bench:vqa:MentalFolding:CubeReconstruction:Level1:20",
+        "spatialviz-bench:vqa:MentalFolding:CubeReconstruction:Level2:0"
+      ],
+      "category": "MentalFolding",
+      "taskType": "CubeReconstruction",
+      "difficulty": {
+        "label": "Uncalibrated",
+        "basis": "Track face identities and the cyclic order at a vertex."
+      },
+      "title": "Cube Reconstruction / color / view",
+      "description": "Fold the six exterior faces and compare the printed markings.",
+      "contentSha256": "e1021b79ff687920a48a05ab3b00df1c7a8b415fc80b5f31380897ce40d641bd",
+      "thumbnail": "records/authored-e1021b79ff687920a48a05ab/v003-9fb59a439cf24121.png",
+      "taskArtifact": "records/authored-e1021b79ff687920a48a05ab/task.json",
+      "verification": {
+        "verdict": "passed",
+        "candidateId": "v003",
+        "fingerprints": {
+          "specification": "e1021b79ff687920a48a05ab3b00df1c7a8b415fc80b5f31380897ce40d641bd",
+          "geometry": "c76474a020756694198c2e7298b1fd3f3ef9a8f8385cbc34cf1e5e9cd3319c4f",
+          "question": "c1b9eb1abea1451519f50ee2d24ad76f21b7d31dbed4d174e947cbef57cba7b3",
+          "options": "b0486aed23f5231897b16b8c377e0d82d9b141a8e0e0f270fbc285d7996226f6",
+          "answer": "0b9f105898c29d03d9fdb9ebd585ba2949b6c3b2e06e18a14a4e048f05b972b8",
+          "contract": "a242a71078e1915731e799821e2eaf246c47567d5fd5b7e0661b516e7bd551e9",
+          "rendering": "cecfa0bd7b8fa3878aeb461aa7d9696ac10041bdbed3c550a621ced52a27edb4",
+          "generator": "0f499659c927ab000e3b078e11b11719d1089473657efa15923d8382f443f0cf"
+        },
+        "report": "records/authored-e1021b79ff687920a48a05ab/verification.json"
+      },
+      "build": {
+        "runId": "build-487bc22b-0420-417e-9985-dfad7c091112",
+        "candidateId": "v003",
+        "usage": {
+          "schemaVersion": 2,
+          "runId": "build-487bc22b-0420-417e-9985-dfad7c091112",
+          "source": "codex",
+          "runtime": "Codex Desktop",
+          "status": "measured",
+          "elapsedMs": 859340,
+          "elapsedKind": "wall-clock",
+          "scope": "Runtime-reported usage between the start baseline and finish snapshot of this session. In-flight or delayed usage, earlier conversation, other agents and later delivery are excluded. This is an observed interval, not a complete billed task total.",
+          "scopeComplete": false,
+          "observedTokens": {
+            "input_tokens": 7827045,
+            "cached_input_tokens": 7767808,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 19018,
+            "reasoning_output_tokens": 3096,
+            "total_tokens": 7846063
+          },
+          "tokens": {
+            "input_tokens": null,
+            "cached_input_tokens": null,
+            "cache_write_input_tokens": null,
+            "output_tokens": null,
+            "reasoning_output_tokens": null,
+            "total_tokens": null
+          },
+          "models": [
+            {
+              "provider": "openai",
+              "model": "gpt-6.2-astra",
+              "reasoningEffort": "xhigh",
+              "tokens": {
+                "input_tokens": 7827045,
+                "cached_input_tokens": 7767808,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 19018,
+                "reasoning_output_tokens": 3096,
+                "total_tokens": 7846063
+              },
+              "observations": 39
+            }
+          ],
+          "missingFields": [],
+          "issues": [],
+          "observations": 39
+        }
+      },
+      "process": "records/authored-e1021b79ff687920a48a05ab/process.json",
+      "eventsCsv": "records/authored-e1021b79ff687920a48a05ab/events.csv"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "authored-c1308cc922e23f7b8603bc18",
+      "harnessId": "spatialviz-harness",
+      "skillIds": [
+        "cube-reconstruction"
+      ],
+      "sourceKind": "agent-authored",
+      "sourceCaseIds": [
+        "spatialviz-bench:vqa:MentalFolding:CubeReconstruction:Level0:0",
+        "spatialviz-bench:vqa:MentalFolding:CubeReconstruction:Level1:0",
+        "spatialviz-bench:vqa:MentalFolding:CubeReconstruction:Level1:20",
+        "spatialviz-bench:vqa:MentalFolding:CubeReconstruction:Level2:0"
+      ],
+      "category": "MentalFolding",
+      "taskType": "CubeReconstruction",
+      "difficulty": {
+        "label": "Uncalibrated",
+        "basis": "Track an ordered corner and transport the orientation of individual motifs."
+      },
+      "title": "Cube Reconstruction / lines / view",
+      "description": "Fold the six exterior faces and compare the printed markings.",
+      "contentSha256": "c1308cc922e23f7b8603bc183f148cf840332bdedf456d8094a2d24a3d7168a3",
+      "thumbnail": "records/authored-c1308cc922e23f7b8603bc18/v002-f0fded5d7997a1fe.png",
+      "taskArtifact": "records/authored-c1308cc922e23f7b8603bc18/task.json",
+      "verification": {
+        "verdict": "passed",
+        "candidateId": "v002",
+        "fingerprints": {
+          "specification": "c1308cc922e23f7b8603bc183f148cf840332bdedf456d8094a2d24a3d7168a3",
+          "geometry": "15995e68ab3bded9a7bff7326f6eeb596af888710c80b08319263fe4a8111db2",
+          "question": "235c0be46ccc519f2e4ec6865a65729e9e3c1f11503afd95824345584bd257c2",
+          "options": "9a7e4f89a3fb23827280c341572fdb5b64ae3ab48b572d660a54a2c08329ce0e",
+          "answer": "5d3939c21461ff64f4f0a7454d4c7196183f24dc7f322da61df0f27f07157c4a",
+          "contract": "a242a71078e1915731e799821e2eaf246c47567d5fd5b7e0661b516e7bd551e9",
+          "rendering": "4a235a216d546c64efc66567483af63ce8397f2c5840e45738eb71dc615009dd",
+          "generator": "c2f3494d479669d5e7f21f9241a5556707edaff6376f85020a54dc616204f064"
+        },
+        "report": "records/authored-c1308cc922e23f7b8603bc18/verification.json"
+      },
+      "build": {
+        "runId": "build-40ef5257-f291-40f5-beba-5c93c769b338",
+        "candidateId": "v002",
+        "usage": {
+          "schemaVersion": 2,
+          "runId": "build-40ef5257-f291-40f5-beba-5c93c769b338",
+          "source": "codex",
+          "runtime": "Codex Desktop",
+          "status": "measured",
+          "elapsedMs": 854144,
+          "elapsedKind": "wall-clock",
+          "scope": "Runtime-reported usage between the start baseline and finish snapshot of this session. In-flight or delayed usage, earlier conversation, other agents and later delivery are excluded. This is an observed interval, not a complete billed task total.",
+          "scopeComplete": false,
+          "observedTokens": {
+            "input_tokens": 7827045,
+            "cached_input_tokens": 7767808,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 19018,
+            "reasoning_output_tokens": 3096,
+            "total_tokens": 7846063
+          },
+          "tokens": {
+            "input_tokens": null,
+            "cached_input_tokens": null,
+            "cache_write_input_tokens": null,
+            "output_tokens": null,
+            "reasoning_output_tokens": null,
+            "total_tokens": null
+          },
+          "models": [
+            {
+              "provider": "openai",
+              "model": "gpt-6.2-astra",
+              "reasoningEffort": "xhigh",
+              "tokens": {
+                "input_tokens": 7827045,
+                "cached_input_tokens": 7767808,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 19018,
+                "reasoning_output_tokens": 3096,
+                "total_tokens": 7846063
+              },
+              "observations": 39
+            }
+          ],
+          "missingFields": [],
+          "issues": [],
+          "observations": 39
+        }
+      },
+      "process": "records/authored-c1308cc922e23f7b8603bc18/process.json",
+      "eventsCsv": "records/authored-c1308cc922e23f7b8603bc18/events.csv"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "authored-4df71e9e50b88a8170960ff5",
+      "harnessId": "spatialviz-harness",
+      "skillIds": [
+        "cube-reconstruction"
+      ],
+      "sourceKind": "agent-authored",
+      "sourceCaseIds": [
+        "spatialviz-bench:vqa:MentalFolding:CubeReconstruction:Level0:0",
+        "spatialviz-bench:vqa:MentalFolding:CubeReconstruction:Level1:0",
+        "spatialviz-bench:vqa:MentalFolding:CubeReconstruction:Level1:20",
+        "spatialviz-bench:vqa:MentalFolding:CubeReconstruction:Level2:0"
+      ],
+      "category": "MentalFolding",
+      "taskType": "CubeReconstruction",
+      "difficulty": {
+        "label": "Uncalibrated",
+        "basis": "Track an ordered corner and transport the orientation of individual motifs."
+      },
+      "title": "Cube Reconstruction / mosaic / view",
+      "description": "Fold the six exterior faces and compare the printed markings.",
+      "contentSha256": "4df71e9e50b88a8170960ff58855aad503d97d9298d5ce089e787b8dbf98f019",
+      "thumbnail": "records/authored-4df71e9e50b88a8170960ff5/v002-37b130c818acb38c.png",
+      "taskArtifact": "records/authored-4df71e9e50b88a8170960ff5/task.json",
+      "verification": {
+        "verdict": "passed",
+        "candidateId": "v002",
+        "fingerprints": {
+          "specification": "4df71e9e50b88a8170960ff58855aad503d97d9298d5ce089e787b8dbf98f019",
+          "geometry": "c9cdc7b3e730f9f8c5dd2b3642715ed1e54c44c72d37c597eaa09ba7993c7584",
+          "question": "235c0be46ccc519f2e4ec6865a65729e9e3c1f11503afd95824345584bd257c2",
+          "options": "9a7e4f89a3fb23827280c341572fdb5b64ae3ab48b572d660a54a2c08329ce0e",
+          "answer": "a771727db2eb261253e1ecab6e46d6cd41a0a2ba5b762b25bc79022ed1a02ebe",
+          "contract": "a242a71078e1915731e799821e2eaf246c47567d5fd5b7e0661b516e7bd551e9",
+          "rendering": "b061cb437eeb5fb0f21a78a9cd9c2894b78011be15faf6003758343b75d86098",
+          "generator": "e0de76491c2369dfa149a3ab54eeba6acb5d1d9dd2ea27fc7cda5bdb9430def6"
+        },
+        "report": "records/authored-4df71e9e50b88a8170960ff5/verification.json"
+      },
+      "build": {
+        "runId": "build-93e8bfff-d254-404b-a6b0-f4875c862dc0",
+        "candidateId": "v002",
+        "usage": {
+          "schemaVersion": 2,
+          "runId": "build-93e8bfff-d254-404b-a6b0-f4875c862dc0",
+          "source": "codex",
+          "runtime": "Codex Desktop",
+          "status": "measured",
+          "elapsedMs": 851881,
+          "elapsedKind": "wall-clock",
+          "scope": "Runtime-reported usage between the start baseline and finish snapshot of this session. In-flight or delayed usage, earlier conversation, other agents and later delivery are excluded. This is an observed interval, not a complete billed task total.",
+          "scopeComplete": false,
+          "observedTokens": {
+            "input_tokens": 7827045,
+            "cached_input_tokens": 7767808,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 19018,
+            "reasoning_output_tokens": 3096,
+            "total_tokens": 7846063
+          },
+          "tokens": {
+            "input_tokens": null,
+            "cached_input_tokens": null,
+            "cache_write_input_tokens": null,
+            "output_tokens": null,
+            "reasoning_output_tokens": null,
+            "total_tokens": null
+          },
+          "models": [
+            {
+              "provider": "openai",
+              "model": "gpt-6.2-astra",
+              "reasoningEffort": "xhigh",
+              "tokens": {
+                "input_tokens": 7827045,
+                "cached_input_tokens": 7767808,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 19018,
+                "reasoning_output_tokens": 3096,
+                "total_tokens": 7846063
+              },
+              "observations": 39
+            }
+          ],
+          "missingFields": [],
+          "issues": [],
+          "observations": 39
+        }
+      },
+      "process": "records/authored-4df71e9e50b88a8170960ff5/process.json",
+      "eventsCsv": "records/authored-4df71e9e50b88a8170960ff5/events.csv"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "authored-b031d4499ae6e8b9b283aaa7",
+      "harnessId": "spatialviz-harness",
+      "skillIds": [
+        "cube-reconstruction"
+      ],
+      "sourceKind": "agent-authored",
+      "sourceCaseIds": [
+        "spatialviz-bench:vqa:MentalFolding:CubeReconstruction:Level0:0",
+        "spatialviz-bench:vqa:MentalFolding:CubeReconstruction:Level1:0",
+        "spatialviz-bench:vqa:MentalFolding:CubeReconstruction:Level1:20",
+        "spatialviz-bench:vqa:MentalFolding:CubeReconstruction:Level2:0"
+      ],
+      "category": "MentalFolding",
+      "taskType": "CubeReconstruction",
+      "difficulty": {
+        "label": "Uncalibrated",
+        "basis": "Track an ordered corner and transport the orientation of individual motifs."
+      },
+      "title": "Cube Reconstruction / pips / view",
+      "description": "Fold the six exterior faces and compare the printed markings.",
+      "contentSha256": "b031d4499ae6e8b9b283aaa71e4437ef5f49a8600315b6477915117da669fead",
+      "thumbnail": "records/authored-b031d4499ae6e8b9b283aaa7/v002-addd6059618f86c9.png",
+      "taskArtifact": "records/authored-b031d4499ae6e8b9b283aaa7/task.json",
+      "verification": {
+        "verdict": "passed",
+        "candidateId": "v002",
+        "fingerprints": {
+          "specification": "b031d4499ae6e8b9b283aaa71e4437ef5f49a8600315b6477915117da669fead",
+          "geometry": "48504d37da8d02e1df2525160ba78cbb49450adf229ade6cf3327fa6673cce5f",
+          "question": "235c0be46ccc519f2e4ec6865a65729e9e3c1f11503afd95824345584bd257c2",
+          "options": "9a7e4f89a3fb23827280c341572fdb5b64ae3ab48b572d660a54a2c08329ce0e",
+          "answer": "ea266bcc225e0b2207c3f08446ee7d6e237098e13673d6d32bc5bb002827f403",
+          "contract": "a242a71078e1915731e799821e2eaf246c47567d5fd5b7e0661b516e7bd551e9",
+          "rendering": "76b22a14f9bd2673299ce0ea9fc337d85ae32daf125923a127cd4c87c7eebf74",
+          "generator": "5690cc0c6f0bc02cfe3680e5d5bc70fb96efa90bd458fcbe5e7f487e52982ed5"
+        },
+        "report": "records/authored-b031d4499ae6e8b9b283aaa7/verification.json"
+      },
+      "build": {
+        "runId": "build-ba39fe86-c286-4de1-a55a-2bc44a633e4d",
+        "candidateId": "v002",
+        "usage": {
+          "schemaVersion": 2,
+          "runId": "build-ba39fe86-c286-4de1-a55a-2bc44a633e4d",
+          "source": "codex",
+          "runtime": "Codex Desktop",
+          "status": "measured",
+          "elapsedMs": 857394,
+          "elapsedKind": "wall-clock",
+          "scope": "Runtime-reported usage between the start baseline and finish snapshot of this session. In-flight or delayed usage, earlier conversation, other agents and later delivery are excluded. This is an observed interval, not a complete billed task total.",
+          "scopeComplete": false,
+          "observedTokens": {
+            "input_tokens": 7827045,
+            "cached_input_tokens": 7767808,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 19018,
+            "reasoning_output_tokens": 3096,
+            "total_tokens": 7846063
+          },
+          "tokens": {
+            "input_tokens": null,
+            "cached_input_tokens": null,
+            "cache_write_input_tokens": null,
+            "output_tokens": null,
+            "reasoning_output_tokens": null,
+            "total_tokens": null
+          },
+          "models": [
+            {
+              "provider": "openai",
+              "model": "gpt-6.2-astra",
+              "reasoningEffort": "xhigh",
+              "tokens": {
+                "input_tokens": 7827045,
+                "cached_input_tokens": 7767808,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 19018,
+                "reasoning_output_tokens": 3096,
+                "total_tokens": 7846063
+              },
+              "observations": 39
+            }
+          ],
+          "missingFields": [],
+          "issues": [],
+          "observations": 39
+        }
+      },
+      "process": "records/authored-b031d4499ae6e8b9b283aaa7/process.json",
+      "eventsCsv": "records/authored-b031d4499ae6e8b9b283aaa7/events.csv"
     }
   ]
 }

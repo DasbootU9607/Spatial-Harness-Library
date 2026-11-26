@@ -1,0 +1,1274 @@
+{
+  "schemaVersion": 1,
+  "manifest": {
+    "sealed": true,
+    "id": "build-8f63a87e-88b0-4253-a76f-8d4d2ba3f4e3",
+    "title": "Cube unfolding-pips-can",
+    "runKind": "[private value omitted]",
+    "harness": "spatialviz-harness",
+    "benchmark": null,
+    "category": null,
+    "taskType": null,
+    "skill": {
+      "id": "spatialviz-cube-unfolding",
+      "sha256": "82e2b205c814cc47b91ce6512cc93bb6103d91a42ebcf19a9661c28a2f2ffa17"
+    },
+    "status": "accepted",
+    "finalCandidateId": "v003",
+    "limitations": [
+      "Only recorder-mediated deliveries, commands and saved boundaries are observed; direct function calls, unwrapped commands and unsaved editor states are excluded.",
+      "Design notes are explicit author annotations, not internal reasoning."
+    ],
+    "captureGaps": []
+  },
+  "events": [
+    {
+      "id": "e000001",
+      "seq": 1,
+      "runId": "build-8f63a87e-88b0-4253-a76f-8d4d2ba3f4e3",
+      "type": "run.created",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": null,
+      "details": {},
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000002",
+      "seq": 2,
+      "runId": "build-8f63a87e-88b0-4253-a76f-8d4d2ba3f4e3",
+      "type": "collector.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": null,
+      "details": {},
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000003",
+      "seq": 3,
+      "runId": "build-8f63a87e-88b0-4253-a76f-8d4d2ba3f4e3",
+      "type": "skill.attached",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": null,
+      "details": {
+        "sha256": "82e2b205c814cc47b91ce6512cc93bb6103d91a42ebcf19a9661c28a2f2ffa17",
+        "skill": "spatialviz-cube-unfolding"
+      },
+      "evidenceRefs": [
+        {
+          "id": "79c403bdf183d79d",
+          "sha256": "82e2b205c814cc47b91ce6512cc93bb6103d91a42ebcf19a9661c28a2f2ffa17",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000004",
+      "seq": 4,
+      "runId": "build-8f63a87e-88b0-4253-a76f-8d4d2ba3f4e3",
+      "type": "resource.read",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "874012b0-5a15-4c1d-8a4d-d0b28217bbc6",
+      "candidateId": null,
+      "details": {
+        "outcome": "delivered",
+        "label": "coverage.md",
+        "start": 1,
+        "end": 25,
+        "sha256": "b11beb1aa9721cb4f8f81dace215a1f112df40c31b9e779db90bb07c103d02e4",
+        "sourceSha256": "b11beb1aa9721cb4f8f81dace215a1f112df40c31b9e779db90bb07c103d02e4"
+      },
+      "evidenceRefs": [
+        {
+          "id": "279481a8407bb596",
+          "sha256": "b11beb1aa9721cb4f8f81dace215a1f112df40c31b9e779db90bb07c103d02e4",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000005",
+      "seq": 5,
+      "runId": "build-8f63a87e-88b0-4253-a76f-8d4d2ba3f4e3",
+      "type": "command.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "fd64107f-7c80-477c-8f2c-2ebfe29be980",
+      "candidateId": null,
+      "details": {
+        "label": "python",
+        "kind": "official-freecad-generation"
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000006",
+      "seq": 6,
+      "runId": "build-8f63a87e-88b0-4253-a76f-8d4d2ba3f4e3",
+      "type": "command.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "fd64107f-7c80-477c-8f2c-2ebfe29be980",
+      "candidateId": null,
+      "details": {
+        "commandEventId": "e000005",
+        "kind": "official-freecad-generation",
+        "exitCode": 0,
+        "signal": null
+      },
+      "evidenceRefs": [
+        {
+          "id": "6bbc5a5e6954d76f",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "availability": "local evidence; hash published"
+        },
+        {
+          "id": "10023f676ae78989",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000007",
+      "seq": 7,
+      "runId": "build-8f63a87e-88b0-4253-a76f-8d4d2ba3f4e3",
+      "type": "candidate.saved",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "af8aba85-2a3c-462c-acce-dcef80af00f2",
+      "candidateId": "v001",
+      "details": {
+        "sha256": "320a2d2b26f2960eb4de5d7b93703e44fd18325f3ec0a66373325955e222bd2c",
+        "parentId": null,
+        "parentBasis": null,
+        "changes": [
+          "specification",
+          "geometry",
+          "question",
+          "options",
+          "answer",
+          "rendering",
+          "generator"
+        ],
+        "fingerprints": {
+          "specification": "320a2d2b26f2960eb4de5d7b93703e44fd18325f3ec0a66373325955e222bd2c",
+          "geometry": "4d03bfc41de3818a905873373b1a411ec9c1f92006121b97477104e8f241caaf",
+          "question": "20f710edbc8f42ac1d050f60b9efea44147ca96bcc701a6a29f5e3155604287f",
+          "options": "9a7e4f89a3fb23827280c341572fdb5b64ae3ab48b572d660a54a2c08329ce0e",
+          "answer": "20ebd52a02a9e56edc7843e34bdecf02709ff852c2f5652a45efe902d63cbbef",
+          "contract": null,
+          "rendering": "47b31a2a0ae9055a94cec9e92cd106204528f482ca9faf2d5f9d66d51ea728e6",
+          "generator": "e8fb94925b5ecf102024ae29852ecc7921067535cbae1d379260497fe5341532"
+        },
+        "previewUnavailable": null
+      },
+      "evidenceRefs": [
+        {
+          "id": "cc0e230f07194bfe",
+          "sha256": "320a2d2b26f2960eb4de5d7b93703e44fd18325f3ec0a66373325955e222bd2c",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000008",
+      "seq": 8,
+      "runId": "build-8f63a87e-88b0-4253-a76f-8d4d2ba3f4e3",
+      "type": "build.saved",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "af8aba85-2a3c-462c-acce-dcef80af00f2",
+      "candidateId": "v001",
+      "details": {},
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000009",
+      "seq": 9,
+      "runId": "build-8f63a87e-88b0-4253-a76f-8d4d2ba3f4e3",
+      "type": "render.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "aa7ed7a7-9abe-4152-ae97-538674741885",
+      "candidateId": "v001",
+      "details": {
+        "renderer": {
+          "id": "official-cube-unfolding",
+          "revision": "977a9a67087b01f034f6e8388203475786618ccfa457b4b777bd113f7f7bbc3e"
+        }
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000010",
+      "seq": 10,
+      "runId": "build-8f63a87e-88b0-4253-a76f-8d4d2ba3f4e3",
+      "type": "render.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "aa7ed7a7-9abe-4152-ae97-538674741885",
+      "candidateId": "v001",
+      "details": {
+        "sha256": "91a2e8e74b33771cecbc68a0904d6af14af33f167081b49e0688d1e0fa8423e4",
+        "renderer": {
+          "id": "official-cube-unfolding",
+          "revision": "977a9a67087b01f034f6e8388203475786618ccfa457b4b777bd113f7f7bbc3e"
+        },
+        "specification": "320a2d2b26f2960eb4de5d7b93703e44fd18325f3ec0a66373325955e222bd2c",
+        "rendering": "47b31a2a0ae9055a94cec9e92cd106204528f482ca9faf2d5f9d66d51ea728e6"
+      },
+      "evidenceRefs": [
+        {
+          "id": "0ed03c52f8c14727",
+          "sha256": "91a2e8e74b33771cecbc68a0904d6af14af33f167081b49e0688d1e0fa8423e4",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000011",
+      "seq": 11,
+      "runId": "build-8f63a87e-88b0-4253-a76f-8d4d2ba3f4e3",
+      "type": "command.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "31ea93ca-63b5-41e2-8c6f-d0c065252308",
+      "candidateId": "v001",
+      "details": {
+        "label": "node.exe",
+        "kind": "verification"
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000012",
+      "seq": 12,
+      "runId": "build-8f63a87e-88b0-4253-a76f-8d4d2ba3f4e3",
+      "type": "command.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "31ea93ca-63b5-41e2-8c6f-d0c065252308",
+      "candidateId": "v001",
+      "details": {
+        "commandEventId": "e000011",
+        "kind": "verification",
+        "exitCode": 0,
+        "signal": null
+      },
+      "evidenceRefs": [
+        {
+          "id": "2924878867f8f0b2",
+          "sha256": "b054cb07f37f0aa8ae23a3737c2043d80cecd28c934bb41176d3a1576f8dfdfe",
+          "availability": "local evidence; hash published"
+        },
+        {
+          "id": "1ed2c4b8c1c97655",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000013",
+      "seq": 13,
+      "runId": "build-8f63a87e-88b0-4253-a76f-8d4d2ba3f4e3",
+      "type": "test.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "31ea93ca-63b5-41e2-8c6f-d0c065252308",
+      "candidateId": "v001",
+      "details": {
+        "commandEventId": "e000011",
+        "completedEventId": "e000012",
+        "verdict": "passed",
+        "status": "passed",
+        "checks": [
+          {
+            "name": "Hinge consistency, six normals, proper rotations and exact unique answer",
+            "verdict": "passed"
+          },
+          {
+            "name": "Published prompt, polarity, upstream answer and ordered figure/text options",
+            "verdict": "passed"
+          },
+          {
+            "name": "Rectified CAD faces, rotations, reflections, grid occupancy and visually distinct panels",
+            "verdict": "passed"
+          },
+          {
+            "name": "Pixel-exact labeled composition and complete question PNG",
+            "verdict": "passed"
+          },
+          {
+            "name": "Current domain adapter and pinned source bytes",
+            "verdict": "passed"
+          }
+        ],
+        "scope": "Exact exterior folding and rectified panel matching under the declared camera.",
+        "binding": "exact",
+        "bindingBasis": "exact candidate and full input fingerprints",
+        "testedFingerprints": {
+          "specification": "320a2d2b26f2960eb4de5d7b93703e44fd18325f3ec0a66373325955e222bd2c",
+          "geometry": "4d03bfc41de3818a905873373b1a411ec9c1f92006121b97477104e8f241caaf",
+          "question": "20f710edbc8f42ac1d050f60b9efea44147ca96bcc701a6a29f5e3155604287f",
+          "options": "9a7e4f89a3fb23827280c341572fdb5b64ae3ab48b572d660a54a2c08329ce0e",
+          "answer": "20ebd52a02a9e56edc7843e34bdecf02709ff852c2f5652a45efe902d63cbbef",
+          "contract": null,
+          "rendering": "47b31a2a0ae9055a94cec9e92cd106204528f482ca9faf2d5f9d66d51ea728e6",
+          "generator": "e8fb94925b5ecf102024ae29852ecc7921067535cbae1d379260497fe5341532"
+        },
+        "verifier": {
+          "id": "official-cube-unfolding",
+          "revision": "977a9a67087b01f034f6e8388203475786618ccfa457b4b777bd113f7f7bbc3e"
+        },
+        "reportSha256": "8fd0052745fac74d7b8cd3a24edf53e41674d046c0c141e6c437ec1cf8db00ef"
+      },
+      "evidenceRefs": [
+        {
+          "id": "1d23309ac7c976a3",
+          "sha256": "8fd0052745fac74d7b8cd3a24edf53e41674d046c0c141e6c437ec1cf8db00ef",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000014",
+      "seq": 14,
+      "runId": "build-8f63a87e-88b0-4253-a76f-8d4d2ba3f4e3",
+      "type": "resource.read",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "d81a5a13-0ca8-46c8-8fbf-15da6fb3d02a",
+      "candidateId": null,
+      "details": {
+        "outcome": "delivered",
+        "label": "coverage.md",
+        "start": 1,
+        "end": 29,
+        "sha256": "4964f86b6794b2b3ed9cbe77e9e6dc87f1c9a4c879f6dfa3aef7448a66017d84",
+        "sourceSha256": "4964f86b6794b2b3ed9cbe77e9e6dc87f1c9a4c879f6dfa3aef7448a66017d84"
+      },
+      "evidenceRefs": [
+        {
+          "id": "b0353d3564b8c75b",
+          "sha256": "4964f86b6794b2b3ed9cbe77e9e6dc87f1c9a4c879f6dfa3aef7448a66017d84",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000015",
+      "seq": 15,
+      "runId": "build-8f63a87e-88b0-4253-a76f-8d4d2ba3f4e3",
+      "type": "command.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "1865ae04-5fc5-41b9-a7dd-42a689d25419",
+      "candidateId": null,
+      "details": {
+        "label": "python",
+        "kind": "official-freecad-generation"
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000016",
+      "seq": 16,
+      "runId": "build-8f63a87e-88b0-4253-a76f-8d4d2ba3f4e3",
+      "type": "command.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "1865ae04-5fc5-41b9-a7dd-42a689d25419",
+      "candidateId": null,
+      "details": {
+        "commandEventId": "e000015",
+        "kind": "official-freecad-generation",
+        "exitCode": 0,
+        "signal": null
+      },
+      "evidenceRefs": [
+        {
+          "id": "8c38aa1177eaf997",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "availability": "local evidence; hash published"
+        },
+        {
+          "id": "212cea4d5d5ac28c",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000017",
+      "seq": 17,
+      "runId": "build-8f63a87e-88b0-4253-a76f-8d4d2ba3f4e3",
+      "type": "candidate.saved",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "29bf9865-7eb0-450c-a2c4-821cdcee896a",
+      "candidateId": "v002",
+      "details": {
+        "sha256": "422fec4d6eb38117fcaba43cf71fa04b6c2dba23d85e24f5311b9294dc9f7f20",
+        "parentId": "v001",
+        "parentBasis": "Correct the rendering or verification defect seen in the prior candidate.",
+        "changes": [
+          "specification",
+          "geometry",
+          "contract",
+          "rendering",
+          "generator"
+        ],
+        "fingerprints": {
+          "specification": "422fec4d6eb38117fcaba43cf71fa04b6c2dba23d85e24f5311b9294dc9f7f20",
+          "geometry": "8c36575ff4ce4ea25686e34bbcb33ea8729a788a30a0482dbab89253387a92d7",
+          "question": "20f710edbc8f42ac1d050f60b9efea44147ca96bcc701a6a29f5e3155604287f",
+          "options": "9a7e4f89a3fb23827280c341572fdb5b64ae3ab48b572d660a54a2c08329ce0e",
+          "answer": "20ebd52a02a9e56edc7843e34bdecf02709ff852c2f5652a45efe902d63cbbef",
+          "contract": "a242a71078e1915731e799821e2eaf246c47567d5fd5b7e0661b516e7bd551e9",
+          "rendering": "1cdd5232d87a483284390b682e73ef0bb6551296546b3722d73e6d9f50d213c0",
+          "generator": "f3081b5d286ec9d8259b2cd3afb6d90b1def74d37b7649a84dbee68af62a0833"
+        },
+        "previewUnavailable": null
+      },
+      "evidenceRefs": [
+        {
+          "id": "2fa92a362ce89794",
+          "sha256": "422fec4d6eb38117fcaba43cf71fa04b6c2dba23d85e24f5311b9294dc9f7f20",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000018",
+      "seq": 18,
+      "runId": "build-8f63a87e-88b0-4253-a76f-8d4d2ba3f4e3",
+      "type": "build.saved",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "29bf9865-7eb0-450c-a2c4-821cdcee896a",
+      "candidateId": "v002",
+      "details": {},
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000019",
+      "seq": 19,
+      "runId": "build-8f63a87e-88b0-4253-a76f-8d4d2ba3f4e3",
+      "type": "render.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "53d0df4d-4b34-42c7-9505-0b9834c3de36",
+      "candidateId": "v002",
+      "details": {
+        "renderer": {
+          "id": "official-cube-unfolding",
+          "revision": "d2e3bdba08964d205af1f822464e62417bc42434015cc43412fa31cc54ceb34a"
+        }
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000020",
+      "seq": 20,
+      "runId": "build-8f63a87e-88b0-4253-a76f-8d4d2ba3f4e3",
+      "type": "render.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "53d0df4d-4b34-42c7-9505-0b9834c3de36",
+      "candidateId": "v002",
+      "details": {
+        "sha256": "91a2e8e74b33771cecbc68a0904d6af14af33f167081b49e0688d1e0fa8423e4",
+        "renderer": {
+          "id": "official-cube-unfolding",
+          "revision": "d2e3bdba08964d205af1f822464e62417bc42434015cc43412fa31cc54ceb34a"
+        },
+        "specification": "422fec4d6eb38117fcaba43cf71fa04b6c2dba23d85e24f5311b9294dc9f7f20",
+        "rendering": "1cdd5232d87a483284390b682e73ef0bb6551296546b3722d73e6d9f50d213c0"
+      },
+      "evidenceRefs": [
+        {
+          "id": "e36d1b0785f5c6ca",
+          "sha256": "91a2e8e74b33771cecbc68a0904d6af14af33f167081b49e0688d1e0fa8423e4",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000021",
+      "seq": 21,
+      "runId": "build-8f63a87e-88b0-4253-a76f-8d4d2ba3f4e3",
+      "type": "report.previous",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "a537dae2-f250-4700-955c-32af1a0ed9ce",
+      "candidateId": null,
+      "details": {
+        "sha256": "8fd0052745fac74d7b8cd3a24edf53e41674d046c0c141e6c437ec1cf8db00ef"
+      },
+      "evidenceRefs": [
+        {
+          "id": "528452f352e3b446",
+          "sha256": "8fd0052745fac74d7b8cd3a24edf53e41674d046c0c141e6c437ec1cf8db00ef",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000022",
+      "seq": 22,
+      "runId": "build-8f63a87e-88b0-4253-a76f-8d4d2ba3f4e3",
+      "type": "command.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "a537dae2-f250-4700-955c-32af1a0ed9ce",
+      "candidateId": "v002",
+      "details": {
+        "label": "node.exe",
+        "kind": "verification"
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000023",
+      "seq": 23,
+      "runId": "build-8f63a87e-88b0-4253-a76f-8d4d2ba3f4e3",
+      "type": "command.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "a537dae2-f250-4700-955c-32af1a0ed9ce",
+      "candidateId": "v002",
+      "details": {
+        "commandEventId": "e000022",
+        "kind": "verification",
+        "exitCode": 0,
+        "signal": null
+      },
+      "evidenceRefs": [
+        {
+          "id": "1de5c7ece8712be1",
+          "sha256": "b054cb07f37f0aa8ae23a3737c2043d80cecd28c934bb41176d3a1576f8dfdfe",
+          "availability": "local evidence; hash published"
+        },
+        {
+          "id": "e17facdbdced1ed7",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000024",
+      "seq": 24,
+      "runId": "build-8f63a87e-88b0-4253-a76f-8d4d2ba3f4e3",
+      "type": "test.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "a537dae2-f250-4700-955c-32af1a0ed9ce",
+      "candidateId": "v002",
+      "details": {
+        "commandEventId": "e000022",
+        "completedEventId": "e000023",
+        "verdict": "passed",
+        "status": "passed",
+        "checks": [
+          {
+            "name": "Hinge consistency, six normals, proper rotations and exact unique answer",
+            "verdict": "passed"
+          },
+          {
+            "name": "Published prompt, polarity, upstream answer and ordered figure/text options",
+            "verdict": "passed"
+          },
+          {
+            "name": "Rectified CAD faces, rotations, reflections, grid occupancy and visually distinct panels",
+            "verdict": "passed"
+          },
+          {
+            "name": "Pixel-exact labeled composition and complete question PNG",
+            "verdict": "passed"
+          },
+          {
+            "name": "Current domain adapter and pinned source bytes",
+            "verdict": "passed"
+          }
+        ],
+        "scope": "Exact exterior folding and rectified panel matching under the declared camera.",
+        "binding": "exact",
+        "bindingBasis": "exact candidate and full input fingerprints",
+        "testedFingerprints": {
+          "specification": "422fec4d6eb38117fcaba43cf71fa04b6c2dba23d85e24f5311b9294dc9f7f20",
+          "geometry": "8c36575ff4ce4ea25686e34bbcb33ea8729a788a30a0482dbab89253387a92d7",
+          "question": "20f710edbc8f42ac1d050f60b9efea44147ca96bcc701a6a29f5e3155604287f",
+          "options": "9a7e4f89a3fb23827280c341572fdb5b64ae3ab48b572d660a54a2c08329ce0e",
+          "answer": "20ebd52a02a9e56edc7843e34bdecf02709ff852c2f5652a45efe902d63cbbef",
+          "contract": "a242a71078e1915731e799821e2eaf246c47567d5fd5b7e0661b516e7bd551e9",
+          "rendering": "1cdd5232d87a483284390b682e73ef0bb6551296546b3722d73e6d9f50d213c0",
+          "generator": "f3081b5d286ec9d8259b2cd3afb6d90b1def74d37b7649a84dbee68af62a0833"
+        },
+        "verifier": {
+          "id": "official-cube-unfolding",
+          "revision": "d2e3bdba08964d205af1f822464e62417bc42434015cc43412fa31cc54ceb34a"
+        },
+        "reportSha256": "2bf79235abff8309fc3c6debb5d4da8dd0926104670437a68ce58a8e5bcba1a4"
+      },
+      "evidenceRefs": [
+        {
+          "id": "68ce7060261753d6",
+          "sha256": "2bf79235abff8309fc3c6debb5d4da8dd0926104670437a68ce58a8e5bcba1a4",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000025",
+      "seq": 25,
+      "runId": "build-8f63a87e-88b0-4253-a76f-8d4d2ba3f4e3",
+      "type": "resource.read",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "17a12b8f-f198-4fcc-a42c-6581a182f9ea",
+      "candidateId": null,
+      "details": {
+        "outcome": "delivered",
+        "label": "coverage.md",
+        "start": 1,
+        "end": 29,
+        "sha256": "4964f86b6794b2b3ed9cbe77e9e6dc87f1c9a4c879f6dfa3aef7448a66017d84",
+        "sourceSha256": "4964f86b6794b2b3ed9cbe77e9e6dc87f1c9a4c879f6dfa3aef7448a66017d84"
+      },
+      "evidenceRefs": [
+        {
+          "id": "a3ec3cfde4427ca2",
+          "sha256": "4964f86b6794b2b3ed9cbe77e9e6dc87f1c9a4c879f6dfa3aef7448a66017d84",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000026",
+      "seq": 26,
+      "runId": "build-8f63a87e-88b0-4253-a76f-8d4d2ba3f4e3",
+      "type": "command.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "e9782e38-29b1-4565-b345-d549e5a2805f",
+      "candidateId": null,
+      "details": {
+        "label": "python",
+        "kind": "official-freecad-generation"
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000027",
+      "seq": 27,
+      "runId": "build-8f63a87e-88b0-4253-a76f-8d4d2ba3f4e3",
+      "type": "command.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "e9782e38-29b1-4565-b345-d549e5a2805f",
+      "candidateId": null,
+      "details": {
+        "commandEventId": "e000026",
+        "kind": "official-freecad-generation",
+        "exitCode": 0,
+        "signal": null
+      },
+      "evidenceRefs": [
+        {
+          "id": "cd623f9d1d2683a2",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "availability": "local evidence; hash published"
+        },
+        {
+          "id": "8d22fd9614d09c33",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000028",
+      "seq": 28,
+      "runId": "build-8f63a87e-88b0-4253-a76f-8d4d2ba3f4e3",
+      "type": "candidate.saved",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "18be301f-f4a6-4288-8b82-904a5c680269",
+      "candidateId": "v003",
+      "details": {
+        "sha256": "bb348ceb2351f866084b53fefb9be15b000898d8822e4cae1f62c027e5d80dda",
+        "parentId": "v002",
+        "parentBasis": "Correct the rendering or verification defect seen in the prior candidate.",
+        "changes": [
+          "specification",
+          "answer",
+          "rendering",
+          "generator"
+        ],
+        "fingerprints": {
+          "specification": "bb348ceb2351f866084b53fefb9be15b000898d8822e4cae1f62c027e5d80dda",
+          "geometry": "8c36575ff4ce4ea25686e34bbcb33ea8729a788a30a0482dbab89253387a92d7",
+          "question": "20f710edbc8f42ac1d050f60b9efea44147ca96bcc701a6a29f5e3155604287f",
+          "options": "9a7e4f89a3fb23827280c341572fdb5b64ae3ab48b572d660a54a2c08329ce0e",
+          "answer": "a3e5d764aadbe1442974e8e9c9277f132f9b929bef59eb1d42c2747137f01e80",
+          "contract": "a242a71078e1915731e799821e2eaf246c47567d5fd5b7e0661b516e7bd551e9",
+          "rendering": "6bc6fb510d53c213da8a83bc9f433a6090116014e233b5cb4425d6f3d8e3d672",
+          "generator": "fb80144213d49731661441565d409e297bfbe181058e366a5d2da9592f2e36eb"
+        },
+        "previewUnavailable": null
+      },
+      "evidenceRefs": [
+        {
+          "id": "3ace4e053e8fefc4",
+          "sha256": "bb348ceb2351f866084b53fefb9be15b000898d8822e4cae1f62c027e5d80dda",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000029",
+      "seq": 29,
+      "runId": "build-8f63a87e-88b0-4253-a76f-8d4d2ba3f4e3",
+      "type": "build.saved",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "18be301f-f4a6-4288-8b82-904a5c680269",
+      "candidateId": "v003",
+      "details": {},
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000030",
+      "seq": 30,
+      "runId": "build-8f63a87e-88b0-4253-a76f-8d4d2ba3f4e3",
+      "type": "render.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "e1c50b16-939b-47ee-9f5b-376c34390e5b",
+      "candidateId": "v003",
+      "details": {
+        "renderer": {
+          "id": "official-cube-unfolding",
+          "revision": "ee0a6235974b4a916be75e746575f267b6cf052f244cbaddb5311170bbd67e3a"
+        }
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000031",
+      "seq": 31,
+      "runId": "build-8f63a87e-88b0-4253-a76f-8d4d2ba3f4e3",
+      "type": "render.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "e1c50b16-939b-47ee-9f5b-376c34390e5b",
+      "candidateId": "v003",
+      "details": {
+        "sha256": "91a2e8e74b33771cecbc68a0904d6af14af33f167081b49e0688d1e0fa8423e4",
+        "renderer": {
+          "id": "official-cube-unfolding",
+          "revision": "ee0a6235974b4a916be75e746575f267b6cf052f244cbaddb5311170bbd67e3a"
+        },
+        "specification": "bb348ceb2351f866084b53fefb9be15b000898d8822e4cae1f62c027e5d80dda",
+        "rendering": "6bc6fb510d53c213da8a83bc9f433a6090116014e233b5cb4425d6f3d8e3d672"
+      },
+      "evidenceRefs": [
+        {
+          "id": "d6200fac6a85d8c1",
+          "sha256": "91a2e8e74b33771cecbc68a0904d6af14af33f167081b49e0688d1e0fa8423e4",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000032",
+      "seq": 32,
+      "runId": "build-8f63a87e-88b0-4253-a76f-8d4d2ba3f4e3",
+      "type": "report.previous",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "5f35cd41-b1e7-41f3-a19a-4d28a43a14b2",
+      "candidateId": null,
+      "details": {
+        "sha256": "2bf79235abff8309fc3c6debb5d4da8dd0926104670437a68ce58a8e5bcba1a4"
+      },
+      "evidenceRefs": [
+        {
+          "id": "3e589aeefd8b85b3",
+          "sha256": "2bf79235abff8309fc3c6debb5d4da8dd0926104670437a68ce58a8e5bcba1a4",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000033",
+      "seq": 33,
+      "runId": "build-8f63a87e-88b0-4253-a76f-8d4d2ba3f4e3",
+      "type": "command.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "5f35cd41-b1e7-41f3-a19a-4d28a43a14b2",
+      "candidateId": "v003",
+      "details": {
+        "label": "node.exe",
+        "kind": "verification"
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000034",
+      "seq": 34,
+      "runId": "build-8f63a87e-88b0-4253-a76f-8d4d2ba3f4e3",
+      "type": "command.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "5f35cd41-b1e7-41f3-a19a-4d28a43a14b2",
+      "candidateId": "v003",
+      "details": {
+        "commandEventId": "e000033",
+        "kind": "verification",
+        "exitCode": 0,
+        "signal": null
+      },
+      "evidenceRefs": [
+        {
+          "id": "7ee8c347ed42323b",
+          "sha256": "b054cb07f37f0aa8ae23a3737c2043d80cecd28c934bb41176d3a1576f8dfdfe",
+          "availability": "local evidence; hash published"
+        },
+        {
+          "id": "477551bcc2a256a4",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000035",
+      "seq": 35,
+      "runId": "build-8f63a87e-88b0-4253-a76f-8d4d2ba3f4e3",
+      "type": "test.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "5f35cd41-b1e7-41f3-a19a-4d28a43a14b2",
+      "candidateId": "v003",
+      "details": {
+        "commandEventId": "e000033",
+        "completedEventId": "e000034",
+        "verdict": "passed",
+        "status": "passed",
+        "checks": [
+          {
+            "name": "Hinge consistency, six normals, proper rotations and exact unique answer",
+            "verdict": "passed"
+          },
+          {
+            "name": "Published prompt, polarity, upstream answer and ordered figure/text options",
+            "verdict": "passed"
+          },
+          {
+            "name": "Rectified CAD faces, rotations, reflections, grid occupancy and visually distinct panels",
+            "verdict": "passed"
+          },
+          {
+            "name": "Pixel-exact labeled composition and complete question PNG",
+            "verdict": "passed"
+          },
+          {
+            "name": "Current domain adapter and pinned source bytes",
+            "verdict": "passed"
+          }
+        ],
+        "scope": "Exact exterior folding and rectified panel matching under the declared camera.",
+        "binding": "exact",
+        "bindingBasis": "exact candidate and full input fingerprints",
+        "testedFingerprints": {
+          "specification": "bb348ceb2351f866084b53fefb9be15b000898d8822e4cae1f62c027e5d80dda",
+          "geometry": "8c36575ff4ce4ea25686e34bbcb33ea8729a788a30a0482dbab89253387a92d7",
+          "question": "20f710edbc8f42ac1d050f60b9efea44147ca96bcc701a6a29f5e3155604287f",
+          "options": "9a7e4f89a3fb23827280c341572fdb5b64ae3ab48b572d660a54a2c08329ce0e",
+          "answer": "a3e5d764aadbe1442974e8e9c9277f132f9b929bef59eb1d42c2747137f01e80",
+          "contract": "a242a71078e1915731e799821e2eaf246c47567d5fd5b7e0661b516e7bd551e9",
+          "rendering": "6bc6fb510d53c213da8a83bc9f433a6090116014e233b5cb4425d6f3d8e3d672",
+          "generator": "fb80144213d49731661441565d409e297bfbe181058e366a5d2da9592f2e36eb"
+        },
+        "verifier": {
+          "id": "official-cube-unfolding",
+          "revision": "ee0a6235974b4a916be75e746575f267b6cf052f244cbaddb5311170bbd67e3a"
+        },
+        "reportSha256": "cee9dc5607d211b14c8f46cd442c8330e817653a25620725cb80711f176443d5"
+      },
+      "evidenceRefs": [
+        {
+          "id": "d4a38bbb41b52d78",
+          "sha256": "cee9dc5607d211b14c8f46cd442c8330e817653a25620725cb80711f176443d5",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000036",
+      "seq": 36,
+      "runId": "build-8f63a87e-88b0-4253-a76f-8d4d2ba3f4e3",
+      "type": "design.note",
+      "actor": "author",
+      "origin": "agent_statement",
+      "actionId": null,
+      "candidateId": "v003",
+      "details": {
+        "goal": "Confirm the verified question and preserve revision context.",
+        "sources": "Official reference inventory, final PNG, independently computed frames and accepted verifier report.",
+        "change": "The delivered explanation identifies the printed cells and any mismatched face rotation. Earlier attempts and diagnostics remain in the run.",
+        "reason": "Match each explanation to visible evidence. Passive capture intervals for this coordinated batch overlap.",
+        "expectedChecks": "Six exterior normals, 24 proper rotations and visual confirmation."
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000037",
+      "seq": 37,
+      "runId": "build-8f63a87e-88b0-4253-a76f-8d4d2ba3f4e3",
+      "type": "visual.review",
+      "actor": "author",
+      "origin": "agent_statement",
+      "actionId": null,
+      "candidateId": "v003",
+      "details": {
+        "outcome": "passed",
+        "review": "B places one pip on top, with the two-pip pair parallel to the shared top edge and the three-pip face on the right. A reverses the order, C turns the pair, and D puts two opposite three. An independent blind read also selected B."
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000038",
+      "seq": 38,
+      "runId": "build-8f63a87e-88b0-4253-a76f-8d4d2ba3f4e3",
+      "type": "run.finished",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": "v003",
+      "details": {
+        "outcome": "accepted",
+        "finalCandidateId": "v003"
+      },
+      "evidenceRefs": []
+    }
+  ],
+  "candidates": [
+    {
+      "id": "v001",
+      "parentId": null,
+      "parentBasis": null,
+      "sha256": "320a2d2b26f2960eb4de5d7b93703e44fd18325f3ec0a66373325955e222bd2c",
+      "fingerprints": {
+        "specification": "320a2d2b26f2960eb4de5d7b93703e44fd18325f3ec0a66373325955e222bd2c",
+        "geometry": "4d03bfc41de3818a905873373b1a411ec9c1f92006121b97477104e8f241caaf",
+        "question": "20f710edbc8f42ac1d050f60b9efea44147ca96bcc701a6a29f5e3155604287f",
+        "options": "9a7e4f89a3fb23827280c341572fdb5b64ae3ab48b572d660a54a2c08329ce0e",
+        "answer": "20ebd52a02a9e56edc7843e34bdecf02709ff852c2f5652a45efe902d63cbbef",
+        "contract": null,
+        "rendering": "47b31a2a0ae9055a94cec9e92cd106204528f482ca9faf2d5f9d66d51ea728e6",
+        "generator": "e8fb94925b5ecf102024ae29852ecc7921067535cbae1d379260497fe5341532"
+      },
+      "previewUnavailable": null,
+      "changes": [
+        "specification",
+        "geometry",
+        "question",
+        "options",
+        "answer",
+        "rendering",
+        "generator"
+      ],
+      "preview": {
+        "candidateId": "v001",
+        "specification": "320a2d2b26f2960eb4de5d7b93703e44fd18325f3ec0a66373325955e222bd2c",
+        "rendering": "47b31a2a0ae9055a94cec9e92cd106204528f482ca9faf2d5f9d66d51ea728e6",
+        "renderer": {
+          "id": "official-cube-unfolding",
+          "revision": "977a9a67087b01f034f6e8388203475786618ccfa457b4b777bd113f7f7bbc3e"
+        },
+        "sha256": "91a2e8e74b33771cecbc68a0904d6af14af33f167081b49e0688d1e0fa8423e4",
+        "path": "records/authored-bb348ceb2351f866084b53fe/v001-91a2e8e74b33771c.png",
+        "origin": "recorded-render"
+      }
+    },
+    {
+      "id": "v002",
+      "parentId": "v001",
+      "parentBasis": "Correct the rendering or verification defect seen in the prior candidate.",
+      "sha256": "422fec4d6eb38117fcaba43cf71fa04b6c2dba23d85e24f5311b9294dc9f7f20",
+      "fingerprints": {
+        "specification": "422fec4d6eb38117fcaba43cf71fa04b6c2dba23d85e24f5311b9294dc9f7f20",
+        "geometry": "8c36575ff4ce4ea25686e34bbcb33ea8729a788a30a0482dbab89253387a92d7",
+        "question": "20f710edbc8f42ac1d050f60b9efea44147ca96bcc701a6a29f5e3155604287f",
+        "options": "9a7e4f89a3fb23827280c341572fdb5b64ae3ab48b572d660a54a2c08329ce0e",
+        "answer": "20ebd52a02a9e56edc7843e34bdecf02709ff852c2f5652a45efe902d63cbbef",
+        "contract": "a242a71078e1915731e799821e2eaf246c47567d5fd5b7e0661b516e7bd551e9",
+        "rendering": "1cdd5232d87a483284390b682e73ef0bb6551296546b3722d73e6d9f50d213c0",
+        "generator": "f3081b5d286ec9d8259b2cd3afb6d90b1def74d37b7649a84dbee68af62a0833"
+      },
+      "previewUnavailable": null,
+      "changes": [
+        "specification",
+        "geometry",
+        "contract",
+        "rendering",
+        "generator"
+      ],
+      "preview": {
+        "candidateId": "v002",
+        "specification": "422fec4d6eb38117fcaba43cf71fa04b6c2dba23d85e24f5311b9294dc9f7f20",
+        "rendering": "1cdd5232d87a483284390b682e73ef0bb6551296546b3722d73e6d9f50d213c0",
+        "renderer": {
+          "id": "official-cube-unfolding",
+          "revision": "d2e3bdba08964d205af1f822464e62417bc42434015cc43412fa31cc54ceb34a"
+        },
+        "sha256": "91a2e8e74b33771cecbc68a0904d6af14af33f167081b49e0688d1e0fa8423e4",
+        "path": "records/authored-bb348ceb2351f866084b53fe/v002-91a2e8e74b33771c.png",
+        "origin": "recorded-render"
+      }
+    },
+    {
+      "id": "v003",
+      "parentId": "v002",
+      "parentBasis": "Correct the rendering or verification defect seen in the prior candidate.",
+      "sha256": "bb348ceb2351f866084b53fefb9be15b000898d8822e4cae1f62c027e5d80dda",
+      "fingerprints": {
+        "specification": "bb348ceb2351f866084b53fefb9be15b000898d8822e4cae1f62c027e5d80dda",
+        "geometry": "8c36575ff4ce4ea25686e34bbcb33ea8729a788a30a0482dbab89253387a92d7",
+        "question": "20f710edbc8f42ac1d050f60b9efea44147ca96bcc701a6a29f5e3155604287f",
+        "options": "9a7e4f89a3fb23827280c341572fdb5b64ae3ab48b572d660a54a2c08329ce0e",
+        "answer": "a3e5d764aadbe1442974e8e9c9277f132f9b929bef59eb1d42c2747137f01e80",
+        "contract": "a242a71078e1915731e799821e2eaf246c47567d5fd5b7e0661b516e7bd551e9",
+        "rendering": "6bc6fb510d53c213da8a83bc9f433a6090116014e233b5cb4425d6f3d8e3d672",
+        "generator": "fb80144213d49731661441565d409e297bfbe181058e366a5d2da9592f2e36eb"
+      },
+      "previewUnavailable": null,
+      "changes": [
+        "specification",
+        "answer",
+        "rendering",
+        "generator"
+      ],
+      "preview": {
+        "candidateId": "v003",
+        "specification": "bb348ceb2351f866084b53fefb9be15b000898d8822e4cae1f62c027e5d80dda",
+        "rendering": "6bc6fb510d53c213da8a83bc9f433a6090116014e233b5cb4425d6f3d8e3d672",
+        "renderer": {
+          "id": "official-cube-unfolding",
+          "revision": "ee0a6235974b4a916be75e746575f267b6cf052f244cbaddb5311170bbd67e3a"
+        },
+        "sha256": "91a2e8e74b33771cecbc68a0904d6af14af33f167081b49e0688d1e0fa8423e4",
+        "path": "records/authored-bb348ceb2351f866084b53fe/v003-91a2e8e74b33771c.png",
+        "origin": "recorded-render"
+      }
+    }
+  ],
+  "tests": [
+    {
+      "id": "t001",
+      "actionId": "31ea93ca-63b5-41e2-8c6f-d0c065252308",
+      "candidateId": "v001",
+      "testedFingerprints": {
+        "specification": "320a2d2b26f2960eb4de5d7b93703e44fd18325f3ec0a66373325955e222bd2c",
+        "geometry": "4d03bfc41de3818a905873373b1a411ec9c1f92006121b97477104e8f241caaf",
+        "question": "20f710edbc8f42ac1d050f60b9efea44147ca96bcc701a6a29f5e3155604287f",
+        "options": "9a7e4f89a3fb23827280c341572fdb5b64ae3ab48b572d660a54a2c08329ce0e",
+        "answer": "20ebd52a02a9e56edc7843e34bdecf02709ff852c2f5652a45efe902d63cbbef",
+        "contract": null,
+        "rendering": "47b31a2a0ae9055a94cec9e92cd106204528f482ca9faf2d5f9d66d51ea728e6",
+        "generator": "e8fb94925b5ecf102024ae29852ecc7921067535cbae1d379260497fe5341532"
+      },
+      "verifier": {
+        "id": "official-cube-unfolding",
+        "revision": "977a9a67087b01f034f6e8388203475786618ccfa457b4b777bd113f7f7bbc3e"
+      },
+      "reportSha256": "8fd0052745fac74d7b8cd3a24edf53e41674d046c0c141e6c437ec1cf8db00ef",
+      "verdict": "passed",
+      "status": "passed",
+      "checks": [
+        {
+          "name": "Hinge consistency, six normals, proper rotations and exact unique answer",
+          "verdict": "passed"
+        },
+        {
+          "name": "Published prompt, polarity, upstream answer and ordered figure/text options",
+          "verdict": "passed"
+        },
+        {
+          "name": "Rectified CAD faces, rotations, reflections, grid occupancy and visually distinct panels",
+          "verdict": "passed"
+        },
+        {
+          "name": "Pixel-exact labeled composition and complete question PNG",
+          "verdict": "passed"
+        },
+        {
+          "name": "Current domain adapter and pinned source bytes",
+          "verdict": "passed"
+        }
+      ],
+      "scope": "Exact exterior folding and rectified panel matching under the declared camera.",
+      "commandExitStatus": 0,
+      "binding": "exact",
+      "bindingBasis": "exact candidate and full input fingerprints",
+      "commandEventId": "e000011"
+    },
+    {
+      "id": "t002",
+      "actionId": "a537dae2-f250-4700-955c-32af1a0ed9ce",
+      "candidateId": "v002",
+      "testedFingerprints": {
+        "specification": "422fec4d6eb38117fcaba43cf71fa04b6c2dba23d85e24f5311b9294dc9f7f20",
+        "geometry": "8c36575ff4ce4ea25686e34bbcb33ea8729a788a30a0482dbab89253387a92d7",
+        "question": "20f710edbc8f42ac1d050f60b9efea44147ca96bcc701a6a29f5e3155604287f",
+        "options": "9a7e4f89a3fb23827280c341572fdb5b64ae3ab48b572d660a54a2c08329ce0e",
+        "answer": "20ebd52a02a9e56edc7843e34bdecf02709ff852c2f5652a45efe902d63cbbef",
+        "contract": "a242a71078e1915731e799821e2eaf246c47567d5fd5b7e0661b516e7bd551e9",
+        "rendering": "1cdd5232d87a483284390b682e73ef0bb6551296546b3722d73e6d9f50d213c0",
+        "generator": "f3081b5d286ec9d8259b2cd3afb6d90b1def74d37b7649a84dbee68af62a0833"
+      },
+      "verifier": {
+        "id": "official-cube-unfolding",
+        "revision": "d2e3bdba08964d205af1f822464e62417bc42434015cc43412fa31cc54ceb34a"
+      },
+      "reportSha256": "2bf79235abff8309fc3c6debb5d4da8dd0926104670437a68ce58a8e5bcba1a4",
+      "verdict": "passed",
+      "status": "passed",
+      "checks": [
+        {
+          "name": "Hinge consistency, six normals, proper rotations and exact unique answer",
+          "verdict": "passed"
+        },
+        {
+          "name": "Published prompt, polarity, upstream answer and ordered figure/text options",
+          "verdict": "passed"
+        },
+        {
+          "name": "Rectified CAD faces, rotations, reflections, grid occupancy and visually distinct panels",
+          "verdict": "passed"
+        },
+        {
+          "name": "Pixel-exact labeled composition and complete question PNG",
+          "verdict": "passed"
+        },
+        {
+          "name": "Current domain adapter and pinned source bytes",
+          "verdict": "passed"
+        }
+      ],
+      "scope": "Exact exterior folding and rectified panel matching under the declared camera.",
+      "commandExitStatus": 0,
+      "binding": "exact",
+      "bindingBasis": "exact candidate and full input fingerprints",
+      "commandEventId": "e000022"
+    },
+    {
+      "id": "t003",
+      "actionId": "5f35cd41-b1e7-41f3-a19a-4d28a43a14b2",
+      "candidateId": "v003",
+      "testedFingerprints": {
+        "specification": "bb348ceb2351f866084b53fefb9be15b000898d8822e4cae1f62c027e5d80dda",
+        "geometry": "8c36575ff4ce4ea25686e34bbcb33ea8729a788a30a0482dbab89253387a92d7",
+        "question": "20f710edbc8f42ac1d050f60b9efea44147ca96bcc701a6a29f5e3155604287f",
+        "options": "9a7e4f89a3fb23827280c341572fdb5b64ae3ab48b572d660a54a2c08329ce0e",
+        "answer": "a3e5d764aadbe1442974e8e9c9277f132f9b929bef59eb1d42c2747137f01e80",
+        "contract": "a242a71078e1915731e799821e2eaf246c47567d5fd5b7e0661b516e7bd551e9",
+        "rendering": "6bc6fb510d53c213da8a83bc9f433a6090116014e233b5cb4425d6f3d8e3d672",
+        "generator": "fb80144213d49731661441565d409e297bfbe181058e366a5d2da9592f2e36eb"
+      },
+      "verifier": {
+        "id": "official-cube-unfolding",
+        "revision": "ee0a6235974b4a916be75e746575f267b6cf052f244cbaddb5311170bbd67e3a"
+      },
+      "reportSha256": "cee9dc5607d211b14c8f46cd442c8330e817653a25620725cb80711f176443d5",
+      "verdict": "passed",
+      "status": "passed",
+      "checks": [
+        {
+          "name": "Hinge consistency, six normals, proper rotations and exact unique answer",
+          "verdict": "passed"
+        },
+        {
+          "name": "Published prompt, polarity, upstream answer and ordered figure/text options",
+          "verdict": "passed"
+        },
+        {
+          "name": "Rectified CAD faces, rotations, reflections, grid occupancy and visually distinct panels",
+          "verdict": "passed"
+        },
+        {
+          "name": "Pixel-exact labeled composition and complete question PNG",
+          "verdict": "passed"
+        },
+        {
+          "name": "Current domain adapter and pinned source bytes",
+          "verdict": "passed"
+        }
+      ],
+      "scope": "Exact exterior folding and rectified panel matching under the declared camera.",
+      "commandExitStatus": 0,
+      "binding": "exact",
+      "bindingBasis": "exact candidate and full input fingerprints",
+      "commandEventId": "e000033"
+    }
+  ],
+  "usage": {
+    "schemaVersion": 2,
+    "runId": "build-8f63a87e-88b0-4253-a76f-8d4d2ba3f4e3",
+    "source": "codex",
+    "runtime": "Codex Desktop",
+    "status": "measured",
+    "elapsedMs": 868207,
+    "elapsedKind": "wall-clock",
+    "scope": "Runtime-reported usage between the start baseline and finish snapshot of this session. In-flight or delayed usage, earlier conversation, other agents and later delivery are excluded. This is an observed interval, not a complete billed task total.",
+    "scopeComplete": false,
+    "observedTokens": {
+      "input_tokens": 7987005,
+      "cached_input_tokens": 7927424,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 21386,
+      "reasoning_output_tokens": 3151,
+      "total_tokens": 8008391
+    },
+    "tokens": {
+      "input_tokens": null,
+      "cached_input_tokens": null,
+      "cache_write_input_tokens": null,
+      "output_tokens": null,
+      "reasoning_output_tokens": null,
+      "total_tokens": null
+    },
+    "models": [
+      {
+        "provider": "openai",
+        "model": "gpt-6.2-astra",
+        "reasoningEffort": "xhigh",
+        "tokens": {
+          "input_tokens": 7987005,
+          "cached_input_tokens": 7927424,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 21386,
+          "reasoning_output_tokens": 3151,
+          "total_tokens": 8008391
+        },
+        "observations": 40
+      }
+    ],
+    "missingFields": [],
+    "issues": [],
+    "observations": 40
+  },
+  "caseId": "authored-bb348ceb2351f866084b53fe"
+}

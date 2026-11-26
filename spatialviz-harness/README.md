@@ -1,8 +1,8 @@
 # SpatialViz Harness
 
-A planned authoring harness for generating and checking spatial visualization tasks.
+Generate and check spatial visualization tasks with the library recorder and the official FreeCAD pipeline.
 
-**Status** · Official question browser available. Construction skills and task verification are in development.
+**Status** 路 Official question browser available. Construction skills and task verification are in development.
 
 [Browse all 1,180 official questions](https://dasbootu9607.github.io/Spatial-Harness-Library/questions/#/spatialviz) with filters for the four categories, 12 task types and source difficulty levels. Each case includes its original figure, question, answer and stable case ID.
 
@@ -12,4 +12,4 @@ A planned authoring harness for generating and checking spatial visualization ta
 
 The library preview uses the original paper-folding question `MentalFolding/PaperFolding/Level2/0-5-5-3-3` from the [SpatialViz-Bench dataset](https://huggingface.co/datasets/PLM-Team/Spatial-Visualization-Benchmark/tree/c722d00b2f740eacb1b56f4cbcd3af47bbbe40b8). [Upstream license](site/preview-license.txt).
 
-[Open the harness page](https://dasbootu9607.github.io/Spatial-Harness-Library/spatialviz-harness/) · [Back to the library](../README.md)
+[Open the harness page](https://dasbootu9607.github.io/Spatial-Harness-Library/spatialviz-harness/) 路 [Back to the library](../README.md)

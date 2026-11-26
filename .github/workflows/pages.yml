@@ -87,6 +87,7 @@ jobs:
           python -c "from PIL import features; print('RAQM:', features.check('raqm'), 'FreeType:', features.version('freetype2'))"
           node --test tools/observatory/tests/official-rotation.test.cjs
           python -m unittest discover -s spatialviz-harness/official-projection
+          python -m unittest discover -s spatialviz-harness/official-folding
   deploy:
     if: github.event_name != 'pull_request'
     needs: [validate, official-rotation]

@@ -1,0 +1,49 @@
+{
+  "id": "t002",
+  "actionId": "9e7f9b5b-a62c-4c61-ade8-d0eccb085146",
+  "candidateId": "v002",
+  "testedFingerprints": {
+    "specification": "b031d4499ae6e8b9b283aaa71e4437ef5f49a8600315b6477915117da669fead",
+    "geometry": "48504d37da8d02e1df2525160ba78cbb49450adf229ade6cf3327fa6673cce5f",
+    "question": "235c0be46ccc519f2e4ec6865a65729e9e3c1f11503afd95824345584bd257c2",
+    "options": "9a7e4f89a3fb23827280c341572fdb5b64ae3ab48b572d660a54a2c08329ce0e",
+    "answer": "ea266bcc225e0b2207c3f08446ee7d6e237098e13673d6d32bc5bb002827f403",
+    "contract": "a242a71078e1915731e799821e2eaf246c47567d5fd5b7e0661b516e7bd551e9",
+    "rendering": "76b22a14f9bd2673299ce0ea9fc337d85ae32daf125923a127cd4c87c7eebf74",
+    "generator": "5690cc0c6f0bc02cfe3680e5d5bc70fb96efa90bd458fcbe5e7f487e52982ed5"
+  },
+  "verifier": {
+    "id": "official-cube-reconstruction",
+    "revision": "8eda3e2eaa8a5e7bd5ec1c54e5f33d2371ed3108a2049c04cb14dff49a61555f"
+  },
+  "reportSha256": "6a2da32533f70986debb313cf19acd2702489e86fbbf9828fd2c0a385acdac36",
+  "verdict": "passed",
+  "status": "passed",
+  "checks": [
+    {
+      "name": "Hinge consistency, six normals, proper rotations and exact unique answer",
+      "verdict": "passed"
+    },
+    {
+      "name": "Published prompt, polarity, upstream answer and ordered figure/text options",
+      "verdict": "passed"
+    },
+    {
+      "name": "Rectified CAD faces, rotations, reflections, grid occupancy and visually distinct panels",
+      "verdict": "passed"
+    },
+    {
+      "name": "Pixel-exact labeled composition and complete question PNG",
+      "verdict": "passed"
+    },
+    {
+      "name": "Current domain adapter and pinned source bytes",
+      "verdict": "passed"
+    }
+  ],
+  "scope": "Exact exterior folding and rectified panel matching under the declared camera.",
+  "commandExitStatus": 0,
+  "binding": "exact",
+  "bindingBasis": "exact candidate and full input fingerprints",
+  "commandEventId": "e000025"
+}

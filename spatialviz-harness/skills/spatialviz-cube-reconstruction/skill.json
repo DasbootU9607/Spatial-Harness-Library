@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "id": "cube-reconstruction",
+  "packageName": "spatialviz-cube-reconstruction",
+  "name": "Cube Reconstruction",
+  "harnessId": "spatialviz-harness",
+  "status": "complete",
+  "adapter": "official-cube-reconstruction",
+  "requiresVisualReview": true,
+  "description": "Generate and verify opposite-face and possible-view questions from a colored or patterned cube net.",
+  "officialReferences": [
+    "spatialviz-bench:vqa:MentalFolding:CubeReconstruction:Level0:0",
+    "spatialviz-bench:vqa:MentalFolding:CubeReconstruction:Level1:0",
+    "spatialviz-bench:vqa:MentalFolding:CubeReconstruction:Level1:20",
+    "spatialviz-bench:vqa:MentalFolding:CubeReconstruction:Level2:0"
+  ],
+  "steps": [
+    "Inspect official examples and select the question form",
+    "Create six marked faces and render the net and cube in FreeCAD",
+    "Solve the displayed options and verify the final PNG",
+    "Review the visible evidence and publish the verified candidate"
+  ]
+}
