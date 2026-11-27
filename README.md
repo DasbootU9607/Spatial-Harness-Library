@@ -34,7 +34,7 @@ The library landing page previews each benchmark in a swipeable carousel, with
 completed skill counts, observed build tokens and recorded models. Harnesses
 without completed skills are marked Upcoming. All harness exhibitions use the
 shared Maze-style layout and a horizontal skill filter for their authored tasks.
-SpatialViz galleries show verified official FreeCAD builds; earlier JavaScript/SVG
+SpatialViz galleries show verified builds from the official FreeCAD and Paper Folding pipelines. Earlier JavaScript/SVG
 records remain accessible at their historical task and process URLs. Gallery
 visibility is derived from task provenance in `tools/build-exhibition.cjs`, without
 rewriting immutable records. Token summaries deduplicate recorded build intervals

@@ -1,10 +1,14 @@
 # SpatialViz Harness
 
-Generate and check spatial visualization tasks with the library recorder and the official FreeCAD pipeline.
+Generate and check spatial visualization tasks with the library recorder and the official generators. Paper Folding uses Matplotlib and Pillow for the printed panels. The cube skills use FreeCAD.
 
 **Status** 路 Official question browser available. Construction skills and task verification are in development.
 
 [Browse all 1,180 official questions](https://dasbootu9607.github.io/Spatial-Harness-Library/questions/#/spatialviz) with filters for the four categories, 12 task types and source difficulty levels. Each case includes its original figure, question, answer and stable case ID.
+
+## Mental Folding
+
+[Paper Folding](skills/spatialviz-paper-folding/SKILL.md) covers the three released grid profiles. Its [coverage table](skills/spatialviz-paper-folding/references/coverage.md) links all released mechanisms to independently verified examples and build records.
 
 ## Source
 

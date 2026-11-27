@@ -1,0 +1,875 @@
+{
+  "schemaVersion": 1,
+  "manifest": {
+    "sealed": true,
+    "id": "build-bb98e24d-9a7a-4a9f-af33-e55e5d905318",
+    "title": "Paper Folding / two-punches",
+    "runKind": "[private value omitted]",
+    "harness": "spatialviz-harness",
+    "benchmark": null,
+    "category": null,
+    "taskType": null,
+    "skill": {
+      "id": "spatialviz-paper-folding",
+      "sha256": "150db079f8751f823d7dc8463cf9cf7bae861c6120b5568db83654b67b1cf2c0"
+    },
+    "status": "accepted",
+    "finalCandidateId": "v002",
+    "limitations": [
+      "Only recorder-mediated deliveries, commands and saved boundaries are observed; direct function calls, unwrapped commands and unsaved editor states are excluded.",
+      "Design notes are explicit author annotations, not internal reasoning."
+    ],
+    "captureGaps": []
+  },
+  "events": [
+    {
+      "id": "e000001",
+      "seq": 1,
+      "runId": "build-bb98e24d-9a7a-4a9f-af33-e55e5d905318",
+      "type": "run.created",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": null,
+      "details": {},
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000002",
+      "seq": 2,
+      "runId": "build-bb98e24d-9a7a-4a9f-af33-e55e5d905318",
+      "type": "collector.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": null,
+      "details": {},
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000003",
+      "seq": 3,
+      "runId": "build-bb98e24d-9a7a-4a9f-af33-e55e5d905318",
+      "type": "skill.attached",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": null,
+      "details": {
+        "sha256": "150db079f8751f823d7dc8463cf9cf7bae861c6120b5568db83654b67b1cf2c0",
+        "skill": "spatialviz-paper-folding"
+      },
+      "evidenceRefs": [
+        {
+          "id": "90ad22d2cf3efc46",
+          "sha256": "150db079f8751f823d7dc8463cf9cf7bae861c6120b5568db83654b67b1cf2c0",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000004",
+      "seq": 4,
+      "runId": "build-bb98e24d-9a7a-4a9f-af33-e55e5d905318",
+      "type": "resource.read",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "dbfd7115-f8b2-403d-9ec7-d3f93519f9c7",
+      "candidateId": null,
+      "details": {
+        "outcome": "delivered",
+        "label": "coverage.md",
+        "start": 1,
+        "end": 33,
+        "sha256": "ba310c95a3a4639c628f757fe1379ffa0ad36080bcfcc8fc8d65c8edfb9dfda6",
+        "sourceSha256": "ba310c95a3a4639c628f757fe1379ffa0ad36080bcfcc8fc8d65c8edfb9dfda6"
+      },
+      "evidenceRefs": [
+        {
+          "id": "5c1ecafb77fb6f6e",
+          "sha256": "ba310c95a3a4639c628f757fe1379ffa0ad36080bcfcc8fc8d65c8edfb9dfda6",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000005",
+      "seq": 5,
+      "runId": "build-bb98e24d-9a7a-4a9f-af33-e55e5d905318",
+      "type": "design.note",
+      "actor": "author",
+      "origin": "agent_statement",
+      "actionId": null,
+      "candidateId": null,
+      "details": {
+        "goal": "Construct a new two-punches hole pattern.",
+        "sources": "Pinned Paper Folding modeling routine and released visual mechanisms.",
+        "change": "Use the selected axial sequence, diagonal, and punch-site constraints.",
+        "reason": "Require a distinct physical stem and only one unfolded answer.",
+        "expectedChecks": "Decode printed creases, red rings, four labeled hole grids, and full prompt."
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000006",
+      "seq": 6,
+      "runId": "build-bb98e24d-9a7a-4a9f-af33-e55e5d905318",
+      "type": "command.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "c126d8ff-1057-43ca-82cb-d2c4b94189f4",
+      "candidateId": null,
+      "details": {
+        "label": "python",
+        "kind": "official-paper-folding-generation"
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000007",
+      "seq": 7,
+      "runId": "build-bb98e24d-9a7a-4a9f-af33-e55e5d905318",
+      "type": "command.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "c126d8ff-1057-43ca-82cb-d2c4b94189f4",
+      "candidateId": null,
+      "details": {
+        "commandEventId": "e000006",
+        "kind": "official-paper-folding-generation",
+        "exitCode": 0,
+        "signal": null
+      },
+      "evidenceRefs": [
+        {
+          "id": "01f3bd384b624a62",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "availability": "local evidence; hash published"
+        },
+        {
+          "id": "91881aec80f75e4c",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000008",
+      "seq": 8,
+      "runId": "build-bb98e24d-9a7a-4a9f-af33-e55e5d905318",
+      "type": "candidate.saved",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "387a38ae-e21d-4c04-9a69-85c046cf2901",
+      "candidateId": "v001",
+      "details": {
+        "sha256": "efeb4f1d5022b7a0f375169638e5057abc1e60f71c00143f2ebed06bb23de406",
+        "parentId": null,
+        "parentBasis": null,
+        "changes": [
+          "specification",
+          "geometry",
+          "question",
+          "options",
+          "answer",
+          "rendering",
+          "generator"
+        ],
+        "fingerprints": {
+          "specification": "efeb4f1d5022b7a0f375169638e5057abc1e60f71c00143f2ebed06bb23de406",
+          "geometry": "86068b0a79020eae841798b217b8c90740b0a872f199ec4281645f3a4b6c673d",
+          "question": "84ae4caa4d5cf9f46d3e4e3be2d5b121c9d42269356d9483bf8fd215f25ec561",
+          "options": "2a02ee37206c0089bd193ad678330e2d408634d0befda3fcfdf1fc7c1b232c15",
+          "answer": "620d07af7536bdbee85d602261057a9a020deeaced5aae476812a57151a7b438",
+          "contract": null,
+          "rendering": "dc77dd7b7cec88416eca1880fd3a89ca49e1cce9f29a98d8ca2ebc4458c33dc7",
+          "generator": "94dfcd762e27951c62178603e28e784981ffcb263bea01d018206fb2be387bfa"
+        },
+        "previewUnavailable": null
+      },
+      "evidenceRefs": [
+        {
+          "id": "e359c09970c87b3b",
+          "sha256": "efeb4f1d5022b7a0f375169638e5057abc1e60f71c00143f2ebed06bb23de406",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000009",
+      "seq": 9,
+      "runId": "build-bb98e24d-9a7a-4a9f-af33-e55e5d905318",
+      "type": "build.saved",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "387a38ae-e21d-4c04-9a69-85c046cf2901",
+      "candidateId": "v001",
+      "details": {},
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000010",
+      "seq": 10,
+      "runId": "build-bb98e24d-9a7a-4a9f-af33-e55e5d905318",
+      "type": "render.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "b110d5df-e175-4d45-876b-e19c29fe24a6",
+      "candidateId": "v001",
+      "details": {
+        "renderer": {
+          "id": "official-paper-folding",
+          "revision": "ee469323e9243761a0a24f3e7daa3fd30036f5cad44743b862f8ac439fdc0fe4"
+        }
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000011",
+      "seq": 11,
+      "runId": "build-bb98e24d-9a7a-4a9f-af33-e55e5d905318",
+      "type": "render.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "b110d5df-e175-4d45-876b-e19c29fe24a6",
+      "candidateId": "v001",
+      "details": {
+        "sha256": "025109295eb0e3859673a70ed67ae245c3f6ef480590014d09fa99a3c8d45a78",
+        "renderer": {
+          "id": "official-paper-folding",
+          "revision": "ee469323e9243761a0a24f3e7daa3fd30036f5cad44743b862f8ac439fdc0fe4"
+        },
+        "specification": "efeb4f1d5022b7a0f375169638e5057abc1e60f71c00143f2ebed06bb23de406",
+        "rendering": "dc77dd7b7cec88416eca1880fd3a89ca49e1cce9f29a98d8ca2ebc4458c33dc7"
+      },
+      "evidenceRefs": [
+        {
+          "id": "7db4f97323f7a1db",
+          "sha256": "025109295eb0e3859673a70ed67ae245c3f6ef480590014d09fa99a3c8d45a78",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000012",
+      "seq": 12,
+      "runId": "build-bb98e24d-9a7a-4a9f-af33-e55e5d905318",
+      "type": "command.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "b5d44e20-943e-42a4-9eb5-190666c3de73",
+      "candidateId": "v001",
+      "details": {
+        "label": "node.exe",
+        "kind": "verification"
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000013",
+      "seq": 13,
+      "runId": "build-bb98e24d-9a7a-4a9f-af33-e55e5d905318",
+      "type": "command.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "b5d44e20-943e-42a4-9eb5-190666c3de73",
+      "candidateId": "v001",
+      "details": {
+        "commandEventId": "e000012",
+        "kind": "verification",
+        "exitCode": 0,
+        "signal": null
+      },
+      "evidenceRefs": [
+        {
+          "id": "d0dec2996f6c864c",
+          "sha256": "63b8ced5ef54783c11c6ff9148511ae8dedea76d50955e74e436ddd2df9a4996",
+          "availability": "local evidence; hash published"
+        },
+        {
+          "id": "f9a6e6505603843d",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000014",
+      "seq": 14,
+      "runId": "build-bb98e24d-9a7a-4a9f-af33-e55e5d905318",
+      "type": "test.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "b5d44e20-943e-42a4-9eb5-190666c3de73",
+      "candidateId": "v001",
+      "details": {
+        "commandEventId": "e000012",
+        "completedEventId": "e000013",
+        "verdict": "passed",
+        "status": "passed",
+        "checks": [
+          {
+            "name": "Independent image-only reconstruction, unique physical history and unique printed choice",
+            "verdict": "passed"
+          },
+          {
+            "name": "Original cell transport, local creases, changing offsets, punch layers and physical novelty",
+            "verdict": "passed"
+          },
+          {
+            "name": "Four visibly distinct options with row or column deletion, duplication and relocation",
+            "verdict": "passed"
+          },
+          {
+            "name": "Pinned native panel sequence, hole locations, option letters, font labels and printed prompt",
+            "verdict": "passed"
+          },
+          {
+            "name": "Pinned modeling, drawing, dispatch, assets and verification source",
+            "verdict": "passed"
+          }
+        ],
+        "scope": "Visible blue fold outlines, red punch centers, unfolded answer pixels, prompt and labels.",
+        "binding": "exact",
+        "bindingBasis": "exact candidate and full input fingerprints",
+        "testedFingerprints": {
+          "specification": "efeb4f1d5022b7a0f375169638e5057abc1e60f71c00143f2ebed06bb23de406",
+          "geometry": "86068b0a79020eae841798b217b8c90740b0a872f199ec4281645f3a4b6c673d",
+          "question": "84ae4caa4d5cf9f46d3e4e3be2d5b121c9d42269356d9483bf8fd215f25ec561",
+          "options": "2a02ee37206c0089bd193ad678330e2d408634d0befda3fcfdf1fc7c1b232c15",
+          "answer": "620d07af7536bdbee85d602261057a9a020deeaced5aae476812a57151a7b438",
+          "contract": null,
+          "rendering": "dc77dd7b7cec88416eca1880fd3a89ca49e1cce9f29a98d8ca2ebc4458c33dc7",
+          "generator": "94dfcd762e27951c62178603e28e784981ffcb263bea01d018206fb2be387bfa"
+        },
+        "verifier": {
+          "id": "official-paper-folding",
+          "revision": "ee469323e9243761a0a24f3e7daa3fd30036f5cad44743b862f8ac439fdc0fe4"
+        },
+        "reportSha256": "ccfb4481ea5fc2e472198d22966f6ad5fb3c7e58bc9b585b3abf7c946da206dd"
+      },
+      "evidenceRefs": [
+        {
+          "id": "f1cf98464d2106db",
+          "sha256": "ccfb4481ea5fc2e472198d22966f6ad5fb3c7e58bc9b585b3abf7c946da206dd",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000015",
+      "seq": 15,
+      "runId": "build-bb98e24d-9a7a-4a9f-af33-e55e5d905318",
+      "type": "command.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "1ac6a3fd-4671-4f1d-8cfc-cd5a86f383a6",
+      "candidateId": null,
+      "details": {
+        "label": "python",
+        "kind": "official-paper-folding-generation"
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000016",
+      "seq": 16,
+      "runId": "build-bb98e24d-9a7a-4a9f-af33-e55e5d905318",
+      "type": "command.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "1ac6a3fd-4671-4f1d-8cfc-cd5a86f383a6",
+      "candidateId": null,
+      "details": {
+        "commandEventId": "e000015",
+        "kind": "official-paper-folding-generation",
+        "exitCode": 0,
+        "signal": null
+      },
+      "evidenceRefs": [
+        {
+          "id": "2ad28a6fd8f81067",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "availability": "local evidence; hash published"
+        },
+        {
+          "id": "02cfa225697fa62f",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000017",
+      "seq": 17,
+      "runId": "build-bb98e24d-9a7a-4a9f-af33-e55e5d905318",
+      "type": "candidate.saved",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "bd7956d4-2c6d-4abd-8e72-4178e5b19a45",
+      "candidateId": "v002",
+      "details": {
+        "sha256": "2dcb317285257792dd5e658b758d9bc45efda06c741235f59b038d19a47b8e9f",
+        "parentId": "v001",
+        "parentBasis": "Clarify that the enumerated fold directions are possibilities. Preserve the same diagrams, letter order and solution.",
+        "changes": [
+          "specification",
+          "question",
+          "rendering",
+          "generator"
+        ],
+        "fingerprints": {
+          "specification": "2dcb317285257792dd5e658b758d9bc45efda06c741235f59b038d19a47b8e9f",
+          "geometry": "86068b0a79020eae841798b217b8c90740b0a872f199ec4281645f3a4b6c673d",
+          "question": "f2d909e035e5e6ec4f9d31e92c439cfc0b3d50178afc937641568dac28234db4",
+          "options": "2a02ee37206c0089bd193ad678330e2d408634d0befda3fcfdf1fc7c1b232c15",
+          "answer": "620d07af7536bdbee85d602261057a9a020deeaced5aae476812a57151a7b438",
+          "contract": null,
+          "rendering": "4a1279c9e8b16b9ff1c7cda512b99a77cb89a964b13fdb7068941af54dc57bc7",
+          "generator": "2561afdd8e2c93dfa53b5bb56d28553364ad89603851306d491de30c90e8539d"
+        },
+        "previewUnavailable": null
+      },
+      "evidenceRefs": [
+        {
+          "id": "c2ec7c1dced0fda2",
+          "sha256": "2dcb317285257792dd5e658b758d9bc45efda06c741235f59b038d19a47b8e9f",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000018",
+      "seq": 18,
+      "runId": "build-bb98e24d-9a7a-4a9f-af33-e55e5d905318",
+      "type": "build.saved",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "bd7956d4-2c6d-4abd-8e72-4178e5b19a45",
+      "candidateId": "v002",
+      "details": {},
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000019",
+      "seq": 19,
+      "runId": "build-bb98e24d-9a7a-4a9f-af33-e55e5d905318",
+      "type": "render.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "23f05524-7317-4239-a0ba-0da4e0e4d31d",
+      "candidateId": "v002",
+      "details": {
+        "renderer": {
+          "id": "official-paper-folding",
+          "revision": "dd94c970d78c923bcd54eb0b6e03d50d81e6d0876f70829dcb3ec533b55c86be"
+        }
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000020",
+      "seq": 20,
+      "runId": "build-bb98e24d-9a7a-4a9f-af33-e55e5d905318",
+      "type": "render.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "23f05524-7317-4239-a0ba-0da4e0e4d31d",
+      "candidateId": "v002",
+      "details": {
+        "sha256": "dd1908b4a70f7629c44a8eee33c9500329db49d9925470ffbb0dca7c37a78a68",
+        "renderer": {
+          "id": "official-paper-folding",
+          "revision": "dd94c970d78c923bcd54eb0b6e03d50d81e6d0876f70829dcb3ec533b55c86be"
+        },
+        "specification": "2dcb317285257792dd5e658b758d9bc45efda06c741235f59b038d19a47b8e9f",
+        "rendering": "4a1279c9e8b16b9ff1c7cda512b99a77cb89a964b13fdb7068941af54dc57bc7"
+      },
+      "evidenceRefs": [
+        {
+          "id": "20539ea65cb59ce1",
+          "sha256": "dd1908b4a70f7629c44a8eee33c9500329db49d9925470ffbb0dca7c37a78a68",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000021",
+      "seq": 21,
+      "runId": "build-bb98e24d-9a7a-4a9f-af33-e55e5d905318",
+      "type": "report.previous",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "a9f2b772-9fc4-4fdd-80f2-da2fc116a814",
+      "candidateId": null,
+      "details": {
+        "sha256": "ccfb4481ea5fc2e472198d22966f6ad5fb3c7e58bc9b585b3abf7c946da206dd"
+      },
+      "evidenceRefs": [
+        {
+          "id": "8cfd8709fa9473f7",
+          "sha256": "ccfb4481ea5fc2e472198d22966f6ad5fb3c7e58bc9b585b3abf7c946da206dd",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000022",
+      "seq": 22,
+      "runId": "build-bb98e24d-9a7a-4a9f-af33-e55e5d905318",
+      "type": "command.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "a9f2b772-9fc4-4fdd-80f2-da2fc116a814",
+      "candidateId": "v002",
+      "details": {
+        "label": "node.exe",
+        "kind": "verification"
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000023",
+      "seq": 23,
+      "runId": "build-bb98e24d-9a7a-4a9f-af33-e55e5d905318",
+      "type": "command.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "a9f2b772-9fc4-4fdd-80f2-da2fc116a814",
+      "candidateId": "v002",
+      "details": {
+        "commandEventId": "e000022",
+        "kind": "verification",
+        "exitCode": 0,
+        "signal": null
+      },
+      "evidenceRefs": [
+        {
+          "id": "08eb8eff69a554d1",
+          "sha256": "63b8ced5ef54783c11c6ff9148511ae8dedea76d50955e74e436ddd2df9a4996",
+          "availability": "local evidence; hash published"
+        },
+        {
+          "id": "8be9cccd6f857be6",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000024",
+      "seq": 24,
+      "runId": "build-bb98e24d-9a7a-4a9f-af33-e55e5d905318",
+      "type": "test.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "a9f2b772-9fc4-4fdd-80f2-da2fc116a814",
+      "candidateId": "v002",
+      "details": {
+        "commandEventId": "e000022",
+        "completedEventId": "e000023",
+        "verdict": "passed",
+        "status": "passed",
+        "checks": [
+          {
+            "name": "Independent image-only reconstruction, unique physical history and unique printed choice",
+            "verdict": "passed"
+          },
+          {
+            "name": "Original cell transport, local creases, changing offsets, punch layers and physical novelty",
+            "verdict": "passed"
+          },
+          {
+            "name": "Four visibly distinct options with row or column deletion, duplication and relocation",
+            "verdict": "passed"
+          },
+          {
+            "name": "Pinned native panel sequence, hole locations, option letters, font labels and printed prompt",
+            "verdict": "passed"
+          },
+          {
+            "name": "Pinned modeling, drawing, dispatch, assets and verification source",
+            "verdict": "passed"
+          }
+        ],
+        "scope": "Visible blue fold outlines, red punch centers, unfolded answer pixels, prompt and labels.",
+        "binding": "exact",
+        "bindingBasis": "exact candidate and full input fingerprints",
+        "testedFingerprints": {
+          "specification": "2dcb317285257792dd5e658b758d9bc45efda06c741235f59b038d19a47b8e9f",
+          "geometry": "86068b0a79020eae841798b217b8c90740b0a872f199ec4281645f3a4b6c673d",
+          "question": "f2d909e035e5e6ec4f9d31e92c439cfc0b3d50178afc937641568dac28234db4",
+          "options": "2a02ee37206c0089bd193ad678330e2d408634d0befda3fcfdf1fc7c1b232c15",
+          "answer": "620d07af7536bdbee85d602261057a9a020deeaced5aae476812a57151a7b438",
+          "contract": null,
+          "rendering": "4a1279c9e8b16b9ff1c7cda512b99a77cb89a964b13fdb7068941af54dc57bc7",
+          "generator": "2561afdd8e2c93dfa53b5bb56d28553364ad89603851306d491de30c90e8539d"
+        },
+        "verifier": {
+          "id": "official-paper-folding",
+          "revision": "dd94c970d78c923bcd54eb0b6e03d50d81e6d0876f70829dcb3ec533b55c86be"
+        },
+        "reportSha256": "18b6b2452492c6e6a0d09a2e8c72acc3c42e6ff164140b821c6b4c77b653924f"
+      },
+      "evidenceRefs": [
+        {
+          "id": "04daec525ca7d65d",
+          "sha256": "18b6b2452492c6e6a0d09a2e8c72acc3c42e6ff164140b821c6b4c77b653924f",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000025",
+      "seq": 25,
+      "runId": "build-bb98e24d-9a7a-4a9f-af33-e55e5d905318",
+      "type": "visual.review",
+      "actor": "author",
+      "origin": "agent_statement",
+      "actionId": null,
+      "candidateId": "v002",
+      "details": {
+        "outcome": "passed",
+        "review": "The upper-left ring is on the diagonal and the second ring is in the uncovered right rectangle. Unfolding the horizontal half-fold gives holes in the top and bottom of column 1 and the two middle cells of column 3. C shows both pairs; D moves the middle pair to column 4. The final caption states the allowed fold directions."
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000026",
+      "seq": 26,
+      "runId": "build-bb98e24d-9a7a-4a9f-af33-e55e5d905318",
+      "type": "run.finished",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": "v002",
+      "details": {
+        "outcome": "accepted",
+        "finalCandidateId": "v002"
+      },
+      "evidenceRefs": []
+    }
+  ],
+  "candidates": [
+    {
+      "id": "v001",
+      "parentId": null,
+      "parentBasis": null,
+      "sha256": "efeb4f1d5022b7a0f375169638e5057abc1e60f71c00143f2ebed06bb23de406",
+      "fingerprints": {
+        "specification": "efeb4f1d5022b7a0f375169638e5057abc1e60f71c00143f2ebed06bb23de406",
+        "geometry": "86068b0a79020eae841798b217b8c90740b0a872f199ec4281645f3a4b6c673d",
+        "question": "84ae4caa4d5cf9f46d3e4e3be2d5b121c9d42269356d9483bf8fd215f25ec561",
+        "options": "2a02ee37206c0089bd193ad678330e2d408634d0befda3fcfdf1fc7c1b232c15",
+        "answer": "620d07af7536bdbee85d602261057a9a020deeaced5aae476812a57151a7b438",
+        "contract": null,
+        "rendering": "dc77dd7b7cec88416eca1880fd3a89ca49e1cce9f29a98d8ca2ebc4458c33dc7",
+        "generator": "94dfcd762e27951c62178603e28e784981ffcb263bea01d018206fb2be387bfa"
+      },
+      "previewUnavailable": null,
+      "changes": [
+        "specification",
+        "geometry",
+        "question",
+        "options",
+        "answer",
+        "rendering",
+        "generator"
+      ],
+      "preview": {
+        "candidateId": "v001",
+        "specification": "efeb4f1d5022b7a0f375169638e5057abc1e60f71c00143f2ebed06bb23de406",
+        "rendering": "dc77dd7b7cec88416eca1880fd3a89ca49e1cce9f29a98d8ca2ebc4458c33dc7",
+        "renderer": {
+          "id": "official-paper-folding",
+          "revision": "ee469323e9243761a0a24f3e7daa3fd30036f5cad44743b862f8ac439fdc0fe4"
+        },
+        "sha256": "025109295eb0e3859673a70ed67ae245c3f6ef480590014d09fa99a3c8d45a78",
+        "path": "records/authored-2dcb317285257792dd5e658b/v001-025109295eb0e385.png",
+        "origin": "recorded-render"
+      }
+    },
+    {
+      "id": "v002",
+      "parentId": "v001",
+      "parentBasis": "Clarify that the enumerated fold directions are possibilities. Preserve the same diagrams, letter order and solution.",
+      "sha256": "2dcb317285257792dd5e658b758d9bc45efda06c741235f59b038d19a47b8e9f",
+      "fingerprints": {
+        "specification": "2dcb317285257792dd5e658b758d9bc45efda06c741235f59b038d19a47b8e9f",
+        "geometry": "86068b0a79020eae841798b217b8c90740b0a872f199ec4281645f3a4b6c673d",
+        "question": "f2d909e035e5e6ec4f9d31e92c439cfc0b3d50178afc937641568dac28234db4",
+        "options": "2a02ee37206c0089bd193ad678330e2d408634d0befda3fcfdf1fc7c1b232c15",
+        "answer": "620d07af7536bdbee85d602261057a9a020deeaced5aae476812a57151a7b438",
+        "contract": null,
+        "rendering": "4a1279c9e8b16b9ff1c7cda512b99a77cb89a964b13fdb7068941af54dc57bc7",
+        "generator": "2561afdd8e2c93dfa53b5bb56d28553364ad89603851306d491de30c90e8539d"
+      },
+      "previewUnavailable": null,
+      "changes": [
+        "specification",
+        "question",
+        "rendering",
+        "generator"
+      ],
+      "preview": {
+        "candidateId": "v002",
+        "specification": "2dcb317285257792dd5e658b758d9bc45efda06c741235f59b038d19a47b8e9f",
+        "rendering": "4a1279c9e8b16b9ff1c7cda512b99a77cb89a964b13fdb7068941af54dc57bc7",
+        "renderer": {
+          "id": "official-paper-folding",
+          "revision": "dd94c970d78c923bcd54eb0b6e03d50d81e6d0876f70829dcb3ec533b55c86be"
+        },
+        "sha256": "dd1908b4a70f7629c44a8eee33c9500329db49d9925470ffbb0dca7c37a78a68",
+        "path": "records/authored-2dcb317285257792dd5e658b/v002-dd1908b4a70f7629.png",
+        "origin": "recorded-render"
+      }
+    }
+  ],
+  "tests": [
+    {
+      "id": "t001",
+      "actionId": "b5d44e20-943e-42a4-9eb5-190666c3de73",
+      "candidateId": "v001",
+      "testedFingerprints": {
+        "specification": "efeb4f1d5022b7a0f375169638e5057abc1e60f71c00143f2ebed06bb23de406",
+        "geometry": "86068b0a79020eae841798b217b8c90740b0a872f199ec4281645f3a4b6c673d",
+        "question": "84ae4caa4d5cf9f46d3e4e3be2d5b121c9d42269356d9483bf8fd215f25ec561",
+        "options": "2a02ee37206c0089bd193ad678330e2d408634d0befda3fcfdf1fc7c1b232c15",
+        "answer": "620d07af7536bdbee85d602261057a9a020deeaced5aae476812a57151a7b438",
+        "contract": null,
+        "rendering": "dc77dd7b7cec88416eca1880fd3a89ca49e1cce9f29a98d8ca2ebc4458c33dc7",
+        "generator": "94dfcd762e27951c62178603e28e784981ffcb263bea01d018206fb2be387bfa"
+      },
+      "verifier": {
+        "id": "official-paper-folding",
+        "revision": "ee469323e9243761a0a24f3e7daa3fd30036f5cad44743b862f8ac439fdc0fe4"
+      },
+      "reportSha256": "ccfb4481ea5fc2e472198d22966f6ad5fb3c7e58bc9b585b3abf7c946da206dd",
+      "verdict": "passed",
+      "status": "passed",
+      "checks": [
+        {
+          "name": "Independent image-only reconstruction, unique physical history and unique printed choice",
+          "verdict": "passed"
+        },
+        {
+          "name": "Original cell transport, local creases, changing offsets, punch layers and physical novelty",
+          "verdict": "passed"
+        },
+        {
+          "name": "Four visibly distinct options with row or column deletion, duplication and relocation",
+          "verdict": "passed"
+        },
+        {
+          "name": "Pinned native panel sequence, hole locations, option letters, font labels and printed prompt",
+          "verdict": "passed"
+        },
+        {
+          "name": "Pinned modeling, drawing, dispatch, assets and verification source",
+          "verdict": "passed"
+        }
+      ],
+      "scope": "Visible blue fold outlines, red punch centers, unfolded answer pixels, prompt and labels.",
+      "commandExitStatus": 0,
+      "binding": "exact",
+      "bindingBasis": "exact candidate and full input fingerprints",
+      "commandEventId": "e000012"
+    },
+    {
+      "id": "t002",
+      "actionId": "a9f2b772-9fc4-4fdd-80f2-da2fc116a814",
+      "candidateId": "v002",
+      "testedFingerprints": {
+        "specification": "2dcb317285257792dd5e658b758d9bc45efda06c741235f59b038d19a47b8e9f",
+        "geometry": "86068b0a79020eae841798b217b8c90740b0a872f199ec4281645f3a4b6c673d",
+        "question": "f2d909e035e5e6ec4f9d31e92c439cfc0b3d50178afc937641568dac28234db4",
+        "options": "2a02ee37206c0089bd193ad678330e2d408634d0befda3fcfdf1fc7c1b232c15",
+        "answer": "620d07af7536bdbee85d602261057a9a020deeaced5aae476812a57151a7b438",
+        "contract": null,
+        "rendering": "4a1279c9e8b16b9ff1c7cda512b99a77cb89a964b13fdb7068941af54dc57bc7",
+        "generator": "2561afdd8e2c93dfa53b5bb56d28553364ad89603851306d491de30c90e8539d"
+      },
+      "verifier": {
+        "id": "official-paper-folding",
+        "revision": "dd94c970d78c923bcd54eb0b6e03d50d81e6d0876f70829dcb3ec533b55c86be"
+      },
+      "reportSha256": "18b6b2452492c6e6a0d09a2e8c72acc3c42e6ff164140b821c6b4c77b653924f",
+      "verdict": "passed",
+      "status": "passed",
+      "checks": [
+        {
+          "name": "Independent image-only reconstruction, unique physical history and unique printed choice",
+          "verdict": "passed"
+        },
+        {
+          "name": "Original cell transport, local creases, changing offsets, punch layers and physical novelty",
+          "verdict": "passed"
+        },
+        {
+          "name": "Four visibly distinct options with row or column deletion, duplication and relocation",
+          "verdict": "passed"
+        },
+        {
+          "name": "Pinned native panel sequence, hole locations, option letters, font labels and printed prompt",
+          "verdict": "passed"
+        },
+        {
+          "name": "Pinned modeling, drawing, dispatch, assets and verification source",
+          "verdict": "passed"
+        }
+      ],
+      "scope": "Visible blue fold outlines, red punch centers, unfolded answer pixels, prompt and labels.",
+      "commandExitStatus": 0,
+      "binding": "exact",
+      "bindingBasis": "exact candidate and full input fingerprints",
+      "commandEventId": "e000022"
+    }
+  ],
+  "usage": {
+    "schemaVersion": 2,
+    "runId": "build-bb98e24d-9a7a-4a9f-af33-e55e5d905318",
+    "source": "codex",
+    "runtime": "Codex Desktop",
+    "status": "measured",
+    "elapsedMs": 206773,
+    "elapsedKind": "wall-clock",
+    "scope": "Runtime-reported usage between the start baseline and finish snapshot of this session. In-flight or delayed usage, earlier conversation, other agents and later delivery are excluded. This is an observed interval, not a complete billed task total.",
+    "scopeComplete": false,
+    "observedTokens": {
+      "input_tokens": 1669822,
+      "cached_input_tokens": 1643904,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 4778,
+      "reasoning_output_tokens": 1020,
+      "total_tokens": 1674600
+    },
+    "tokens": {
+      "input_tokens": null,
+      "cached_input_tokens": null,
+      "cache_write_input_tokens": null,
+      "output_tokens": null,
+      "reasoning_output_tokens": null,
+      "total_tokens": null
+    },
+    "models": [
+      {
+        "provider": "openai",
+        "model": "gpt-6.2-astra",
+        "reasoningEffort": "xhigh",
+        "tokens": {
+          "input_tokens": 1669822,
+          "cached_input_tokens": 1643904,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 4778,
+          "reasoning_output_tokens": 1020,
+          "total_tokens": 1674600
+        },
+        "observations": 10
+      }
+    ],
+    "missingFields": [],
+    "issues": [],
+    "observations": 10
+  },
+  "caseId": "authored-2dcb317285257792dd5e658b"
+}

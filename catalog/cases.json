@@ -2033,6 +2033,678 @@
       },
       "process": "records/authored-b031d4499ae6e8b9b283aaa7/process.json",
       "eventsCsv": "records/authored-b031d4499ae6e8b9b283aaa7/events.csv"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "authored-55ff7e11741379bb06c0d33e",
+      "harnessId": "spatialviz-harness",
+      "skillIds": [
+        "paper-folding"
+      ],
+      "sourceKind": "agent-authored",
+      "sourceCaseIds": [
+        "spatialviz-bench:vqa:MentalFolding:PaperFolding:Level0:0-3-3-2-1",
+        "spatialviz-bench:vqa:MentalFolding:PaperFolding:Level0:1-3-3-2-1",
+        "spatialviz-bench:vqa:MentalFolding:PaperFolding:Level0:4-3-3-2-1",
+        "spatialviz-bench:vqa:MentalFolding:PaperFolding:Level1:0-4-4-2-2",
+        "spatialviz-bench:vqa:MentalFolding:PaperFolding:Level2:0-5-5-3-3",
+        "spatialviz-bench:vqa:MentalFolding:PaperFolding:Level2:2-5-5-3-3",
+        "spatialviz-bench:vqa:MentalFolding:PaperFolding:Level2:20-5-5-3-3"
+      ],
+      "category": "MentalFolding",
+      "taskType": "PaperFolding",
+      "difficulty": {
+        "label": "Uncalibrated",
+        "basis": "Follow V then a finite diagonal fold. Track 1 punch sites through stacks of [2] layers."
+      },
+      "title": "Paper Folding / 3 by 3 / strip",
+      "description": "Trace the blue fold outlines and unfold the red punch sites onto the original grid.",
+      "contentSha256": "55ff7e11741379bb06c0d33ea93e69a44bedda194910cba792d3099e89950b2d",
+      "thumbnail": "records/authored-55ff7e11741379bb06c0d33e/v003-6eecd71a12255726.png",
+      "taskArtifact": "records/authored-55ff7e11741379bb06c0d33e/task.json",
+      "verification": {
+        "verdict": "passed",
+        "candidateId": "v003",
+        "fingerprints": {
+          "specification": "55ff7e11741379bb06c0d33ea93e69a44bedda194910cba792d3099e89950b2d",
+          "geometry": "bd356ab15800340a1738aa99fe36434d510d9d2ae95e8edbad812c1b8b9e4c05",
+          "question": "21466aaaebe5ff440cc97600d62d4eef344f3abc2d390dd0c4c1626ac51bc772",
+          "options": "2a02ee37206c0089bd193ad678330e2d408634d0befda3fcfdf1fc7c1b232c15",
+          "answer": "e83ae57a5c0e499645d3f57e490db3889126abfabe283ac92bd79a85afbc4d15",
+          "contract": null,
+          "rendering": "9496af77ba769ae76775e418da12252fa52bf6a5c562b3ccca20a381458b664d",
+          "generator": "6971657ddf8250853d98f635eef9e96b22ef78beddb27bd92bcd002d17ff11cf"
+        },
+        "report": "records/authored-55ff7e11741379bb06c0d33e/verification.json"
+      },
+      "build": {
+        "runId": "build-fad016bc-2e59-4e34-95bd-59f15ccf2561",
+        "candidateId": "v003",
+        "usage": {
+          "schemaVersion": 2,
+          "runId": "build-fad016bc-2e59-4e34-95bd-59f15ccf2561",
+          "source": "codex",
+          "runtime": "Codex Desktop",
+          "status": "measured",
+          "elapsedMs": 256789,
+          "elapsedKind": "wall-clock",
+          "scope": "Runtime-reported usage between the start baseline and finish snapshot of this session. In-flight or delayed usage, earlier conversation, other agents and later delivery are excluded. This is an observed interval, not a complete billed task total.",
+          "scopeComplete": false,
+          "observedTokens": {
+            "input_tokens": 2107438,
+            "cached_input_tokens": 2080512,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 7784,
+            "reasoning_output_tokens": 1198,
+            "total_tokens": 2115222
+          },
+          "tokens": {
+            "input_tokens": null,
+            "cached_input_tokens": null,
+            "cache_write_input_tokens": null,
+            "output_tokens": null,
+            "reasoning_output_tokens": null,
+            "total_tokens": null
+          },
+          "models": [
+            {
+              "provider": "openai",
+              "model": "gpt-6.2-astra",
+              "reasoningEffort": "xhigh",
+              "tokens": {
+                "input_tokens": 2107438,
+                "cached_input_tokens": 2080512,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 7784,
+                "reasoning_output_tokens": 1198,
+                "total_tokens": 2115222
+              },
+              "observations": 13
+            }
+          ],
+          "missingFields": [],
+          "issues": [],
+          "observations": 13
+        }
+      },
+      "process": "records/authored-55ff7e11741379bb06c0d33e/process.json",
+      "eventsCsv": "records/authored-55ff7e11741379bb06c0d33e/events.csv"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "authored-e426070849f483c0f4e07277",
+      "harnessId": "spatialviz-harness",
+      "skillIds": [
+        "paper-folding"
+      ],
+      "sourceKind": "agent-authored",
+      "sourceCaseIds": [
+        "spatialviz-bench:vqa:MentalFolding:PaperFolding:Level0:0-3-3-2-1",
+        "spatialviz-bench:vqa:MentalFolding:PaperFolding:Level0:1-3-3-2-1",
+        "spatialviz-bench:vqa:MentalFolding:PaperFolding:Level0:4-3-3-2-1",
+        "spatialviz-bench:vqa:MentalFolding:PaperFolding:Level1:0-4-4-2-2",
+        "spatialviz-bench:vqa:MentalFolding:PaperFolding:Level2:0-5-5-3-3",
+        "spatialviz-bench:vqa:MentalFolding:PaperFolding:Level2:2-5-5-3-3",
+        "spatialviz-bench:vqa:MentalFolding:PaperFolding:Level2:20-5-5-3-3"
+      ],
+      "category": "MentalFolding",
+      "taskType": "PaperFolding",
+      "difficulty": {
+        "label": "Uncalibrated",
+        "basis": "Follow H then a finite diagonal fold. Track 1 punch sites through stacks of [3] layers."
+      },
+      "title": "Paper Folding / 3 by 3 / strip",
+      "description": "Trace the blue fold outlines and unfold the red punch sites onto the original grid.",
+      "contentSha256": "e426070849f483c0f4e07277264238d7a390128fcdb4a68dedd01f9e1bac71fe",
+      "thumbnail": "records/authored-e426070849f483c0f4e07277/v002-3f863aca47a5dc64.png",
+      "taskArtifact": "records/authored-e426070849f483c0f4e07277/task.json",
+      "verification": {
+        "verdict": "passed",
+        "candidateId": "v002",
+        "fingerprints": {
+          "specification": "e426070849f483c0f4e07277264238d7a390128fcdb4a68dedd01f9e1bac71fe",
+          "geometry": "67155d3726f912d3cebf9bb2337a1053f642bd25931e1b33b3f4d18326e5e704",
+          "question": "21466aaaebe5ff440cc97600d62d4eef344f3abc2d390dd0c4c1626ac51bc772",
+          "options": "2a02ee37206c0089bd193ad678330e2d408634d0befda3fcfdf1fc7c1b232c15",
+          "answer": "0904278dc1a42c066e47e739428815bc4076b02c677146367949ee5b8d2b01df",
+          "contract": null,
+          "rendering": "e8d2ef0719edc5124952844aa369bb39c3ec83f6ba88ebd5fa4ea0abfc84a63f",
+          "generator": "daaf8853bbd6277efcaed6767fc31b014343e2e8d63b82bded21296c3ccc5fa0"
+        },
+        "report": "records/authored-e426070849f483c0f4e07277/verification.json"
+      },
+      "build": {
+        "runId": "build-efbab798-4945-4b3a-bae1-1bc7f3c45254",
+        "candidateId": "v002",
+        "usage": {
+          "schemaVersion": 2,
+          "runId": "build-efbab798-4945-4b3a-bae1-1bc7f3c45254",
+          "source": "codex",
+          "runtime": "Codex Desktop",
+          "status": "measured",
+          "elapsedMs": 223255,
+          "elapsedKind": "wall-clock",
+          "scope": "Runtime-reported usage between the start baseline and finish snapshot of this session. In-flight or delayed usage, earlier conversation, other agents and later delivery are excluded. This is an observed interval, not a complete billed task total.",
+          "scopeComplete": false,
+          "observedTokens": {
+            "input_tokens": 1963457,
+            "cached_input_tokens": 1936768,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 5606,
+            "reasoning_output_tokens": 1180,
+            "total_tokens": 1969063
+          },
+          "tokens": {
+            "input_tokens": null,
+            "cached_input_tokens": null,
+            "cache_write_input_tokens": null,
+            "output_tokens": null,
+            "reasoning_output_tokens": null,
+            "total_tokens": null
+          },
+          "models": [
+            {
+              "provider": "openai",
+              "model": "gpt-6.2-astra",
+              "reasoningEffort": "xhigh",
+              "tokens": {
+                "input_tokens": 1963457,
+                "cached_input_tokens": 1936768,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 5606,
+                "reasoning_output_tokens": 1180,
+                "total_tokens": 1969063
+              },
+              "observations": 12
+            }
+          ],
+          "missingFields": [],
+          "issues": [],
+          "observations": 12
+        }
+      },
+      "process": "records/authored-e426070849f483c0f4e07277/process.json",
+      "eventsCsv": "records/authored-e426070849f483c0f4e07277/events.csv"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "authored-6336e9146796c47b0497dcaf",
+      "harnessId": "spatialviz-harness",
+      "skillIds": [
+        "paper-folding"
+      ],
+      "sourceKind": "agent-authored",
+      "sourceCaseIds": [
+        "spatialviz-bench:vqa:MentalFolding:PaperFolding:Level0:0-3-3-2-1",
+        "spatialviz-bench:vqa:MentalFolding:PaperFolding:Level0:1-3-3-2-1",
+        "spatialviz-bench:vqa:MentalFolding:PaperFolding:Level0:4-3-3-2-1",
+        "spatialviz-bench:vqa:MentalFolding:PaperFolding:Level1:0-4-4-2-2",
+        "spatialviz-bench:vqa:MentalFolding:PaperFolding:Level2:0-5-5-3-3",
+        "spatialviz-bench:vqa:MentalFolding:PaperFolding:Level2:2-5-5-3-3",
+        "spatialviz-bench:vqa:MentalFolding:PaperFolding:Level2:20-5-5-3-3"
+      ],
+      "category": "MentalFolding",
+      "taskType": "PaperFolding",
+      "difficulty": {
+        "label": "Uncalibrated",
+        "basis": "Follow V then a finite diagonal fold. Track 1 punch sites through stacks of [2] layers."
+      },
+      "title": "Paper Folding / 3 by 3 / strip",
+      "description": "Trace the blue fold outlines and unfold the red punch sites onto the original grid.",
+      "contentSha256": "6336e9146796c47b0497dcafa50e4ec616bf91fcdf0b4fd5e37eac92bb9bf91c",
+      "thumbnail": "records/authored-6336e9146796c47b0497dcaf/v002-2817d19d2fbaf6eb.png",
+      "taskArtifact": "records/authored-6336e9146796c47b0497dcaf/task.json",
+      "verification": {
+        "verdict": "passed",
+        "candidateId": "v002",
+        "fingerprints": {
+          "specification": "6336e9146796c47b0497dcafa50e4ec616bf91fcdf0b4fd5e37eac92bb9bf91c",
+          "geometry": "f06c907047761c1664210198ec217b6e0054892f5787b4a813e4aa2ecd49b3c4",
+          "question": "21466aaaebe5ff440cc97600d62d4eef344f3abc2d390dd0c4c1626ac51bc772",
+          "options": "2a02ee37206c0089bd193ad678330e2d408634d0befda3fcfdf1fc7c1b232c15",
+          "answer": "93655223feeff808b6dbc2905f6e0d54484aac445a3f51ad321e91b1d0b7bf9e",
+          "contract": null,
+          "rendering": "7bf05f5144a4da64f060ce51e4e183b8905067d08fbc719c5761701b17de2e70",
+          "generator": "c503416d0be4d380593159be505781b8b8624697d034c9e3d419928656b641c2"
+        },
+        "report": "records/authored-6336e9146796c47b0497dcaf/verification.json"
+      },
+      "build": {
+        "runId": "build-a83b8eac-0750-4f5c-8ae8-11d63958aab6",
+        "candidateId": "v002",
+        "usage": {
+          "schemaVersion": 2,
+          "runId": "build-a83b8eac-0750-4f5c-8ae8-11d63958aab6",
+          "source": "codex",
+          "runtime": "Codex Desktop",
+          "status": "measured",
+          "elapsedMs": 215191,
+          "elapsedKind": "wall-clock",
+          "scope": "Runtime-reported usage between the start baseline and finish snapshot of this session. In-flight or delayed usage, earlier conversation, other agents and later delivery are excluded. This is an observed interval, not a complete billed task total.",
+          "scopeComplete": false,
+          "observedTokens": {
+            "input_tokens": 1816972,
+            "cached_input_tokens": 1790848,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 5003,
+            "reasoning_output_tokens": 1033,
+            "total_tokens": 1821975
+          },
+          "tokens": {
+            "input_tokens": null,
+            "cached_input_tokens": null,
+            "cache_write_input_tokens": null,
+            "output_tokens": null,
+            "reasoning_output_tokens": null,
+            "total_tokens": null
+          },
+          "models": [
+            {
+              "provider": "openai",
+              "model": "gpt-6.2-astra",
+              "reasoningEffort": "xhigh",
+              "tokens": {
+                "input_tokens": 1816972,
+                "cached_input_tokens": 1790848,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 5003,
+                "reasoning_output_tokens": 1033,
+                "total_tokens": 1821975
+              },
+              "observations": 11
+            }
+          ],
+          "missingFields": [],
+          "issues": [],
+          "observations": 11
+        }
+      },
+      "process": "records/authored-6336e9146796c47b0497dcaf/process.json",
+      "eventsCsv": "records/authored-6336e9146796c47b0497dcaf/events.csv"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "authored-2dcb317285257792dd5e658b",
+      "harnessId": "spatialviz-harness",
+      "skillIds": [
+        "paper-folding"
+      ],
+      "sourceKind": "agent-authored",
+      "sourceCaseIds": [
+        "spatialviz-bench:vqa:MentalFolding:PaperFolding:Level0:0-3-3-2-1",
+        "spatialviz-bench:vqa:MentalFolding:PaperFolding:Level0:1-3-3-2-1",
+        "spatialviz-bench:vqa:MentalFolding:PaperFolding:Level0:4-3-3-2-1",
+        "spatialviz-bench:vqa:MentalFolding:PaperFolding:Level1:0-4-4-2-2",
+        "spatialviz-bench:vqa:MentalFolding:PaperFolding:Level2:0-5-5-3-3",
+        "spatialviz-bench:vqa:MentalFolding:PaperFolding:Level2:2-5-5-3-3",
+        "spatialviz-bench:vqa:MentalFolding:PaperFolding:Level2:20-5-5-3-3"
+      ],
+      "category": "MentalFolding",
+      "taskType": "PaperFolding",
+      "difficulty": {
+        "label": "Uncalibrated",
+        "basis": "Follow H then a finite diagonal fold. Track 2 punch sites through stacks of [2, 2] layers."
+      },
+      "title": "Paper Folding / 4 by 4 / strip",
+      "description": "Trace the blue fold outlines and unfold the red punch sites onto the original grid.",
+      "contentSha256": "2dcb317285257792dd5e658b758d9bc45efda06c741235f59b038d19a47b8e9f",
+      "thumbnail": "records/authored-2dcb317285257792dd5e658b/v002-dd1908b4a70f7629.png",
+      "taskArtifact": "records/authored-2dcb317285257792dd5e658b/task.json",
+      "verification": {
+        "verdict": "passed",
+        "candidateId": "v002",
+        "fingerprints": {
+          "specification": "2dcb317285257792dd5e658b758d9bc45efda06c741235f59b038d19a47b8e9f",
+          "geometry": "86068b0a79020eae841798b217b8c90740b0a872f199ec4281645f3a4b6c673d",
+          "question": "f2d909e035e5e6ec4f9d31e92c439cfc0b3d50178afc937641568dac28234db4",
+          "options": "2a02ee37206c0089bd193ad678330e2d408634d0befda3fcfdf1fc7c1b232c15",
+          "answer": "620d07af7536bdbee85d602261057a9a020deeaced5aae476812a57151a7b438",
+          "contract": null,
+          "rendering": "4a1279c9e8b16b9ff1c7cda512b99a77cb89a964b13fdb7068941af54dc57bc7",
+          "generator": "2561afdd8e2c93dfa53b5bb56d28553364ad89603851306d491de30c90e8539d"
+        },
+        "report": "records/authored-2dcb317285257792dd5e658b/verification.json"
+      },
+      "build": {
+        "runId": "build-bb98e24d-9a7a-4a9f-af33-e55e5d905318",
+        "candidateId": "v002",
+        "usage": {
+          "schemaVersion": 2,
+          "runId": "build-bb98e24d-9a7a-4a9f-af33-e55e5d905318",
+          "source": "codex",
+          "runtime": "Codex Desktop",
+          "status": "measured",
+          "elapsedMs": 206773,
+          "elapsedKind": "wall-clock",
+          "scope": "Runtime-reported usage between the start baseline and finish snapshot of this session. In-flight or delayed usage, earlier conversation, other agents and later delivery are excluded. This is an observed interval, not a complete billed task total.",
+          "scopeComplete": false,
+          "observedTokens": {
+            "input_tokens": 1669822,
+            "cached_input_tokens": 1643904,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 4778,
+            "reasoning_output_tokens": 1020,
+            "total_tokens": 1674600
+          },
+          "tokens": {
+            "input_tokens": null,
+            "cached_input_tokens": null,
+            "cache_write_input_tokens": null,
+            "output_tokens": null,
+            "reasoning_output_tokens": null,
+            "total_tokens": null
+          },
+          "models": [
+            {
+              "provider": "openai",
+              "model": "gpt-6.2-astra",
+              "reasoningEffort": "xhigh",
+              "tokens": {
+                "input_tokens": 1669822,
+                "cached_input_tokens": 1643904,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 4778,
+                "reasoning_output_tokens": 1020,
+                "total_tokens": 1674600
+              },
+              "observations": 10
+            }
+          ],
+          "missingFields": [],
+          "issues": [],
+          "observations": 10
+        }
+      },
+      "process": "records/authored-2dcb317285257792dd5e658b/process.json",
+      "eventsCsv": "records/authored-2dcb317285257792dd5e658b/events.csv"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "authored-f4dc785cecd1ead2ff7a7096",
+      "harnessId": "spatialviz-harness",
+      "skillIds": [
+        "paper-folding"
+      ],
+      "sourceKind": "agent-authored",
+      "sourceCaseIds": [
+        "spatialviz-bench:vqa:MentalFolding:PaperFolding:Level0:0-3-3-2-1",
+        "spatialviz-bench:vqa:MentalFolding:PaperFolding:Level0:1-3-3-2-1",
+        "spatialviz-bench:vqa:MentalFolding:PaperFolding:Level0:4-3-3-2-1",
+        "spatialviz-bench:vqa:MentalFolding:PaperFolding:Level1:0-4-4-2-2",
+        "spatialviz-bench:vqa:MentalFolding:PaperFolding:Level2:0-5-5-3-3",
+        "spatialviz-bench:vqa:MentalFolding:PaperFolding:Level2:2-5-5-3-3",
+        "spatialviz-bench:vqa:MentalFolding:PaperFolding:Level2:20-5-5-3-3"
+      ],
+      "category": "MentalFolding",
+      "taskType": "PaperFolding",
+      "difficulty": {
+        "label": "Uncalibrated",
+        "basis": "Follow HH then a finite diagonal fold. Track 3 punch sites through stacks of [1, 4, 1] layers."
+      },
+      "title": "Paper Folding / 5 by 5 / parallel",
+      "description": "Trace the blue fold outlines and unfold the red punch sites onto the original grid.",
+      "contentSha256": "f4dc785cecd1ead2ff7a7096b4c45bcc86fca2119e9f8bb86200fc7c0e9e7130",
+      "thumbnail": "records/authored-f4dc785cecd1ead2ff7a7096/v002-81560e26168cbcfb.png",
+      "taskArtifact": "records/authored-f4dc785cecd1ead2ff7a7096/task.json",
+      "verification": {
+        "verdict": "passed",
+        "candidateId": "v002",
+        "fingerprints": {
+          "specification": "f4dc785cecd1ead2ff7a7096b4c45bcc86fca2119e9f8bb86200fc7c0e9e7130",
+          "geometry": "6c1255eddf0098e64a49d97d4f6bc965ea5ecf6789da58ff494a08332785c9b2",
+          "question": "58de11a280153fba650fa30a3707ad6c1990f601e6d65f0d48bb9cb8feecd90e",
+          "options": "2a02ee37206c0089bd193ad678330e2d408634d0befda3fcfdf1fc7c1b232c15",
+          "answer": "69115c1d86acc473d602b03361335059d7b764fe077d63c663b847c1fa077d83",
+          "contract": null,
+          "rendering": "5c40e1cbc65ca5ce6e7bf9d0667dfc0538fb6e98e463296e57adec60a82dba54",
+          "generator": "a3eeaf7f70bd2b04e1613cabcd8ff7c198f7bdecd5e5c2b75c5738f147946620"
+        },
+        "report": "records/authored-f4dc785cecd1ead2ff7a7096/verification.json"
+      },
+      "build": {
+        "runId": "build-604661e6-5920-4901-9f6f-7fa6bec8f303",
+        "candidateId": "v002",
+        "usage": {
+          "schemaVersion": 2,
+          "runId": "build-604661e6-5920-4901-9f6f-7fa6bec8f303",
+          "source": "codex",
+          "runtime": "Codex Desktop",
+          "status": "measured",
+          "elapsedMs": 199757,
+          "elapsedKind": "wall-clock",
+          "scope": "Runtime-reported usage between the start baseline and finish snapshot of this session. In-flight or delayed usage, earlier conversation, other agents and later delivery are excluded. This is an observed interval, not a complete billed task total.",
+          "scopeComplete": false,
+          "observedTokens": {
+            "input_tokens": 1522434,
+            "cached_input_tokens": 1496704,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 4605,
+            "reasoning_output_tokens": 887,
+            "total_tokens": 1527039
+          },
+          "tokens": {
+            "input_tokens": null,
+            "cached_input_tokens": null,
+            "cache_write_input_tokens": null,
+            "output_tokens": null,
+            "reasoning_output_tokens": null,
+            "total_tokens": null
+          },
+          "models": [
+            {
+              "provider": "openai",
+              "model": "gpt-6.2-astra",
+              "reasoningEffort": "xhigh",
+              "tokens": {
+                "input_tokens": 1522434,
+                "cached_input_tokens": 1496704,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 4605,
+                "reasoning_output_tokens": 887,
+                "total_tokens": 1527039
+              },
+              "observations": 9
+            }
+          ],
+          "missingFields": [],
+          "issues": [],
+          "observations": 9
+        }
+      },
+      "process": "records/authored-f4dc785cecd1ead2ff7a7096/process.json",
+      "eventsCsv": "records/authored-f4dc785cecd1ead2ff7a7096/events.csv"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "authored-1c2816fae927f768cb0d1468",
+      "harnessId": "spatialviz-harness",
+      "skillIds": [
+        "paper-folding"
+      ],
+      "sourceKind": "agent-authored",
+      "sourceCaseIds": [
+        "spatialviz-bench:vqa:MentalFolding:PaperFolding:Level0:0-3-3-2-1",
+        "spatialviz-bench:vqa:MentalFolding:PaperFolding:Level0:1-3-3-2-1",
+        "spatialviz-bench:vqa:MentalFolding:PaperFolding:Level0:4-3-3-2-1",
+        "spatialviz-bench:vqa:MentalFolding:PaperFolding:Level1:0-4-4-2-2",
+        "spatialviz-bench:vqa:MentalFolding:PaperFolding:Level2:0-5-5-3-3",
+        "spatialviz-bench:vqa:MentalFolding:PaperFolding:Level2:2-5-5-3-3",
+        "spatialviz-bench:vqa:MentalFolding:PaperFolding:Level2:20-5-5-3-3"
+      ],
+      "category": "MentalFolding",
+      "taskType": "PaperFolding",
+      "difficulty": {
+        "label": "Uncalibrated",
+        "basis": "Follow VV then a finite diagonal fold. Track 3 punch sites through stacks of [3, 3, 3] layers."
+      },
+      "title": "Paper Folding / 5 by 5 / parallel",
+      "description": "Trace the blue fold outlines and unfold the red punch sites onto the original grid.",
+      "contentSha256": "1c2816fae927f768cb0d1468ac62a732d6767e48bbe6b5bafb12745b3504bf80",
+      "thumbnail": "records/authored-1c2816fae927f768cb0d1468/v002-d80889c4810357dd.png",
+      "taskArtifact": "records/authored-1c2816fae927f768cb0d1468/task.json",
+      "verification": {
+        "verdict": "passed",
+        "candidateId": "v002",
+        "fingerprints": {
+          "specification": "1c2816fae927f768cb0d1468ac62a732d6767e48bbe6b5bafb12745b3504bf80",
+          "geometry": "f509a5632173464098bb124442feda0361f0e09041c8456fb6818ef80029dfd5",
+          "question": "58de11a280153fba650fa30a3707ad6c1990f601e6d65f0d48bb9cb8feecd90e",
+          "options": "2a02ee37206c0089bd193ad678330e2d408634d0befda3fcfdf1fc7c1b232c15",
+          "answer": "7fe1358a4d2d7206fca2bbeadb891655a5a3f041c4c6e8122b42818315f03924",
+          "contract": null,
+          "rendering": "33ac9b44128d46336994fed252eda1890288380b71f9ddffeb642214bc25e605",
+          "generator": "8f49892c5fc9a91e7b6c86142a5a140cdd75d87796a78db1d283a98392df0b8d"
+        },
+        "report": "records/authored-1c2816fae927f768cb0d1468/verification.json"
+      },
+      "build": {
+        "runId": "build-3b53945c-d3a5-46c2-bfa2-9ddeb3676e2b",
+        "candidateId": "v002",
+        "usage": {
+          "schemaVersion": 2,
+          "runId": "build-3b53945c-d3a5-46c2-bfa2-9ddeb3676e2b",
+          "source": "codex",
+          "runtime": "Codex Desktop",
+          "status": "measured",
+          "elapsedMs": 190921,
+          "elapsedKind": "wall-clock",
+          "scope": "Runtime-reported usage between the start baseline and finish snapshot of this session. In-flight or delayed usage, earlier conversation, other agents and later delivery are excluded. This is an observed interval, not a complete billed task total.",
+          "scopeComplete": false,
+          "observedTokens": {
+            "input_tokens": 1522434,
+            "cached_input_tokens": 1496704,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 4605,
+            "reasoning_output_tokens": 887,
+            "total_tokens": 1527039
+          },
+          "tokens": {
+            "input_tokens": null,
+            "cached_input_tokens": null,
+            "cache_write_input_tokens": null,
+            "output_tokens": null,
+            "reasoning_output_tokens": null,
+            "total_tokens": null
+          },
+          "models": [
+            {
+              "provider": "openai",
+              "model": "gpt-6.2-astra",
+              "reasoningEffort": "xhigh",
+              "tokens": {
+                "input_tokens": 1522434,
+                "cached_input_tokens": 1496704,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 4605,
+                "reasoning_output_tokens": 887,
+                "total_tokens": 1527039
+              },
+              "observations": 9
+            }
+          ],
+          "missingFields": [],
+          "issues": [],
+          "observations": 9
+        }
+      },
+      "process": "records/authored-1c2816fae927f768cb0d1468/process.json",
+      "eventsCsv": "records/authored-1c2816fae927f768cb0d1468/events.csv"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "authored-20b5e1226e98d04ee3747a6f",
+      "harnessId": "spatialviz-harness",
+      "skillIds": [
+        "paper-folding"
+      ],
+      "sourceKind": "agent-authored",
+      "sourceCaseIds": [
+        "spatialviz-bench:vqa:MentalFolding:PaperFolding:Level0:0-3-3-2-1",
+        "spatialviz-bench:vqa:MentalFolding:PaperFolding:Level0:1-3-3-2-1",
+        "spatialviz-bench:vqa:MentalFolding:PaperFolding:Level0:4-3-3-2-1",
+        "spatialviz-bench:vqa:MentalFolding:PaperFolding:Level1:0-4-4-2-2",
+        "spatialviz-bench:vqa:MentalFolding:PaperFolding:Level2:0-5-5-3-3",
+        "spatialviz-bench:vqa:MentalFolding:PaperFolding:Level2:2-5-5-3-3",
+        "spatialviz-bench:vqa:MentalFolding:PaperFolding:Level2:20-5-5-3-3"
+      ],
+      "category": "MentalFolding",
+      "taskType": "PaperFolding",
+      "difficulty": {
+        "label": "Uncalibrated",
+        "basis": "Follow HV then a finite diagonal fold. Track 3 punch sites through stacks of [2, 2, 4] layers."
+      },
+      "title": "Paper Folding / 5 by 5 / crossed",
+      "description": "Trace the blue fold outlines and unfold the red punch sites onto the original grid.",
+      "contentSha256": "20b5e1226e98d04ee3747a6f061067f62a821a9af2eb5f6993043087a8c11ad7",
+      "thumbnail": "records/authored-20b5e1226e98d04ee3747a6f/v002-ca04026900cc99e1.png",
+      "taskArtifact": "records/authored-20b5e1226e98d04ee3747a6f/task.json",
+      "verification": {
+        "verdict": "passed",
+        "candidateId": "v002",
+        "fingerprints": {
+          "specification": "20b5e1226e98d04ee3747a6f061067f62a821a9af2eb5f6993043087a8c11ad7",
+          "geometry": "47bbb873682a9b9c78d93e9a83dfb42455a90b90207c117f27b40569593af9c1",
+          "question": "58de11a280153fba650fa30a3707ad6c1990f601e6d65f0d48bb9cb8feecd90e",
+          "options": "2a02ee37206c0089bd193ad678330e2d408634d0befda3fcfdf1fc7c1b232c15",
+          "answer": "7b56edce0ac42c433acddaada853595cdd3851d90c600d5a7e9730642c3a1703",
+          "contract": null,
+          "rendering": "38b242610d295eee0e1b576f13096ed41ff169251a78f344db37e8640a415013",
+          "generator": "4f9d1a26b277264c9564dd9ef23562a13bdec637ce2e4648b5c817078c4731a9"
+        },
+        "report": "records/authored-20b5e1226e98d04ee3747a6f/verification.json"
+      },
+      "build": {
+        "runId": "build-14d49566-c415-4a23-bfc3-966c4a4ca6b0",
+        "candidateId": "v002",
+        "usage": {
+          "schemaVersion": 2,
+          "runId": "build-14d49566-c415-4a23-bfc3-966c4a4ca6b0",
+          "source": "codex",
+          "runtime": "Codex Desktop",
+          "status": "measured",
+          "elapsedMs": 183522,
+          "elapsedKind": "wall-clock",
+          "scope": "Runtime-reported usage between the start baseline and finish snapshot of this session. In-flight or delayed usage, earlier conversation, other agents and later delivery are excluded. This is an observed interval, not a complete billed task total.",
+          "scopeComplete": false,
+          "observedTokens": {
+            "input_tokens": 1522434,
+            "cached_input_tokens": 1496704,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 4605,
+            "reasoning_output_tokens": 887,
+            "total_tokens": 1527039
+          },
+          "tokens": {
+            "input_tokens": null,
+            "cached_input_tokens": null,
+            "cache_write_input_tokens": null,
+            "output_tokens": null,
+            "reasoning_output_tokens": null,
+            "total_tokens": null
+          },
+          "models": [
+            {
+              "provider": "openai",
+              "model": "gpt-6.2-astra",
+              "reasoningEffort": "xhigh",
+              "tokens": {
+                "input_tokens": 1522434,
+                "cached_input_tokens": 1496704,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 4605,
+                "reasoning_output_tokens": 887,
+                "total_tokens": 1527039
+              },
+              "observations": 9
+            }
+          ],
+          "missingFields": [],
+          "issues": [],
+          "observations": 9
+        }
+      },
+      "process": "records/authored-20b5e1226e98d04ee3747a6f/process.json",
+      "eventsCsv": "records/authored-20b5e1226e98d04ee3747a6f/events.csv"
     }
   ]
 }

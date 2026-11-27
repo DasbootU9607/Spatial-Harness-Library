@@ -12,7 +12,7 @@ function discover(){
   if(c.harnessId!=='spatialviz-harness')continue;
   const task=R.read(path.join(root,c.harnessId,'site',c.taskArtifact));
   c.generationMethod=task.provenance?.generationMethod||'Legacy JavaScript/SVG generator';
-  c.exhibit=c.verification?.verdict==='passed'&&task.provenance?.generationMethod==='SpatialViz-Bench official FreeCAD + OpenCV/Pillow pipeline'&&Boolean(task.provenance?.sourceRevision);
+  c.exhibit=c.verification?.verdict==='passed'&&(c.generationMethod==='SpatialViz-Bench official FreeCAD + OpenCV/Pillow pipeline'||(task.taskType==='PaperFolding'&&c.generationMethod==='SpatialViz-Bench official Paper Folding Matplotlib/Pillow pipeline'))&&Boolean(task.provenance?.sourceRevision);
  }
  const maze=R.read(path.join(root,'maze-harness/site/data/catalog.json'));
  for(const s of maze.skills)if(!skills.some(x=>x.id===s.id&&x.harnessId==='maze-harness'))skills.push({...s,harnessId:'maze-harness',status:'complete',officialReferences:s.officialCases,install:'node tools/install.cjs --harness maze-harness --destination YOUR_SKILLS_DIRECTORY'});

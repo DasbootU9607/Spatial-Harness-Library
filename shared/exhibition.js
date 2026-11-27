@@ -28,7 +28,7 @@ function mountGallery(){
  function update(){
   const items=cases.filter(c=>selected==='all'||c.skillIds.includes(selected));
   filters.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.filter===selected)));
-  document.querySelector('#case-count').textContent=`${items.length} ${items.length===1?'task':'tasks'}${hid==='spatialviz-harness'?' · Generated with official FreeCAD tools':''}`;
+  document.querySelector('#case-count').textContent=`${items.length} ${items.length===1?'task':'tasks'}${hid==='spatialviz-harness'?' · Generated with official SpatialViz tools':''}`;
   gallery.innerHTML=items.length?items.map(card).join(''):empty('No published tasks for this skill yet.');
  }
  filters.addEventListener('click',event=>{const b=event.target.closest('[data-filter]');if(!b)return;selected=b.dataset.filter;const url=new URL(location.href);if(selected==='all')url.searchParams.delete('skill');else url.searchParams.set('skill',selected);history.replaceState(null,'',url);update();});
