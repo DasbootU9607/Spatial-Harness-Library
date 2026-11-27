@@ -1,0 +1,111 @@
+{
+  "title": "Which way does the slide move now?",
+  "intent": "Determine the crank sense before resolving the pin velocity across the guided slot.",
+  "cad": {
+    "moduleMm": 2,
+    "tiltDeg": 24
+  },
+  "members": {
+    "A": {
+      "kind": "gear",
+      "at": [
+        0,
+        0,
+        0
+      ],
+      "teeth": 18
+    },
+    "B": {
+      "kind": "gear",
+      "at": [
+        24,
+        0,
+        0
+      ],
+      "teeth": 30
+    },
+    "K": {
+      "kind": "crank",
+      "at": [
+        24,
+        0,
+        1
+      ],
+      "radius": 8
+    },
+    "Y": {
+      "kind": "slider",
+      "at": [
+        24,
+        -8,
+        2
+      ]
+    }
+  },
+  "connections": [
+    {
+      "kind": "mesh",
+      "ports": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "kind": "key",
+      "ports": [
+        "B",
+        "K"
+      ]
+    },
+    {
+      "kind": "yoke",
+      "ports": [
+        "K",
+        "Y"
+      ],
+      "radius": 8
+    }
+  ],
+  "input": {
+    "member": "A",
+    "motion": "CW"
+  },
+  "interval": "instant",
+  "targets": [
+    {
+      "name": "Y",
+      "kind": "horizontal"
+    }
+  ],
+  "choices": [
+    {
+      "motions": [
+        "left"
+      ],
+      "reason": "The external mesh reverses K. At twelve o'clock its pin travels left across the slot."
+    },
+    {
+      "motions": [
+        "right"
+      ],
+      "reason": "This would follow the input directly and miss the external mesh."
+    },
+    {
+      "motions": [
+        "stationary"
+      ],
+      "reason": "The pin has zero vertical speed here and nonzero horizontal speed across the slot."
+    },
+    {
+      "motions": [
+        "rotates"
+      ],
+      "reason": "The two frame guides constrain the yoke to translation."
+    }
+  ],
+  "references": [
+    "MentalAnimation/MechanicalSystem/Level0/20",
+    "MentalAnimation/MechanicalSystem/Level0/34",
+    "MentalAnimation/MechanicalSystem/Level0/35"
+  ]
+}

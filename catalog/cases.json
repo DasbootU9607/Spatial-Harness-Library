@@ -13125,6 +13125,376 @@
       },
       "process": "records/authored-40f1b06b1134e1834402f5b6/process.json",
       "eventsCsv": "records/authored-40f1b06b1134e1834402f5b6/events.csv"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "authored-e979ecaa5c35287a3747ec04",
+      "harnessId": "spatialviz-harness",
+      "skillIds": [
+        "mechanical-system"
+      ],
+      "sourceKind": "agent-authored",
+      "sourceCaseIds": [
+        "spatialviz-bench:vqa:MentalAnimation:MechanicalSystem:Level0:20",
+        "spatialviz-bench:vqa:MentalAnimation:MechanicalSystem:Level0:21",
+        "spatialviz-bench:vqa:MentalAnimation:MechanicalSystem:Level1:32",
+        "spatialviz-bench:vqa:MentalAnimation:MechanicalSystem:Level1:34"
+      ],
+      "category": "MentalAnimation",
+      "taskType": "MechanicalSystem",
+      "difficulty": {
+        "label": "Unranked",
+        "basis": "Author-designed assembly"
+      },
+      "title": "Which way does the suspended load move?",
+      "description": "Resolve the external mesh, rigid hub and takeoff tangent in the front view.",
+      "contentSha256": "e979ecaa5c35287a3747ec04269fe506afcdf899109182291cfcf5982d792314",
+      "thumbnail": "records/authored-e979ecaa5c35287a3747ec04/v002-c4cb75298a536c90.png",
+      "taskArtifact": "records/authored-e979ecaa5c35287a3747ec04/task.json",
+      "verification": {
+        "verdict": "passed",
+        "candidateId": "v002",
+        "fingerprints": {
+          "specification": "e979ecaa5c35287a3747ec04269fe506afcdf899109182291cfcf5982d792314",
+          "geometry": "bab18667cadb7762b313a5460d7289ff278788b0cc0e6d2bb2fae35ba03b8820",
+          "question": "19b5951eca3e562c290bf15dfee9673df81a7d71d1752ba6927ad5b9ba5f1c33",
+          "options": "8de907db99eb4db27b87aa5d2445b8b8d04f36ae1d4e4c3054e0c2136f6b8877",
+          "answer": "ff534c21ee8d99a393a851fe48e232b01a7703842653e295ba814c25110435ac",
+          "contract": "d16e2f83f7844bc78d3f0520c99c8000cd5bba7d4a8d5c64b1d276d93f241b7a",
+          "rendering": "e2f4ca2b0b5fc2a1ff1f6936ce67b398503076dacb9439cec9a35c4762e350dd",
+          "generator": "86fba9f9bc7cfb9bcef05eb4606906de1bfe6a2be1d0a5cf61778074a440cef2"
+        },
+        "report": "records/authored-e979ecaa5c35287a3747ec04/verification.json"
+      },
+      "build": {
+        "runId": "build-eead0ff4-e886-4ea7-a147-77d62389f0f4",
+        "candidateId": "v002",
+        "usage": {
+          "schemaVersion": 2,
+          "runId": "build-eead0ff4-e886-4ea7-a147-77d62389f0f4",
+          "source": "codex",
+          "runtime": "Codex Desktop",
+          "status": "measured",
+          "elapsedMs": 370681,
+          "elapsedKind": "wall-clock",
+          "scope": "Runtime-reported usage between the start baseline and finish snapshot of this session. In-flight or delayed usage, earlier conversation, other agents and later delivery are excluded. This is an observed interval, not a complete billed task total.",
+          "scopeComplete": false,
+          "observedTokens": {
+            "input_tokens": 5508626,
+            "cached_input_tokens": 5488384,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 8336,
+            "reasoning_output_tokens": 2744,
+            "total_tokens": 5516962
+          },
+          "tokens": {
+            "input_tokens": null,
+            "cached_input_tokens": null,
+            "cache_write_input_tokens": null,
+            "output_tokens": null,
+            "reasoning_output_tokens": null,
+            "total_tokens": null
+          },
+          "models": [
+            {
+              "provider": "openai",
+              "model": "gpt-6.2-astra",
+              "reasoningEffort": "xhigh",
+              "tokens": {
+                "input_tokens": 5508626,
+                "cached_input_tokens": 5488384,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 8336,
+                "reasoning_output_tokens": 2744,
+                "total_tokens": 5516962
+              },
+              "observations": 24
+            }
+          ],
+          "missingFields": [],
+          "issues": [],
+          "observations": 24
+        }
+      },
+      "process": "records/authored-e979ecaa5c35287a3747ec04/process.json",
+      "eventsCsv": "records/authored-e979ecaa5c35287a3747ec04/events.csv"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "authored-f1b2e96852e4013b0a62f69e",
+      "harnessId": "spatialviz-harness",
+      "skillIds": [
+        "mechanical-system"
+      ],
+      "sourceKind": "agent-authored",
+      "sourceCaseIds": [
+        "spatialviz-bench:vqa:MentalAnimation:MechanicalSystem:Level0:20",
+        "spatialviz-bench:vqa:MentalAnimation:MechanicalSystem:Level0:21",
+        "spatialviz-bench:vqa:MentalAnimation:MechanicalSystem:Level1:32",
+        "spatialviz-bench:vqa:MentalAnimation:MechanicalSystem:Level1:34"
+      ],
+      "category": "MentalAnimation",
+      "taskType": "MechanicalSystem",
+      "difficulty": {
+        "label": "Unranked",
+        "basis": "Author-designed assembly"
+      },
+      "title": "Which way does the suspended load move?",
+      "description": "Resolve the external mesh, rigid hub and takeoff tangent in the front view.",
+      "contentSha256": "f1b2e96852e4013b0a62f69e808dbc57c1bb390c4cb4f18e2383ffdf0f561c4a",
+      "thumbnail": "records/authored-f1b2e96852e4013b0a62f69e/v002-5bf1d597d69ffbab.png",
+      "taskArtifact": "records/authored-f1b2e96852e4013b0a62f69e/task.json",
+      "verification": {
+        "verdict": "passed",
+        "candidateId": "v002",
+        "fingerprints": {
+          "specification": "f1b2e96852e4013b0a62f69e808dbc57c1bb390c4cb4f18e2383ffdf0f561c4a",
+          "geometry": "66813570e4014e1f1bc574085c641e60a9831b50585b4293d6e86fdd73364484",
+          "question": "19b5951eca3e562c290bf15dfee9673df81a7d71d1752ba6927ad5b9ba5f1c33",
+          "options": "8de907db99eb4db27b87aa5d2445b8b8d04f36ae1d4e4c3054e0c2136f6b8877",
+          "answer": "22ef4af7ab500cb7733fe9d1cfeea3e2226a8da203ea4bf6ba3b2f0762a7cbd7",
+          "contract": "d16e2f83f7844bc78d3f0520c99c8000cd5bba7d4a8d5c64b1d276d93f241b7a",
+          "rendering": "ff1c79ecb0f534dd8fb36d3f5856c8317362b49a1c5eb26e79dc1c6fe3868be9",
+          "generator": "14b466f3d616f43e8ed59343ced7eb33cc16afee527775cb6fc1329746293cb5"
+        },
+        "report": "records/authored-f1b2e96852e4013b0a62f69e/verification.json"
+      },
+      "build": {
+        "runId": "build-c2512c2a-e95e-4984-beb6-d3c4882657e6",
+        "candidateId": "v002",
+        "usage": {
+          "schemaVersion": 2,
+          "runId": "build-c2512c2a-e95e-4984-beb6-d3c4882657e6",
+          "source": "codex",
+          "runtime": "Codex Desktop",
+          "status": "measured",
+          "elapsedMs": 371305,
+          "elapsedKind": "wall-clock",
+          "scope": "Runtime-reported usage between the start baseline and finish snapshot of this session. In-flight or delayed usage, earlier conversation, other agents and later delivery are excluded. This is an observed interval, not a complete billed task total.",
+          "scopeComplete": false,
+          "observedTokens": {
+            "input_tokens": 5508626,
+            "cached_input_tokens": 5488384,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 8336,
+            "reasoning_output_tokens": 2744,
+            "total_tokens": 5516962
+          },
+          "tokens": {
+            "input_tokens": null,
+            "cached_input_tokens": null,
+            "cache_write_input_tokens": null,
+            "output_tokens": null,
+            "reasoning_output_tokens": null,
+            "total_tokens": null
+          },
+          "models": [
+            {
+              "provider": "openai",
+              "model": "gpt-6.2-astra",
+              "reasoningEffort": "xhigh",
+              "tokens": {
+                "input_tokens": 5508626,
+                "cached_input_tokens": 5488384,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 8336,
+                "reasoning_output_tokens": 2744,
+                "total_tokens": 5516962
+              },
+              "observations": 24
+            }
+          ],
+          "missingFields": [],
+          "issues": [],
+          "observations": 24
+        }
+      },
+      "process": "records/authored-f1b2e96852e4013b0a62f69e/process.json",
+      "eventsCsv": "records/authored-f1b2e96852e4013b0a62f69e/events.csv"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "authored-5df35a34e74253b184d2b44b",
+      "harnessId": "spatialviz-harness",
+      "skillIds": [
+        "mechanical-system"
+      ],
+      "sourceKind": "agent-authored",
+      "sourceCaseIds": [
+        "spatialviz-bench:vqa:MentalAnimation:MechanicalSystem:Level0:20",
+        "spatialviz-bench:vqa:MentalAnimation:MechanicalSystem:Level0:34",
+        "spatialviz-bench:vqa:MentalAnimation:MechanicalSystem:Level0:35"
+      ],
+      "category": "MentalAnimation",
+      "taskType": "MechanicalSystem",
+      "difficulty": {
+        "label": "Unranked",
+        "basis": "Author-designed assembly"
+      },
+      "title": "Which way does the slide move now?",
+      "description": "Determine the crank sense before resolving the pin velocity across the guided slot.",
+      "contentSha256": "5df35a34e74253b184d2b44beb14d967b3ec58923c4553f71bc1dfa12454cc50",
+      "thumbnail": "records/authored-5df35a34e74253b184d2b44b/v002-1c94ad826cf5cda0.png",
+      "taskArtifact": "records/authored-5df35a34e74253b184d2b44b/task.json",
+      "verification": {
+        "verdict": "passed",
+        "candidateId": "v002",
+        "fingerprints": {
+          "specification": "5df35a34e74253b184d2b44beb14d967b3ec58923c4553f71bc1dfa12454cc50",
+          "geometry": "248c889b5a48e0ae77b41cdfb6448bdc1be284574c695f445cecbf69534a10e3",
+          "question": "4a7f2fc1577e954b7c871359ae2c7564d4b8d410b4b1f6c8be56f71abc724a1c",
+          "options": "c2098e9bc8d67ded86dd8e4523b557daf46c738b631772fca47d628abb276b78",
+          "answer": "89d53413beec0594391c4af06e27cbba1bc6ad5bbc69f131d8aa0a6457578b78",
+          "contract": "d16e2f83f7844bc78d3f0520c99c8000cd5bba7d4a8d5c64b1d276d93f241b7a",
+          "rendering": "c051cfa5a7fbd2775af1f5b958878026531d33b40ea670500f127040c989e461",
+          "generator": "b6b9eaba1e323356142180c5a79166f42649ea9b3cfc11612ffae31aaf46a63a"
+        },
+        "report": "records/authored-5df35a34e74253b184d2b44b/verification.json"
+      },
+      "build": {
+        "runId": "build-f9adde03-de79-4f1e-9af0-6212f7cb5f47",
+        "candidateId": "v002",
+        "usage": {
+          "schemaVersion": 2,
+          "runId": "build-f9adde03-de79-4f1e-9af0-6212f7cb5f47",
+          "source": "codex",
+          "runtime": "Codex Desktop",
+          "status": "measured",
+          "elapsedMs": 371414,
+          "elapsedKind": "wall-clock",
+          "scope": "Runtime-reported usage between the start baseline and finish snapshot of this session. In-flight or delayed usage, earlier conversation, other agents and later delivery are excluded. This is an observed interval, not a complete billed task total.",
+          "scopeComplete": false,
+          "observedTokens": {
+            "input_tokens": 5508626,
+            "cached_input_tokens": 5488384,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 8336,
+            "reasoning_output_tokens": 2744,
+            "total_tokens": 5516962
+          },
+          "tokens": {
+            "input_tokens": null,
+            "cached_input_tokens": null,
+            "cache_write_input_tokens": null,
+            "output_tokens": null,
+            "reasoning_output_tokens": null,
+            "total_tokens": null
+          },
+          "models": [
+            {
+              "provider": "openai",
+              "model": "gpt-6.2-astra",
+              "reasoningEffort": "xhigh",
+              "tokens": {
+                "input_tokens": 5508626,
+                "cached_input_tokens": 5488384,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 8336,
+                "reasoning_output_tokens": 2744,
+                "total_tokens": 5516962
+              },
+              "observations": 24
+            }
+          ],
+          "missingFields": [],
+          "issues": [],
+          "observations": 24
+        }
+      },
+      "process": "records/authored-5df35a34e74253b184d2b44b/process.json",
+      "eventsCsv": "records/authored-5df35a34e74253b184d2b44b/events.csv"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "authored-5a3404eb24597e69b5b048e5",
+      "harnessId": "spatialviz-harness",
+      "skillIds": [
+        "mechanical-system"
+      ],
+      "sourceKind": "agent-authored",
+      "sourceCaseIds": [
+        "spatialviz-bench:vqa:MentalAnimation:MechanicalSystem:Level0:16",
+        "spatialviz-bench:vqa:MentalAnimation:MechanicalSystem:Level0:17",
+        "spatialviz-bench:vqa:MentalAnimation:MechanicalSystem:Level0:0"
+      ],
+      "category": "MentalAnimation",
+      "taskType": "MechanicalSystem",
+      "difficulty": {
+        "label": "Unranked",
+        "basis": "Author-designed assembly"
+      },
+      "title": "How do the planet and its axle move?",
+      "description": "Distinguish the planet's frame-relative spin from its axle's orbit around a locked sun.",
+      "contentSha256": "5a3404eb24597e69b5b048e5bd3251d5cd830b4b152ad6468b2c7e26895c872e",
+      "thumbnail": "records/authored-5a3404eb24597e69b5b048e5/v002-c6e63914a8a2f0f7.png",
+      "taskArtifact": "records/authored-5a3404eb24597e69b5b048e5/task.json",
+      "verification": {
+        "verdict": "passed",
+        "candidateId": "v002",
+        "fingerprints": {
+          "specification": "5a3404eb24597e69b5b048e5bd3251d5cd830b4b152ad6468b2c7e26895c872e",
+          "geometry": "e69bb1fb343638e5401178ed8e6b810f377015887f0aaa24c27e1a74d3a07a49",
+          "question": "9d3cb5a11a6af1bb89313ba28c8a856186301cfd81029954b0b8e105afe22a04",
+          "options": "57e3e167224db1b9b327bf8985fd3c2e851fba43e6c139efc55324c04733ce18",
+          "answer": "30dc04085764e607aa1ad1b4cee98d6146aa6618c98a3f45638fb456762b1b32",
+          "contract": "d16e2f83f7844bc78d3f0520c99c8000cd5bba7d4a8d5c64b1d276d93f241b7a",
+          "rendering": "f0b11ea3daf256e0108b993c8e805ff1f0bdd5cc370f06e4915c4d1fbce5e925",
+          "generator": "72c3f28892725f82e1b1f9adfb91561333faa3c5a72e97013eeb63d32062b2ca"
+        },
+        "report": "records/authored-5a3404eb24597e69b5b048e5/verification.json"
+      },
+      "build": {
+        "runId": "build-ba6d6b64-dea2-462c-bbbb-612a97991aa0",
+        "candidateId": "v002",
+        "usage": {
+          "schemaVersion": 2,
+          "runId": "build-ba6d6b64-dea2-462c-bbbb-612a97991aa0",
+          "source": "codex",
+          "runtime": "Codex Desktop",
+          "status": "measured",
+          "elapsedMs": 372399,
+          "elapsedKind": "wall-clock",
+          "scope": "Runtime-reported usage between the start baseline and finish snapshot of this session. In-flight or delayed usage, earlier conversation, other agents and later delivery are excluded. This is an observed interval, not a complete billed task total.",
+          "scopeComplete": false,
+          "observedTokens": {
+            "input_tokens": 5508626,
+            "cached_input_tokens": 5488384,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 8336,
+            "reasoning_output_tokens": 2744,
+            "total_tokens": 5516962
+          },
+          "tokens": {
+            "input_tokens": null,
+            "cached_input_tokens": null,
+            "cache_write_input_tokens": null,
+            "output_tokens": null,
+            "reasoning_output_tokens": null,
+            "total_tokens": null
+          },
+          "models": [
+            {
+              "provider": "openai",
+              "model": "gpt-6.2-astra",
+              "reasoningEffort": "xhigh",
+              "tokens": {
+                "input_tokens": 5508626,
+                "cached_input_tokens": 5488384,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 8336,
+                "reasoning_output_tokens": 2744,
+                "total_tokens": 5516962
+              },
+              "observations": 24
+            }
+          ],
+          "missingFields": [],
+          "issues": [],
+          "observations": 24
+        }
+      },
+      "process": "records/authored-5a3404eb24597e69b5b048e5/process.json",
+      "eventsCsv": "records/authored-5a3404eb24597e69b5b048e5/events.csv"
     }
   ]
 }

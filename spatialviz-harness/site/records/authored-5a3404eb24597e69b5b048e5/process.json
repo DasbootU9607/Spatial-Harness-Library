@@ -1,0 +1,1464 @@
+{
+  "schemaVersion": 1,
+  "manifest": {
+    "sealed": true,
+    "id": "build-ba6d6b64-dea2-462c-bbbb-612a97991aa0",
+    "title": "FreeCAD construction / orbit",
+    "runKind": "[private value omitted]",
+    "harness": "spatialviz-harness",
+    "benchmark": null,
+    "category": null,
+    "taskType": null,
+    "skill": {
+      "id": "spatialviz-mechanical-system",
+      "sha256": "dbb46e4b8ed5242b481aa786b6652585be82f3f1e537f865b00db2a48e0f6280"
+    },
+    "status": "accepted",
+    "finalCandidateId": "v002",
+    "limitations": [
+      "Only recorder-mediated deliveries, commands and saved boundaries are observed; direct function calls, unwrapped commands and unsaved editor states are excluded.",
+      "Design notes are explicit author annotations, not internal reasoning."
+    ],
+    "captureGaps": []
+  },
+  "events": [
+    {
+      "id": "e000001",
+      "seq": 1,
+      "runId": "build-ba6d6b64-dea2-462c-bbbb-612a97991aa0",
+      "type": "run.created",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": null,
+      "details": {},
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000002",
+      "seq": 2,
+      "runId": "build-ba6d6b64-dea2-462c-bbbb-612a97991aa0",
+      "type": "collector.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": null,
+      "details": {},
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000003",
+      "seq": 3,
+      "runId": "build-ba6d6b64-dea2-462c-bbbb-612a97991aa0",
+      "type": "skill.attached",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": null,
+      "details": {
+        "sha256": "dbb46e4b8ed5242b481aa786b6652585be82f3f1e537f865b00db2a48e0f6280",
+        "skill": "spatialviz-mechanical-system"
+      },
+      "evidenceRefs": [
+        {
+          "id": "17c1156cd4e194d6",
+          "sha256": "dbb46e4b8ed5242b481aa786b6652585be82f3f1e537f865b00db2a48e0f6280",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000004",
+      "seq": 4,
+      "runId": "build-ba6d6b64-dea2-462c-bbbb-612a97991aa0",
+      "type": "resource.read",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "857e9e4f-0f28-497c-b0a8-f9062dfb385c",
+      "candidateId": null,
+      "details": {
+        "outcome": "delivered",
+        "label": "orbit.json",
+        "start": 1,
+        "end": 103,
+        "sha256": "48f4529559e470310e2c26a823cee7aca4e6dfcbc9df3297f7aed60175628c20",
+        "sourceSha256": "48f4529559e470310e2c26a823cee7aca4e6dfcbc9df3297f7aed60175628c20"
+      },
+      "evidenceRefs": [
+        {
+          "id": "5caf14db3b69705e",
+          "sha256": "48f4529559e470310e2c26a823cee7aca4e6dfcbc9df3297f7aed60175628c20",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000005",
+      "seq": 5,
+      "runId": "build-ba6d6b64-dea2-462c-bbbb-612a97991aa0",
+      "type": "resource.read",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "0ee0f684-14ca-4998-bdbf-3633801d70f9",
+      "candidateId": null,
+      "details": {
+        "outcome": "delivered",
+        "label": "system.json",
+        "start": 1,
+        "end": 103,
+        "sha256": "48f4529559e470310e2c26a823cee7aca4e6dfcbc9df3297f7aed60175628c20",
+        "sourceSha256": "48f4529559e470310e2c26a823cee7aca4e6dfcbc9df3297f7aed60175628c20"
+      },
+      "evidenceRefs": [
+        {
+          "id": "43dc205cf801279f",
+          "sha256": "48f4529559e470310e2c26a823cee7aca4e6dfcbc9df3297f7aed60175628c20",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000006",
+      "seq": 6,
+      "runId": "build-ba6d6b64-dea2-462c-bbbb-612a97991aa0",
+      "type": "design.note",
+      "actor": "author",
+      "origin": "agent_statement",
+      "actionId": null,
+      "candidateId": null,
+      "details": {
+        "goal": "Distinguish the planet's frame-relative spin from its axle's orbit around a locked sun.",
+        "sources": null,
+        "change": "How do the planet and its axle move?",
+        "reason": "Build the FreeCAD solids and photograph the reopened assembly.",
+        "expectedChecks": [
+          "Measure the native assembly and solve the printed motion question."
+        ]
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000007",
+      "seq": 7,
+      "runId": "build-ba6d6b64-dea2-462c-bbbb-612a97991aa0",
+      "type": "command.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "0caa699e-7729-4841-ba98-2616229ec176",
+      "candidateId": null,
+      "details": {
+        "label": "python",
+        "kind": "Build, reopen and photograph FreeCAD assembly"
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000008",
+      "seq": 8,
+      "runId": "build-ba6d6b64-dea2-462c-bbbb-612a97991aa0",
+      "type": "command.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "0caa699e-7729-4841-ba98-2616229ec176",
+      "candidateId": null,
+      "details": {
+        "commandEventId": "e000007",
+        "kind": "Build, reopen and photograph FreeCAD assembly",
+        "exitCode": 0,
+        "signal": null
+      },
+      "evidenceRefs": [
+        {
+          "id": "a43393fdcee6f1c2",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "availability": "local evidence; hash published"
+        },
+        {
+          "id": "a714dce5ee7ce1c9",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000009",
+      "seq": 9,
+      "runId": "build-ba6d6b64-dea2-462c-bbbb-612a97991aa0",
+      "type": "command.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "cac64a8b-c25f-4e73-bbcc-685125c14eb3",
+      "candidateId": null,
+      "details": {
+        "label": "python",
+        "kind": "Compose native viewport pixels"
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000010",
+      "seq": 10,
+      "runId": "build-ba6d6b64-dea2-462c-bbbb-612a97991aa0",
+      "type": "command.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "cac64a8b-c25f-4e73-bbcc-685125c14eb3",
+      "candidateId": null,
+      "details": {
+        "commandEventId": "e000009",
+        "kind": "Compose native viewport pixels",
+        "exitCode": 0,
+        "signal": null
+      },
+      "evidenceRefs": [
+        {
+          "id": "584aa59df544ac78",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "availability": "local evidence; hash published"
+        },
+        {
+          "id": "ec639c305eb4b096",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000011",
+      "seq": 11,
+      "runId": "build-ba6d6b64-dea2-462c-bbbb-612a97991aa0",
+      "type": "design.note",
+      "actor": "author",
+      "origin": "agent_statement",
+      "actionId": null,
+      "candidateId": null,
+      "details": {
+        "goal": "Distinguish the planet's frame-relative spin from its axle's orbit around a locked sun.",
+        "sources": [
+          "MentalAnimation/MechanicalSystem/Level0/16",
+          "MentalAnimation/MechanicalSystem/Level0/17",
+          "MentalAnimation/MechanicalSystem/Level0/0"
+        ],
+        "change": "Built the native solids and physical hardware. Reopened the saved document and captured its front and assembly views.",
+        "reason": "Pose checks and kinematic inference are recorded separately.",
+        "expectedChecks": [
+          "Valid positive-volume solid: S  |  gear",
+          "Valid positive-volume solid: P  |  gear",
+          "Valid positive-volume solid: H  |  carrier",
+          "Valid positive-volume solid: Fixed rear mounting plate",
+          "Valid positive-volume solid: Axle at S, H",
+          "Valid positive-volume solid: Frame bearing at S, H",
+          "Valid positive-volume solid: Axle at P",
+          "Valid positive-volume solid: Frame bolts on S",
+          "Counted 48 physical flank crossings for 24 teeth on S",
+          "Counted 32 physical flank crossings for 16 teeth on P",
+          "Native pitch distance 40.000 mm at S/P",
+          "Working tooth faces overlap axially",
+          "Meshed B-reps at the displayed pose have 0.000047 cubic mm interference",
+          "Carrier bore locates a mesh axle on H",
+          "Carrier bore locates a mesh axle on H",
+          "Two through-bolts clamp S to the fixed frame"
+        ]
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000012",
+      "seq": 12,
+      "runId": "build-ba6d6b64-dea2-462c-bbbb-612a97991aa0",
+      "type": "candidate.saved",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "bb70d37f-4aaa-41f7-ac33-667bf84ae02a",
+      "candidateId": "v001",
+      "details": {
+        "sha256": "b04df74573e4be97e852e57b1117bb052808eb6b226ea37443def173f975a969",
+        "parentId": null,
+        "parentBasis": null,
+        "changes": [
+          "specification",
+          "geometry",
+          "question",
+          "options",
+          "answer",
+          "contract",
+          "rendering",
+          "generator"
+        ],
+        "fingerprints": {
+          "specification": "b04df74573e4be97e852e57b1117bb052808eb6b226ea37443def173f975a969",
+          "geometry": "e69bb1fb343638e5401178ed8e6b810f377015887f0aaa24c27e1a74d3a07a49",
+          "question": "5c0cced01b59217b4a6a472f9c11eb461fbee1b47ee1be8b924c3ca203dd081d",
+          "options": "57e3e167224db1b9b327bf8985fd3c2e851fba43e6c139efc55324c04733ce18",
+          "answer": "30dc04085764e607aa1ad1b4cee98d6146aa6618c98a3f45638fb456762b1b32",
+          "contract": "d16e2f83f7844bc78d3f0520c99c8000cd5bba7d4a8d5c64b1d276d93f241b7a",
+          "rendering": "99680934593d329098a9b5c38bc470a58003c1aaea05c8703b6ee6d7d2b0a376",
+          "generator": "2368f0c22912295f157060327c1cab806463ae8abc3fa29f962d26acd4c386c6"
+        },
+        "previewUnavailable": null
+      },
+      "evidenceRefs": [
+        {
+          "id": "b93c79a93a16b62c",
+          "sha256": "b04df74573e4be97e852e57b1117bb052808eb6b226ea37443def173f975a969",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000013",
+      "seq": 13,
+      "runId": "build-ba6d6b64-dea2-462c-bbbb-612a97991aa0",
+      "type": "build.saved",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "bb70d37f-4aaa-41f7-ac33-667bf84ae02a",
+      "candidateId": "v001",
+      "details": {},
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000014",
+      "seq": 14,
+      "runId": "build-ba6d6b64-dea2-462c-bbbb-612a97991aa0",
+      "type": "render.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "c40af77b-75f6-4d56-b436-8b94c8c3a8bd",
+      "candidateId": "v001",
+      "details": {
+        "renderer": {
+          "id": "mechanical-system",
+          "revision": "9253d4ac478dc1d75a4c69e808f4e750250b0a0746e065191b386dc70b296f6c"
+        }
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000015",
+      "seq": 15,
+      "runId": "build-ba6d6b64-dea2-462c-bbbb-612a97991aa0",
+      "type": "render.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "c40af77b-75f6-4d56-b436-8b94c8c3a8bd",
+      "candidateId": "v001",
+      "details": {
+        "sha256": "a038ca90d944d4f108b53072fddcd18faf1b6bc05f10a5ed67b53cf58981fda3",
+        "renderer": {
+          "id": "mechanical-system",
+          "revision": "9253d4ac478dc1d75a4c69e808f4e750250b0a0746e065191b386dc70b296f6c"
+        },
+        "specification": "b04df74573e4be97e852e57b1117bb052808eb6b226ea37443def173f975a969",
+        "rendering": "99680934593d329098a9b5c38bc470a58003c1aaea05c8703b6ee6d7d2b0a376"
+      },
+      "evidenceRefs": [
+        {
+          "id": "6f969b0b18002caa",
+          "sha256": "a038ca90d944d4f108b53072fddcd18faf1b6bc05f10a5ed67b53cf58981fda3",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000016",
+      "seq": 16,
+      "runId": "build-ba6d6b64-dea2-462c-bbbb-612a97991aa0",
+      "type": "command.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "ddd44aab-f1cc-40af-9062-fb91c825522b",
+      "candidateId": "v001",
+      "details": {
+        "label": "node.exe",
+        "kind": "verification"
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000017",
+      "seq": 17,
+      "runId": "build-ba6d6b64-dea2-462c-bbbb-612a97991aa0",
+      "type": "command.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "ddd44aab-f1cc-40af-9062-fb91c825522b",
+      "candidateId": "v001",
+      "details": {
+        "commandEventId": "e000016",
+        "kind": "verification",
+        "exitCode": 0,
+        "signal": null
+      },
+      "evidenceRefs": [
+        {
+          "id": "9e56e6b79eeb4ca1",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "availability": "local evidence; hash published"
+        },
+        {
+          "id": "5713dddee32b3718",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000018",
+      "seq": 18,
+      "runId": "build-ba6d6b64-dea2-462c-bbbb-612a97991aa0",
+      "type": "test.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "ddd44aab-f1cc-40af-9062-fb91c825522b",
+      "candidateId": "v001",
+      "details": {
+        "commandEventId": "e000016",
+        "completedEventId": "e000017",
+        "verdict": "passed",
+        "status": "passed",
+        "checks": [
+          {
+            "name": "Candidate PNG matches the recorded final render",
+            "verdict": "passed"
+          },
+          {
+            "name": "Fresh FreeCAD reopen reproduces all solid and interface checks",
+            "verdict": "passed"
+          },
+          {
+            "name": "Valid positive-volume solid: S  |  gear",
+            "verdict": "passed"
+          },
+          {
+            "name": "Valid positive-volume solid: P  |  gear",
+            "verdict": "passed"
+          },
+          {
+            "name": "Valid positive-volume solid: H  |  carrier",
+            "verdict": "passed"
+          },
+          {
+            "name": "Valid positive-volume solid: Fixed rear mounting plate",
+            "verdict": "passed"
+          },
+          {
+            "name": "Valid positive-volume solid: Axle at S, H",
+            "verdict": "passed"
+          },
+          {
+            "name": "Valid positive-volume solid: Frame bearing at S, H",
+            "verdict": "passed"
+          },
+          {
+            "name": "Valid positive-volume solid: Axle at P",
+            "verdict": "passed"
+          },
+          {
+            "name": "Valid positive-volume solid: Frame bolts on S",
+            "verdict": "passed"
+          },
+          {
+            "name": "Counted 48 physical flank crossings for 24 teeth on S",
+            "verdict": "passed"
+          },
+          {
+            "name": "Counted 32 physical flank crossings for 16 teeth on P",
+            "verdict": "passed"
+          },
+          {
+            "name": "Native pitch distance 40.000 mm at S/P",
+            "verdict": "passed"
+          },
+          {
+            "name": "Working tooth faces overlap axially",
+            "verdict": "passed"
+          },
+          {
+            "name": "Meshed B-reps at the displayed pose have 0.000047 cubic mm interference",
+            "verdict": "passed"
+          },
+          {
+            "name": "Carrier bore locates a mesh axle on H",
+            "verdict": "passed"
+          },
+          {
+            "name": "Carrier bore locates a mesh axle on H",
+            "verdict": "passed"
+          },
+          {
+            "name": "Two through-bolts clamp S to the fixed frame",
+            "verdict": "passed"
+          },
+          {
+            "name": "Printed working connections match measurements on the native assembly",
+            "verdict": "passed"
+          },
+          {
+            "name": "Displayed driver, outputs and interval match the delivered question",
+            "verdict": "passed"
+          },
+          {
+            "name": "Option A violates the motions derived from the final pixels",
+            "verdict": "passed"
+          },
+          {
+            "name": "Option B violates the motions derived from the final pixels",
+            "verdict": "passed"
+          },
+          {
+            "name": "Option C satisfies the motions derived from the final pixels",
+            "verdict": "passed"
+          },
+          {
+            "name": "Option D violates the motions derived from the final pixels",
+            "verdict": "passed"
+          },
+          {
+            "name": "One printed answer satisfies the visible constraints",
+            "verdict": "passed"
+          },
+          {
+            "name": "Native generator and verifier fingerprints match",
+            "verdict": "passed"
+          }
+        ],
+        "scope": "Reopen exact FCStd, measure rigid solids and interfaces, decode visible final PNG lettering, solve contact constraints and evaluate four printed options.",
+        "binding": "exact",
+        "bindingBasis": "exact candidate and full input fingerprints",
+        "testedFingerprints": {
+          "specification": "b04df74573e4be97e852e57b1117bb052808eb6b226ea37443def173f975a969",
+          "geometry": "e69bb1fb343638e5401178ed8e6b810f377015887f0aaa24c27e1a74d3a07a49",
+          "question": "5c0cced01b59217b4a6a472f9c11eb461fbee1b47ee1be8b924c3ca203dd081d",
+          "options": "57e3e167224db1b9b327bf8985fd3c2e851fba43e6c139efc55324c04733ce18",
+          "answer": "30dc04085764e607aa1ad1b4cee98d6146aa6618c98a3f45638fb456762b1b32",
+          "contract": "d16e2f83f7844bc78d3f0520c99c8000cd5bba7d4a8d5c64b1d276d93f241b7a",
+          "rendering": "99680934593d329098a9b5c38bc470a58003c1aaea05c8703b6ee6d7d2b0a376",
+          "generator": "2368f0c22912295f157060327c1cab806463ae8abc3fa29f962d26acd4c386c6"
+        },
+        "verifier": {
+          "id": "mechanical-system",
+          "revision": "9253d4ac478dc1d75a4c69e808f4e750250b0a0746e065191b386dc70b296f6c"
+        },
+        "reportSha256": "4cf01d3c549b818bda9adb3be557af53c6ebedf098bb197818a42828d79a7204"
+      },
+      "evidenceRefs": [
+        {
+          "id": "dfef4eaff8b7ae8b",
+          "sha256": "4cf01d3c549b818bda9adb3be557af53c6ebedf098bb197818a42828d79a7204",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000019",
+      "seq": 19,
+      "runId": "build-ba6d6b64-dea2-462c-bbbb-612a97991aa0",
+      "type": "visual.review",
+      "actor": "author",
+      "origin": "agent_statement",
+      "actionId": null,
+      "candidateId": "v001",
+      "details": {
+        "outcome": "failed",
+        "review": "The carrier is readable, but the orbit label should explicitly refer to its carried axle and distinguish frame spin."
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000020",
+      "seq": 20,
+      "runId": "build-ba6d6b64-dea2-462c-bbbb-612a97991aa0",
+      "type": "resource.read",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "0e61fc0b-7634-4dc8-aa24-c51acea7b4c8",
+      "candidateId": null,
+      "details": {
+        "outcome": "delivered",
+        "label": "system.json",
+        "start": 1,
+        "end": 103,
+        "sha256": "48f4529559e470310e2c26a823cee7aca4e6dfcbc9df3297f7aed60175628c20",
+        "sourceSha256": "48f4529559e470310e2c26a823cee7aca4e6dfcbc9df3297f7aed60175628c20"
+      },
+      "evidenceRefs": [
+        {
+          "id": "11fe1adb7e07da86",
+          "sha256": "48f4529559e470310e2c26a823cee7aca4e6dfcbc9df3297f7aed60175628c20",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000021",
+      "seq": 21,
+      "runId": "build-ba6d6b64-dea2-462c-bbbb-612a97991aa0",
+      "type": "design.note",
+      "actor": "author",
+      "origin": "agent_statement",
+      "actionId": null,
+      "candidateId": null,
+      "details": {
+        "goal": "Distinguish the planet's frame-relative spin from its axle's orbit around a locked sun.",
+        "sources": null,
+        "change": "How do the planet and its axle move?",
+        "reason": "Build the FreeCAD solids and photograph the reopened assembly.",
+        "expectedChecks": [
+          "Measure the native assembly and solve the printed motion question."
+        ]
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000022",
+      "seq": 22,
+      "runId": "build-ba6d6b64-dea2-462c-bbbb-612a97991aa0",
+      "type": "command.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "3e73eccd-1be8-4681-8c40-f673d72a72b7",
+      "candidateId": null,
+      "details": {
+        "label": "python",
+        "kind": "Build, reopen and photograph FreeCAD assembly"
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000023",
+      "seq": 23,
+      "runId": "build-ba6d6b64-dea2-462c-bbbb-612a97991aa0",
+      "type": "command.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "3e73eccd-1be8-4681-8c40-f673d72a72b7",
+      "candidateId": null,
+      "details": {
+        "commandEventId": "e000022",
+        "kind": "Build, reopen and photograph FreeCAD assembly",
+        "exitCode": 0,
+        "signal": null
+      },
+      "evidenceRefs": [
+        {
+          "id": "a8daae1631632e82",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "availability": "local evidence; hash published"
+        },
+        {
+          "id": "1928605791000898",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000024",
+      "seq": 24,
+      "runId": "build-ba6d6b64-dea2-462c-bbbb-612a97991aa0",
+      "type": "command.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "bdd6aad6-9507-4582-9a74-2df796d9a3de",
+      "candidateId": null,
+      "details": {
+        "label": "python",
+        "kind": "Compose native viewport pixels"
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000025",
+      "seq": 25,
+      "runId": "build-ba6d6b64-dea2-462c-bbbb-612a97991aa0",
+      "type": "command.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "bdd6aad6-9507-4582-9a74-2df796d9a3de",
+      "candidateId": null,
+      "details": {
+        "commandEventId": "e000024",
+        "kind": "Compose native viewport pixels",
+        "exitCode": 0,
+        "signal": null
+      },
+      "evidenceRefs": [
+        {
+          "id": "764a2626e9e23da7",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "availability": "local evidence; hash published"
+        },
+        {
+          "id": "c678895bc31f3228",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000026",
+      "seq": 26,
+      "runId": "build-ba6d6b64-dea2-462c-bbbb-612a97991aa0",
+      "type": "design.note",
+      "actor": "author",
+      "origin": "agent_statement",
+      "actionId": null,
+      "candidateId": null,
+      "details": {
+        "goal": "Distinguish the planet's frame-relative spin from its axle's orbit around a locked sun.",
+        "sources": [
+          "MentalAnimation/MechanicalSystem/Level0/16",
+          "MentalAnimation/MechanicalSystem/Level0/17",
+          "MentalAnimation/MechanicalSystem/Level0/0"
+        ],
+        "change": "Built the native solids and physical hardware. Reopened the saved document and captured its front and assembly views.",
+        "reason": "Pose checks and kinematic inference are recorded separately.",
+        "expectedChecks": [
+          "Valid positive-volume solid: S  |  gear",
+          "Valid positive-volume solid: P  |  gear",
+          "Valid positive-volume solid: H  |  carrier",
+          "Valid positive-volume solid: Fixed rear mounting plate",
+          "Valid positive-volume solid: Axle at S, H",
+          "Valid positive-volume solid: Frame bearing at S, H",
+          "Valid positive-volume solid: Axle at P",
+          "Valid positive-volume solid: Frame bolts on S",
+          "Counted 48 physical flank crossings for 24 teeth on S",
+          "Counted 32 physical flank crossings for 16 teeth on P",
+          "Native pitch distance 40.000 mm at S/P",
+          "Working tooth faces overlap axially",
+          "Meshed B-reps at the displayed pose have 0.000047 cubic mm interference",
+          "Carrier bore locates a mesh axle on H",
+          "Carrier bore locates a mesh axle on H",
+          "Two through-bolts clamp S to the fixed frame"
+        ]
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000027",
+      "seq": 27,
+      "runId": "build-ba6d6b64-dea2-462c-bbbb-612a97991aa0",
+      "type": "candidate.saved",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "d60dbe72-00f6-4496-9785-a6bcdb9bf698",
+      "candidateId": "v002",
+      "details": {
+        "sha256": "5a3404eb24597e69b5b048e5bd3251d5cd830b4b152ad6468b2c7e26895c872e",
+        "parentId": "v001",
+        "parentBasis": "Correct the observed model, image or validation issue and recheck the native assembly.",
+        "changes": [
+          "specification",
+          "question",
+          "rendering",
+          "generator"
+        ],
+        "fingerprints": {
+          "specification": "5a3404eb24597e69b5b048e5bd3251d5cd830b4b152ad6468b2c7e26895c872e",
+          "geometry": "e69bb1fb343638e5401178ed8e6b810f377015887f0aaa24c27e1a74d3a07a49",
+          "question": "9d3cb5a11a6af1bb89313ba28c8a856186301cfd81029954b0b8e105afe22a04",
+          "options": "57e3e167224db1b9b327bf8985fd3c2e851fba43e6c139efc55324c04733ce18",
+          "answer": "30dc04085764e607aa1ad1b4cee98d6146aa6618c98a3f45638fb456762b1b32",
+          "contract": "d16e2f83f7844bc78d3f0520c99c8000cd5bba7d4a8d5c64b1d276d93f241b7a",
+          "rendering": "f0b11ea3daf256e0108b993c8e805ff1f0bdd5cc370f06e4915c4d1fbce5e925",
+          "generator": "72c3f28892725f82e1b1f9adfb91561333faa3c5a72e97013eeb63d32062b2ca"
+        },
+        "previewUnavailable": null
+      },
+      "evidenceRefs": [
+        {
+          "id": "a7495c79d29212d7",
+          "sha256": "5a3404eb24597e69b5b048e5bd3251d5cd830b4b152ad6468b2c7e26895c872e",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000028",
+      "seq": 28,
+      "runId": "build-ba6d6b64-dea2-462c-bbbb-612a97991aa0",
+      "type": "build.saved",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "d60dbe72-00f6-4496-9785-a6bcdb9bf698",
+      "candidateId": "v002",
+      "details": {},
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000029",
+      "seq": 29,
+      "runId": "build-ba6d6b64-dea2-462c-bbbb-612a97991aa0",
+      "type": "render.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "cde354a1-77aa-4518-98f7-54a9bcdcdacf",
+      "candidateId": "v002",
+      "details": {
+        "renderer": {
+          "id": "mechanical-system",
+          "revision": "500d731287cbe10fedf6925df3b9322c62a40b177fc9d2706f22eae6e3aec23c"
+        }
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000030",
+      "seq": 30,
+      "runId": "build-ba6d6b64-dea2-462c-bbbb-612a97991aa0",
+      "type": "render.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "cde354a1-77aa-4518-98f7-54a9bcdcdacf",
+      "candidateId": "v002",
+      "details": {
+        "sha256": "c6e63914a8a2f0f7115d9c2feec86b1d72cad3e08aad647a2d3ac01ef55bb320",
+        "renderer": {
+          "id": "mechanical-system",
+          "revision": "500d731287cbe10fedf6925df3b9322c62a40b177fc9d2706f22eae6e3aec23c"
+        },
+        "specification": "5a3404eb24597e69b5b048e5bd3251d5cd830b4b152ad6468b2c7e26895c872e",
+        "rendering": "f0b11ea3daf256e0108b993c8e805ff1f0bdd5cc370f06e4915c4d1fbce5e925"
+      },
+      "evidenceRefs": [
+        {
+          "id": "dd1c9f7374d55815",
+          "sha256": "c6e63914a8a2f0f7115d9c2feec86b1d72cad3e08aad647a2d3ac01ef55bb320",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000031",
+      "seq": 31,
+      "runId": "build-ba6d6b64-dea2-462c-bbbb-612a97991aa0",
+      "type": "report.previous",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "711732ad-089a-4b4f-809e-405e5196dae1",
+      "candidateId": null,
+      "details": {
+        "sha256": "4cf01d3c549b818bda9adb3be557af53c6ebedf098bb197818a42828d79a7204"
+      },
+      "evidenceRefs": [
+        {
+          "id": "510a4445d300c327",
+          "sha256": "4cf01d3c549b818bda9adb3be557af53c6ebedf098bb197818a42828d79a7204",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000032",
+      "seq": 32,
+      "runId": "build-ba6d6b64-dea2-462c-bbbb-612a97991aa0",
+      "type": "command.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "711732ad-089a-4b4f-809e-405e5196dae1",
+      "candidateId": "v002",
+      "details": {
+        "label": "node.exe",
+        "kind": "verification"
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000033",
+      "seq": 33,
+      "runId": "build-ba6d6b64-dea2-462c-bbbb-612a97991aa0",
+      "type": "command.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "711732ad-089a-4b4f-809e-405e5196dae1",
+      "candidateId": "v002",
+      "details": {
+        "commandEventId": "e000032",
+        "kind": "verification",
+        "exitCode": 0,
+        "signal": null
+      },
+      "evidenceRefs": [
+        {
+          "id": "ac1fb2e90d450ea2",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "availability": "local evidence; hash published"
+        },
+        {
+          "id": "b395cea0b46e42ad",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000034",
+      "seq": 34,
+      "runId": "build-ba6d6b64-dea2-462c-bbbb-612a97991aa0",
+      "type": "test.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "711732ad-089a-4b4f-809e-405e5196dae1",
+      "candidateId": "v002",
+      "details": {
+        "commandEventId": "e000032",
+        "completedEventId": "e000033",
+        "verdict": "passed",
+        "status": "passed",
+        "checks": [
+          {
+            "name": "Candidate PNG matches the recorded final render",
+            "verdict": "passed"
+          },
+          {
+            "name": "Fresh FreeCAD reopen reproduces all solid and interface checks",
+            "verdict": "passed"
+          },
+          {
+            "name": "Valid positive-volume solid: S  |  gear",
+            "verdict": "passed"
+          },
+          {
+            "name": "Valid positive-volume solid: P  |  gear",
+            "verdict": "passed"
+          },
+          {
+            "name": "Valid positive-volume solid: H  |  carrier",
+            "verdict": "passed"
+          },
+          {
+            "name": "Valid positive-volume solid: Fixed rear mounting plate",
+            "verdict": "passed"
+          },
+          {
+            "name": "Valid positive-volume solid: Axle at S, H",
+            "verdict": "passed"
+          },
+          {
+            "name": "Valid positive-volume solid: Frame bearing at S, H",
+            "verdict": "passed"
+          },
+          {
+            "name": "Valid positive-volume solid: Axle at P",
+            "verdict": "passed"
+          },
+          {
+            "name": "Valid positive-volume solid: Frame bolts on S",
+            "verdict": "passed"
+          },
+          {
+            "name": "Counted 48 physical flank crossings for 24 teeth on S",
+            "verdict": "passed"
+          },
+          {
+            "name": "Counted 32 physical flank crossings for 16 teeth on P",
+            "verdict": "passed"
+          },
+          {
+            "name": "Native pitch distance 40.000 mm at S/P",
+            "verdict": "passed"
+          },
+          {
+            "name": "Working tooth faces overlap axially",
+            "verdict": "passed"
+          },
+          {
+            "name": "Meshed B-reps at the displayed pose have 0.000047 cubic mm interference",
+            "verdict": "passed"
+          },
+          {
+            "name": "Carrier bore locates a mesh axle on H",
+            "verdict": "passed"
+          },
+          {
+            "name": "Carrier bore locates a mesh axle on H",
+            "verdict": "passed"
+          },
+          {
+            "name": "Two through-bolts clamp S to the fixed frame",
+            "verdict": "passed"
+          },
+          {
+            "name": "Printed working connections match measurements on the native assembly",
+            "verdict": "passed"
+          },
+          {
+            "name": "Displayed driver, outputs and interval match the delivered question",
+            "verdict": "passed"
+          },
+          {
+            "name": "Option A violates the motions derived from the final pixels",
+            "verdict": "passed"
+          },
+          {
+            "name": "Option B violates the motions derived from the final pixels",
+            "verdict": "passed"
+          },
+          {
+            "name": "Option C satisfies the motions derived from the final pixels",
+            "verdict": "passed"
+          },
+          {
+            "name": "Option D violates the motions derived from the final pixels",
+            "verdict": "passed"
+          },
+          {
+            "name": "One printed answer satisfies the visible constraints",
+            "verdict": "passed"
+          },
+          {
+            "name": "Native generator and verifier fingerprints match",
+            "verdict": "passed"
+          }
+        ],
+        "scope": "Reopen exact FCStd, measure rigid solids and interfaces, decode visible final PNG lettering, solve contact constraints and evaluate four printed options.",
+        "binding": "exact",
+        "bindingBasis": "exact candidate and full input fingerprints",
+        "testedFingerprints": {
+          "specification": "5a3404eb24597e69b5b048e5bd3251d5cd830b4b152ad6468b2c7e26895c872e",
+          "geometry": "e69bb1fb343638e5401178ed8e6b810f377015887f0aaa24c27e1a74d3a07a49",
+          "question": "9d3cb5a11a6af1bb89313ba28c8a856186301cfd81029954b0b8e105afe22a04",
+          "options": "57e3e167224db1b9b327bf8985fd3c2e851fba43e6c139efc55324c04733ce18",
+          "answer": "30dc04085764e607aa1ad1b4cee98d6146aa6618c98a3f45638fb456762b1b32",
+          "contract": "d16e2f83f7844bc78d3f0520c99c8000cd5bba7d4a8d5c64b1d276d93f241b7a",
+          "rendering": "f0b11ea3daf256e0108b993c8e805ff1f0bdd5cc370f06e4915c4d1fbce5e925",
+          "generator": "72c3f28892725f82e1b1f9adfb91561333faa3c5a72e97013eeb63d32062b2ca"
+        },
+        "verifier": {
+          "id": "mechanical-system",
+          "revision": "500d731287cbe10fedf6925df3b9322c62a40b177fc9d2706f22eae6e3aec23c"
+        },
+        "reportSha256": "fcead11cc8263c8432ef63bc6c80589658510434f3d16e30f22d1637543bbbaa"
+      },
+      "evidenceRefs": [
+        {
+          "id": "f1ccb89a67451135",
+          "sha256": "fcead11cc8263c8432ef63bc6c80589658510434f3d16e30f22d1637543bbbaa",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000035",
+      "seq": 35,
+      "runId": "build-ba6d6b64-dea2-462c-bbbb-612a97991aa0",
+      "type": "visual.review",
+      "actor": "author",
+      "origin": "agent_statement",
+      "actionId": null,
+      "candidateId": "v002",
+      "details": {
+        "outcome": "passed",
+        "review": "Both bolts in S, the carrier pivot, planet bearing, gear mesh and the distinct frame-spin and carried-axle labels are visible. Independent PNG-only reader: H carries the axle CCW. Its upward velocity at the right-hand position must be canceled at the left contact against fixed S. The planet spins CCW in the frame. Selected C."
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000036",
+      "seq": 36,
+      "runId": "build-ba6d6b64-dea2-462c-bbbb-612a97991aa0",
+      "type": "run.finished",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": "v002",
+      "details": {
+        "outcome": "accepted",
+        "finalCandidateId": "v002"
+      },
+      "evidenceRefs": []
+    }
+  ],
+  "candidates": [
+    {
+      "id": "v001",
+      "parentId": null,
+      "parentBasis": null,
+      "sha256": "b04df74573e4be97e852e57b1117bb052808eb6b226ea37443def173f975a969",
+      "fingerprints": {
+        "specification": "b04df74573e4be97e852e57b1117bb052808eb6b226ea37443def173f975a969",
+        "geometry": "e69bb1fb343638e5401178ed8e6b810f377015887f0aaa24c27e1a74d3a07a49",
+        "question": "5c0cced01b59217b4a6a472f9c11eb461fbee1b47ee1be8b924c3ca203dd081d",
+        "options": "57e3e167224db1b9b327bf8985fd3c2e851fba43e6c139efc55324c04733ce18",
+        "answer": "30dc04085764e607aa1ad1b4cee98d6146aa6618c98a3f45638fb456762b1b32",
+        "contract": "d16e2f83f7844bc78d3f0520c99c8000cd5bba7d4a8d5c64b1d276d93f241b7a",
+        "rendering": "99680934593d329098a9b5c38bc470a58003c1aaea05c8703b6ee6d7d2b0a376",
+        "generator": "2368f0c22912295f157060327c1cab806463ae8abc3fa29f962d26acd4c386c6"
+      },
+      "previewUnavailable": null,
+      "changes": [
+        "specification",
+        "geometry",
+        "question",
+        "options",
+        "answer",
+        "contract",
+        "rendering",
+        "generator"
+      ],
+      "preview": {
+        "candidateId": "v001",
+        "specification": "b04df74573e4be97e852e57b1117bb052808eb6b226ea37443def173f975a969",
+        "rendering": "99680934593d329098a9b5c38bc470a58003c1aaea05c8703b6ee6d7d2b0a376",
+        "renderer": {
+          "id": "mechanical-system",
+          "revision": "9253d4ac478dc1d75a4c69e808f4e750250b0a0746e065191b386dc70b296f6c"
+        },
+        "sha256": "a038ca90d944d4f108b53072fddcd18faf1b6bc05f10a5ed67b53cf58981fda3",
+        "path": "records/authored-5a3404eb24597e69b5b048e5/v001-a038ca90d944d4f1.png",
+        "origin": "recorded-render"
+      }
+    },
+    {
+      "id": "v002",
+      "parentId": "v001",
+      "parentBasis": "Correct the observed model, image or validation issue and recheck the native assembly.",
+      "sha256": "5a3404eb24597e69b5b048e5bd3251d5cd830b4b152ad6468b2c7e26895c872e",
+      "fingerprints": {
+        "specification": "5a3404eb24597e69b5b048e5bd3251d5cd830b4b152ad6468b2c7e26895c872e",
+        "geometry": "e69bb1fb343638e5401178ed8e6b810f377015887f0aaa24c27e1a74d3a07a49",
+        "question": "9d3cb5a11a6af1bb89313ba28c8a856186301cfd81029954b0b8e105afe22a04",
+        "options": "57e3e167224db1b9b327bf8985fd3c2e851fba43e6c139efc55324c04733ce18",
+        "answer": "30dc04085764e607aa1ad1b4cee98d6146aa6618c98a3f45638fb456762b1b32",
+        "contract": "d16e2f83f7844bc78d3f0520c99c8000cd5bba7d4a8d5c64b1d276d93f241b7a",
+        "rendering": "f0b11ea3daf256e0108b993c8e805ff1f0bdd5cc370f06e4915c4d1fbce5e925",
+        "generator": "72c3f28892725f82e1b1f9adfb91561333faa3c5a72e97013eeb63d32062b2ca"
+      },
+      "previewUnavailable": null,
+      "changes": [
+        "specification",
+        "question",
+        "rendering",
+        "generator"
+      ],
+      "preview": {
+        "candidateId": "v002",
+        "specification": "5a3404eb24597e69b5b048e5bd3251d5cd830b4b152ad6468b2c7e26895c872e",
+        "rendering": "f0b11ea3daf256e0108b993c8e805ff1f0bdd5cc370f06e4915c4d1fbce5e925",
+        "renderer": {
+          "id": "mechanical-system",
+          "revision": "500d731287cbe10fedf6925df3b9322c62a40b177fc9d2706f22eae6e3aec23c"
+        },
+        "sha256": "c6e63914a8a2f0f7115d9c2feec86b1d72cad3e08aad647a2d3ac01ef55bb320",
+        "path": "records/authored-5a3404eb24597e69b5b048e5/v002-c6e63914a8a2f0f7.png",
+        "origin": "recorded-render"
+      }
+    }
+  ],
+  "tests": [
+    {
+      "id": "t001",
+      "actionId": "ddd44aab-f1cc-40af-9062-fb91c825522b",
+      "candidateId": "v001",
+      "testedFingerprints": {
+        "specification": "b04df74573e4be97e852e57b1117bb052808eb6b226ea37443def173f975a969",
+        "geometry": "e69bb1fb343638e5401178ed8e6b810f377015887f0aaa24c27e1a74d3a07a49",
+        "question": "5c0cced01b59217b4a6a472f9c11eb461fbee1b47ee1be8b924c3ca203dd081d",
+        "options": "57e3e167224db1b9b327bf8985fd3c2e851fba43e6c139efc55324c04733ce18",
+        "answer": "30dc04085764e607aa1ad1b4cee98d6146aa6618c98a3f45638fb456762b1b32",
+        "contract": "d16e2f83f7844bc78d3f0520c99c8000cd5bba7d4a8d5c64b1d276d93f241b7a",
+        "rendering": "99680934593d329098a9b5c38bc470a58003c1aaea05c8703b6ee6d7d2b0a376",
+        "generator": "2368f0c22912295f157060327c1cab806463ae8abc3fa29f962d26acd4c386c6"
+      },
+      "verifier": {
+        "id": "mechanical-system",
+        "revision": "9253d4ac478dc1d75a4c69e808f4e750250b0a0746e065191b386dc70b296f6c"
+      },
+      "reportSha256": "4cf01d3c549b818bda9adb3be557af53c6ebedf098bb197818a42828d79a7204",
+      "verdict": "passed",
+      "status": "passed",
+      "checks": [
+        {
+          "name": "Candidate PNG matches the recorded final render",
+          "verdict": "passed"
+        },
+        {
+          "name": "Fresh FreeCAD reopen reproduces all solid and interface checks",
+          "verdict": "passed"
+        },
+        {
+          "name": "Valid positive-volume solid: S  |  gear",
+          "verdict": "passed"
+        },
+        {
+          "name": "Valid positive-volume solid: P  |  gear",
+          "verdict": "passed"
+        },
+        {
+          "name": "Valid positive-volume solid: H  |  carrier",
+          "verdict": "passed"
+        },
+        {
+          "name": "Valid positive-volume solid: Fixed rear mounting plate",
+          "verdict": "passed"
+        },
+        {
+          "name": "Valid positive-volume solid: Axle at S, H",
+          "verdict": "passed"
+        },
+        {
+          "name": "Valid positive-volume solid: Frame bearing at S, H",
+          "verdict": "passed"
+        },
+        {
+          "name": "Valid positive-volume solid: Axle at P",
+          "verdict": "passed"
+        },
+        {
+          "name": "Valid positive-volume solid: Frame bolts on S",
+          "verdict": "passed"
+        },
+        {
+          "name": "Counted 48 physical flank crossings for 24 teeth on S",
+          "verdict": "passed"
+        },
+        {
+          "name": "Counted 32 physical flank crossings for 16 teeth on P",
+          "verdict": "passed"
+        },
+        {
+          "name": "Native pitch distance 40.000 mm at S/P",
+          "verdict": "passed"
+        },
+        {
+          "name": "Working tooth faces overlap axially",
+          "verdict": "passed"
+        },
+        {
+          "name": "Meshed B-reps at the displayed pose have 0.000047 cubic mm interference",
+          "verdict": "passed"
+        },
+        {
+          "name": "Carrier bore locates a mesh axle on H",
+          "verdict": "passed"
+        },
+        {
+          "name": "Carrier bore locates a mesh axle on H",
+          "verdict": "passed"
+        },
+        {
+          "name": "Two through-bolts clamp S to the fixed frame",
+          "verdict": "passed"
+        },
+        {
+          "name": "Printed working connections match measurements on the native assembly",
+          "verdict": "passed"
+        },
+        {
+          "name": "Displayed driver, outputs and interval match the delivered question",
+          "verdict": "passed"
+        },
+        {
+          "name": "Option A violates the motions derived from the final pixels",
+          "verdict": "passed"
+        },
+        {
+          "name": "Option B violates the motions derived from the final pixels",
+          "verdict": "passed"
+        },
+        {
+          "name": "Option C satisfies the motions derived from the final pixels",
+          "verdict": "passed"
+        },
+        {
+          "name": "Option D violates the motions derived from the final pixels",
+          "verdict": "passed"
+        },
+        {
+          "name": "One printed answer satisfies the visible constraints",
+          "verdict": "passed"
+        },
+        {
+          "name": "Native generator and verifier fingerprints match",
+          "verdict": "passed"
+        }
+      ],
+      "scope": "Reopen exact FCStd, measure rigid solids and interfaces, decode visible final PNG lettering, solve contact constraints and evaluate four printed options.",
+      "commandExitStatus": 0,
+      "binding": "exact",
+      "bindingBasis": "exact candidate and full input fingerprints",
+      "commandEventId": "e000016"
+    },
+    {
+      "id": "t002",
+      "actionId": "711732ad-089a-4b4f-809e-405e5196dae1",
+      "candidateId": "v002",
+      "testedFingerprints": {
+        "specification": "5a3404eb24597e69b5b048e5bd3251d5cd830b4b152ad6468b2c7e26895c872e",
+        "geometry": "e69bb1fb343638e5401178ed8e6b810f377015887f0aaa24c27e1a74d3a07a49",
+        "question": "9d3cb5a11a6af1bb89313ba28c8a856186301cfd81029954b0b8e105afe22a04",
+        "options": "57e3e167224db1b9b327bf8985fd3c2e851fba43e6c139efc55324c04733ce18",
+        "answer": "30dc04085764e607aa1ad1b4cee98d6146aa6618c98a3f45638fb456762b1b32",
+        "contract": "d16e2f83f7844bc78d3f0520c99c8000cd5bba7d4a8d5c64b1d276d93f241b7a",
+        "rendering": "f0b11ea3daf256e0108b993c8e805ff1f0bdd5cc370f06e4915c4d1fbce5e925",
+        "generator": "72c3f28892725f82e1b1f9adfb91561333faa3c5a72e97013eeb63d32062b2ca"
+      },
+      "verifier": {
+        "id": "mechanical-system",
+        "revision": "500d731287cbe10fedf6925df3b9322c62a40b177fc9d2706f22eae6e3aec23c"
+      },
+      "reportSha256": "fcead11cc8263c8432ef63bc6c80589658510434f3d16e30f22d1637543bbbaa",
+      "verdict": "passed",
+      "status": "passed",
+      "checks": [
+        {
+          "name": "Candidate PNG matches the recorded final render",
+          "verdict": "passed"
+        },
+        {
+          "name": "Fresh FreeCAD reopen reproduces all solid and interface checks",
+          "verdict": "passed"
+        },
+        {
+          "name": "Valid positive-volume solid: S  |  gear",
+          "verdict": "passed"
+        },
+        {
+          "name": "Valid positive-volume solid: P  |  gear",
+          "verdict": "passed"
+        },
+        {
+          "name": "Valid positive-volume solid: H  |  carrier",
+          "verdict": "passed"
+        },
+        {
+          "name": "Valid positive-volume solid: Fixed rear mounting plate",
+          "verdict": "passed"
+        },
+        {
+          "name": "Valid positive-volume solid: Axle at S, H",
+          "verdict": "passed"
+        },
+        {
+          "name": "Valid positive-volume solid: Frame bearing at S, H",
+          "verdict": "passed"
+        },
+        {
+          "name": "Valid positive-volume solid: Axle at P",
+          "verdict": "passed"
+        },
+        {
+          "name": "Valid positive-volume solid: Frame bolts on S",
+          "verdict": "passed"
+        },
+        {
+          "name": "Counted 48 physical flank crossings for 24 teeth on S",
+          "verdict": "passed"
+        },
+        {
+          "name": "Counted 32 physical flank crossings for 16 teeth on P",
+          "verdict": "passed"
+        },
+        {
+          "name": "Native pitch distance 40.000 mm at S/P",
+          "verdict": "passed"
+        },
+        {
+          "name": "Working tooth faces overlap axially",
+          "verdict": "passed"
+        },
+        {
+          "name": "Meshed B-reps at the displayed pose have 0.000047 cubic mm interference",
+          "verdict": "passed"
+        },
+        {
+          "name": "Carrier bore locates a mesh axle on H",
+          "verdict": "passed"
+        },
+        {
+          "name": "Carrier bore locates a mesh axle on H",
+          "verdict": "passed"
+        },
+        {
+          "name": "Two through-bolts clamp S to the fixed frame",
+          "verdict": "passed"
+        },
+        {
+          "name": "Printed working connections match measurements on the native assembly",
+          "verdict": "passed"
+        },
+        {
+          "name": "Displayed driver, outputs and interval match the delivered question",
+          "verdict": "passed"
+        },
+        {
+          "name": "Option A violates the motions derived from the final pixels",
+          "verdict": "passed"
+        },
+        {
+          "name": "Option B violates the motions derived from the final pixels",
+          "verdict": "passed"
+        },
+        {
+          "name": "Option C satisfies the motions derived from the final pixels",
+          "verdict": "passed"
+        },
+        {
+          "name": "Option D violates the motions derived from the final pixels",
+          "verdict": "passed"
+        },
+        {
+          "name": "One printed answer satisfies the visible constraints",
+          "verdict": "passed"
+        },
+        {
+          "name": "Native generator and verifier fingerprints match",
+          "verdict": "passed"
+        }
+      ],
+      "scope": "Reopen exact FCStd, measure rigid solids and interfaces, decode visible final PNG lettering, solve contact constraints and evaluate four printed options.",
+      "commandExitStatus": 0,
+      "binding": "exact",
+      "bindingBasis": "exact candidate and full input fingerprints",
+      "commandEventId": "e000032"
+    }
+  ],
+  "usage": {
+    "schemaVersion": 2,
+    "runId": "build-ba6d6b64-dea2-462c-bbbb-612a97991aa0",
+    "source": "codex",
+    "runtime": "Codex Desktop",
+    "status": "measured",
+    "elapsedMs": 372399,
+    "elapsedKind": "wall-clock",
+    "scope": "Runtime-reported usage between the start baseline and finish snapshot of this session. In-flight or delayed usage, earlier conversation, other agents and later delivery are excluded. This is an observed interval, not a complete billed task total.",
+    "scopeComplete": false,
+    "observedTokens": {
+      "input_tokens": 5508626,
+      "cached_input_tokens": 5488384,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 8336,
+      "reasoning_output_tokens": 2744,
+      "total_tokens": 5516962
+    },
+    "tokens": {
+      "input_tokens": null,
+      "cached_input_tokens": null,
+      "cache_write_input_tokens": null,
+      "output_tokens": null,
+      "reasoning_output_tokens": null,
+      "total_tokens": null
+    },
+    "models": [
+      {
+        "provider": "openai",
+        "model": "gpt-6.2-astra",
+        "reasoningEffort": "xhigh",
+        "tokens": {
+          "input_tokens": 5508626,
+          "cached_input_tokens": 5488384,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 8336,
+          "reasoning_output_tokens": 2744,
+          "total_tokens": 5516962
+        },
+        "observations": 24
+      }
+    ],
+    "missingFields": [],
+    "issues": [],
+    "observations": 24
+  },
+  "caseId": "authored-5a3404eb24597e69b5b048e5"
+}

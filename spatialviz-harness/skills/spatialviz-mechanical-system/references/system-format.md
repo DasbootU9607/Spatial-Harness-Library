@@ -1,4 +1,6 @@
-# Authored assembly format
+# Historical schematic assembly format
+
+This reference documents the archived SVG authoring system. Use the [native FreeCAD format](freecad-authoring.md) for formal generation.
 
 Use JSON with the following fields. All directions are expressed in the printed view. The solver derives the correct option. The description has no answer field.
 

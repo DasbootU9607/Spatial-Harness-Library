@@ -1,0 +1,45 @@
+{
+  "checks": [
+    "Valid positive-volume solid: A  |  gear",
+    "Valid positive-volume solid: B  |  gear",
+    "Valid positive-volume solid: D  |  drum",
+    "Valid positive-volume solid: W  |  weight",
+    "Valid positive-volume solid: Fixed rear mounting plate",
+    "Valid positive-volume solid: Axle at A",
+    "Valid positive-volume solid: Frame bearing at A",
+    "Valid positive-volume solid: Axle at B, D",
+    "Valid positive-volume solid: Frame bearing at B, D",
+    "Valid positive-volume solid: Feather key B / D",
+    "Valid positive-volume solid: Taut wrapped line D / W",
+    "Counted 32 physical flank crossings for 16 teeth on A",
+    "Counted 64 physical flank crossings for 32 teeth on B",
+    "Native pitch distance 48.000 mm at A/B",
+    "Working tooth faces overlap axially",
+    "Meshed B-reps at the displayed pose have 0.000001 cubic mm interference",
+    "A physical frame bearing locates a fixed mesh axle at A / B",
+    "A physical frame bearing locates a fixed mesh axle at A / B",
+    "Keyed hubs have a common axis",
+    "Solid key sits in the keyway of B",
+    "Solid key sits in the keyway of D",
+    "One vertical straight takeoff on the wrapped line",
+    "Wrapped line exits the drum tangentially above the load",
+    "Line meets the load and the barrel"
+  ],
+  "facts": [
+    "A 16T / B 32T : external mesh on frame.",
+    "B and D are keyed to one shaft.",
+    "W hangs from the taut right tangent of D."
+  ],
+  "meshMeasurements": [
+    {
+      "members": [
+        "A",
+        "B"
+      ],
+      "pitchDistanceMm": 48.0,
+      "overlapMm3": 7e-07
+    }
+  ],
+  "scope": "Reopened B-reps and mounted interfaces at the displayed pose. Tooth phasing is a pose check. Motion signs are derived separately from the printed problem.",
+  "freecadVersion": "1.0.2"
+}

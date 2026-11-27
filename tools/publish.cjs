@@ -29,6 +29,7 @@ function prepare({run,task,skill,sourceCaseIds: requestedReferences}){
   }
   const adapter=require('./observatory/adapters/'+meta.adapter+'.cjs');
   if(checked.test.verifier.revision!==adapter.identity.revision)throw Error('Verifier revision changed; run fresh verification');
+  const attachments=adapter.attachments?.(spec,run)||{};
   const id='authored-'+c.sha256.slice(0,24),relative=`${harness}/site/records/${id}`,dir=path.join(R.ROOT,relative);
   const urls={task:base+harness+'/task.html?id='+id,skill:base+harness+'/skill.html?id='+meta.id,process:base+harness+'/process.html?id='+id};
   return locked(()=>{
@@ -48,6 +49,10 @@ function prepare({run,task,skill,sourceCaseIds: requestedReferences}){
       previews.push(preview);process.candidates.find(x=>x.id===version.id).preview=preview;
     }
     if(!previews.some(x=>x.candidateId===c.id))throw Error('Final preview unavailable');
+    for(const [file,bytes] of Object.entries(attachments)){
+      if(!/^[a-zA-Z0-9_-]+\.(?:FCStd|json|png)$/.test(file)||['task.json','verification.json','delivery.json','process.json'].includes(file))throw Error('Invalid public attachment name');
+      fs.writeFileSync(path.join(dir,file),bytes,{flag:'wx'});
+    }
     fs.copyFileSync(task,path.join(dir,'task.json'));
     R.atomic(path.join(dir,'process.json'),process);fs.writeFileSync(path.join(dir,'events.csv'),P.csv(process));
     R.atomic(path.join(dir,'verification.json'),process.tests.find(x=>x.id===checked.test.id));

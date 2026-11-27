@@ -30,7 +30,10 @@ function discover(){
   const usesRecordedTool=(c.generationMethod==='SpatialViz-Bench official FreeCAD + OpenCV/Pillow pipeline'
    && (task.category!=='VisualPenetration' || hasPenetrationReceipt(task)))
    || (task.taskType==='PaperFolding' && c.generationMethod==='SpatialViz-Bench official Paper Folding Matplotlib/Pillow pipeline')
-   || (task.taskType==='MechanicalSystem' && task.verifier?.id==='mechanical-system' && c.generationMethod==='Spatial Harness mechanical contact schematics')
+   || (task.taskType==='MechanicalSystem' && task.verifier?.id==='mechanical-system' && c.generationMethod==='Spatial Harness original FreeCAD assembly'
+       && task.provenance.native?.renderer==='FreeCADGui activeView.saveImage' && task.rendering?.format==='png'
+       && ['assembly.FCStd','front-view.png','assembly-view.png','system.json','geometry.json'].every(f=>fs.existsSync(path.join(root,c.harnessId,'site',path.dirname(c.taskArtifact),f)))
+       && R.sha(fs.readFileSync(path.join(root,c.harnessId,'site',path.dirname(c.taskArtifact),'assembly.FCStd')))===task.provenance.native.modelSha256)
    || c.generationMethod===movementTools[task.taskType];
   c.exhibit=c.verification?.verdict==='passed' && usesRecordedTool && Boolean(task.provenance?.sourceRevision);
  }

@@ -1,0 +1,27 @@
+# FreeCAD constructions and official analogues
+
+All source IDs below begin with `MentalAnimation/MechanicalSystem/`. The official collection contains 40 items at each of Level0 and Level1. The [full audit](audit.json) gives all 80 source IDs, prompts, options, source keys, visible features and interpretation notes. These four questions are Spatial Harness originals.
+
+| Native assembly | Source analogues | Decisive mechanical relationship |
+|---|---|---|
+| [Left takeoff](../assets/freecad/hoist-left.json) | Level0/20–21 external mesh; Level1/32 and /34 winding load | A drives B through 16/32 external teeth. A feather key drives D. A CCW drum carries its left tangent down. |
+| [Right takeoff](../assets/freecad/hoist-right.json) | Same references | The identical components, driver, question and choices are retained. Rethreading the cord to the opposite rim moves the load under that tangent and lifts it. |
+| [Guided slide](../assets/freecad/guided-slide.json) | Level0/20 external mesh and Level0/34–35 crank/yoke | The external gear pair determines the intermediate crank sense. A CCW crank takes its top pin left. The slot transmits its horizontal velocity and the guides suppress rotation. |
+| [Orbiting pinion](../assets/freecad/orbit.json) | Level0/16–17 rolling around a fixed sun; Level0/0 separates spin and orbit | H carries P around bolted S. In the carrier frame S appears CW. The external mesh gives P CCW relative spin. Adding the CCW carrier gives CCW frame spin. |
+
+## Breadth and limits
+
+These documents physically implement exterior involute gears, fixed and moving bearings, carrier, shaft and feather key, frame bolts, winding drum, line and weight, crank pin, slotted yoke and horizontal guide sleeves. The winding examples reuse the load relation from the official cam questions. The upstream cam pair itself was not modeled.
+
+The other audited constructions remain design references: internal annuli and complete sun/planet/ring differentials, parallel-guided and twin planets, ratchets and detented sweep lugs, face and bevel selectors, worms and crossed helices, intermittent teeth, rolling wheels on racks, crossed racks, free reaction housings, pivoted rockers, inclined slider pairs, carrier-mounted indexing slots, opposing cams and shared spiral grooves. The [historical coverage map](coverage.md) describes their schematic exercises and links the archived builds. A formal question involving one of these unimplemented native interfaces needs a new part/interface builder, a measured native check and a visible condition the image solver understands.
+
+## Published models
+
+| Assembly | Official source suffixes | Derived output | Files and history |
+|---|---|---|---|
+| hoist-left | Level0/20, Level0/21, Level1/32, Level1/34 | D · down | [FCStd](https://dasbootu9607.github.io/Spatial-Harness-Library/spatialviz-harness/records/authored-e979ecaa5c35287a3747ec04/assembly.FCStd) · [Final PNG](https://dasbootu9607.github.io/Spatial-Harness-Library/spatialviz-harness/records/authored-e979ecaa5c35287a3747ec04/v002-c4cb75298a536c90.png) · [Question](https://dasbootu9607.github.io/Spatial-Harness-Library/spatialviz-harness/task.html?id=authored-e979ecaa5c35287a3747ec04) · [Build](https://dasbootu9607.github.io/Spatial-Harness-Library/spatialviz-harness/process.html?id=authored-e979ecaa5c35287a3747ec04) |
+| hoist-right | Level0/20, Level0/21, Level1/32, Level1/34 | B · up | [FCStd](https://dasbootu9607.github.io/Spatial-Harness-Library/spatialviz-harness/records/authored-f1b2e96852e4013b0a62f69e/assembly.FCStd) · [Final PNG](https://dasbootu9607.github.io/Spatial-Harness-Library/spatialviz-harness/records/authored-f1b2e96852e4013b0a62f69e/v002-5bf1d597d69ffbab.png) · [Question](https://dasbootu9607.github.io/Spatial-Harness-Library/spatialviz-harness/task.html?id=authored-f1b2e96852e4013b0a62f69e) · [Build](https://dasbootu9607.github.io/Spatial-Harness-Library/spatialviz-harness/process.html?id=authored-f1b2e96852e4013b0a62f69e) |
+| guided-slide | Level0/20, Level0/34, Level0/35 | C · left | [FCStd](https://dasbootu9607.github.io/Spatial-Harness-Library/spatialviz-harness/records/authored-5df35a34e74253b184d2b44b/assembly.FCStd) · [Final PNG](https://dasbootu9607.github.io/Spatial-Harness-Library/spatialviz-harness/records/authored-5df35a34e74253b184d2b44b/v002-1c94ad826cf5cda0.png) · [Question](https://dasbootu9607.github.io/Spatial-Harness-Library/spatialviz-harness/task.html?id=authored-5df35a34e74253b184d2b44b) · [Build](https://dasbootu9607.github.io/Spatial-Harness-Library/spatialviz-harness/process.html?id=authored-5df35a34e74253b184d2b44b) |
+| orbit | Level0/16, Level0/17, Level0/0 | C · P CCW / H CCW | [FCStd](https://dasbootu9607.github.io/Spatial-Harness-Library/spatialviz-harness/records/authored-5a3404eb24597e69b5b048e5/assembly.FCStd) · [Final PNG](https://dasbootu9607.github.io/Spatial-Harness-Library/spatialviz-harness/records/authored-5a3404eb24597e69b5b048e5/v002-c6e63914a8a2f0f7.png) · [Question](https://dasbootu9607.github.io/Spatial-Harness-Library/spatialviz-harness/task.html?id=authored-5a3404eb24597e69b5b048e5) · [Build](https://dasbootu9607.github.io/Spatial-Harness-Library/spatialviz-harness/process.html?id=authored-5a3404eb24597e69b5b048e5) |
+
+The archive also includes questions asking about full-cycle motion. The current exhibition physically checks the top-pin yoke at one instant. It does not report a simulated full turn. Independent coaxial branches and compound face selectors remain historical material.

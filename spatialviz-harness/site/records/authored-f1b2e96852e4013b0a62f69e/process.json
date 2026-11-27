@@ -1,0 +1,1592 @@
+{
+  "schemaVersion": 1,
+  "manifest": {
+    "sealed": true,
+    "id": "build-c2512c2a-e95e-4984-beb6-d3c4882657e6",
+    "title": "FreeCAD construction / hoist-right",
+    "runKind": "[private value omitted]",
+    "harness": "spatialviz-harness",
+    "benchmark": null,
+    "category": null,
+    "taskType": null,
+    "skill": {
+      "id": "spatialviz-mechanical-system",
+      "sha256": "dbb46e4b8ed5242b481aa786b6652585be82f3f1e537f865b00db2a48e0f6280"
+    },
+    "status": "accepted",
+    "finalCandidateId": "v002",
+    "limitations": [
+      "Only recorder-mediated deliveries, commands and saved boundaries are observed; direct function calls, unwrapped commands and unsaved editor states are excluded.",
+      "Design notes are explicit author annotations, not internal reasoning."
+    ],
+    "captureGaps": []
+  },
+  "events": [
+    {
+      "id": "e000001",
+      "seq": 1,
+      "runId": "build-c2512c2a-e95e-4984-beb6-d3c4882657e6",
+      "type": "run.created",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": null,
+      "details": {},
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000002",
+      "seq": 2,
+      "runId": "build-c2512c2a-e95e-4984-beb6-d3c4882657e6",
+      "type": "collector.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": null,
+      "details": {},
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000003",
+      "seq": 3,
+      "runId": "build-c2512c2a-e95e-4984-beb6-d3c4882657e6",
+      "type": "skill.attached",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": null,
+      "details": {
+        "sha256": "dbb46e4b8ed5242b481aa786b6652585be82f3f1e537f865b00db2a48e0f6280",
+        "skill": "spatialviz-mechanical-system"
+      },
+      "evidenceRefs": [
+        {
+          "id": "17c1156cd4e194d6",
+          "sha256": "dbb46e4b8ed5242b481aa786b6652585be82f3f1e537f865b00db2a48e0f6280",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000004",
+      "seq": 4,
+      "runId": "build-c2512c2a-e95e-4984-beb6-d3c4882657e6",
+      "type": "resource.read",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "2bb8885a-9e59-4a12-8b61-f866bd52aa16",
+      "candidateId": null,
+      "details": {
+        "outcome": "delivered",
+        "label": "hoist-right.json",
+        "start": 1,
+        "end": 113,
+        "sha256": "c850d01ada09b843310b776e93bd9ba836d4ddcd611c319c293e3be251df3e80",
+        "sourceSha256": "c850d01ada09b843310b776e93bd9ba836d4ddcd611c319c293e3be251df3e80"
+      },
+      "evidenceRefs": [
+        {
+          "id": "b76849e11025e7c5",
+          "sha256": "c850d01ada09b843310b776e93bd9ba836d4ddcd611c319c293e3be251df3e80",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000005",
+      "seq": 5,
+      "runId": "build-c2512c2a-e95e-4984-beb6-d3c4882657e6",
+      "type": "resource.read",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "980279af-a6d5-4dc8-aa1b-9ed9d611ea74",
+      "candidateId": null,
+      "details": {
+        "outcome": "delivered",
+        "label": "system.json",
+        "start": 1,
+        "end": 113,
+        "sha256": "c850d01ada09b843310b776e93bd9ba836d4ddcd611c319c293e3be251df3e80",
+        "sourceSha256": "c850d01ada09b843310b776e93bd9ba836d4ddcd611c319c293e3be251df3e80"
+      },
+      "evidenceRefs": [
+        {
+          "id": "51d9c1ff88e2d2fa",
+          "sha256": "c850d01ada09b843310b776e93bd9ba836d4ddcd611c319c293e3be251df3e80",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000006",
+      "seq": 6,
+      "runId": "build-c2512c2a-e95e-4984-beb6-d3c4882657e6",
+      "type": "design.note",
+      "actor": "author",
+      "origin": "agent_statement",
+      "actionId": null,
+      "candidateId": null,
+      "details": {
+        "goal": "Resolve the external mesh, rigid hub and takeoff tangent in the front view.",
+        "sources": null,
+        "change": "Which way does the suspended load move?",
+        "reason": "Build the FreeCAD solids and photograph the reopened assembly.",
+        "expectedChecks": [
+          "Measure the native assembly and solve the printed motion question."
+        ]
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000007",
+      "seq": 7,
+      "runId": "build-c2512c2a-e95e-4984-beb6-d3c4882657e6",
+      "type": "command.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "45d9f371-efdf-40a8-ad02-0f328477d1b2",
+      "candidateId": null,
+      "details": {
+        "label": "python",
+        "kind": "Build, reopen and photograph FreeCAD assembly"
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000008",
+      "seq": 8,
+      "runId": "build-c2512c2a-e95e-4984-beb6-d3c4882657e6",
+      "type": "command.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "45d9f371-efdf-40a8-ad02-0f328477d1b2",
+      "candidateId": null,
+      "details": {
+        "commandEventId": "e000007",
+        "kind": "Build, reopen and photograph FreeCAD assembly",
+        "exitCode": 0,
+        "signal": null
+      },
+      "evidenceRefs": [
+        {
+          "id": "230a97de365ff990",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "availability": "local evidence; hash published"
+        },
+        {
+          "id": "faa33a907d4c99b0",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000009",
+      "seq": 9,
+      "runId": "build-c2512c2a-e95e-4984-beb6-d3c4882657e6",
+      "type": "command.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "6b3ee4b3-8df9-409e-940a-8e0cbbef87aa",
+      "candidateId": null,
+      "details": {
+        "label": "python",
+        "kind": "Compose native viewport pixels"
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000010",
+      "seq": 10,
+      "runId": "build-c2512c2a-e95e-4984-beb6-d3c4882657e6",
+      "type": "command.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "6b3ee4b3-8df9-409e-940a-8e0cbbef87aa",
+      "candidateId": null,
+      "details": {
+        "commandEventId": "e000009",
+        "kind": "Compose native viewport pixels",
+        "exitCode": 0,
+        "signal": null
+      },
+      "evidenceRefs": [
+        {
+          "id": "88cdcd67d2612ced",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "availability": "local evidence; hash published"
+        },
+        {
+          "id": "dcd8503df36ef73d",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000011",
+      "seq": 11,
+      "runId": "build-c2512c2a-e95e-4984-beb6-d3c4882657e6",
+      "type": "design.note",
+      "actor": "author",
+      "origin": "agent_statement",
+      "actionId": null,
+      "candidateId": null,
+      "details": {
+        "goal": "Resolve the external mesh, rigid hub and takeoff tangent in the front view.",
+        "sources": [
+          "MentalAnimation/MechanicalSystem/Level0/20",
+          "MentalAnimation/MechanicalSystem/Level0/21",
+          "MentalAnimation/MechanicalSystem/Level1/32",
+          "MentalAnimation/MechanicalSystem/Level1/34"
+        ],
+        "change": "Built the native solids and physical hardware. Reopened the saved document and captured its front and assembly views.",
+        "reason": "Pose checks and kinematic inference are recorded separately.",
+        "expectedChecks": [
+          "Valid positive-volume solid: A  |  gear",
+          "Valid positive-volume solid: B  |  gear",
+          "Valid positive-volume solid: D  |  drum",
+          "Valid positive-volume solid: W  |  weight",
+          "Valid positive-volume solid: Fixed rear mounting plate",
+          "Valid positive-volume solid: Axle at A",
+          "Valid positive-volume solid: Frame bearing at A",
+          "Valid positive-volume solid: Axle at B, D",
+          "Valid positive-volume solid: Frame bearing at B, D",
+          "Valid positive-volume solid: Feather key B / D",
+          "Valid positive-volume solid: Taut wrapped line D / W",
+          "Counted 32 physical flank crossings for 16 teeth on A",
+          "Counted 64 physical flank crossings for 32 teeth on B",
+          "Native pitch distance 48.000 mm at A/B",
+          "Working tooth faces overlap axially",
+          "Meshed B-reps at the displayed pose have 0.000001 cubic mm interference",
+          "Keyed hubs have a common axis",
+          "Solid key sits in the keyway of B",
+          "Solid key sits in the keyway of D",
+          "One vertical straight takeoff on the wrapped line",
+          "Wrapped line exits the drum tangentially above the load",
+          "Line meets the load and the barrel"
+        ]
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000012",
+      "seq": 12,
+      "runId": "build-c2512c2a-e95e-4984-beb6-d3c4882657e6",
+      "type": "candidate.saved",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "14e64c5a-a4fa-4cee-a6bc-f03a2b7a0b0d",
+      "candidateId": "v001",
+      "details": {
+        "sha256": "9c7edd1426674e5075ed45bcc03733c0fb283c2f6b7767c0376d1550ab8df762",
+        "parentId": null,
+        "parentBasis": null,
+        "changes": [
+          "specification",
+          "geometry",
+          "question",
+          "options",
+          "answer",
+          "contract",
+          "rendering",
+          "generator"
+        ],
+        "fingerprints": {
+          "specification": "9c7edd1426674e5075ed45bcc03733c0fb283c2f6b7767c0376d1550ab8df762",
+          "geometry": "66813570e4014e1f1bc574085c641e60a9831b50585b4293d6e86fdd73364484",
+          "question": "dfa482d170b40d1fd6b9c2331e340c3bc0d77ca2bcdbbb4363ce6995338d3a6e",
+          "options": "8de907db99eb4db27b87aa5d2445b8b8d04f36ae1d4e4c3054e0c2136f6b8877",
+          "answer": "22ef4af7ab500cb7733fe9d1cfeea3e2226a8da203ea4bf6ba3b2f0762a7cbd7",
+          "contract": "d16e2f83f7844bc78d3f0520c99c8000cd5bba7d4a8d5c64b1d276d93f241b7a",
+          "rendering": "83051b888b6b72b27cca14fd0bbaeba305cd5b2413d5d6d153b6d464a492c087",
+          "generator": "93a0c5fa5361ccdff331f75930e46957192a781c1977d56bffcf059db0cebf9f"
+        },
+        "previewUnavailable": null
+      },
+      "evidenceRefs": [
+        {
+          "id": "1d6dcd251cb5f1d7",
+          "sha256": "9c7edd1426674e5075ed45bcc03733c0fb283c2f6b7767c0376d1550ab8df762",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000013",
+      "seq": 13,
+      "runId": "build-c2512c2a-e95e-4984-beb6-d3c4882657e6",
+      "type": "build.saved",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "14e64c5a-a4fa-4cee-a6bc-f03a2b7a0b0d",
+      "candidateId": "v001",
+      "details": {},
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000014",
+      "seq": 14,
+      "runId": "build-c2512c2a-e95e-4984-beb6-d3c4882657e6",
+      "type": "render.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "dbae79d8-104d-4136-b60b-5fe1dad4be36",
+      "candidateId": "v001",
+      "details": {
+        "renderer": {
+          "id": "mechanical-system",
+          "revision": "9253d4ac478dc1d75a4c69e808f4e750250b0a0746e065191b386dc70b296f6c"
+        }
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000015",
+      "seq": 15,
+      "runId": "build-c2512c2a-e95e-4984-beb6-d3c4882657e6",
+      "type": "render.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "dbae79d8-104d-4136-b60b-5fe1dad4be36",
+      "candidateId": "v001",
+      "details": {
+        "sha256": "e2d1faa46ab67f5d3e42b2ac0794edc561f73a7ce39d2d4b7864bfafb13db93b",
+        "renderer": {
+          "id": "mechanical-system",
+          "revision": "9253d4ac478dc1d75a4c69e808f4e750250b0a0746e065191b386dc70b296f6c"
+        },
+        "specification": "9c7edd1426674e5075ed45bcc03733c0fb283c2f6b7767c0376d1550ab8df762",
+        "rendering": "83051b888b6b72b27cca14fd0bbaeba305cd5b2413d5d6d153b6d464a492c087"
+      },
+      "evidenceRefs": [
+        {
+          "id": "729a86fec7e95fae",
+          "sha256": "e2d1faa46ab67f5d3e42b2ac0794edc561f73a7ce39d2d4b7864bfafb13db93b",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000016",
+      "seq": 16,
+      "runId": "build-c2512c2a-e95e-4984-beb6-d3c4882657e6",
+      "type": "command.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "f4f18eeb-ad6e-4eff-a6c8-d0951a658de3",
+      "candidateId": "v001",
+      "details": {
+        "label": "node.exe",
+        "kind": "verification"
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000017",
+      "seq": 17,
+      "runId": "build-c2512c2a-e95e-4984-beb6-d3c4882657e6",
+      "type": "command.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "f4f18eeb-ad6e-4eff-a6c8-d0951a658de3",
+      "candidateId": "v001",
+      "details": {
+        "commandEventId": "e000016",
+        "kind": "verification",
+        "exitCode": 0,
+        "signal": null
+      },
+      "evidenceRefs": [
+        {
+          "id": "4ba2db2496d54097",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "availability": "local evidence; hash published"
+        },
+        {
+          "id": "0767f8b75338cf6e",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000018",
+      "seq": 18,
+      "runId": "build-c2512c2a-e95e-4984-beb6-d3c4882657e6",
+      "type": "test.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "f4f18eeb-ad6e-4eff-a6c8-d0951a658de3",
+      "candidateId": "v001",
+      "details": {
+        "commandEventId": "e000016",
+        "completedEventId": "e000017",
+        "verdict": "passed",
+        "status": "passed",
+        "checks": [
+          {
+            "name": "Candidate PNG matches the recorded final render",
+            "verdict": "passed"
+          },
+          {
+            "name": "Fresh FreeCAD reopen reproduces all solid and interface checks",
+            "verdict": "passed"
+          },
+          {
+            "name": "Valid positive-volume solid: A  |  gear",
+            "verdict": "passed"
+          },
+          {
+            "name": "Valid positive-volume solid: B  |  gear",
+            "verdict": "passed"
+          },
+          {
+            "name": "Valid positive-volume solid: D  |  drum",
+            "verdict": "passed"
+          },
+          {
+            "name": "Valid positive-volume solid: W  |  weight",
+            "verdict": "passed"
+          },
+          {
+            "name": "Valid positive-volume solid: Fixed rear mounting plate",
+            "verdict": "passed"
+          },
+          {
+            "name": "Valid positive-volume solid: Axle at A",
+            "verdict": "passed"
+          },
+          {
+            "name": "Valid positive-volume solid: Frame bearing at A",
+            "verdict": "passed"
+          },
+          {
+            "name": "Valid positive-volume solid: Axle at B, D",
+            "verdict": "passed"
+          },
+          {
+            "name": "Valid positive-volume solid: Frame bearing at B, D",
+            "verdict": "passed"
+          },
+          {
+            "name": "Valid positive-volume solid: Feather key B / D",
+            "verdict": "passed"
+          },
+          {
+            "name": "Valid positive-volume solid: Taut wrapped line D / W",
+            "verdict": "passed"
+          },
+          {
+            "name": "Counted 32 physical flank crossings for 16 teeth on A",
+            "verdict": "passed"
+          },
+          {
+            "name": "Counted 64 physical flank crossings for 32 teeth on B",
+            "verdict": "passed"
+          },
+          {
+            "name": "Native pitch distance 48.000 mm at A/B",
+            "verdict": "passed"
+          },
+          {
+            "name": "Working tooth faces overlap axially",
+            "verdict": "passed"
+          },
+          {
+            "name": "Meshed B-reps at the displayed pose have 0.000001 cubic mm interference",
+            "verdict": "passed"
+          },
+          {
+            "name": "Keyed hubs have a common axis",
+            "verdict": "passed"
+          },
+          {
+            "name": "Solid key sits in the keyway of B",
+            "verdict": "passed"
+          },
+          {
+            "name": "Solid key sits in the keyway of D",
+            "verdict": "passed"
+          },
+          {
+            "name": "One vertical straight takeoff on the wrapped line",
+            "verdict": "passed"
+          },
+          {
+            "name": "Wrapped line exits the drum tangentially above the load",
+            "verdict": "passed"
+          },
+          {
+            "name": "Line meets the load and the barrel",
+            "verdict": "passed"
+          },
+          {
+            "name": "Printed working connections match measurements on the native assembly",
+            "verdict": "passed"
+          },
+          {
+            "name": "Displayed driver, outputs and interval match the delivered question",
+            "verdict": "passed"
+          },
+          {
+            "name": "Option A violates the motions derived from the final pixels",
+            "verdict": "passed"
+          },
+          {
+            "name": "Option B satisfies the motions derived from the final pixels",
+            "verdict": "passed"
+          },
+          {
+            "name": "Option C violates the motions derived from the final pixels",
+            "verdict": "passed"
+          },
+          {
+            "name": "Option D violates the motions derived from the final pixels",
+            "verdict": "passed"
+          },
+          {
+            "name": "One printed answer satisfies the visible constraints",
+            "verdict": "passed"
+          },
+          {
+            "name": "Native generator and verifier fingerprints match",
+            "verdict": "passed"
+          }
+        ],
+        "scope": "Reopen exact FCStd, measure rigid solids and interfaces, decode visible final PNG lettering, solve contact constraints and evaluate four printed options.",
+        "binding": "exact",
+        "bindingBasis": "exact candidate and full input fingerprints",
+        "testedFingerprints": {
+          "specification": "9c7edd1426674e5075ed45bcc03733c0fb283c2f6b7767c0376d1550ab8df762",
+          "geometry": "66813570e4014e1f1bc574085c641e60a9831b50585b4293d6e86fdd73364484",
+          "question": "dfa482d170b40d1fd6b9c2331e340c3bc0d77ca2bcdbbb4363ce6995338d3a6e",
+          "options": "8de907db99eb4db27b87aa5d2445b8b8d04f36ae1d4e4c3054e0c2136f6b8877",
+          "answer": "22ef4af7ab500cb7733fe9d1cfeea3e2226a8da203ea4bf6ba3b2f0762a7cbd7",
+          "contract": "d16e2f83f7844bc78d3f0520c99c8000cd5bba7d4a8d5c64b1d276d93f241b7a",
+          "rendering": "83051b888b6b72b27cca14fd0bbaeba305cd5b2413d5d6d153b6d464a492c087",
+          "generator": "93a0c5fa5361ccdff331f75930e46957192a781c1977d56bffcf059db0cebf9f"
+        },
+        "verifier": {
+          "id": "mechanical-system",
+          "revision": "9253d4ac478dc1d75a4c69e808f4e750250b0a0746e065191b386dc70b296f6c"
+        },
+        "reportSha256": "92d135cceed5b90e460a423ed7455d576d2fe92a776d1cb6f06748f1835ff72e"
+      },
+      "evidenceRefs": [
+        {
+          "id": "b48b065ab2477968",
+          "sha256": "92d135cceed5b90e460a423ed7455d576d2fe92a776d1cb6f06748f1835ff72e",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000019",
+      "seq": 19,
+      "runId": "build-c2512c2a-e95e-4984-beb6-d3c4882657e6",
+      "type": "visual.review",
+      "actor": "author",
+      "origin": "agent_statement",
+      "actionId": null,
+      "candidateId": "v001",
+      "details": {
+        "outcome": "failed",
+        "review": "The takeoff is legible, but the drum label sits over the small physical key in the front view."
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000020",
+      "seq": 20,
+      "runId": "build-c2512c2a-e95e-4984-beb6-d3c4882657e6",
+      "type": "resource.read",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "3ecdcc37-6ed4-4ec4-a1c2-ec2005445e15",
+      "candidateId": null,
+      "details": {
+        "outcome": "delivered",
+        "label": "system.json",
+        "start": 1,
+        "end": 113,
+        "sha256": "c850d01ada09b843310b776e93bd9ba836d4ddcd611c319c293e3be251df3e80",
+        "sourceSha256": "c850d01ada09b843310b776e93bd9ba836d4ddcd611c319c293e3be251df3e80"
+      },
+      "evidenceRefs": [
+        {
+          "id": "bcd8b4b1067acd1b",
+          "sha256": "c850d01ada09b843310b776e93bd9ba836d4ddcd611c319c293e3be251df3e80",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000021",
+      "seq": 21,
+      "runId": "build-c2512c2a-e95e-4984-beb6-d3c4882657e6",
+      "type": "design.note",
+      "actor": "author",
+      "origin": "agent_statement",
+      "actionId": null,
+      "candidateId": null,
+      "details": {
+        "goal": "Resolve the external mesh, rigid hub and takeoff tangent in the front view.",
+        "sources": null,
+        "change": "Which way does the suspended load move?",
+        "reason": "Build the FreeCAD solids and photograph the reopened assembly.",
+        "expectedChecks": [
+          "Measure the native assembly and solve the printed motion question."
+        ]
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000022",
+      "seq": 22,
+      "runId": "build-c2512c2a-e95e-4984-beb6-d3c4882657e6",
+      "type": "command.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "700bb275-b6f7-4f48-93aa-25949072cf5e",
+      "candidateId": null,
+      "details": {
+        "label": "python",
+        "kind": "Build, reopen and photograph FreeCAD assembly"
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000023",
+      "seq": 23,
+      "runId": "build-c2512c2a-e95e-4984-beb6-d3c4882657e6",
+      "type": "command.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "700bb275-b6f7-4f48-93aa-25949072cf5e",
+      "candidateId": null,
+      "details": {
+        "commandEventId": "e000022",
+        "kind": "Build, reopen and photograph FreeCAD assembly",
+        "exitCode": 0,
+        "signal": null
+      },
+      "evidenceRefs": [
+        {
+          "id": "8f710621c3ab843d",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "availability": "local evidence; hash published"
+        },
+        {
+          "id": "5c945f11020997f8",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000024",
+      "seq": 24,
+      "runId": "build-c2512c2a-e95e-4984-beb6-d3c4882657e6",
+      "type": "command.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "c7dad9c1-4ba6-4d1d-afaf-11053484dd99",
+      "candidateId": null,
+      "details": {
+        "label": "python",
+        "kind": "Compose native viewport pixels"
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000025",
+      "seq": 25,
+      "runId": "build-c2512c2a-e95e-4984-beb6-d3c4882657e6",
+      "type": "command.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "c7dad9c1-4ba6-4d1d-afaf-11053484dd99",
+      "candidateId": null,
+      "details": {
+        "commandEventId": "e000024",
+        "kind": "Compose native viewport pixels",
+        "exitCode": 0,
+        "signal": null
+      },
+      "evidenceRefs": [
+        {
+          "id": "03d8ee7d4ec53c45",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "availability": "local evidence; hash published"
+        },
+        {
+          "id": "9488a73bf2a09b16",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000026",
+      "seq": 26,
+      "runId": "build-c2512c2a-e95e-4984-beb6-d3c4882657e6",
+      "type": "design.note",
+      "actor": "author",
+      "origin": "agent_statement",
+      "actionId": null,
+      "candidateId": null,
+      "details": {
+        "goal": "Resolve the external mesh, rigid hub and takeoff tangent in the front view.",
+        "sources": [
+          "MentalAnimation/MechanicalSystem/Level0/20",
+          "MentalAnimation/MechanicalSystem/Level0/21",
+          "MentalAnimation/MechanicalSystem/Level1/32",
+          "MentalAnimation/MechanicalSystem/Level1/34"
+        ],
+        "change": "Built the native solids and physical hardware. Reopened the saved document and captured its front and assembly views.",
+        "reason": "Pose checks and kinematic inference are recorded separately.",
+        "expectedChecks": [
+          "Valid positive-volume solid: A  |  gear",
+          "Valid positive-volume solid: B  |  gear",
+          "Valid positive-volume solid: D  |  drum",
+          "Valid positive-volume solid: W  |  weight",
+          "Valid positive-volume solid: Fixed rear mounting plate",
+          "Valid positive-volume solid: Axle at A",
+          "Valid positive-volume solid: Frame bearing at A",
+          "Valid positive-volume solid: Axle at B, D",
+          "Valid positive-volume solid: Frame bearing at B, D",
+          "Valid positive-volume solid: Feather key B / D",
+          "Valid positive-volume solid: Taut wrapped line D / W",
+          "Counted 32 physical flank crossings for 16 teeth on A",
+          "Counted 64 physical flank crossings for 32 teeth on B",
+          "Native pitch distance 48.000 mm at A/B",
+          "Working tooth faces overlap axially",
+          "Meshed B-reps at the displayed pose have 0.000001 cubic mm interference",
+          "A physical frame bearing locates a fixed mesh axle at A / B",
+          "A physical frame bearing locates a fixed mesh axle at A / B",
+          "Keyed hubs have a common axis",
+          "Solid key sits in the keyway of B",
+          "Solid key sits in the keyway of D",
+          "One vertical straight takeoff on the wrapped line",
+          "Wrapped line exits the drum tangentially above the load",
+          "Line meets the load and the barrel"
+        ]
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000027",
+      "seq": 27,
+      "runId": "build-c2512c2a-e95e-4984-beb6-d3c4882657e6",
+      "type": "candidate.saved",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "c48d09b9-6522-45bb-98a4-47fca5ef578a",
+      "candidateId": "v002",
+      "details": {
+        "sha256": "f1b2e96852e4013b0a62f69e808dbc57c1bb390c4cb4f18e2383ffdf0f561c4a",
+        "parentId": "v001",
+        "parentBasis": "Correct the observed model, image or validation issue and recheck the native assembly.",
+        "changes": [
+          "specification",
+          "question",
+          "rendering",
+          "generator"
+        ],
+        "fingerprints": {
+          "specification": "f1b2e96852e4013b0a62f69e808dbc57c1bb390c4cb4f18e2383ffdf0f561c4a",
+          "geometry": "66813570e4014e1f1bc574085c641e60a9831b50585b4293d6e86fdd73364484",
+          "question": "19b5951eca3e562c290bf15dfee9673df81a7d71d1752ba6927ad5b9ba5f1c33",
+          "options": "8de907db99eb4db27b87aa5d2445b8b8d04f36ae1d4e4c3054e0c2136f6b8877",
+          "answer": "22ef4af7ab500cb7733fe9d1cfeea3e2226a8da203ea4bf6ba3b2f0762a7cbd7",
+          "contract": "d16e2f83f7844bc78d3f0520c99c8000cd5bba7d4a8d5c64b1d276d93f241b7a",
+          "rendering": "ff1c79ecb0f534dd8fb36d3f5856c8317362b49a1c5eb26e79dc1c6fe3868be9",
+          "generator": "14b466f3d616f43e8ed59343ced7eb33cc16afee527775cb6fc1329746293cb5"
+        },
+        "previewUnavailable": null
+      },
+      "evidenceRefs": [
+        {
+          "id": "1c0114613361c1e1",
+          "sha256": "f1b2e96852e4013b0a62f69e808dbc57c1bb390c4cb4f18e2383ffdf0f561c4a",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000028",
+      "seq": 28,
+      "runId": "build-c2512c2a-e95e-4984-beb6-d3c4882657e6",
+      "type": "build.saved",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "c48d09b9-6522-45bb-98a4-47fca5ef578a",
+      "candidateId": "v002",
+      "details": {},
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000029",
+      "seq": 29,
+      "runId": "build-c2512c2a-e95e-4984-beb6-d3c4882657e6",
+      "type": "render.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "1558df4a-cbbf-4c72-bb15-9ba738500a34",
+      "candidateId": "v002",
+      "details": {
+        "renderer": {
+          "id": "mechanical-system",
+          "revision": "500d731287cbe10fedf6925df3b9322c62a40b177fc9d2706f22eae6e3aec23c"
+        }
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000030",
+      "seq": 30,
+      "runId": "build-c2512c2a-e95e-4984-beb6-d3c4882657e6",
+      "type": "render.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "1558df4a-cbbf-4c72-bb15-9ba738500a34",
+      "candidateId": "v002",
+      "details": {
+        "sha256": "5bf1d597d69ffbab19394cff3108d4028f16a199d631ade04373674959548572",
+        "renderer": {
+          "id": "mechanical-system",
+          "revision": "500d731287cbe10fedf6925df3b9322c62a40b177fc9d2706f22eae6e3aec23c"
+        },
+        "specification": "f1b2e96852e4013b0a62f69e808dbc57c1bb390c4cb4f18e2383ffdf0f561c4a",
+        "rendering": "ff1c79ecb0f534dd8fb36d3f5856c8317362b49a1c5eb26e79dc1c6fe3868be9"
+      },
+      "evidenceRefs": [
+        {
+          "id": "968274bab567b7bc",
+          "sha256": "5bf1d597d69ffbab19394cff3108d4028f16a199d631ade04373674959548572",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000031",
+      "seq": 31,
+      "runId": "build-c2512c2a-e95e-4984-beb6-d3c4882657e6",
+      "type": "report.previous",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "14eefc7e-b45b-4011-98c5-b0103f6c3da1",
+      "candidateId": null,
+      "details": {
+        "sha256": "92d135cceed5b90e460a423ed7455d576d2fe92a776d1cb6f06748f1835ff72e"
+      },
+      "evidenceRefs": [
+        {
+          "id": "f7abff32caf32457",
+          "sha256": "92d135cceed5b90e460a423ed7455d576d2fe92a776d1cb6f06748f1835ff72e",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000032",
+      "seq": 32,
+      "runId": "build-c2512c2a-e95e-4984-beb6-d3c4882657e6",
+      "type": "command.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "14eefc7e-b45b-4011-98c5-b0103f6c3da1",
+      "candidateId": "v002",
+      "details": {
+        "label": "node.exe",
+        "kind": "verification"
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000033",
+      "seq": 33,
+      "runId": "build-c2512c2a-e95e-4984-beb6-d3c4882657e6",
+      "type": "command.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "14eefc7e-b45b-4011-98c5-b0103f6c3da1",
+      "candidateId": "v002",
+      "details": {
+        "commandEventId": "e000032",
+        "kind": "verification",
+        "exitCode": 0,
+        "signal": null
+      },
+      "evidenceRefs": [
+        {
+          "id": "804d0de6148b302a",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "availability": "local evidence; hash published"
+        },
+        {
+          "id": "84633c090583d013",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000034",
+      "seq": 34,
+      "runId": "build-c2512c2a-e95e-4984-beb6-d3c4882657e6",
+      "type": "test.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "14eefc7e-b45b-4011-98c5-b0103f6c3da1",
+      "candidateId": "v002",
+      "details": {
+        "commandEventId": "e000032",
+        "completedEventId": "e000033",
+        "verdict": "passed",
+        "status": "passed",
+        "checks": [
+          {
+            "name": "Candidate PNG matches the recorded final render",
+            "verdict": "passed"
+          },
+          {
+            "name": "Fresh FreeCAD reopen reproduces all solid and interface checks",
+            "verdict": "passed"
+          },
+          {
+            "name": "Valid positive-volume solid: A  |  gear",
+            "verdict": "passed"
+          },
+          {
+            "name": "Valid positive-volume solid: B  |  gear",
+            "verdict": "passed"
+          },
+          {
+            "name": "Valid positive-volume solid: D  |  drum",
+            "verdict": "passed"
+          },
+          {
+            "name": "Valid positive-volume solid: W  |  weight",
+            "verdict": "passed"
+          },
+          {
+            "name": "Valid positive-volume solid: Fixed rear mounting plate",
+            "verdict": "passed"
+          },
+          {
+            "name": "Valid positive-volume solid: Axle at A",
+            "verdict": "passed"
+          },
+          {
+            "name": "Valid positive-volume solid: Frame bearing at A",
+            "verdict": "passed"
+          },
+          {
+            "name": "Valid positive-volume solid: Axle at B, D",
+            "verdict": "passed"
+          },
+          {
+            "name": "Valid positive-volume solid: Frame bearing at B, D",
+            "verdict": "passed"
+          },
+          {
+            "name": "Valid positive-volume solid: Feather key B / D",
+            "verdict": "passed"
+          },
+          {
+            "name": "Valid positive-volume solid: Taut wrapped line D / W",
+            "verdict": "passed"
+          },
+          {
+            "name": "Counted 32 physical flank crossings for 16 teeth on A",
+            "verdict": "passed"
+          },
+          {
+            "name": "Counted 64 physical flank crossings for 32 teeth on B",
+            "verdict": "passed"
+          },
+          {
+            "name": "Native pitch distance 48.000 mm at A/B",
+            "verdict": "passed"
+          },
+          {
+            "name": "Working tooth faces overlap axially",
+            "verdict": "passed"
+          },
+          {
+            "name": "Meshed B-reps at the displayed pose have 0.000001 cubic mm interference",
+            "verdict": "passed"
+          },
+          {
+            "name": "A physical frame bearing locates a fixed mesh axle at A / B",
+            "verdict": "passed"
+          },
+          {
+            "name": "A physical frame bearing locates a fixed mesh axle at A / B",
+            "verdict": "passed"
+          },
+          {
+            "name": "Keyed hubs have a common axis",
+            "verdict": "passed"
+          },
+          {
+            "name": "Solid key sits in the keyway of B",
+            "verdict": "passed"
+          },
+          {
+            "name": "Solid key sits in the keyway of D",
+            "verdict": "passed"
+          },
+          {
+            "name": "One vertical straight takeoff on the wrapped line",
+            "verdict": "passed"
+          },
+          {
+            "name": "Wrapped line exits the drum tangentially above the load",
+            "verdict": "passed"
+          },
+          {
+            "name": "Line meets the load and the barrel",
+            "verdict": "passed"
+          },
+          {
+            "name": "Printed working connections match measurements on the native assembly",
+            "verdict": "passed"
+          },
+          {
+            "name": "Displayed driver, outputs and interval match the delivered question",
+            "verdict": "passed"
+          },
+          {
+            "name": "Option A violates the motions derived from the final pixels",
+            "verdict": "passed"
+          },
+          {
+            "name": "Option B satisfies the motions derived from the final pixels",
+            "verdict": "passed"
+          },
+          {
+            "name": "Option C violates the motions derived from the final pixels",
+            "verdict": "passed"
+          },
+          {
+            "name": "Option D violates the motions derived from the final pixels",
+            "verdict": "passed"
+          },
+          {
+            "name": "One printed answer satisfies the visible constraints",
+            "verdict": "passed"
+          },
+          {
+            "name": "Native generator and verifier fingerprints match",
+            "verdict": "passed"
+          }
+        ],
+        "scope": "Reopen exact FCStd, measure rigid solids and interfaces, decode visible final PNG lettering, solve contact constraints and evaluate four printed options.",
+        "binding": "exact",
+        "bindingBasis": "exact candidate and full input fingerprints",
+        "testedFingerprints": {
+          "specification": "f1b2e96852e4013b0a62f69e808dbc57c1bb390c4cb4f18e2383ffdf0f561c4a",
+          "geometry": "66813570e4014e1f1bc574085c641e60a9831b50585b4293d6e86fdd73364484",
+          "question": "19b5951eca3e562c290bf15dfee9673df81a7d71d1752ba6927ad5b9ba5f1c33",
+          "options": "8de907db99eb4db27b87aa5d2445b8b8d04f36ae1d4e4c3054e0c2136f6b8877",
+          "answer": "22ef4af7ab500cb7733fe9d1cfeea3e2226a8da203ea4bf6ba3b2f0762a7cbd7",
+          "contract": "d16e2f83f7844bc78d3f0520c99c8000cd5bba7d4a8d5c64b1d276d93f241b7a",
+          "rendering": "ff1c79ecb0f534dd8fb36d3f5856c8317362b49a1c5eb26e79dc1c6fe3868be9",
+          "generator": "14b466f3d616f43e8ed59343ced7eb33cc16afee527775cb6fc1329746293cb5"
+        },
+        "verifier": {
+          "id": "mechanical-system",
+          "revision": "500d731287cbe10fedf6925df3b9322c62a40b177fc9d2706f22eae6e3aec23c"
+        },
+        "reportSha256": "b8fbd63c3379cb9522806104835cf3e5079e19e7b8478feb17e017ea072597f4"
+      },
+      "evidenceRefs": [
+        {
+          "id": "267f1f56ce428bc3",
+          "sha256": "b8fbd63c3379cb9522806104835cf3e5079e19e7b8478feb17e017ea072597f4",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000035",
+      "seq": 35,
+      "runId": "build-c2512c2a-e95e-4984-beb6-d3c4882657e6",
+      "type": "visual.review",
+      "actor": "author",
+      "origin": "agent_statement",
+      "actionId": null,
+      "candidateId": "v002",
+      "details": {
+        "outcome": "passed",
+        "review": "The otherwise identical rig has the line visibly attached on the right. The D badge leaves the hub exposed. Both views and all choices agree. Independent PNG-only reader: A drives an exterior mesh. B and keyed D turn CCW. The line at the right rim rises. Selected B."
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000036",
+      "seq": 36,
+      "runId": "build-c2512c2a-e95e-4984-beb6-d3c4882657e6",
+      "type": "run.finished",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": "v002",
+      "details": {
+        "outcome": "accepted",
+        "finalCandidateId": "v002"
+      },
+      "evidenceRefs": []
+    }
+  ],
+  "candidates": [
+    {
+      "id": "v001",
+      "parentId": null,
+      "parentBasis": null,
+      "sha256": "9c7edd1426674e5075ed45bcc03733c0fb283c2f6b7767c0376d1550ab8df762",
+      "fingerprints": {
+        "specification": "9c7edd1426674e5075ed45bcc03733c0fb283c2f6b7767c0376d1550ab8df762",
+        "geometry": "66813570e4014e1f1bc574085c641e60a9831b50585b4293d6e86fdd73364484",
+        "question": "dfa482d170b40d1fd6b9c2331e340c3bc0d77ca2bcdbbb4363ce6995338d3a6e",
+        "options": "8de907db99eb4db27b87aa5d2445b8b8d04f36ae1d4e4c3054e0c2136f6b8877",
+        "answer": "22ef4af7ab500cb7733fe9d1cfeea3e2226a8da203ea4bf6ba3b2f0762a7cbd7",
+        "contract": "d16e2f83f7844bc78d3f0520c99c8000cd5bba7d4a8d5c64b1d276d93f241b7a",
+        "rendering": "83051b888b6b72b27cca14fd0bbaeba305cd5b2413d5d6d153b6d464a492c087",
+        "generator": "93a0c5fa5361ccdff331f75930e46957192a781c1977d56bffcf059db0cebf9f"
+      },
+      "previewUnavailable": null,
+      "changes": [
+        "specification",
+        "geometry",
+        "question",
+        "options",
+        "answer",
+        "contract",
+        "rendering",
+        "generator"
+      ],
+      "preview": {
+        "candidateId": "v001",
+        "specification": "9c7edd1426674e5075ed45bcc03733c0fb283c2f6b7767c0376d1550ab8df762",
+        "rendering": "83051b888b6b72b27cca14fd0bbaeba305cd5b2413d5d6d153b6d464a492c087",
+        "renderer": {
+          "id": "mechanical-system",
+          "revision": "9253d4ac478dc1d75a4c69e808f4e750250b0a0746e065191b386dc70b296f6c"
+        },
+        "sha256": "e2d1faa46ab67f5d3e42b2ac0794edc561f73a7ce39d2d4b7864bfafb13db93b",
+        "path": "records/authored-f1b2e96852e4013b0a62f69e/v001-e2d1faa46ab67f5d.png",
+        "origin": "recorded-render"
+      }
+    },
+    {
+      "id": "v002",
+      "parentId": "v001",
+      "parentBasis": "Correct the observed model, image or validation issue and recheck the native assembly.",
+      "sha256": "f1b2e96852e4013b0a62f69e808dbc57c1bb390c4cb4f18e2383ffdf0f561c4a",
+      "fingerprints": {
+        "specification": "f1b2e96852e4013b0a62f69e808dbc57c1bb390c4cb4f18e2383ffdf0f561c4a",
+        "geometry": "66813570e4014e1f1bc574085c641e60a9831b50585b4293d6e86fdd73364484",
+        "question": "19b5951eca3e562c290bf15dfee9673df81a7d71d1752ba6927ad5b9ba5f1c33",
+        "options": "8de907db99eb4db27b87aa5d2445b8b8d04f36ae1d4e4c3054e0c2136f6b8877",
+        "answer": "22ef4af7ab500cb7733fe9d1cfeea3e2226a8da203ea4bf6ba3b2f0762a7cbd7",
+        "contract": "d16e2f83f7844bc78d3f0520c99c8000cd5bba7d4a8d5c64b1d276d93f241b7a",
+        "rendering": "ff1c79ecb0f534dd8fb36d3f5856c8317362b49a1c5eb26e79dc1c6fe3868be9",
+        "generator": "14b466f3d616f43e8ed59343ced7eb33cc16afee527775cb6fc1329746293cb5"
+      },
+      "previewUnavailable": null,
+      "changes": [
+        "specification",
+        "question",
+        "rendering",
+        "generator"
+      ],
+      "preview": {
+        "candidateId": "v002",
+        "specification": "f1b2e96852e4013b0a62f69e808dbc57c1bb390c4cb4f18e2383ffdf0f561c4a",
+        "rendering": "ff1c79ecb0f534dd8fb36d3f5856c8317362b49a1c5eb26e79dc1c6fe3868be9",
+        "renderer": {
+          "id": "mechanical-system",
+          "revision": "500d731287cbe10fedf6925df3b9322c62a40b177fc9d2706f22eae6e3aec23c"
+        },
+        "sha256": "5bf1d597d69ffbab19394cff3108d4028f16a199d631ade04373674959548572",
+        "path": "records/authored-f1b2e96852e4013b0a62f69e/v002-5bf1d597d69ffbab.png",
+        "origin": "recorded-render"
+      }
+    }
+  ],
+  "tests": [
+    {
+      "id": "t001",
+      "actionId": "f4f18eeb-ad6e-4eff-a6c8-d0951a658de3",
+      "candidateId": "v001",
+      "testedFingerprints": {
+        "specification": "9c7edd1426674e5075ed45bcc03733c0fb283c2f6b7767c0376d1550ab8df762",
+        "geometry": "66813570e4014e1f1bc574085c641e60a9831b50585b4293d6e86fdd73364484",
+        "question": "dfa482d170b40d1fd6b9c2331e340c3bc0d77ca2bcdbbb4363ce6995338d3a6e",
+        "options": "8de907db99eb4db27b87aa5d2445b8b8d04f36ae1d4e4c3054e0c2136f6b8877",
+        "answer": "22ef4af7ab500cb7733fe9d1cfeea3e2226a8da203ea4bf6ba3b2f0762a7cbd7",
+        "contract": "d16e2f83f7844bc78d3f0520c99c8000cd5bba7d4a8d5c64b1d276d93f241b7a",
+        "rendering": "83051b888b6b72b27cca14fd0bbaeba305cd5b2413d5d6d153b6d464a492c087",
+        "generator": "93a0c5fa5361ccdff331f75930e46957192a781c1977d56bffcf059db0cebf9f"
+      },
+      "verifier": {
+        "id": "mechanical-system",
+        "revision": "9253d4ac478dc1d75a4c69e808f4e750250b0a0746e065191b386dc70b296f6c"
+      },
+      "reportSha256": "92d135cceed5b90e460a423ed7455d576d2fe92a776d1cb6f06748f1835ff72e",
+      "verdict": "passed",
+      "status": "passed",
+      "checks": [
+        {
+          "name": "Candidate PNG matches the recorded final render",
+          "verdict": "passed"
+        },
+        {
+          "name": "Fresh FreeCAD reopen reproduces all solid and interface checks",
+          "verdict": "passed"
+        },
+        {
+          "name": "Valid positive-volume solid: A  |  gear",
+          "verdict": "passed"
+        },
+        {
+          "name": "Valid positive-volume solid: B  |  gear",
+          "verdict": "passed"
+        },
+        {
+          "name": "Valid positive-volume solid: D  |  drum",
+          "verdict": "passed"
+        },
+        {
+          "name": "Valid positive-volume solid: W  |  weight",
+          "verdict": "passed"
+        },
+        {
+          "name": "Valid positive-volume solid: Fixed rear mounting plate",
+          "verdict": "passed"
+        },
+        {
+          "name": "Valid positive-volume solid: Axle at A",
+          "verdict": "passed"
+        },
+        {
+          "name": "Valid positive-volume solid: Frame bearing at A",
+          "verdict": "passed"
+        },
+        {
+          "name": "Valid positive-volume solid: Axle at B, D",
+          "verdict": "passed"
+        },
+        {
+          "name": "Valid positive-volume solid: Frame bearing at B, D",
+          "verdict": "passed"
+        },
+        {
+          "name": "Valid positive-volume solid: Feather key B / D",
+          "verdict": "passed"
+        },
+        {
+          "name": "Valid positive-volume solid: Taut wrapped line D / W",
+          "verdict": "passed"
+        },
+        {
+          "name": "Counted 32 physical flank crossings for 16 teeth on A",
+          "verdict": "passed"
+        },
+        {
+          "name": "Counted 64 physical flank crossings for 32 teeth on B",
+          "verdict": "passed"
+        },
+        {
+          "name": "Native pitch distance 48.000 mm at A/B",
+          "verdict": "passed"
+        },
+        {
+          "name": "Working tooth faces overlap axially",
+          "verdict": "passed"
+        },
+        {
+          "name": "Meshed B-reps at the displayed pose have 0.000001 cubic mm interference",
+          "verdict": "passed"
+        },
+        {
+          "name": "Keyed hubs have a common axis",
+          "verdict": "passed"
+        },
+        {
+          "name": "Solid key sits in the keyway of B",
+          "verdict": "passed"
+        },
+        {
+          "name": "Solid key sits in the keyway of D",
+          "verdict": "passed"
+        },
+        {
+          "name": "One vertical straight takeoff on the wrapped line",
+          "verdict": "passed"
+        },
+        {
+          "name": "Wrapped line exits the drum tangentially above the load",
+          "verdict": "passed"
+        },
+        {
+          "name": "Line meets the load and the barrel",
+          "verdict": "passed"
+        },
+        {
+          "name": "Printed working connections match measurements on the native assembly",
+          "verdict": "passed"
+        },
+        {
+          "name": "Displayed driver, outputs and interval match the delivered question",
+          "verdict": "passed"
+        },
+        {
+          "name": "Option A violates the motions derived from the final pixels",
+          "verdict": "passed"
+        },
+        {
+          "name": "Option B satisfies the motions derived from the final pixels",
+          "verdict": "passed"
+        },
+        {
+          "name": "Option C violates the motions derived from the final pixels",
+          "verdict": "passed"
+        },
+        {
+          "name": "Option D violates the motions derived from the final pixels",
+          "verdict": "passed"
+        },
+        {
+          "name": "One printed answer satisfies the visible constraints",
+          "verdict": "passed"
+        },
+        {
+          "name": "Native generator and verifier fingerprints match",
+          "verdict": "passed"
+        }
+      ],
+      "scope": "Reopen exact FCStd, measure rigid solids and interfaces, decode visible final PNG lettering, solve contact constraints and evaluate four printed options.",
+      "commandExitStatus": 0,
+      "binding": "exact",
+      "bindingBasis": "exact candidate and full input fingerprints",
+      "commandEventId": "e000016"
+    },
+    {
+      "id": "t002",
+      "actionId": "14eefc7e-b45b-4011-98c5-b0103f6c3da1",
+      "candidateId": "v002",
+      "testedFingerprints": {
+        "specification": "f1b2e96852e4013b0a62f69e808dbc57c1bb390c4cb4f18e2383ffdf0f561c4a",
+        "geometry": "66813570e4014e1f1bc574085c641e60a9831b50585b4293d6e86fdd73364484",
+        "question": "19b5951eca3e562c290bf15dfee9673df81a7d71d1752ba6927ad5b9ba5f1c33",
+        "options": "8de907db99eb4db27b87aa5d2445b8b8d04f36ae1d4e4c3054e0c2136f6b8877",
+        "answer": "22ef4af7ab500cb7733fe9d1cfeea3e2226a8da203ea4bf6ba3b2f0762a7cbd7",
+        "contract": "d16e2f83f7844bc78d3f0520c99c8000cd5bba7d4a8d5c64b1d276d93f241b7a",
+        "rendering": "ff1c79ecb0f534dd8fb36d3f5856c8317362b49a1c5eb26e79dc1c6fe3868be9",
+        "generator": "14b466f3d616f43e8ed59343ced7eb33cc16afee527775cb6fc1329746293cb5"
+      },
+      "verifier": {
+        "id": "mechanical-system",
+        "revision": "500d731287cbe10fedf6925df3b9322c62a40b177fc9d2706f22eae6e3aec23c"
+      },
+      "reportSha256": "b8fbd63c3379cb9522806104835cf3e5079e19e7b8478feb17e017ea072597f4",
+      "verdict": "passed",
+      "status": "passed",
+      "checks": [
+        {
+          "name": "Candidate PNG matches the recorded final render",
+          "verdict": "passed"
+        },
+        {
+          "name": "Fresh FreeCAD reopen reproduces all solid and interface checks",
+          "verdict": "passed"
+        },
+        {
+          "name": "Valid positive-volume solid: A  |  gear",
+          "verdict": "passed"
+        },
+        {
+          "name": "Valid positive-volume solid: B  |  gear",
+          "verdict": "passed"
+        },
+        {
+          "name": "Valid positive-volume solid: D  |  drum",
+          "verdict": "passed"
+        },
+        {
+          "name": "Valid positive-volume solid: W  |  weight",
+          "verdict": "passed"
+        },
+        {
+          "name": "Valid positive-volume solid: Fixed rear mounting plate",
+          "verdict": "passed"
+        },
+        {
+          "name": "Valid positive-volume solid: Axle at A",
+          "verdict": "passed"
+        },
+        {
+          "name": "Valid positive-volume solid: Frame bearing at A",
+          "verdict": "passed"
+        },
+        {
+          "name": "Valid positive-volume solid: Axle at B, D",
+          "verdict": "passed"
+        },
+        {
+          "name": "Valid positive-volume solid: Frame bearing at B, D",
+          "verdict": "passed"
+        },
+        {
+          "name": "Valid positive-volume solid: Feather key B / D",
+          "verdict": "passed"
+        },
+        {
+          "name": "Valid positive-volume solid: Taut wrapped line D / W",
+          "verdict": "passed"
+        },
+        {
+          "name": "Counted 32 physical flank crossings for 16 teeth on A",
+          "verdict": "passed"
+        },
+        {
+          "name": "Counted 64 physical flank crossings for 32 teeth on B",
+          "verdict": "passed"
+        },
+        {
+          "name": "Native pitch distance 48.000 mm at A/B",
+          "verdict": "passed"
+        },
+        {
+          "name": "Working tooth faces overlap axially",
+          "verdict": "passed"
+        },
+        {
+          "name": "Meshed B-reps at the displayed pose have 0.000001 cubic mm interference",
+          "verdict": "passed"
+        },
+        {
+          "name": "A physical frame bearing locates a fixed mesh axle at A / B",
+          "verdict": "passed"
+        },
+        {
+          "name": "A physical frame bearing locates a fixed mesh axle at A / B",
+          "verdict": "passed"
+        },
+        {
+          "name": "Keyed hubs have a common axis",
+          "verdict": "passed"
+        },
+        {
+          "name": "Solid key sits in the keyway of B",
+          "verdict": "passed"
+        },
+        {
+          "name": "Solid key sits in the keyway of D",
+          "verdict": "passed"
+        },
+        {
+          "name": "One vertical straight takeoff on the wrapped line",
+          "verdict": "passed"
+        },
+        {
+          "name": "Wrapped line exits the drum tangentially above the load",
+          "verdict": "passed"
+        },
+        {
+          "name": "Line meets the load and the barrel",
+          "verdict": "passed"
+        },
+        {
+          "name": "Printed working connections match measurements on the native assembly",
+          "verdict": "passed"
+        },
+        {
+          "name": "Displayed driver, outputs and interval match the delivered question",
+          "verdict": "passed"
+        },
+        {
+          "name": "Option A violates the motions derived from the final pixels",
+          "verdict": "passed"
+        },
+        {
+          "name": "Option B satisfies the motions derived from the final pixels",
+          "verdict": "passed"
+        },
+        {
+          "name": "Option C violates the motions derived from the final pixels",
+          "verdict": "passed"
+        },
+        {
+          "name": "Option D violates the motions derived from the final pixels",
+          "verdict": "passed"
+        },
+        {
+          "name": "One printed answer satisfies the visible constraints",
+          "verdict": "passed"
+        },
+        {
+          "name": "Native generator and verifier fingerprints match",
+          "verdict": "passed"
+        }
+      ],
+      "scope": "Reopen exact FCStd, measure rigid solids and interfaces, decode visible final PNG lettering, solve contact constraints and evaluate four printed options.",
+      "commandExitStatus": 0,
+      "binding": "exact",
+      "bindingBasis": "exact candidate and full input fingerprints",
+      "commandEventId": "e000032"
+    }
+  ],
+  "usage": {
+    "schemaVersion": 2,
+    "runId": "build-c2512c2a-e95e-4984-beb6-d3c4882657e6",
+    "source": "codex",
+    "runtime": "Codex Desktop",
+    "status": "measured",
+    "elapsedMs": 371305,
+    "elapsedKind": "wall-clock",
+    "scope": "Runtime-reported usage between the start baseline and finish snapshot of this session. In-flight or delayed usage, earlier conversation, other agents and later delivery are excluded. This is an observed interval, not a complete billed task total.",
+    "scopeComplete": false,
+    "observedTokens": {
+      "input_tokens": 5508626,
+      "cached_input_tokens": 5488384,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 8336,
+      "reasoning_output_tokens": 2744,
+      "total_tokens": 5516962
+    },
+    "tokens": {
+      "input_tokens": null,
+      "cached_input_tokens": null,
+      "cache_write_input_tokens": null,
+      "output_tokens": null,
+      "reasoning_output_tokens": null,
+      "total_tokens": null
+    },
+    "models": [
+      {
+        "provider": "openai",
+        "model": "gpt-6.2-astra",
+        "reasoningEffort": "xhigh",
+        "tokens": {
+          "input_tokens": 5508626,
+          "cached_input_tokens": 5488384,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 8336,
+          "reasoning_output_tokens": 2744,
+          "total_tokens": 5516962
+        },
+        "observations": 24
+      }
+    ],
+    "missingFields": [],
+    "issues": [],
+    "observations": 24
+  },
+  "caseId": "authored-f1b2e96852e4013b0a62f69e"
+}

@@ -1,5 +1,8 @@
 * text=auto eol=lf
 
+# Native assembly measurements are fingerprinted as the exact bytes exported by FreeCAD.
+spatialviz-harness/site/records/*/geometry.json -text
+
 # Preserve the pinned upstream generator byte for byte.
 questions/vendor/spatialLogic.js -text -whitespace
 spatialviz-harness/vendor/SpatialViz-Bench-c27f9111a267/** -text -whitespace

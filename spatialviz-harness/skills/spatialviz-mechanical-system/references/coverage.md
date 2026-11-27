@@ -1,4 +1,6 @@
-# Official coverage
+# Official coverage and historical schematic constructions
+
+The table maps all official relations learned from the audit. The [native coverage register](freecad-coverage.md) identifies the relations built and measured in FreeCAD.
 
 All source IDs begin with `MentalAnimation/MechanicalSystem/`. The two official levels contain 40 items each, indexed 0 through 39. These family names describe local construction choices. Each accepted plate exercises the named contact in the derivation of the listed output. Read [the 80 individual observations and frequency tables](audit.json) for the image, wording, choices, key, path and distractor.
 

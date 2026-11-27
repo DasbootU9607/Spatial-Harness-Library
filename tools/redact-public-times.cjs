@@ -14,19 +14,33 @@ function publicFiles(root=ROOT){
  for(const name of ['catalog','build-attributions','provenance'])files.push(path.join(root,'maze-harness/site/data',name+'.json'));
  return files.filter(file=>fs.existsSync(file));
 }
+// In a mechanical rebuild input, a member's "at" is a three-axis position.
+function inspectPublicJson(file, value, inspect) {
+ if (path.basename(file)!=='system.json' || !value.cad || !Array.isArray(value.connections) || !value.members) return inspect(value);
+ const document=structuredClone(value), positions=[];
+ for(const [name,member] of Object.entries(document.members)){
+  if(member && typeof member.kind==='string' && Array.isArray(member.at) && member.at.length===3 && member.at.every(n=>n===null || (Number.isFinite(n) && Math.abs(n)<=1e6))){
+   positions.push([name,member.at]);
+   delete member.at;
+  }
+ }
+ const result=inspect(document);
+ if(result) for(const [name,position] of positions) result.members[name].at=position;
+ return result;
+}
 function check(root=ROOT){
  const files=publicFiles(root);
  for(const file of files){
-  try{if(file.endsWith('.json'))assertNoAbsoluteTimes(read(file));else if(hasAbsoluteTime(fs.readFileSync(file,'utf8')))throw Error('Absolute activity time in CSV');}
+  try{if(file.endsWith('.json'))inspectPublicJson(file,read(file),assertNoAbsoluteTimes);else if(hasAbsoluteTime(fs.readFileSync(file,'utf8')))throw Error('Absolute activity time in CSV');}
   catch(error){throw Error(path.relative(root,file)+': '+error.message);}
  }
  return files.length;
 }
 function redact(root=ROOT){
  const changed=new Set();
- const write=(file,value)=>{const old=read(file);if(JSON.stringify(old)===JSON.stringify(value))return;fs.writeFileSync(file,JSON.stringify(value,null,2)+'\n');changed.add(path.relative(root,file));};
+ const write=(file,value)=>{const old=read(file);if(require('node:util').isDeepStrictEqual(old,value))return;fs.writeFileSync(file,JSON.stringify(value,null,2)+'\n');changed.add(path.relative(root,file));};
  for(const file of publicFiles(root).filter(file=>file.endsWith('.json'))){
-  const original=read(file),next=withoutAbsoluteTimes(original);
+  const original=read(file),next=inspectPublicJson(file,original,withoutAbsoluteTimes);
   if(file.endsWith(path.sep+'process.json')&&next.manifest)next.manifest.sealed=Boolean(original.manifest.finishedAt||original.manifest.sealed);
   write(file,next);
  }
@@ -46,7 +60,7 @@ function redact(root=ROOT){
  check(root);
  return [...changed];
 }
-module.exports={publicFiles,check,redact};
+module.exports={publicFiles,check,redact,inspectPublicJson};
 if(require.main===module){
  if(process.argv.includes('--write'))console.log(JSON.stringify({redacted:redact()}));
  else console.log(`Public time privacy passed: ${check()} data files contain no absolute activity times.`);

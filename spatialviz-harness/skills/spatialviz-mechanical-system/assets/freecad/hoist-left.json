@@ -1,0 +1,112 @@
+{
+  "title": "Which way does the suspended load move?",
+  "intent": "Resolve the external mesh, rigid hub and takeoff tangent in the front view.",
+  "cad": {
+    "moduleMm": 2,
+    "tiltDeg": 24
+  },
+  "members": {
+    "A": {
+      "kind": "gear",
+      "at": [
+        0,
+        0,
+        0
+      ],
+      "teeth": 16
+    },
+    "B": {
+      "kind": "gear",
+      "at": [
+        24,
+        0,
+        0
+      ],
+      "teeth": 32
+    },
+    "D": {
+      "kind": "drum",
+      "at": [
+        24,
+        0,
+        1
+      ],
+      "radius": 6
+    },
+    "W": {
+      "kind": "weight",
+      "at": [
+        null,
+        26,
+        1
+      ]
+    }
+  },
+  "connections": [
+    {
+      "kind": "mesh",
+      "ports": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "kind": "key",
+      "ports": [
+        "B",
+        "D"
+      ]
+    },
+    {
+      "kind": "cord",
+      "ports": [
+        "D",
+        "W"
+      ],
+      "side": "left"
+    }
+  ],
+  "input": {
+    "member": "A",
+    "motion": "CW"
+  },
+  "interval": "instant",
+  "targets": [
+    {
+      "name": "W",
+      "kind": "vertical"
+    }
+  ],
+  "choices": [
+    {
+      "motions": [
+        "up"
+      ],
+      "reason": "A CCW drum lifts a taut line at its right rim."
+    },
+    {
+      "motions": [
+        "down"
+      ],
+      "reason": "A CCW drum lowers a taut line at its left rim."
+    },
+    {
+      "motions": [
+        "stationary"
+      ],
+      "reason": "The keyed hub couples the drum to B and the line is taut."
+    },
+    {
+      "motions": [
+        "rotates"
+      ],
+      "reason": "The drum turns about its axle. The suspended load travels on the straight line."
+    }
+  ],
+  "references": [
+    "MentalAnimation/MechanicalSystem/Level0/20",
+    "MentalAnimation/MechanicalSystem/Level0/21",
+    "MentalAnimation/MechanicalSystem/Level1/32",
+    "MentalAnimation/MechanicalSystem/Level1/34"
+  ]
+}

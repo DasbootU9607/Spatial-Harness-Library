@@ -31,6 +31,16 @@ test('private collection remains intact while JSON and CSV exports omit absolute
  assert.equal(published.manifest.sealed,false);
 });
 
+test('mechanical rebuild coordinates survive redaction while activity times still fail',()=>{
+ const {inspectPublicJson}=require('../../redact-public-times.cjs');
+ const model={cad:{moduleMm:2},connections:[],members:{G:{kind:'gear',at:[null,26,1]}}};
+ assert.deepEqual(inspectPublicJson('system.json',model,withoutAbsoluteTimes),model);
+ inspectPublicJson('system.json',model,assertNoAbsoluteTimes);
+ assert.throws(()=>inspectPublicJson('process.json',model,assertNoAbsoluteTimes));
+ assert.throws(()=>inspectPublicJson('system.json',{...model,at:1731111111111},assertNoAbsoluteTimes));
+ assert.throws(()=>inspectPublicJson('system.json',{...model,members:{G:{kind:'gear',at:1731111111111}}},assertNoAbsoluteTimes));
+});
+
 test('all checked-in public build files exclude absolute activity times',()=>{
  assert(require('../../redact-public-times.cjs').check()>=70);
 });

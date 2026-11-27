@@ -1,6 +1,6 @@
 'use strict';
 const fs=require('node:fs'),path=require('node:path'),{execFileSync}=require('node:child_process');
-const argv=process.argv.slice(2),usage='node build.cjs --system FILE [--seed N] [--run DIR] [--parent ID --basis TEXT] or node build.cjs SEED MECHANISM [PARAMETERS.json]';
+const argv=process.argv.slice(2),usage='node build.cjs --system FILE [--seed N] [--run DIR] [--parent ID --basis TEXT]';
 const bridge=(...args)=>execFileSync(process.execPath,[path.join(__dirname,'construct.cjs'),...args],{encoding:'utf8',windowsHide:true,maxBuffer:8*1024*1024}).trim();
 const read=file=>JSON.parse(fs.readFileSync(file,'utf8').replace(/^\uFEFF/,''));
 let seed,params,run,lineage=[];
@@ -14,17 +14,17 @@ if(argv[0]==='--system'){
  process.stderr.write('Recorder '+run+'\n');
  bridge('read','--run',run,'--file',file);params={system:read(file)};
  const note=path.join(run,'author-intent.json');
- fs.writeFileSync(note,JSON.stringify({goal:params.system.intent,change:params.system.title,reason:'Evaluate the authored assembly and each printed hypothesis.',expectedChecks:['Read the final contact flags, derive the outputs, and compare four choices.']}));
+ fs.writeFileSync(note,JSON.stringify({goal:params.system.intent,change:params.system.title,reason:'Build the FreeCAD solids and photograph the reopened assembly.',expectedChecks:['Measure the native assembly and solve the printed motion question.']}));
  bridge('note','--run',run,'--file',note);
 }else{
- const [value,id,file]=argv;if(!/^-?\d+$/.test(value)||!id||argv.length>3)throw Error(usage);
- seed=value;params={...(file?read(file):{}),mechanism:id};
- run=bridge('start','--task',id+' '+seed+' '+JSON.stringify(params),'--title','Mechanical System / '+id,'--no-viewer');
- bridge('read','--run',run,'--file',path.join(__dirname,'../references/coverage.md'));
+ throw Error('Formal questions require FreeCAD. '+usage);
 }
 const config=path.join(run,'parameters.json'),task=path.join(run,'delivery.json');
 fs.writeFileSync(config,JSON.stringify(params,null,2));
 const c=JSON.parse(bridge('generate','--run',run,'--task',task,'--seed',seed,'--params',config,...lineage));
 const a=['--run',run,'--candidate',c.id],preview=JSON.parse(bridge('render',...a));
 bridge('verify',...a);
-console.log(JSON.stringify({run,task,candidate:c.id,media:path.join(run,preview.artifactPath),verdict:'passed'},null,2));
+const spec=read(task),hash=file=>require('node:crypto').createHash('sha256').update(fs.readFileSync(file)).digest('hex');
+const native=fs.readdirSync(run).filter(f=>f.startsWith('native-')).map(f=>path.join(run,f)).find(f=>fs.existsSync(path.join(f,'assembly.FCStd'))&&hash(path.join(f,'assembly.FCStd'))===spec.provenance.native.modelSha256&&fs.existsSync(path.join(f,'plate.png'))&&hash(path.join(f,'plate.png'))===spec.rendering.sha256);
+if(!native)throw Error('Missing exact native model');
+console.log(JSON.stringify({run,task,candidate:c.id,media:path.join(run,preview.artifactPath),model:path.join(native,'assembly.FCStd'),native,verdict:'passed'},null,2));

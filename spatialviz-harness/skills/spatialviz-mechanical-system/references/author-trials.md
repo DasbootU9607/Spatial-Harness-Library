@@ -1,4 +1,6 @@
-# Installed goal-only author trials
+# Historical goal-only SVG author trials
+
+The tasks and build histories below remain available. See the [FreeCAD constructions](freecad-coverage.md) for the current exhibition.
 
 Independent authors received the English-equivalent goals below and access to the installed skill. They selected the mechanisms, constraints, dimensions, inputs, observation order and candidate answers. Each authored JSON was passed to the installed build command. Readers received anonymized PNGs.
 

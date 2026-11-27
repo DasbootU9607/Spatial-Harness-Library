@@ -1,0 +1,102 @@
+{
+  "title": "How do the planet and its axle move?",
+  "intent": "Distinguish the planet's frame-relative spin from its axle's orbit around a locked sun.",
+  "cad": {
+    "moduleMm": 2,
+    "tiltDeg": 24
+  },
+  "members": {
+    "S": {
+      "kind": "gear",
+      "at": [
+        0,
+        0,
+        0
+      ],
+      "teeth": 24
+    },
+    "P": {
+      "kind": "gear",
+      "at": [
+        20,
+        0,
+        0
+      ],
+      "teeth": 16
+    },
+    "H": {
+      "kind": "carrier",
+      "at": [
+        0,
+        0,
+        1
+      ]
+    }
+  },
+  "connections": [
+    {
+      "kind": "mesh",
+      "ports": [
+        "S",
+        "P"
+      ],
+      "arm": "H"
+    },
+    {
+      "kind": "ground",
+      "ports": [
+        "S"
+      ]
+    }
+  ],
+  "input": {
+    "member": "H",
+    "motion": "CCW"
+  },
+  "interval": "instant",
+  "targets": [
+    {
+      "name": "P",
+      "kind": "spin"
+    },
+    {
+      "name": "H",
+      "kind": "orbit"
+    }
+  ],
+  "choices": [
+    {
+      "motions": [
+        "CCW",
+        "CCW"
+      ],
+      "reason": "The fixed sun appears CW on H. The external planet spins CCW on H. Adding the CCW carrier gives CCW frame spin."
+    },
+    {
+      "motions": [
+        "CW",
+        "CCW"
+      ],
+      "reason": "The carrier does turn CCW. Treating the fixed sun as a frame-mounted driving gear reverses the planet incorrectly."
+    },
+    {
+      "motions": [
+        "stationary",
+        "CCW"
+      ],
+      "reason": "A stationary point at tooth contact allows the planet body to spin while its center orbits."
+    },
+    {
+      "motions": [
+        "CCW",
+        "CW"
+      ],
+      "reason": "The axle rides on H and follows its prescribed CCW orbit."
+    }
+  ],
+  "references": [
+    "MentalAnimation/MechanicalSystem/Level0/16",
+    "MentalAnimation/MechanicalSystem/Level0/17",
+    "MentalAnimation/MechanicalSystem/Level0/0"
+  ]
+}

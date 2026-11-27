@@ -1,0 +1,165 @@
+{
+  "id": "t002",
+  "actionId": "14eefc7e-b45b-4011-98c5-b0103f6c3da1",
+  "candidateId": "v002",
+  "testedFingerprints": {
+    "specification": "f1b2e96852e4013b0a62f69e808dbc57c1bb390c4cb4f18e2383ffdf0f561c4a",
+    "geometry": "66813570e4014e1f1bc574085c641e60a9831b50585b4293d6e86fdd73364484",
+    "question": "19b5951eca3e562c290bf15dfee9673df81a7d71d1752ba6927ad5b9ba5f1c33",
+    "options": "8de907db99eb4db27b87aa5d2445b8b8d04f36ae1d4e4c3054e0c2136f6b8877",
+    "answer": "22ef4af7ab500cb7733fe9d1cfeea3e2226a8da203ea4bf6ba3b2f0762a7cbd7",
+    "contract": "d16e2f83f7844bc78d3f0520c99c8000cd5bba7d4a8d5c64b1d276d93f241b7a",
+    "rendering": "ff1c79ecb0f534dd8fb36d3f5856c8317362b49a1c5eb26e79dc1c6fe3868be9",
+    "generator": "14b466f3d616f43e8ed59343ced7eb33cc16afee527775cb6fc1329746293cb5"
+  },
+  "verifier": {
+    "id": "mechanical-system",
+    "revision": "500d731287cbe10fedf6925df3b9322c62a40b177fc9d2706f22eae6e3aec23c"
+  },
+  "reportSha256": "b8fbd63c3379cb9522806104835cf3e5079e19e7b8478feb17e017ea072597f4",
+  "verdict": "passed",
+  "status": "passed",
+  "checks": [
+    {
+      "name": "Candidate PNG matches the recorded final render",
+      "verdict": "passed"
+    },
+    {
+      "name": "Fresh FreeCAD reopen reproduces all solid and interface checks",
+      "verdict": "passed"
+    },
+    {
+      "name": "Valid positive-volume solid: A  |  gear",
+      "verdict": "passed"
+    },
+    {
+      "name": "Valid positive-volume solid: B  |  gear",
+      "verdict": "passed"
+    },
+    {
+      "name": "Valid positive-volume solid: D  |  drum",
+      "verdict": "passed"
+    },
+    {
+      "name": "Valid positive-volume solid: W  |  weight",
+      "verdict": "passed"
+    },
+    {
+      "name": "Valid positive-volume solid: Fixed rear mounting plate",
+      "verdict": "passed"
+    },
+    {
+      "name": "Valid positive-volume solid: Axle at A",
+      "verdict": "passed"
+    },
+    {
+      "name": "Valid positive-volume solid: Frame bearing at A",
+      "verdict": "passed"
+    },
+    {
+      "name": "Valid positive-volume solid: Axle at B, D",
+      "verdict": "passed"
+    },
+    {
+      "name": "Valid positive-volume solid: Frame bearing at B, D",
+      "verdict": "passed"
+    },
+    {
+      "name": "Valid positive-volume solid: Feather key B / D",
+      "verdict": "passed"
+    },
+    {
+      "name": "Valid positive-volume solid: Taut wrapped line D / W",
+      "verdict": "passed"
+    },
+    {
+      "name": "Counted 32 physical flank crossings for 16 teeth on A",
+      "verdict": "passed"
+    },
+    {
+      "name": "Counted 64 physical flank crossings for 32 teeth on B",
+      "verdict": "passed"
+    },
+    {
+      "name": "Native pitch distance 48.000 mm at A/B",
+      "verdict": "passed"
+    },
+    {
+      "name": "Working tooth faces overlap axially",
+      "verdict": "passed"
+    },
+    {
+      "name": "Meshed B-reps at the displayed pose have 0.000001 cubic mm interference",
+      "verdict": "passed"
+    },
+    {
+      "name": "A physical frame bearing locates a fixed mesh axle at A / B",
+      "verdict": "passed"
+    },
+    {
+      "name": "A physical frame bearing locates a fixed mesh axle at A / B",
+      "verdict": "passed"
+    },
+    {
+      "name": "Keyed hubs have a common axis",
+      "verdict": "passed"
+    },
+    {
+      "name": "Solid key sits in the keyway of B",
+      "verdict": "passed"
+    },
+    {
+      "name": "Solid key sits in the keyway of D",
+      "verdict": "passed"
+    },
+    {
+      "name": "One vertical straight takeoff on the wrapped line",
+      "verdict": "passed"
+    },
+    {
+      "name": "Wrapped line exits the drum tangentially above the load",
+      "verdict": "passed"
+    },
+    {
+      "name": "Line meets the load and the barrel",
+      "verdict": "passed"
+    },
+    {
+      "name": "Printed working connections match measurements on the native assembly",
+      "verdict": "passed"
+    },
+    {
+      "name": "Displayed driver, outputs and interval match the delivered question",
+      "verdict": "passed"
+    },
+    {
+      "name": "Option A violates the motions derived from the final pixels",
+      "verdict": "passed"
+    },
+    {
+      "name": "Option B satisfies the motions derived from the final pixels",
+      "verdict": "passed"
+    },
+    {
+      "name": "Option C violates the motions derived from the final pixels",
+      "verdict": "passed"
+    },
+    {
+      "name": "Option D violates the motions derived from the final pixels",
+      "verdict": "passed"
+    },
+    {
+      "name": "One printed answer satisfies the visible constraints",
+      "verdict": "passed"
+    },
+    {
+      "name": "Native generator and verifier fingerprints match",
+      "verdict": "passed"
+    }
+  ],
+  "scope": "Reopen exact FCStd, measure rigid solids and interfaces, decode visible final PNG lettering, solve contact constraints and evaluate four printed options.",
+  "commandExitStatus": 0,
+  "binding": "exact",
+  "bindingBasis": "exact candidate and full input fingerprints",
+  "commandEventId": "e000032"
+}

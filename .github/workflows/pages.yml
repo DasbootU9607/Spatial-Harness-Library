@@ -52,7 +52,7 @@ jobs:
         run: |
           node tools/check.cjs
           node --test tools/observatory/tests/runtime.test.cjs tools/observatory/tests/schema.test.cjs tools/observatory/tests/rotation-domains.test.cjs
-          node --test spatialviz-harness/skills/spatialviz-mechanical-system/scripts/domain.test.cjs spatialviz-harness/skills/spatialviz-mechanical-system/scripts/system.test.cjs
+          node --test spatialviz-harness/skills/spatialviz-mechanical-system/scripts/domain.test.cjs spatialviz-harness/skills/spatialviz-mechanical-system/scripts/system.test.cjs spatialviz-harness/skills/spatialviz-mechanical-system/scripts/native.test.cjs
           node --test tools/observatory/tests/process-presentation.test.cjs
           node --test tools/observatory/tests/time-privacy.test.cjs
       - name: Install browser checks
@@ -96,6 +96,7 @@ jobs:
           python -B spatialviz-harness/penetration/tests.py cross-sections
           python -B spatialviz-harness/penetration/tests.py cube-assembly
           python -B spatialviz-harness/penetration/tests.py cube-counting
+          node --test spatialviz-harness/skills/spatialviz-mechanical-system/scripts/recorded-native.test.cjs
   deploy:
     if: github.event_name != 'pull_request'
     needs: [validate, official-rotation]

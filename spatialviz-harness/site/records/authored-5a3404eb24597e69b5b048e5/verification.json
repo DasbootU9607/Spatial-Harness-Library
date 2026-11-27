@@ -1,0 +1,133 @@
+{
+  "id": "t002",
+  "actionId": "711732ad-089a-4b4f-809e-405e5196dae1",
+  "candidateId": "v002",
+  "testedFingerprints": {
+    "specification": "5a3404eb24597e69b5b048e5bd3251d5cd830b4b152ad6468b2c7e26895c872e",
+    "geometry": "e69bb1fb343638e5401178ed8e6b810f377015887f0aaa24c27e1a74d3a07a49",
+    "question": "9d3cb5a11a6af1bb89313ba28c8a856186301cfd81029954b0b8e105afe22a04",
+    "options": "57e3e167224db1b9b327bf8985fd3c2e851fba43e6c139efc55324c04733ce18",
+    "answer": "30dc04085764e607aa1ad1b4cee98d6146aa6618c98a3f45638fb456762b1b32",
+    "contract": "d16e2f83f7844bc78d3f0520c99c8000cd5bba7d4a8d5c64b1d276d93f241b7a",
+    "rendering": "f0b11ea3daf256e0108b993c8e805ff1f0bdd5cc370f06e4915c4d1fbce5e925",
+    "generator": "72c3f28892725f82e1b1f9adfb91561333faa3c5a72e97013eeb63d32062b2ca"
+  },
+  "verifier": {
+    "id": "mechanical-system",
+    "revision": "500d731287cbe10fedf6925df3b9322c62a40b177fc9d2706f22eae6e3aec23c"
+  },
+  "reportSha256": "fcead11cc8263c8432ef63bc6c80589658510434f3d16e30f22d1637543bbbaa",
+  "verdict": "passed",
+  "status": "passed",
+  "checks": [
+    {
+      "name": "Candidate PNG matches the recorded final render",
+      "verdict": "passed"
+    },
+    {
+      "name": "Fresh FreeCAD reopen reproduces all solid and interface checks",
+      "verdict": "passed"
+    },
+    {
+      "name": "Valid positive-volume solid: S  |  gear",
+      "verdict": "passed"
+    },
+    {
+      "name": "Valid positive-volume solid: P  |  gear",
+      "verdict": "passed"
+    },
+    {
+      "name": "Valid positive-volume solid: H  |  carrier",
+      "verdict": "passed"
+    },
+    {
+      "name": "Valid positive-volume solid: Fixed rear mounting plate",
+      "verdict": "passed"
+    },
+    {
+      "name": "Valid positive-volume solid: Axle at S, H",
+      "verdict": "passed"
+    },
+    {
+      "name": "Valid positive-volume solid: Frame bearing at S, H",
+      "verdict": "passed"
+    },
+    {
+      "name": "Valid positive-volume solid: Axle at P",
+      "verdict": "passed"
+    },
+    {
+      "name": "Valid positive-volume solid: Frame bolts on S",
+      "verdict": "passed"
+    },
+    {
+      "name": "Counted 48 physical flank crossings for 24 teeth on S",
+      "verdict": "passed"
+    },
+    {
+      "name": "Counted 32 physical flank crossings for 16 teeth on P",
+      "verdict": "passed"
+    },
+    {
+      "name": "Native pitch distance 40.000 mm at S/P",
+      "verdict": "passed"
+    },
+    {
+      "name": "Working tooth faces overlap axially",
+      "verdict": "passed"
+    },
+    {
+      "name": "Meshed B-reps at the displayed pose have 0.000047 cubic mm interference",
+      "verdict": "passed"
+    },
+    {
+      "name": "Carrier bore locates a mesh axle on H",
+      "verdict": "passed"
+    },
+    {
+      "name": "Carrier bore locates a mesh axle on H",
+      "verdict": "passed"
+    },
+    {
+      "name": "Two through-bolts clamp S to the fixed frame",
+      "verdict": "passed"
+    },
+    {
+      "name": "Printed working connections match measurements on the native assembly",
+      "verdict": "passed"
+    },
+    {
+      "name": "Displayed driver, outputs and interval match the delivered question",
+      "verdict": "passed"
+    },
+    {
+      "name": "Option A violates the motions derived from the final pixels",
+      "verdict": "passed"
+    },
+    {
+      "name": "Option B violates the motions derived from the final pixels",
+      "verdict": "passed"
+    },
+    {
+      "name": "Option C satisfies the motions derived from the final pixels",
+      "verdict": "passed"
+    },
+    {
+      "name": "Option D violates the motions derived from the final pixels",
+      "verdict": "passed"
+    },
+    {
+      "name": "One printed answer satisfies the visible constraints",
+      "verdict": "passed"
+    },
+    {
+      "name": "Native generator and verifier fingerprints match",
+      "verdict": "passed"
+    }
+  ],
+  "scope": "Reopen exact FCStd, measure rigid solids and interfaces, decode visible final PNG lettering, solve contact constraints and evaluate four printed options.",
+  "commandExitStatus": 0,
+  "binding": "exact",
+  "bindingBasis": "exact candidate and full input fingerprints",
+  "commandEventId": "e000032"
+}
