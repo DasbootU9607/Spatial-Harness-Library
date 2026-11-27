@@ -1,0 +1,53 @@
+{
+  "id": "t002",
+  "actionId": "a92d4dfa-1285-4c74-b029-dcb6fd05ca5d",
+  "candidateId": "v002",
+  "testedFingerprints": {
+    "specification": "c396dfabf8e3b30f3d52a1e5f239ed353a6ee3c4db2adb923a314b26f6ef9080",
+    "geometry": "fa5cf8bced396b50736542448dc72a9bbb551f97df3b58c7808b0e2ca7db7223",
+    "question": "3197894b534c953369105036045650eaa3110cd3d29e2195875ad0ed32898b98",
+    "options": "4fc00e1aeab3ea7c1e1f6d722040c76f9deb3b5daa112f76c26e43767264d299",
+    "answer": "78f972e399f2348f7c1dfe5bb79a7bab1b0a78a516f5ca0c4956e44d2b18d1ae",
+    "contract": null,
+    "rendering": "e0454370336573d7305e32fa64008b4aa0b964f5209739b741ea03d41d360118",
+    "generator": "de381d57c91b9e657db0a8d0552c638eb8bad1885ac9129ae447d996701efe19"
+  },
+  "verifier": {
+    "id": "block-movement",
+    "revision": "05facdd03f40c6c217c8a41766fb64bced7395ba6306c594bb2ee7e9ca956fc0"
+  },
+  "reportSha256": "a7c25fa8799211310607ba94bbd54bc3547ad80909a87eba8dd24364f9b8f90e",
+  "verdict": "passed",
+  "status": "passed",
+  "checks": [
+    {
+      "name": "Printed coordinate key, question and four option labels match the final sheet",
+      "verdict": "passed"
+    },
+    {
+      "name": "Option A",
+      "detail": "red (2, 1, 0) to (2, 2, 0). Then red (2, 2, 0) to (1, 2, 0). Then green (1, 0, 0) to (0, 0, 0), exchanging with cyan. Step 3, cell (1, 2, 0) contains red. The panel requires empty.",
+      "verdict": "passed"
+    },
+    {
+      "name": "Option B",
+      "detail": "cyan (0, 2, 0) to (1, 2, 0). Then cyan (1, 2, 0) to (2, 2, 0). Then green (1, 0, 0) to (0, 0, 0), exchanging with cyan. Step 3, cell (0, 2, 0) contains empty. The panel requires cyan.",
+      "verdict": "passed"
+    },
+    {
+      "name": "Option C",
+      "detail": "green (1, 0, 0) to (0, 0, 0), exchanging with cyan. Then green (0, 0, 0) to (1, 0, 0), exchanging with cyan. Then green (1, 0, 0) to (0, 0, 0), exchanging with cyan. Every displayed constraint matches.",
+      "verdict": "passed"
+    },
+    {
+      "name": "Option D",
+      "detail": "cyan (0, 2, 0) to (1, 2, 0). Then cyan (1, 2, 0) to (1, 1, 0). Then green (1, 0, 0) to (0, 0, 0), exchanging with cyan. Step 3, cell (0, 2, 0) contains empty. The panel requires cyan.",
+      "verdict": "passed"
+    }
+  ],
+  "scope": "Printed state keys, commands, labeled diagrams and all four alternatives.",
+  "commandExitStatus": 0,
+  "binding": "exact",
+  "bindingBasis": "exact candidate and full input fingerprints",
+  "commandEventId": "e000022"
+}

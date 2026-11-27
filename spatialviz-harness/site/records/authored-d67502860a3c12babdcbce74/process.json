@@ -1,0 +1,812 @@
+{
+  "schemaVersion": 1,
+  "manifest": {
+    "sealed": true,
+    "id": "build-067a8c39-a5d6-4e47-9f9a-467e06c431a9",
+    "title": "Block Movement / missing / 32057",
+    "runKind": "[private value omitted]",
+    "harness": "spatialviz-harness",
+    "benchmark": null,
+    "category": null,
+    "taskType": null,
+    "skill": {
+      "id": "spatialviz-block-movement",
+      "sha256": "686cae0826963db0562dd7c621f209d13e9cac8d88ea73a8e0db1bf79b0a69e1"
+    },
+    "status": "accepted",
+    "finalCandidateId": "v001",
+    "limitations": [
+      "Only recorder-mediated deliveries, commands and saved boundaries are observed; direct function calls, unwrapped commands and unsaved editor states are excluded.",
+      "Design notes are explicit author annotations, not internal reasoning."
+    ],
+    "captureGaps": []
+  },
+  "events": [
+    {
+      "id": "e000001",
+      "seq": 1,
+      "runId": "build-067a8c39-a5d6-4e47-9f9a-467e06c431a9",
+      "type": "run.created",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": null,
+      "details": {},
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000002",
+      "seq": 2,
+      "runId": "build-067a8c39-a5d6-4e47-9f9a-467e06c431a9",
+      "type": "collector.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": null,
+      "details": {},
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000003",
+      "seq": 3,
+      "runId": "build-067a8c39-a5d6-4e47-9f9a-467e06c431a9",
+      "type": "skill.attached",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": null,
+      "details": {
+        "sha256": "686cae0826963db0562dd7c621f209d13e9cac8d88ea73a8e0db1bf79b0a69e1",
+        "skill": "spatialviz-block-movement"
+      },
+      "evidenceRefs": [
+        {
+          "id": "03e69e1a7d3d8db8",
+          "sha256": "686cae0826963db0562dd7c621f209d13e9cac8d88ea73a8e0db1bf79b0a69e1",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000004",
+      "seq": 4,
+      "runId": "build-067a8c39-a5d6-4e47-9f9a-467e06c431a9",
+      "type": "resource.read",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "ded83514-2d5d-400e-92e5-fc958eeda4a5",
+      "candidateId": null,
+      "details": {
+        "outcome": "delivered",
+        "label": "SKILL.md",
+        "start": 1,
+        "end": 22,
+        "sha256": "686cae0826963db0562dd7c621f209d13e9cac8d88ea73a8e0db1bf79b0a69e1",
+        "sourceSha256": "686cae0826963db0562dd7c621f209d13e9cac8d88ea73a8e0db1bf79b0a69e1"
+      },
+      "evidenceRefs": [
+        {
+          "id": "c078104caf072fd9",
+          "sha256": "686cae0826963db0562dd7c621f209d13e9cac8d88ea73a8e0db1bf79b0a69e1",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000005",
+      "seq": 5,
+      "runId": "build-067a8c39-a5d6-4e47-9f9a-467e06c431a9",
+      "type": "command.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "08f05b81-9273-4f4c-8898-bc445dcf11de",
+      "candidateId": null,
+      "details": {
+        "label": "python",
+        "kind": "mental-animation-generation"
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000006",
+      "seq": 6,
+      "runId": "build-067a8c39-a5d6-4e47-9f9a-467e06c431a9",
+      "type": "command.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "08f05b81-9273-4f4c-8898-bc445dcf11de",
+      "candidateId": null,
+      "details": {
+        "commandEventId": "e000005",
+        "kind": "mental-animation-generation",
+        "exitCode": 0,
+        "signal": null
+      },
+      "evidenceRefs": [
+        {
+          "id": "0b12f2aaa03014f0",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "availability": "local evidence; hash published"
+        },
+        {
+          "id": "6f7ce3e16998f0ee",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000007",
+      "seq": 7,
+      "runId": "build-067a8c39-a5d6-4e47-9f9a-467e06c431a9",
+      "type": "candidate.saved",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "50bb13ab-5f81-47e0-bd53-ce19b07446ca",
+      "candidateId": "v001",
+      "details": {
+        "sha256": "d67502860a3c12babdcbce749c374e6aeb4489cd82f5c6cc3ada9fe5a7ab9a20",
+        "parentId": null,
+        "parentBasis": null,
+        "changes": [
+          "specification",
+          "geometry",
+          "question",
+          "options",
+          "answer",
+          "rendering",
+          "generator"
+        ],
+        "fingerprints": {
+          "specification": "d67502860a3c12babdcbce749c374e6aeb4489cd82f5c6cc3ada9fe5a7ab9a20",
+          "geometry": "a253330e586be4504b8465eed27159e71f2e6bc4406bcb788b8d915f9676a2dc",
+          "question": "e5153b48de86855150cca962d93579cb408426cbe05324f64a21cc090dab3a7a",
+          "options": "a41d5549c44c58fc21be0dc4a83fa9e8cfc033f32f7a5a5ce8e5f90584c84bca",
+          "answer": "5e2a21ec41a28c72b3b2c824ac4c734f72f0f2f822a5626cf2579636ab3b968b",
+          "contract": null,
+          "rendering": "f230cbe4e0321b7ab02df512672b7f2bfab2924ef438720d733d46ef12529883",
+          "generator": "8f45e041f8bd4eef5255409c3304a3412f123c8c3c93a08e43032fd253be1f69"
+        },
+        "previewUnavailable": null
+      },
+      "evidenceRefs": [
+        {
+          "id": "67ca589da982f8a2",
+          "sha256": "d67502860a3c12babdcbce749c374e6aeb4489cd82f5c6cc3ada9fe5a7ab9a20",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000008",
+      "seq": 8,
+      "runId": "build-067a8c39-a5d6-4e47-9f9a-467e06c431a9",
+      "type": "build.saved",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "50bb13ab-5f81-47e0-bd53-ce19b07446ca",
+      "candidateId": "v001",
+      "details": {},
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000009",
+      "seq": 9,
+      "runId": "build-067a8c39-a5d6-4e47-9f9a-467e06c431a9",
+      "type": "render.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "a46eea16-cf88-41f8-ada2-a4ebe189f622",
+      "candidateId": "v001",
+      "details": {
+        "renderer": {
+          "id": "block-movement",
+          "revision": "05facdd03f40c6c217c8a41766fb64bced7395ba6306c594bb2ee7e9ca956fc0"
+        }
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000010",
+      "seq": 10,
+      "runId": "build-067a8c39-a5d6-4e47-9f9a-467e06c431a9",
+      "type": "render.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "a46eea16-cf88-41f8-ada2-a4ebe189f622",
+      "candidateId": "v001",
+      "details": {
+        "sha256": "4156bea70ffd91aae556a2f92d0249a18260eecbeb74ffb491d4940ada9ba614",
+        "renderer": {
+          "id": "block-movement",
+          "revision": "05facdd03f40c6c217c8a41766fb64bced7395ba6306c594bb2ee7e9ca956fc0"
+        },
+        "specification": "d67502860a3c12babdcbce749c374e6aeb4489cd82f5c6cc3ada9fe5a7ab9a20",
+        "rendering": "f230cbe4e0321b7ab02df512672b7f2bfab2924ef438720d733d46ef12529883"
+      },
+      "evidenceRefs": [
+        {
+          "id": "bee498b6e6ba9463",
+          "sha256": "4156bea70ffd91aae556a2f92d0249a18260eecbeb74ffb491d4940ada9ba614",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000011",
+      "seq": 11,
+      "runId": "build-067a8c39-a5d6-4e47-9f9a-467e06c431a9",
+      "type": "command.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "4af50be2-4dc3-47c2-9364-80c43a1c99ad",
+      "candidateId": "v001",
+      "details": {
+        "label": "node.exe",
+        "kind": "verification"
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000012",
+      "seq": 12,
+      "runId": "build-067a8c39-a5d6-4e47-9f9a-467e06c431a9",
+      "type": "command.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "4af50be2-4dc3-47c2-9364-80c43a1c99ad",
+      "candidateId": "v001",
+      "details": {
+        "commandEventId": "e000011",
+        "kind": "verification",
+        "exitCode": 0,
+        "signal": null
+      },
+      "evidenceRefs": [
+        {
+          "id": "15d05f7b7cc39aa2",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "availability": "local evidence; hash published"
+        },
+        {
+          "id": "ff3724c2730fb70c",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000013",
+      "seq": 13,
+      "runId": "build-067a8c39-a5d6-4e47-9f9a-467e06c431a9",
+      "type": "test.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "4af50be2-4dc3-47c2-9364-80c43a1c99ad",
+      "candidateId": "v001",
+      "details": {
+        "commandEventId": "e000011",
+        "completedEventId": "e000012",
+        "verdict": "passed",
+        "status": "passed",
+        "checks": [
+          {
+            "name": "Printed coordinate key, question and four option labels match the final sheet",
+            "verdict": "passed"
+          },
+          {
+            "name": "Option A",
+            "detail": "magenta (1, 1, 1) to (2, 1, 1). Then red (2, 1, 0) to (1, 1, 0), exchanging with gold. Then gold (2, 1, 0) to (2, 0, 0), magenta falls from (2, 1, 1) to (2, 1, 0). Step 3, cell (1, 0, 0) contains empty. The panel requires gold.",
+            "verdict": "passed"
+          },
+          {
+            "name": "Option B",
+            "detail": "magenta (1, 1, 1) to (1, 1, 0), exchanging with gold. Then red (2, 1, 0) to (1, 1, 0), exchanging with magenta. Then magenta (2, 1, 0) to (2, 0, 0). Step 3, cell (1, 0, 0) contains empty. The panel requires gold.",
+            "verdict": "passed"
+          },
+          {
+            "name": "Option C",
+            "detail": "gold (1, 1, 0) to (1, 0, 0), magenta falls from (1, 1, 1) to (1, 1, 0). Then red (2, 1, 0) to (1, 1, 0), exchanging with magenta. Then magenta (2, 1, 0) to (2, 0, 0). Every displayed constraint matches.",
+            "verdict": "passed"
+          },
+          {
+            "name": "Option D",
+            "detail": "red (0, 1, 0) to (0, 1, 1), exchanging with green. Then red (2, 1, 0) to (1, 1, 0), exchanging with gold. Then gold (2, 1, 0) to (2, 0, 0). Step 3, cell (0, 1, 0) contains green. The panel requires red.",
+            "verdict": "passed"
+          }
+        ],
+        "scope": "Printed state keys, commands, labeled diagrams and all four alternatives.",
+        "binding": "exact",
+        "bindingBasis": "exact candidate and full input fingerprints",
+        "testedFingerprints": {
+          "specification": "d67502860a3c12babdcbce749c374e6aeb4489cd82f5c6cc3ada9fe5a7ab9a20",
+          "geometry": "a253330e586be4504b8465eed27159e71f2e6bc4406bcb788b8d915f9676a2dc",
+          "question": "e5153b48de86855150cca962d93579cb408426cbe05324f64a21cc090dab3a7a",
+          "options": "a41d5549c44c58fc21be0dc4a83fa9e8cfc033f32f7a5a5ce8e5f90584c84bca",
+          "answer": "5e2a21ec41a28c72b3b2c824ac4c734f72f0f2f822a5626cf2579636ab3b968b",
+          "contract": null,
+          "rendering": "f230cbe4e0321b7ab02df512672b7f2bfab2924ef438720d733d46ef12529883",
+          "generator": "8f45e041f8bd4eef5255409c3304a3412f123c8c3c93a08e43032fd253be1f69"
+        },
+        "verifier": {
+          "id": "block-movement",
+          "revision": "05facdd03f40c6c217c8a41766fb64bced7395ba6306c594bb2ee7e9ca956fc0"
+        },
+        "reportSha256": "8da806811b7a7eac94965828cfa725504905e5ebdc80ed75c516c6b7292c589d"
+      },
+      "evidenceRefs": [
+        {
+          "id": "842d14ebaa06e855",
+          "sha256": "8da806811b7a7eac94965828cfa725504905e5ebdc80ed75c516c6b7292c589d",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000014",
+      "seq": 14,
+      "runId": "build-067a8c39-a5d6-4e47-9f9a-467e06c431a9",
+      "type": "resource.read",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "60b068e3-a4d7-45ca-818d-9cc2cee57d83",
+      "candidateId": null,
+      "details": {
+        "outcome": "delivered",
+        "label": "SKILL.md",
+        "start": 1,
+        "end": 22,
+        "sha256": "686cae0826963db0562dd7c621f209d13e9cac8d88ea73a8e0db1bf79b0a69e1",
+        "sourceSha256": "686cae0826963db0562dd7c621f209d13e9cac8d88ea73a8e0db1bf79b0a69e1"
+      },
+      "evidenceRefs": [
+        {
+          "id": "6ef1fe25de4beec5",
+          "sha256": "686cae0826963db0562dd7c621f209d13e9cac8d88ea73a8e0db1bf79b0a69e1",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000015",
+      "seq": 15,
+      "runId": "build-067a8c39-a5d6-4e47-9f9a-467e06c431a9",
+      "type": "resource.read",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "984bf050-ae40-42af-9dfa-ec7ebd9b46a5",
+      "candidateId": null,
+      "details": {
+        "outcome": "delivered",
+        "label": "coverage.md",
+        "start": 1,
+        "end": 46,
+        "sha256": "b6ffd3cfa4648b3aeadf74ab4be0f490108f92d1b00072f8707ce15d115058d2",
+        "sourceSha256": "b6ffd3cfa4648b3aeadf74ab4be0f490108f92d1b00072f8707ce15d115058d2"
+      },
+      "evidenceRefs": [
+        {
+          "id": "8dde0a89808ce32b",
+          "sha256": "b6ffd3cfa4648b3aeadf74ab4be0f490108f92d1b00072f8707ce15d115058d2",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000016",
+      "seq": 16,
+      "runId": "build-067a8c39-a5d6-4e47-9f9a-467e06c431a9",
+      "type": "render.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "87e298e3-6a8a-4c98-b4dc-3d82177967ac",
+      "candidateId": "v001",
+      "details": {
+        "renderer": {
+          "id": "block-movement",
+          "revision": "05facdd03f40c6c217c8a41766fb64bced7395ba6306c594bb2ee7e9ca956fc0"
+        }
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000017",
+      "seq": 17,
+      "runId": "build-067a8c39-a5d6-4e47-9f9a-467e06c431a9",
+      "type": "render.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "87e298e3-6a8a-4c98-b4dc-3d82177967ac",
+      "candidateId": "v001",
+      "details": {
+        "sha256": "4156bea70ffd91aae556a2f92d0249a18260eecbeb74ffb491d4940ada9ba614",
+        "renderer": {
+          "id": "block-movement",
+          "revision": "05facdd03f40c6c217c8a41766fb64bced7395ba6306c594bb2ee7e9ca956fc0"
+        },
+        "specification": "d67502860a3c12babdcbce749c374e6aeb4489cd82f5c6cc3ada9fe5a7ab9a20",
+        "rendering": "f230cbe4e0321b7ab02df512672b7f2bfab2924ef438720d733d46ef12529883"
+      },
+      "evidenceRefs": [
+        {
+          "id": "bee498b6e6ba9463",
+          "sha256": "4156bea70ffd91aae556a2f92d0249a18260eecbeb74ffb491d4940ada9ba614",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000018",
+      "seq": 18,
+      "runId": "build-067a8c39-a5d6-4e47-9f9a-467e06c431a9",
+      "type": "report.previous",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "b86b3631-3ec2-4c66-a742-ce733ebe8478",
+      "candidateId": null,
+      "details": {
+        "sha256": "8da806811b7a7eac94965828cfa725504905e5ebdc80ed75c516c6b7292c589d"
+      },
+      "evidenceRefs": [
+        {
+          "id": "7f8409b6e9e170f1",
+          "sha256": "8da806811b7a7eac94965828cfa725504905e5ebdc80ed75c516c6b7292c589d",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000019",
+      "seq": 19,
+      "runId": "build-067a8c39-a5d6-4e47-9f9a-467e06c431a9",
+      "type": "command.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "b86b3631-3ec2-4c66-a742-ce733ebe8478",
+      "candidateId": "v001",
+      "details": {
+        "label": "node.exe",
+        "kind": "verification"
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000020",
+      "seq": 20,
+      "runId": "build-067a8c39-a5d6-4e47-9f9a-467e06c431a9",
+      "type": "command.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "b86b3631-3ec2-4c66-a742-ce733ebe8478",
+      "candidateId": "v001",
+      "details": {
+        "commandEventId": "e000019",
+        "kind": "verification",
+        "exitCode": 0,
+        "signal": null
+      },
+      "evidenceRefs": [
+        {
+          "id": "976495bfd02ebb67",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "availability": "local evidence; hash published"
+        },
+        {
+          "id": "638cf025b51632cc",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000021",
+      "seq": 21,
+      "runId": "build-067a8c39-a5d6-4e47-9f9a-467e06c431a9",
+      "type": "test.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "b86b3631-3ec2-4c66-a742-ce733ebe8478",
+      "candidateId": "v001",
+      "details": {
+        "commandEventId": "e000019",
+        "completedEventId": "e000020",
+        "verdict": "passed",
+        "status": "passed",
+        "checks": [
+          {
+            "name": "Printed coordinate key, question and four option labels match the final sheet",
+            "verdict": "passed"
+          },
+          {
+            "name": "Option A",
+            "detail": "magenta (1, 1, 1) to (2, 1, 1). Then red (2, 1, 0) to (1, 1, 0), exchanging with gold. Then gold (2, 1, 0) to (2, 0, 0), magenta falls from (2, 1, 1) to (2, 1, 0). Step 3, cell (1, 0, 0) contains empty. The panel requires gold.",
+            "verdict": "passed"
+          },
+          {
+            "name": "Option B",
+            "detail": "magenta (1, 1, 1) to (1, 1, 0), exchanging with gold. Then red (2, 1, 0) to (1, 1, 0), exchanging with magenta. Then magenta (2, 1, 0) to (2, 0, 0). Step 3, cell (1, 0, 0) contains empty. The panel requires gold.",
+            "verdict": "passed"
+          },
+          {
+            "name": "Option C",
+            "detail": "gold (1, 1, 0) to (1, 0, 0), magenta falls from (1, 1, 1) to (1, 1, 0). Then red (2, 1, 0) to (1, 1, 0), exchanging with magenta. Then magenta (2, 1, 0) to (2, 0, 0). Every displayed constraint matches.",
+            "verdict": "passed"
+          },
+          {
+            "name": "Option D",
+            "detail": "red (0, 1, 0) to (0, 1, 1), exchanging with green. Then red (2, 1, 0) to (1, 1, 0), exchanging with gold. Then gold (2, 1, 0) to (2, 0, 0). Step 3, cell (0, 1, 0) contains green. The panel requires red.",
+            "verdict": "passed"
+          }
+        ],
+        "scope": "Printed state keys, commands, labeled diagrams and all four alternatives.",
+        "binding": "exact",
+        "bindingBasis": "exact candidate and full input fingerprints",
+        "testedFingerprints": {
+          "specification": "d67502860a3c12babdcbce749c374e6aeb4489cd82f5c6cc3ada9fe5a7ab9a20",
+          "geometry": "a253330e586be4504b8465eed27159e71f2e6bc4406bcb788b8d915f9676a2dc",
+          "question": "e5153b48de86855150cca962d93579cb408426cbe05324f64a21cc090dab3a7a",
+          "options": "a41d5549c44c58fc21be0dc4a83fa9e8cfc033f32f7a5a5ce8e5f90584c84bca",
+          "answer": "5e2a21ec41a28c72b3b2c824ac4c734f72f0f2f822a5626cf2579636ab3b968b",
+          "contract": null,
+          "rendering": "f230cbe4e0321b7ab02df512672b7f2bfab2924ef438720d733d46ef12529883",
+          "generator": "8f45e041f8bd4eef5255409c3304a3412f123c8c3c93a08e43032fd253be1f69"
+        },
+        "verifier": {
+          "id": "block-movement",
+          "revision": "05facdd03f40c6c217c8a41766fb64bced7395ba6306c594bb2ee7e9ca956fc0"
+        },
+        "reportSha256": "8da806811b7a7eac94965828cfa725504905e5ebdc80ed75c516c6b7292c589d"
+      },
+      "evidenceRefs": [
+        {
+          "id": "842d14ebaa06e855",
+          "sha256": "8da806811b7a7eac94965828cfa725504905e5ebdc80ed75c516c6b7292c589d",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000022",
+      "seq": 22,
+      "runId": "build-067a8c39-a5d6-4e47-9f9a-467e06c431a9",
+      "type": "design.note",
+      "actor": "author",
+      "origin": "agent_statement",
+      "actionId": null,
+      "candidateId": "v001",
+      "details": {
+        "goal": "Verify block-missing against the printed problem.",
+        "sources": "MentalAnimation/BlockMoving/Level1/39-3-2-3-4",
+        "change": "Select missing with the fall constraint.",
+        "reason": "Check the complete visible result of every offered choice.",
+        "expectedChecks": "A single match, distinct distractors, matching captions and final image."
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000023",
+      "seq": 23,
+      "runId": "build-067a8c39-a5d6-4e47-9f9a-467e06c431a9",
+      "type": "visual.review",
+      "actor": "author",
+      "origin": "agent_statement",
+      "actionId": null,
+      "candidateId": "v001",
+      "details": {
+        "outcome": "passed",
+        "review": "The green cap over red stays fixed at x=0 in both camera pairs. Gold moves onto the near floor and magenta ends separately on the right. The suffix is legible above four single-command choices. My PNG-only answer C was recorded before the key was opened. Independent decoding of the two camera images in each labeled row recovered exactly the printed coordinate/color maps. Option order agrees with the delivered specification."
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000024",
+      "seq": 24,
+      "runId": "build-067a8c39-a5d6-4e47-9f9a-467e06c431a9",
+      "type": "run.finished",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": "v001",
+      "details": {
+        "outcome": "accepted",
+        "finalCandidateId": "v001"
+      },
+      "evidenceRefs": []
+    }
+  ],
+  "candidates": [
+    {
+      "id": "v001",
+      "parentId": null,
+      "parentBasis": null,
+      "sha256": "d67502860a3c12babdcbce749c374e6aeb4489cd82f5c6cc3ada9fe5a7ab9a20",
+      "fingerprints": {
+        "specification": "d67502860a3c12babdcbce749c374e6aeb4489cd82f5c6cc3ada9fe5a7ab9a20",
+        "geometry": "a253330e586be4504b8465eed27159e71f2e6bc4406bcb788b8d915f9676a2dc",
+        "question": "e5153b48de86855150cca962d93579cb408426cbe05324f64a21cc090dab3a7a",
+        "options": "a41d5549c44c58fc21be0dc4a83fa9e8cfc033f32f7a5a5ce8e5f90584c84bca",
+        "answer": "5e2a21ec41a28c72b3b2c824ac4c734f72f0f2f822a5626cf2579636ab3b968b",
+        "contract": null,
+        "rendering": "f230cbe4e0321b7ab02df512672b7f2bfab2924ef438720d733d46ef12529883",
+        "generator": "8f45e041f8bd4eef5255409c3304a3412f123c8c3c93a08e43032fd253be1f69"
+      },
+      "previewUnavailable": null,
+      "changes": [
+        "specification",
+        "geometry",
+        "question",
+        "options",
+        "answer",
+        "rendering",
+        "generator"
+      ],
+      "preview": {
+        "candidateId": "v001",
+        "specification": "d67502860a3c12babdcbce749c374e6aeb4489cd82f5c6cc3ada9fe5a7ab9a20",
+        "rendering": "f230cbe4e0321b7ab02df512672b7f2bfab2924ef438720d733d46ef12529883",
+        "renderer": {
+          "id": "block-movement",
+          "revision": "05facdd03f40c6c217c8a41766fb64bced7395ba6306c594bb2ee7e9ca956fc0"
+        },
+        "sha256": "4156bea70ffd91aae556a2f92d0249a18260eecbeb74ffb491d4940ada9ba614",
+        "path": "records/authored-d67502860a3c12babdcbce74/v001-4156bea70ffd91aa.png",
+        "origin": "recorded-render"
+      }
+    }
+  ],
+  "tests": [
+    {
+      "id": "t001",
+      "actionId": "4af50be2-4dc3-47c2-9364-80c43a1c99ad",
+      "candidateId": "v001",
+      "testedFingerprints": {
+        "specification": "d67502860a3c12babdcbce749c374e6aeb4489cd82f5c6cc3ada9fe5a7ab9a20",
+        "geometry": "a253330e586be4504b8465eed27159e71f2e6bc4406bcb788b8d915f9676a2dc",
+        "question": "e5153b48de86855150cca962d93579cb408426cbe05324f64a21cc090dab3a7a",
+        "options": "a41d5549c44c58fc21be0dc4a83fa9e8cfc033f32f7a5a5ce8e5f90584c84bca",
+        "answer": "5e2a21ec41a28c72b3b2c824ac4c734f72f0f2f822a5626cf2579636ab3b968b",
+        "contract": null,
+        "rendering": "f230cbe4e0321b7ab02df512672b7f2bfab2924ef438720d733d46ef12529883",
+        "generator": "8f45e041f8bd4eef5255409c3304a3412f123c8c3c93a08e43032fd253be1f69"
+      },
+      "verifier": {
+        "id": "block-movement",
+        "revision": "05facdd03f40c6c217c8a41766fb64bced7395ba6306c594bb2ee7e9ca956fc0"
+      },
+      "reportSha256": "8da806811b7a7eac94965828cfa725504905e5ebdc80ed75c516c6b7292c589d",
+      "verdict": "passed",
+      "status": "passed",
+      "checks": [
+        {
+          "name": "Printed coordinate key, question and four option labels match the final sheet",
+          "verdict": "passed"
+        },
+        {
+          "name": "Option A",
+          "detail": "magenta (1, 1, 1) to (2, 1, 1). Then red (2, 1, 0) to (1, 1, 0), exchanging with gold. Then gold (2, 1, 0) to (2, 0, 0), magenta falls from (2, 1, 1) to (2, 1, 0). Step 3, cell (1, 0, 0) contains empty. The panel requires gold.",
+          "verdict": "passed"
+        },
+        {
+          "name": "Option B",
+          "detail": "magenta (1, 1, 1) to (1, 1, 0), exchanging with gold. Then red (2, 1, 0) to (1, 1, 0), exchanging with magenta. Then magenta (2, 1, 0) to (2, 0, 0). Step 3, cell (1, 0, 0) contains empty. The panel requires gold.",
+          "verdict": "passed"
+        },
+        {
+          "name": "Option C",
+          "detail": "gold (1, 1, 0) to (1, 0, 0), magenta falls from (1, 1, 1) to (1, 1, 0). Then red (2, 1, 0) to (1, 1, 0), exchanging with magenta. Then magenta (2, 1, 0) to (2, 0, 0). Every displayed constraint matches.",
+          "verdict": "passed"
+        },
+        {
+          "name": "Option D",
+          "detail": "red (0, 1, 0) to (0, 1, 1), exchanging with green. Then red (2, 1, 0) to (1, 1, 0), exchanging with gold. Then gold (2, 1, 0) to (2, 0, 0). Step 3, cell (0, 1, 0) contains green. The panel requires red.",
+          "verdict": "passed"
+        }
+      ],
+      "scope": "Printed state keys, commands, labeled diagrams and all four alternatives.",
+      "commandExitStatus": 0,
+      "binding": "exact",
+      "bindingBasis": "exact candidate and full input fingerprints",
+      "commandEventId": "e000011"
+    },
+    {
+      "id": "t002",
+      "actionId": "b86b3631-3ec2-4c66-a742-ce733ebe8478",
+      "candidateId": "v001",
+      "testedFingerprints": {
+        "specification": "d67502860a3c12babdcbce749c374e6aeb4489cd82f5c6cc3ada9fe5a7ab9a20",
+        "geometry": "a253330e586be4504b8465eed27159e71f2e6bc4406bcb788b8d915f9676a2dc",
+        "question": "e5153b48de86855150cca962d93579cb408426cbe05324f64a21cc090dab3a7a",
+        "options": "a41d5549c44c58fc21be0dc4a83fa9e8cfc033f32f7a5a5ce8e5f90584c84bca",
+        "answer": "5e2a21ec41a28c72b3b2c824ac4c734f72f0f2f822a5626cf2579636ab3b968b",
+        "contract": null,
+        "rendering": "f230cbe4e0321b7ab02df512672b7f2bfab2924ef438720d733d46ef12529883",
+        "generator": "8f45e041f8bd4eef5255409c3304a3412f123c8c3c93a08e43032fd253be1f69"
+      },
+      "verifier": {
+        "id": "block-movement",
+        "revision": "05facdd03f40c6c217c8a41766fb64bced7395ba6306c594bb2ee7e9ca956fc0"
+      },
+      "reportSha256": "8da806811b7a7eac94965828cfa725504905e5ebdc80ed75c516c6b7292c589d",
+      "verdict": "passed",
+      "status": "passed",
+      "checks": [
+        {
+          "name": "Printed coordinate key, question and four option labels match the final sheet",
+          "verdict": "passed"
+        },
+        {
+          "name": "Option A",
+          "detail": "magenta (1, 1, 1) to (2, 1, 1). Then red (2, 1, 0) to (1, 1, 0), exchanging with gold. Then gold (2, 1, 0) to (2, 0, 0), magenta falls from (2, 1, 1) to (2, 1, 0). Step 3, cell (1, 0, 0) contains empty. The panel requires gold.",
+          "verdict": "passed"
+        },
+        {
+          "name": "Option B",
+          "detail": "magenta (1, 1, 1) to (1, 1, 0), exchanging with gold. Then red (2, 1, 0) to (1, 1, 0), exchanging with magenta. Then magenta (2, 1, 0) to (2, 0, 0). Step 3, cell (1, 0, 0) contains empty. The panel requires gold.",
+          "verdict": "passed"
+        },
+        {
+          "name": "Option C",
+          "detail": "gold (1, 1, 0) to (1, 0, 0), magenta falls from (1, 1, 1) to (1, 1, 0). Then red (2, 1, 0) to (1, 1, 0), exchanging with magenta. Then magenta (2, 1, 0) to (2, 0, 0). Every displayed constraint matches.",
+          "verdict": "passed"
+        },
+        {
+          "name": "Option D",
+          "detail": "red (0, 1, 0) to (0, 1, 1), exchanging with green. Then red (2, 1, 0) to (1, 1, 0), exchanging with gold. Then gold (2, 1, 0) to (2, 0, 0). Step 3, cell (0, 1, 0) contains green. The panel requires red.",
+          "verdict": "passed"
+        }
+      ],
+      "scope": "Printed state keys, commands, labeled diagrams and all four alternatives.",
+      "commandExitStatus": 0,
+      "binding": "exact",
+      "bindingBasis": "exact candidate and full input fingerprints",
+      "commandEventId": "e000019"
+    }
+  ],
+  "usage": {
+    "schemaVersion": 2,
+    "runId": "build-067a8c39-a5d6-4e47-9f9a-467e06c431a9",
+    "source": "codex",
+    "runtime": "Codex Desktop",
+    "status": "measured",
+    "elapsedMs": 676788,
+    "elapsedKind": "wall-clock",
+    "scope": "Runtime-reported usage between the start baseline and finish snapshot of this session. In-flight or delayed usage, earlier conversation, other agents and later delivery are excluded. This is an observed interval, not a complete billed task total.",
+    "scopeComplete": false,
+    "observedTokens": {
+      "input_tokens": 3278360,
+      "cached_input_tokens": 3251072,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 6565,
+      "reasoning_output_tokens": 1404,
+      "total_tokens": 3284925
+    },
+    "tokens": {
+      "input_tokens": null,
+      "cached_input_tokens": null,
+      "cache_write_input_tokens": null,
+      "output_tokens": null,
+      "reasoning_output_tokens": null,
+      "total_tokens": null
+    },
+    "models": [
+      {
+        "provider": "openai",
+        "model": "gpt-6.2-astra",
+        "reasoningEffort": "xhigh",
+        "tokens": {
+          "input_tokens": 3278360,
+          "cached_input_tokens": 3251072,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 6565,
+          "reasoning_output_tokens": 1404,
+          "total_tokens": 3284925
+        },
+        "observations": 25
+      }
+    ],
+    "missingFields": [],
+    "issues": [],
+    "observations": 25
+  },
+  "caseId": "authored-d67502860a3c12babdcbce74"
+}

@@ -1,0 +1,53 @@
+{
+  "id": "t001",
+  "actionId": "aebae0cd-54d8-4c39-a702-fb8fba5c9629",
+  "candidateId": "v001",
+  "testedFingerprints": {
+    "specification": "c2c63751a4d1140685cdcb07e8b65a7f0c75a8effd7f2bdd1029505af17d36bd",
+    "geometry": "aa94e962a102e8de78fef7f66b4f8dd5b0499041643ae73c8fd5750c9286e6a8",
+    "question": "db16b9227f28c0720a3de9941f05686002eb674b16cdcacabd7a7d14d904d1b9",
+    "options": "9d1024511416c1272907d3923670f6733306b305eace089506a86e9d4fd68a38",
+    "answer": "e20a7e1eced06d360b0b9b9402f4a9306a909c801f13e5e944c7581ad3cc8fa4",
+    "contract": null,
+    "rendering": "173e44eba101c0d3820859c14253e8a355092db770d697349d1f549a1f7d46cc",
+    "generator": "079d5f0075cbd13e88e3c21c3890fe93a45ab2647c4db1c921a7390629187eb2"
+  },
+  "verifier": {
+    "id": "block-movement",
+    "revision": "05facdd03f40c6c217c8a41766fb64bced7395ba6306c594bb2ee7e9ca956fc0"
+  },
+  "reportSha256": "df1bab5d6633e912d12fe6fbeb74f7062df1a1dba7a649c42226c5a4fd9d46a6",
+  "verdict": "passed",
+  "status": "passed",
+  "checks": [
+    {
+      "name": "Printed coordinate key, question and four option labels match the final sheet",
+      "verdict": "passed"
+    },
+    {
+      "name": "Option A",
+      "detail": "magenta (0, 0, 1) to (1, 0, 1), magenta falls from (0, 0, 2) to (0, 0, 1). Then green (2, 1, 2) to (2, 0, 2). Then magenta (0, 1, 1) to (0, 1, 2), magenta falls from (0, 1, 2) to (0, 1, 1). Every displayed constraint matches.",
+      "verdict": "passed"
+    },
+    {
+      "name": "Option B",
+      "detail": "magenta (2, 0, 0) to (2, 0, 1), exchanging with green. Then green (2, 0, 0) to (2, 0, 1), exchanging with magenta. Then magenta (0, 0, 1) to (1, 0, 1), magenta falls from (0, 0, 2) to (0, 0, 1). Step 3, cell (2, 0, 2) contains empty. The panel requires green.",
+      "verdict": "passed"
+    },
+    {
+      "name": "Option C",
+      "detail": "cyan (0, 0, 0) to (0, 1, 0), exchanging with blue. Then green (2, 1, 2) to (2, 0, 2). Then blue (0, 0, 0) to (0, 1, 0), exchanging with cyan. Step 3, cell (0, 0, 2) contains magenta. The panel requires empty.",
+      "verdict": "passed"
+    },
+    {
+      "name": "Option D",
+      "detail": "magenta (0, 0, 1) to (1, 0, 1), magenta falls from (0, 0, 2) to (0, 0, 1). Then magenta (0, 1, 1) to (0, 0, 1), exchanging with magenta. Then cyan (2, 1, 1) to (2, 1, 2), exchanging with green. Step 3, cell (2, 0, 2) contains empty. The panel requires green.",
+      "verdict": "passed"
+    }
+  ],
+  "scope": "Printed state keys, commands, labeled diagrams and all four alternatives.",
+  "commandExitStatus": 0,
+  "binding": "exact",
+  "bindingBasis": "exact candidate and full input fingerprints",
+  "commandEventId": "e000011"
+}

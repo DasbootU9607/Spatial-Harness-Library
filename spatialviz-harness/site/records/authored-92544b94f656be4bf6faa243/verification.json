@@ -1,0 +1,53 @@
+{
+  "id": "t001",
+  "actionId": "9f163510-1bfa-46be-a529-4aefa6c87e5d",
+  "candidateId": "v001",
+  "testedFingerprints": {
+    "specification": "92544b94f656be4bf6faa243f7b1f90bd6f93a1858e86055e6f3bc53d4e181cd",
+    "geometry": "5506c5af94797867dc7baa5b297d796fbbcc097cac776ffbdb714cde25d86073",
+    "question": "c1a2fa8ba6d754d53b16b63697203a9d54d181457aafbc2fbf637788dad7fc87",
+    "options": "2a02ee37206c0089bd193ad678330e2d408634d0befda3fcfdf1fc7c1b232c15",
+    "answer": "0ee8c132a2e620135e19573ab6345f38e73f9dcbbab6084fdb1ca9ffff6e3c71",
+    "contract": null,
+    "rendering": "c31ce21186e02e9c75d522646da665a2d2485724d6f471099be96fce92261e46",
+    "generator": "e905e86c0e65193c28fd33368478187f3fb4a2eaaa08313d016f8daeb6b02dbf"
+  },
+  "verifier": {
+    "id": "arrow-movement",
+    "revision": "b53464c5a44f95977a83184de30510f7ab2e083e56e84db3d21f44b324645c93"
+  },
+  "reportSha256": "029bd480c68d16c861dbb714e29d397be6c52851a383c881466bb0a4f8f52f17",
+  "verdict": "passed",
+  "status": "passed",
+  "checks": [
+    {
+      "name": "Printed coordinate key, question and four option labels match the final sheet",
+      "verdict": "passed"
+    },
+    {
+      "name": "Option A",
+      "detail": "red (1, 1) to (2, 1) facing E, exchanging with green facing W. Then green (1, 1) to (0, 1) facing W, exchanging with purple facing E. Then blue (2, 0) to (2, 2) facing N. Then red (2, 1) to (0, 1) facing W, exchanging with green facing E. Step 4, cell (1, 0) contains empty. The panel requires blue W.",
+      "verdict": "passed"
+    },
+    {
+      "name": "Option B",
+      "detail": "red (1, 1) to (2, 1) facing E, exchanging with green facing W. Then green (1, 1) to (0, 1) facing W, exchanging with purple facing E. Then blue (2, 0) to (2, 2) facing N. Then red (2, 1) to (0, 1) facing W, exchanging with green facing E. Step 4, cell (0, 1) contains red W. The panel requires empty.",
+      "verdict": "passed"
+    },
+    {
+      "name": "Option C",
+      "detail": "red (1, 1) to (2, 1) facing E, exchanging with green facing W. Then green (1, 1) to (0, 1) facing W, exchanging with purple facing E. Then blue (2, 0) to (2, 2) facing N. Then red (2, 1) to (0, 1) facing W, exchanging with green facing E. Step 4, cell (1, 0) contains empty. The panel requires green S.",
+      "verdict": "passed"
+    },
+    {
+      "name": "Option D",
+      "detail": "red (1, 1) to (2, 1) facing E, exchanging with green facing W. Then green (1, 1) to (0, 1) facing W, exchanging with purple facing E. Then blue (2, 0) to (2, 2) facing N. Then red (2, 1) to (0, 1) facing W, exchanging with green facing E. Every displayed constraint matches.",
+      "verdict": "passed"
+    }
+  ],
+  "scope": "Printed state keys, commands, labeled diagrams and all four alternatives.",
+  "commandExitStatus": 0,
+  "binding": "exact",
+  "bindingBasis": "exact candidate and full input fingerprints",
+  "commandEventId": "e000011"
+}

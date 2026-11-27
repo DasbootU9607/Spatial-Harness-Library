@@ -1,0 +1,53 @@
+{
+  "id": "t002",
+  "actionId": "b86b3631-3ec2-4c66-a742-ce733ebe8478",
+  "candidateId": "v001",
+  "testedFingerprints": {
+    "specification": "d67502860a3c12babdcbce749c374e6aeb4489cd82f5c6cc3ada9fe5a7ab9a20",
+    "geometry": "a253330e586be4504b8465eed27159e71f2e6bc4406bcb788b8d915f9676a2dc",
+    "question": "e5153b48de86855150cca962d93579cb408426cbe05324f64a21cc090dab3a7a",
+    "options": "a41d5549c44c58fc21be0dc4a83fa9e8cfc033f32f7a5a5ce8e5f90584c84bca",
+    "answer": "5e2a21ec41a28c72b3b2c824ac4c734f72f0f2f822a5626cf2579636ab3b968b",
+    "contract": null,
+    "rendering": "f230cbe4e0321b7ab02df512672b7f2bfab2924ef438720d733d46ef12529883",
+    "generator": "8f45e041f8bd4eef5255409c3304a3412f123c8c3c93a08e43032fd253be1f69"
+  },
+  "verifier": {
+    "id": "block-movement",
+    "revision": "05facdd03f40c6c217c8a41766fb64bced7395ba6306c594bb2ee7e9ca956fc0"
+  },
+  "reportSha256": "8da806811b7a7eac94965828cfa725504905e5ebdc80ed75c516c6b7292c589d",
+  "verdict": "passed",
+  "status": "passed",
+  "checks": [
+    {
+      "name": "Printed coordinate key, question and four option labels match the final sheet",
+      "verdict": "passed"
+    },
+    {
+      "name": "Option A",
+      "detail": "magenta (1, 1, 1) to (2, 1, 1). Then red (2, 1, 0) to (1, 1, 0), exchanging with gold. Then gold (2, 1, 0) to (2, 0, 0), magenta falls from (2, 1, 1) to (2, 1, 0). Step 3, cell (1, 0, 0) contains empty. The panel requires gold.",
+      "verdict": "passed"
+    },
+    {
+      "name": "Option B",
+      "detail": "magenta (1, 1, 1) to (1, 1, 0), exchanging with gold. Then red (2, 1, 0) to (1, 1, 0), exchanging with magenta. Then magenta (2, 1, 0) to (2, 0, 0). Step 3, cell (1, 0, 0) contains empty. The panel requires gold.",
+      "verdict": "passed"
+    },
+    {
+      "name": "Option C",
+      "detail": "gold (1, 1, 0) to (1, 0, 0), magenta falls from (1, 1, 1) to (1, 1, 0). Then red (2, 1, 0) to (1, 1, 0), exchanging with magenta. Then magenta (2, 1, 0) to (2, 0, 0). Every displayed constraint matches.",
+      "verdict": "passed"
+    },
+    {
+      "name": "Option D",
+      "detail": "red (0, 1, 0) to (0, 1, 1), exchanging with green. Then red (2, 1, 0) to (1, 1, 0), exchanging with gold. Then gold (2, 1, 0) to (2, 0, 0). Step 3, cell (0, 1, 0) contains green. The panel requires red.",
+      "verdict": "passed"
+    }
+  ],
+  "scope": "Printed state keys, commands, labeled diagrams and all four alternatives.",
+  "commandExitStatus": 0,
+  "binding": "exact",
+  "bindingBasis": "exact candidate and full input fingerprints",
+  "commandEventId": "e000019"
+}

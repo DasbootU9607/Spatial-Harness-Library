@@ -1,0 +1,53 @@
+{
+  "id": "t002",
+  "actionId": "426e13bd-843a-4389-bd55-3fe69db29e5b",
+  "candidateId": "v002",
+  "testedFingerprints": {
+    "specification": "83cce73c95e19deb296ac137b66d74d7759e88768bcb4137b1d636a9e5251bf4",
+    "geometry": "4b172a0823def56e99c38b13a3d0871bcc71fd0e362d5ae8ab994288b64ae9b2",
+    "question": "355100aedae87c60b4fa02406f0f1c3d821e3401ea88dc303578996236b4908e",
+    "options": "2a02ee37206c0089bd193ad678330e2d408634d0befda3fcfdf1fc7c1b232c15",
+    "answer": "b7715ffc18c5ff89a1d10ccc4556124a9d754d474f4d021acd577bce30113733",
+    "contract": null,
+    "rendering": "3f4b22ce412c6e35b4ef4e056a1a084138c0ddbd97a3e973e387fa61924a675e",
+    "generator": "c5ff35b0d7181b997d14917106fd601e57ea3b468fcdfc66124f1f4a5b40c63b"
+  },
+  "verifier": {
+    "id": "arrow-movement",
+    "revision": "b53464c5a44f95977a83184de30510f7ab2e083e56e84db3d21f44b324645c93"
+  },
+  "reportSha256": "e80edd788802f5f85cf2fd478998cf3e64193b69074c913e553decc16c51e1f6",
+  "verdict": "passed",
+  "status": "passed",
+  "checks": [
+    {
+      "name": "Printed coordinate key, question and four option labels match the final sheet",
+      "verdict": "passed"
+    },
+    {
+      "name": "Option A",
+      "detail": "teal (2, 0) to (2, 2) facing N. Then teal (2, 2) to (2, 0) facing S. Step 2, cell (2, 0) contains teal S. The panel requires teal E.",
+      "verdict": "passed"
+    },
+    {
+      "name": "Option B",
+      "detail": "teal (0, 0) to (0, 2) facing N. Then teal (0, 2) to (0, 0) facing S. Step 2, cell (0, 0) contains teal S. The panel requires empty.",
+      "verdict": "passed"
+    },
+    {
+      "name": "Option C",
+      "detail": "teal (1, 2) to (1, 0) facing S. Then teal (1, 0) to (1, 2) facing N. Step 2, cell (1, 2) contains teal N. The panel requires empty.",
+      "verdict": "passed"
+    },
+    {
+      "name": "Option D",
+      "detail": "teal (2, 0) to (0, 0) facing W. Then teal (0, 0) to (2, 0) facing E. Every displayed constraint matches.",
+      "verdict": "passed"
+    }
+  ],
+  "scope": "Printed state keys, commands, labeled diagrams and all four alternatives.",
+  "commandExitStatus": 0,
+  "binding": "exact",
+  "bindingBasis": "exact candidate and full input fingerprints",
+  "commandEventId": "e000023"
+}

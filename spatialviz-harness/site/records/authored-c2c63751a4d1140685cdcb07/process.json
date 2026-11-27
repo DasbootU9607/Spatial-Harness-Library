@@ -1,0 +1,536 @@
+{
+  "schemaVersion": 1,
+  "manifest": {
+    "sealed": true,
+    "id": "build-cdfc6fe3-bb84-458b-97ef-95567ec8a846",
+    "title": "Block Movement / stack / 980071",
+    "runKind": "[private value omitted]",
+    "harness": "spatialviz-harness",
+    "benchmark": null,
+    "category": null,
+    "taskType": null,
+    "skill": {
+      "id": "spatialviz-block-movement",
+      "sha256": "686cae0826963db0562dd7c621f209d13e9cac8d88ea73a8e0db1bf79b0a69e1"
+    },
+    "status": "accepted",
+    "finalCandidateId": "v001",
+    "limitations": [
+      "Only recorder-mediated deliveries, commands and saved boundaries are observed; direct function calls, unwrapped commands and unsaved editor states are excluded.",
+      "Design notes are explicit author annotations, not internal reasoning."
+    ],
+    "captureGaps": []
+  },
+  "events": [
+    {
+      "id": "e000001",
+      "seq": 1,
+      "runId": "build-cdfc6fe3-bb84-458b-97ef-95567ec8a846",
+      "type": "run.created",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": null,
+      "details": {},
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000002",
+      "seq": 2,
+      "runId": "build-cdfc6fe3-bb84-458b-97ef-95567ec8a846",
+      "type": "collector.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": null,
+      "details": {},
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000003",
+      "seq": 3,
+      "runId": "build-cdfc6fe3-bb84-458b-97ef-95567ec8a846",
+      "type": "skill.attached",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": null,
+      "details": {
+        "sha256": "686cae0826963db0562dd7c621f209d13e9cac8d88ea73a8e0db1bf79b0a69e1",
+        "skill": "spatialviz-block-movement"
+      },
+      "evidenceRefs": [
+        {
+          "id": "03e69e1a7d3d8db8",
+          "sha256": "686cae0826963db0562dd7c621f209d13e9cac8d88ea73a8e0db1bf79b0a69e1",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000004",
+      "seq": 4,
+      "runId": "build-cdfc6fe3-bb84-458b-97ef-95567ec8a846",
+      "type": "resource.read",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "908d7d5b-af61-4fd5-817f-7b1f5b245e96",
+      "candidateId": null,
+      "details": {
+        "outcome": "delivered",
+        "label": "SKILL.md",
+        "start": 1,
+        "end": 22,
+        "sha256": "686cae0826963db0562dd7c621f209d13e9cac8d88ea73a8e0db1bf79b0a69e1",
+        "sourceSha256": "686cae0826963db0562dd7c621f209d13e9cac8d88ea73a8e0db1bf79b0a69e1"
+      },
+      "evidenceRefs": [
+        {
+          "id": "6bd36d2694454382",
+          "sha256": "686cae0826963db0562dd7c621f209d13e9cac8d88ea73a8e0db1bf79b0a69e1",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000005",
+      "seq": 5,
+      "runId": "build-cdfc6fe3-bb84-458b-97ef-95567ec8a846",
+      "type": "command.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "1503dd1e-42f2-46cd-8b9c-fa8acc63f2ae",
+      "candidateId": null,
+      "details": {
+        "label": "python",
+        "kind": "mental-animation-generation"
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000006",
+      "seq": 6,
+      "runId": "build-cdfc6fe3-bb84-458b-97ef-95567ec8a846",
+      "type": "command.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "1503dd1e-42f2-46cd-8b9c-fa8acc63f2ae",
+      "candidateId": null,
+      "details": {
+        "commandEventId": "e000005",
+        "kind": "mental-animation-generation",
+        "exitCode": 0,
+        "signal": null
+      },
+      "evidenceRefs": [
+        {
+          "id": "76d252da4a5cb564",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "availability": "local evidence; hash published"
+        },
+        {
+          "id": "9040963084c0edb6",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000007",
+      "seq": 7,
+      "runId": "build-cdfc6fe3-bb84-458b-97ef-95567ec8a846",
+      "type": "candidate.saved",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "752457a2-0cfa-4d69-8c4f-f0b835cb2f2d",
+      "candidateId": "v001",
+      "details": {
+        "sha256": "c2c63751a4d1140685cdcb07e8b65a7f0c75a8effd7f2bdd1029505af17d36bd",
+        "parentId": null,
+        "parentBasis": null,
+        "changes": [
+          "specification",
+          "geometry",
+          "question",
+          "options",
+          "answer",
+          "rendering",
+          "generator"
+        ],
+        "fingerprints": {
+          "specification": "c2c63751a4d1140685cdcb07e8b65a7f0c75a8effd7f2bdd1029505af17d36bd",
+          "geometry": "aa94e962a102e8de78fef7f66b4f8dd5b0499041643ae73c8fd5750c9286e6a8",
+          "question": "db16b9227f28c0720a3de9941f05686002eb674b16cdcacabd7a7d14d904d1b9",
+          "options": "9d1024511416c1272907d3923670f6733306b305eace089506a86e9d4fd68a38",
+          "answer": "e20a7e1eced06d360b0b9b9402f4a9306a909c801f13e5e944c7581ad3cc8fa4",
+          "contract": null,
+          "rendering": "173e44eba101c0d3820859c14253e8a355092db770d697349d1f549a1f7d46cc",
+          "generator": "079d5f0075cbd13e88e3c21c3890fe93a45ab2647c4db1c921a7390629187eb2"
+        },
+        "previewUnavailable": null
+      },
+      "evidenceRefs": [
+        {
+          "id": "c67479e9cb6e09be",
+          "sha256": "c2c63751a4d1140685cdcb07e8b65a7f0c75a8effd7f2bdd1029505af17d36bd",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000008",
+      "seq": 8,
+      "runId": "build-cdfc6fe3-bb84-458b-97ef-95567ec8a846",
+      "type": "build.saved",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "752457a2-0cfa-4d69-8c4f-f0b835cb2f2d",
+      "candidateId": "v001",
+      "details": {},
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000009",
+      "seq": 9,
+      "runId": "build-cdfc6fe3-bb84-458b-97ef-95567ec8a846",
+      "type": "render.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "0960d4a1-0195-4bbb-be64-ce179d3b11c8",
+      "candidateId": "v001",
+      "details": {
+        "renderer": {
+          "id": "block-movement",
+          "revision": "05facdd03f40c6c217c8a41766fb64bced7395ba6306c594bb2ee7e9ca956fc0"
+        }
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000010",
+      "seq": 10,
+      "runId": "build-cdfc6fe3-bb84-458b-97ef-95567ec8a846",
+      "type": "render.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "0960d4a1-0195-4bbb-be64-ce179d3b11c8",
+      "candidateId": "v001",
+      "details": {
+        "sha256": "010e3f6c4491f9e607ebfce6cd92bbd971d9ab1513c49ca209203ea532b75786",
+        "renderer": {
+          "id": "block-movement",
+          "revision": "05facdd03f40c6c217c8a41766fb64bced7395ba6306c594bb2ee7e9ca956fc0"
+        },
+        "specification": "c2c63751a4d1140685cdcb07e8b65a7f0c75a8effd7f2bdd1029505af17d36bd",
+        "rendering": "173e44eba101c0d3820859c14253e8a355092db770d697349d1f549a1f7d46cc"
+      },
+      "evidenceRefs": [
+        {
+          "id": "ed5040528254dea8",
+          "sha256": "010e3f6c4491f9e607ebfce6cd92bbd971d9ab1513c49ca209203ea532b75786",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000011",
+      "seq": 11,
+      "runId": "build-cdfc6fe3-bb84-458b-97ef-95567ec8a846",
+      "type": "command.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "aebae0cd-54d8-4c39-a702-fb8fba5c9629",
+      "candidateId": "v001",
+      "details": {
+        "label": "node.exe",
+        "kind": "verification"
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000012",
+      "seq": 12,
+      "runId": "build-cdfc6fe3-bb84-458b-97ef-95567ec8a846",
+      "type": "command.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "aebae0cd-54d8-4c39-a702-fb8fba5c9629",
+      "candidateId": "v001",
+      "details": {
+        "commandEventId": "e000011",
+        "kind": "verification",
+        "exitCode": 0,
+        "signal": null
+      },
+      "evidenceRefs": [
+        {
+          "id": "49cb9ecff46f1764",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "availability": "local evidence; hash published"
+        },
+        {
+          "id": "de89986b53bab4ef",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000013",
+      "seq": 13,
+      "runId": "build-cdfc6fe3-bb84-458b-97ef-95567ec8a846",
+      "type": "test.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "aebae0cd-54d8-4c39-a702-fb8fba5c9629",
+      "candidateId": "v001",
+      "details": {
+        "commandEventId": "e000011",
+        "completedEventId": "e000012",
+        "verdict": "passed",
+        "status": "passed",
+        "checks": [
+          {
+            "name": "Printed coordinate key, question and four option labels match the final sheet",
+            "verdict": "passed"
+          },
+          {
+            "name": "Option A",
+            "detail": "magenta (0, 0, 1) to (1, 0, 1), magenta falls from (0, 0, 2) to (0, 0, 1). Then green (2, 1, 2) to (2, 0, 2). Then magenta (0, 1, 1) to (0, 1, 2), magenta falls from (0, 1, 2) to (0, 1, 1). Every displayed constraint matches.",
+            "verdict": "passed"
+          },
+          {
+            "name": "Option B",
+            "detail": "magenta (2, 0, 0) to (2, 0, 1), exchanging with green. Then green (2, 0, 0) to (2, 0, 1), exchanging with magenta. Then magenta (0, 0, 1) to (1, 0, 1), magenta falls from (0, 0, 2) to (0, 0, 1). Step 3, cell (2, 0, 2) contains empty. The panel requires green.",
+            "verdict": "passed"
+          },
+          {
+            "name": "Option C",
+            "detail": "cyan (0, 0, 0) to (0, 1, 0), exchanging with blue. Then green (2, 1, 2) to (2, 0, 2). Then blue (0, 0, 0) to (0, 1, 0), exchanging with cyan. Step 3, cell (0, 0, 2) contains magenta. The panel requires empty.",
+            "verdict": "passed"
+          },
+          {
+            "name": "Option D",
+            "detail": "magenta (0, 0, 1) to (1, 0, 1), magenta falls from (0, 0, 2) to (0, 0, 1). Then magenta (0, 1, 1) to (0, 0, 1), exchanging with magenta. Then cyan (2, 1, 1) to (2, 1, 2), exchanging with green. Step 3, cell (2, 0, 2) contains empty. The panel requires green.",
+            "verdict": "passed"
+          }
+        ],
+        "scope": "Printed state keys, commands, labeled diagrams and all four alternatives.",
+        "binding": "exact",
+        "bindingBasis": "exact candidate and full input fingerprints",
+        "testedFingerprints": {
+          "specification": "c2c63751a4d1140685cdcb07e8b65a7f0c75a8effd7f2bdd1029505af17d36bd",
+          "geometry": "aa94e962a102e8de78fef7f66b4f8dd5b0499041643ae73c8fd5750c9286e6a8",
+          "question": "db16b9227f28c0720a3de9941f05686002eb674b16cdcacabd7a7d14d904d1b9",
+          "options": "9d1024511416c1272907d3923670f6733306b305eace089506a86e9d4fd68a38",
+          "answer": "e20a7e1eced06d360b0b9b9402f4a9306a909c801f13e5e944c7581ad3cc8fa4",
+          "contract": null,
+          "rendering": "173e44eba101c0d3820859c14253e8a355092db770d697349d1f549a1f7d46cc",
+          "generator": "079d5f0075cbd13e88e3c21c3890fe93a45ab2647c4db1c921a7390629187eb2"
+        },
+        "verifier": {
+          "id": "block-movement",
+          "revision": "05facdd03f40c6c217c8a41766fb64bced7395ba6306c594bb2ee7e9ca956fc0"
+        },
+        "reportSha256": "df1bab5d6633e912d12fe6fbeb74f7062df1a1dba7a649c42226c5a4fd9d46a6"
+      },
+      "evidenceRefs": [
+        {
+          "id": "ff30b65edd794b70",
+          "sha256": "df1bab5d6633e912d12fe6fbeb74f7062df1a1dba7a649c42226c5a4fd9d46a6",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000014",
+      "seq": 14,
+      "runId": "build-cdfc6fe3-bb84-458b-97ef-95567ec8a846",
+      "type": "design.note",
+      "actor": "author",
+      "origin": "agent_statement",
+      "actionId": null,
+      "candidateId": "v001",
+      "details": {
+        "goal": "Verify installed-block against the printed problem.",
+        "sources": "MentalAnimation/BlockMoving/Level1/39-3-2-3-4",
+        "change": "Select stack with the fall constraint.",
+        "reason": "Check the complete visible result of every offered choice.",
+        "expectedChecks": "A single match, distinct distractors, matching captions and final image."
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000015",
+      "seq": 15,
+      "runId": "build-cdfc6fe3-bb84-458b-97ef-95567ec8a846",
+      "type": "visual.review",
+      "actor": "author",
+      "origin": "agent_statement",
+      "actionId": null,
+      "candidateId": "v001",
+      "details": {
+        "outcome": "passed",
+        "review": "Both views resolve the tall stacks, including the cyan/gold base pair and the two original magenta layers. The lower panels show gold/cyan at (2,1), and a double-green cap above magenta at (2,0). A matches these height and color changes. The long state captions wrap without covering the A-D list. Independent decoding of the two camera images in each labeled row recovered exactly the printed coordinate/color maps. Option order agrees with the delivered specification."
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000016",
+      "seq": 16,
+      "runId": "build-cdfc6fe3-bb84-458b-97ef-95567ec8a846",
+      "type": "run.finished",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": "v001",
+      "details": {
+        "outcome": "accepted",
+        "finalCandidateId": "v001"
+      },
+      "evidenceRefs": []
+    }
+  ],
+  "candidates": [
+    {
+      "id": "v001",
+      "parentId": null,
+      "parentBasis": null,
+      "sha256": "c2c63751a4d1140685cdcb07e8b65a7f0c75a8effd7f2bdd1029505af17d36bd",
+      "fingerprints": {
+        "specification": "c2c63751a4d1140685cdcb07e8b65a7f0c75a8effd7f2bdd1029505af17d36bd",
+        "geometry": "aa94e962a102e8de78fef7f66b4f8dd5b0499041643ae73c8fd5750c9286e6a8",
+        "question": "db16b9227f28c0720a3de9941f05686002eb674b16cdcacabd7a7d14d904d1b9",
+        "options": "9d1024511416c1272907d3923670f6733306b305eace089506a86e9d4fd68a38",
+        "answer": "e20a7e1eced06d360b0b9b9402f4a9306a909c801f13e5e944c7581ad3cc8fa4",
+        "contract": null,
+        "rendering": "173e44eba101c0d3820859c14253e8a355092db770d697349d1f549a1f7d46cc",
+        "generator": "079d5f0075cbd13e88e3c21c3890fe93a45ab2647c4db1c921a7390629187eb2"
+      },
+      "previewUnavailable": null,
+      "changes": [
+        "specification",
+        "geometry",
+        "question",
+        "options",
+        "answer",
+        "rendering",
+        "generator"
+      ],
+      "preview": {
+        "candidateId": "v001",
+        "specification": "c2c63751a4d1140685cdcb07e8b65a7f0c75a8effd7f2bdd1029505af17d36bd",
+        "rendering": "173e44eba101c0d3820859c14253e8a355092db770d697349d1f549a1f7d46cc",
+        "renderer": {
+          "id": "block-movement",
+          "revision": "05facdd03f40c6c217c8a41766fb64bced7395ba6306c594bb2ee7e9ca956fc0"
+        },
+        "sha256": "010e3f6c4491f9e607ebfce6cd92bbd971d9ab1513c49ca209203ea532b75786",
+        "path": "records/authored-c2c63751a4d1140685cdcb07/v001-010e3f6c4491f9e6.png",
+        "origin": "recorded-render"
+      }
+    }
+  ],
+  "tests": [
+    {
+      "id": "t001",
+      "actionId": "aebae0cd-54d8-4c39-a702-fb8fba5c9629",
+      "candidateId": "v001",
+      "testedFingerprints": {
+        "specification": "c2c63751a4d1140685cdcb07e8b65a7f0c75a8effd7f2bdd1029505af17d36bd",
+        "geometry": "aa94e962a102e8de78fef7f66b4f8dd5b0499041643ae73c8fd5750c9286e6a8",
+        "question": "db16b9227f28c0720a3de9941f05686002eb674b16cdcacabd7a7d14d904d1b9",
+        "options": "9d1024511416c1272907d3923670f6733306b305eace089506a86e9d4fd68a38",
+        "answer": "e20a7e1eced06d360b0b9b9402f4a9306a909c801f13e5e944c7581ad3cc8fa4",
+        "contract": null,
+        "rendering": "173e44eba101c0d3820859c14253e8a355092db770d697349d1f549a1f7d46cc",
+        "generator": "079d5f0075cbd13e88e3c21c3890fe93a45ab2647c4db1c921a7390629187eb2"
+      },
+      "verifier": {
+        "id": "block-movement",
+        "revision": "05facdd03f40c6c217c8a41766fb64bced7395ba6306c594bb2ee7e9ca956fc0"
+      },
+      "reportSha256": "df1bab5d6633e912d12fe6fbeb74f7062df1a1dba7a649c42226c5a4fd9d46a6",
+      "verdict": "passed",
+      "status": "passed",
+      "checks": [
+        {
+          "name": "Printed coordinate key, question and four option labels match the final sheet",
+          "verdict": "passed"
+        },
+        {
+          "name": "Option A",
+          "detail": "magenta (0, 0, 1) to (1, 0, 1), magenta falls from (0, 0, 2) to (0, 0, 1). Then green (2, 1, 2) to (2, 0, 2). Then magenta (0, 1, 1) to (0, 1, 2), magenta falls from (0, 1, 2) to (0, 1, 1). Every displayed constraint matches.",
+          "verdict": "passed"
+        },
+        {
+          "name": "Option B",
+          "detail": "magenta (2, 0, 0) to (2, 0, 1), exchanging with green. Then green (2, 0, 0) to (2, 0, 1), exchanging with magenta. Then magenta (0, 0, 1) to (1, 0, 1), magenta falls from (0, 0, 2) to (0, 0, 1). Step 3, cell (2, 0, 2) contains empty. The panel requires green.",
+          "verdict": "passed"
+        },
+        {
+          "name": "Option C",
+          "detail": "cyan (0, 0, 0) to (0, 1, 0), exchanging with blue. Then green (2, 1, 2) to (2, 0, 2). Then blue (0, 0, 0) to (0, 1, 0), exchanging with cyan. Step 3, cell (0, 0, 2) contains magenta. The panel requires empty.",
+          "verdict": "passed"
+        },
+        {
+          "name": "Option D",
+          "detail": "magenta (0, 0, 1) to (1, 0, 1), magenta falls from (0, 0, 2) to (0, 0, 1). Then magenta (0, 1, 1) to (0, 0, 1), exchanging with magenta. Then cyan (2, 1, 1) to (2, 1, 2), exchanging with green. Step 3, cell (2, 0, 2) contains empty. The panel requires green.",
+          "verdict": "passed"
+        }
+      ],
+      "scope": "Printed state keys, commands, labeled diagrams and all four alternatives.",
+      "commandExitStatus": 0,
+      "binding": "exact",
+      "bindingBasis": "exact candidate and full input fingerprints",
+      "commandEventId": "e000011"
+    }
+  ],
+  "usage": {
+    "schemaVersion": 2,
+    "runId": "build-cdfc6fe3-bb84-458b-97ef-95567ec8a846",
+    "source": "codex",
+    "runtime": "Codex Desktop",
+    "status": "measured",
+    "elapsedMs": 528484,
+    "elapsedKind": "wall-clock",
+    "scope": "Runtime-reported usage between the start baseline and finish snapshot of this session. In-flight or delayed usage, earlier conversation, other agents and later delivery are excluded. This is an observed interval, not a complete billed task total.",
+    "scopeComplete": false,
+    "observedTokens": {
+      "input_tokens": 2194816,
+      "cached_input_tokens": 2179712,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 4402,
+      "reasoning_output_tokens": 1089,
+      "total_tokens": 2199218
+    },
+    "tokens": {
+      "input_tokens": null,
+      "cached_input_tokens": null,
+      "cache_write_input_tokens": null,
+      "output_tokens": null,
+      "reasoning_output_tokens": null,
+      "total_tokens": null
+    },
+    "models": [
+      {
+        "provider": "openai",
+        "model": "gpt-6.2-astra",
+        "reasoningEffort": "xhigh",
+        "tokens": {
+          "input_tokens": 2194816,
+          "cached_input_tokens": 2179712,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 4402,
+          "reasoning_output_tokens": 1089,
+          "total_tokens": 2199218
+        },
+        "observations": 16
+      }
+    ],
+    "missingFields": [],
+    "issues": [],
+    "observations": 16
+  },
+  "caseId": "authored-c2c63751a4d1140685cdcb07"
+}

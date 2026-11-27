@@ -1,0 +1,629 @@
+{
+  "schemaVersion": 1,
+  "manifest": {
+    "sealed": true,
+    "id": "build-5e03f6da-2e76-4b01-8cf6-38c2d7368fc8",
+    "title": "Arrow Movement / fleet-state / 21023",
+    "runKind": "[private value omitted]",
+    "harness": "spatialviz-harness",
+    "benchmark": null,
+    "category": null,
+    "taskType": null,
+    "skill": {
+      "id": "spatialviz-arrow-movement",
+      "sha256": "f26c4d3c7739134eec731fa993918942098d9acfa1267c2bcb8fb152876b1f2c"
+    },
+    "status": "accepted",
+    "finalCandidateId": "v001",
+    "limitations": [
+      "Only recorder-mediated deliveries, commands and saved boundaries are observed; direct function calls, unwrapped commands and unsaved editor states are excluded.",
+      "Design notes are explicit author annotations, not internal reasoning."
+    ],
+    "captureGaps": []
+  },
+  "events": [
+    {
+      "id": "e000001",
+      "seq": 1,
+      "runId": "build-5e03f6da-2e76-4b01-8cf6-38c2d7368fc8",
+      "type": "run.created",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": null,
+      "details": {},
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000002",
+      "seq": 2,
+      "runId": "build-5e03f6da-2e76-4b01-8cf6-38c2d7368fc8",
+      "type": "collector.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": null,
+      "details": {},
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000003",
+      "seq": 3,
+      "runId": "build-5e03f6da-2e76-4b01-8cf6-38c2d7368fc8",
+      "type": "skill.attached",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": null,
+      "details": {
+        "sha256": "f26c4d3c7739134eec731fa993918942098d9acfa1267c2bcb8fb152876b1f2c",
+        "skill": "spatialviz-arrow-movement"
+      },
+      "evidenceRefs": [
+        {
+          "id": "498267d5a576ab26",
+          "sha256": "f26c4d3c7739134eec731fa993918942098d9acfa1267c2bcb8fb152876b1f2c",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000004",
+      "seq": 4,
+      "runId": "build-5e03f6da-2e76-4b01-8cf6-38c2d7368fc8",
+      "type": "resource.read",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "d3aa25dd-f6b9-42fd-b13b-e70e9803db81",
+      "candidateId": null,
+      "details": {
+        "outcome": "delivered",
+        "label": "SKILL.md",
+        "start": 1,
+        "end": 22,
+        "sha256": "f26c4d3c7739134eec731fa993918942098d9acfa1267c2bcb8fb152876b1f2c",
+        "sourceSha256": "f26c4d3c7739134eec731fa993918942098d9acfa1267c2bcb8fb152876b1f2c"
+      },
+      "evidenceRefs": [
+        {
+          "id": "e833f1efc908abc3",
+          "sha256": "f26c4d3c7739134eec731fa993918942098d9acfa1267c2bcb8fb152876b1f2c",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000005",
+      "seq": 5,
+      "runId": "build-5e03f6da-2e76-4b01-8cf6-38c2d7368fc8",
+      "type": "command.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "f7026e9d-c038-4c25-a73c-2b88d3ca2567",
+      "candidateId": null,
+      "details": {
+        "label": "python",
+        "kind": "mental-animation-generation"
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000006",
+      "seq": 6,
+      "runId": "build-5e03f6da-2e76-4b01-8cf6-38c2d7368fc8",
+      "type": "command.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "f7026e9d-c038-4c25-a73c-2b88d3ca2567",
+      "candidateId": null,
+      "details": {
+        "commandEventId": "e000005",
+        "kind": "mental-animation-generation",
+        "exitCode": 1,
+        "signal": null
+      },
+      "evidenceRefs": [
+        {
+          "id": "f57206f292b3b6b3",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "availability": "local evidence; hash published"
+        },
+        {
+          "id": "08622421b9a90cbe",
+          "sha256": "09db1ac07402b2a194d8b0c08977fa99a5a0608554a3965a45c77e8f63bf7d80",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000007",
+      "seq": 7,
+      "runId": "build-5e03f6da-2e76-4b01-8cf6-38c2d7368fc8",
+      "type": "resource.read",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "f91abc4b-5091-418f-a8fa-a7b67f539617",
+      "candidateId": null,
+      "details": {
+        "outcome": "delivered",
+        "label": "SKILL.md",
+        "start": 1,
+        "end": 22,
+        "sha256": "f26c4d3c7739134eec731fa993918942098d9acfa1267c2bcb8fb152876b1f2c",
+        "sourceSha256": "f26c4d3c7739134eec731fa993918942098d9acfa1267c2bcb8fb152876b1f2c"
+      },
+      "evidenceRefs": [
+        {
+          "id": "ea339a034a4aee70",
+          "sha256": "f26c4d3c7739134eec731fa993918942098d9acfa1267c2bcb8fb152876b1f2c",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000008",
+      "seq": 8,
+      "runId": "build-5e03f6da-2e76-4b01-8cf6-38c2d7368fc8",
+      "type": "resource.read",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "f8077e13-73a1-45ff-9d24-c1210f8d3600",
+      "candidateId": null,
+      "details": {
+        "outcome": "delivered",
+        "label": "coverage.md",
+        "start": 1,
+        "end": 44,
+        "sha256": "f1813a712fb613322b6923be650aafd0ad97afff84d50d40c0b642cea4326b03",
+        "sourceSha256": "f1813a712fb613322b6923be650aafd0ad97afff84d50d40c0b642cea4326b03"
+      },
+      "evidenceRefs": [
+        {
+          "id": "b74328d61f6ebd51",
+          "sha256": "f1813a712fb613322b6923be650aafd0ad97afff84d50d40c0b642cea4326b03",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000009",
+      "seq": 9,
+      "runId": "build-5e03f6da-2e76-4b01-8cf6-38c2d7368fc8",
+      "type": "command.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "b179793c-708d-4852-956d-49f51db7028d",
+      "candidateId": null,
+      "details": {
+        "label": "python",
+        "kind": "mental-animation-generation"
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000010",
+      "seq": 10,
+      "runId": "build-5e03f6da-2e76-4b01-8cf6-38c2d7368fc8",
+      "type": "command.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "b179793c-708d-4852-956d-49f51db7028d",
+      "candidateId": null,
+      "details": {
+        "commandEventId": "e000009",
+        "kind": "mental-animation-generation",
+        "exitCode": 0,
+        "signal": null
+      },
+      "evidenceRefs": [
+        {
+          "id": "699ef06589cd7792",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "availability": "local evidence; hash published"
+        },
+        {
+          "id": "f77e1ba7008281c3",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000011",
+      "seq": 11,
+      "runId": "build-5e03f6da-2e76-4b01-8cf6-38c2d7368fc8",
+      "type": "candidate.saved",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "984e0bd3-55d8-4adf-b0c7-161e6861ec3a",
+      "candidateId": "v001",
+      "details": {
+        "sha256": "91d789c2c37bdd5526f83ecbfb23c5bc3a8fb6c5556120978f7697cfcbafdbb4",
+        "parentId": null,
+        "parentBasis": null,
+        "changes": [
+          "specification",
+          "geometry",
+          "question",
+          "options",
+          "answer",
+          "rendering",
+          "generator"
+        ],
+        "fingerprints": {
+          "specification": "91d789c2c37bdd5526f83ecbfb23c5bc3a8fb6c5556120978f7697cfcbafdbb4",
+          "geometry": "3868e46e8cf63c57cfedf4262e3206298028730d6a0e93d5bc6b6ad849eac9f5",
+          "question": "173ad6f62ea0de08df59d91dcdc49f2ad30f9c8370d8411ba8f93cd9d06f620c",
+          "options": "2a02ee37206c0089bd193ad678330e2d408634d0befda3fcfdf1fc7c1b232c15",
+          "answer": "35eb5353056c98d93db789049cd9c887ca9f96932c05482fa79dfe7ec7b05cc0",
+          "contract": null,
+          "rendering": "97bd8945e44d9e57d856c1fe94f30a3ab25bbebe7588b6e2061575bd002b4b41",
+          "generator": "449c0c6d24a0d58007dba4687dbdac238769eceaeb3baa90e133c219ba993c0f"
+        },
+        "previewUnavailable": null
+      },
+      "evidenceRefs": [
+        {
+          "id": "0a80d4a00b9219b1",
+          "sha256": "91d789c2c37bdd5526f83ecbfb23c5bc3a8fb6c5556120978f7697cfcbafdbb4",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000012",
+      "seq": 12,
+      "runId": "build-5e03f6da-2e76-4b01-8cf6-38c2d7368fc8",
+      "type": "build.saved",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "984e0bd3-55d8-4adf-b0c7-161e6861ec3a",
+      "candidateId": "v001",
+      "details": {},
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000013",
+      "seq": 13,
+      "runId": "build-5e03f6da-2e76-4b01-8cf6-38c2d7368fc8",
+      "type": "render.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "cf7273ec-1a88-4958-87b2-6aa70c0f230d",
+      "candidateId": "v001",
+      "details": {
+        "renderer": {
+          "id": "arrow-movement",
+          "revision": "b53464c5a44f95977a83184de30510f7ab2e083e56e84db3d21f44b324645c93"
+        }
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000014",
+      "seq": 14,
+      "runId": "build-5e03f6da-2e76-4b01-8cf6-38c2d7368fc8",
+      "type": "render.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "cf7273ec-1a88-4958-87b2-6aa70c0f230d",
+      "candidateId": "v001",
+      "details": {
+        "sha256": "a377637dd09f498807e624cfd52e4de638682a2f66365299f0c8656f4a5b5856",
+        "renderer": {
+          "id": "arrow-movement",
+          "revision": "b53464c5a44f95977a83184de30510f7ab2e083e56e84db3d21f44b324645c93"
+        },
+        "specification": "91d789c2c37bdd5526f83ecbfb23c5bc3a8fb6c5556120978f7697cfcbafdbb4",
+        "rendering": "97bd8945e44d9e57d856c1fe94f30a3ab25bbebe7588b6e2061575bd002b4b41"
+      },
+      "evidenceRefs": [
+        {
+          "id": "a48c586d15a60be1",
+          "sha256": "a377637dd09f498807e624cfd52e4de638682a2f66365299f0c8656f4a5b5856",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000015",
+      "seq": 15,
+      "runId": "build-5e03f6da-2e76-4b01-8cf6-38c2d7368fc8",
+      "type": "command.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "b5da0be3-1833-4dd0-a900-e137cf3823fa",
+      "candidateId": "v001",
+      "details": {
+        "label": "node.exe",
+        "kind": "verification"
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000016",
+      "seq": 16,
+      "runId": "build-5e03f6da-2e76-4b01-8cf6-38c2d7368fc8",
+      "type": "command.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "b5da0be3-1833-4dd0-a900-e137cf3823fa",
+      "candidateId": "v001",
+      "details": {
+        "commandEventId": "e000015",
+        "kind": "verification",
+        "exitCode": 0,
+        "signal": null
+      },
+      "evidenceRefs": [
+        {
+          "id": "8e15f9a2ed718465",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "availability": "local evidence; hash published"
+        },
+        {
+          "id": "6397d4ddcaba3c91",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000017",
+      "seq": 17,
+      "runId": "build-5e03f6da-2e76-4b01-8cf6-38c2d7368fc8",
+      "type": "test.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "b5da0be3-1833-4dd0-a900-e137cf3823fa",
+      "candidateId": "v001",
+      "details": {
+        "commandEventId": "e000015",
+        "completedEventId": "e000016",
+        "verdict": "passed",
+        "status": "passed",
+        "checks": [
+          {
+            "name": "Printed coordinate key, question and four option labels match the final sheet",
+            "verdict": "passed"
+          },
+          {
+            "name": "Option A",
+            "detail": "red (2, 0) to (2, 1) facing N, exchanging with teal facing S. Then teal (2, 0) to (2, 2) facing N. Step 2, cell (2, 1) contains red N. The panel requires red S.",
+            "verdict": "passed"
+          },
+          {
+            "name": "Option B",
+            "detail": "red (2, 0) to (2, 1) facing N, exchanging with teal facing S. Then teal (2, 0) to (2, 2) facing N. Step 2, cell (0, 0) contains blue N. The panel requires teal W.",
+            "verdict": "passed"
+          },
+          {
+            "name": "Option C",
+            "detail": "red (2, 0) to (2, 1) facing N, exchanging with teal facing S. Then teal (2, 0) to (2, 2) facing N. Step 2, cell (0, 1) contains empty. The panel requires teal W.",
+            "verdict": "passed"
+          },
+          {
+            "name": "Option D",
+            "detail": "red (2, 0) to (2, 1) facing N, exchanging with teal facing S. Then teal (2, 0) to (2, 2) facing N. Every displayed constraint matches.",
+            "verdict": "passed"
+          }
+        ],
+        "scope": "Printed state keys, commands, labeled diagrams and all four alternatives.",
+        "binding": "exact",
+        "bindingBasis": "exact candidate and full input fingerprints",
+        "testedFingerprints": {
+          "specification": "91d789c2c37bdd5526f83ecbfb23c5bc3a8fb6c5556120978f7697cfcbafdbb4",
+          "geometry": "3868e46e8cf63c57cfedf4262e3206298028730d6a0e93d5bc6b6ad849eac9f5",
+          "question": "173ad6f62ea0de08df59d91dcdc49f2ad30f9c8370d8411ba8f93cd9d06f620c",
+          "options": "2a02ee37206c0089bd193ad678330e2d408634d0befda3fcfdf1fc7c1b232c15",
+          "answer": "35eb5353056c98d93db789049cd9c887ca9f96932c05482fa79dfe7ec7b05cc0",
+          "contract": null,
+          "rendering": "97bd8945e44d9e57d856c1fe94f30a3ab25bbebe7588b6e2061575bd002b4b41",
+          "generator": "449c0c6d24a0d58007dba4687dbdac238769eceaeb3baa90e133c219ba993c0f"
+        },
+        "verifier": {
+          "id": "arrow-movement",
+          "revision": "b53464c5a44f95977a83184de30510f7ab2e083e56e84db3d21f44b324645c93"
+        },
+        "reportSha256": "3a50dfcf2f3002b8951666754598dec2fb317459361dd3e3e3ae9efe6bb957d6"
+      },
+      "evidenceRefs": [
+        {
+          "id": "1647c5b17b3655bb",
+          "sha256": "3a50dfcf2f3002b8951666754598dec2fb317459361dd3e3e3ae9efe6bb957d6",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000018",
+      "seq": 18,
+      "runId": "build-5e03f6da-2e76-4b01-8cf6-38c2d7368fc8",
+      "type": "design.note",
+      "actor": "author",
+      "origin": "agent_statement",
+      "actionId": null,
+      "candidateId": "v001",
+      "details": {
+        "goal": "Verify state-swap against the printed problem.",
+        "sources": "MentalAnimation/ArrowMoving/Level1/0-3-3-2",
+        "change": "Select fleet-state with the mixed constraint.",
+        "reason": "Check the complete visible result of every offered choice.",
+        "expectedChecks": "A single match, distinct distractors, matching captions and final image."
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000019",
+      "seq": 19,
+      "runId": "build-5e03f6da-2e76-4b01-8cf6-38c2d7368fc8",
+      "type": "visual.review",
+      "actor": "author",
+      "origin": "agent_statement",
+      "actionId": null,
+      "candidateId": "v001",
+      "details": {
+        "outcome": "passed",
+        "review": "The two commands share (2,0) as their source. After red moves north, teal returns to that cell facing south and the backward move takes teal to (2,2) north. A matches all the target occupied cells yet shows red south at (2,1); D correctly shows red north there. The neutral A-D headings, cell captions and printed path agree with the structured task."
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000020",
+      "seq": 20,
+      "runId": "build-5e03f6da-2e76-4b01-8cf6-38c2d7368fc8",
+      "type": "run.finished",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": "v001",
+      "details": {
+        "outcome": "accepted",
+        "finalCandidateId": "v001"
+      },
+      "evidenceRefs": []
+    }
+  ],
+  "candidates": [
+    {
+      "id": "v001",
+      "parentId": null,
+      "parentBasis": null,
+      "sha256": "91d789c2c37bdd5526f83ecbfb23c5bc3a8fb6c5556120978f7697cfcbafdbb4",
+      "fingerprints": {
+        "specification": "91d789c2c37bdd5526f83ecbfb23c5bc3a8fb6c5556120978f7697cfcbafdbb4",
+        "geometry": "3868e46e8cf63c57cfedf4262e3206298028730d6a0e93d5bc6b6ad849eac9f5",
+        "question": "173ad6f62ea0de08df59d91dcdc49f2ad30f9c8370d8411ba8f93cd9d06f620c",
+        "options": "2a02ee37206c0089bd193ad678330e2d408634d0befda3fcfdf1fc7c1b232c15",
+        "answer": "35eb5353056c98d93db789049cd9c887ca9f96932c05482fa79dfe7ec7b05cc0",
+        "contract": null,
+        "rendering": "97bd8945e44d9e57d856c1fe94f30a3ab25bbebe7588b6e2061575bd002b4b41",
+        "generator": "449c0c6d24a0d58007dba4687dbdac238769eceaeb3baa90e133c219ba993c0f"
+      },
+      "previewUnavailable": null,
+      "changes": [
+        "specification",
+        "geometry",
+        "question",
+        "options",
+        "answer",
+        "rendering",
+        "generator"
+      ],
+      "preview": {
+        "candidateId": "v001",
+        "specification": "91d789c2c37bdd5526f83ecbfb23c5bc3a8fb6c5556120978f7697cfcbafdbb4",
+        "rendering": "97bd8945e44d9e57d856c1fe94f30a3ab25bbebe7588b6e2061575bd002b4b41",
+        "renderer": {
+          "id": "arrow-movement",
+          "revision": "b53464c5a44f95977a83184de30510f7ab2e083e56e84db3d21f44b324645c93"
+        },
+        "sha256": "a377637dd09f498807e624cfd52e4de638682a2f66365299f0c8656f4a5b5856",
+        "path": "records/authored-91d789c2c37bdd5526f83ecb/v001-a377637dd09f4988.png",
+        "origin": "recorded-render"
+      }
+    }
+  ],
+  "tests": [
+    {
+      "id": "t001",
+      "actionId": "b5da0be3-1833-4dd0-a900-e137cf3823fa",
+      "candidateId": "v001",
+      "testedFingerprints": {
+        "specification": "91d789c2c37bdd5526f83ecbfb23c5bc3a8fb6c5556120978f7697cfcbafdbb4",
+        "geometry": "3868e46e8cf63c57cfedf4262e3206298028730d6a0e93d5bc6b6ad849eac9f5",
+        "question": "173ad6f62ea0de08df59d91dcdc49f2ad30f9c8370d8411ba8f93cd9d06f620c",
+        "options": "2a02ee37206c0089bd193ad678330e2d408634d0befda3fcfdf1fc7c1b232c15",
+        "answer": "35eb5353056c98d93db789049cd9c887ca9f96932c05482fa79dfe7ec7b05cc0",
+        "contract": null,
+        "rendering": "97bd8945e44d9e57d856c1fe94f30a3ab25bbebe7588b6e2061575bd002b4b41",
+        "generator": "449c0c6d24a0d58007dba4687dbdac238769eceaeb3baa90e133c219ba993c0f"
+      },
+      "verifier": {
+        "id": "arrow-movement",
+        "revision": "b53464c5a44f95977a83184de30510f7ab2e083e56e84db3d21f44b324645c93"
+      },
+      "reportSha256": "3a50dfcf2f3002b8951666754598dec2fb317459361dd3e3e3ae9efe6bb957d6",
+      "verdict": "passed",
+      "status": "passed",
+      "checks": [
+        {
+          "name": "Printed coordinate key, question and four option labels match the final sheet",
+          "verdict": "passed"
+        },
+        {
+          "name": "Option A",
+          "detail": "red (2, 0) to (2, 1) facing N, exchanging with teal facing S. Then teal (2, 0) to (2, 2) facing N. Step 2, cell (2, 1) contains red N. The panel requires red S.",
+          "verdict": "passed"
+        },
+        {
+          "name": "Option B",
+          "detail": "red (2, 0) to (2, 1) facing N, exchanging with teal facing S. Then teal (2, 0) to (2, 2) facing N. Step 2, cell (0, 0) contains blue N. The panel requires teal W.",
+          "verdict": "passed"
+        },
+        {
+          "name": "Option C",
+          "detail": "red (2, 0) to (2, 1) facing N, exchanging with teal facing S. Then teal (2, 0) to (2, 2) facing N. Step 2, cell (0, 1) contains empty. The panel requires teal W.",
+          "verdict": "passed"
+        },
+        {
+          "name": "Option D",
+          "detail": "red (2, 0) to (2, 1) facing N, exchanging with teal facing S. Then teal (2, 0) to (2, 2) facing N. Every displayed constraint matches.",
+          "verdict": "passed"
+        }
+      ],
+      "scope": "Printed state keys, commands, labeled diagrams and all four alternatives.",
+      "commandExitStatus": 0,
+      "binding": "exact",
+      "bindingBasis": "exact candidate and full input fingerprints",
+      "commandEventId": "e000015"
+    }
+  ],
+  "usage": {
+    "schemaVersion": 2,
+    "runId": "build-5e03f6da-2e76-4b01-8cf6-38c2d7368fc8",
+    "source": "codex",
+    "runtime": "Codex Desktop",
+    "status": "measured",
+    "elapsedMs": 777891,
+    "elapsedKind": "wall-clock",
+    "scope": "Runtime-reported usage between the start baseline and finish snapshot of this session. In-flight or delayed usage, earlier conversation, other agents and later delivery are excluded. This is an observed interval, not a complete billed task total.",
+    "scopeComplete": false,
+    "observedTokens": {
+      "input_tokens": 4255412,
+      "cached_input_tokens": 4221440,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 8987,
+      "reasoning_output_tokens": 1824,
+      "total_tokens": 4264399
+    },
+    "tokens": {
+      "input_tokens": null,
+      "cached_input_tokens": null,
+      "cache_write_input_tokens": null,
+      "output_tokens": null,
+      "reasoning_output_tokens": null,
+      "total_tokens": null
+    },
+    "models": [
+      {
+        "provider": "openai",
+        "model": "gpt-6.2-astra",
+        "reasoningEffort": "xhigh",
+        "tokens": {
+          "input_tokens": 4255412,
+          "cached_input_tokens": 4221440,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 8987,
+          "reasoning_output_tokens": 1824,
+          "total_tokens": 4264399
+        },
+        "observations": 34
+      }
+    ],
+    "missingFields": [],
+    "issues": [],
+    "observations": 34
+  },
+  "caseId": "authored-91d789c2c37bdd5526f83ecb"
+}

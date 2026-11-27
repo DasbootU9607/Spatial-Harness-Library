@@ -4,7 +4,7 @@ const root=R.ROOT;
 function discover(){
  const config=R.read(path.join(root,'catalog/harnesses.json')),cases=R.read(path.join(root,'catalog/cases.json')).cases,skills=[],official=[];
  for(const h of config.harnesses){
-  const dir=path.join(root,h.id,'skills');if(fs.existsSync(dir))for(const e of fs.readdirSync(dir,{withFileTypes:true})){const file=path.join(dir,e.name,'skill.json');if(!fs.existsSync(file))continue;const s=R.read(file);if(s.status==='complete'){if(!fs.existsSync(path.join(dir,e.name,'SKILL.md')))throw Error('Missing completed skill');skills.push({...s,source:`https://github.com/DasbootU9607/Spatial-Harness-Library/tree/main/${h.id}/skills/${e.name}`,install:`node tools/install.cjs --harness ${h.id} --destination YOUR_SKILLS_DIRECTORY`});}}
+  const dir=path.join(root,h.id,'skills');if(fs.existsSync(dir))for(const e of fs.readdirSync(dir,{withFileTypes:true})){const file=path.join(dir,e.name,'skill.json');if(!fs.existsSync(file))continue;const s=R.read(file);if(s.status==='complete'){if(!fs.existsSync(path.join(dir,e.name,'SKILL.md')))throw Error('Missing completed skill');skills.push({...s,source:`https://github.com/DasbootU9607/Spatial-Harness-Library/tree/main/${h.id}/skills/${e.name}`,install:`node tools/install.cjs --harness ${h.id} --skill ${e.name} --destination YOUR_SKILLS_DIRECTORY`});}}
   if(h.collection){const source=R.read(path.join(root,'questions/data',h.collection+'.json'));h.officialCount=source.length;h.categories=[...new Set(source.map(s=>s.category))];h.tracks=Object.fromEntries([...new Set(source.map(s=>s.track))].map(t=>[t,source.filter(s=>s.track===t).length]));const refs=new Set(skills.filter(s=>s.harnessId===h.id).flatMap(s=>s.officialReferences||[]));for(const s of source.filter((s,i)=>i===0||refs.has(s.id)))official.push({id:s.id,harnessId:h.id,sourceKind:'official',title:s.type+' · '+(s.level||s.sourceId),description:s.question,thumbnail:'../questions/'+s.image,taskUrl:'../questions/#/'+h.collection+'?case='+encodeURIComponent(s.id),category:s.category,taskType:s.type,difficulty:s.level,source:s.provenance});}
  }
  // Keep archived routes intact and expose independently verified mechanical plates.
@@ -12,7 +12,12 @@ function discover(){
   if(c.harnessId!=='spatialviz-harness')continue;
   const task=R.read(path.join(root,c.harnessId,'site',c.taskArtifact));
   c.generationMethod=task.provenance?.generationMethod||'Legacy JavaScript/SVG generator';
-  c.exhibit=c.verification?.verdict==='passed'&&(c.generationMethod==='SpatialViz-Bench official FreeCAD + OpenCV/Pillow pipeline'||(task.taskType==='PaperFolding'&&c.generationMethod==='SpatialViz-Bench official Paper Folding Matplotlib/Pillow pipeline')||(task.taskType==='MechanicalSystem'&&task.verifier?.id==='mechanical-system'&&c.generationMethod==='Spatial Harness mechanical contact schematics'))&&Boolean(task.provenance?.sourceRevision);
+  const movementTools={ArrowMoving:'SpatialViz-Bench Arrow Moving models and Matplotlib',BlockMoving:'SpatialViz-Bench Block Moving model and FreeCAD'};
+  const usesRecordedTool=c.generationMethod==='SpatialViz-Bench official FreeCAD + OpenCV/Pillow pipeline'
+   || (task.taskType==='PaperFolding' && c.generationMethod==='SpatialViz-Bench official Paper Folding Matplotlib/Pillow pipeline')
+   || (task.taskType==='MechanicalSystem' && task.verifier?.id==='mechanical-system' && c.generationMethod==='Spatial Harness mechanical contact schematics')
+   || c.generationMethod===movementTools[task.taskType];
+  c.exhibit=c.verification?.verdict==='passed' && usesRecordedTool && Boolean(task.provenance?.sourceRevision);
  }
  for(const archived of cases.filter(c=>c.supersededBy)){
    const replacement=cases.find(c=>c.harnessId===archived.harnessId&&c.id===archived.supersededBy);

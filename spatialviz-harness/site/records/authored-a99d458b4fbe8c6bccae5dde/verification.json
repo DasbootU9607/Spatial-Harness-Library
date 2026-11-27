@@ -1,0 +1,53 @@
+{
+  "id": "t001",
+  "actionId": "a3ba9154-910c-4227-9781-30c4517e1b05",
+  "candidateId": "v001",
+  "testedFingerprints": {
+    "specification": "a99d458b4fbe8c6bccae5dde7eed1f8b61eedf96f79d1fadde89ef1cd5bffe7d",
+    "geometry": "5347b316a8fcc49ea4b5462203efd9eb45076f6aab665401788c9cbe94d6044f",
+    "question": "3197894b534c953369105036045650eaa3110cd3d29e2195875ad0ed32898b98",
+    "options": "8488ec1a849b702e41c592df2c1930c77031bdff8c7d1d79a88e290a0f98f4d3",
+    "answer": "2e7e768bf1ff4352f533ecd6b3c580fba92ab3463b49e4d458d1a8328cd15c9a",
+    "contract": null,
+    "rendering": "36bffadc071268b88658ffffcc9159ff26d126db903e84ccc2434897bed43914",
+    "generator": "68d2ddbaa6aa058dde61db68494e5e2f2b3751efa9c01cb87e0fe19b033397ae"
+  },
+  "verifier": {
+    "id": "block-movement",
+    "revision": "05facdd03f40c6c217c8a41766fb64bced7395ba6306c594bb2ee7e9ca956fc0"
+  },
+  "reportSha256": "97193d603762528c5b6d5218d0d8bc17037d5f9960bf4c0ad3b985d7267e0d9e",
+  "verdict": "passed",
+  "status": "passed",
+  "checks": [
+    {
+      "name": "Printed coordinate key, question and four option labels match the final sheet",
+      "verdict": "passed"
+    },
+    {
+      "name": "Option A",
+      "detail": "magenta (0, 1, 0) to (1, 1, 0), exchanging with red. Then magenta (1, 1, 0) to (0, 1, 0), exchanging with red. Then magenta (0, 1, 0) to (0, 0, 0). Step 3, cell (0, 0, 0) contains magenta. The panel requires empty.",
+      "verdict": "passed"
+    },
+    {
+      "name": "Option B",
+      "detail": "blue (1, 0, 0) to (2, 0, 0). Then magenta (1, 2, 0) to (1, 1, 0), exchanging with red. Then magenta (1, 1, 0) to (1, 2, 0), exchanging with red. Step 3, cell (1, 0, 0) contains empty. The panel requires blue.",
+      "verdict": "passed"
+    },
+    {
+      "name": "Option C",
+      "detail": "cyan (2, 1, 0) to (2, 0, 0). Then magenta (1, 2, 0) to (1, 1, 0), exchanging with red. Then red (1, 2, 0) to (1, 1, 0), exchanging with magenta. Step 3, cell (2, 0, 0) contains cyan. The panel requires empty.",
+      "verdict": "passed"
+    },
+    {
+      "name": "Option D",
+      "detail": "magenta (0, 1, 0) to (1, 1, 0), exchanging with red. Then magenta (1, 2, 0) to (1, 1, 0), exchanging with magenta. Then red (0, 1, 0) to (1, 1, 0), exchanging with magenta. Every displayed constraint matches.",
+      "verdict": "passed"
+    }
+  ],
+  "scope": "Printed state keys, commands, labeled diagrams and all four alternatives.",
+  "commandExitStatus": 0,
+  "binding": "exact",
+  "bindingBasis": "exact candidate and full input fingerprints",
+  "commandEventId": "e000012"
+}

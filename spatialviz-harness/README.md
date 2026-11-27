@@ -6,6 +6,10 @@ Generate and check spatial visualization tasks with the library recorder and the
 
 [Browse all 1,180 official questions](https://dasbootu9607.github.io/Spatial-Harness-Library/questions/#/spatialviz) with filters for the four categories, 12 task types and source difficulty levels. Each case includes its original figure, question, answer and stable case ID.
 
+## Mental Animation
+
+[Arrow Movement](skills/spatialviz-arrow-movement/SKILL.md) traces relative headings and occupied-cell exchanges. [Block Movement](skills/spatialviz-block-movement/SKILL.md) traces cube swaps, support and gravity across paired views. Both packages include a source audit and independently verified examples.
+
 ## Mental Folding
 
 [Paper Folding](skills/spatialviz-paper-folding/SKILL.md) covers the three released grid profiles. Its [coverage table](skills/spatialviz-paper-folding/references/coverage.md) links all released mechanisms to independently verified examples and build records.

@@ -6,9 +6,11 @@ const args=process.argv.slice(2),get=k=>args[args.indexOf('--'+k)+1];
 const harness=get('harness'),destination=get('destination');
 if(!harness||!destination||!R.read(path.join(R.ROOT,'catalog/harnesses.json')).harnesses.some(h=>h.id===harness))throw Error('Supply --harness and --destination');
 const root=path.resolve(destination),source=path.join(R.ROOT,harness,'skills');
+if(args.includes('--skill') && !fs.readdirSync(source).some(name=>name===get('skill') && fs.existsSync(path.join(source,name,'SKILL.md'))))throw Error('Unknown skill for this harness');
 fs.mkdirSync(root,{recursive:true});
 for(const e of fs.readdirSync(source,{withFileTypes:true})){
  if(!e.isDirectory()||!fs.existsSync(path.join(source,e.name,'SKILL.md')))continue;
+ if(args.includes('--skill') && e.name!==get('skill'))continue;
  const out=path.join(root,e.name);if(fs.existsSync(out))throw Error('Existing skill preserved: '+out+'; select a new destination or update it explicitly.');
  fs.cpSync(path.join(source,e.name),out,{recursive:true});
 }

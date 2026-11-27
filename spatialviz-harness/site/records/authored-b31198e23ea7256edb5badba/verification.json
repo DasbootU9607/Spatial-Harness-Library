@@ -1,0 +1,53 @@
+{
+  "id": "t002",
+  "actionId": "64fa9fe6-b5aa-4cb1-ac48-1773025df492",
+  "candidateId": "v002",
+  "testedFingerprints": {
+    "specification": "b31198e23ea7256edb5badbad8edeb96ec5e79b3b6b429699adeef84586516b8",
+    "geometry": "806fa1bea0c4cb38bc96ff0bc5a7f493197a8af99eab159803b293027ad910a1",
+    "question": "3197894b534c953369105036045650eaa3110cd3d29e2195875ad0ed32898b98",
+    "options": "79540be69b67a95fa9dbfc8012ddbafab87a5c80b3c1125fee9242e8e9d81237",
+    "answer": "4a617b258997d1a98c21e9aaa0b10fe430e84fab81601733a3f00383092f717a",
+    "contract": null,
+    "rendering": "955c6a4e57fc98905ea94e75086fb94a825f324d7e7208d0abdca6cfaa1b41be",
+    "generator": "a65b5c178daf8c24c392b1d5bb97483097b15851fbb4430d40a4c928c05a105a"
+  },
+  "verifier": {
+    "id": "block-movement",
+    "revision": "05facdd03f40c6c217c8a41766fb64bced7395ba6306c594bb2ee7e9ca956fc0"
+  },
+  "reportSha256": "70af0ad90e47fd6371b6d221e3a82c4e70c47724442e7a52669761f1f6247403",
+  "verdict": "passed",
+  "status": "passed",
+  "checks": [
+    {
+      "name": "Printed coordinate key, question and four option labels match the final sheet",
+      "verdict": "passed"
+    },
+    {
+      "name": "Option A",
+      "detail": "green (1, 2, 0) to (2, 2, 0). Then green (2, 2, 0) to (1, 2, 0). Then gold (1, 1, 0) to (2, 1, 0). Step 3, cell (0, 1, 0) contains empty. The panel requires gold.",
+      "verdict": "passed"
+    },
+    {
+      "name": "Option B",
+      "detail": "green (1, 2, 0) to (2, 2, 0). Then green (2, 2, 0) to (2, 1, 0). Then gold (1, 1, 0) to (0, 1, 0). Step 3, cell (1, 2, 0) contains empty. The panel requires green.",
+      "verdict": "passed"
+    },
+    {
+      "name": "Option C",
+      "detail": "green (1, 2, 0) to (2, 2, 0). Then green (2, 2, 0) to (1, 2, 0). Then gold (1, 1, 0) to (0, 1, 0). Every displayed constraint matches.",
+      "verdict": "passed"
+    },
+    {
+      "name": "Option D",
+      "detail": "green (1, 2, 0) to (2, 2, 0). Then gold (1, 1, 0) to (1, 0, 0), exchanging with gold. Then gold (1, 1, 0) to (0, 1, 0). Step 3, cell (1, 2, 0) contains empty. The panel requires green.",
+      "verdict": "passed"
+    }
+  ],
+  "scope": "Printed state keys, commands, labeled diagrams and all four alternatives.",
+  "commandExitStatus": 0,
+  "binding": "exact",
+  "bindingBasis": "exact candidate and full input fingerprints",
+  "commandEventId": "e000022"
+}

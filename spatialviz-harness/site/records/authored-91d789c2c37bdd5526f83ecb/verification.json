@@ -1,0 +1,53 @@
+{
+  "id": "t001",
+  "actionId": "b5da0be3-1833-4dd0-a900-e137cf3823fa",
+  "candidateId": "v001",
+  "testedFingerprints": {
+    "specification": "91d789c2c37bdd5526f83ecbfb23c5bc3a8fb6c5556120978f7697cfcbafdbb4",
+    "geometry": "3868e46e8cf63c57cfedf4262e3206298028730d6a0e93d5bc6b6ad849eac9f5",
+    "question": "173ad6f62ea0de08df59d91dcdc49f2ad30f9c8370d8411ba8f93cd9d06f620c",
+    "options": "2a02ee37206c0089bd193ad678330e2d408634d0befda3fcfdf1fc7c1b232c15",
+    "answer": "35eb5353056c98d93db789049cd9c887ca9f96932c05482fa79dfe7ec7b05cc0",
+    "contract": null,
+    "rendering": "97bd8945e44d9e57d856c1fe94f30a3ab25bbebe7588b6e2061575bd002b4b41",
+    "generator": "449c0c6d24a0d58007dba4687dbdac238769eceaeb3baa90e133c219ba993c0f"
+  },
+  "verifier": {
+    "id": "arrow-movement",
+    "revision": "b53464c5a44f95977a83184de30510f7ab2e083e56e84db3d21f44b324645c93"
+  },
+  "reportSha256": "3a50dfcf2f3002b8951666754598dec2fb317459361dd3e3e3ae9efe6bb957d6",
+  "verdict": "passed",
+  "status": "passed",
+  "checks": [
+    {
+      "name": "Printed coordinate key, question and four option labels match the final sheet",
+      "verdict": "passed"
+    },
+    {
+      "name": "Option A",
+      "detail": "red (2, 0) to (2, 1) facing N, exchanging with teal facing S. Then teal (2, 0) to (2, 2) facing N. Step 2, cell (2, 1) contains red N. The panel requires red S.",
+      "verdict": "passed"
+    },
+    {
+      "name": "Option B",
+      "detail": "red (2, 0) to (2, 1) facing N, exchanging with teal facing S. Then teal (2, 0) to (2, 2) facing N. Step 2, cell (0, 0) contains blue N. The panel requires teal W.",
+      "verdict": "passed"
+    },
+    {
+      "name": "Option C",
+      "detail": "red (2, 0) to (2, 1) facing N, exchanging with teal facing S. Then teal (2, 0) to (2, 2) facing N. Step 2, cell (0, 1) contains empty. The panel requires teal W.",
+      "verdict": "passed"
+    },
+    {
+      "name": "Option D",
+      "detail": "red (2, 0) to (2, 1) facing N, exchanging with teal facing S. Then teal (2, 0) to (2, 2) facing N. Every displayed constraint matches.",
+      "verdict": "passed"
+    }
+  ],
+  "scope": "Printed state keys, commands, labeled diagrams and all four alternatives.",
+  "commandExitStatus": 0,
+  "binding": "exact",
+  "bindingBasis": "exact candidate and full input fingerprints",
+  "commandEventId": "e000015"
+}

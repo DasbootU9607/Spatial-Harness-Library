@@ -136,7 +136,19 @@ assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerW
    await page.locator('[aria-label="Search evidence"]').fill('no-such-record-837329');assert.match(await page.locator('.evidence-results').innerText(),/No matching evidence/);
    await page.locator('[aria-label="Search evidence"]').fill('');await page.locator('[aria-label="Evidence type"]').selectOption('test.completed');
    assert.equal(await page.locator('.evidence-results button').count(),Math.min(30,process.events.filter(e=>e.type==='test.completed').length));
-   await page.locator('.evidence-results button').first().click();assert(await page.locator('.process-checks li').count()>0);
+   const firstReport=page.locator('.evidence-results button').first();
+   const selectedId=await firstReport.getAttribute('data-event');
+   const selected=process.events.find(e=>e.id===selectedId);
+   await firstReport.click();
+   assert.equal(await page.locator('.process-checks li').count(),(selected.details.checks||[]).length);
+   if(!selected.details.checks?.length){
+    assert.notEqual(selected.details.verdict,'passed','A passed report must carry its checks');
+    const accepted=process.events.find(e=>e.type==='test.completed' && e.candidateId===example.verification.candidateId && e.details.verdict==='passed');
+    assert(accepted?.details.checks?.length,'The accepted version must have executed checks');
+    await page.goto(origin+example.harnessId+'/process.html?id='+example.id+'&node='+accepted.id);
+    await page.waitForSelector('.process-checks li');
+    assert.equal(await page.locator('.process-checks li').count(),accepted.details.checks.length);
+   }
    if(process.events.filter(e=>e.type==='test.completed').length>30){await page.locator('[data-page-step="1"]').click();assert.match(await page.locator('.evidence-count').innerText(),/31–60/);}
    await page.locator('[data-view="actions"]').click();
    assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false,'Process overflow');

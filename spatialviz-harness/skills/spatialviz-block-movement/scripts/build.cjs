@@ -1,0 +1,18 @@
+'use strict';
+const path=require('node:path');
+const fs=require('node:fs');
+const {execFileSync}=require('node:child_process');
+const [seed,mechanism,effect='any',config,...rest]=process.argv.slice(2);
+if(!/^-?\d+$/.test(seed)||!Number.isSafeInteger(Number(seed))||!mechanism||rest.length) throw Error('Usage: build.cjs SEED MECHANISM [EFFECT] [PARAMETERS.json]');
+const params={...(config?JSON.parse(fs.readFileSync(config,'utf8').replace(/^\uFEFF/,'')):{}),mechanism,effect};
+const invoke=(...args)=>execFileSync(process.execPath,[path.join(__dirname,'construct.cjs'),...args],{encoding:'utf8',windowsHide:true}).trim();
+const title='Block Movement / '+mechanism+' / '+seed;
+const run=invoke('start','--task',title+' '+JSON.stringify(params),'--title',title,'--no-viewer');
+const task=path.join(run,'delivery.json'),pf=path.join(run,'parameters.json');
+fs.writeFileSync(pf,JSON.stringify(params));
+invoke('read','--run',run,'--file',path.join(__dirname,'../SKILL.md'));
+const c=JSON.parse(invoke('generate','--run',run,'--params',pf,'--seed',seed,'--task',task));
+const args=['--run',run,'--candidate',c.id];
+const preview=JSON.parse(invoke('render',...args));
+invoke('verify',...args);
+console.log(JSON.stringify({run,candidate:c.id,task,png:path.join(run,preview.artifactPath),verdict:'passed'}));

@@ -1,0 +1,53 @@
+{
+  "id": "t001",
+  "actionId": "0b0151bd-163d-4759-a29e-dcef637becca",
+  "candidateId": "v001",
+  "testedFingerprints": {
+    "specification": "8c9bd6899bdbe65d7f39d49ec7f527ea5ebf0604c49fd53fbd8f6ed97188c435",
+    "geometry": "43f18924f3cb53d09c23efe99c2ccf6c5fb2fff18465754040571a067e24c4c7",
+    "question": "a04d1ff91df67c9e23cf8b7dc3ae43dd0765e9d301f18b74873929c143ccb577",
+    "options": "52b29bdd20e03f8155e187497877f0b9a10ad419ee5d0678a4d67ce4b876888f",
+    "answer": "7d291a6f939c274a6a384eaf04d1da9dd6f330120a4a7c585d6a3decc4bcf28c",
+    "contract": null,
+    "rendering": "9579ff9d6b9f6b9899b938a45b3910c6727780dc39b77a946fe316d35b69304d",
+    "generator": "5acf0fb39525f50336e6c16493db228974cee5cd5dc8831f22fe3b2f5a6bc9f3"
+  },
+  "verifier": {
+    "id": "arrow-movement",
+    "revision": "b53464c5a44f95977a83184de30510f7ab2e083e56e84db3d21f44b324645c93"
+  },
+  "reportSha256": "f9c2483ea3a0b9787dd0585d57e7d3b190b3bc8bce4ac40ca64115433f403fcc",
+  "verdict": "passed",
+  "status": "passed",
+  "checks": [
+    {
+      "name": "Printed coordinate key, question and four option labels match the final sheet",
+      "verdict": "passed"
+    },
+    {
+      "name": "Option A",
+      "detail": "red (2, 0) to (1, 0) facing W. Then red (1, 0) to (1, 1) facing N. Then red (1, 1) to (0, 1) facing W. Every displayed constraint matches.",
+      "verdict": "passed"
+    },
+    {
+      "name": "Option B",
+      "detail": "red (2, 0) to (1, 0) facing W. Then red (1, 0) to (1, 1) facing N. Then red (1, 1) to (2, 1) facing E. Step 3, cell (0, 1) contains empty. The panel requires red W.",
+      "verdict": "passed"
+    },
+    {
+      "name": "Option C",
+      "detail": "red (2, 0) to (1, 0) facing W. Then red (1, 0) to (2, 0) facing E. Then red (2, 0) to (2, 1) facing N. Step 3, cell (0, 1) contains empty. The panel requires red W.",
+      "verdict": "passed"
+    },
+    {
+      "name": "Option D",
+      "detail": "red (2, 0) to (1, 0) facing W. Then red (1, 0) to (1, 1) facing N. Then red (1, 1) to (1, 0) facing S. Step 3, cell (0, 1) contains empty. The panel requires red W.",
+      "verdict": "passed"
+    }
+  ],
+  "scope": "Printed state keys, commands, labeled diagrams and all four alternatives.",
+  "commandExitStatus": 0,
+  "binding": "exact",
+  "bindingBasis": "exact candidate and full input fingerprints",
+  "commandEventId": "e000015"
+}

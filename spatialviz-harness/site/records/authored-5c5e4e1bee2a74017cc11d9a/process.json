@@ -1,0 +1,629 @@
+{
+  "schemaVersion": 1,
+  "manifest": {
+    "sealed": true,
+    "id": "build-5faaa328-b304-44fb-882d-1fd85a11fc6f",
+    "title": "Arrow Movement / fleet-state / 21019",
+    "runKind": "[private value omitted]",
+    "harness": "spatialviz-harness",
+    "benchmark": null,
+    "category": null,
+    "taskType": null,
+    "skill": {
+      "id": "spatialviz-arrow-movement",
+      "sha256": "f26c4d3c7739134eec731fa993918942098d9acfa1267c2bcb8fb152876b1f2c"
+    },
+    "status": "accepted",
+    "finalCandidateId": "v001",
+    "limitations": [
+      "Only recorder-mediated deliveries, commands and saved boundaries are observed; direct function calls, unwrapped commands and unsaved editor states are excluded.",
+      "Design notes are explicit author annotations, not internal reasoning."
+    ],
+    "captureGaps": []
+  },
+  "events": [
+    {
+      "id": "e000001",
+      "seq": 1,
+      "runId": "build-5faaa328-b304-44fb-882d-1fd85a11fc6f",
+      "type": "run.created",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": null,
+      "details": {},
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000002",
+      "seq": 2,
+      "runId": "build-5faaa328-b304-44fb-882d-1fd85a11fc6f",
+      "type": "collector.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": null,
+      "details": {},
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000003",
+      "seq": 3,
+      "runId": "build-5faaa328-b304-44fb-882d-1fd85a11fc6f",
+      "type": "skill.attached",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": null,
+      "details": {
+        "sha256": "f26c4d3c7739134eec731fa993918942098d9acfa1267c2bcb8fb152876b1f2c",
+        "skill": "spatialviz-arrow-movement"
+      },
+      "evidenceRefs": [
+        {
+          "id": "498267d5a576ab26",
+          "sha256": "f26c4d3c7739134eec731fa993918942098d9acfa1267c2bcb8fb152876b1f2c",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000004",
+      "seq": 4,
+      "runId": "build-5faaa328-b304-44fb-882d-1fd85a11fc6f",
+      "type": "resource.read",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "7ee9e7ac-ce3e-4eed-aad2-cbbede64b7da",
+      "candidateId": null,
+      "details": {
+        "outcome": "delivered",
+        "label": "SKILL.md",
+        "start": 1,
+        "end": 22,
+        "sha256": "f26c4d3c7739134eec731fa993918942098d9acfa1267c2bcb8fb152876b1f2c",
+        "sourceSha256": "f26c4d3c7739134eec731fa993918942098d9acfa1267c2bcb8fb152876b1f2c"
+      },
+      "evidenceRefs": [
+        {
+          "id": "66263a5566a40cec",
+          "sha256": "f26c4d3c7739134eec731fa993918942098d9acfa1267c2bcb8fb152876b1f2c",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000005",
+      "seq": 5,
+      "runId": "build-5faaa328-b304-44fb-882d-1fd85a11fc6f",
+      "type": "command.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "1369da5f-6063-4418-9c1a-fc8848ab4a6d",
+      "candidateId": null,
+      "details": {
+        "label": "python",
+        "kind": "mental-animation-generation"
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000006",
+      "seq": 6,
+      "runId": "build-5faaa328-b304-44fb-882d-1fd85a11fc6f",
+      "type": "command.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "1369da5f-6063-4418-9c1a-fc8848ab4a6d",
+      "candidateId": null,
+      "details": {
+        "commandEventId": "e000005",
+        "kind": "mental-animation-generation",
+        "exitCode": 1,
+        "signal": null
+      },
+      "evidenceRefs": [
+        {
+          "id": "b5abdc4770aaa287",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "availability": "local evidence; hash published"
+        },
+        {
+          "id": "aa991658d909ee70",
+          "sha256": "09db1ac07402b2a194d8b0c08977fa99a5a0608554a3965a45c77e8f63bf7d80",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000007",
+      "seq": 7,
+      "runId": "build-5faaa328-b304-44fb-882d-1fd85a11fc6f",
+      "type": "resource.read",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "11192d4a-dd18-458a-b85e-aa457096daba",
+      "candidateId": null,
+      "details": {
+        "outcome": "delivered",
+        "label": "SKILL.md",
+        "start": 1,
+        "end": 22,
+        "sha256": "f26c4d3c7739134eec731fa993918942098d9acfa1267c2bcb8fb152876b1f2c",
+        "sourceSha256": "f26c4d3c7739134eec731fa993918942098d9acfa1267c2bcb8fb152876b1f2c"
+      },
+      "evidenceRefs": [
+        {
+          "id": "cf619a18b5624a5f",
+          "sha256": "f26c4d3c7739134eec731fa993918942098d9acfa1267c2bcb8fb152876b1f2c",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000008",
+      "seq": 8,
+      "runId": "build-5faaa328-b304-44fb-882d-1fd85a11fc6f",
+      "type": "resource.read",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "80bc91e4-32bc-4296-87d2-f4b8d31a349b",
+      "candidateId": null,
+      "details": {
+        "outcome": "delivered",
+        "label": "coverage.md",
+        "start": 1,
+        "end": 44,
+        "sha256": "f1813a712fb613322b6923be650aafd0ad97afff84d50d40c0b642cea4326b03",
+        "sourceSha256": "f1813a712fb613322b6923be650aafd0ad97afff84d50d40c0b642cea4326b03"
+      },
+      "evidenceRefs": [
+        {
+          "id": "51444516772c7716",
+          "sha256": "f1813a712fb613322b6923be650aafd0ad97afff84d50d40c0b642cea4326b03",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000009",
+      "seq": 9,
+      "runId": "build-5faaa328-b304-44fb-882d-1fd85a11fc6f",
+      "type": "command.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "1cb3d38e-33d9-4304-886d-b9c43ee48ccf",
+      "candidateId": null,
+      "details": {
+        "label": "python",
+        "kind": "mental-animation-generation"
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000010",
+      "seq": 10,
+      "runId": "build-5faaa328-b304-44fb-882d-1fd85a11fc6f",
+      "type": "command.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "1cb3d38e-33d9-4304-886d-b9c43ee48ccf",
+      "candidateId": null,
+      "details": {
+        "commandEventId": "e000009",
+        "kind": "mental-animation-generation",
+        "exitCode": 0,
+        "signal": null
+      },
+      "evidenceRefs": [
+        {
+          "id": "63ef46300f90a1d7",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "availability": "local evidence; hash published"
+        },
+        {
+          "id": "c101732d9827bc63",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000011",
+      "seq": 11,
+      "runId": "build-5faaa328-b304-44fb-882d-1fd85a11fc6f",
+      "type": "candidate.saved",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "b4c243f6-7cc6-4e94-ae1e-98c3f193ff4f",
+      "candidateId": "v001",
+      "details": {
+        "sha256": "5c5e4e1bee2a74017cc11d9a38f95ed2fb93de6d404694908d9168b545c1c075",
+        "parentId": null,
+        "parentBasis": null,
+        "changes": [
+          "specification",
+          "geometry",
+          "question",
+          "options",
+          "answer",
+          "rendering",
+          "generator"
+        ],
+        "fingerprints": {
+          "specification": "5c5e4e1bee2a74017cc11d9a38f95ed2fb93de6d404694908d9168b545c1c075",
+          "geometry": "11b4104fadcd7d84cce209cb8df5cc76e0c1186e0449d01ff1bc9dc098596e93",
+          "question": "51e074d0e4b01aa66e57d77014248b6d7ea15dd2e47772a0c469c575fd0a1267",
+          "options": "2a02ee37206c0089bd193ad678330e2d408634d0befda3fcfdf1fc7c1b232c15",
+          "answer": "0792c0ea543b500f56b755a0afd04cc60dfa58aa7bb17662e7efcf7c70520425",
+          "contract": null,
+          "rendering": "1b360fb174739961d21e6f638499575ce15b3a8aab10979148a677c525491e60",
+          "generator": "0511c3216722c0cdeb7c70e135eae4580fd95f4ae74157f1ead5b484caa494ac"
+        },
+        "previewUnavailable": null
+      },
+      "evidenceRefs": [
+        {
+          "id": "cec89ece3b414013",
+          "sha256": "5c5e4e1bee2a74017cc11d9a38f95ed2fb93de6d404694908d9168b545c1c075",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000012",
+      "seq": 12,
+      "runId": "build-5faaa328-b304-44fb-882d-1fd85a11fc6f",
+      "type": "build.saved",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "b4c243f6-7cc6-4e94-ae1e-98c3f193ff4f",
+      "candidateId": "v001",
+      "details": {},
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000013",
+      "seq": 13,
+      "runId": "build-5faaa328-b304-44fb-882d-1fd85a11fc6f",
+      "type": "render.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "12808233-b02d-4adf-bc33-50e8ca6e011b",
+      "candidateId": "v001",
+      "details": {
+        "renderer": {
+          "id": "arrow-movement",
+          "revision": "b53464c5a44f95977a83184de30510f7ab2e083e56e84db3d21f44b324645c93"
+        }
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000014",
+      "seq": 14,
+      "runId": "build-5faaa328-b304-44fb-882d-1fd85a11fc6f",
+      "type": "render.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "12808233-b02d-4adf-bc33-50e8ca6e011b",
+      "candidateId": "v001",
+      "details": {
+        "sha256": "68f4efd4176021a230dd4d5e001ebba3b79a299f464478f15aa8a67c8caa9c88",
+        "renderer": {
+          "id": "arrow-movement",
+          "revision": "b53464c5a44f95977a83184de30510f7ab2e083e56e84db3d21f44b324645c93"
+        },
+        "specification": "5c5e4e1bee2a74017cc11d9a38f95ed2fb93de6d404694908d9168b545c1c075",
+        "rendering": "1b360fb174739961d21e6f638499575ce15b3a8aab10979148a677c525491e60"
+      },
+      "evidenceRefs": [
+        {
+          "id": "6a3f628812aa0936",
+          "sha256": "68f4efd4176021a230dd4d5e001ebba3b79a299f464478f15aa8a67c8caa9c88",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000015",
+      "seq": 15,
+      "runId": "build-5faaa328-b304-44fb-882d-1fd85a11fc6f",
+      "type": "command.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "c2bd2fa4-f330-416e-b441-e0e74cded36c",
+      "candidateId": "v001",
+      "details": {
+        "label": "node.exe",
+        "kind": "verification"
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000016",
+      "seq": 16,
+      "runId": "build-5faaa328-b304-44fb-882d-1fd85a11fc6f",
+      "type": "command.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "c2bd2fa4-f330-416e-b441-e0e74cded36c",
+      "candidateId": "v001",
+      "details": {
+        "commandEventId": "e000015",
+        "kind": "verification",
+        "exitCode": 0,
+        "signal": null
+      },
+      "evidenceRefs": [
+        {
+          "id": "72d878e403c84e28",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "availability": "local evidence; hash published"
+        },
+        {
+          "id": "dd534b048c8b0338",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000017",
+      "seq": 17,
+      "runId": "build-5faaa328-b304-44fb-882d-1fd85a11fc6f",
+      "type": "test.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "c2bd2fa4-f330-416e-b441-e0e74cded36c",
+      "candidateId": "v001",
+      "details": {
+        "commandEventId": "e000015",
+        "completedEventId": "e000016",
+        "verdict": "passed",
+        "status": "passed",
+        "checks": [
+          {
+            "name": "Printed coordinate key, question and four option labels match the final sheet",
+            "verdict": "passed"
+          },
+          {
+            "name": "Option A",
+            "detail": "green (0, 0) to (1, 0) facing E. Then red (1, 2) to (1, 1) facing S. Then teal (2, 1) to (0, 1) facing W. Step 3, cell (1, 1) contains red S. The panel requires empty.",
+            "verdict": "passed"
+          },
+          {
+            "name": "Option B",
+            "detail": "green (0, 0) to (1, 0) facing E. Then red (1, 2) to (1, 1) facing S. Then teal (2, 1) to (0, 1) facing W. Step 3, cell (1, 1) contains red S. The panel requires empty.",
+            "verdict": "passed"
+          },
+          {
+            "name": "Option C",
+            "detail": "green (0, 0) to (1, 0) facing E. Then red (1, 2) to (1, 1) facing S. Then teal (2, 1) to (0, 1) facing W. Every displayed constraint matches.",
+            "verdict": "passed"
+          },
+          {
+            "name": "Option D",
+            "detail": "green (0, 0) to (1, 0) facing E. Then red (1, 2) to (1, 1) facing S. Then teal (2, 1) to (0, 1) facing W. Step 3, cell (0, 0) contains empty. The panel requires red W.",
+            "verdict": "passed"
+          }
+        ],
+        "scope": "Printed state keys, commands, labeled diagrams and all four alternatives.",
+        "binding": "exact",
+        "bindingBasis": "exact candidate and full input fingerprints",
+        "testedFingerprints": {
+          "specification": "5c5e4e1bee2a74017cc11d9a38f95ed2fb93de6d404694908d9168b545c1c075",
+          "geometry": "11b4104fadcd7d84cce209cb8df5cc76e0c1186e0449d01ff1bc9dc098596e93",
+          "question": "51e074d0e4b01aa66e57d77014248b6d7ea15dd2e47772a0c469c575fd0a1267",
+          "options": "2a02ee37206c0089bd193ad678330e2d408634d0befda3fcfdf1fc7c1b232c15",
+          "answer": "0792c0ea543b500f56b755a0afd04cc60dfa58aa7bb17662e7efcf7c70520425",
+          "contract": null,
+          "rendering": "1b360fb174739961d21e6f638499575ce15b3a8aab10979148a677c525491e60",
+          "generator": "0511c3216722c0cdeb7c70e135eae4580fd95f4ae74157f1ead5b484caa494ac"
+        },
+        "verifier": {
+          "id": "arrow-movement",
+          "revision": "b53464c5a44f95977a83184de30510f7ab2e083e56e84db3d21f44b324645c93"
+        },
+        "reportSha256": "b289adcd4d1aff45d13b41029a58525cfad523791469823886d97169a54cf3b1"
+      },
+      "evidenceRefs": [
+        {
+          "id": "ab97ccb259950b45",
+          "sha256": "b289adcd4d1aff45d13b41029a58525cfad523791469823886d97169a54cf3b1",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000018",
+      "seq": 18,
+      "runId": "build-5faaa328-b304-44fb-882d-1fd85a11fc6f",
+      "type": "design.note",
+      "actor": "author",
+      "origin": "agent_statement",
+      "actionId": null,
+      "candidateId": "v001",
+      "details": {
+        "goal": "Verify state-empty against the printed problem.",
+        "sources": "MentalAnimation/ArrowMoving/Level1/2-3-3-2",
+        "change": "Select fleet-state with the slide constraint.",
+        "reason": "Check the complete visible result of every offered choice.",
+        "expectedChecks": "A single match, distinct distractors, matching captions and final image."
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000019",
+      "seq": 19,
+      "runId": "build-5faaa328-b304-44fb-882d-1fd85a11fc6f",
+      "type": "visual.review",
+      "actor": "author",
+      "origin": "agent_statement",
+      "actionId": null,
+      "candidateId": "v001",
+      "details": {
+        "outcome": "passed",
+        "review": "The five panel labels and board transcriptions agree. In the four answer grids the distinguishing red glyph is north at (1,2) in A, east at (2,2) in B, south at (1,1) in C, and west at (0,0) in D. The second command puts red at (1,1) south and the last teal move passes over it. C shows the full result."
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000020",
+      "seq": 20,
+      "runId": "build-5faaa328-b304-44fb-882d-1fd85a11fc6f",
+      "type": "run.finished",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": "v001",
+      "details": {
+        "outcome": "accepted",
+        "finalCandidateId": "v001"
+      },
+      "evidenceRefs": []
+    }
+  ],
+  "candidates": [
+    {
+      "id": "v001",
+      "parentId": null,
+      "parentBasis": null,
+      "sha256": "5c5e4e1bee2a74017cc11d9a38f95ed2fb93de6d404694908d9168b545c1c075",
+      "fingerprints": {
+        "specification": "5c5e4e1bee2a74017cc11d9a38f95ed2fb93de6d404694908d9168b545c1c075",
+        "geometry": "11b4104fadcd7d84cce209cb8df5cc76e0c1186e0449d01ff1bc9dc098596e93",
+        "question": "51e074d0e4b01aa66e57d77014248b6d7ea15dd2e47772a0c469c575fd0a1267",
+        "options": "2a02ee37206c0089bd193ad678330e2d408634d0befda3fcfdf1fc7c1b232c15",
+        "answer": "0792c0ea543b500f56b755a0afd04cc60dfa58aa7bb17662e7efcf7c70520425",
+        "contract": null,
+        "rendering": "1b360fb174739961d21e6f638499575ce15b3a8aab10979148a677c525491e60",
+        "generator": "0511c3216722c0cdeb7c70e135eae4580fd95f4ae74157f1ead5b484caa494ac"
+      },
+      "previewUnavailable": null,
+      "changes": [
+        "specification",
+        "geometry",
+        "question",
+        "options",
+        "answer",
+        "rendering",
+        "generator"
+      ],
+      "preview": {
+        "candidateId": "v001",
+        "specification": "5c5e4e1bee2a74017cc11d9a38f95ed2fb93de6d404694908d9168b545c1c075",
+        "rendering": "1b360fb174739961d21e6f638499575ce15b3a8aab10979148a677c525491e60",
+        "renderer": {
+          "id": "arrow-movement",
+          "revision": "b53464c5a44f95977a83184de30510f7ab2e083e56e84db3d21f44b324645c93"
+        },
+        "sha256": "68f4efd4176021a230dd4d5e001ebba3b79a299f464478f15aa8a67c8caa9c88",
+        "path": "records/authored-5c5e4e1bee2a74017cc11d9a/v001-68f4efd4176021a2.png",
+        "origin": "recorded-render"
+      }
+    }
+  ],
+  "tests": [
+    {
+      "id": "t001",
+      "actionId": "c2bd2fa4-f330-416e-b441-e0e74cded36c",
+      "candidateId": "v001",
+      "testedFingerprints": {
+        "specification": "5c5e4e1bee2a74017cc11d9a38f95ed2fb93de6d404694908d9168b545c1c075",
+        "geometry": "11b4104fadcd7d84cce209cb8df5cc76e0c1186e0449d01ff1bc9dc098596e93",
+        "question": "51e074d0e4b01aa66e57d77014248b6d7ea15dd2e47772a0c469c575fd0a1267",
+        "options": "2a02ee37206c0089bd193ad678330e2d408634d0befda3fcfdf1fc7c1b232c15",
+        "answer": "0792c0ea543b500f56b755a0afd04cc60dfa58aa7bb17662e7efcf7c70520425",
+        "contract": null,
+        "rendering": "1b360fb174739961d21e6f638499575ce15b3a8aab10979148a677c525491e60",
+        "generator": "0511c3216722c0cdeb7c70e135eae4580fd95f4ae74157f1ead5b484caa494ac"
+      },
+      "verifier": {
+        "id": "arrow-movement",
+        "revision": "b53464c5a44f95977a83184de30510f7ab2e083e56e84db3d21f44b324645c93"
+      },
+      "reportSha256": "b289adcd4d1aff45d13b41029a58525cfad523791469823886d97169a54cf3b1",
+      "verdict": "passed",
+      "status": "passed",
+      "checks": [
+        {
+          "name": "Printed coordinate key, question and four option labels match the final sheet",
+          "verdict": "passed"
+        },
+        {
+          "name": "Option A",
+          "detail": "green (0, 0) to (1, 0) facing E. Then red (1, 2) to (1, 1) facing S. Then teal (2, 1) to (0, 1) facing W. Step 3, cell (1, 1) contains red S. The panel requires empty.",
+          "verdict": "passed"
+        },
+        {
+          "name": "Option B",
+          "detail": "green (0, 0) to (1, 0) facing E. Then red (1, 2) to (1, 1) facing S. Then teal (2, 1) to (0, 1) facing W. Step 3, cell (1, 1) contains red S. The panel requires empty.",
+          "verdict": "passed"
+        },
+        {
+          "name": "Option C",
+          "detail": "green (0, 0) to (1, 0) facing E. Then red (1, 2) to (1, 1) facing S. Then teal (2, 1) to (0, 1) facing W. Every displayed constraint matches.",
+          "verdict": "passed"
+        },
+        {
+          "name": "Option D",
+          "detail": "green (0, 0) to (1, 0) facing E. Then red (1, 2) to (1, 1) facing S. Then teal (2, 1) to (0, 1) facing W. Step 3, cell (0, 0) contains empty. The panel requires red W.",
+          "verdict": "passed"
+        }
+      ],
+      "scope": "Printed state keys, commands, labeled diagrams and all four alternatives.",
+      "commandExitStatus": 0,
+      "binding": "exact",
+      "bindingBasis": "exact candidate and full input fingerprints",
+      "commandEventId": "e000015"
+    }
+  ],
+  "usage": {
+    "schemaVersion": 2,
+    "runId": "build-5faaa328-b304-44fb-882d-1fd85a11fc6f",
+    "source": "codex",
+    "runtime": "Codex Desktop",
+    "status": "measured",
+    "elapsedMs": 781349,
+    "elapsedKind": "wall-clock",
+    "scope": "Runtime-reported usage between the start baseline and finish snapshot of this session. In-flight or delayed usage, earlier conversation, other agents and later delivery are excluded. This is an observed interval, not a complete billed task total.",
+    "scopeComplete": false,
+    "observedTokens": {
+      "input_tokens": 4255412,
+      "cached_input_tokens": 4221440,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 8987,
+      "reasoning_output_tokens": 1824,
+      "total_tokens": 4264399
+    },
+    "tokens": {
+      "input_tokens": null,
+      "cached_input_tokens": null,
+      "cache_write_input_tokens": null,
+      "output_tokens": null,
+      "reasoning_output_tokens": null,
+      "total_tokens": null
+    },
+    "models": [
+      {
+        "provider": "openai",
+        "model": "gpt-6.2-astra",
+        "reasoningEffort": "xhigh",
+        "tokens": {
+          "input_tokens": 4255412,
+          "cached_input_tokens": 4221440,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 8987,
+          "reasoning_output_tokens": 1824,
+          "total_tokens": 4264399
+        },
+        "observations": 34
+      }
+    ],
+    "missingFields": [],
+    "issues": [],
+    "observations": 34
+  },
+  "caseId": "authored-5c5e4e1bee2a74017cc11d9a"
+}

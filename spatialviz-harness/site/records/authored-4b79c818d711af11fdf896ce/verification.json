@@ -1,0 +1,53 @@
+{
+  "id": "t001",
+  "actionId": "288b9339-eae4-4884-8d12-c5ac2049a90e",
+  "candidateId": "v001",
+  "testedFingerprints": {
+    "specification": "4b79c818d711af11fdf896ce73f59af093ca4ba650657f9a1d7fa59b2b301bf9",
+    "geometry": "b785c071d991a87cca283dad16752a6c86f7d1002881916ec7b46b79048e8a69",
+    "question": "f583c1022bc0fea0d0351c79ddd3e990bacc86134fc7f16e2c95bc874b8e4720",
+    "options": "e908412069d058b294bee9c9c80bde1b1f8e5168b02106ff7cca7485e15d37d3",
+    "answer": "14a5f24fec5cbdfb69ac549a1fb229f0ce9c605fd0985e62d09872adecf22c83",
+    "contract": null,
+    "rendering": "37d89f18f1cbfa25f0b32746a355dd3f73144183182ab7e1d441cdf4f67eb408",
+    "generator": "e54079ba7836d8d9dddd72c94f6cfb567703113f9057d1353e1f3e44ee0b32a7"
+  },
+  "verifier": {
+    "id": "arrow-movement",
+    "revision": "b53464c5a44f95977a83184de30510f7ab2e083e56e84db3d21f44b324645c93"
+  },
+  "reportSha256": "6bb2c9d552c8dad289262296d6c365114e7b805481577fbf027e159373fd077c",
+  "verdict": "passed",
+  "status": "passed",
+  "checks": [
+    {
+      "name": "Printed coordinate key, question and four option labels match the final sheet",
+      "verdict": "passed"
+    },
+    {
+      "name": "Option A",
+      "detail": "teal (0, 0) to (0, 2) facing N, exchanging with purple facing S. Then teal (0, 2) to (0, 0) facing S, exchanging with purple facing N. Step 2, cell (0, 0) contains teal S. The panel requires empty.",
+      "verdict": "passed"
+    },
+    {
+      "name": "Option B",
+      "detail": "teal (0, 0) to (2, 0) facing E. Then teal (2, 0) to (0, 0) facing W. Step 2, cell (0, 0) contains teal W. The panel requires empty.",
+      "verdict": "passed"
+    },
+    {
+      "name": "Option C",
+      "detail": "teal (0, 0) to (2, 0) facing E. Then teal (2, 0) to (2, 2) facing N. Every displayed constraint matches.",
+      "verdict": "passed"
+    },
+    {
+      "name": "Option D",
+      "detail": "teal (0, 0) to (2, 0) facing E. Then teal (2, 1) to (2, 2) facing N. Step 2, cell (2, 0) contains teal E. The panel requires empty.",
+      "verdict": "passed"
+    }
+  ],
+  "scope": "Printed state keys, commands, labeled diagrams and all four alternatives.",
+  "commandExitStatus": 0,
+  "binding": "exact",
+  "bindingBasis": "exact candidate and full input fingerprints",
+  "commandEventId": "e000015"
+}

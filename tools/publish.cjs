@@ -12,7 +12,7 @@ function previewBytes(run,version,events,adapter){
   if(original.rendering?.revision!==adapter.identity.revision)return null;
   return {bytes:adapter.render(original),renderer:adapter.identity,origin:'delivery-render',extension:adapter.imageFormat?.extension||'svg'};
 }
-function prepare({run,task,skill}){
+function prepare({run,task,skill,sourceCaseIds: requestedReferences}){
   const checked=P.audit(run,task),m=checked.run.manifest,c=checked.candidate,harness=m.harness;
   if(!R.read(path.join(R.ROOT,'catalog/harnesses.json')).harnesses.some(h=>h.id===harness))throw Error('Unknown harness');
   const skillDir=path.resolve(skill),meta=R.read(path.join(skillDir,'skill.json'));
@@ -20,7 +20,8 @@ function prepare({run,task,skill}){
   if(meta.requiresVisualReview){const review=checked.run.events.findLast(e=>e.type==='visual.review'&&e.candidateId===c.id);if(review?.details?.outcome!=='passed')throw Error('This skill requires a passed visual review of the exact final candidate');}
   const spec=R.read(task);
   if(JSON.stringify(P.safe(spec))!==JSON.stringify(spec))throw Error('Task contains private fields; fix the public specification before authoring');
-  let sourceCaseIds=meta.officialReferences||[];
+  let sourceCaseIds=requestedReferences??meta.officialReferences??[];
+  if(!Array.isArray(sourceCaseIds)||sourceCaseIds.some(id=>!meta.officialReferences?.includes(id)))throw Error('Reference outside recorded skill scope');
   if(meta.referenceMode==='per-task'){
     const collection=R.read(path.join(R.ROOT,'catalog/harnesses.json')).harnesses.find(h=>h.id===harness).collection;
     const records=R.read(path.join(R.ROOT,'questions/data',collection+'.json'));
