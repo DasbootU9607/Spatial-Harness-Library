@@ -8207,6 +8207,2314 @@
       },
       "process": "records/authored-c2c63751a4d1140685cdcb07/process.json",
       "eventsCsv": "records/authored-c2c63751a4d1140685cdcb07/events.csv"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "authored-ed41292582d4163f84150c54",
+      "harnessId": "spatialviz-harness",
+      "skillIds": [
+        "cross-sections"
+      ],
+      "sourceKind": "agent-authored",
+      "sourceCaseIds": [
+        "spatialviz-bench:vqa:VisualPenetration:CrossSection:Level0:0-cone-frustum_square",
+        "spatialviz-bench:vqa:VisualPenetration:CrossSection:Level1:6-pyramid_square-cone-frustum_triangle",
+        "spatialviz-bench:vqa:VisualPenetration:CrossSection:Level2:0-cone-cube"
+      ],
+      "category": "VisualPenetration",
+      "taskType": "CrossSection",
+      "difficulty": null,
+      "title": "CrossSection | parallel",
+      "description": "Two views show the same stack. Which image cannot be a plane section? Use the common scale and retain component boundaries.",
+      "contentSha256": "ed41292582d4163f84150c54e6520e3a16d20c000345fa99b6c8244ecd7cbf5c",
+      "thumbnail": "records/authored-ed41292582d4163f84150c54/v001-5516c6e208208b3d.png",
+      "taskArtifact": "records/authored-ed41292582d4163f84150c54/task.json",
+      "verification": {
+        "verdict": "passed",
+        "candidateId": "v001",
+        "fingerprints": {
+          "specification": "ed41292582d4163f84150c54e6520e3a16d20c000345fa99b6c8244ecd7cbf5c",
+          "geometry": "f0024253b05547d03b1efc028f9ac61d2ed24e9bdbd9cd668e2ffb69dbc55a58",
+          "question": "2da8a5923563553c8dc17325c8aef74a95daa8fa11f5c884f8b2b471aecd309f",
+          "options": "585387ab35a14b6ce23bc22c9b280c80aad913bf95ba51aed8c6c1b47ae977b5",
+          "answer": "7f09448940b1291457e834fb29e5b82020c66d6a84a88b9a254ccd76f22b4fd2",
+          "contract": "9e93d9fdbb28339058f87b0d9d64a8a2d8f21225077a70a5787a984047035c8e",
+          "rendering": "67948fbc1599294633c482526b95f3c498dd92e6fc402765dd22d012316ce5aa",
+          "generator": "14686e92090cc964c049a6cfa46058a30fa57d58ce39ffb3657a473973e99b6f"
+        },
+        "report": "records/authored-ed41292582d4163f84150c54/verification.json"
+      },
+      "build": {
+        "runId": "build-11b418ab-df51-464a-849d-90702fa3af0f",
+        "candidateId": "v001",
+        "usage": {
+          "schemaVersion": 2,
+          "runId": "build-11b418ab-df51-464a-849d-90702fa3af0f",
+          "source": "codex",
+          "runtime": "Codex Desktop",
+          "status": "measured",
+          "elapsedMs": 179957,
+          "elapsedKind": "wall-clock",
+          "scope": "Runtime-reported usage between the start baseline and finish snapshot of this session. In-flight or delayed usage, earlier conversation, other agents and later delivery are excluded. This is an observed interval, not a complete billed task total.",
+          "scopeComplete": false,
+          "observedTokens": {
+            "input_tokens": 1984036,
+            "cached_input_tokens": 1977856,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 3111,
+            "reasoning_output_tokens": 772,
+            "total_tokens": 1987147
+          },
+          "tokens": {
+            "input_tokens": null,
+            "cached_input_tokens": null,
+            "cache_write_input_tokens": null,
+            "output_tokens": null,
+            "reasoning_output_tokens": null,
+            "total_tokens": null
+          },
+          "models": [
+            {
+              "provider": "openai",
+              "model": "gpt-6.2-astra",
+              "reasoningEffort": "xhigh",
+              "tokens": {
+                "input_tokens": 1984036,
+                "cached_input_tokens": 1977856,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 3111,
+                "reasoning_output_tokens": 772,
+                "total_tokens": 1987147
+              },
+              "observations": 14
+            }
+          ],
+          "missingFields": [],
+          "issues": [],
+          "observations": 14
+        }
+      },
+      "process": "records/authored-ed41292582d4163f84150c54/process.json",
+      "eventsCsv": "records/authored-ed41292582d4163f84150c54/events.csv"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "authored-cbccd0d785cb054500c5da7a",
+      "harnessId": "spatialviz-harness",
+      "skillIds": [
+        "cross-sections"
+      ],
+      "sourceKind": "agent-authored",
+      "sourceCaseIds": [
+        "spatialviz-bench:vqa:VisualPenetration:CrossSection:Level0:0-cone-frustum_square",
+        "spatialviz-bench:vqa:VisualPenetration:CrossSection:Level1:6-pyramid_square-cone-frustum_triangle",
+        "spatialviz-bench:vqa:VisualPenetration:CrossSection:Level2:0-cone-cube"
+      ],
+      "category": "VisualPenetration",
+      "taskType": "CrossSection",
+      "difficulty": null,
+      "title": "CrossSection | mixed",
+      "description": "Two views show the same stack. Which image cannot be a plane section? Use the common scale and retain component boundaries.",
+      "contentSha256": "cbccd0d785cb054500c5da7aff6aa353daea890b60c611e1ca0e05d4acec579a",
+      "thumbnail": "records/authored-cbccd0d785cb054500c5da7a/v001-5447b0b59fb88815.png",
+      "taskArtifact": "records/authored-cbccd0d785cb054500c5da7a/task.json",
+      "verification": {
+        "verdict": "passed",
+        "candidateId": "v001",
+        "fingerprints": {
+          "specification": "cbccd0d785cb054500c5da7aff6aa353daea890b60c611e1ca0e05d4acec579a",
+          "geometry": "7bbd20f50eb38cb8bbc136b43a41cd7cf79181e3389502aef870ca7154e47618",
+          "question": "2da8a5923563553c8dc17325c8aef74a95daa8fa11f5c884f8b2b471aecd309f",
+          "options": "4923610c27029b2c46a23d128942edadfa5d4b8ae0e929759e44a319eeacae68",
+          "answer": "e5c3e694e7bdcb608539596612eb56f3c7d18c44a8d658391f3492400b1488f3",
+          "contract": "ae0538de42eca6697f8dfd7d0b25fdcaeb73a1935671da6d0f7c2f9c652e1fd5",
+          "rendering": "cbfaac7db83c1b06dd208e22bf3ae21c64fd6c3e7bfe177acbe6abc62ab182b5",
+          "generator": "d859e2deb427763cdc2f3d6579f656d37a2f65801c0c92f056594e955c570075"
+        },
+        "report": "records/authored-cbccd0d785cb054500c5da7a/verification.json"
+      },
+      "build": {
+        "runId": "build-2a75f6c5-d234-456c-a00e-23d3c947b7f3",
+        "candidateId": "v001",
+        "usage": {
+          "schemaVersion": 2,
+          "runId": "build-2a75f6c5-d234-456c-a00e-23d3c947b7f3",
+          "source": "codex",
+          "runtime": "Codex Desktop",
+          "status": "measured",
+          "elapsedMs": 183366,
+          "elapsedKind": "wall-clock",
+          "scope": "Runtime-reported usage between the start baseline and finish snapshot of this session. In-flight or delayed usage, earlier conversation, other agents and later delivery are excluded. This is an observed interval, not a complete billed task total.",
+          "scopeComplete": false,
+          "observedTokens": {
+            "input_tokens": 2121267,
+            "cached_input_tokens": 2114688,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 3307,
+            "reasoning_output_tokens": 772,
+            "total_tokens": 2124574
+          },
+          "tokens": {
+            "input_tokens": null,
+            "cached_input_tokens": null,
+            "cache_write_input_tokens": null,
+            "output_tokens": null,
+            "reasoning_output_tokens": null,
+            "total_tokens": null
+          },
+          "models": [
+            {
+              "provider": "openai",
+              "model": "gpt-6.2-astra",
+              "reasoningEffort": "xhigh",
+              "tokens": {
+                "input_tokens": 2121267,
+                "cached_input_tokens": 2114688,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 3307,
+                "reasoning_output_tokens": 772,
+                "total_tokens": 2124574
+              },
+              "observations": 15
+            }
+          ],
+          "missingFields": [],
+          "issues": [],
+          "observations": 15
+        }
+      },
+      "process": "records/authored-cbccd0d785cb054500c5da7a/process.json",
+      "eventsCsv": "records/authored-cbccd0d785cb054500c5da7a/events.csv"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "authored-6f2021742502e4755ef183b4",
+      "harnessId": "spatialviz-harness",
+      "skillIds": [
+        "cross-sections"
+      ],
+      "sourceKind": "agent-authored",
+      "sourceCaseIds": [
+        "spatialviz-bench:vqa:VisualPenetration:CrossSection:Level0:0-cone-frustum_square",
+        "spatialviz-bench:vqa:VisualPenetration:CrossSection:Level1:6-pyramid_square-cone-frustum_triangle",
+        "spatialviz-bench:vqa:VisualPenetration:CrossSection:Level2:0-cone-cube"
+      ],
+      "category": "VisualPenetration",
+      "taskType": "CrossSection",
+      "difficulty": null,
+      "title": "CrossSection | oblique",
+      "description": "Two views show the same stack. Which image cannot be a plane section? Use the common scale and retain component boundaries.",
+      "contentSha256": "6f2021742502e4755ef183b4918e09bbd7de23b9a2a982e1806ea1583b03c700",
+      "thumbnail": "records/authored-6f2021742502e4755ef183b4/v001-e5d8f6930448c81e.png",
+      "taskArtifact": "records/authored-6f2021742502e4755ef183b4/task.json",
+      "verification": {
+        "verdict": "passed",
+        "candidateId": "v001",
+        "fingerprints": {
+          "specification": "6f2021742502e4755ef183b4918e09bbd7de23b9a2a982e1806ea1583b03c700",
+          "geometry": "5b1ce2414dacfb42a14f2a1a6d27198b6abd7c0ebd57a092070f4d833c98b916",
+          "question": "2da8a5923563553c8dc17325c8aef74a95daa8fa11f5c884f8b2b471aecd309f",
+          "options": "8bd044c20c63b5f305972c44da8d8c7739615aa5a3664d19f50a7ed87f0bfac1",
+          "answer": "98a8363feb1425df2efe03a3ee8c675c2033f13246666fc4be8ab17bacfc0f25",
+          "contract": "4011f6c721ea74c5737313418c19bf9cf230288de8f3839e68548571250c4584",
+          "rendering": "1328f3ac5ce86bba8b42f474bba5da8a21ef33ca1d5fdccbe715a08759ed0f86",
+          "generator": "a160232e886f0d6f6494f7b7b67e4f138f16b23defde340c0e9e2ce75e946e31"
+        },
+        "report": "records/authored-6f2021742502e4755ef183b4/verification.json"
+      },
+      "build": {
+        "runId": "build-46ac17d8-7fc0-4b9a-a56f-c65603f0d96e",
+        "candidateId": "v001",
+        "usage": {
+          "schemaVersion": 2,
+          "runId": "build-46ac17d8-7fc0-4b9a-a56f-c65603f0d96e",
+          "source": "codex",
+          "runtime": "Codex Desktop",
+          "status": "measured",
+          "elapsedMs": 167455,
+          "elapsedKind": "wall-clock",
+          "scope": "Runtime-reported usage between the start baseline and finish snapshot of this session. In-flight or delayed usage, earlier conversation, other agents and later delivery are excluded. This is an observed interval, not a complete billed task total.",
+          "scopeComplete": false,
+          "observedTokens": {
+            "input_tokens": 1708476,
+            "cached_input_tokens": 1702784,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 2918,
+            "reasoning_output_tokens": 772,
+            "total_tokens": 1711394
+          },
+          "tokens": {
+            "input_tokens": null,
+            "cached_input_tokens": null,
+            "cache_write_input_tokens": null,
+            "output_tokens": null,
+            "reasoning_output_tokens": null,
+            "total_tokens": null
+          },
+          "models": [
+            {
+              "provider": "openai",
+              "model": "gpt-6.2-astra",
+              "reasoningEffort": "xhigh",
+              "tokens": {
+                "input_tokens": 1708476,
+                "cached_input_tokens": 1702784,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 2918,
+                "reasoning_output_tokens": 772,
+                "total_tokens": 1711394
+              },
+              "observations": 12
+            }
+          ],
+          "missingFields": [],
+          "issues": [],
+          "observations": 12
+        }
+      },
+      "process": "records/authored-6f2021742502e4755ef183b4/process.json",
+      "eventsCsv": "records/authored-6f2021742502e4755ef183b4/events.csv"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "authored-42e7cc74712d99dd8b94fb33",
+      "harnessId": "spatialviz-harness",
+      "skillIds": [
+        "cross-sections"
+      ],
+      "sourceKind": "agent-authored",
+      "sourceCaseIds": [
+        "spatialviz-bench:vqa:VisualPenetration:CrossSection:Level0:0-cone-frustum_square",
+        "spatialviz-bench:vqa:VisualPenetration:CrossSection:Level1:6-pyramid_square-cone-frustum_triangle",
+        "spatialviz-bench:vqa:VisualPenetration:CrossSection:Level2:0-cone-cube"
+      ],
+      "category": "VisualPenetration",
+      "taskType": "CrossSection",
+      "difficulty": null,
+      "title": "CrossSection | oblique",
+      "description": "Two views show the same stack. Which image cannot be a plane section? Use the common scale and retain component boundaries.",
+      "contentSha256": "42e7cc74712d99dd8b94fb337fb1ae0de50215b7cc3716de31e20ddc99182d81",
+      "thumbnail": "records/authored-42e7cc74712d99dd8b94fb33/v001-733949ac5ef47040.png",
+      "taskArtifact": "records/authored-42e7cc74712d99dd8b94fb33/task.json",
+      "verification": {
+        "verdict": "passed",
+        "candidateId": "v001",
+        "fingerprints": {
+          "specification": "42e7cc74712d99dd8b94fb337fb1ae0de50215b7cc3716de31e20ddc99182d81",
+          "geometry": "8f6639c397f4abdece6c5845a7718b128a1b674811e0fb40843369ecc4b3a43d",
+          "question": "2da8a5923563553c8dc17325c8aef74a95daa8fa11f5c884f8b2b471aecd309f",
+          "options": "9d2d00c743aa1d1571f360508c173cdf57b57575c8d6db008661a127243ac1bd",
+          "answer": "dc634ab7cef50d201baa31d84622ce9905f6ad1f65f6bd4f288d452f364d03a3",
+          "contract": "4011f6c721ea74c5737313418c19bf9cf230288de8f3839e68548571250c4584",
+          "rendering": "6948220dda9d86bb36ce1db8e48aa66da790e69873e766750535658309d897cd",
+          "generator": "685d12d1db652aad32a9dcc5b6a8dc1c91b429137d8a3e0a75b4e4d52310cf9f"
+        },
+        "report": "records/authored-42e7cc74712d99dd8b94fb33/verification.json"
+      },
+      "build": {
+        "runId": "build-c274d6b1-3d8f-4e21-b65f-2701a30819e1",
+        "candidateId": "v001",
+        "usage": {
+          "schemaVersion": 2,
+          "runId": "build-c274d6b1-3d8f-4e21-b65f-2701a30819e1",
+          "source": "codex",
+          "runtime": "Codex Desktop",
+          "status": "measured",
+          "elapsedMs": 170906,
+          "elapsedKind": "wall-clock",
+          "scope": "Runtime-reported usage between the start baseline and finish snapshot of this session. In-flight or delayed usage, earlier conversation, other agents and later delivery are excluded. This is an observed interval, not a complete billed task total.",
+          "scopeComplete": false,
+          "observedTokens": {
+            "input_tokens": 1708476,
+            "cached_input_tokens": 1702784,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 2918,
+            "reasoning_output_tokens": 772,
+            "total_tokens": 1711394
+          },
+          "tokens": {
+            "input_tokens": null,
+            "cached_input_tokens": null,
+            "cache_write_input_tokens": null,
+            "output_tokens": null,
+            "reasoning_output_tokens": null,
+            "total_tokens": null
+          },
+          "models": [
+            {
+              "provider": "openai",
+              "model": "gpt-6.2-astra",
+              "reasoningEffort": "xhigh",
+              "tokens": {
+                "input_tokens": 1708476,
+                "cached_input_tokens": 1702784,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 2918,
+                "reasoning_output_tokens": 772,
+                "total_tokens": 1711394
+              },
+              "observations": 12
+            }
+          ],
+          "missingFields": [],
+          "issues": [],
+          "observations": 12
+        }
+      },
+      "process": "records/authored-42e7cc74712d99dd8b94fb33/process.json",
+      "eventsCsv": "records/authored-42e7cc74712d99dd8b94fb33/events.csv"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "authored-26e574adf4698fe738c127c4",
+      "harnessId": "spatialviz-harness",
+      "skillIds": [
+        "cross-sections"
+      ],
+      "sourceKind": "agent-authored",
+      "sourceCaseIds": [
+        "spatialviz-bench:vqa:VisualPenetration:CrossSection:Level0:0-cone-frustum_square",
+        "spatialviz-bench:vqa:VisualPenetration:CrossSection:Level1:6-pyramid_square-cone-frustum_triangle",
+        "spatialviz-bench:vqa:VisualPenetration:CrossSection:Level2:0-cone-cube"
+      ],
+      "category": "VisualPenetration",
+      "taskType": "CrossSection",
+      "difficulty": null,
+      "title": "CrossSection | oblique",
+      "description": "Two views show the same stack. Which image cannot be a plane section? Use the common scale and retain component boundaries.",
+      "contentSha256": "26e574adf4698fe738c127c478bd2a3c686738733bbbfa75cd756bba54b12a83",
+      "thumbnail": "records/authored-26e574adf4698fe738c127c4/v001-c89f60bf681e2655.png",
+      "taskArtifact": "records/authored-26e574adf4698fe738c127c4/task.json",
+      "verification": {
+        "verdict": "passed",
+        "candidateId": "v001",
+        "fingerprints": {
+          "specification": "26e574adf4698fe738c127c478bd2a3c686738733bbbfa75cd756bba54b12a83",
+          "geometry": "50d3cdd602440ade2f9fe79be2f03dc8511af0cd6a9024c026699eff251b94c5",
+          "question": "2da8a5923563553c8dc17325c8aef74a95daa8fa11f5c884f8b2b471aecd309f",
+          "options": "5c577d908f69ba63f9d9140aeee904ff917170d2638fae295ba81719c438ad51",
+          "answer": "79b889456366f698236c94021cbbdccf363265d510018ffaaaa1e2da5e3b8979",
+          "contract": "4011f6c721ea74c5737313418c19bf9cf230288de8f3839e68548571250c4584",
+          "rendering": "c634366c412638c9faa3c4791239f73ca0a7b8d6995fd7a0347db7f53c6c439f",
+          "generator": "53c4f4bcccf6770655a79af91c779055b24105be5f437c82fd126b8d63e5fa33"
+        },
+        "report": "records/authored-26e574adf4698fe738c127c4/verification.json"
+      },
+      "build": {
+        "runId": "build-fb546636-aa9c-403c-9313-c860b2eee79f",
+        "candidateId": "v001",
+        "usage": {
+          "schemaVersion": 2,
+          "runId": "build-fb546636-aa9c-403c-9313-c860b2eee79f",
+          "source": "codex",
+          "runtime": "Codex Desktop",
+          "status": "measured",
+          "elapsedMs": 164601,
+          "elapsedKind": "wall-clock",
+          "scope": "Runtime-reported usage between the start baseline and finish snapshot of this session. In-flight or delayed usage, earlier conversation, other agents and later delivery are excluded. This is an observed interval, not a complete billed task total.",
+          "scopeComplete": false,
+          "observedTokens": {
+            "input_tokens": 1570538,
+            "cached_input_tokens": 1564928,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 2812,
+            "reasoning_output_tokens": 772,
+            "total_tokens": 1573350
+          },
+          "tokens": {
+            "input_tokens": null,
+            "cached_input_tokens": null,
+            "cache_write_input_tokens": null,
+            "output_tokens": null,
+            "reasoning_output_tokens": null,
+            "total_tokens": null
+          },
+          "models": [
+            {
+              "provider": "openai",
+              "model": "gpt-6.2-astra",
+              "reasoningEffort": "xhigh",
+              "tokens": {
+                "input_tokens": 1570538,
+                "cached_input_tokens": 1564928,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 2812,
+                "reasoning_output_tokens": 772,
+                "total_tokens": 1573350
+              },
+              "observations": 11
+            }
+          ],
+          "missingFields": [],
+          "issues": [],
+          "observations": 11
+        }
+      },
+      "process": "records/authored-26e574adf4698fe738c127c4/process.json",
+      "eventsCsv": "records/authored-26e574adf4698fe738c127c4/events.csv"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "authored-fca93e273d990142721b0f19",
+      "harnessId": "spatialviz-harness",
+      "skillIds": [
+        "cross-sections"
+      ],
+      "sourceKind": "agent-authored",
+      "sourceCaseIds": [
+        "spatialviz-bench:vqa:VisualPenetration:CrossSection:Level0:0-cone-frustum_square",
+        "spatialviz-bench:vqa:VisualPenetration:CrossSection:Level1:6-pyramid_square-cone-frustum_triangle",
+        "spatialviz-bench:vqa:VisualPenetration:CrossSection:Level2:0-cone-cube"
+      ],
+      "category": "VisualPenetration",
+      "taskType": "CrossSection",
+      "difficulty": null,
+      "title": "CrossSection | oblique",
+      "description": "Two views show the same stack. Which image cannot be a plane section? Use the common scale and retain component boundaries.",
+      "contentSha256": "fca93e273d990142721b0f19188f84c0d6aaa07b5921bc8e4f98245547b01c88",
+      "thumbnail": "records/authored-fca93e273d990142721b0f19/v001-7289600d07de93a3.png",
+      "taskArtifact": "records/authored-fca93e273d990142721b0f19/task.json",
+      "verification": {
+        "verdict": "passed",
+        "candidateId": "v001",
+        "fingerprints": {
+          "specification": "fca93e273d990142721b0f19188f84c0d6aaa07b5921bc8e4f98245547b01c88",
+          "geometry": "8f6639c397f4abdece6c5845a7718b128a1b674811e0fb40843369ecc4b3a43d",
+          "question": "2da8a5923563553c8dc17325c8aef74a95daa8fa11f5c884f8b2b471aecd309f",
+          "options": "3ebda30e7e711cc923b2fbac53a3dd4cdea1249f45453407246b7c1bf3fd9c79",
+          "answer": "35376bf22535d31deb064f9504886ffde6f1f29babcf60e73ca562a346fe7ffb",
+          "contract": "4011f6c721ea74c5737313418c19bf9cf230288de8f3839e68548571250c4584",
+          "rendering": "578ba3391d5da1baf734778e67b04fe51d1e8a681fa7d56f790ba692fb0cdd54",
+          "generator": "51e0198d36fed6ff2e8469ace7abc98d8753e20d4c32b1e2afbd778d078a0742"
+        },
+        "report": "records/authored-fca93e273d990142721b0f19/verification.json"
+      },
+      "build": {
+        "runId": "build-1c9910fb-c57f-4192-acc3-62a4329f9210",
+        "candidateId": "v001",
+        "usage": {
+          "schemaVersion": 2,
+          "runId": "build-1c9910fb-c57f-4192-acc3-62a4329f9210",
+          "source": "codex",
+          "runtime": "Codex Desktop",
+          "status": "measured",
+          "elapsedMs": 161780,
+          "elapsedKind": "wall-clock",
+          "scope": "Runtime-reported usage between the start baseline and finish snapshot of this session. In-flight or delayed usage, earlier conversation, other agents and later delivery are excluded. This is an observed interval, not a complete billed task total.",
+          "scopeComplete": false,
+          "observedTokens": {
+            "input_tokens": 1570538,
+            "cached_input_tokens": 1564928,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 2812,
+            "reasoning_output_tokens": 772,
+            "total_tokens": 1573350
+          },
+          "tokens": {
+            "input_tokens": null,
+            "cached_input_tokens": null,
+            "cache_write_input_tokens": null,
+            "output_tokens": null,
+            "reasoning_output_tokens": null,
+            "total_tokens": null
+          },
+          "models": [
+            {
+              "provider": "openai",
+              "model": "gpt-6.2-astra",
+              "reasoningEffort": "xhigh",
+              "tokens": {
+                "input_tokens": 1570538,
+                "cached_input_tokens": 1564928,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 2812,
+                "reasoning_output_tokens": 772,
+                "total_tokens": 1573350
+              },
+              "observations": 11
+            }
+          ],
+          "missingFields": [],
+          "issues": [],
+          "observations": 11
+        }
+      },
+      "process": "records/authored-fca93e273d990142721b0f19/process.json",
+      "eventsCsv": "records/authored-fca93e273d990142721b0f19/events.csv"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "authored-2751a127cae1f0234754cb52",
+      "harnessId": "spatialviz-harness",
+      "skillIds": [
+        "cross-sections"
+      ],
+      "sourceKind": "agent-authored",
+      "sourceCaseIds": [
+        "spatialviz-bench:vqa:VisualPenetration:CrossSection:Level0:0-cone-frustum_square",
+        "spatialviz-bench:vqa:VisualPenetration:CrossSection:Level1:6-pyramid_square-cone-frustum_triangle",
+        "spatialviz-bench:vqa:VisualPenetration:CrossSection:Level2:0-cone-cube"
+      ],
+      "category": "VisualPenetration",
+      "taskType": "CrossSection",
+      "difficulty": null,
+      "title": "CrossSection | point-contact",
+      "description": "Two views show the same stack. Which image cannot be a plane section? Use the common scale and retain component boundaries.",
+      "contentSha256": "2751a127cae1f0234754cb524a16c0c71cdca8ee2145bc0ecb015b74e7885541",
+      "thumbnail": "records/authored-2751a127cae1f0234754cb52/v001-da7376d3da557a34.png",
+      "taskArtifact": "records/authored-2751a127cae1f0234754cb52/task.json",
+      "verification": {
+        "verdict": "passed",
+        "candidateId": "v001",
+        "fingerprints": {
+          "specification": "2751a127cae1f0234754cb524a16c0c71cdca8ee2145bc0ecb015b74e7885541",
+          "geometry": "305cb7f0556773abeabeeeb14609512afb9474f0bbab615b78d5f4762dd1f245",
+          "question": "2da8a5923563553c8dc17325c8aef74a95daa8fa11f5c884f8b2b471aecd309f",
+          "options": "ef0aa971904a61e460db87f47712f42d82e7cb4969577a34171c2703e3c419c6",
+          "answer": "e175313666353169e0c4ab0c4ebbd0e9ec1159b51148bea5a87edff552689808",
+          "contract": "5ecb1aa8da1d82b64b0c68b394fea9ebf151278ac22363b31e95383e27e9e3d6",
+          "rendering": "c2c90c84ab67724ee4ba26ddc8e8f48ed46ce1ee767f77b8b48e185b92c2df48",
+          "generator": "889584351277afd0158e7a7e12277019b13a163822a8b64351df2dbd4e98e41d"
+        },
+        "report": "records/authored-2751a127cae1f0234754cb52/verification.json"
+      },
+      "build": {
+        "runId": "build-7b81465f-81bf-4d5e-9d2a-fd39514c41e9",
+        "candidateId": "v001",
+        "usage": {
+          "schemaVersion": 2,
+          "runId": "build-7b81465f-81bf-4d5e-9d2a-fd39514c41e9",
+          "source": "codex",
+          "runtime": "Codex Desktop",
+          "status": "measured",
+          "elapsedMs": 174849,
+          "elapsedKind": "wall-clock",
+          "scope": "Runtime-reported usage between the start baseline and finish snapshot of this session. In-flight or delayed usage, earlier conversation, other agents and later delivery are excluded. This is an observed interval, not a complete billed task total.",
+          "scopeComplete": false,
+          "observedTokens": {
+            "input_tokens": 1846315,
+            "cached_input_tokens": 1840512,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 3005,
+            "reasoning_output_tokens": 772,
+            "total_tokens": 1849320
+          },
+          "tokens": {
+            "input_tokens": null,
+            "cached_input_tokens": null,
+            "cache_write_input_tokens": null,
+            "output_tokens": null,
+            "reasoning_output_tokens": null,
+            "total_tokens": null
+          },
+          "models": [
+            {
+              "provider": "openai",
+              "model": "gpt-6.2-astra",
+              "reasoningEffort": "xhigh",
+              "tokens": {
+                "input_tokens": 1846315,
+                "cached_input_tokens": 1840512,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 3005,
+                "reasoning_output_tokens": 772,
+                "total_tokens": 1849320
+              },
+              "observations": 13
+            }
+          ],
+          "missingFields": [],
+          "issues": [],
+          "observations": 13
+        }
+      },
+      "process": "records/authored-2751a127cae1f0234754cb52/process.json",
+      "eventsCsv": "records/authored-2751a127cae1f0234754cb52/events.csv"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "authored-696c55782c08b59e26608f34",
+      "harnessId": "spatialviz-harness",
+      "skillIds": [
+        "cross-sections"
+      ],
+      "sourceKind": "agent-authored",
+      "sourceCaseIds": [
+        "spatialviz-bench:vqa:VisualPenetration:CrossSection:Level0:0-cone-frustum_square",
+        "spatialviz-bench:vqa:VisualPenetration:CrossSection:Level1:6-pyramid_square-cone-frustum_triangle",
+        "spatialviz-bench:vqa:VisualPenetration:CrossSection:Level2:0-cone-cube"
+      ],
+      "category": "VisualPenetration",
+      "taskType": "CrossSection",
+      "difficulty": null,
+      "title": "CrossSection | joined-rims",
+      "description": "Two views show the same stack. Which image cannot be a plane section? Use the common scale and retain component boundaries.",
+      "contentSha256": "696c55782c08b59e26608f34abb8cb406e0861a77b4fa95067563d9fd4a71f2e",
+      "thumbnail": "records/authored-696c55782c08b59e26608f34/v001-03cfb27684c1ae8a.png",
+      "taskArtifact": "records/authored-696c55782c08b59e26608f34/task.json",
+      "verification": {
+        "verdict": "passed",
+        "candidateId": "v001",
+        "fingerprints": {
+          "specification": "696c55782c08b59e26608f34abb8cb406e0861a77b4fa95067563d9fd4a71f2e",
+          "geometry": "abecc28f0ed96acc22f256fb1b46680785c4e4529012e55cbb593e58f5a0d6c9",
+          "question": "2da8a5923563553c8dc17325c8aef74a95daa8fa11f5c884f8b2b471aecd309f",
+          "options": "eb35d0d108daa6ea532ca9cbcc34c37892bf1e9c31998fb210de82a3b81d0722",
+          "answer": "67b4bb7a1aa306bd5ff16f66b35739a4bc848383612a886fb16ff3e84bdddb84",
+          "contract": "ec532511ad9af43362da77462319f2e7985a1834498445c32f74caf9d069bdb7",
+          "rendering": "47b269b49aebf5f9cfade4c130bf521d5aca022d8703aea461c77338c58228dc",
+          "generator": "ae7cbd84d723423dd3510c961c5d5676aae312f95e24f5f9b1b325d3c46232b2"
+        },
+        "report": "records/authored-696c55782c08b59e26608f34/verification.json"
+      },
+      "build": {
+        "runId": "build-f60e9f07-9bbf-4b06-9a17-ea8e25d08306",
+        "candidateId": "v001",
+        "usage": {
+          "schemaVersion": 2,
+          "runId": "build-f60e9f07-9bbf-4b06-9a17-ea8e25d08306",
+          "source": "codex",
+          "runtime": "Codex Desktop",
+          "status": "measured",
+          "elapsedMs": 158613,
+          "elapsedKind": "wall-clock",
+          "scope": "Runtime-reported usage between the start baseline and finish snapshot of this session. In-flight or delayed usage, earlier conversation, other agents and later delivery are excluded. This is an observed interval, not a complete billed task total.",
+          "scopeComplete": false,
+          "observedTokens": {
+            "input_tokens": 1570538,
+            "cached_input_tokens": 1564928,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 2812,
+            "reasoning_output_tokens": 772,
+            "total_tokens": 1573350
+          },
+          "tokens": {
+            "input_tokens": null,
+            "cached_input_tokens": null,
+            "cache_write_input_tokens": null,
+            "output_tokens": null,
+            "reasoning_output_tokens": null,
+            "total_tokens": null
+          },
+          "models": [
+            {
+              "provider": "openai",
+              "model": "gpt-6.2-astra",
+              "reasoningEffort": "xhigh",
+              "tokens": {
+                "input_tokens": 1570538,
+                "cached_input_tokens": 1564928,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 2812,
+                "reasoning_output_tokens": 772,
+                "total_tokens": 1573350
+              },
+              "observations": 11
+            }
+          ],
+          "missingFields": [],
+          "issues": [],
+          "observations": 11
+        }
+      },
+      "process": "records/authored-696c55782c08b59e26608f34/process.json",
+      "eventsCsv": "records/authored-696c55782c08b59e26608f34/events.csv"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "authored-f9d709b203eb0d99ab211522",
+      "harnessId": "spatialviz-harness",
+      "skillIds": [
+        "cross-sections"
+      ],
+      "sourceKind": "agent-authored",
+      "sourceCaseIds": [
+        "spatialviz-bench:vqa:VisualPenetration:CrossSection:Level0:0-cone-frustum_square",
+        "spatialviz-bench:vqa:VisualPenetration:CrossSection:Level1:6-pyramid_square-cone-frustum_triangle",
+        "spatialviz-bench:vqa:VisualPenetration:CrossSection:Level2:0-cone-cube"
+      ],
+      "category": "VisualPenetration",
+      "taskType": "CrossSection",
+      "difficulty": null,
+      "title": "CrossSection | marked",
+      "description": "Which section lies on the marked plane when viewed from the indicated side?",
+      "contentSha256": "f9d709b203eb0d99ab211522834e591bbb1002043d11943fe9ec5dac0f20e446",
+      "thumbnail": "records/authored-f9d709b203eb0d99ab211522/v001-fbdc67358cf76938.png",
+      "taskArtifact": "records/authored-f9d709b203eb0d99ab211522/task.json",
+      "verification": {
+        "verdict": "passed",
+        "candidateId": "v001",
+        "fingerprints": {
+          "specification": "f9d709b203eb0d99ab211522834e591bbb1002043d11943fe9ec5dac0f20e446",
+          "geometry": "1e0acd3dc36f21bff535c267f1d667b4c93a86f0017cd2ddbd787ddb6853faa0",
+          "question": "9c8b346b157ddb0fabeca677ed2a0b7d7e634fdfb372b0fdceb1d23cd1375a57",
+          "options": "96f02668f29f59906042db3f643cb6e1b8e55bdc66992a372bdca80d2f77c921",
+          "answer": "393f3f8398c4efbf3c0bcb0fcc91c4c32894c29e4cd226933b0398dadd53a3cf",
+          "contract": "79954ef021244896fe0e1d3be9fca8110a6882c01d596e60b7578cb4fd45b968",
+          "rendering": "17689a8a823f82d5ee700470a7400054254ec4d6443dd6c060bee1065fee6d33",
+          "generator": "2a84299bbc88f590b16a7227b571a513cde7b0099ec2572a061e3e2c98d7c5b8"
+        },
+        "report": "records/authored-f9d709b203eb0d99ab211522/verification.json"
+      },
+      "build": {
+        "runId": "build-6f226dc4-5f41-42c9-b3a1-88d6b4c29fe2",
+        "candidateId": "v001",
+        "usage": {
+          "schemaVersion": 2,
+          "runId": "build-6f226dc4-5f41-42c9-b3a1-88d6b4c29fe2",
+          "source": "codex",
+          "runtime": "Codex Desktop",
+          "status": "measured",
+          "elapsedMs": 190614,
+          "elapsedKind": "wall-clock",
+          "scope": "Runtime-reported usage between the start baseline and finish snapshot of this session. In-flight or delayed usage, earlier conversation, other agents and later delivery are excluded. This is an observed interval, not a complete billed task total.",
+          "scopeComplete": false,
+          "observedTokens": {
+            "input_tokens": 2121267,
+            "cached_input_tokens": 2114688,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 3307,
+            "reasoning_output_tokens": 772,
+            "total_tokens": 2124574
+          },
+          "tokens": {
+            "input_tokens": null,
+            "cached_input_tokens": null,
+            "cache_write_input_tokens": null,
+            "output_tokens": null,
+            "reasoning_output_tokens": null,
+            "total_tokens": null
+          },
+          "models": [
+            {
+              "provider": "openai",
+              "model": "gpt-6.2-astra",
+              "reasoningEffort": "xhigh",
+              "tokens": {
+                "input_tokens": 2121267,
+                "cached_input_tokens": 2114688,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 3307,
+                "reasoning_output_tokens": 772,
+                "total_tokens": 2124574
+              },
+              "observations": 15
+            }
+          ],
+          "missingFields": [],
+          "issues": [],
+          "observations": 15
+        }
+      },
+      "process": "records/authored-f9d709b203eb0d99ab211522/process.json",
+      "eventsCsv": "records/authored-f9d709b203eb0d99ab211522/events.csv"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "authored-d7a11f1f33055fc66ba9dcde",
+      "harnessId": "spatialviz-harness",
+      "skillIds": [
+        "cross-sections"
+      ],
+      "sourceKind": "agent-authored",
+      "sourceCaseIds": [
+        "spatialviz-bench:vqa:VisualPenetration:CrossSection:Level0:0-cone-frustum_square",
+        "spatialviz-bench:vqa:VisualPenetration:CrossSection:Level1:6-pyramid_square-cone-frustum_triangle",
+        "spatialviz-bench:vqa:VisualPenetration:CrossSection:Level2:0-cone-cube"
+      ],
+      "category": "VisualPenetration",
+      "taskType": "CrossSection",
+      "difficulty": null,
+      "title": "CrossSection | marked",
+      "description": "Which section lies on the marked plane when viewed from the indicated side?",
+      "contentSha256": "d7a11f1f33055fc66ba9dcded1d00b683fdaf97a1f15770b32c4d3ac9aeb6274",
+      "thumbnail": "records/authored-d7a11f1f33055fc66ba9dcde/v001-b5f2203114443afa.png",
+      "taskArtifact": "records/authored-d7a11f1f33055fc66ba9dcde/task.json",
+      "verification": {
+        "verdict": "passed",
+        "candidateId": "v001",
+        "fingerprints": {
+          "specification": "d7a11f1f33055fc66ba9dcded1d00b683fdaf97a1f15770b32c4d3ac9aeb6274",
+          "geometry": "2e37686e7bf82ddaaf8f3606ef21d26a27f24bddbee45d4ed18c9885b3ae0d23",
+          "question": "9c8b346b157ddb0fabeca677ed2a0b7d7e634fdfb372b0fdceb1d23cd1375a57",
+          "options": "96f02668f29f59906042db3f643cb6e1b8e55bdc66992a372bdca80d2f77c921",
+          "answer": "fc0b7f2c33c242de5f57a9f7bf37ef05640e16c1c3adbe1ee5f00d395fa16015",
+          "contract": "79954ef021244896fe0e1d3be9fca8110a6882c01d596e60b7578cb4fd45b968",
+          "rendering": "8f6cc7cbdf39312bbe06d162e20a7281652dd71cb32392f8e58bbcf1d89889ca",
+          "generator": "fd61266cd6fcfc771fbd98c49e28a984bffb590203a50ee8113910c8d99ef50d"
+        },
+        "report": "records/authored-d7a11f1f33055fc66ba9dcde/verification.json"
+      },
+      "build": {
+        "runId": "build-b9858fb0-86d6-4a14-84bb-e174440d42d5",
+        "candidateId": "v001",
+        "usage": {
+          "schemaVersion": 2,
+          "runId": "build-b9858fb0-86d6-4a14-84bb-e174440d42d5",
+          "source": "codex",
+          "runtime": "Codex Desktop",
+          "status": "measured",
+          "elapsedMs": 187943,
+          "elapsedKind": "wall-clock",
+          "scope": "Runtime-reported usage between the start baseline and finish snapshot of this session. In-flight or delayed usage, earlier conversation, other agents and later delivery are excluded. This is an observed interval, not a complete billed task total.",
+          "scopeComplete": false,
+          "observedTokens": {
+            "input_tokens": 2121267,
+            "cached_input_tokens": 2114688,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 3307,
+            "reasoning_output_tokens": 772,
+            "total_tokens": 2124574
+          },
+          "tokens": {
+            "input_tokens": null,
+            "cached_input_tokens": null,
+            "cache_write_input_tokens": null,
+            "output_tokens": null,
+            "reasoning_output_tokens": null,
+            "total_tokens": null
+          },
+          "models": [
+            {
+              "provider": "openai",
+              "model": "gpt-6.2-astra",
+              "reasoningEffort": "xhigh",
+              "tokens": {
+                "input_tokens": 2121267,
+                "cached_input_tokens": 2114688,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 3307,
+                "reasoning_output_tokens": 772,
+                "total_tokens": 2124574
+              },
+              "observations": 15
+            }
+          ],
+          "missingFields": [],
+          "issues": [],
+          "observations": 15
+        }
+      },
+      "process": "records/authored-d7a11f1f33055fc66ba9dcde/process.json",
+      "eventsCsv": "records/authored-d7a11f1f33055fc66ba9dcde/events.csv"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "authored-c4b66cda3b3063048f9816ce",
+      "harnessId": "spatialviz-harness",
+      "skillIds": [
+        "cross-sections"
+      ],
+      "sourceKind": "agent-authored",
+      "sourceCaseIds": [
+        "spatialviz-bench:vqa:VisualPenetration:CrossSection:Level0:0-cone-frustum_square",
+        "spatialviz-bench:vqa:VisualPenetration:CrossSection:Level1:6-pyramid_square-cone-frustum_triangle",
+        "spatialviz-bench:vqa:VisualPenetration:CrossSection:Level2:0-cone-cube"
+      ],
+      "category": "VisualPenetration",
+      "taskType": "CrossSection",
+      "difficulty": null,
+      "title": "CrossSection | three-tiers",
+      "description": "Two views show the same stack. Which image cannot be a plane section? Use the common scale and retain component boundaries.",
+      "contentSha256": "c4b66cda3b3063048f9816cebb6a85b934399fd722cde5d27c63ffb9ad3ba571",
+      "thumbnail": "records/authored-c4b66cda3b3063048f9816ce/v001-ad06f44f1cc256a3.png",
+      "taskArtifact": "records/authored-c4b66cda3b3063048f9816ce/task.json",
+      "verification": {
+        "verdict": "passed",
+        "candidateId": "v001",
+        "fingerprints": {
+          "specification": "c4b66cda3b3063048f9816cebb6a85b934399fd722cde5d27c63ffb9ad3ba571",
+          "geometry": "1ccd5a3016f927297277086b09ccb8b7ce275c599dc4b464d8d8234323b48fd5",
+          "question": "2da8a5923563553c8dc17325c8aef74a95daa8fa11f5c884f8b2b471aecd309f",
+          "options": "de455e39f0f634a154c2193542295c051c421eacc94e119b5397d1d92eb6faa2",
+          "answer": "694f5bb515b6f922dee087fbfbf1f521dde3fff7bbccdac18150daa5e20ccdd5",
+          "contract": "51b1f17ca79bcd2f103ea5ae28e457837d986f86e782bc0cc8e4d5d46e0a4145",
+          "rendering": "2ea499e9f9f36ec90e8acd4f5924d9cebfb61ce36d8fc786c39474ecf02c94fe",
+          "generator": "de57c0eceb5658f6f2176a4803a61de9f082db02a78401f1fb457b969a805616"
+        },
+        "report": "records/authored-c4b66cda3b3063048f9816ce/verification.json"
+      },
+      "build": {
+        "runId": "build-2ab22f49-d029-407b-9273-2955e4713500",
+        "candidateId": "v001",
+        "usage": {
+          "schemaVersion": 2,
+          "runId": "build-2ab22f49-d029-407b-9273-2955e4713500",
+          "source": "codex",
+          "runtime": "Codex Desktop",
+          "status": "measured",
+          "elapsedMs": 178546,
+          "elapsedKind": "wall-clock",
+          "scope": "Runtime-reported usage between the start baseline and finish snapshot of this session. In-flight or delayed usage, earlier conversation, other agents and later delivery are excluded. This is an observed interval, not a complete billed task total.",
+          "scopeComplete": false,
+          "observedTokens": {
+            "input_tokens": 1984036,
+            "cached_input_tokens": 1977856,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 3111,
+            "reasoning_output_tokens": 772,
+            "total_tokens": 1987147
+          },
+          "tokens": {
+            "input_tokens": null,
+            "cached_input_tokens": null,
+            "cache_write_input_tokens": null,
+            "output_tokens": null,
+            "reasoning_output_tokens": null,
+            "total_tokens": null
+          },
+          "models": [
+            {
+              "provider": "openai",
+              "model": "gpt-6.2-astra",
+              "reasoningEffort": "xhigh",
+              "tokens": {
+                "input_tokens": 1984036,
+                "cached_input_tokens": 1977856,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 3111,
+                "reasoning_output_tokens": 772,
+                "total_tokens": 1987147
+              },
+              "observations": 14
+            }
+          ],
+          "missingFields": [],
+          "issues": [],
+          "observations": 14
+        }
+      },
+      "process": "records/authored-c4b66cda3b3063048f9816ce/process.json",
+      "eventsCsv": "records/authored-c4b66cda3b3063048f9816ce/events.csv"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "authored-6112aa3954cacd1290424535",
+      "harnessId": "spatialviz-harness",
+      "skillIds": [
+        "cross-sections"
+      ],
+      "sourceKind": "agent-authored",
+      "sourceCaseIds": [
+        "spatialviz-bench:vqa:VisualPenetration:CrossSection:Level0:0-cone-frustum_square",
+        "spatialviz-bench:vqa:VisualPenetration:CrossSection:Level1:6-pyramid_square-cone-frustum_triangle",
+        "spatialviz-bench:vqa:VisualPenetration:CrossSection:Level2:0-cone-cube"
+      ],
+      "category": "VisualPenetration",
+      "taskType": "CrossSection",
+      "difficulty": null,
+      "title": "CrossSection | mixed",
+      "description": "Two views show the same stack. Which image cannot be a plane section? Use the common scale and retain component boundaries.",
+      "contentSha256": "6112aa3954cacd129042453500880c44c2d22ef65e45d485e7d20a0522776d95",
+      "thumbnail": "records/authored-6112aa3954cacd1290424535/v001-028e1b3178d04afa.png",
+      "taskArtifact": "records/authored-6112aa3954cacd1290424535/task.json",
+      "verification": {
+        "verdict": "passed",
+        "candidateId": "v001",
+        "fingerprints": {
+          "specification": "6112aa3954cacd129042453500880c44c2d22ef65e45d485e7d20a0522776d95",
+          "geometry": "6c4f4582d33392e25edd1a5756cdf8cda6d6ec3e97ef8eab6f979401f9f83c02",
+          "question": "2da8a5923563553c8dc17325c8aef74a95daa8fa11f5c884f8b2b471aecd309f",
+          "options": "6c25164a863d96ac73220fee02a45aafd198ac4ce285c1ac39de1050824d7b03",
+          "answer": "db97b2af48dc4499d3c215839302f59ba72ec25577d6c30af76de65b861e6c0a",
+          "contract": "ae0538de42eca6697f8dfd7d0b25fdcaeb73a1935671da6d0f7c2f9c652e1fd5",
+          "rendering": "ccef7a832c69931e4ea6b4e5b1981d2a3b7b16b17c91a488e85b38ee0f09d8d7",
+          "generator": "40726d39f0b7367067afed87c61cfd3a0323866b44e2515cb21faf1bc58cc7fe"
+        },
+        "report": "records/authored-6112aa3954cacd1290424535/verification.json"
+      },
+      "build": {
+        "runId": "build-87e83432-d828-4ebc-a0c9-d72f3c61c40c",
+        "candidateId": "v001",
+        "usage": {
+          "schemaVersion": 2,
+          "runId": "build-87e83432-d828-4ebc-a0c9-d72f3c61c40c",
+          "source": "codex",
+          "runtime": "Codex Desktop",
+          "status": "measured",
+          "elapsedMs": 108455,
+          "elapsedKind": "wall-clock",
+          "scope": "Runtime-reported usage between the start baseline and finish snapshot of this session. In-flight or delayed usage, earlier conversation, other agents and later delivery are excluded. This is an observed interval, not a complete billed task total.",
+          "scopeComplete": false,
+          "observedTokens": {
+            "input_tokens": 1009277,
+            "cached_input_tokens": 1006976,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 2070,
+            "reasoning_output_tokens": 531,
+            "total_tokens": 1011347
+          },
+          "tokens": {
+            "input_tokens": null,
+            "cached_input_tokens": null,
+            "cache_write_input_tokens": null,
+            "output_tokens": null,
+            "reasoning_output_tokens": null,
+            "total_tokens": null
+          },
+          "models": [
+            {
+              "provider": "openai",
+              "model": "gpt-6.2-astra",
+              "reasoningEffort": "xhigh",
+              "tokens": {
+                "input_tokens": 1009277,
+                "cached_input_tokens": 1006976,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 2070,
+                "reasoning_output_tokens": 531,
+                "total_tokens": 1011347
+              },
+              "observations": 7
+            }
+          ],
+          "missingFields": [],
+          "issues": [],
+          "observations": 7
+        }
+      },
+      "process": "records/authored-6112aa3954cacd1290424535/process.json",
+      "eventsCsv": "records/authored-6112aa3954cacd1290424535/events.csv"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "authored-35880a997c89e1043f81ce87",
+      "harnessId": "spatialviz-harness",
+      "skillIds": [
+        "cube-assembly"
+      ],
+      "sourceKind": "agent-authored",
+      "sourceCaseIds": [
+        "spatialviz-bench:vqa:VisualPenetration:CubeAssembly:Level0:0-2-3-2-9-2",
+        "spatialviz-bench:vqa:VisualPenetration:CubeAssembly:Level1:38-2-3-3-9-3"
+      ],
+      "category": "VisualPenetration",
+      "taskType": "CubeAssembly",
+      "difficulty": null,
+      "title": "CubeAssembly | changed-view",
+      "description": "Which option, together with the given pieces, exactly covers the target? Keep the shown orientations.",
+      "contentSha256": "35880a997c89e1043f81ce87a2955ac2050e47a3a83a41ddddbd7ec6a6fd495f",
+      "thumbnail": "records/authored-35880a997c89e1043f81ce87/v001-71261cd3c6ffc3ec.png",
+      "taskArtifact": "records/authored-35880a997c89e1043f81ce87/task.json",
+      "verification": {
+        "verdict": "passed",
+        "candidateId": "v001",
+        "fingerprints": {
+          "specification": "35880a997c89e1043f81ce87a2955ac2050e47a3a83a41ddddbd7ec6a6fd495f",
+          "geometry": "7bd085173755d2ebd4ebae29a1953e266650b0a0af115290cafd916ab6b82414",
+          "question": "56e42326d7c8d3ba04fe711a8975e3fccb2e0c89622c430fe65d2bfe0b8c6028",
+          "options": "dd31be641b6a0aa6f6a2ebd8d89c098a8224085072381f4b15dce5804250a9d5",
+          "answer": "fff5c111cd4fb6a4a1e691c062d6153727764abdabe0b1f483c2c1b22c4d56ad",
+          "contract": "d2a651bfb7f7d8382dd8dbb2199c2f3e3054be36e74648c54df4fb84017073a1",
+          "rendering": "5f0967c43257f329ec05dc762c1427d9a6ff5a146972092534309b1c549f2a8f",
+          "generator": "79f797f57b680444f7c2385409b4b746abe719bf54f207006daaa956fa387104"
+        },
+        "report": "records/authored-35880a997c89e1043f81ce87/verification.json"
+      },
+      "build": {
+        "runId": "build-255a8578-6728-4446-8226-b1e2046d72cf",
+        "candidateId": "v001",
+        "usage": {
+          "schemaVersion": 2,
+          "runId": "build-255a8578-6728-4446-8226-b1e2046d72cf",
+          "source": "codex",
+          "runtime": "Codex Desktop",
+          "status": "measured",
+          "elapsedMs": 140059,
+          "elapsedKind": "wall-clock",
+          "scope": "Runtime-reported usage between the start baseline and finish snapshot of this session. In-flight or delayed usage, earlier conversation, other agents and later delivery are excluded. This is an observed interval, not a complete billed task total.",
+          "scopeComplete": false,
+          "observedTokens": {
+            "input_tokens": 1291950,
+            "cached_input_tokens": 1288704,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 2499,
+            "reasoning_output_tokens": 650,
+            "total_tokens": 1294449
+          },
+          "tokens": {
+            "input_tokens": null,
+            "cached_input_tokens": null,
+            "cache_write_input_tokens": null,
+            "output_tokens": null,
+            "reasoning_output_tokens": null,
+            "total_tokens": null
+          },
+          "models": [
+            {
+              "provider": "openai",
+              "model": "gpt-6.2-astra",
+              "reasoningEffort": "xhigh",
+              "tokens": {
+                "input_tokens": 1291950,
+                "cached_input_tokens": 1288704,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 2499,
+                "reasoning_output_tokens": 650,
+                "total_tokens": 1294449
+              },
+              "observations": 9
+            }
+          ],
+          "missingFields": [],
+          "issues": [],
+          "observations": 9
+        }
+      },
+      "process": "records/authored-35880a997c89e1043f81ce87/process.json",
+      "eventsCsv": "records/authored-35880a997c89e1043f81ce87/events.csv"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "authored-932059f2e27aae1f75d18f83",
+      "harnessId": "spatialviz-harness",
+      "skillIds": [
+        "cube-assembly"
+      ],
+      "sourceKind": "agent-authored",
+      "sourceCaseIds": [
+        "spatialviz-bench:vqa:VisualPenetration:CubeAssembly:Level0:0-2-3-2-9-2",
+        "spatialviz-bench:vqa:VisualPenetration:CubeAssembly:Level1:38-2-3-3-9-3"
+      ],
+      "category": "VisualPenetration",
+      "taskType": "CubeAssembly",
+      "difficulty": null,
+      "title": "CubeAssembly | two-parts",
+      "description": "Which option, together with the given pieces, exactly covers the target? Keep the shown orientations.",
+      "contentSha256": "932059f2e27aae1f75d18f834cbff19420eb450b70a5f7ea13e9459ab56151be",
+      "thumbnail": "records/authored-932059f2e27aae1f75d18f83/v001-579db1d7f058a57f.png",
+      "taskArtifact": "records/authored-932059f2e27aae1f75d18f83/task.json",
+      "verification": {
+        "verdict": "passed",
+        "candidateId": "v001",
+        "fingerprints": {
+          "specification": "932059f2e27aae1f75d18f834cbff19420eb450b70a5f7ea13e9459ab56151be",
+          "geometry": "ab60f465d5b8565b77d614f8f60c3e754412f47bf313f8cf31bf554ea132cead",
+          "question": "56e42326d7c8d3ba04fe711a8975e3fccb2e0c89622c430fe65d2bfe0b8c6028",
+          "options": "dfceec77f2f32e962246bbfe21fa91d02e3684c23c830d3fe8f6c367302c3ef0",
+          "answer": "81a6bd8ddda69e84471c83a2a7364c407e2635ecae8627f79d2646119e6a8f6d",
+          "contract": "096d5598f0b27f33f89e47a3e570e82f60587b6878c27a3b307c8698d4d15340",
+          "rendering": "3d9e6a84d3cd92b557e46d9e9aef695eedcbed3a30a9719c9d116c194011dd0a",
+          "generator": "176326455c8933767dd15f6f82d02c056ba77f6b45a2e655a0fc100d76453901"
+        },
+        "report": "records/authored-932059f2e27aae1f75d18f83/verification.json"
+      },
+      "build": {
+        "runId": "build-4f7544f3-b312-41c4-8a1e-fbc4980708d2",
+        "candidateId": "v001",
+        "usage": {
+          "schemaVersion": 2,
+          "runId": "build-4f7544f3-b312-41c4-8a1e-fbc4980708d2",
+          "source": "codex",
+          "runtime": "Codex Desktop",
+          "status": "measured",
+          "elapsedMs": 150280,
+          "elapsedKind": "wall-clock",
+          "scope": "Runtime-reported usage between the start baseline and finish snapshot of this session. In-flight or delayed usage, earlier conversation, other agents and later delivery are excluded. This is an observed interval, not a complete billed task total.",
+          "scopeComplete": false,
+          "observedTokens": {
+            "input_tokens": 1432481,
+            "cached_input_tokens": 1426944,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 2558,
+            "reasoning_output_tokens": 667,
+            "total_tokens": 1435039
+          },
+          "tokens": {
+            "input_tokens": null,
+            "cached_input_tokens": null,
+            "cache_write_input_tokens": null,
+            "output_tokens": null,
+            "reasoning_output_tokens": null,
+            "total_tokens": null
+          },
+          "models": [
+            {
+              "provider": "openai",
+              "model": "gpt-6.2-astra",
+              "reasoningEffort": "xhigh",
+              "tokens": {
+                "input_tokens": 1432481,
+                "cached_input_tokens": 1426944,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 2558,
+                "reasoning_output_tokens": 667,
+                "total_tokens": 1435039
+              },
+              "observations": 10
+            }
+          ],
+          "missingFields": [],
+          "issues": [],
+          "observations": 10
+        }
+      },
+      "process": "records/authored-932059f2e27aae1f75d18f83/process.json",
+      "eventsCsv": "records/authored-932059f2e27aae1f75d18f83/events.csv"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "authored-b2f119e5e5243b54f8b87166",
+      "harnessId": "spatialviz-harness",
+      "skillIds": [
+        "cube-assembly"
+      ],
+      "sourceKind": "agent-authored",
+      "sourceCaseIds": [
+        "spatialviz-bench:vqa:VisualPenetration:CubeAssembly:Level0:0-2-3-2-9-2",
+        "spatialviz-bench:vqa:VisualPenetration:CubeAssembly:Level1:38-2-3-3-9-3"
+      ],
+      "category": "VisualPenetration",
+      "taskType": "CubeAssembly",
+      "difficulty": null,
+      "title": "CubeAssembly | interface",
+      "description": "Which option, together with the given pieces, exactly covers the target? Rotations and translations are allowed.",
+      "contentSha256": "b2f119e5e5243b54f8b87166abcd037cddc7f3dcd9f1ccd001fc190a6ece30da",
+      "thumbnail": "records/authored-b2f119e5e5243b54f8b87166/v001-4f056d7906cd748d.png",
+      "taskArtifact": "records/authored-b2f119e5e5243b54f8b87166/task.json",
+      "verification": {
+        "verdict": "passed",
+        "candidateId": "v001",
+        "fingerprints": {
+          "specification": "b2f119e5e5243b54f8b87166abcd037cddc7f3dcd9f1ccd001fc190a6ece30da",
+          "geometry": "6148a46601536f03b45ad4b4eaf11e79dc980de00c2c89c49bc06ed03f4363cf",
+          "question": "1a106cfc246ef50e60fbddad62767a6e230bf9db4a91a909d4ac16781c03c0b2",
+          "options": "e7886c708b7247248b53ebaa54d5c8b3eab9316d1fa442bfcf4712c287b39792",
+          "answer": "30abfb52d9a8abe32746f1866c195ff61ba15159c01477dd895fb2818f94bcf9",
+          "contract": "b657d3ce14c11009a704e604e888a607c8d4375d74e91eb932ff990d75e9935b",
+          "rendering": "2e852052eb8ed378f07f723ba5203c44fa56afcb4a9eced1a37ac9e4fa2bdeee",
+          "generator": "c29517fef67db229f6aba8d313d5ccf498062d36372490cd74c6eebd10e2c8d7"
+        },
+        "report": "records/authored-b2f119e5e5243b54f8b87166/verification.json"
+      },
+      "build": {
+        "runId": "build-ded6dba8-4d20-4fdc-b09c-928a167723f3",
+        "candidateId": "v001",
+        "usage": {
+          "schemaVersion": 2,
+          "runId": "build-ded6dba8-4d20-4fdc-b09c-928a167723f3",
+          "source": "codex",
+          "runtime": "Codex Desktop",
+          "status": "measured",
+          "elapsedMs": 156284,
+          "elapsedKind": "wall-clock",
+          "scope": "Runtime-reported usage between the start baseline and finish snapshot of this session. In-flight or delayed usage, earlier conversation, other agents and later delivery are excluded. This is an observed interval, not a complete billed task total.",
+          "scopeComplete": false,
+          "observedTokens": {
+            "input_tokens": 1570538,
+            "cached_input_tokens": 1564928,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 2812,
+            "reasoning_output_tokens": 772,
+            "total_tokens": 1573350
+          },
+          "tokens": {
+            "input_tokens": null,
+            "cached_input_tokens": null,
+            "cache_write_input_tokens": null,
+            "output_tokens": null,
+            "reasoning_output_tokens": null,
+            "total_tokens": null
+          },
+          "models": [
+            {
+              "provider": "openai",
+              "model": "gpt-6.2-astra",
+              "reasoningEffort": "xhigh",
+              "tokens": {
+                "input_tokens": 1570538,
+                "cached_input_tokens": 1564928,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 2812,
+                "reasoning_output_tokens": 772,
+                "total_tokens": 1573350
+              },
+              "observations": 11
+            }
+          ],
+          "missingFields": [],
+          "issues": [],
+          "observations": 11
+        }
+      },
+      "process": "records/authored-b2f119e5e5243b54f8b87166/process.json",
+      "eventsCsv": "records/authored-b2f119e5e5243b54f8b87166/events.csv"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "authored-caef10a118e6f63e9b9305ef",
+      "harnessId": "spatialviz-harness",
+      "skillIds": [
+        "cube-assembly"
+      ],
+      "sourceKind": "agent-authored",
+      "sourceCaseIds": [
+        "spatialviz-bench:vqa:VisualPenetration:CubeAssembly:Level0:0-2-3-2-9-2",
+        "spatialviz-bench:vqa:VisualPenetration:CubeAssembly:Level1:38-2-3-3-9-3"
+      ],
+      "category": "VisualPenetration",
+      "taskType": "CubeAssembly",
+      "difficulty": null,
+      "title": "CubeAssembly | relocated",
+      "description": "Which option, together with the given pieces, exactly covers the target? Rotations and translations are allowed.",
+      "contentSha256": "caef10a118e6f63e9b9305efcf7edb1e20f58239e566bfaa0301a35b4a5e5a1a",
+      "thumbnail": "records/authored-caef10a118e6f63e9b9305ef/v001-1ad1baffa132a324.png",
+      "taskArtifact": "records/authored-caef10a118e6f63e9b9305ef/task.json",
+      "verification": {
+        "verdict": "passed",
+        "candidateId": "v001",
+        "fingerprints": {
+          "specification": "caef10a118e6f63e9b9305efcf7edb1e20f58239e566bfaa0301a35b4a5e5a1a",
+          "geometry": "d974dcf621c50583e1548be8d8b21da286728bf1c5bc475fe47c9c2763380c31",
+          "question": "1a106cfc246ef50e60fbddad62767a6e230bf9db4a91a909d4ac16781c03c0b2",
+          "options": "e7886c708b7247248b53ebaa54d5c8b3eab9316d1fa442bfcf4712c287b39792",
+          "answer": "72ee50d96c4ce4c415bd105c2fda19c573f6bd975f63f434e30f6c5eab4846c6",
+          "contract": "829632caa4a3ba1ddba501fe77c81e5601bac6b753a96b8dc71f45aea23eda5d",
+          "rendering": "7e17828ee837116ef0ccbd6c0e6bd189421b76c396010d3ef537091ae02f2321",
+          "generator": "150837b869e4e759d84dd4d67a8b5ca3085aec8949f758104a9588c45e523877"
+        },
+        "report": "records/authored-caef10a118e6f63e9b9305ef/verification.json"
+      },
+      "build": {
+        "runId": "build-6d67d61a-919c-401e-85ef-8dfcab800c4c",
+        "candidateId": "v001",
+        "usage": {
+          "schemaVersion": 2,
+          "runId": "build-6d67d61a-919c-401e-85ef-8dfcab800c4c",
+          "source": "codex",
+          "runtime": "Codex Desktop",
+          "status": "measured",
+          "elapsedMs": 153736,
+          "elapsedKind": "wall-clock",
+          "scope": "Runtime-reported usage between the start baseline and finish snapshot of this session. In-flight or delayed usage, earlier conversation, other agents and later delivery are excluded. This is an observed interval, not a complete billed task total.",
+          "scopeComplete": false,
+          "observedTokens": {
+            "input_tokens": 1432481,
+            "cached_input_tokens": 1426944,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 2558,
+            "reasoning_output_tokens": 667,
+            "total_tokens": 1435039
+          },
+          "tokens": {
+            "input_tokens": null,
+            "cached_input_tokens": null,
+            "cache_write_input_tokens": null,
+            "output_tokens": null,
+            "reasoning_output_tokens": null,
+            "total_tokens": null
+          },
+          "models": [
+            {
+              "provider": "openai",
+              "model": "gpt-6.2-astra",
+              "reasoningEffort": "xhigh",
+              "tokens": {
+                "input_tokens": 1432481,
+                "cached_input_tokens": 1426944,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 2558,
+                "reasoning_output_tokens": 667,
+                "total_tokens": 1435039
+              },
+              "observations": 10
+            }
+          ],
+          "missingFields": [],
+          "issues": [],
+          "observations": 10
+        }
+      },
+      "process": "records/authored-caef10a118e6f63e9b9305ef/process.json",
+      "eventsCsv": "records/authored-caef10a118e6f63e9b9305ef/events.csv"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "authored-784f8b23e07ae3b587e32af8",
+      "harnessId": "spatialviz-harness",
+      "skillIds": [
+        "cube-assembly"
+      ],
+      "sourceKind": "agent-authored",
+      "sourceCaseIds": [
+        "spatialviz-bench:vqa:VisualPenetration:CubeAssembly:Level0:0-2-3-2-9-2",
+        "spatialviz-bench:vqa:VisualPenetration:CubeAssembly:Level1:38-2-3-3-9-3"
+      ],
+      "category": "VisualPenetration",
+      "taskType": "CubeAssembly",
+      "difficulty": null,
+      "title": "CubeAssembly | three-parts",
+      "description": "Which option, together with the given pieces, exactly covers the target? Keep the shown orientations.",
+      "contentSha256": "784f8b23e07ae3b587e32af80fbf282e53ee0feaa2223c7204fd52d3d0a3408a",
+      "thumbnail": "records/authored-784f8b23e07ae3b587e32af8/v001-8eee70fcd7042fd6.png",
+      "taskArtifact": "records/authored-784f8b23e07ae3b587e32af8/task.json",
+      "verification": {
+        "verdict": "passed",
+        "candidateId": "v001",
+        "fingerprints": {
+          "specification": "784f8b23e07ae3b587e32af80fbf282e53ee0feaa2223c7204fd52d3d0a3408a",
+          "geometry": "692a1555ed49f7dd47caa38303f430c1d882eac6fc27d8630ae8d54366db759d",
+          "question": "56e42326d7c8d3ba04fe711a8975e3fccb2e0c89622c430fe65d2bfe0b8c6028",
+          "options": "2845ba97f677c11b299bd0a533ee6f0a55fb1fc68da9cc3ac47b3e17212587c4",
+          "answer": "cfc9b9ce5a9f4975e260b36653675b1d7cafe219bdcc000f2d127b72af5e1e1a",
+          "contract": "91c58705cc9b03455ffd608d236c53e898aeefd99875d805cdff81b265819e72",
+          "rendering": "72ed7e77c4b97efe9dd027b8ad84e8501856467f5b1668a45ce152681ffad4f2",
+          "generator": "d3cced85a84380c1059ea366f7d9d9d9e959b0ec77ec3e0e34b99464f74fa565"
+        },
+        "report": "records/authored-784f8b23e07ae3b587e32af8/verification.json"
+      },
+      "build": {
+        "runId": "build-e35df244-f1d5-4e07-b59e-1364d0dd4110",
+        "candidateId": "v001",
+        "usage": {
+          "schemaVersion": 2,
+          "runId": "build-e35df244-f1d5-4e07-b59e-1364d0dd4110",
+          "source": "codex",
+          "runtime": "Codex Desktop",
+          "status": "measured",
+          "elapsedMs": 147902,
+          "elapsedKind": "wall-clock",
+          "scope": "Runtime-reported usage between the start baseline and finish snapshot of this session. In-flight or delayed usage, earlier conversation, other agents and later delivery are excluded. This is an observed interval, not a complete billed task total.",
+          "scopeComplete": false,
+          "observedTokens": {
+            "input_tokens": 1432481,
+            "cached_input_tokens": 1426944,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 2558,
+            "reasoning_output_tokens": 667,
+            "total_tokens": 1435039
+          },
+          "tokens": {
+            "input_tokens": null,
+            "cached_input_tokens": null,
+            "cache_write_input_tokens": null,
+            "output_tokens": null,
+            "reasoning_output_tokens": null,
+            "total_tokens": null
+          },
+          "models": [
+            {
+              "provider": "openai",
+              "model": "gpt-6.2-astra",
+              "reasoningEffort": "xhigh",
+              "tokens": {
+                "input_tokens": 1432481,
+                "cached_input_tokens": 1426944,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 2558,
+                "reasoning_output_tokens": 667,
+                "total_tokens": 1435039
+              },
+              "observations": 10
+            }
+          ],
+          "missingFields": [],
+          "issues": [],
+          "observations": 10
+        }
+      },
+      "process": "records/authored-784f8b23e07ae3b587e32af8/process.json",
+      "eventsCsv": "records/authored-784f8b23e07ae3b587e32af8/events.csv"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "authored-b83e05799037be4cbe5e184c",
+      "harnessId": "spatialviz-harness",
+      "skillIds": [
+        "cube-assembly"
+      ],
+      "sourceKind": "agent-authored",
+      "sourceCaseIds": [
+        "spatialviz-bench:vqa:VisualPenetration:CubeAssembly:Level0:0-2-3-2-9-2",
+        "spatialviz-bench:vqa:VisualPenetration:CubeAssembly:Level1:38-2-3-3-9-3"
+      ],
+      "category": "VisualPenetration",
+      "taskType": "CubeAssembly",
+      "difficulty": null,
+      "title": "CubeAssembly | equal-three",
+      "description": "Which option, together with the given pieces, exactly covers the target? Keep the shown orientations.",
+      "contentSha256": "b83e05799037be4cbe5e184c83f78a2f1c94900c643aa5832d148faab040c1fc",
+      "thumbnail": "records/authored-b83e05799037be4cbe5e184c/v001-9c628c4e7e333e62.png",
+      "taskArtifact": "records/authored-b83e05799037be4cbe5e184c/task.json",
+      "verification": {
+        "verdict": "passed",
+        "candidateId": "v001",
+        "fingerprints": {
+          "specification": "b83e05799037be4cbe5e184c83f78a2f1c94900c643aa5832d148faab040c1fc",
+          "geometry": "7bd085173755d2ebd4ebae29a1953e266650b0a0af115290cafd916ab6b82414",
+          "question": "56e42326d7c8d3ba04fe711a8975e3fccb2e0c89622c430fe65d2bfe0b8c6028",
+          "options": "e6d53ba6e3266587ca224ea64a3e338098298434a69f4c889c61f4c024d0d61d",
+          "answer": "2cd37f5d31802c22acee8052888b222bf19f8c1e993041b0ac5d408ae0e6d4ff",
+          "contract": "451ebafa45f5d3ebea2c2fd09f7f8b42285437fb7c8fcd1442988ede19f189dd",
+          "rendering": "0874a7ab2eec3e873eeef5d3a6dd652db984d6ece2c6dd4d8f99dbf47adb9062",
+          "generator": "ae1afad873f6160609e5a8d7c7a73bb863a2b9c57a596809d1af1a19748498da"
+        },
+        "report": "records/authored-b83e05799037be4cbe5e184c/verification.json"
+      },
+      "build": {
+        "runId": "build-986bd022-f452-4fa0-b72f-31d293f54c39",
+        "candidateId": "v001",
+        "usage": {
+          "schemaVersion": 2,
+          "runId": "build-986bd022-f452-4fa0-b72f-31d293f54c39",
+          "source": "codex",
+          "runtime": "Codex Desktop",
+          "status": "measured",
+          "elapsedMs": 144678,
+          "elapsedKind": "wall-clock",
+          "scope": "Runtime-reported usage between the start baseline and finish snapshot of this session. In-flight or delayed usage, earlier conversation, other agents and later delivery are excluded. This is an observed interval, not a complete billed task total.",
+          "scopeComplete": false,
+          "observedTokens": {
+            "input_tokens": 1432481,
+            "cached_input_tokens": 1426944,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 2558,
+            "reasoning_output_tokens": 667,
+            "total_tokens": 1435039
+          },
+          "tokens": {
+            "input_tokens": null,
+            "cached_input_tokens": null,
+            "cache_write_input_tokens": null,
+            "output_tokens": null,
+            "reasoning_output_tokens": null,
+            "total_tokens": null
+          },
+          "models": [
+            {
+              "provider": "openai",
+              "model": "gpt-6.2-astra",
+              "reasoningEffort": "xhigh",
+              "tokens": {
+                "input_tokens": 1432481,
+                "cached_input_tokens": 1426944,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 2558,
+                "reasoning_output_tokens": 667,
+                "total_tokens": 1435039
+              },
+              "observations": 10
+            }
+          ],
+          "missingFields": [],
+          "issues": [],
+          "observations": 10
+        }
+      },
+      "process": "records/authored-b83e05799037be4cbe5e184c/process.json",
+      "eventsCsv": "records/authored-b83e05799037be4cbe5e184c/events.csv"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "authored-dc9c5de9d083037d581df06b",
+      "harnessId": "spatialviz-harness",
+      "skillIds": [
+        "cube-counting"
+      ],
+      "sourceKind": "agent-authored",
+      "sourceCaseIds": [
+        "spatialviz-bench:vqa:VisualPenetration:CubeCounting:Level0:0-3-3-3-7",
+        "spatialviz-bench:vqa:VisualPenetration:CubeCounting:Level1:34-3-3-3-16",
+        "spatialviz-bench:vqa:VisualPenetration:CubeCounting:Level2:21-4-4-4-26"
+      ],
+      "category": "VisualPenetration",
+      "taskType": "CubeCounting",
+      "difficulty": null,
+      "title": "CubeCounting | min-3",
+      "description": "What is the minimum number of cubes?",
+      "contentSha256": "dc9c5de9d083037d581df06bebd22277760bf251bd744269eabd7d3b9356ae17",
+      "thumbnail": "records/authored-dc9c5de9d083037d581df06b/v001-13bbd581c5a3e315.png",
+      "taskArtifact": "records/authored-dc9c5de9d083037d581df06b/task.json",
+      "verification": {
+        "verdict": "passed",
+        "candidateId": "v001",
+        "fingerprints": {
+          "specification": "dc9c5de9d083037d581df06bebd22277760bf251bd744269eabd7d3b9356ae17",
+          "geometry": "f4c48fbf209fe9939e9eb78a3aefa90bf5bd2d2a455110f8fe20d0bb8cb05e2d",
+          "question": "cb5b24a48a8ad00024a0e5aa68497d1f9f52548bdbf5757aef74a3041538d0ac",
+          "options": "8397eb5b0bc6ae9a085ddde7dedc270e45af8eb929e687e7f894f46b54e4ba2f",
+          "answer": "aab234fe4978e4e6e844c45a45e35db769dbcb0df1b8b878c57957a894951385",
+          "contract": "e756f5319e51e549055b912ed0c627db894f8c8920c65a78e15e62796756b77a",
+          "rendering": "335e5aa3205fe600cb77a547075fa4067ee34d9a9ea0e09ea01e0c586798f622",
+          "generator": "fb35c8160ea759c4b15fd72e93960f6b80424ffd6c5522808c0384e540991d58"
+        },
+        "report": "records/authored-dc9c5de9d083037d581df06b/verification.json"
+      },
+      "build": {
+        "runId": "build-8b099a2d-4fa1-4a47-b4e6-0c2c50215804",
+        "candidateId": "v001",
+        "usage": {
+          "schemaVersion": 2,
+          "runId": "build-8b099a2d-4fa1-4a47-b4e6-0c2c50215804",
+          "source": "codex",
+          "runtime": "Codex Desktop",
+          "status": "measured",
+          "elapsedMs": 118001,
+          "elapsedKind": "wall-clock",
+          "scope": "Runtime-reported usage between the start baseline and finish snapshot of this session. In-flight or delayed usage, earlier conversation, other agents and later delivery are excluded. This is an observed interval, not a complete billed task total.",
+          "scopeComplete": false,
+          "observedTokens": {
+            "input_tokens": 1009277,
+            "cached_input_tokens": 1006976,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 2070,
+            "reasoning_output_tokens": 531,
+            "total_tokens": 1011347
+          },
+          "tokens": {
+            "input_tokens": null,
+            "cached_input_tokens": null,
+            "cache_write_input_tokens": null,
+            "output_tokens": null,
+            "reasoning_output_tokens": null,
+            "total_tokens": null
+          },
+          "models": [
+            {
+              "provider": "openai",
+              "model": "gpt-6.2-astra",
+              "reasoningEffort": "xhigh",
+              "tokens": {
+                "input_tokens": 1009277,
+                "cached_input_tokens": 1006976,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 2070,
+                "reasoning_output_tokens": 531,
+                "total_tokens": 1011347
+              },
+              "observations": 7
+            }
+          ],
+          "missingFields": [],
+          "issues": [],
+          "observations": 7
+        }
+      },
+      "process": "records/authored-dc9c5de9d083037d581df06b/process.json",
+      "eventsCsv": "records/authored-dc9c5de9d083037d581df06b/events.csv"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "authored-afcd221ca2fff0b064362a89",
+      "harnessId": "spatialviz-harness",
+      "skillIds": [
+        "cube-counting"
+      ],
+      "sourceKind": "agent-authored",
+      "sourceCaseIds": [
+        "spatialviz-bench:vqa:VisualPenetration:CubeCounting:Level0:0-3-3-3-7",
+        "spatialviz-bench:vqa:VisualPenetration:CubeCounting:Level1:34-3-3-3-16",
+        "spatialviz-bench:vqa:VisualPenetration:CubeCounting:Level2:21-4-4-4-26"
+      ],
+      "category": "VisualPenetration",
+      "taskType": "CubeCounting",
+      "difficulty": null,
+      "title": "CubeCounting | max-2",
+      "description": "What is the maximum number of cubes?",
+      "contentSha256": "afcd221ca2fff0b064362a89a94eee0636553bd510cd35745f6941bdff5559c9",
+      "thumbnail": "records/authored-afcd221ca2fff0b064362a89/v001-894b5f6f4d0b83ec.png",
+      "taskArtifact": "records/authored-afcd221ca2fff0b064362a89/task.json",
+      "verification": {
+        "verdict": "passed",
+        "candidateId": "v001",
+        "fingerprints": {
+          "specification": "afcd221ca2fff0b064362a89a94eee0636553bd510cd35745f6941bdff5559c9",
+          "geometry": "a92ac4bbff9404c58871bc45a9828c7776c7ff4b4d75d125b385d823f0c5afee",
+          "question": "c10134d430b072b9ac8c471b362cd615c9b5a400a58dc44afaa1e7ceae38a2d7",
+          "options": "ee868ed06d8b3c3504345599d6326488ddacd26f906078ff1b4622a01f6ca858",
+          "answer": "79f9c9837205a701432b7fb16eb3b6265524fba13e11938a197f32d9a46e7b82",
+          "contract": "ff06941ee787cd5a51802b6559a3b895d6e0f674e023956dd5dbc5ef882bdecf",
+          "rendering": "4090e8b72cc843c83a095064d50a16cd3af19de7038b9ab17548e70847eda3e8",
+          "generator": "41d2d587f372c8fb097af7e093e6efe41e2f0d8016c41785bab0ad9da29cd66c"
+        },
+        "report": "records/authored-afcd221ca2fff0b064362a89/verification.json"
+      },
+      "build": {
+        "runId": "build-504334b0-2495-4b73-8f03-c16ed1f152c2",
+        "candidateId": "v001",
+        "usage": {
+          "schemaVersion": 2,
+          "runId": "build-504334b0-2495-4b73-8f03-c16ed1f152c2",
+          "source": "codex",
+          "runtime": "Codex Desktop",
+          "status": "measured",
+          "elapsedMs": 131477,
+          "elapsedKind": "wall-clock",
+          "scope": "Runtime-reported usage between the start baseline and finish snapshot of this session. In-flight or delayed usage, earlier conversation, other agents and later delivery are excluded. This is an observed interval, not a complete billed task total.",
+          "scopeComplete": false,
+          "observedTokens": {
+            "input_tokens": 1150838,
+            "cached_input_tokens": 1148160,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 2273,
+            "reasoning_output_tokens": 624,
+            "total_tokens": 1153111
+          },
+          "tokens": {
+            "input_tokens": null,
+            "cached_input_tokens": null,
+            "cache_write_input_tokens": null,
+            "output_tokens": null,
+            "reasoning_output_tokens": null,
+            "total_tokens": null
+          },
+          "models": [
+            {
+              "provider": "openai",
+              "model": "gpt-6.2-astra",
+              "reasoningEffort": "xhigh",
+              "tokens": {
+                "input_tokens": 1150838,
+                "cached_input_tokens": 1148160,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 2273,
+                "reasoning_output_tokens": 624,
+                "total_tokens": 1153111
+              },
+              "observations": 8
+            }
+          ],
+          "missingFields": [],
+          "issues": [],
+          "observations": 8
+        }
+      },
+      "process": "records/authored-afcd221ca2fff0b064362a89/process.json",
+      "eventsCsv": "records/authored-afcd221ca2fff0b064362a89/events.csv"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "authored-12c1d7836ea623d1c7654293",
+      "harnessId": "spatialviz-harness",
+      "skillIds": [
+        "cube-counting"
+      ],
+      "sourceKind": "agent-authored",
+      "sourceCaseIds": [
+        "spatialviz-bench:vqa:VisualPenetration:CubeCounting:Level0:0-3-3-3-7",
+        "spatialviz-bench:vqa:VisualPenetration:CubeCounting:Level1:34-3-3-3-16",
+        "spatialviz-bench:vqa:VisualPenetration:CubeCounting:Level2:21-4-4-4-26"
+      ],
+      "category": "VisualPenetration",
+      "taskType": "CubeCounting",
+      "difficulty": null,
+      "title": "CubeCounting | max-3",
+      "description": "What is the maximum number of cubes?",
+      "contentSha256": "12c1d7836ea623d1c7654293547260d7dfd85bcd918c3b6934249bb90b6fe68d",
+      "thumbnail": "records/authored-12c1d7836ea623d1c7654293/v001-d7000f06279628a4.png",
+      "taskArtifact": "records/authored-12c1d7836ea623d1c7654293/task.json",
+      "verification": {
+        "verdict": "passed",
+        "candidateId": "v001",
+        "fingerprints": {
+          "specification": "12c1d7836ea623d1c7654293547260d7dfd85bcd918c3b6934249bb90b6fe68d",
+          "geometry": "b50540a35dde180605556804eedd50ef4ad0dd3e8cf121cd4e1a4315f3add02b",
+          "question": "c10134d430b072b9ac8c471b362cd615c9b5a400a58dc44afaa1e7ceae38a2d7",
+          "options": "ebc2027753977563dd6b8eae6177be3a01f5f7648e7a1174c55e021da531ca25",
+          "answer": "84814c245236963a8e56319e8d7cdf782c8cd4071b5dcf9eae874d49ecb3a4a8",
+          "contract": "bd0c3fed7ced0f43b91fb6525feafc65aa99ae47fc734c573de2a79aec28617c",
+          "rendering": "b680080a4ec187cb16883bb2d14218a75963becd04074cc3f4c2e8d4436dcf01",
+          "generator": "b5c9c0f885e6699ecee81a9d0ebfc1e3fc06dee400d35471329f5b58685a32e0"
+        },
+        "report": "records/authored-12c1d7836ea623d1c7654293/verification.json"
+      },
+      "build": {
+        "runId": "build-81154598-5a1f-43a5-b49f-812745dcc343",
+        "candidateId": "v001",
+        "usage": {
+          "schemaVersion": 2,
+          "runId": "build-81154598-5a1f-43a5-b49f-812745dcc343",
+          "source": "codex",
+          "runtime": "Codex Desktop",
+          "status": "measured",
+          "elapsedMs": 123409,
+          "elapsedKind": "wall-clock",
+          "scope": "Runtime-reported usage between the start baseline and finish snapshot of this session. In-flight or delayed usage, earlier conversation, other agents and later delivery are excluded. This is an observed interval, not a complete billed task total.",
+          "scopeComplete": false,
+          "observedTokens": {
+            "input_tokens": 1009277,
+            "cached_input_tokens": 1006976,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 2070,
+            "reasoning_output_tokens": 531,
+            "total_tokens": 1011347
+          },
+          "tokens": {
+            "input_tokens": null,
+            "cached_input_tokens": null,
+            "cache_write_input_tokens": null,
+            "output_tokens": null,
+            "reasoning_output_tokens": null,
+            "total_tokens": null
+          },
+          "models": [
+            {
+              "provider": "openai",
+              "model": "gpt-6.2-astra",
+              "reasoningEffort": "xhigh",
+              "tokens": {
+                "input_tokens": 1009277,
+                "cached_input_tokens": 1006976,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 2070,
+                "reasoning_output_tokens": 531,
+                "total_tokens": 1011347
+              },
+              "observations": 7
+            }
+          ],
+          "missingFields": [],
+          "issues": [],
+          "observations": 7
+        }
+      },
+      "process": "records/authored-12c1d7836ea623d1c7654293/process.json",
+      "eventsCsv": "records/authored-12c1d7836ea623d1c7654293/events.csv"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "authored-269cc1fdf33f505de3be23fb",
+      "harnessId": "spatialviz-harness",
+      "skillIds": [
+        "cube-counting"
+      ],
+      "sourceKind": "agent-authored",
+      "sourceCaseIds": [
+        "spatialviz-bench:vqa:VisualPenetration:CubeCounting:Level0:0-3-3-3-7",
+        "spatialviz-bench:vqa:VisualPenetration:CubeCounting:Level1:34-3-3-3-16",
+        "spatialviz-bench:vqa:VisualPenetration:CubeCounting:Level2:21-4-4-4-26"
+      ],
+      "category": "VisualPenetration",
+      "taskType": "CubeCounting",
+      "difficulty": null,
+      "title": "CubeCounting | min-2",
+      "description": "What is the minimum number of cubes?",
+      "contentSha256": "269cc1fdf33f505de3be23fb160684d9131ee5afd56f9e0942652bc86004b2d8",
+      "thumbnail": "records/authored-269cc1fdf33f505de3be23fb/v001-6db9fdd8ed3ce2ed.png",
+      "taskArtifact": "records/authored-269cc1fdf33f505de3be23fb/task.json",
+      "verification": {
+        "verdict": "passed",
+        "candidateId": "v001",
+        "fingerprints": {
+          "specification": "269cc1fdf33f505de3be23fb160684d9131ee5afd56f9e0942652bc86004b2d8",
+          "geometry": "55ba5ab852af75f770d7871f4c281cd952f0926d49ce4867c688714fd9b1b304",
+          "question": "cb5b24a48a8ad00024a0e5aa68497d1f9f52548bdbf5757aef74a3041538d0ac",
+          "options": "f22618ce12a20271012098647cfbf89bad69f3717f80d9d28cd1ba729c758059",
+          "answer": "174540b637789501b59e13aa9c2a47c71ea62c5d62e39a1580350ca95de0b82b",
+          "contract": "7a3b9e23c9e7350daeb2fda9513b1932ecee8ac65842c6646ef0eacd81ade8b7",
+          "rendering": "6203a6efcca27c7b94fa9a6a78ad36f977e84c96bf00e0bbaab4d70746e31d7b",
+          "generator": "9686cf40a87ea713d508825a9cc51cb890a341b2fc74a56c2d8c20a2a42bcfea"
+        },
+        "report": "records/authored-269cc1fdf33f505de3be23fb/verification.json"
+      },
+      "build": {
+        "runId": "build-e8822319-fbea-49b6-b540-e013172252a4",
+        "candidateId": "v001",
+        "usage": {
+          "schemaVersion": 2,
+          "runId": "build-e8822319-fbea-49b6-b540-e013172252a4",
+          "source": "codex",
+          "runtime": "Codex Desktop",
+          "status": "measured",
+          "elapsedMs": 134986,
+          "elapsedKind": "wall-clock",
+          "scope": "Runtime-reported usage between the start baseline and finish snapshot of this session. In-flight or delayed usage, earlier conversation, other agents and later delivery are excluded. This is an observed interval, not a complete billed task total.",
+          "scopeComplete": false,
+          "observedTokens": {
+            "input_tokens": 1150838,
+            "cached_input_tokens": 1148160,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 2273,
+            "reasoning_output_tokens": 624,
+            "total_tokens": 1153111
+          },
+          "tokens": {
+            "input_tokens": null,
+            "cached_input_tokens": null,
+            "cache_write_input_tokens": null,
+            "output_tokens": null,
+            "reasoning_output_tokens": null,
+            "total_tokens": null
+          },
+          "models": [
+            {
+              "provider": "openai",
+              "model": "gpt-6.2-astra",
+              "reasoningEffort": "xhigh",
+              "tokens": {
+                "input_tokens": 1150838,
+                "cached_input_tokens": 1148160,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 2273,
+                "reasoning_output_tokens": 624,
+                "total_tokens": 1153111
+              },
+              "observations": 8
+            }
+          ],
+          "missingFields": [],
+          "issues": [],
+          "observations": 8
+        }
+      },
+      "process": "records/authored-269cc1fdf33f505de3be23fb/process.json",
+      "eventsCsv": "records/authored-269cc1fdf33f505de3be23fb/events.csv"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "authored-1a014c3c2c6533101a33ca32",
+      "harnessId": "spatialviz-harness",
+      "skillIds": [
+        "cube-counting"
+      ],
+      "sourceKind": "agent-authored",
+      "sourceCaseIds": [
+        "spatialviz-bench:vqa:VisualPenetration:CubeCounting:Level0:0-3-3-3-7",
+        "spatialviz-bench:vqa:VisualPenetration:CubeCounting:Level1:34-3-3-3-16",
+        "spatialviz-bench:vqa:VisualPenetration:CubeCounting:Level2:21-4-4-4-26"
+      ],
+      "category": "VisualPenetration",
+      "taskType": "CubeCounting",
+      "difficulty": null,
+      "title": "CubeCounting | min-3",
+      "description": "What is the minimum number of cubes?",
+      "contentSha256": "1a014c3c2c6533101a33ca32a4a2ee99e14c5041b9497e1597a831fffde17832",
+      "thumbnail": "records/authored-1a014c3c2c6533101a33ca32/v001-eb6c5294935ceb1a.png",
+      "taskArtifact": "records/authored-1a014c3c2c6533101a33ca32/task.json",
+      "verification": {
+        "verdict": "passed",
+        "candidateId": "v001",
+        "fingerprints": {
+          "specification": "1a014c3c2c6533101a33ca32a4a2ee99e14c5041b9497e1597a831fffde17832",
+          "geometry": "9ff804c5d4026ede5f4d51ef3d234c2acdb1568124f59a14ccd667e76b355292",
+          "question": "cb5b24a48a8ad00024a0e5aa68497d1f9f52548bdbf5757aef74a3041538d0ac",
+          "options": "de0be65e38cd5c82a69dc26e23be9affc5967d9f6e4500e7f933712a3a34f9d1",
+          "answer": "0dfb1f3c346b04930a2d75777ec7e2d4db1c92105dae0045889af043f168c788",
+          "contract": "e756f5319e51e549055b912ed0c627db894f8c8920c65a78e15e62796756b77a",
+          "rendering": "de4e14c3f532f241d6a9ab92503ebccf402cc304cebd2a80304fa962b8b79c2a",
+          "generator": "7d222e472e41f7263a72ad15aac1cb6847bb578550113422e51c640db9f18485"
+        },
+        "report": "records/authored-1a014c3c2c6533101a33ca32/verification.json"
+      },
+      "build": {
+        "runId": "build-ad53b12f-0925-4ab4-af76-1a32e5f116ba",
+        "candidateId": "v001",
+        "usage": {
+          "schemaVersion": 2,
+          "runId": "build-ad53b12f-0925-4ab4-af76-1a32e5f116ba",
+          "source": "codex",
+          "runtime": "Codex Desktop",
+          "status": "measured",
+          "elapsedMs": 126245,
+          "elapsedKind": "wall-clock",
+          "scope": "Runtime-reported usage between the start baseline and finish snapshot of this session. In-flight or delayed usage, earlier conversation, other agents and later delivery are excluded. This is an observed interval, not a complete billed task total.",
+          "scopeComplete": false,
+          "observedTokens": {
+            "input_tokens": 1009277,
+            "cached_input_tokens": 1006976,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 2070,
+            "reasoning_output_tokens": 531,
+            "total_tokens": 1011347
+          },
+          "tokens": {
+            "input_tokens": null,
+            "cached_input_tokens": null,
+            "cache_write_input_tokens": null,
+            "output_tokens": null,
+            "reasoning_output_tokens": null,
+            "total_tokens": null
+          },
+          "models": [
+            {
+              "provider": "openai",
+              "model": "gpt-6.2-astra",
+              "reasoningEffort": "xhigh",
+              "tokens": {
+                "input_tokens": 1009277,
+                "cached_input_tokens": 1006976,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 2070,
+                "reasoning_output_tokens": 531,
+                "total_tokens": 1011347
+              },
+              "observations": 7
+            }
+          ],
+          "missingFields": [],
+          "issues": [],
+          "observations": 7
+        }
+      },
+      "process": "records/authored-1a014c3c2c6533101a33ca32/process.json",
+      "eventsCsv": "records/authored-1a014c3c2c6533101a33ca32/events.csv"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "authored-ca8be1fead72292b0ac00df7",
+      "harnessId": "spatialviz-harness",
+      "skillIds": [
+        "cube-counting"
+      ],
+      "sourceKind": "agent-authored",
+      "sourceCaseIds": [
+        "spatialviz-bench:vqa:VisualPenetration:CubeCounting:Level0:0-3-3-3-7",
+        "spatialviz-bench:vqa:VisualPenetration:CubeCounting:Level1:34-3-3-3-16",
+        "spatialviz-bench:vqa:VisualPenetration:CubeCounting:Level2:21-4-4-4-26"
+      ],
+      "category": "VisualPenetration",
+      "taskType": "CubeCounting",
+      "difficulty": null,
+      "title": "CubeCounting | possible-2",
+      "description": "Which listed number of cubes is possible?",
+      "contentSha256": "ca8be1fead72292b0ac00df7a887a5c6106ee3287a1119c4702d56135925c453",
+      "thumbnail": "records/authored-ca8be1fead72292b0ac00df7/v001-66cae9d4da2fdfbe.png",
+      "taskArtifact": "records/authored-ca8be1fead72292b0ac00df7/task.json",
+      "verification": {
+        "verdict": "passed",
+        "candidateId": "v001",
+        "fingerprints": {
+          "specification": "ca8be1fead72292b0ac00df7a887a5c6106ee3287a1119c4702d56135925c453",
+          "geometry": "3ad39db49a2b1e5d639a2405b3d2762666a3fe4ad538b70ae49dede28e89e04a",
+          "question": "1535d8738a0598599f46de92387c4880f984ff74551d5aa470aee367b2bd62c1",
+          "options": "d06d2eb6c9ff68a2a54dc144ee46aae42a0781c84f4d728b6071553ccb31ed71",
+          "answer": "f1c5211c3cdf73a514691dbd290a0c168e7da4a35f9746d44fc2e1857189cec3",
+          "contract": "9d7ceb678d41e9d9df2edc8674dc89ab822b399a14a987e898ad81f181653d80",
+          "rendering": "dbdef28d70ca40733fa1e0b85ac95c2496e8a01f478a0e3ff7db95568ddc72b6",
+          "generator": "08599d4019cc08fc0a4c3dedf6ffcef8b6612c84eda0dede2e76caac90bac791"
+        },
+        "report": "records/authored-ca8be1fead72292b0ac00df7/verification.json"
+      },
+      "build": {
+        "runId": "build-f3b4cf01-4177-49a7-9185-3fa5af38bc3b",
+        "candidateId": "v001",
+        "usage": {
+          "schemaVersion": 2,
+          "runId": "build-f3b4cf01-4177-49a7-9185-3fa5af38bc3b",
+          "source": "codex",
+          "runtime": "Codex Desktop",
+          "status": "measured",
+          "elapsedMs": 129007,
+          "elapsedKind": "wall-clock",
+          "scope": "Runtime-reported usage between the start baseline and finish snapshot of this session. In-flight or delayed usage, earlier conversation, other agents and later delivery are excluded. This is an observed interval, not a complete billed task total.",
+          "scopeComplete": false,
+          "observedTokens": {
+            "input_tokens": 1150838,
+            "cached_input_tokens": 1148160,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 2273,
+            "reasoning_output_tokens": 624,
+            "total_tokens": 1153111
+          },
+          "tokens": {
+            "input_tokens": null,
+            "cached_input_tokens": null,
+            "cache_write_input_tokens": null,
+            "output_tokens": null,
+            "reasoning_output_tokens": null,
+            "total_tokens": null
+          },
+          "models": [
+            {
+              "provider": "openai",
+              "model": "gpt-6.2-astra",
+              "reasoningEffort": "xhigh",
+              "tokens": {
+                "input_tokens": 1150838,
+                "cached_input_tokens": 1148160,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 2273,
+                "reasoning_output_tokens": 624,
+                "total_tokens": 1153111
+              },
+              "observations": 8
+            }
+          ],
+          "missingFields": [],
+          "issues": [],
+          "observations": 8
+        }
+      },
+      "process": "records/authored-ca8be1fead72292b0ac00df7/process.json",
+      "eventsCsv": "records/authored-ca8be1fead72292b0ac00df7/events.csv"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "authored-3fdeb9b73c567d5347cfab1e",
+      "harnessId": "spatialviz-harness",
+      "skillIds": [
+        "cube-counting"
+      ],
+      "sourceKind": "agent-authored",
+      "sourceCaseIds": [
+        "spatialviz-bench:vqa:VisualPenetration:CubeCounting:Level0:0-3-3-3-7",
+        "spatialviz-bench:vqa:VisualPenetration:CubeCounting:Level1:34-3-3-3-16",
+        "spatialviz-bench:vqa:VisualPenetration:CubeCounting:Level2:21-4-4-4-26"
+      ],
+      "category": "VisualPenetration",
+      "taskType": "CubeCounting",
+      "difficulty": null,
+      "title": "CubeCounting | possible-3",
+      "description": "Which listed number of cubes is possible?",
+      "contentSha256": "3fdeb9b73c567d5347cfab1eeeae69f859a555d8526477af0c30b48dc41f33ad",
+      "thumbnail": "records/authored-3fdeb9b73c567d5347cfab1e/v001-76b5629d2cea981f.png",
+      "taskArtifact": "records/authored-3fdeb9b73c567d5347cfab1e/task.json",
+      "verification": {
+        "verdict": "passed",
+        "candidateId": "v001",
+        "fingerprints": {
+          "specification": "3fdeb9b73c567d5347cfab1eeeae69f859a555d8526477af0c30b48dc41f33ad",
+          "geometry": "3aed8301d0003286622a2c17231649ad38be3decfa87bd4c33cbd3c00df80a51",
+          "question": "1535d8738a0598599f46de92387c4880f984ff74551d5aa470aee367b2bd62c1",
+          "options": "564ea1886074c6f5a0bed918c5b06bb3fcb256166aab49fd0173852acd733cd5",
+          "answer": "85892ed2485dcb0cbde6a958b3640dede6ae746b156f73182eeac3ec3564c260",
+          "contract": "56747ff28987fbbe52f70795446d8f2eb4c5ac186de9fdab89cdccd83ff75544",
+          "rendering": "fc6c8e2bbc66a93e00cf20cacbbbc7b9a087b5b98906d6276768fcc540190a77",
+          "generator": "457e8ef4ccdfed20648c3529caebb2cd1d6d20634fea42373e05bf4a002318f1"
+        },
+        "report": "records/authored-3fdeb9b73c567d5347cfab1e/verification.json"
+      },
+      "build": {
+        "runId": "build-70b63060-2f89-41e6-bb0b-f75647758946",
+        "candidateId": "v001",
+        "usage": {
+          "schemaVersion": 2,
+          "runId": "build-70b63060-2f89-41e6-bb0b-f75647758946",
+          "source": "codex",
+          "runtime": "Codex Desktop",
+          "status": "measured",
+          "elapsedMs": 121780,
+          "elapsedKind": "wall-clock",
+          "scope": "Runtime-reported usage between the start baseline and finish snapshot of this session. In-flight or delayed usage, earlier conversation, other agents and later delivery are excluded. This is an observed interval, not a complete billed task total.",
+          "scopeComplete": false,
+          "observedTokens": {
+            "input_tokens": 1009277,
+            "cached_input_tokens": 1006976,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 2070,
+            "reasoning_output_tokens": 531,
+            "total_tokens": 1011347
+          },
+          "tokens": {
+            "input_tokens": null,
+            "cached_input_tokens": null,
+            "cache_write_input_tokens": null,
+            "output_tokens": null,
+            "reasoning_output_tokens": null,
+            "total_tokens": null
+          },
+          "models": [
+            {
+              "provider": "openai",
+              "model": "gpt-6.2-astra",
+              "reasoningEffort": "xhigh",
+              "tokens": {
+                "input_tokens": 1009277,
+                "cached_input_tokens": 1006976,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 2070,
+                "reasoning_output_tokens": 531,
+                "total_tokens": 1011347
+              },
+              "observations": 7
+            }
+          ],
+          "missingFields": [],
+          "issues": [],
+          "observations": 7
+        }
+      },
+      "process": "records/authored-3fdeb9b73c567d5347cfab1e/process.json",
+      "eventsCsv": "records/authored-3fdeb9b73c567d5347cfab1e/events.csv"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "authored-06da8056176951950062c1b3",
+      "harnessId": "spatialviz-harness",
+      "skillIds": [
+        "cube-counting"
+      ],
+      "sourceKind": "agent-authored",
+      "sourceCaseIds": [
+        "spatialviz-bench:vqa:VisualPenetration:CubeCounting:Level0:0-3-3-3-7",
+        "spatialviz-bench:vqa:VisualPenetration:CubeCounting:Level1:34-3-3-3-16",
+        "spatialviz-bench:vqa:VisualPenetration:CubeCounting:Level2:21-4-4-4-26"
+      ],
+      "category": "VisualPenetration",
+      "taskType": "CubeCounting",
+      "difficulty": null,
+      "title": "CubeCounting | exact-3",
+      "description": "How many cubes are in the stack?",
+      "contentSha256": "06da8056176951950062c1b3f3deb7b0b58d912ce7d8eea6d21e46bdee0d455e",
+      "thumbnail": "records/authored-06da8056176951950062c1b3/v002-28fd01473b30ab7e.png",
+      "taskArtifact": "records/authored-06da8056176951950062c1b3/task.json",
+      "verification": {
+        "verdict": "passed",
+        "candidateId": "v002",
+        "fingerprints": {
+          "specification": "06da8056176951950062c1b3f3deb7b0b58d912ce7d8eea6d21e46bdee0d455e",
+          "geometry": "63e55dadabc994909edb29ba7b1957b0a0fcf5098636ca0b50d9c5cb4cfd0d46",
+          "question": "c9ac8b0da43b39453cf2051582d5a918f90f422d5a3625491ecbe9e98602129d",
+          "options": "150d61ee0bee9cebb003d771b7c00a7aa01135099faa24490d03d18d36c7fc0c",
+          "answer": "fa81242f6967bcfa2b7756a4e609dcd7f5c74754f44fca206fcd0a5f9c166a72",
+          "contract": "d5a7281ad4d899ed21fdc136eab216af0e50d0a3272c4698f04204dbc37e8bd7",
+          "rendering": "50cb0defc4ec564a5213dea3127e500bf08d6a6ad48da512748a67061a697a47",
+          "generator": "3bb15ddc64716fed3f8e36fc831daf2e6babf766c7a11fdb5b44cd2396546ada"
+        },
+        "report": "records/authored-06da8056176951950062c1b3/verification.json"
+      },
+      "build": {
+        "runId": "build-48f21785-fa6e-4dee-b916-8aeb9c1fc7d2",
+        "candidateId": "v002",
+        "usage": {
+          "schemaVersion": 2,
+          "runId": "build-48f21785-fa6e-4dee-b916-8aeb9c1fc7d2",
+          "source": "codex",
+          "runtime": "Codex Desktop",
+          "status": "measured",
+          "elapsedMs": 139727,
+          "elapsedKind": "wall-clock",
+          "scope": "Runtime-reported usage between the start baseline and finish snapshot of this session. In-flight or delayed usage, earlier conversation, other agents and later delivery are excluded. This is an observed interval, not a complete billed task total.",
+          "scopeComplete": false,
+          "observedTokens": {
+            "input_tokens": 1291950,
+            "cached_input_tokens": 1288704,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 2499,
+            "reasoning_output_tokens": 650,
+            "total_tokens": 1294449
+          },
+          "tokens": {
+            "input_tokens": null,
+            "cached_input_tokens": null,
+            "cache_write_input_tokens": null,
+            "output_tokens": null,
+            "reasoning_output_tokens": null,
+            "total_tokens": null
+          },
+          "models": [
+            {
+              "provider": "openai",
+              "model": "gpt-6.2-astra",
+              "reasoningEffort": "xhigh",
+              "tokens": {
+                "input_tokens": 1291950,
+                "cached_input_tokens": 1288704,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 2499,
+                "reasoning_output_tokens": 650,
+                "total_tokens": 1294449
+              },
+              "observations": 9
+            }
+          ],
+          "missingFields": [],
+          "issues": [],
+          "observations": 9
+        }
+      },
+      "process": "records/authored-06da8056176951950062c1b3/process.json",
+      "eventsCsv": "records/authored-06da8056176951950062c1b3/events.csv"
     }
   ]
 }

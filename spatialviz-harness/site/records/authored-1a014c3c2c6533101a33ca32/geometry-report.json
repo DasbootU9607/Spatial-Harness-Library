@@ -1,0 +1,200 @@
+{
+  "checks": [
+    {
+      "name": "Final PNG agrees with the public drawing primitives, panel labels and option order",
+      "verdict": "passed"
+    },
+    {
+      "name": "Question matches the displayed task and contract",
+      "verdict": "passed"
+    },
+    {
+      "name": "Exactly one displayed option satisfies the independent solver",
+      "verdict": "passed"
+    },
+    {
+      "name": "Per-option explanations match the solver",
+      "verdict": "passed"
+    },
+    {
+      "name": "Four distinct choices",
+      "verdict": "passed"
+    },
+    {
+      "name": "Matching renderer and checker revisions",
+      "verdict": "passed"
+    }
+  ],
+  "verdict": "passed",
+  "geometryEvidence": {
+    "decodedViews": {
+      "Front": [
+        [
+          1,
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "Top": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          1
+        ]
+      ],
+      "Left": [
+        [
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          1
+        ]
+      ]
+    },
+    "heightWitnesses": {
+      "15": [
+        [
+          3,
+          0,
+          0,
+          0
+        ],
+        [
+          3,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          3,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          3
+        ]
+      ],
+      "16": [
+        [
+          3,
+          0,
+          0,
+          0
+        ],
+        [
+          3,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          3,
+          0
+        ],
+        [
+          0,
+          0,
+          2,
+          3
+        ]
+      ],
+      "17": [
+        [
+          3,
+          0,
+          0,
+          0
+        ],
+        [
+          3,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          3,
+          0
+        ],
+        [
+          0,
+          0,
+          3,
+          3
+        ]
+      ]
+    },
+    "feasibleTotals": [
+      15,
+      16,
+      17
+    ]
+  },
+  "candidateId": "v001",
+  "testedFingerprints": {
+    "specification": "1a014c3c2c6533101a33ca32a4a2ee99e14c5041b9497e1597a831fffde17832",
+    "geometry": "9ff804c5d4026ede5f4d51ef3d234c2acdb1568124f59a14ccd667e76b355292",
+    "question": "cb5b24a48a8ad00024a0e5aa68497d1f9f52548bdbf5757aef74a3041538d0ac",
+    "options": "de0be65e38cd5c82a69dc26e23be9affc5967d9f6e4500e7f933712a3a34f9d1",
+    "answer": "0dfb1f3c346b04930a2d75777ec7e2d4db1c92105dae0045889af043f168c788",
+    "contract": "e756f5319e51e549055b912ed0c627db894f8c8920c65a78e15e62796756b77a",
+    "rendering": "de4e14c3f532f241d6a9ab92503ebccf402cc304cebd2a80304fa962b8b79c2a",
+    "generator": "7d222e472e41f7263a72ad15aac1cb6847bb578550113422e51c640db9f18485"
+  },
+  "verifier": {
+    "id": "penetration-cube-counting",
+    "revision": "39b4d23939e1f8be6abce2874b7bb5eb6834bfc53f621c861008433ea2c72de5"
+  },
+  "scope": "Independent geometry, all choices, unique answer and reconstruction of final media."
+}

@@ -1,0 +1,95 @@
+{
+  "checks": [
+    {
+      "name": "Final PNG agrees with the public drawing primitives, panel labels and option order",
+      "verdict": "passed"
+    },
+    {
+      "name": "Question matches the displayed task and contract",
+      "verdict": "passed"
+    },
+    {
+      "name": "Exactly one displayed option satisfies the independent solver",
+      "verdict": "failed"
+    },
+    {
+      "name": "Per-option explanations match the solver",
+      "verdict": "passed"
+    },
+    {
+      "name": "Four distinct choices",
+      "verdict": "passed"
+    },
+    {
+      "name": "Matching renderer and checker revisions",
+      "verdict": "passed"
+    }
+  ],
+  "verdict": "failed",
+  "geometryEvidence": {
+    "decodedViews": {
+      "Front": [
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "Top": [
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    "heightWitnesses": {
+      "4": [
+        [
+          2,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "5": [
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          1
+        ]
+      ]
+    },
+    "feasibleTotals": [
+      4,
+      5
+    ]
+  },
+  "candidateId": "v001",
+  "testedFingerprints": {
+    "specification": "d8dc436a428f5a014158a6babdd4f048aaff8f27f6013f1c0b752e65d158f784",
+    "geometry": "d550c7461f1e7e1aa3fe915cb6906eb7fb257aafd7b1c0f049a82950e490bd35",
+    "question": "c9ac8b0da43b39453cf2051582d5a918f90f422d5a3625491ecbe9e98602129d",
+    "options": "150d61ee0bee9cebb003d771b7c00a7aa01135099faa24490d03d18d36c7fc0c",
+    "answer": "048b7a337d146e780bad0310628b224d77c33f3936425f554c05bf08a928e0c0",
+    "contract": "1f439ba8e72841b1cd5994ce7a28e0313f8e9a4b42b4ed1d8101f05a3646f642",
+    "rendering": "6538ce89aab54aa2ad0240ca83933ce3b73c1f424ed410a3114a7266b39cc3ec",
+    "generator": "fecced5abbb0e2318c7b3b6f9025f3f80819c61fdca7bb233a38e4a14157c257"
+  },
+  "verifier": {
+    "id": "penetration-cube-counting",
+    "revision": "39b4d23939e1f8be6abce2874b7bb5eb6834bfc53f621c861008433ea2c72de5"
+  },
+  "scope": "Independent geometry, all choices, unique answer and reconstruction of final media."
+}

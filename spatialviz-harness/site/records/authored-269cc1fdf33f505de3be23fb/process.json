@@ -1,0 +1,543 @@
+{
+  "schemaVersion": 1,
+  "manifest": {
+    "sealed": true,
+    "id": "build-e8822319-fbea-49b6-b540-e013172252a4",
+    "title": "Author cube-counting",
+    "runKind": "[private value omitted]",
+    "harness": "spatialviz-harness",
+    "benchmark": "SpatialViz-Bench",
+    "category": "VisualPenetration",
+    "taskType": "cube-counting",
+    "skill": {
+      "id": "spatialviz-cube-counting",
+      "sha256": "a2dfb803dca3f05cb7e57ac46f453dabc05757609ff5b753b22be3cea6c0ae4f"
+    },
+    "status": "accepted",
+    "finalCandidateId": "v001",
+    "limitations": [
+      "Only recorder-mediated deliveries, commands and saved boundaries are observed; direct function calls, unwrapped commands and unsaved editor states are excluded.",
+      "Design notes are explicit author annotations, not internal reasoning."
+    ],
+    "captureGaps": []
+  },
+  "events": [
+    {
+      "id": "e000001",
+      "seq": 1,
+      "runId": "build-e8822319-fbea-49b6-b540-e013172252a4",
+      "type": "run.created",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": null,
+      "details": {},
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000002",
+      "seq": 2,
+      "runId": "build-e8822319-fbea-49b6-b540-e013172252a4",
+      "type": "collector.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": null,
+      "details": {},
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000003",
+      "seq": 3,
+      "runId": "build-e8822319-fbea-49b6-b540-e013172252a4",
+      "type": "skill.attached",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": null,
+      "details": {
+        "sha256": "a2dfb803dca3f05cb7e57ac46f453dabc05757609ff5b753b22be3cea6c0ae4f",
+        "skill": "spatialviz-cube-counting"
+      },
+      "evidenceRefs": [
+        {
+          "id": "8ca2e15848b60e21",
+          "sha256": "a2dfb803dca3f05cb7e57ac46f453dabc05757609ff5b753b22be3cea6c0ae4f",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000004",
+      "seq": 4,
+      "runId": "build-e8822319-fbea-49b6-b540-e013172252a4",
+      "type": "resource.read",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "42e7fb32-5a36-469d-a228-5af06c98d634",
+      "candidateId": null,
+      "details": {
+        "outcome": "delivered",
+        "label": "design.md",
+        "start": 1,
+        "end": 6,
+        "sha256": "1cf078bb26d8ecc3c19b490ac4e5d8efe0a9e0d2dc39691515a384beae9ae8f1",
+        "sourceSha256": "1cf078bb26d8ecc3c19b490ac4e5d8efe0a9e0d2dc39691515a384beae9ae8f1"
+      },
+      "evidenceRefs": [
+        {
+          "id": "ab68176baff0b185",
+          "sha256": "1cf078bb26d8ecc3c19b490ac4e5d8efe0a9e0d2dc39691515a384beae9ae8f1",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000005",
+      "seq": 5,
+      "runId": "build-e8822319-fbea-49b6-b540-e013172252a4",
+      "type": "design.note",
+      "actor": "author",
+      "origin": "agent_statement",
+      "actionId": null,
+      "candidateId": null,
+      "details": {
+        "goal": "Generate a new cube-counting question",
+        "sources": [
+          "Official inventory and design notes"
+        ],
+        "change": "Construct min-2",
+        "reason": null,
+        "expectedChecks": [
+          "Independent geometry",
+          "Media review"
+        ]
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000006",
+      "seq": 6,
+      "runId": "build-e8822319-fbea-49b6-b540-e013172252a4",
+      "type": "command.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "1b600b17-2f85-422c-afef-2d8bc4242bce",
+      "candidateId": null,
+      "details": {
+        "label": "python",
+        "kind": "parametric-generation"
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000007",
+      "seq": 7,
+      "runId": "build-e8822319-fbea-49b6-b540-e013172252a4",
+      "type": "command.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "1b600b17-2f85-422c-afef-2d8bc4242bce",
+      "candidateId": null,
+      "details": {
+        "commandEventId": "e000006",
+        "kind": "parametric-generation",
+        "exitCode": 0,
+        "signal": null
+      },
+      "evidenceRefs": [
+        {
+          "id": "8d4148d6e813d018",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "availability": "local evidence; hash published"
+        },
+        {
+          "id": "c66d9b96ab9b3d12",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000008",
+      "seq": 8,
+      "runId": "build-e8822319-fbea-49b6-b540-e013172252a4",
+      "type": "candidate.saved",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "ae193634-0051-4a21-aed5-f031ba939f8a",
+      "candidateId": "v001",
+      "details": {
+        "sha256": "269cc1fdf33f505de3be23fb160684d9131ee5afd56f9e0942652bc86004b2d8",
+        "parentId": null,
+        "parentBasis": null,
+        "changes": [
+          "specification",
+          "geometry",
+          "question",
+          "options",
+          "answer",
+          "contract",
+          "rendering",
+          "generator"
+        ],
+        "fingerprints": {
+          "specification": "269cc1fdf33f505de3be23fb160684d9131ee5afd56f9e0942652bc86004b2d8",
+          "geometry": "55ba5ab852af75f770d7871f4c281cd952f0926d49ce4867c688714fd9b1b304",
+          "question": "cb5b24a48a8ad00024a0e5aa68497d1f9f52548bdbf5757aef74a3041538d0ac",
+          "options": "f22618ce12a20271012098647cfbf89bad69f3717f80d9d28cd1ba729c758059",
+          "answer": "174540b637789501b59e13aa9c2a47c71ea62c5d62e39a1580350ca95de0b82b",
+          "contract": "7a3b9e23c9e7350daeb2fda9513b1932ecee8ac65842c6646ef0eacd81ade8b7",
+          "rendering": "6203a6efcca27c7b94fa9a6a78ad36f977e84c96bf00e0bbaab4d70746e31d7b",
+          "generator": "9686cf40a87ea713d508825a9cc51cb890a341b2fc74a56c2d8c20a2a42bcfea"
+        },
+        "previewUnavailable": null
+      },
+      "evidenceRefs": [
+        {
+          "id": "ad7675fc8b95e7e5",
+          "sha256": "269cc1fdf33f505de3be23fb160684d9131ee5afd56f9e0942652bc86004b2d8",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000009",
+      "seq": 9,
+      "runId": "build-e8822319-fbea-49b6-b540-e013172252a4",
+      "type": "build.saved",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": "v001",
+      "details": {},
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000010",
+      "seq": 10,
+      "runId": "build-e8822319-fbea-49b6-b540-e013172252a4",
+      "type": "render.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "4fc9b706-794e-4e04-8b26-7fb2dfa30ebb",
+      "candidateId": "v001",
+      "details": {
+        "renderer": {
+          "id": "penetration-cube-counting",
+          "revision": "39b4d23939e1f8be6abce2874b7bb5eb6834bfc53f621c861008433ea2c72de5"
+        }
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000011",
+      "seq": 11,
+      "runId": "build-e8822319-fbea-49b6-b540-e013172252a4",
+      "type": "render.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "4fc9b706-794e-4e04-8b26-7fb2dfa30ebb",
+      "candidateId": "v001",
+      "details": {
+        "sha256": "6db9fdd8ed3ce2ed7c83c4d181ede80819e996fe1d382373cb8f43f25e9ba74b",
+        "renderer": {
+          "id": "penetration-cube-counting",
+          "revision": "39b4d23939e1f8be6abce2874b7bb5eb6834bfc53f621c861008433ea2c72de5"
+        },
+        "specification": "269cc1fdf33f505de3be23fb160684d9131ee5afd56f9e0942652bc86004b2d8",
+        "rendering": "6203a6efcca27c7b94fa9a6a78ad36f977e84c96bf00e0bbaab4d70746e31d7b"
+      },
+      "evidenceRefs": [
+        {
+          "id": "32ffcf46e1a1cf8f",
+          "sha256": "6db9fdd8ed3ce2ed7c83c4d181ede80819e996fe1d382373cb8f43f25e9ba74b",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000012",
+      "seq": 12,
+      "runId": "build-e8822319-fbea-49b6-b540-e013172252a4",
+      "type": "command.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "507f27cc-b4ff-42e5-82be-9c1c298d02c6",
+      "candidateId": "v001",
+      "details": {
+        "label": "node.exe",
+        "kind": "verification"
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000013",
+      "seq": 13,
+      "runId": "build-e8822319-fbea-49b6-b540-e013172252a4",
+      "type": "command.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "507f27cc-b4ff-42e5-82be-9c1c298d02c6",
+      "candidateId": "v001",
+      "details": {
+        "commandEventId": "e000012",
+        "kind": "verification",
+        "exitCode": 0,
+        "signal": null
+      },
+      "evidenceRefs": [
+        {
+          "id": "00c3f7b7bcd169bb",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "availability": "local evidence; hash published"
+        },
+        {
+          "id": "f7be8fae3e743fa0",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000014",
+      "seq": 14,
+      "runId": "build-e8822319-fbea-49b6-b540-e013172252a4",
+      "type": "test.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "507f27cc-b4ff-42e5-82be-9c1c298d02c6",
+      "candidateId": "v001",
+      "details": {
+        "commandEventId": "e000012",
+        "completedEventId": "e000013",
+        "verdict": "passed",
+        "status": "passed",
+        "checks": [
+          {
+            "name": "Final PNG agrees with the public drawing primitives, panel labels and option order",
+            "verdict": "passed"
+          },
+          {
+            "name": "Question matches the displayed task and contract",
+            "verdict": "passed"
+          },
+          {
+            "name": "Exactly one displayed option satisfies the independent solver",
+            "verdict": "passed"
+          },
+          {
+            "name": "Per-option explanations match the solver",
+            "verdict": "passed"
+          },
+          {
+            "name": "Four distinct choices",
+            "verdict": "passed"
+          },
+          {
+            "name": "Matching renderer and checker revisions",
+            "verdict": "passed"
+          }
+        ],
+        "scope": "Independent geometry, all choices, unique answer and reconstruction of final media.",
+        "binding": "exact",
+        "bindingBasis": "exact candidate and full input fingerprints",
+        "testedFingerprints": {
+          "specification": "269cc1fdf33f505de3be23fb160684d9131ee5afd56f9e0942652bc86004b2d8",
+          "geometry": "55ba5ab852af75f770d7871f4c281cd952f0926d49ce4867c688714fd9b1b304",
+          "question": "cb5b24a48a8ad00024a0e5aa68497d1f9f52548bdbf5757aef74a3041538d0ac",
+          "options": "f22618ce12a20271012098647cfbf89bad69f3717f80d9d28cd1ba729c758059",
+          "answer": "174540b637789501b59e13aa9c2a47c71ea62c5d62e39a1580350ca95de0b82b",
+          "contract": "7a3b9e23c9e7350daeb2fda9513b1932ecee8ac65842c6646ef0eacd81ade8b7",
+          "rendering": "6203a6efcca27c7b94fa9a6a78ad36f977e84c96bf00e0bbaab4d70746e31d7b",
+          "generator": "9686cf40a87ea713d508825a9cc51cb890a341b2fc74a56c2d8c20a2a42bcfea"
+        },
+        "verifier": {
+          "id": "penetration-cube-counting",
+          "revision": "39b4d23939e1f8be6abce2874b7bb5eb6834bfc53f621c861008433ea2c72de5"
+        },
+        "reportSha256": "04dd6792d5e6523761fdef10a11717ff04e0091faea62ebaeade7025edd60fda"
+      },
+      "evidenceRefs": [
+        {
+          "id": "e1e98f86c3948255",
+          "sha256": "04dd6792d5e6523761fdef10a11717ff04e0091faea62ebaeade7025edd60fda",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000015",
+      "seq": 15,
+      "runId": "build-e8822319-fbea-49b6-b540-e013172252a4",
+      "type": "visual.review",
+      "actor": "author",
+      "origin": "agent_statement",
+      "actionId": null,
+      "candidateId": "v001",
+      "details": {
+        "outcome": "passed",
+        "review": "The Top grid contributes five base cubes. Raising one cell in each Front column to 3,2,2 costs two, one and one additional cubes. Nine is attained."
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000016",
+      "seq": 16,
+      "runId": "build-e8822319-fbea-49b6-b540-e013172252a4",
+      "type": "run.finished",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": "v001",
+      "details": {
+        "outcome": "accepted",
+        "finalCandidateId": "v001"
+      },
+      "evidenceRefs": []
+    }
+  ],
+  "candidates": [
+    {
+      "id": "v001",
+      "parentId": null,
+      "parentBasis": null,
+      "sha256": "269cc1fdf33f505de3be23fb160684d9131ee5afd56f9e0942652bc86004b2d8",
+      "fingerprints": {
+        "specification": "269cc1fdf33f505de3be23fb160684d9131ee5afd56f9e0942652bc86004b2d8",
+        "geometry": "55ba5ab852af75f770d7871f4c281cd952f0926d49ce4867c688714fd9b1b304",
+        "question": "cb5b24a48a8ad00024a0e5aa68497d1f9f52548bdbf5757aef74a3041538d0ac",
+        "options": "f22618ce12a20271012098647cfbf89bad69f3717f80d9d28cd1ba729c758059",
+        "answer": "174540b637789501b59e13aa9c2a47c71ea62c5d62e39a1580350ca95de0b82b",
+        "contract": "7a3b9e23c9e7350daeb2fda9513b1932ecee8ac65842c6646ef0eacd81ade8b7",
+        "rendering": "6203a6efcca27c7b94fa9a6a78ad36f977e84c96bf00e0bbaab4d70746e31d7b",
+        "generator": "9686cf40a87ea713d508825a9cc51cb890a341b2fc74a56c2d8c20a2a42bcfea"
+      },
+      "previewUnavailable": null,
+      "changes": [
+        "specification",
+        "geometry",
+        "question",
+        "options",
+        "answer",
+        "contract",
+        "rendering",
+        "generator"
+      ],
+      "preview": {
+        "candidateId": "v001",
+        "specification": "269cc1fdf33f505de3be23fb160684d9131ee5afd56f9e0942652bc86004b2d8",
+        "rendering": "6203a6efcca27c7b94fa9a6a78ad36f977e84c96bf00e0bbaab4d70746e31d7b",
+        "renderer": {
+          "id": "penetration-cube-counting",
+          "revision": "39b4d23939e1f8be6abce2874b7bb5eb6834bfc53f621c861008433ea2c72de5"
+        },
+        "sha256": "6db9fdd8ed3ce2ed7c83c4d181ede80819e996fe1d382373cb8f43f25e9ba74b",
+        "path": "records/authored-269cc1fdf33f505de3be23fb/v001-6db9fdd8ed3ce2ed.png",
+        "origin": "recorded-render"
+      }
+    }
+  ],
+  "tests": [
+    {
+      "id": "t001",
+      "actionId": "507f27cc-b4ff-42e5-82be-9c1c298d02c6",
+      "candidateId": "v001",
+      "testedFingerprints": {
+        "specification": "269cc1fdf33f505de3be23fb160684d9131ee5afd56f9e0942652bc86004b2d8",
+        "geometry": "55ba5ab852af75f770d7871f4c281cd952f0926d49ce4867c688714fd9b1b304",
+        "question": "cb5b24a48a8ad00024a0e5aa68497d1f9f52548bdbf5757aef74a3041538d0ac",
+        "options": "f22618ce12a20271012098647cfbf89bad69f3717f80d9d28cd1ba729c758059",
+        "answer": "174540b637789501b59e13aa9c2a47c71ea62c5d62e39a1580350ca95de0b82b",
+        "contract": "7a3b9e23c9e7350daeb2fda9513b1932ecee8ac65842c6646ef0eacd81ade8b7",
+        "rendering": "6203a6efcca27c7b94fa9a6a78ad36f977e84c96bf00e0bbaab4d70746e31d7b",
+        "generator": "9686cf40a87ea713d508825a9cc51cb890a341b2fc74a56c2d8c20a2a42bcfea"
+      },
+      "verifier": {
+        "id": "penetration-cube-counting",
+        "revision": "39b4d23939e1f8be6abce2874b7bb5eb6834bfc53f621c861008433ea2c72de5"
+      },
+      "reportSha256": "04dd6792d5e6523761fdef10a11717ff04e0091faea62ebaeade7025edd60fda",
+      "verdict": "passed",
+      "status": "passed",
+      "checks": [
+        {
+          "name": "Final PNG agrees with the public drawing primitives, panel labels and option order",
+          "verdict": "passed"
+        },
+        {
+          "name": "Question matches the displayed task and contract",
+          "verdict": "passed"
+        },
+        {
+          "name": "Exactly one displayed option satisfies the independent solver",
+          "verdict": "passed"
+        },
+        {
+          "name": "Per-option explanations match the solver",
+          "verdict": "passed"
+        },
+        {
+          "name": "Four distinct choices",
+          "verdict": "passed"
+        },
+        {
+          "name": "Matching renderer and checker revisions",
+          "verdict": "passed"
+        }
+      ],
+      "scope": "Independent geometry, all choices, unique answer and reconstruction of final media.",
+      "commandExitStatus": 0,
+      "binding": "exact",
+      "bindingBasis": "exact candidate and full input fingerprints",
+      "commandEventId": "e000012"
+    }
+  ],
+  "usage": {
+    "schemaVersion": 2,
+    "runId": "build-e8822319-fbea-49b6-b540-e013172252a4",
+    "source": "codex",
+    "runtime": "Codex Desktop",
+    "status": "measured",
+    "elapsedMs": 134986,
+    "elapsedKind": "wall-clock",
+    "scope": "Runtime-reported usage between the start baseline and finish snapshot of this session. In-flight or delayed usage, earlier conversation, other agents and later delivery are excluded. This is an observed interval, not a complete billed task total.",
+    "scopeComplete": false,
+    "observedTokens": {
+      "input_tokens": 1150838,
+      "cached_input_tokens": 1148160,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 2273,
+      "reasoning_output_tokens": 624,
+      "total_tokens": 1153111
+    },
+    "tokens": {
+      "input_tokens": null,
+      "cached_input_tokens": null,
+      "cache_write_input_tokens": null,
+      "output_tokens": null,
+      "reasoning_output_tokens": null,
+      "total_tokens": null
+    },
+    "models": [
+      {
+        "provider": "openai",
+        "model": "gpt-6.2-astra",
+        "reasoningEffort": "xhigh",
+        "tokens": {
+          "input_tokens": 1150838,
+          "cached_input_tokens": 1148160,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 2273,
+          "reasoning_output_tokens": 624,
+          "total_tokens": 1153111
+        },
+        "observations": 8
+      }
+    ],
+    "missingFields": [],
+    "issues": [],
+    "observations": 8
+  },
+  "caseId": "authored-269cc1fdf33f505de3be23fb"
+}

@@ -1,0 +1,114 @@
+{
+  "checks": [
+    {
+      "name": "Final PNG agrees with the public drawing primitives, panel labels and option order",
+      "verdict": "passed"
+    },
+    {
+      "name": "Question matches the displayed task and contract",
+      "verdict": "passed"
+    },
+    {
+      "name": "Exactly one displayed option satisfies the independent solver",
+      "verdict": "passed"
+    },
+    {
+      "name": "Per-option explanations match the solver",
+      "verdict": "passed"
+    },
+    {
+      "name": "Four distinct choices",
+      "verdict": "passed"
+    },
+    {
+      "name": "No pair of section drawings is identical",
+      "verdict": "passed"
+    },
+    {
+      "name": "Matching renderer and checker revisions",
+      "verdict": "passed"
+    }
+  ],
+  "verdict": "passed",
+  "geometryEvidence": {
+    "certificates": [
+      {
+        "plane": [
+          [
+            0,
+            0,
+            3.5
+          ],
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ]
+        ]
+      },
+      {
+        "componentDiameterBound": 8.845903006477066,
+        "observedDiameter": 10.5
+      },
+      {
+        "plane": [
+          [
+            0,
+            0,
+            2.5
+          ],
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            -0.7071067811865476,
+            -0.7071067811865475
+          ]
+        ]
+      },
+      {
+        "plane": [
+          [
+            0,
+            0.2,
+            0
+          ],
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1
+          ]
+        ]
+      }
+    ]
+  },
+  "candidateId": "v001",
+  "testedFingerprints": {
+    "specification": "6f2021742502e4755ef183b4918e09bbd7de23b9a2a982e1806ea1583b03c700",
+    "geometry": "5b1ce2414dacfb42a14f2a1a6d27198b6abd7c0ebd57a092070f4d833c98b916",
+    "question": "2da8a5923563553c8dc17325c8aef74a95daa8fa11f5c884f8b2b471aecd309f",
+    "options": "8bd044c20c63b5f305972c44da8d8c7739615aa5a3664d19f50a7ed87f0bfac1",
+    "answer": "98a8363feb1425df2efe03a3ee8c675c2033f13246666fc4be8ab17bacfc0f25",
+    "contract": "4011f6c721ea74c5737313418c19bf9cf230288de8f3839e68548571250c4584",
+    "rendering": "1328f3ac5ce86bba8b42f474bba5da8a21ef33ca1d5fdccbe715a08759ed0f86",
+    "generator": "a160232e886f0d6f6494f7b7b67e4f138f16b23defde340c0e9e2ce75e946e31"
+  },
+  "verifier": {
+    "id": "penetration-cross-sections",
+    "revision": "a77b257dc6605f8fbab2eb7f3d90a670c8aa76aea9037d937ef5e4a4225ac630"
+  },
+  "scope": "Independent geometry, all choices, unique answer and reconstruction of final media."
+}

@@ -14,6 +14,10 @@ Generate and check spatial visualization tasks with the library recorder and the
 
 [Paper Folding](skills/spatialviz-paper-folding/SKILL.md) covers the three released grid profiles. Its [coverage table](skills/spatialviz-paper-folding/references/coverage.md) links all released mechanisms to independently verified examples and build records.
 
+## Visual Penetration
+
+[Cross-Sections](skills/spatialviz-cross-sections/SKILL.md) constructs possible and impossible cuts through stacked solids. [Cube Assembly](skills/spatialviz-cube-assembly/SKILL.md) verifies complete lattice packings. [Cube Counting](skills/spatialviz-cube-counting/SKILL.md) determines attainable totals from the displayed projections. Each package includes its source audit, coverage table, installation entry and independent checker.
+
 ## Source
 
 [SpatialViz-Bench](https://github.com/wangst0181/SpatialViz-Bench) is the upstream project for this harness. Explore mental rotation, folding, cross-sections and moving shapes.

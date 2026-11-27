@@ -16,6 +16,7 @@ function discover(){
   const usesRecordedTool=c.generationMethod==='SpatialViz-Bench official FreeCAD + OpenCV/Pillow pipeline'
    || (task.taskType==='PaperFolding' && c.generationMethod==='SpatialViz-Bench official Paper Folding Matplotlib/Pillow pipeline')
    || (task.taskType==='MechanicalSystem' && task.verifier?.id==='mechanical-system' && c.generationMethod==='Spatial Harness mechanical contact schematics')
+   || (task.category==='VisualPenetration' && {CrossSection:'penetration-cross-sections',CubeAssembly:'penetration-cube-assembly',CubeCounting:'penetration-cube-counting'}[task.taskType]===task.verifier?.id && c.generationMethod==='Visual Penetration parametric geometry and Pillow')
    || c.generationMethod===movementTools[task.taskType];
   c.exhibit=c.verification?.verdict==='passed' && usesRecordedTool && Boolean(task.provenance?.sourceRevision);
  }

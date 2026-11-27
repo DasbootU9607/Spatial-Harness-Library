@@ -1,0 +1,57 @@
+{
+  "id": "t001",
+  "actionId": "98778d09-bf03-494f-93b9-bffad773c18c",
+  "candidateId": "v001",
+  "testedFingerprints": {
+    "specification": "2751a127cae1f0234754cb524a16c0c71cdca8ee2145bc0ecb015b74e7885541",
+    "geometry": "305cb7f0556773abeabeeeb14609512afb9474f0bbab615b78d5f4762dd1f245",
+    "question": "2da8a5923563553c8dc17325c8aef74a95daa8fa11f5c884f8b2b471aecd309f",
+    "options": "ef0aa971904a61e460db87f47712f42d82e7cb4969577a34171c2703e3c419c6",
+    "answer": "e175313666353169e0c4ab0c4ebbd0e9ec1159b51148bea5a87edff552689808",
+    "contract": "5ecb1aa8da1d82b64b0c68b394fea9ebf151278ac22363b31e95383e27e9e3d6",
+    "rendering": "c2c90c84ab67724ee4ba26ddc8e8f48ed46ce1ee767f77b8b48e185b92c2df48",
+    "generator": "889584351277afd0158e7a7e12277019b13a163822a8b64351df2dbd4e98e41d"
+  },
+  "verifier": {
+    "id": "penetration-cross-sections",
+    "revision": "a77b257dc6605f8fbab2eb7f3d90a670c8aa76aea9037d937ef5e4a4225ac630"
+  },
+  "reportSha256": "f27fe645f1508bf38ed911081804b6fe540c9a69f3625cd0fc99320ff8180dd9",
+  "verdict": "passed",
+  "status": "passed",
+  "checks": [
+    {
+      "name": "Final PNG agrees with the public drawing primitives, panel labels and option order",
+      "verdict": "passed"
+    },
+    {
+      "name": "Question matches the displayed task and contract",
+      "verdict": "passed"
+    },
+    {
+      "name": "Exactly one displayed option satisfies the independent solver",
+      "verdict": "passed"
+    },
+    {
+      "name": "Per-option explanations match the solver",
+      "verdict": "passed"
+    },
+    {
+      "name": "Four distinct choices",
+      "verdict": "passed"
+    },
+    {
+      "name": "No pair of section drawings is identical",
+      "verdict": "passed"
+    },
+    {
+      "name": "Matching renderer and checker revisions",
+      "verdict": "passed"
+    }
+  ],
+  "scope": "Independent geometry, all choices, unique answer and reconstruction of final media.",
+  "commandExitStatus": 0,
+  "binding": "exact",
+  "bindingBasis": "exact candidate and full input fingerprints",
+  "commandEventId": "e000012"
+}

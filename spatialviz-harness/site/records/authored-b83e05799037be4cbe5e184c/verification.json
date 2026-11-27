@@ -1,0 +1,53 @@
+{
+  "id": "t001",
+  "actionId": "f0c6c575-ef4c-4fa4-957d-6608b366b71b",
+  "candidateId": "v001",
+  "testedFingerprints": {
+    "specification": "b83e05799037be4cbe5e184c83f78a2f1c94900c643aa5832d148faab040c1fc",
+    "geometry": "7bd085173755d2ebd4ebae29a1953e266650b0a0af115290cafd916ab6b82414",
+    "question": "56e42326d7c8d3ba04fe711a8975e3fccb2e0c89622c430fe65d2bfe0b8c6028",
+    "options": "e6d53ba6e3266587ca224ea64a3e338098298434a69f4c889c61f4c024d0d61d",
+    "answer": "2cd37f5d31802c22acee8052888b222bf19f8c1e993041b0ac5d408ae0e6d4ff",
+    "contract": "451ebafa45f5d3ebea2c2fd09f7f8b42285437fb7c8fcd1442988ede19f189dd",
+    "rendering": "0874a7ab2eec3e873eeef5d3a6dd652db984d6ece2c6dd4d8f99dbf47adb9062",
+    "generator": "ae1afad873f6160609e5a8d7c7a73bb863a2b9c57a596809d1af1a19748498da"
+  },
+  "verifier": {
+    "id": "penetration-cube-assembly",
+    "revision": "c49ffc0664d55fef5f2e13481cd610891274cd3566800df58e1eadba2a75b206"
+  },
+  "reportSha256": "6494dce7f12c5ef1f7088c4e63d0d23b473ee066f5cbcf84cf9072ad8afd892d",
+  "verdict": "passed",
+  "status": "passed",
+  "checks": [
+    {
+      "name": "Final PNG agrees with the public drawing primitives, panel labels and option order",
+      "verdict": "passed"
+    },
+    {
+      "name": "Question matches the displayed task and contract",
+      "verdict": "passed"
+    },
+    {
+      "name": "Exactly one displayed option satisfies the independent solver",
+      "verdict": "passed"
+    },
+    {
+      "name": "Per-option explanations match the solver",
+      "verdict": "passed"
+    },
+    {
+      "name": "Four distinct choices",
+      "verdict": "passed"
+    },
+    {
+      "name": "Matching renderer and checker revisions",
+      "verdict": "passed"
+    }
+  ],
+  "scope": "Independent geometry, all choices, unique answer and reconstruction of final media.",
+  "commandExitStatus": 0,
+  "binding": "exact",
+  "bindingBasis": "exact candidate and full input fingerprints",
+  "commandEventId": "e000012"
+}
