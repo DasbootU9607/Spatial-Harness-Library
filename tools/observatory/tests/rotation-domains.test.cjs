@@ -77,7 +77,7 @@ test('Packaged official evidence retains exact source annotations and original i
  const root=path.resolve(__dirname,'../../..'),official=JSON.parse(fs.readFileSync(path.join(root,'questions/data/spatialviz.json'),'utf8'));
  for(const dim of [2,3]){
   const dir=path.join(root,`spatialviz-harness/skills/spatialviz-${dim}d-rotation/references`);
-  for(const file of fs.readdirSync(dir).filter(f=>f.endsWith('.json'))){
+  for(const file of fs.readdirSync(dir).filter(f=>f.endsWith('.json') && f!=='patterns.json')){
    const q=JSON.parse(fs.readFileSync(path.join(dir,file),'utf8'));
    if(file==='coverage.json'){
     const family=official.filter(s=>s.type===`${dim}DRotation`);

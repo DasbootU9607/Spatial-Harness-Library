@@ -5,6 +5,27 @@ description: Author SpatialViz cross-section questions with the original FreeCAD
 
 # Cross-Sections
 
+## Author a new question
+
+Use the installed `scripts/construct.cjs` bridge's **guide** command for new tasks. Offer identify an impossible section, identify a directed marked cut, or a random choice, in one sentence in the user's language. A specified family or recognizable inference selects the matching choice directly. If several choices fit a specified inference, choose a compatible realization. Only ask when the request leaves the substantive choice open. Keep dimensions and similar implementation decisions with the author.
+
+`node scripts/construct.cjs guide` lists the IDs. Start with `guide --task TASK.json --choice ID`; for an explicit random request use `--choice random` and, when constrained, `--eligible ID1,ID2`. Read the returned [pattern](references/patterns.json) and open its original image with your image viewer. Record what you saw with `viewed --run RUN --id SOURCE_ID --observation TEXT`. Read a second, same-type source only to resolve a specific symmetry, occlusion or ambiguity. Keep the returned run for all steps and revisions.
+
+Before generation, write four short, instance-specific sentences to DESIGN.json and select a supported target. This is one possible design:
+
+```json
+{
+  "target": "marked-plane",
+  "inference": "Identify the cut that reaches the narrower upper tier.",
+  "condition": "The plan marks a plane through the cap and an arrow toward the front shoulder.",
+  "foil": "The base-only option would result from moving the cut beyond the cap.",
+  "evidence": "Compare clipped profiles at the marked and displaced planes."
+}
+```
+
+Use `design --run RUN --file DESIGN.json`, then `generate --run RUN --task TASK.json --seed N --params PARAMETERS.json`. The selected pattern supplies starting parameters. Render and verify the returned candidate. Read the target check's witness and local repair feedback. For a correction, keep the original, record any revised design with `--parent VERSION`, then generate with `--parent VERSION --basis TEXT`. Inspect the exact final preview and record a separate `review` before `finish`. The guide response provides the shared command reference. Use the native tooling and parameter rules below with the same run. Standalone sample commands are also available for explicit reproduction.
+
+
 The released CrossSection asks which of four wires cannot occur. Two CAD views establish the component order, the footprint and the contact between tiers. Treat each answer as a cut in its own plane. Retain the visible common boundary of two component sections. Eliminate hidden surface edges, which can appear in an object view but do not intersect the cutting plane. See the [official audit and original figures](references/official-audit.md) and [coverage and solved examples](references/coverage.md).
 
 ## Design a marked pair

@@ -1,0 +1,44 @@
+{
+  "type": "MechanicalSystem",
+  "choices": {
+    "hoist": {
+      "label": "Trace drum rotation to a suspended load",
+      "reference": "MentalAnimation/MechanicalSystem/Level1/32",
+      "targets": [
+        "critical-joint"
+      ],
+      "defaults": {},
+      "accept": {},
+      "observed": "Official winding questions connect a driven rim to a load; the takeoff side sets the linear direction.",
+      "construct": "Author a native system with external mesh, keyed drum and taut cord. State the frame and compare the opposite takeoff. Record joint as cord:<drum>/<load> using the actual body IDs.",
+      "extension": "The formal FreeCAD gear-driven hoist is a harness assembly inspired by the original winding relation.",
+      "output": "vertical"
+    },
+    "slide": {
+      "label": "Infer the guided slide velocity",
+      "reference": "MentalAnimation/MechanicalSystem/Level0/34",
+      "targets": [
+        "critical-joint"
+      ],
+      "defaults": {},
+      "accept": {},
+      "observed": "A captured crank pin transmits the velocity component across the slot; the guide fixes the output axis.",
+      "construct": "Give a nondegenerate crank phase, drive and observer. A foil follows the free component along the slot. Release the named shaft key and test whether the same slide motion is forced. Use key:<wheel>/<crank>.",
+      "extension": "The native FreeCAD worksheet asks about an instant in the guided stroke.",
+      "output": "horizontal"
+    },
+    "orbit": {
+      "label": "Separate planet spin and axle orbit",
+      "reference": "MentalAnimation/MechanicalSystem/Level0/16",
+      "targets": [
+        "critical-joint"
+      ],
+      "defaults": {},
+      "accept": {},
+      "observed": "The relative mesh velocity on the carrier and the grounded sun constrain spin in the observer frame.",
+      "construct": "Connect a fixed sun and moving pinion, mark the carrier input and both outputs. A foil transfers the carrier sign to both. Release the sun constraint and compare allowed outcomes. Use ground:<sun>.",
+      "extension": "The harness builds and measures the native assembly in FreeCAD.",
+      "output": "orbit"
+    }
+  }
+}

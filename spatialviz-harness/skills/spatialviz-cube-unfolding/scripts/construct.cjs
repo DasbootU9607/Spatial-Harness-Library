@@ -10,6 +10,6 @@ if(['generate','render','verify'].includes(command)){
  forwarded.push('--adapter','official-cube-unfolding');
 }
 if(command==='start'&&!forwarded.includes('--harness'))forwarded.push('--harness','spatialviz-harness');
-if(['start','finish'].includes(command)&&!forwarded.includes('--skill'))forwarded.push('--skill',path.resolve(__dirname,'..'));
+if(['start','guide','finish'].includes(command)&&!forwarded.includes('--skill'))forwarded.push('--skill',path.resolve(__dirname,'..'));
 const result=spawnSync(process.execPath,[path.join(root,'tools/construct.cjs'),...forwarded],{stdio:'inherit',windowsHide:true});
 process.exitCode=result.status??1;

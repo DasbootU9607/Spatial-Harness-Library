@@ -1,0 +1,39 @@
+{
+  "type": "3DRotation",
+  "choices": {
+    "can": {
+      "label": "Which model can be rotated into the original?",
+      "reference": "MentalRotation/3DRotation/Level1/0-3-2-2-5",
+      "targets": [
+        "proper-rotation"
+      ],
+      "defaults": {
+        "polarity": "can"
+      },
+      "accept": {
+        "polarity": [
+          "can"
+        ]
+      },
+      "observed": "Rotations preserve adjacency and handedness. Same-sized mirrors can be inequivalent.",
+      "construct": "Design a connected, visible asymmetric bend; vary the coordinates and the viewing pose. Keep a same-count foil which fails every proper rotation."
+    },
+    "cannot": {
+      "label": "Which model cannot be obtained by rotation?",
+      "reference": "MentalRotation/3DRotation/Level0/0-3-3-1-5",
+      "targets": [
+        "cube-count-change"
+      ],
+      "defaults": {
+        "polarity": "cannot"
+      },
+      "accept": {
+        "polarity": [
+          "cannot"
+        ]
+      },
+      "observed": "A missing terminal cube invalidates the transformation; the remaining accepted alternatives can have different poses.",
+      "construct": "Choose a terminal removal that stays connected and visible; keep both legal rotations. Vary the size and stance so the missing end can be identified in the single supplied view."
+    }
+  }
+}

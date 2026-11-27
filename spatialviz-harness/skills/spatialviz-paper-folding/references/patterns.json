@@ -1,0 +1,72 @@
+{
+  "type": "PaperFolding",
+  "choices": {
+    "strip": {
+      "label": "one strip and a corner fold",
+      "reference": "MentalFolding/PaperFolding/Level0/0-3-3-2-1",
+      "targets": [
+        "fold-layers",
+        "diagonal-partner"
+      ],
+      "defaults": {
+        "level": 0,
+        "mechanism": "strip"
+      },
+      "accept": {
+        "mechanism": [
+          "strip"
+        ],
+        "level": [
+          0,
+          1
+        ]
+      },
+      "observed": "A strip fold followed by a diagonal sends only cells inside the flap across the diagonal.",
+      "construct": "Vary the legal crease and punch sites. Keep a finite flap and actually occupied punch. Derive the unfolded holes per ring, then omit or displace one band for the closest foil. To require the diagonal, choose an off-crease site with a distinct reflected partner."
+    },
+    "parallel": {
+      "label": "two parallel strips and a corner fold",
+      "reference": "MentalFolding/PaperFolding/Level2/0-5-5-3-3",
+      "targets": [
+        "fold-layers",
+        "diagonal-partner"
+      ],
+      "defaults": {
+        "level": 2,
+        "mechanism": "parallel"
+      },
+      "accept": {
+        "mechanism": [
+          "parallel"
+        ],
+        "level": [
+          2
+        ]
+      },
+      "observed": "Parallel folds can bring different original bands onto the same surviving strip.",
+      "construct": "Vary the legal crease and punch sites. Keep a finite flap and actually occupied punch. Derive the unfolded holes per ring, then omit or displace one band for the closest foil. To require the diagonal, choose an off-crease site with a distinct reflected partner."
+    },
+    "crossed": {
+      "label": "two crossed strips and a corner fold",
+      "reference": "MentalFolding/PaperFolding/Level2/2-5-5-3-3",
+      "targets": [
+        "fold-layers",
+        "diagonal-partner"
+      ],
+      "defaults": {
+        "level": 2,
+        "mechanism": "crossed"
+      },
+      "accept": {
+        "mechanism": [
+          "crossed"
+        ],
+        "level": [
+          2
+        ]
+      },
+      "observed": "Perpendicular folds bring row and column preimages together before the final corner turn.",
+      "construct": "Vary the legal crease and punch sites. Keep a finite flap and actually occupied punch. Derive the unfolded holes per ring, then omit or displace one band for the closest foil. To require the diagonal, choose an off-crease site with a distinct reflected partner."
+    }
+  }
+}

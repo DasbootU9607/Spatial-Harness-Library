@@ -1,0 +1,58 @@
+{
+  "type": "2DRotation",
+  "choices": {
+    "colored": {
+      "label": "Colored squares",
+      "reference": "MentalRotation/2DRotation/Level0/38-3-4",
+      "targets": [
+        "decorated-grid"
+      ],
+      "defaults": {
+        "mode": "colored"
+      },
+      "accept": {
+        "mode": [
+          "colored"
+        ]
+      },
+      "observed": "A quarter turn swaps the axes of a rectangle and transports its colored cells and external red corner together.",
+      "construct": "Vary the mask and the dimensions; choose a reflected candidate whose corner or noncentral colored cell actually breaks symmetry. Compare the decorated grid under all four turns."
+    },
+    "patterned": {
+      "label": "Dice dots",
+      "reference": "MentalRotation/2DRotation/Level1/1-2-3",
+      "targets": [
+        "motif-orientation",
+        "decorated-grid"
+      ],
+      "defaults": {
+        "mode": "patterned"
+      },
+      "accept": {
+        "mode": [
+          "patterned"
+        ]
+      },
+      "observed": "A dot pair changes axis even when its count stays constant.",
+      "construct": "Hold corner, grid position and dot count equal for the closest alternative. Change a directional pair within one occupied cell. Compare matches with and without orientation."
+    },
+    "geometric": {
+      "label": "Lines and circles",
+      "reference": "MentalRotation/2DRotation/Level1/29-3-3",
+      "targets": [
+        "motif-orientation",
+        "decorated-grid"
+      ],
+      "defaults": {
+        "mode": "geometric"
+      },
+      "accept": {
+        "mode": [
+          "geometric"
+        ]
+      },
+      "observed": "A circle survives a quarter turn; a slanted branch generally changes direction.",
+      "construct": "Place one asymmetric branch among symmetric marks. Match its cell and the corner in the foil but change its arm direction. If the corner already selects the answer, align the foil before claiming internal orientation."
+    }
+  }
+}

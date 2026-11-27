@@ -1,0 +1,80 @@
+{
+  "type": "BlockMoving",
+  "choices": {
+    "flat": {
+      "label": "Track floor occupancy and swaps",
+      "reference": "MentalAnimation/BlockMoving/Level0/22-3-3-1-2",
+      "targets": [
+        "moving-occupant",
+        "state-replay"
+      ],
+      "defaults": {
+        "mechanism": "flat"
+      },
+      "accept": {
+        "mechanism": [
+          "flat"
+        ]
+      },
+      "observed": "An occupied destination exchanges colors while a vacancy changes the footprint.",
+      "construct": "Arrange two paths with the same destination color and different source cells. Vary repeated colors deliberately; replay all visible cells."
+    },
+    "stack": {
+      "label": "Track supported stacks",
+      "reference": "MentalAnimation/BlockMoving/Level1/39-3-2-3-4",
+      "targets": [
+        "support-drop",
+        "moving-occupant",
+        "state-replay"
+      ],
+      "defaults": {
+        "mechanism": "stack"
+      },
+      "accept": {
+        "mechanism": [
+          "stack"
+        ]
+      },
+      "observed": "Withdrawing a support can settle the stack before the next address is read.",
+      "construct": "Put an upper cube over the movable support. Move the base sideways into a supported vacancy. A foil keeps it suspended or selects the wrong color on the next step. Inspect both views."
+    },
+    "checkpoint": {
+      "label": "Choose a path using its intermediate stack",
+      "reference": "MentalAnimation/BlockMoving/Level1/39-3-2-3-4",
+      "targets": [
+        "checkpoint",
+        "state-replay"
+      ],
+      "defaults": {
+        "mechanism": "checkpoint"
+      },
+      "accept": {
+        "mechanism": [
+          "checkpoint"
+        ]
+      },
+      "observed": "Different valid sequences can end in the same configuration.",
+      "construct": "Create two legal routes with equal final stacks and a different settled first state. Retain that checkpoint and compare outcomes with it omitted.",
+      "extension": "The additional observed state is a harness extension."
+    },
+    "missing": {
+      "label": "Infer a missing first instruction",
+      "reference": "MentalAnimation/BlockMoving/Level1/39-3-2-3-4",
+      "targets": [
+        "support-drop",
+        "state-replay"
+      ],
+      "defaults": {
+        "mechanism": "missing"
+      },
+      "accept": {
+        "mechanism": [
+          "missing"
+        ]
+      },
+      "observed": "Destinations and support change the effect of later operations.",
+      "construct": "Hold a suffix fixed. Vary the initial withdrawal so subsequent commands see different settled occupants. Replay each complete program against the visible board.",
+      "extension": "Inferring the missing prefix is a harness extension."
+    }
+  }
+}

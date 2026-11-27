@@ -1,0 +1,62 @@
+{
+  "type": "CubeAssembly",
+  "choices": {
+    "one-part": {
+      "label": "Complete a target from one given part",
+      "reference": "VisualPenetration/CubeAssembly/Level0/0-2-3-2-9-2",
+      "targets": [
+        "exact-cover"
+      ],
+      "defaults": {
+        "mechanism": "two-parts"
+      },
+      "accept": {
+        "mechanism": [
+          "two-parts",
+          "changed-view"
+        ]
+      },
+      "observed": "The remaining occupied target cells must be covered by a connected complement.",
+      "construct": "Make the junction visible and vary the footprint. A shorter end or changed bend can leave a gap. Check coverage and collisions after allowed poses."
+    },
+    "two-parts": {
+      "label": "Complete a target from two given parts",
+      "reference": "VisualPenetration/CubeAssembly/Level1/0-2-3-3-9-3",
+      "targets": [
+        "exact-cover"
+      ],
+      "defaults": {
+        "mechanism": "three-parts"
+      },
+      "accept": {
+        "mechanism": [
+          "three-parts"
+        ]
+      },
+      "observed": "Every given piece constrains the residual cells for the next piece.",
+      "construct": "Design two interlocking given pieces and vary their placement clues. A foil can fit beside one but overlap the other. Require a simultaneous full packing."
+    },
+    "interface": {
+      "label": "Distinguish equal-volume interfaces",
+      "reference": "VisualPenetration/CubeAssembly/Level1/38-2-3-3-9-3",
+      "targets": [
+        "equal-volume-interface",
+        "exact-cover"
+      ],
+      "defaults": {
+        "mechanism": "interface"
+      },
+      "accept": {
+        "mechanism": [
+          "interface",
+          "relocated",
+          "equal-three",
+          "changed-view"
+        ]
+      },
+      "observed": "Equal-count alternatives can disagree on the last raised cell or connection.",
+      "construct": "Fix the placement of the given rail. Move one riser or bend in a same-count complement; keep other options and camera comparable. Enumerate all permitted poses.",
+      "extension": "The controlled near/far pair and exact-cover search are local constructions."
+    }
+  }
+}

@@ -5,13 +5,34 @@ description: Author new 3D rotation questions through SpatialViz-Bench's actual 
 
 # SpatialViz 3D Rotation
 
+## Author a new question
+
+Use the installed `scripts/construct.cjs` bridge's **guide** command for new tasks. Offer which model can be rotated into the original?, which model cannot be obtained by rotation?, or a random choice, in one sentence in the user's language. A specified family or recognizable inference selects the matching choice directly. If several choices fit a specified inference, choose a compatible realization. Only ask when the request leaves the substantive choice open. Keep dimensions and similar implementation decisions with the author.
+
+`node scripts/construct.cjs guide` lists the IDs. Start with `guide --task TASK.json --choice ID`; for an explicit random request use `--choice random` and, when constrained, `--eligible ID1,ID2`. Read the returned [pattern](references/patterns.json) and open its original image with your image viewer. Record what you saw with `viewed --run RUN --id SOURCE_ID --observation TEXT`. Read a second, same-type source only to resolve a specific symmetry, occlusion or ambiguity. Keep the returned run for all steps and revisions.
+
+Before generation, write four short, instance-specific sentences to DESIGN.json and select a supported target. This is one possible design:
+
+```json
+{
+  "target": "proper-rotation",
+  "inference": "Recognize the same handed turn after rotating the cube chain.",
+  "condition": "Two offered shapes retain the same number of visibly joined cubes.",
+  "foil": "The mirror puts the raised end on the other side of the elbow.",
+  "evidence": "Compare their translation-normalized coordinates under all 24 proper rotations."
+}
+```
+
+Use `design --run RUN --file DESIGN.json`, then `generate --run RUN --task TASK.json --seed N --params PARAMETERS.json`. The selected pattern supplies starting parameters. Render and verify the returned candidate. Read the target check's witness and local repair feedback. For a correction, keep the original, record any revised design with `--parent VERSION`, then generate with `--parent VERSION --basis TEXT`. Inspect the exact final preview and record a separate `review` before `finish`. The guide response provides the shared command reference. Use the native tooling and parameter rules below with the same run. Standalone sample commands are also available for explicit reproduction.
+
+
 Create new unranked questions. Default to the pinned official FreeCAD pipeline; never silently substitute the legacy JavaScript/SVG generator or reuse official question images. Keep maintained instructions and generated questions in English. Original annotations remain unchanged in packaged references.
 
 ## Prepare and record
 
 Keep the shared library checkout available. Installed packages bind to it through `node tools/install.cjs --harness spatialviz-harness --destination EMPTY_DIRECTORY`. Read `references/official-pipeline.md` for actual dependencies, source version, patches and limits. A real FreeCAD GUI application is required; host Python cannot import its GUI modules. Set `SPATIALVIZ_FREECAD` to the executable and install the host dependencies described there. Failure to launch or render is a concrete blocker, not permission to switch renderers.
 
-Use this package's bridge (substitute absolute paths). Start before task-specific reference reads or generation:
+For explicit reproduction of an earlier recipe, the bridge also supports the following start command. In guided authoring continue with the RUN returned by guide.
 
 ```text
 node SKILL_DIRECTORY/scripts/construct.cjs start --task TASK.json --title "Official 3D rotation construction"

@@ -1,0 +1,82 @@
+{
+  "type": "CubeCounting",
+  "choices": {
+    "minimum": {
+      "label": "Find a minimum count",
+      "reference": "VisualPenetration/CubeCounting/Level0/0-3-3-3-7",
+      "targets": [
+        "count-feasibility",
+        "third-view-essential"
+      ],
+      "defaults": {
+        "mechanism": "min-3"
+      },
+      "accept": {
+        "mechanism": [
+          "min-2",
+          "min-3"
+        ]
+      },
+      "observed": "The footprint and elevation peaks constrain the minimum: jointly realize every peak with the fewest added cubes.",
+      "construct": "Choose independent or competing peaks on a supported stack. Vary heights and footprint; make a plausible number by taking independent row and column lower bounds as simultaneously attainable. Solve the printed views jointly and keep height witnesses."
+    },
+    "maximum": {
+      "label": "Find a maximum count",
+      "reference": "VisualPenetration/CubeCounting/Level0/1-3-3-3-8",
+      "targets": [
+        "count-feasibility",
+        "third-view-essential"
+      ],
+      "defaults": {
+        "mechanism": "max-3"
+      },
+      "accept": {
+        "mechanism": [
+          "max-2",
+          "max-3"
+        ]
+      },
+      "observed": "The footprint and elevation peaks constrain the maximum: each occupied column must obey all crossing upper bounds.",
+      "construct": "Choose independent or competing peaks on a supported stack. Vary heights and footprint; make a plausible number by ignoring a cap from the other view. Solve the printed views jointly and keep height witnesses."
+    },
+    "possible": {
+      "label": "Find a possible count",
+      "reference": "VisualPenetration/CubeCounting/Level0/3-3-3-2-5",
+      "targets": [
+        "count-feasibility",
+        "third-view-essential"
+      ],
+      "defaults": {
+        "mechanism": "possible-3"
+      },
+      "accept": {
+        "mechanism": [
+          "possible-2",
+          "possible-3"
+        ]
+      },
+      "observed": "The footprint and elevation peaks constrain the feasible total: exhibit at least one complete height map.",
+      "construct": "Choose independent or competing peaks on a supported stack. Vary heights and footprint; make a plausible number by accepting a number merely because it fits one elevation. Solve the printed views jointly and keep height witnesses."
+    },
+    "exact": {
+      "label": "Determine the unique total",
+      "reference": "VisualPenetration/CubeCounting/Level1/34-3-3-3-16",
+      "targets": [
+        "third-view-essential",
+        "count-feasibility"
+      ],
+      "defaults": {
+        "mechanism": "exact-3"
+      },
+      "accept": {
+        "mechanism": [
+          "exact-2",
+          "exact-3"
+        ]
+      },
+      "observed": "Two- and three-view originals ask about extrema or attainable totals under floor support.",
+      "construct": "Construct different totals that share Front and Top. Add a Left elevation that rules out all but one total. Dropping it must restore ambiguity when claiming the third view matters.",
+      "extension": "Exact-count questions and the paired missing-view diagnostic extend the original question forms."
+    }
+  }
+}

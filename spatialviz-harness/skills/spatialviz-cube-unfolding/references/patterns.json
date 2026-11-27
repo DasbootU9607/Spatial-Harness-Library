@@ -1,0 +1,95 @@
+{
+  "type": "CubeUnfolding",
+  "choices": {
+    "color": {
+      "label": "Colored faces",
+      "reference": "MentalFolding/CubeUnfolding/Level0/30",
+      "targets": [
+        "visible-corner"
+      ],
+      "defaults": {
+        "family": "color",
+        "mode": "cannot"
+      },
+      "accept": {
+        "family": [
+          "color"
+        ],
+        "mode": [
+          "cannot"
+        ]
+      },
+      "observed": "Nets can share a silhouette and differ only in visible corner assignment.",
+      "construct": "Keep the colored corner visible; move or swap two of its faces on one valid net. Compare folded cyclic order for every choice."
+    },
+    "pips": {
+      "label": "pips on the unfolded faces",
+      "reference": "MentalFolding/CubeUnfolding/Level1/0",
+      "targets": [
+        "face-orientation",
+        "visible-corner"
+      ],
+      "defaults": {
+        "family": "pips",
+        "mode": "cannot"
+      },
+      "accept": {
+        "family": [
+          "pips"
+        ],
+        "mode": [
+          "can",
+          "cannot"
+        ]
+      },
+      "observed": "The same face pattern can meet the same neighbors at a different orientation.",
+      "construct": "Place a dot pair on a face visible in the shown corner; contrast two candidate nets with matching identities. Require a unique matching or failing net under the requested polarity."
+    },
+    "lines": {
+      "label": "lines on the unfolded faces",
+      "reference": "MentalFolding/CubeUnfolding/Level1/20",
+      "targets": [
+        "face-orientation",
+        "visible-corner"
+      ],
+      "defaults": {
+        "family": "lines",
+        "mode": "cannot"
+      },
+      "accept": {
+        "family": [
+          "lines"
+        ],
+        "mode": [
+          "can",
+          "cannot"
+        ]
+      },
+      "observed": "The same face pattern can meet the same neighbors at a different orientation.",
+      "construct": "Place parallel stripes on a face visible in the shown corner; contrast two candidate nets with matching identities. Require a unique matching or failing net under the requested polarity."
+    },
+    "mosaic": {
+      "label": "mosaic on the unfolded faces",
+      "reference": "MentalFolding/CubeUnfolding/Level2/0",
+      "targets": [
+        "face-orientation",
+        "visible-corner"
+      ],
+      "defaults": {
+        "family": "mosaic",
+        "mode": "cannot"
+      },
+      "accept": {
+        "family": [
+          "mosaic"
+        ],
+        "mode": [
+          "can",
+          "cannot"
+        ]
+      },
+      "observed": "The same face pattern can meet the same neighbors at a different orientation.",
+      "construct": "Place a colored dot cluster on a face visible in the shown corner; contrast two candidate nets with matching identities. Require a unique matching or failing net under the requested polarity."
+    }
+  }
+}

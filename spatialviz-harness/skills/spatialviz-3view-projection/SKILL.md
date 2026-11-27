@@ -5,7 +5,28 @@ description: Build new SpatialViz orthographic projection questions from colored
 
 # Three-view projection
 
-Use the installed package's `scripts/construct.cjs` bridge with the shared library checkout. Start a run for the exact destination before reading references. Keep variants of one question in that run.
+## Author a new question
+
+Use the installed `scripts/construct.cjs` bridge's **guide** command for new tasks. Offer left view of a colored stack, visible edges of a stepped cad solid, projection of holes in a cad solid, or a random choice, in one sentence in the user's language. A specified family or recognizable inference selects the matching choice directly. If several choices fit a specified inference, choose a compatible realization. Only ask when the request leaves the substantive choice open. Keep dimensions and similar implementation decisions with the author.
+
+`node scripts/construct.cjs guide` lists the IDs. Start with `guide --task TASK.json --choice ID`; for an explicit random request use `--choice random` and, when constrained, `--eligible ID1,ID2`. Read the returned [pattern](references/patterns.json) and open its original image with your image viewer. Record what you saw with `viewed --run RUN --id SOURCE_ID --observation TEXT`. Read a second, same-type source only to resolve a specific symmetry, occlusion or ambiguity. Keep the returned run for all steps and revisions.
+
+Before generation, write four short, instance-specific sentences to DESIGN.json and select a supported target. This is one possible design:
+
+```json
+{
+  "target": "nearest-surface",
+  "inference": "Infer which red face remains visible from the left.",
+  "condition": "The two left-view candidates share the occupied silhouette but differ at one projected ray.",
+  "foil": "One option paints the farther cube through its opaque neighbor.",
+  "evidence": "Trace the nearest surface at that ray and compare both panels."
+}
+```
+
+Use `design --run RUN --file DESIGN.json`, then `generate --run RUN --task TASK.json --seed N --params PARAMETERS.json`. The selected pattern supplies starting parameters. Render and verify the returned candidate. Read the target check's witness and local repair feedback. For a correction, keep the original, record any revised design with `--parent VERSION`, then generate with `--parent VERSION --basis TEXT`. Inspect the exact final preview and record a separate `review` before `finish`. The guide response provides the shared command reference. Use the native tooling and parameter rules below with the same run. Standalone sample commands are also available for explicit reproduction.
+
+
+The following explicit recipe reproduces an earlier build. In guided authoring use the RUN from guide and continue at generate after recording the design.
 
 ```text
 node SKILL/scripts/construct.cjs start --task TASK.json --title "Orthographic projection"

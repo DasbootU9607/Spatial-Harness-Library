@@ -20,12 +20,23 @@ function prepare({run,task,skill,sourceCaseIds: requestedReferences}){
   if(meta.requiresVisualReview){const review=checked.run.events.findLast(e=>e.type==='visual.review'&&e.candidateId===c.id);if(review?.details?.outcome!=='passed')throw Error('This skill requires a passed visual review of the exact final candidate');}
   const spec=R.read(task);
   if(JSON.stringify(P.safe(spec))!==JSON.stringify(spec))throw Error('Task contains private fields; fix the public specification before authoring');
-  let sourceCaseIds=requestedReferences??meta.officialReferences??[];
+  let sourceCaseIds=requestedReferences??(harness==='spatialviz-harness'?[]:meta.officialReferences??[]);
   if(!Array.isArray(sourceCaseIds)||sourceCaseIds.some(id=>!meta.officialReferences?.includes(id)))throw Error('Reference outside recorded skill scope');
   if(meta.referenceMode==='per-task'){
     const collection=R.read(path.join(R.ROOT,'catalog/harnesses.json')).harnesses.find(h=>h.id===harness).collection;
     const records=R.read(path.join(R.ROOT,'questions/data',collection+'.json'));
     sourceCaseIds=spec.provenance.references.map(ref=>{const record=records.find(q=>q.sourceId===ref);if(!record||!meta.officialReferences.includes(record.id))throw Error('Unregistered task reference '+ref);return record.id;});
+  }
+  if(c.designId){
+    const design=checked.run.events.find(e=>e.id===c.designId)?.details?.design;
+    const collection=R.read(path.join(R.ROOT,'questions/data/spatialviz.json'));
+    const seen=checked.run.events.filter(e=>e.type==='reference.viewed');
+    sourceCaseIds=design.sourceIds.map(id=>{
+      const q=collection.find(q=>q.sourceId===id);
+      if(!q || !seen.some(e=>e.details.sourceId===id && e.details.sourceSha256===R.sha(fs.readFileSync(path.join(R.ROOT,'questions',q.image)))))
+        throw Error('Missing viewed original or changed image: '+id);
+      return q.id;
+    });
   }
   const adapter=require('./observatory/adapters/'+meta.adapter+'.cjs');
   if(checked.test.verifier.revision!==adapter.identity.revision)throw Error('Verifier revision changed; run fresh verification');
@@ -59,7 +70,10 @@ function prepare({run,task,skill,sourceCaseIds: requestedReferences}){
     R.atomic(path.join(dir,'delivery.json'),{schemaVersion:1,runId:m.id,caseId:id,kind:'prepared-public-export',previews,taskSha256:c.sha256,processSha256:R.sha(fs.readFileSync(path.join(dir,'process.json')))});
     const item={schemaVersion:1,id,harnessId:harness,skillIds:[meta.id],sourceKind:spec.provenance?.sourceKind||'agent-authored',sourceCaseIds,category:spec.category,taskType:spec.taskType,difficulty:spec.difficulty||null,title:spec.title,description:spec.description,contentSha256:c.sha256,thumbnail:previews.find(x=>x.candidateId===c.id).path,taskArtifact:`records/${id}/task.json`,verification:{verdict:'passed',candidateId:c.id,fingerprints:c.fingerprints,report:`records/${id}/verification.json`},build:{runId:m.id,candidateId:c.id,usage:process.usage},process:`records/${id}/process.json`,eventsCsv:`records/${id}/events.csv`};
     catalog.cases.push(item);R.atomic(catalogFile,catalog);
-    return {case:item,urls,run,prepared:true,repeated:false,paths:['catalog/cases.json',relative,path.relative(R.ROOT,skillDir).replaceAll('\\','/')]};
+    const paths=['catalog/cases.json',relative];
+    const packagePath=path.posix.join(harness,'skills',path.basename(skillDir));
+    if(skillDir===path.resolve(R.ROOT,packagePath))paths.push(packagePath);
+    return {case:item,urls,run,prepared:true,repeated:false,paths};
   });
 }
 function synchronize(){

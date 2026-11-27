@@ -5,7 +5,28 @@ description: Construct and verify SpatialViz grid-paper folding questions from a
 
 # Paper Folding
 
-Start a recorded build before opening task-specific references. Choose the reasoning you want the learner to demonstrate using the [released mechanisms](references/coverage.md). All four letters label drawings. The final picture in the top row tells the learner where the punch passes through the folded stack. The choices show the original square sheet with its holes.
+## Author a new question
+
+Use the installed `scripts/construct.cjs` bridge's **guide** command for new tasks. Offer one strip and a corner fold, two parallel strips and a corner fold, two crossed strips and a corner fold, or a random choice, in one sentence in the user's language. A specified family or recognizable inference selects the matching choice directly. If several choices fit a specified inference, choose a compatible realization. Only ask when the request leaves the substantive choice open. Keep dimensions and similar implementation decisions with the author.
+
+`node scripts/construct.cjs guide` lists the IDs. Start with `guide --task TASK.json --choice ID`; for an explicit random request use `--choice random` and, when constrained, `--eligible ID1,ID2`. Read the returned [pattern](references/patterns.json) and open its original image with your image viewer. Record what you saw with `viewed --run RUN --id SOURCE_ID --observation TEXT`. Read a second, same-type source only to resolve a specific symmetry, occlusion or ambiguity. Keep the returned run for all steps and revisions.
+
+Before generation, write four short, instance-specific sentences to DESIGN.json and select a supported target. This is one possible design:
+
+```json
+{
+  "target": "diagonal-partner",
+  "inference": "Infer the extra hole mirrored through the final corner crease.",
+  "condition": "One ring lies inside the finite triangular flap and off the crease.",
+  "foil": "A foil unfolds only the earlier straight folds and misses its reflected partner.",
+  "evidence": "Trace each cell to the ring with and without the corner fold and identify a changed original cell."
+}
+```
+
+Use `design --run RUN --file DESIGN.json`, then `generate --run RUN --task TASK.json --seed N --params PARAMETERS.json`. The selected pattern supplies starting parameters. Render and verify the returned candidate. Read the target check's witness and local repair feedback. For a correction, keep the original, record any revised design with `--parent VERSION`, then generate with `--parent VERSION --basis TEXT`. Inspect the exact final preview and record a separate `review` before `finish`. The guide response provides the shared command reference. Use the native tooling and parameter rules below with the same run. Standalone sample commands are also available for explicit reproduction.
+
+
+The [released mechanisms](references/coverage.md) document the original paper-folding families in greater detail. All four letters label drawings. The final picture in the top row tells the learner where the punch passes through the folded stack. The choices show the original square sheet with its holes.
 
 ## Design from an empty grid
 

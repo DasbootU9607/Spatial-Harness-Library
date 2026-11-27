@@ -5,6 +5,28 @@ description: Design SpatialViz-style mechanical reasoning questions from a desir
 
 # Design from the motion to be explained
 
+## Author a new question
+
+Use the installed `scripts/construct.cjs` bridge's **guide** command for new tasks. Offer trace drum rotation to a suspended load, infer the guided slide velocity, separate planet spin and axle orbit, or a random choice, in one sentence in the user's language. A specified family or recognizable inference selects the matching choice directly. If several choices fit a specified inference, choose a compatible realization. Only ask when the request leaves the substantive choice open. Keep dimensions and similar implementation decisions with the author.
+
+`node scripts/construct.cjs guide` lists the IDs. Start with `guide --task TASK.json --choice ID`; for an explicit random request use `--choice random` and, when constrained, `--eligible ID1,ID2`. Read the returned [pattern](references/patterns.json) and open its original image with your image viewer. Record what you saw with `viewed --run RUN --id SOURCE_ID --observation TEXT`. Read a second, same-type source only to resolve a specific symmetry, occlusion or ambiguity. Keep the returned run for all steps and revisions.
+
+Before generation, write four short, instance-specific sentences to DESIGN.json and select a supported target. This is one possible design:
+
+```json
+{
+  "target": "critical-joint",
+  "inference": "Determine whether the suspended load rises or descends.",
+  "condition": "A taut line leaves the left rim of the keyed drum; the meshed driver establishes its spin.",
+  "foil": "Reading the right tangent predicts the opposite load motion.",
+  "evidence": "Rethread the same line on the opposite side and recompute the output, holding driver and observer fixed.",
+  "joint": "cord:D/W"
+}
+```
+
+Use `design --run RUN --file DESIGN.json`, then `generate --run RUN --task TASK.json --seed N --params PARAMETERS.json`. The selected pattern supplies starting parameters. Supply your authored native assembly as the `system` member of PARAMETERS.json; use the actual connection IDs in `joint`. Render and verify the returned candidate. Read the target check's witness and local repair feedback. For a correction, keep the original, record any revised design with `--parent VERSION`, then generate with `--parent VERSION --basis TEXT`. Inspect the exact final preview and record a separate `review` before `finish`. The guide response provides the shared command reference. Use the native tooling and parameter rules below with the same run. Standalone sample commands are also available for explicit reproduction.
+
+
 Name the observed body, quantity, observer and interval. Choose the intermediate decision the reader must make. A wheel can spin about its own axle while the axle orbits. A crank pin at the top of its path can have zero vertical speed while a horizontal yoke moves. These require different supports, observations and views.
 
 Official MechanicalSystem questions were authored by people drawing on public simulations. The benchmark uses FreeCAD in its programmatic workflows. The released material does not identify the software used to draw the original MechanicalSystem images. Attribute formal questions built with this package to **Spatial Harness original FreeCAD assembly**.
@@ -23,7 +45,7 @@ Use the installed package with its library runtime binding, Python with Pillow a
 node scripts/build.cjs --system assets/freecad/guided-slide.json --seed 427
 ```
 
-For a new design run `node scripts/construct.cjs start --task ABSOLUTE_SYSTEM_JSON --title "Mechanical assembly" --no-viewer` before drafting. Read the needed references through the recorder. Pass the returned directory to the build command with `--run`. For a revision also specify `--parent v001 --basis "Describe the correction"`.
+To reproduce the earlier standalone workflow, run `node scripts/construct.cjs start --task ABSOLUTE_SYSTEM_JSON --title "Mechanical assembly" --no-viewer` before drafting. Read the needed references through the recorder. Pass the returned directory to the build command with `--run`. For a revision also specify `--parent v001 --basis "Describe the correction"`.
 
 Formal generation requires a saved and reopened FCStd, measured native interfaces, actual FreeCAD viewport captures, rebuild parameters and the final composed PNG. Unavailable FreeCAD, an unsupported native interface or a failed native check stops the build. The overview and front photograph show the model. Letter badges and worksheet text are added after capture.
 

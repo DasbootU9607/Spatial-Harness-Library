@@ -1,0 +1,113 @@
+{
+  "type": "CubeReconstruction",
+  "choices": {
+    "opposite": {
+      "label": "Identify the opposite face",
+      "reference": "MentalFolding/CubeReconstruction/Level0/1",
+      "targets": [
+        "opposite-face"
+      ],
+      "defaults": {
+        "family": "color",
+        "mode": "opposite"
+      },
+      "accept": {
+        "family": [
+          "color"
+        ],
+        "mode": [
+          "opposite"
+        ]
+      },
+      "observed": "Face normals reached by folding the net distinguish opposite and adjacent colors.",
+      "construct": "Put a visually nearby color on an adjacent face and the true opposite farther along the fold path. Vary the layout and assignment; compare the two normals."
+    },
+    "color-view": {
+      "label": "Choose a colored corner view",
+      "reference": "MentalFolding/CubeReconstruction/Level0/0",
+      "targets": [
+        "visible-corner"
+      ],
+      "defaults": {
+        "family": "color",
+        "mode": "view"
+      },
+      "accept": {
+        "family": [
+          "color"
+        ],
+        "mode": [
+          "view"
+        ]
+      },
+      "observed": "Three faces meeting at a corner retain cyclic order after a proper rotation.",
+      "construct": "Use six different colors and a mirrored corner order as a plausible alternative. Vary the net and the target corner; evaluate the ordered triad."
+    },
+    "pips": {
+      "label": "Choose a pips corner view",
+      "reference": "MentalFolding/CubeReconstruction/Level1/0",
+      "targets": [
+        "face-orientation",
+        "visible-corner"
+      ],
+      "defaults": {
+        "family": "pips",
+        "mode": "view"
+      },
+      "accept": {
+        "family": [
+          "pips"
+        ],
+        "mode": [
+          "view"
+        ]
+      },
+      "observed": "Printed face orientation travels with the fold.",
+      "construct": "Use a directional pip pair on a visible face. Keep its identity and adjacent faces fixed while varying the mark direction in a foil. Check both ordered corner and orientation after folding."
+    },
+    "lines": {
+      "label": "Choose a lines corner view",
+      "reference": "MentalFolding/CubeReconstruction/Level1/20",
+      "targets": [
+        "face-orientation",
+        "visible-corner"
+      ],
+      "defaults": {
+        "family": "lines",
+        "mode": "view"
+      },
+      "accept": {
+        "family": [
+          "lines"
+        ],
+        "mode": [
+          "view"
+        ]
+      },
+      "observed": "Printed face orientation travels with the fold.",
+      "construct": "Use a directional stripe on a visible face. Keep its identity and adjacent faces fixed while varying the mark direction in a foil. Check both ordered corner and orientation after folding."
+    },
+    "mosaic": {
+      "label": "Choose a mosaic corner view",
+      "reference": "MentalFolding/CubeReconstruction/Level2/0",
+      "targets": [
+        "face-orientation",
+        "visible-corner"
+      ],
+      "defaults": {
+        "family": "mosaic",
+        "mode": "view"
+      },
+      "accept": {
+        "family": [
+          "mosaic"
+        ],
+        "mode": [
+          "view"
+        ]
+      },
+      "observed": "Printed face orientation travels with the fold.",
+      "construct": "Use a directional colored dot on a visible face. Keep its identity and adjacent faces fixed while varying the mark direction in a foil. Check both ordered corner and orientation after folding."
+    }
+  }
+}

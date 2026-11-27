@@ -1,0 +1,46 @@
+{
+  "type": "CrossSection",
+  "choices": {
+    "impossible": {
+      "label": "Identify an impossible section",
+      "reference": "VisualPenetration/CrossSection/Level1/6-pyramid_square-cone-frustum_triangle",
+      "targets": [
+        "seam-containment"
+      ],
+      "defaults": {
+        "mechanism": "parallel"
+      },
+      "accept": {
+        "mechanism": [
+          "parallel",
+          "three-tiers",
+          "mixed",
+          "point-contact",
+          "joined-rims",
+          "oblique"
+        ]
+      },
+      "observed": "The upper footprint lies inside the lower contact face; a cut cannot reverse this containment on their shared chord.",
+      "construct": "Vary the stack, axes and planes. Give three real cuts; make one option extend its upper chord beyond the supporting chord. Compare joins and witnesses at each option’s own scale."
+    },
+    "marked": {
+      "label": "Identify a directed marked cut",
+      "reference": "VisualPenetration/CrossSection/Level0/0-cone-frustum_square",
+      "targets": [
+        "marked-plane",
+        "marked-side"
+      ],
+      "defaults": {
+        "mechanism": "marked"
+      },
+      "accept": {
+        "mechanism": [
+          "marked"
+        ]
+      },
+      "observed": "The official stacks distinguish an actual section from an outside silhouette.",
+      "construct": "Place an offset cap, choose a plane through it or just clear of it, and retain all four options across variants. To test the sight arrow use unequal shoulders which visibly reverse.",
+      "extension": "The marked plane, observer arrow and paired cut are harness additions."
+    }
+  }
+}

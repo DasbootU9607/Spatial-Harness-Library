@@ -1,0 +1,96 @@
+{
+  "type": "ArrowMoving",
+  "choices": {
+    "single": {
+      "label": "Find a path for a single arrow",
+      "reference": "MentalAnimation/ArrowMoving/Level0/1-3-3-2",
+      "targets": [
+        "relative-heading",
+        "state-replay"
+      ],
+      "defaults": {
+        "mechanism": "single"
+      },
+      "accept": {
+        "mechanism": [
+          "single"
+        ]
+      },
+      "observed": "Forward is local to the current heading, which changes after movement.",
+      "construct": "Fix the end pose first and turn before the last leg. Offer a route with a matching position but wrong facing or one that assumed a fixed basis. Compare both final pose components."
+    },
+    "fleet-path": {
+      "label": "Choose a program connecting two boards",
+      "reference": "MentalAnimation/ArrowMoving/Level1/3-3-3-2",
+      "targets": [
+        "moving-occupant",
+        "state-replay"
+      ],
+      "defaults": {
+        "mechanism": "fleet-path"
+      },
+      "accept": {
+        "mechanism": [
+          "fleet-path"
+        ]
+      },
+      "observed": "An addressed cell selects its current arrow; landing on an occupied cell exchanges two occupants.",
+      "construct": "Use a swap followed by another move from an affected coordinate. A foil carries the old color or heading; compare every cell after complete replay."
+    },
+    "fleet-state": {
+      "label": "Choose the resulting board",
+      "reference": "MentalAnimation/ArrowMoving/Level1/0-3-3-2",
+      "targets": [
+        "moving-occupant",
+        "state-replay"
+      ],
+      "defaults": {
+        "mechanism": "fleet-state"
+      },
+      "accept": {
+        "mechanism": [
+          "fleet-state"
+        ]
+      },
+      "observed": "Each legal command updates the whole colored, oriented board.",
+      "construct": "Hold the path fixed. Offer boards differing at the displaced arrow, not only at the mover. Vary starting cells and command order while preserving a visible difference."
+    },
+    "checkpoint": {
+      "label": "Disambiguate paths at an intermediate pose",
+      "reference": "MentalAnimation/ArrowMoving/Level0/1-3-3-2",
+      "targets": [
+        "checkpoint"
+      ],
+      "defaults": {
+        "mechanism": "checkpoint"
+      },
+      "accept": {
+        "mechanism": [
+          "checkpoint"
+        ]
+      },
+      "observed": "Endpoint and heading constrain the final pose in the official single-arrow paths.",
+      "construct": "Make two paths share that pose but differ after step one. Show the checkpoint; dropping it should allow the competing route.",
+      "extension": "Showing a checkpoint to distinguish convergent paths is a harness extension."
+    },
+    "predecessor": {
+      "label": "Recover a starting pose",
+      "reference": "MentalAnimation/ArrowMoving/Level0/0-3-3-2",
+      "targets": [
+        "state-replay",
+        "relative-heading"
+      ],
+      "defaults": {
+        "mechanism": "predecessor"
+      },
+      "accept": {
+        "mechanism": [
+          "predecessor"
+        ]
+      },
+      "observed": "The final pose reflects all relative turns and step lengths.",
+      "construct": "Fix the program and end pose. Offer legal initial poses, including a start that works only in a fixed frame. Replay each from its own initial facing.",
+      "extension": "Reversing the endpoint task to ask for a predecessor is a harness extension."
+    }
+  }
+}

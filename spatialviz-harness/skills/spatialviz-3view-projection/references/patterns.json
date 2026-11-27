@@ -1,0 +1,64 @@
+{
+  "type": "3ViewProjection",
+  "choices": {
+    "cubes": {
+      "label": "Left view of a colored stack",
+      "reference": "MentalRotation/3ViewProjection/Level0-Cubes3View/0-3-3-3-15",
+      "targets": [
+        "nearest-surface"
+      ],
+      "defaults": {
+        "branch": "cubes"
+      },
+      "accept": {
+        "branch": [
+          "cubes"
+        ]
+      },
+      "observed": "Viewed along a ray, the nearest occupied cube supplies its square color. Opposite silhouettes can coincide.",
+      "construct": "Choose column heights and a marker that distinguish near from far on one ray. A same-silhouette recoloring isolates that decision; test all options against the given views."
+    },
+    "step": {
+      "label": "Visible edges of a stepped CAD solid",
+      "reference": "MentalRotation/3ViewProjection/Level1-CAD3View/00001614",
+      "targets": [
+        "cad-view"
+      ],
+      "defaults": {
+        "branch": "cad",
+        "mechanism": "step"
+      },
+      "accept": {
+        "branch": [
+          "cad"
+        ],
+        "mechanism": [
+          "step"
+        ]
+      },
+      "observed": "A ledge changes the outer or inner visible edge depending on the viewing direction.",
+      "construct": "Orient the step and choose a given and requested view that reveal different edges. Let one foil preserve the outline but move a riser. Check the reimported solid against the drawing."
+    },
+    "bores": {
+      "label": "Projection of holes in a CAD solid",
+      "reference": "MentalRotation/3ViewProjection/Level1-CAD3View/00001213",
+      "targets": [
+        "cad-view"
+      ],
+      "defaults": {
+        "branch": "cad",
+        "mechanism": "bores"
+      },
+      "accept": {
+        "branch": [
+          "cad"
+        ],
+        "mechanism": [
+          "bores"
+        ]
+      },
+      "observed": "A hole mouth is visible down the bore axis; looking across the plate can hide the opening.",
+      "construct": "Vary the two bore positions and radii on the plate; choose an axial target and a foil with a moved rim. Retain enough asymmetry to distinguish the projected holes."
+    }
+  }
+}

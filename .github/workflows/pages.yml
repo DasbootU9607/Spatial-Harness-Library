@@ -87,6 +87,7 @@ jobs:
           python -m pip install -r spatialviz-harness/paper-folding/requirements.txt
           python -c "from PIL import features; print('RAQM:', features.check('raqm'), 'FreeType:', features.version('freetype2'))"
           node --test tools/observatory/tests/official-rotation.test.cjs
+          node --test tools/observatory/tests/authoring.test.cjs tools/observatory/tests/rotation-folding-reasoning.test.cjs tools/observatory/tests/solids-reasoning.test.cjs tools/observatory/tests/motion-reasoning.test.cjs
           python -m unittest discover -s spatialviz-harness/official-projection
           python -m unittest discover -s spatialviz-harness/official-folding
           python -m unittest discover -s spatialviz-harness/mental-animation

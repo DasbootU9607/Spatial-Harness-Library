@@ -35,18 +35,20 @@ function start({task, title, harness, skill, runKind = 'task-generation', benchm
   if (viewer) try {require('./viewer.cjs').ensure(root);} catch {event(dir,'capture.gap',{reason:'Local viewer could not be reached. Recording continues; inspect viewer logs and local-network permissions.'});}
   return dir;
 }
-function resume(dir, task, sessionId = process.env.CODEX_THREAD_ID || process.env.CODEX_SESSION_ID) {
+function resume(dir, task, sessionId = U.discover().sessionId) {
   active(dir); const b = read(path.join(dir, 'binding.json'));
   if (b.task !== path.resolve(task) || !sessionId || b.sessionId !== sessionId) throw new Error('Exact task and session binding required to resume.');
   event(dir, 'run.resumed', {}); return dir;
 }
-function deliver(dir, file, {start = 1, end, sink = text => process.stdout.write(text)} = {}) {
+function deliver(dir, file, options = {}) {
+  const {start=1,end,sink=text=>process.stdout.write(text)}=options;
+  const delivery=options.delivery || (options.sink?'programmatic':'author');
   active(dir); const actionId = crypto.randomUUID(), bytes = fs.readFileSync(file), lines = bytes.toString('utf8').split(/\r?\n/);
   const delivered = start === 1 && end === undefined ? bytes : Buffer.from(lines.slice(start - 1, end).join('\n'));
   let outcome = 'delivered'; try {sink(delivered.toString('utf8'));} catch (e) {outcome = 'failed'; throw e;} finally {
     const temp = path.join(dir, 'artifacts', crypto.randomUUID() + '.txt'); fs.writeFileSync(temp, delivered);
     const ref = S.saveArtifact(dir, temp, 'resources'); fs.unlinkSync(temp);
-    event(dir, 'resource.read', {label: path.basename(file), start, end: end ?? lines.length, sha256: sha(delivered), sourceSha256: sha(bytes), outcome}, {actionId, evidenceRefs: [ref]});
+    event(dir, 'resource.read', {label: path.basename(file), delivery, start, end: end ?? lines.length, sha256: sha(delivered), sourceSha256: sha(bytes), outcome}, {actionId, evidenceRefs: [ref]});
   }
 }
 function note(dir, annotation, candidateId = null) {
@@ -58,15 +60,22 @@ function fingerprints(spec, bytes) {
   for (const key of ['geometry','question','options','answer','contract','rendering','generator']) out[key] = spec && Object.hasOwn(spec, key) ? sha(spec[key]) : null;
   return out;
 }
-function save(dir, file, {parentId = null, parentBasis = null, actionId = crypto.randomUUID()} = {}) {
+function save(dir, file, {parentId = null, parentBasis = null, actionId = crypto.randomUUID(), designId = null} = {}) {
   active(dir); refreshUsage(dir); const bytes = fs.readFileSync(file); let spec = null, previewUnavailable = null;
   try {spec = JSON.parse(bytes.toString('utf8'));} catch {previewUnavailable = 'Malformed JSON draft; no preview available.';}
+  if (active(dir).authoring) {
+    const state=S.readRun(dir);
+    if (designId && !state.events.some(e=>e.id===designId && e.type==='design.note' && e.details.design)) {
+      throw Error('Unknown generation design for this run.');
+    }
+    designId=designId || require('./authoring.cjs').latestDesign(state).id;
+  }
   return S.mutate(dir, (index, emit) => {
     const parent = index.candidates.find(c => c.id === parentId);
     if (parentId && (!parent || !parentBasis)) throw new Error('Parent requires an existing candidate and explicit basis.');
     const id = 'v' + String(index.candidates.length + 1).padStart(3, '0'), fp = fingerprints(spec, bytes), specPath = `candidates/${id}-${fp.specification.slice(0,12)}.json`;
     fs.writeFileSync(path.join(dir, specPath), bytes, {flag: 'wx'});
-    const c = {id, parentId, parentBasis, actionId, createdAt: now(), specPath, sha256: fp.specification, fingerprints: fp, previewUnavailable, changes: parent ? Object.keys(fp).filter(k => fp[k] !== parent.fingerprints[k]) : Object.keys(fp).filter(k => fp[k] !== null)};
+    const c = {id, ...(designId?{designId}:{}), parentId, parentBasis, actionId, createdAt: now(), specPath, sha256: fp.specification, fingerprints: fp, previewUnavailable, changes: parent ? Object.keys(fp).filter(k => fp[k] !== parent.fingerprints[k]) : Object.keys(fp).filter(k => fp[k] !== null)};
     index.candidates.push(c); emit('candidate.saved', c, {candidateId: id, actionId, evidenceRefs: [specPath]}); return c;
   });
 }
@@ -82,7 +91,15 @@ function execute(dir, command, args = [], {candidateId = null, cwd = ROOT, kind 
   const completed = event(dir, 'command.completed', {commandEventId: started.id, kind, exitCode: result.status, signal: result.signal || null}, {actionId, candidateId, evidenceRefs: refs});
   if (!report) return {exitCode: result.status ?? 1, actionId, commandEventId: started.id};
   let data = null, reportPath = null, reportSha256 = null;
-  if (fs.existsSync(report)) {reportPath = S.saveArtifact(dir,report,'reports'); reportSha256 = sha(fs.readFileSync(report)); try {data = read(report);} catch {}}
+  if (fs.existsSync(report)) {
+    try {data=read(report);} catch {}
+    if (c?.designId && data?.candidateId===candidateId && Array.isArray(data.checks) &&
+        JSON.stringify(data.testedFingerprints)===JSON.stringify(c.fingerprints)) {
+      require('./authoring.cjs').assess(dir,c,read(path.join(dir,c.specPath)),data);
+      atomic(report,data);
+    }
+    reportPath=S.saveArtifact(dir,report,'reports'); reportSha256=sha(fs.readFileSync(report));
+  }
   const bound = c && data && data.candidateId === candidateId && JSON.stringify(data.testedFingerprints) === JSON.stringify(c.fingerprints) && (!expectedFingerprints || JSON.stringify(expectedFingerprints) === JSON.stringify(c.fingerprints));
   const checks = Array.isArray(data?.checks) ? data.checks : [];
   let verdict = !data ? 'error' : ['passed','failed','unknown','error'].includes(data.verdict) ? data.verdict : 'unknown';
@@ -103,6 +120,18 @@ function render(dir, id, adapter) {
 function finish(dir, id, outcome = 'accepted') {
   active(dir); const c = id ? candidate(dir,id) : null, run = S.readRun(dir);
   if (outcome === 'accepted' && (!c || !run.tests.some(t => t.candidateId === id && t.verdict === 'passed' && t.binding === 'exact' && JSON.stringify(t.testedFingerprints) === JSON.stringify(c.fingerprints)))) throw new Error('Acceptance requires exact passing verification.');
+  if (outcome==='accepted' && run.manifest.authoring) {
+    const last=run.tests.findLast(t=>t.candidateId===id);
+    if (last?.verdict!=='passed' || !last.checks?.some(x=>x.designId===c.designId && x.verdict==='passed')) {
+      throw Error('The latest verification must pass the candidate-bound reasoning design.');
+    }
+    const review=run.events.findLast(e=>e.type==='visual.review' && e.candidateId===id);
+    const preview=run.events.findLast(e=>e.type==='render.completed' && e.candidateId===id &&
+      e.details.specification===c.sha256 && e.details.rendering===c.fingerprints.rendering);
+    if (!preview || review?.details.outcome!=='passed' || !review.details.review?.trim() || review.seq<preview.seq) {
+      throw Error('Inspect the final preview and record its visible distinguishing detail before finishing.');
+    }
+  }
   refreshUsage(dir,{finish:true}); S.appendEvent(dir,'run.finished',{outcome,finalCandidateId:id},{candidateId:id});
   return S.updateManifest(dir,{status:outcome,finalCandidateId:id,finishedAt:now()});
 }
