@@ -21,6 +21,7 @@ function jointView(j){
   svg=inside?wheel(110,57,rb,'',true)+wheel(110+rb-ra,57,ra,'')+text(75,64,b)+text(159,38,a):wheel(83-ra,57,ra,'')+wheel(83+rb,57,rb,'')+text(48,27,a)+text(125,33,b);
   lines=[a+' / '+b+'   '+n+' / '+m+' teeth',inside?'Inner teeth of '+b+' engage '+a+'.':'Outer rims in mesh.',s.arm==='frame'?'Both axle centers fixed.':'Axle centers ride on '+s.arm+'.'];break;
  }
+ case 'sleeve':svg=rect(34,50,169,14,'#a1b4b7',ink)+rect(80,39,30,8,teal)+rect(80,67,30,8,teal);lines=[a+' and '+b+' share an axis.','Free bearing between the hubs.'];break;
  case 'key':svg=rect(34,50,169,14,'#a1b4b7',ink)+rect(75,31,15,50,'#99d1c1',ink)+rect(150,31,15,50,'#eab880',ink)+rect(75,43,90,8,ink);lines=[a+' and '+b+' on one shaft.','Solid key joins both hubs.'];break;
  case 'helix':{
   svg=rect(30,27,135,57,'#d3e6db',ink);for(let x=42;x<145;x+=17)svg+=line(x,80,x+17,31,teal,3);
@@ -39,7 +40,7 @@ function jointView(j){
  case 'roll':svg=wheel(100,48,31,a)+line(33,80,170,80)+text(150,49,b);lines=['Rack locked below wheel '+a+'.',b+' marks its center. Pure rolling.'];break;
  case 'clutch':case 'ratchet':{
   svg=wheel(103,57,34,b)+line(135,40,158,22,amber,6)+pivot(158,22)+line(76,39,52,24,teal,6)+pivot(52,24);
-  lines=j.kind==='clutch'?[a+' drives clutch on drum '+b+'.','Locks CW, overruns CCW.','Holding brake in overrun.']:['Arm '+a+' strokes ratchet '+b+'.','Holding pawl blocks CCW.','Full stroke exceeds a tooth.'];break;
+  lines=j.kind==='clutch'?[a+' drives clutch on drum '+b+'.','Locks '+s.locks+', overruns '+(s.locks==='CW'?'CCW':'CW')+'.','Holding brake in overrun.']:['Arm '+a+' strokes ratchet '+b+'.','Holding pawl blocks CCW.','Full stroke exceeds a tooth.'];break;
  }
  case 'lug':{
   const right=s.phase===180;
@@ -84,8 +85,9 @@ function jointView(j){
  }
  return {svg,lines};
 }
-const titles={'parallel-guide':'Parallel motion',helix:'Helical mesh',mesh:'Gear mesh',key:'Keyed shaft',cord:'Winding drum',face:'Shaft-end views',lug:'Drive lug',clutch:'Overrunning clutch',ratchet:'Ratchet stroke',ground:'Frame lock',roll:'Rolling contact','index-tooth':'Index contact',racks:'Rack guides',stroke:'Captive yoke',yoke:'Captive yoke',rocker:'Slotted rocker','slide-arm':'Slotted guide',inertia:'Free housing',index:'Output slot',cams:'Loaded cam pair',grooves:'Guided spiral pin'};
+const titles={sleeve:'Free sleeve','parallel-guide':'Parallel motion',helix:'Helical mesh',mesh:'Gear mesh',key:'Keyed shaft',cord:'Winding drum',face:'Shaft-end views',lug:'Drive lug',clutch:'Overrunning clutch',ratchet:'Ratchet stroke',ground:'Frame lock',roll:'Rolling contact','index-tooth':'Index contact',racks:'Rack guides',stroke:'Captive yoke',yoke:'Captive yoke',rocker:'Slotted rocker','slide-arm':'Slotted guide',inertia:'Free housing',index:'Output slot',cams:'Loaded cam pair',grooves:'Guided spiral pin'};
 function figure(q){
+ if(q.assembly)return require('./assembly.cjs').assemblyFigure(q,{jointView,titles,text,rect,line,esc});
  const g=q.geometry,columns=g.joints.length===1?1:2,card=455,W=Math.max(640,columns*card+56);
  const top=178,h=128,end=top+Math.ceil(g.joints.length/columns)*h+18,H=end+150;
  let svg=rect(0,0,W,H,paper)+text(24,31,'MECHANICAL SYSTEM   /   MOTION STUDY',15,teal,700)+text(24,67,'Drive '+g.driver+'   '+g.input,29,ink,700)+text(24,96,'Find '+g.targets.map(t=>t.name+' ('+t.kind+')').join(' and ')+' '+g.scope+'.',15)+text(24,123,'CW = clockwise in the marked view. Matching letters denote one body.',12)+text(24,146,'Detail views use pitch outlines. Only the labeled joints transmit motion.',12);

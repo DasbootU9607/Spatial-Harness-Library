@@ -1,30 +1,33 @@
 ---
 name: spatialviz-mechanical-system
-description: Construct and verify SpatialViz Mechanical System questions about gear trains, carriers, one-sided engagement, slots, cams, guided followers and loads. Use to design a new assembly from a desired reasoning dependency or reproduce a MechanicalSystem question family.
+description: Design SpatialViz-Bench Mechanical System questions from a reasoning goal. Compose an assembly, draw its working contacts, derive unique motions from the final plate and test the dependence on a critical connection.
 ---
 
-# Design from the output
+# Design a mechanical reasoning question
 
-Name the physical quantity and its reference first. A wheel can have stationary orientation while its axle orbits. A slot can transmit sideways force while its pin moves along the slot. State whether the observer wants the initial tangent, net advance over a stroke, or motion over a full cycle. [Components and constraints](references/components.md) gives usable ports and failure conditions. [Coverage](references/coverage.md) maps the generator selectors to the actual official source IDs. Consult the per-item audit there when the source key depends on an unstated condition.
+Begin with one sentence describing the observation and the inference it requires. For example, “To tell which way the last wheel turns, the reader must identify which boundary carries the teeth.” Name the observer, the observed body, the quantity and the interval. A carrier's orbit, a planet's own orientation and motion relative to the carrier are three different observations. A ratchet's net advance over a return stroke needs different evidence from a pin's instantaneous tangent.
 
-## Work a design backwards
+## Work backward through the necessary contacts
 
-Suppose the target is the vertical motion of a load. Start with a drum on a fixed axis and a taut cord tangent to its left edge. A CW drum lifts the load because the leftmost point travels up. Move just the cord takeoff to the right and the same drum lowers it. Keep the drawing, driver and choices aligned between versions so a reader can locate the changed joint.
+1. Sketch the smallest system that can produce the observation. Work from the output contact back to the driver. At every step identify the remaining degree of freedom and the fact that determines it. Give an unpowered body its actual constraint. A bearing allows independent rotation. A holding brake arrests it under the specified condition.
+2. Decide what the reader must distinguish. The official planetary assemblies reuse the same sun, planet, ring and carrier. Locking the ring in one assembly and the sun in the other changes the zero-speed term in the carrier-relative mesh equations. Recompute both the spin and the orbit. For crown and bevel gears, differently shaped contact surfaces use the same rule: the engaged flanks must have compatible contact velocity. Mark the two viewing ends and each local CW tangent. See [official contrasts and evidence](references/design-contrasts.md).
+3. Work a substitution by hand. To test tooth-boundary recognition, start with a fixed-axis 20-tooth driver and a 40-tooth follower. With their centers 30 pitch units apart, their outside pitch circles touch. A CW driver turns the follower CCW. Keep the driver, mount a 60-tooth annulus on a *frame-located bearing*, and put its center 20 units from the driver's center. Its *inner* teeth now engage the driver. At that shared point the CW tangents align, so the ring turns CW. The frame locates both axes and leaves both spins free. A frame lock on the ring would jam this driven pair. Show the pitch boundaries, centers, input sense and the single active contact. An answer reversing the follower can reveal the reader applied the outside rule to the inside boundary. An answer of zero can reveal confusion between a located bearing and a locked body. A translation answer can reveal confusion between rim-point travel and rigid-body motion.
+4. Add a dependency with a purpose. Choose a second joint whose operation consumes the intermediate spin, pin velocity or engagement state. Remove or reconnect it on paper. Does the requested motion change, become free or stay fixed for a reason? If two parallel paths already determine the answer, ask about an output that really depends on the intended decision. An underdetermined output requires another visible constraint.
+5. Draw the assembled system first. Give each independently moving body a distinct ID. Assign pitch geometry, centers and axial planes. Position working ports at their physical contacts. Mark bearings, rigid couplings, locks and active flanks. Place the input and every output directly on their bodies. Use a local section where the front projection hides an active face or a guide direction. A line crossing or a common axis alone supplies no torque.
+6. Write four candidate motion tuples in the same observer frame and output order. Predict the result once with the correct constraints. For each alternative, change one inference and follow its consequences. Use those causal explanations as option feedback. Check all four again after a connection edit, especially if a previous distractor becomes correct.
 
-Now make the drum direction depend on a gear contact. Drive A CW, mesh its outside teeth with B, and key B to drum D. B and D turn CCW. The left-hand line descends and the right-hand line rises. An answer that follows A misses the gear mesh. An answer that follows D without examining the cord can fit only one arrangement.
+## Build the authored system
 
-To test conditional transmission, replace the key with a clutch locking on CW input and give the drum a holding brake in overrun. With A CW the CCW intermediate shaft releases the clutch. The brake holds the drum and the load stays still. Replace the clutch with the key again: the load descends. Explain the brake in the question because gravity could otherwise unwind a free drum. The solver must establish B's motion before deciding whether D is driven. The same exercise accepts a separate transfer idler to change B's sense.
+Write the members, connections, input, interval, observations and four hypotheses in the [system description format](references/system-format.md). The agent chooses the mechanism and geometry. Existing joint laws compose through shared body IDs. Start the task recorder before consulting task-specific references. For a system file in the current directory, start with the following commands in PowerShell from the package directory.
 
-## Construct a plate
-
-Run the installed `scripts/build.cjs` with an integer seed, a selector from the coverage table (or `wind-left`, `wind-right`, `clutch-hoist`) and optionally a parameters JSON path. For example, from the library root:
-
-```sh
-node spatialviz-harness/skills/spatialviz-mechanical-system/scripts/build.cjs 481 clutch-hoist
+```powershell
+$system = [IO.Path]::GetFullPath('system.json')
+$run = node scripts/construct.cjs start --task $system --title 'Mechanical reasoning design' --no-viewer
+node scripts/construct.cjs read --run $run --file references/components.md
+# Write the authored description to $system, then render and verify it.
+node scripts/build.cjs --system $system --seed 481 --run $run
 ```
 
-Direction is `CW` or `CCW` in the marked shaft-end view. For a slider driver, CW selects its down-track orientation. Set `teeth` (8–64) and `ratio` (integer 2–4) for the gear dimensions. The slider exercise accepts `drive` P or Q. The sweep accepts `stage` 0 or 180. The hoist clutch accepts `bypass` true for a rigid replacement and `transfer` direct or idler. Inputs are saved in the run. The result includes the final SVG, structured question, answer, choice explanations and verification. Read [maintenance and publication](references/maintenance.md) for review and release.
+For a saved design use `node scripts/build.cjs --system system.json --seed 481`. The command starts its own recorder and prints the candidate, final SVG, structured task and run directory. Inspect the actual plate separately with `node scripts/inspect.cjs final.svg`. The seed controls option placement. Change members, dimensions, ports or initial conditions to generate a new configuration.
 
-To build a new family, compose members and joints in `scripts/design.cjs`. Reuse a member letter for the same rigid body across detail views. Give independent sleeves different letters. A mesh accepts two wheels and a carrier or fixed frame. A key accepts co-rotating hubs. A cord consumes drum rotation and produces vertical line motion. A slot consumes relative point velocity and transmits only its normal component. A clutch requires a defined overrun state. Select distractors that reverse the active face, skip an idler, swap outputs or drive a released lug. Change the decisive joint and verify that the computed output changes. Include a new visible contact detail and its reader if a relationship requires a new symbol.
-
-For acceptance, open the rendered plate. Trace every required contact from the input label, check the shaft views, stroke interval and marked target, and solve the displayed options. Record the review on that candidate. Rebuild in the same run after a correction. The shared verifier reads the visible plate lettering and tangent arrows, independently solves the constraints and compares all four options.
+Open the final plate at reading size. Trace the numbered contacts and solve in the stated frame before seeing the computed result. Compare the physical output and the selected option. Save rejected drafts when the connections or text cannot be read. [Maintenance and release](references/maintenance.md) covers review, installation and publication. Use the [official coverage table](references/coverage.md), [component reference](references/components.md) and [individual audit](references/audit.json) for source analogues. The older selector builds remain available for regression and historical reproduction.

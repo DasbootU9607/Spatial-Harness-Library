@@ -1,0 +1,145 @@
+{
+  "title": "The offset wheel on a geared carrier",
+  "intent": "From the fixed front view, determine how wheel P changes its own orientation and how its bearing on H travels around the common fixed center of S and H at the shown instant.",
+  "references": [
+    "MentalAnimation/MechanicalSystem/Level0/5"
+  ],
+  "members": {
+    "A": {
+      "kind": "gear",
+      "at": [
+        -25,
+        0,
+        0
+      ],
+      "teeth": 20
+    },
+    "B": {
+      "kind": "gear",
+      "at": [
+        0,
+        0,
+        0
+      ],
+      "teeth": 30
+    },
+    "H": {
+      "kind": "carrier",
+      "at": [
+        0,
+        0,
+        1
+      ]
+    },
+    "S": {
+      "kind": "gear",
+      "at": [
+        0,
+        0,
+        1
+      ],
+      "teeth": 24
+    },
+    "I": {
+      "kind": "gear",
+      "at": [
+        21,
+        0,
+        1
+      ],
+      "teeth": 18
+    },
+    "P": {
+      "kind": "gear",
+      "at": [
+        21,
+        27,
+        1
+      ],
+      "teeth": 36
+    }
+  },
+  "connections": [
+    {
+      "kind": "mesh",
+      "ports": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "kind": "key",
+      "ports": [
+        "B",
+        "H"
+      ]
+    },
+    {
+      "kind": "ground",
+      "ports": [
+        "S"
+      ]
+    },
+    {
+      "kind": "mesh",
+      "ports": [
+        "S",
+        "I"
+      ],
+      "arm": "H"
+    },
+    {
+      "kind": "mesh",
+      "ports": [
+        "I",
+        "P"
+      ],
+      "arm": "H"
+    }
+  ],
+  "input": {
+    "member": "A",
+    "motion": "CW"
+  },
+  "targets": [
+    {
+      "name": "P",
+      "kind": "spin"
+    },
+    {
+      "name": "H",
+      "kind": "orbit"
+    }
+  ],
+  "interval": "instant",
+  "choices": [
+    {
+      "motions": [
+        "CCW",
+        "CCW"
+      ],
+      "reason": "The outer A-B mesh drives H counterclockwise through B. Seen from H, S turns clockwise. P follows S through two outer meshes at 24/36 of its relative speed. Adding H's larger counterclockwise speed gives P a counterclockwise frame spin."
+    },
+    {
+      "motions": [
+        "CW",
+        "CCW"
+      ],
+      "reason": "This reports P's clockwise spin as seen by a rider on H. The frame observer must also include H's counterclockwise angular velocity."
+    },
+    {
+      "motions": [
+        "CW",
+        "CW"
+      ],
+      "reason": "Giving B the same sense as A carries a clockwise error into H and P. The labeled A-B contact is an external mesh and reverses the drive."
+    },
+    {
+      "motions": [
+        "stationary",
+        "CCW"
+      ],
+      "reason": "Perfect cancellation would hold with equal end wheels. The 36-tooth P gains only two thirds of the clockwise relative speed of the 24-tooth S, leaving a counterclockwise frame spin."
+    }
+  ]
+}

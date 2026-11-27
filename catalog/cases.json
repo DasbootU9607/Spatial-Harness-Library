@@ -10515,6 +10515,282 @@
       },
       "process": "records/authored-06da8056176951950062c1b3/process.json",
       "eventsCsv": "records/authored-06da8056176951950062c1b3/events.csv"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "authored-00b9461d9da38dc9a593b897",
+      "harnessId": "spatialviz-harness",
+      "skillIds": [
+        "mechanical-system"
+      ],
+      "sourceKind": "agent-authored",
+      "sourceCaseIds": [
+        "spatialviz-bench:vqa:MentalAnimation:MechanicalSystem:Level0:5"
+      ],
+      "category": "MentalAnimation",
+      "taskType": "MechanicalSystem",
+      "difficulty": {
+        "label": "Unranked",
+        "basis": "Author-designed assembly"
+      },
+      "title": "The offset wheel on a geared carrier",
+      "description": "From the fixed front view, determine how wheel P changes its own orientation and how its bearing on H travels around the common fixed center of S and H at the shown instant.",
+      "contentSha256": "00b9461d9da38dc9a593b897a8372b5299815372472520bf5633c697aaee1d4d",
+      "thumbnail": "records/authored-00b9461d9da38dc9a593b897/v002-acbe5ed46811c9a7.svg",
+      "taskArtifact": "records/authored-00b9461d9da38dc9a593b897/task.json",
+      "verification": {
+        "verdict": "passed",
+        "candidateId": "v002",
+        "fingerprints": {
+          "specification": "00b9461d9da38dc9a593b897a8372b5299815372472520bf5633c697aaee1d4d",
+          "geometry": "4abb2ecb97c51685475be6313e0b7d1ec6b4b209a00d65566f4057e9c1c37368",
+          "question": "08ee3bbe73aa0d49224ccb0667c88759b8a401778d886a9ea3f6581ac12d4377",
+          "options": "49207f5f9f0cf65b576ee86567f82ac5114208c47285e1d76d17edb556188347",
+          "answer": "1e3591c2562fbad92816ab73fdf91f06944d2a7a9d47e72b239701714bdcf7e2",
+          "contract": "d16e2f83f7844bc78d3f0520c99c8000cd5bba7d4a8d5c64b1d276d93f241b7a",
+          "rendering": "84c692423b72365228545e47bb7570a840e54c6027bf72348fc396bc1d76b3d9",
+          "generator": "d0331c301446f64dc3caeddeac3281005c4d349397785e5ade6a7460a2271bfb"
+        },
+        "report": "records/authored-00b9461d9da38dc9a593b897/verification.json"
+      },
+      "build": {
+        "runId": "build-72c2fffa-37de-4c82-b896-99fc0b35a4e2",
+        "candidateId": "v002",
+        "usage": {
+          "schemaVersion": 2,
+          "runId": "build-72c2fffa-37de-4c82-b896-99fc0b35a4e2",
+          "source": "codex",
+          "runtime": "Codex Desktop",
+          "status": "measured",
+          "elapsedMs": 487696,
+          "elapsedKind": "wall-clock",
+          "scope": "Runtime-reported usage between the start baseline and finish snapshot of this session. In-flight or delayed usage, earlier conversation, other agents and later delivery are excluded. This is an observed interval, not a complete billed task total.",
+          "scopeComplete": false,
+          "observedTokens": {
+            "input_tokens": 932377,
+            "cached_input_tokens": 906240,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 5601,
+            "reasoning_output_tokens": 763,
+            "total_tokens": 937978
+          },
+          "tokens": {
+            "input_tokens": null,
+            "cached_input_tokens": null,
+            "cache_write_input_tokens": null,
+            "output_tokens": null,
+            "reasoning_output_tokens": null,
+            "total_tokens": null
+          },
+          "models": [
+            {
+              "provider": "openai",
+              "model": "gpt-6.2-astra",
+              "reasoningEffort": "xhigh",
+              "tokens": {
+                "input_tokens": 932377,
+                "cached_input_tokens": 906240,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 5601,
+                "reasoning_output_tokens": 763,
+                "total_tokens": 937978
+              },
+              "observations": 23
+            }
+          ],
+          "missingFields": [],
+          "issues": [],
+          "observations": 23
+        }
+      },
+      "process": "records/authored-00b9461d9da38dc9a593b897/process.json",
+      "eventsCsv": "records/authored-00b9461d9da38dc9a593b897/events.csv"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "authored-bc68d000175581634942beb3",
+      "harnessId": "spatialviz-harness",
+      "skillIds": [
+        "mechanical-system"
+      ],
+      "sourceKind": "agent-authored",
+      "sourceCaseIds": [
+        "spatialviz-bench:vqa:MentalAnimation:MechanicalSystem:Level0:10",
+        "spatialviz-bench:vqa:MentalAnimation:MechanicalSystem:Level0:12",
+        "spatialviz-bench:vqa:MentalAnimation:MechanicalSystem:Level0:34",
+        "spatialviz-bench:vqa:MentalAnimation:MechanicalSystem:Level1:6"
+      ],
+      "category": "MentalAnimation",
+      "taskType": "MechanicalSystem",
+      "difficulty": {
+        "label": "Unranked",
+        "basis": "Author-designed assembly"
+      },
+      "title": "Face-wheel drive with a crank slide",
+      "description": "From the frame, determine whether rotor C turns and slide Y travels at the illustrated instant by tracing the selected face and the independent keyed crank.",
+      "contentSha256": "bc68d000175581634942beb336ff63a0da9308d107c8fbbf693eb2e00e2052c9",
+      "thumbnail": "records/authored-bc68d000175581634942beb3/v002-3297bc4f186a151e.svg",
+      "taskArtifact": "records/authored-bc68d000175581634942beb3/task.json",
+      "verification": {
+        "verdict": "passed",
+        "candidateId": "v002",
+        "fingerprints": {
+          "specification": "bc68d000175581634942beb336ff63a0da9308d107c8fbbf693eb2e00e2052c9",
+          "geometry": "a07e8c8666b5e14ecff0dc36f50b83b2a1bf77a6215fce572cb65b1988c3eba9",
+          "question": "f48adec41be883578d92d61fbe79997cff47cc4a3520ccd685818e672beeae7e",
+          "options": "f37c569e1e69740d886597ee4f9c738c481fa1103cfc9b43d50f1448edc60e8b",
+          "answer": "7b685d65aaadebfe8589164a6fa0b03f0a6c1730cbb41fd88754228b411e86b6",
+          "contract": "d16e2f83f7844bc78d3f0520c99c8000cd5bba7d4a8d5c64b1d276d93f241b7a",
+          "rendering": "84c692423b72365228545e47bb7570a840e54c6027bf72348fc396bc1d76b3d9",
+          "generator": "f59727087cd65c8a79d73af6f9096fbeed0ae56c192d4c13ac9ca0987c424763"
+        },
+        "report": "records/authored-bc68d000175581634942beb3/verification.json"
+      },
+      "build": {
+        "runId": "build-ee10150e-fbce-4e20-a678-b9628c1bab71",
+        "candidateId": "v002",
+        "usage": {
+          "schemaVersion": 2,
+          "runId": "build-ee10150e-fbce-4e20-a678-b9628c1bab71",
+          "source": "codex",
+          "runtime": "Codex Desktop",
+          "status": "measured",
+          "elapsedMs": 467614,
+          "elapsedKind": "wall-clock",
+          "scope": "Runtime-reported usage between the start baseline and finish snapshot of this session. In-flight or delayed usage, earlier conversation, other agents and later delivery are excluded. This is an observed interval, not a complete billed task total.",
+          "scopeComplete": false,
+          "observedTokens": {
+            "input_tokens": 1153202,
+            "cached_input_tokens": 1114112,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 6866,
+            "reasoning_output_tokens": 1545,
+            "total_tokens": 1160068
+          },
+          "tokens": {
+            "input_tokens": null,
+            "cached_input_tokens": null,
+            "cache_write_input_tokens": null,
+            "output_tokens": null,
+            "reasoning_output_tokens": null,
+            "total_tokens": null
+          },
+          "models": [
+            {
+              "provider": "openai",
+              "model": "gpt-6.2-astra",
+              "reasoningEffort": "xhigh",
+              "tokens": {
+                "input_tokens": 1153202,
+                "cached_input_tokens": 1114112,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 6866,
+                "reasoning_output_tokens": 1545,
+                "total_tokens": 1160068
+              },
+              "observations": 22
+            }
+          ],
+          "missingFields": [],
+          "issues": [],
+          "observations": 22
+        }
+      },
+      "process": "records/authored-bc68d000175581634942beb3/process.json",
+      "eventsCsv": "records/authored-bc68d000175581634942beb3/events.csv"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "authored-787aa94100d865b658688aad",
+      "harnessId": "spatialviz-harness",
+      "skillIds": [
+        "mechanical-system"
+      ],
+      "sourceKind": "agent-authored",
+      "sourceCaseIds": [
+        "spatialviz-bench:vqa:MentalAnimation:MechanicalSystem:Level0:10",
+        "spatialviz-bench:vqa:MentalAnimation:MechanicalSystem:Level0:12",
+        "spatialviz-bench:vqa:MentalAnimation:MechanicalSystem:Level0:34",
+        "spatialviz-bench:vqa:MentalAnimation:MechanicalSystem:Level1:6"
+      ],
+      "category": "MentalAnimation",
+      "taskType": "MechanicalSystem",
+      "difficulty": {
+        "label": "Unranked",
+        "basis": "Author-designed assembly"
+      },
+      "title": "Face-wheel drive with a crank slide",
+      "description": "From the frame, determine whether rotor C turns and slide Y travels at the illustrated instant by tracing the selected face and the independent keyed crank.",
+      "contentSha256": "787aa94100d865b658688aad7938a395690b1d0746097fdc14bdd8e9098fa5c4",
+      "thumbnail": "records/authored-787aa94100d865b658688aad/v002-3f5f4ac9fa5015d4.svg",
+      "taskArtifact": "records/authored-787aa94100d865b658688aad/task.json",
+      "verification": {
+        "verdict": "passed",
+        "candidateId": "v002",
+        "fingerprints": {
+          "specification": "787aa94100d865b658688aad7938a395690b1d0746097fdc14bdd8e9098fa5c4",
+          "geometry": "6caa92cb7a81c6a36754e4a381a5dd7ee8baca4f5b6df2457d8fac8c3b28c5c9",
+          "question": "f48adec41be883578d92d61fbe79997cff47cc4a3520ccd685818e672beeae7e",
+          "options": "f37c569e1e69740d886597ee4f9c738c481fa1103cfc9b43d50f1448edc60e8b",
+          "answer": "7036d2b49dda9589626b67f22cbcc47ced6eb2d952fdd8856d72bc2df6217b10",
+          "contract": "d16e2f83f7844bc78d3f0520c99c8000cd5bba7d4a8d5c64b1d276d93f241b7a",
+          "rendering": "84c692423b72365228545e47bb7570a840e54c6027bf72348fc396bc1d76b3d9",
+          "generator": "00a0ddf1b78c0530a5c8ed3dd28d59d26e2cf37e006d4eb90b41fcdb70423131"
+        },
+        "report": "records/authored-787aa94100d865b658688aad/verification.json"
+      },
+      "build": {
+        "runId": "build-1078dc21-91c6-41c1-a256-d07c85f94308",
+        "candidateId": "v002",
+        "usage": {
+          "schemaVersion": 2,
+          "runId": "build-1078dc21-91c6-41c1-a256-d07c85f94308",
+          "source": "codex",
+          "runtime": "Codex Desktop",
+          "status": "measured",
+          "elapsedMs": 457072,
+          "elapsedKind": "wall-clock",
+          "scope": "Runtime-reported usage between the start baseline and finish snapshot of this session. In-flight or delayed usage, earlier conversation, other agents and later delivery are excluded. This is an observed interval, not a complete billed task total.",
+          "scopeComplete": false,
+          "observedTokens": {
+            "input_tokens": 1126794,
+            "cached_input_tokens": 1087872,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 6838,
+            "reasoning_output_tokens": 1545,
+            "total_tokens": 1133632
+          },
+          "tokens": {
+            "input_tokens": null,
+            "cached_input_tokens": null,
+            "cache_write_input_tokens": null,
+            "output_tokens": null,
+            "reasoning_output_tokens": null,
+            "total_tokens": null
+          },
+          "models": [
+            {
+              "provider": "openai",
+              "model": "gpt-6.2-astra",
+              "reasoningEffort": "xhigh",
+              "tokens": {
+                "input_tokens": 1126794,
+                "cached_input_tokens": 1087872,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 6838,
+                "reasoning_output_tokens": 1545,
+                "total_tokens": 1133632
+              },
+              "observations": 21
+            }
+          ],
+          "missingFields": [],
+          "issues": [],
+          "observations": 21
+        }
+      },
+      "process": "records/authored-787aa94100d865b658688aad/process.json",
+      "eventsCsv": "records/authored-787aa94100d865b658688aad/events.csv"
     }
   ]
 }

@@ -1,0 +1,72 @@
+{
+  "title": "Pinion at the inner rim",
+  "intent": "Identify the engaged tooth boundary to infer the follower's spin.",
+  "references": [
+    "MentalAnimation/MechanicalSystem/Level1/4"
+  ],
+  "members": {
+    "P": {
+      "kind": "gear",
+      "at": [
+        20,
+        0,
+        0
+      ],
+      "teeth": 20
+    },
+    "R": {
+      "kind": "ring",
+      "at": [
+        0,
+        0,
+        0
+      ],
+      "teeth": 60
+    }
+  },
+  "connections": [
+    {
+      "kind": "mesh",
+      "ports": [
+        "P",
+        "R"
+      ]
+    }
+  ],
+  "input": {
+    "member": "P",
+    "motion": "CW"
+  },
+  "targets": [
+    {
+      "name": "R",
+      "kind": "spin"
+    }
+  ],
+  "choices": [
+    {
+      "motions": [
+        "CW"
+      ],
+      "reason": "The pinion and internal ring move together at their common tangent. Both turn clockwise."
+    },
+    {
+      "motions": [
+        "CCW"
+      ],
+      "reason": "Reversing the ring treats the contact as a pair of exterior gears."
+    },
+    {
+      "motions": [
+        "stationary"
+      ],
+      "reason": "The frame locates the ring axle. Its bearing allows rotation."
+    },
+    {
+      "motions": [
+        "translates"
+      ],
+      "reason": "A tooth moves along the rim. The ring center stays on its fixed axle."
+    }
+  ]
+}

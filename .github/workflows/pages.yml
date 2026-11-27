@@ -52,7 +52,7 @@ jobs:
         run: |
           node tools/check.cjs
           node --test tools/observatory/tests/runtime.test.cjs tools/observatory/tests/schema.test.cjs tools/observatory/tests/rotation-domains.test.cjs
-          node --test spatialviz-harness/skills/spatialviz-mechanical-system/scripts/domain.test.cjs
+          node --test spatialviz-harness/skills/spatialviz-mechanical-system/scripts/domain.test.cjs spatialviz-harness/skills/spatialviz-mechanical-system/scripts/system.test.cjs
           node --test tools/observatory/tests/process-presentation.test.cjs
           node --test tools/observatory/tests/time-privacy.test.cjs
       - name: Install browser checks

@@ -6,7 +6,7 @@ function solve(g){
  const names=Object.keys(g.components), rows=[], rules=[];
  const idx=n=>{const i=names.indexOf(n);if(i<0)throw Error('Unknown member '+n);return i};
  const equation=(terms,rhs=0)=>{const row=Array(names.length+1).fill(0);for(const [name,k] of terms)row[idx(name)]+=k;row[names.length]=rhs;rows.push(row)};
- const positive=['CW','right','down-right','down-left'],negative=['CCW','left','up-left','up-right'];
+ const positive=['CW','right','up','down-right','down-left'],negative=['CCW','left','down','up-left','up-right'];
  if(!positive.includes(g.input)&&!negative.includes(g.input))throw Error('Unspecified driver sense');
  const direction=positive.includes(g.input)?1:-1;
  equation([[g.driver,1]],direction);
@@ -25,6 +25,7 @@ function solve(g){
    }
    case 'parallel-guide':equation([[a,1]]);reason='The parallel linkage holds the orientation of '+a+' while its center travels on the arm.';break;
    case 'ground':equation([[a,1]]);reason=a+' is locked to the frame.';break;
+   case 'sleeve':reason='The bearing permits independent spin of '+a+' and '+b+'.';break;
    case 'key':ratio(1);reason='The solid key makes '+a+' and '+b+' rotate together.';break;
    case 'helix':ratio(-1);reason='Equal flank-normal speeds on the two unwrapped pitch surfaces require opposite rotation, since their CW motions cross a tooth in opposite senses.';break;
    case 'face':ratio(s.bank==='near'?1:-1);reason='At the tooth section the two rim tangents must coincide. The marked CW tangents '+(s.bank==='near'?'agree.':'oppose one another.');break;
@@ -43,7 +44,7 @@ function solve(g){
     reason='One positive angular increment changes the sampled radii by '+da+' and '+db+' mm. '+(j.kind==='cams'?'The two radii must sum to the fixed center distance.':'Both grooves must reach the same translating pin displacement.');break;
    }
    case 'ratchet':equation([[b,1]],1);reason='At least one drive stroke catches a steep tooth face. The holding pawl blocks CCW retreat over the return stroke.';break;
-   case 'lug':case 'clutch':nonlinear.push(j);reason=j.kind==='lug'?'At the displayed phase only '+b+' presents a lug. CCW pushes its square face; CW retreats and the detent holds.':'The clutch locks for CW input. Its brake holds the loaded drum when the clutch overruns.';break;
+   case 'lug':case 'clutch':nonlinear.push(j);reason=j.kind==='lug'?'At the displayed phase only '+b+' presents a lug. CCW pushes its square face; CW retreats and the detent holds.':'The clutch locks for '+s.locks+' input. Its brake holds the output when the clutch overruns.';break;
    default:throw Error('Unknown connection '+j.kind);
   }
   rules.push({ports:j.ports,reason});
@@ -62,7 +63,7 @@ function solve(g){
  let values=reduce();
  while(nonlinear.length){
   const k=nonlinear.findIndex(j=>Number.isFinite(values[j.ports[0]]));if(k<0)throw Error('Undetermined engagement');
-  const [j]=nonlinear.splice(k,1),[a,b]=j.ports,active=j.kind==='clutch'?values[a]>0:values[a]<0;
+  const [j]=nonlinear.splice(k,1),[a,b]=j.ports,active=j.kind==='clutch'?sign(values[a])===(j.settings.locks==='CW'?1:-1):values[a]<0;
   equation([[b,1],[a,active?-1:0]]);values=reduce();
  }
  const motion=(name,kind)=>{

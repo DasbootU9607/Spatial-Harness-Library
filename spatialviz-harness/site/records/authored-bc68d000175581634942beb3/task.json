@@ -1,0 +1,336 @@
+{
+  "schemaVersion": 1,
+  "title": "Face-wheel drive with a crank slide",
+  "description": "From the frame, determine whether rotor C turns and slide Y travels at the illustrated instant by tracing the selected face and the independent keyed crank.",
+  "category": "MentalAnimation",
+  "taskType": "MechanicalSystem",
+  "difficulty": {
+    "label": "Unranked",
+    "basis": "Author-designed assembly"
+  },
+  "geometry": {
+    "components": {
+      "A": "wheel",
+      "B": "wheel",
+      "K": "crank",
+      "Y": "slider",
+      "C": "rotor"
+    },
+    "joints": [
+      {
+        "kind": "face",
+        "ports": [
+          "A",
+          "B"
+        ],
+        "settings": {
+          "bank": "far",
+          "form": "double face wheel"
+        }
+      },
+      {
+        "kind": "clutch",
+        "ports": [
+          "B",
+          "C"
+        ],
+        "settings": {
+          "locks": "CW"
+        }
+      },
+      {
+        "kind": "key",
+        "ports": [
+          "A",
+          "K"
+        ],
+        "settings": {}
+      },
+      {
+        "kind": "yoke",
+        "ports": [
+          "K",
+          "Y"
+        ],
+        "settings": {
+          "pin": "top",
+          "radius": 12
+        }
+      }
+    ],
+    "driver": "A",
+    "input": "CW",
+    "targets": [
+      {
+        "name": "C",
+        "kind": "spin"
+      },
+      {
+        "name": "Y",
+        "kind": "horizontal"
+      }
+    ],
+    "scope": "at the shown instant"
+  },
+  "assembly": {
+    "A": {
+      "kind": "wheel",
+      "at": [
+        0,
+        0,
+        0
+      ],
+      "radius": 10
+    },
+    "B": {
+      "kind": "wheel",
+      "at": [
+        0,
+        20,
+        0
+      ],
+      "radius": 10
+    },
+    "K": {
+      "kind": "crank",
+      "at": [
+        0,
+        0,
+        1
+      ],
+      "radius": 12
+    },
+    "Y": {
+      "kind": "slider",
+      "at": [
+        0,
+        -12,
+        1
+      ],
+      "radius": 6
+    },
+    "C": {
+      "kind": "rotor",
+      "at": [
+        0,
+        20,
+        1
+      ],
+      "radius": 8
+    }
+  },
+  "question": "Drive A CW. Determine C (spin) and Y (horizontal) at the shown instant.",
+  "polarity": "positive",
+  "options": [
+    {
+      "label": "A",
+      "type": "text",
+      "text": "C stationary / Y stationary"
+    },
+    {
+      "label": "B",
+      "type": "text",
+      "text": "C CW / Y stationary"
+    },
+    {
+      "label": "C",
+      "type": "text",
+      "text": "C stationary / Y right"
+    },
+    {
+      "label": "D",
+      "type": "text",
+      "text": "C CW / Y right"
+    }
+  ],
+  "answer": {
+    "index": 2,
+    "explanation": "Drive A CW. At the tooth section the two rim tangents must coincide. The marked CW tangents oppose one another. A positive, B negative. The clutch locks for CW input. Its brake holds the output when the clutch overruns. B negative, C held. The solid key makes A and K rotate together. A positive, K positive. The top crank pin sweeps right under CW drive. The slot takes the transverse component along the horizontal slide. K positive, Y positive. The requested motion is stationary / right (in listed output order).",
+    "options": [
+      {
+        "label": "A",
+        "explanation": "Y is right, while this choice gives stationary. The brake can hold C when B turns CCW. Treating that brake as a stop for Y ignores the separate solid key from A to K and the horizontal velocity of the upper pin."
+      },
+      {
+        "label": "B",
+        "explanation": "C is stationary, while this choice gives CW. Y is right, while this choice gives stationary. CW motion of C requires the clutch to engage. A stationary Y would require zero pin travel across its slot, but a clockwise crank carries its top pin horizontally at this instant."
+      },
+      {
+        "label": "C",
+        "explanation": "This tuple matches the derived motions. For C to stay still, B must turn CCW and overrun the CW-locking clutch. For Y to go right, the top pin on the keyed crank K must sweep to the right."
+      },
+      {
+        "label": "D",
+        "explanation": "C is stationary, while this choice gives CW. For C to turn CW, B must turn CW and engage the clutch. The solid key also turns K clockwise, sending its upper pin and the horizontal slide to the right."
+      }
+    ]
+  },
+  "contract": {
+    "answerUnique": true,
+    "scope": "at the shown instant"
+  },
+  "provenance": {
+    "sourceKind": "agent-authored",
+    "generationMethod": "Spatial Harness mechanical contact schematics",
+    "sourceRevision": "c27f9111a2674f2ea03e2ca1f5833326cf1eec1a",
+    "series": "system-design",
+    "references": [
+      "MentalAnimation/MechanicalSystem/Level0/10",
+      "MentalAnimation/MechanicalSystem/Level0/12",
+      "MentalAnimation/MechanicalSystem/Level0/34",
+      "MentalAnimation/MechanicalSystem/Level1/6"
+    ]
+  },
+  "generator": {
+    "id": "mechanical-system",
+    "revision": "26a81651b1ede5478e637e692d22b7ee85ad475979f93ac2119fd9ee6e55ba31",
+    "seed": 419,
+    "parameters": {
+      "system": {
+        "title": "Face-wheel drive with a crank slide",
+        "intent": "From the frame, determine whether rotor C turns and slide Y travels at the illustrated instant by tracing the selected face and the independent keyed crank.",
+        "references": [
+          "MentalAnimation/MechanicalSystem/Level0/10",
+          "MentalAnimation/MechanicalSystem/Level0/12",
+          "MentalAnimation/MechanicalSystem/Level0/34",
+          "MentalAnimation/MechanicalSystem/Level1/6"
+        ],
+        "members": {
+          "A": {
+            "kind": "wheel",
+            "at": [
+              0,
+              0,
+              0
+            ],
+            "radius": 10
+          },
+          "B": {
+            "kind": "wheel",
+            "at": [
+              0,
+              20,
+              0
+            ],
+            "radius": 10
+          },
+          "K": {
+            "kind": "crank",
+            "at": [
+              0,
+              0,
+              1
+            ],
+            "radius": 12
+          },
+          "Y": {
+            "kind": "slider",
+            "at": [
+              0,
+              -12,
+              1
+            ],
+            "radius": 6
+          },
+          "C": {
+            "kind": "rotor",
+            "at": [
+              0,
+              20,
+              1
+            ],
+            "radius": 8
+          }
+        },
+        "connections": [
+          {
+            "kind": "face",
+            "ports": [
+              "A",
+              "B"
+            ],
+            "form": "double face wheel",
+            "bank": "far"
+          },
+          {
+            "kind": "clutch",
+            "ports": [
+              "B",
+              "C"
+            ],
+            "locks": "CW"
+          },
+          {
+            "kind": "key",
+            "ports": [
+              "A",
+              "K"
+            ]
+          },
+          {
+            "kind": "yoke",
+            "ports": [
+              "K",
+              "Y"
+            ],
+            "radius": 12
+          }
+        ],
+        "input": {
+          "member": "A",
+          "motion": "CW"
+        },
+        "interval": "instant",
+        "targets": [
+          {
+            "name": "C",
+            "kind": "spin"
+          },
+          {
+            "name": "Y",
+            "kind": "horizontal"
+          }
+        ],
+        "choices": [
+          {
+            "motions": [
+              "stationary",
+              "right"
+            ],
+            "reason": "For C to stay still, B must turn CCW and overrun the CW-locking clutch. For Y to go right, the top pin on the keyed crank K must sweep to the right."
+          },
+          {
+            "motions": [
+              "CW",
+              "right"
+            ],
+            "reason": "For C to turn CW, B must turn CW and engage the clutch. The solid key also turns K clockwise, sending its upper pin and the horizontal slide to the right."
+          },
+          {
+            "motions": [
+              "stationary",
+              "stationary"
+            ],
+            "reason": "The brake can hold C when B turns CCW. Treating that brake as a stop for Y ignores the separate solid key from A to K and the horizontal velocity of the upper pin."
+          },
+          {
+            "motions": [
+              "CW",
+              "stationary"
+            ],
+            "reason": "CW motion of C requires the clutch to engage. A stationary Y would require zero pin travel across its slot, but a clockwise crank carries its top pin horizontally at this instant."
+          }
+        ]
+      }
+    }
+  },
+  "rendering": {
+    "id": "mechanical-system",
+    "revision": "26a81651b1ede5478e637e692d22b7ee85ad475979f93ac2119fd9ee6e55ba31",
+    "format": "svg"
+  },
+  "verifier": {
+    "id": "mechanical-system",
+    "revision": "26a81651b1ede5478e637e692d22b7ee85ad475979f93ac2119fd9ee6e55ba31"
+  }
+}

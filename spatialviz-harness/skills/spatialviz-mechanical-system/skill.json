@@ -8,7 +8,7 @@
   "referenceMode": "per-task",
   "adapter": "mechanical-system",
   "requiresVisualReview": true,
-  "description": "Build uniquely solvable contact schematics from mechanical output constraints.",
+  "description": "Design assemblies from a reasoning goal and verify the motion inferred from their printed contacts.",
   "officialReferences": [
     "spatialviz-bench:vqa:MentalAnimation:MechanicalSystem:Level0:0",
     "spatialviz-bench:vqa:MentalAnimation:MechanicalSystem:Level0:1",
@@ -92,8 +92,9 @@
     "spatialviz-bench:vqa:MentalAnimation:MechanicalSystem:Level1:39"
   ],
   "steps": [
-    "Choose the observed body and frame",
-    "Locate the active contact and constrain each degree of freedom",
+    "Specify the observation, frame and necessary inference",
+    "Work backward to members, active contacts, geometry and constraints",
+    "Write the custom system and draw the complete assembly",
     "Solve from visible conditions",
     "Compare all four options and review the final plate"
   ]
