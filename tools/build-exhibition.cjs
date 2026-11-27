@@ -1,6 +1,20 @@
 'use strict';
 const fs=require('node:fs'),path=require('node:path'),R=require('./observatory/runtime.cjs');
 const root=R.ROOT;
+const sourceManifest=require('../spatialviz-harness/penetration/official-source.json');
+const penetrationModules={CrossSection:'cross_section',CubeAssembly:'cube_assembly',CubeCounting:'cube_counting'};
+function hasPenetrationReceipt(task){
+ const receipt=task.provenance?.officialTools;
+ const module=penetrationModules[task.taskType];
+ const entry='create_visual_penetration/create_'+module+'.py';
+ const compositor='create_composite_image_'+task.taskType;
+ return Boolean(module && receipt?.revision===sourceManifest.revision && receipt.modelEntry===entry
+  && receipt.freecadLaunches?.some(name=>/^freecad(?:\.exe)?$/i.test(name))
+  && receipt.compositor===compositor && receipt.observedFunctions?.[compositor]>0
+  && receipt.compositeSha256===task.rendering?.sha256
+  && [entry,'utils.py','visual_penetration_tasks_utils.py'].every(file=>receipt.sourceFiles?.[file]===sourceManifest.files[file])
+  && receipt.nativeFiles?.some(item=>/\.FCStd$/i.test(item.file)));
+}
 function discover(){
  const config=R.read(path.join(root,'catalog/harnesses.json')),cases=R.read(path.join(root,'catalog/cases.json')).cases,skills=[],official=[];
  for(const h of config.harnesses){
@@ -13,10 +27,10 @@ function discover(){
   const task=R.read(path.join(root,c.harnessId,'site',c.taskArtifact));
   c.generationMethod=task.provenance?.generationMethod||'Legacy JavaScript/SVG generator';
   const movementTools={ArrowMoving:'SpatialViz-Bench Arrow Moving models and Matplotlib',BlockMoving:'SpatialViz-Bench Block Moving model and FreeCAD'};
-  const usesRecordedTool=c.generationMethod==='SpatialViz-Bench official FreeCAD + OpenCV/Pillow pipeline'
+  const usesRecordedTool=(c.generationMethod==='SpatialViz-Bench official FreeCAD + OpenCV/Pillow pipeline'
+   && (task.category!=='VisualPenetration' || hasPenetrationReceipt(task)))
    || (task.taskType==='PaperFolding' && c.generationMethod==='SpatialViz-Bench official Paper Folding Matplotlib/Pillow pipeline')
    || (task.taskType==='MechanicalSystem' && task.verifier?.id==='mechanical-system' && c.generationMethod==='Spatial Harness mechanical contact schematics')
-   || (task.category==='VisualPenetration' && {CrossSection:'penetration-cross-sections',CubeAssembly:'penetration-cube-assembly',CubeCounting:'penetration-cube-counting'}[task.taskType]===task.verifier?.id && c.generationMethod==='Visual Penetration parametric geometry and Pillow')
    || c.generationMethod===movementTools[task.taskType];
   c.exhibit=c.verification?.verdict==='passed' && usesRecordedTool && Boolean(task.provenance?.sourceRevision);
  }

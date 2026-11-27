@@ -1,0 +1,157 @@
+{
+  "verdict": "passed",
+  "geometryEvidence": {
+    "decodedViews": {
+      "Front": [
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ]
+      ],
+      "Top": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          1
+        ],
+        [
+          1,
+          1,
+          0
+        ]
+      ]
+    },
+    "feasibleTotals": [
+      9,
+      10,
+      11
+    ],
+    "heightWitnesses": {
+      "9": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          2
+        ],
+        [
+          1,
+          3,
+          0
+        ]
+      ],
+      "10": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          2
+        ],
+        [
+          1,
+          3,
+          0
+        ]
+      ],
+      "11": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          2
+        ],
+        [
+          2,
+          3,
+          0
+        ]
+      ]
+    }
+  },
+  "checks": [
+    {
+      "name": "Final image is the official compositor output",
+      "verdict": "passed"
+    },
+    {
+      "name": "Prompt, choices and key agree with upstream annotation",
+      "verdict": "passed"
+    },
+    {
+      "name": "Published projection cells agree with the native model",
+      "verdict": "passed"
+    },
+    {
+      "name": "Visible constraints yield exactly one qualifying choice",
+      "verdict": "passed"
+    },
+    {
+      "name": "Per-option explanations agree with the independent solver",
+      "verdict": "passed"
+    },
+    {
+      "name": "Unmodified official source fingerprints",
+      "verdict": "passed"
+    },
+    {
+      "name": "FreeCAD launch and native document recorded",
+      "verdict": "passed"
+    },
+    {
+      "name": "Pinned compositor emitted the delivered PNG",
+      "verdict": "passed"
+    },
+    {
+      "name": "Official method and task identity",
+      "verdict": "passed"
+    },
+    {
+      "name": "Current official-tool adapter and verifier revisions",
+      "verdict": "passed"
+    }
+  ],
+  "candidateId": "v001",
+  "testedFingerprints": {
+    "specification": "31d4424b9c668d86f9067fb14aa46e9bf20cafbf480305679a82b829eb0991e5",
+    "geometry": "428e003dcb3904509e8cbd3ca2c987ba5a250aeea28c64309b3a33a2a6a8e945",
+    "question": "0a62c0855a3ee46ebe67bcf50ff89d82c61cb03c826bf4938cc582573fb494e2",
+    "options": "5c0d0d99e301f4ab3cddc995bdfcc6463b5bda5f9a1a038b9670dfd79eecf7f4",
+    "answer": "5f1ceebe43c2e43a47ba1ad37d5a4fd83360b2022ebec274317bf4095bd1ccef",
+    "contract": "9d7ceb678d41e9d9df2edc8674dc89ab822b399a14a987e898ad81f181653d80",
+    "rendering": "f82f487d205b17a4d6020b3c6f88a5b725a6213a33ac03f486d43ddd3b09f210",
+    "generator": "7f489b57423c082e129e4a00dc2629dfaae62650ab4790c3ec83bd86f4f47b2c"
+  },
+  "verifier": {
+    "id": "penetration-cube-counting",
+    "revision": "b7c2479878cb457923f5c3ae989f1089af3a488ca979c9d2a9fbbe4d68c1acba"
+  },
+  "scope": "Native FreeCAD evidence, original compositor output, per-option geometry and final media."
+}

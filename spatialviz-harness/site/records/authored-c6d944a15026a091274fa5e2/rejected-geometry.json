@@ -1,0 +1,174 @@
+{
+  "verdict": "failed",
+  "geometryEvidence": {
+    "decodedViews": {
+      "Front": [
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ]
+      ],
+      "Top": [
+        [
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ]
+      ],
+      "Left": [
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ]
+      ]
+    },
+    "feasibleTotals": [
+      15,
+      16,
+      17
+    ],
+    "heightWitnesses": {
+      "15": [
+        [
+          2,
+          0,
+          3
+        ],
+        [
+          0,
+          2,
+          3
+        ],
+        [
+          1,
+          1,
+          3
+        ]
+      ],
+      "16": [
+        [
+          2,
+          0,
+          3
+        ],
+        [
+          0,
+          2,
+          3
+        ],
+        [
+          1,
+          2,
+          3
+        ]
+      ],
+      "17": [
+        [
+          2,
+          0,
+          3
+        ],
+        [
+          0,
+          2,
+          3
+        ],
+        [
+          2,
+          2,
+          3
+        ]
+      ]
+    }
+  },
+  "checks": [
+    {
+      "name": "Final image is the official compositor output",
+      "verdict": "passed"
+    },
+    {
+      "name": "Prompt, choices and key agree with upstream annotation",
+      "verdict": "passed"
+    },
+    {
+      "name": "Published projection cells agree with the native model",
+      "verdict": "passed"
+    },
+    {
+      "name": "Visible constraints yield exactly one qualifying choice",
+      "verdict": "failed"
+    },
+    {
+      "name": "Per-option explanations agree with the independent solver",
+      "verdict": "passed"
+    },
+    {
+      "name": "Unmodified official source fingerprints",
+      "verdict": "passed"
+    },
+    {
+      "name": "FreeCAD launch and native document recorded",
+      "verdict": "passed"
+    },
+    {
+      "name": "Pinned compositor emitted the delivered PNG",
+      "verdict": "passed"
+    },
+    {
+      "name": "Official method and task identity",
+      "verdict": "passed"
+    },
+    {
+      "name": "Current official-tool adapter and verifier revisions",
+      "verdict": "passed"
+    }
+  ],
+  "candidateId": "v001",
+  "testedFingerprints": {
+    "specification": "d4b46c72b7a0010578fe90092777b812f8504dc8932fa86eace7e443768c5123",
+    "geometry": "784246c7321647f33c16dfcdf5656f8c888ed90a52891c78248190db62eb33b9",
+    "question": "ccf801dc8685ede7491c51344f646332acabcaa2fceed3e0fcd95dd698b85dfa",
+    "options": "6617670ffb6ba8e86b9d1b5275500dfc7a19067b0497bafabd7ed1879895214f",
+    "answer": "51b77343fba4dfa2aa41f51a188d29b3f3735ab1fe1e5624f4b3be4b0c4bb3ef",
+    "contract": "e756f5319e51e549055b912ed0c627db894f8c8920c65a78e15e62796756b77a",
+    "rendering": "9f2a3d3b5305978fc7f43f2dcfa354533325ae18eba0ae3b025d0394c060a190",
+    "generator": "5295a2132b9e4ac8b067a17eca255feab3d4ee78cea62e36f5018aa0b0f09b29"
+  },
+  "verifier": {
+    "id": "penetration-cube-counting",
+    "revision": "b7c2479878cb457923f5c3ae989f1089af3a488ca979c9d2a9fbbe4d68c1acba"
+  },
+  "scope": "Native FreeCAD evidence, original compositor output, per-option geometry and final media."
+}

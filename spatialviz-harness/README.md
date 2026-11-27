@@ -16,7 +16,7 @@ Generate and check spatial visualization tasks with the library recorder and the
 
 ## Visual Penetration
 
-[Cross-Sections](skills/spatialviz-cross-sections/SKILL.md) constructs possible and impossible cuts through stacked solids. [Cube Assembly](skills/spatialviz-cube-assembly/SKILL.md) verifies complete lattice packings. [Cube Counting](skills/spatialviz-cube-counting/SKILL.md) determines attainable totals from the displayed projections. Each package includes its source audit, coverage table, installation entry and independent checker.
+[Cross-Sections](skills/spatialviz-cross-sections/SKILL.md) constructs possible and impossible cuts through stacked solids. [Cube Assembly](skills/spatialviz-cube-assembly/SKILL.md) verifies complete lattice packings. [Cube Counting](skills/spatialviz-cube-counting/SKILL.md) determines attainable totals from the displayed projections. The three skills run the pinned SpatialViz-Bench FreeCAD model scripts and compose the final figure with the corresponding upstream options function. Each reviewed build records the FreeCAD launch, native files, source revision and exact figure hash. The independent checkers test cut boundaries, rigid packings or totals inferred from the published views. The source audits and coverage tables identify authored extensions.
 
 ## Source
 

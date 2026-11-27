@@ -1,21 +1,17 @@
 ---
 name: spatialviz-cube-counting
-description: Design cube-counting puzzles from two or three orthographic views and solve for the minimum, maximum, feasible or exact total.
+description: Build SpatialViz CubeCounting questions with the benchmark's FreeCAD and TechDraw generator and official figure and option compositor. Determine the attainable cube totals from the actual exported views.
 ---
 
 # Cube Counting
 
-Choose which inference the solver must make before choosing the stack. In each top cell with ink, a contiguous column has an integer height of at least one. The front elevation sets a maximum for every top column and requires some cell to attain it. A left elevation adds the same constraint to every row. The released two-view pair is Front and Top. The three-view form adds Left. Provide their alignment on new diagrams. The archived model generator places cubes on the floor or on an occupied cell. State this support convention in the new stem.
+Start from the question the learner must answer. The released two-view family gives Front and Top. The three-view family adds Left. Front gives a peak for each column of the Top footprint. Left gives a peak for each row, with left-to-right peaks corresponding to the top-to-bottom rows of Top. Each occupied plan square supports a solid column starting on the floor. State that convention in the public stem. A choice can ask for the minimum, maximum or any feasible total. The exact-count diagnostic is an original extension.
 
-For example, draw top rows [1,0] and [1,1], and front heights [2,1]. Write the height rows as [a,0], [b,1]. At least one of a,b must be 2. Both [2,0]/[1,1] and [2,0]/[2,1] fit, giving four and five cubes. Save the exact-count candidate with both witnesses and the failing report. Add a left elevation [2,1]. Now the second row has maximum one, so b=1. The first front column still requires height two, so a=2. The total is four. Reuse the same grid axes, option values and seed to isolate the new information.
+For an exact-count pair, arrange the shown height rows as [3,1,0], [1,0,1], [1,0,0]. Five plan squares are occupied. Front reads [3,1,1]. Its three-unit column can rise over any of the three occupied cells in the first plan column. For example, promoting another one of these stacks from one to two preserves Front and Top while raising the total from seven to eight. Preserve both witnesses and the failed two-view candidate. Add the Left peaks [3,1,1]. Both lower plan rows are now capped at one, so the lone three-stack must occupy the top row. The total is seven. Use the same seed for both versions to compare the same native geometry and the same four offered choices.
 
-For a minimum or maximum, require the relevant endpoint of the feasible set. For a possible-count question test each offered number for membership. For exact count require precisely one total across all explanations, even if only one listed number happens to fit. Apply the fallback text option after evaluating all numbers. Do not take the larger of the two independent elevation lower bounds as proof of feasibility. Compute jointly attainable row and column maxima. The checker reads the colored projection cells back from the PNG and keeps a height-map witness for each attainable total.
+## Build and solve
 
-## Author and verify
-
-Use `profile: competing-peaks` in parameter JSON for a footprint where row and column lower bounds cannot be attained together. Use `min-2`, `min-3`, `max-2`, `max-3`, `possible-2` or `possible-3`. Set `size` from 2 to 4 for the footprint and `none` to true for a fallback answer. `exact-2` deliberately emits the ambiguous diagnostic. `exact-3` adds the resolving left elevation.
-
-From this package directory with Node 20+, Python 3 and Pillow installed, run the following commands. An installation made with the library installer keeps a local binding to the checkout.
+Run the installed entry with the checkout's Node and Python dependencies, a FreeCAD GUI runtime and its A4 landscape TechDraw template. The generation command starts a recorder and invokes the pinned `create_cube_counting.main`. It places FreeCAD boxes, compounds them, creates the First Angle projection group and exports a PDF. The benchmark's `detect_subfigures`, `create_composite_image_CubeCounting`, `prepare_composite_image_CubeCounting` and `save_json` produce the panel crops, labeled PNG and ordered answer annotation. The printed figure contains the views. The corresponding question, choices and support convention appear beside it in the delivered task. Keep both parts together when reviewing the learner's evidence.
 
 ```sh
 node scripts/author.cjs generate --mechanism min-3 --seed 93177 --out new-question
@@ -23,6 +19,12 @@ node scripts/author.cjs solve --out new-question
 node scripts/author.cjs test
 ```
 
-Pass `--params parameters.json` to set the design parameters. Generation starts a recorder, writes the native geometry to task.json, exports question.png and runs the independent checker. Open the final image, solve it from the visible information, and inspect verification.json. After review, use `node scripts/author.cjs accept --out new-question --review "Your concrete observations"` for library publication.
+Use `min-2`, `max-2`, `possible-2`, `min-3`, `max-3` or `possible-3` for the released families. Pass `--params parameters.json` for `size` 3 or 4. The optional boolean `none` requests an official draw containing the “None of the above” distractor. Native sampling continues until one model meets the official size filter. The original chooser can produce two feasible numeric options on a possible-count item. Rejection sampling retains an official draw with a single winning option.
 
-Read the [official audit](references/official-audit.md) for the source images, construction history and observed exceptions. The [coverage table](references/coverage.md) connects mechanisms to verified tasks. The [design record](references/design.md) identifies the distinction between release conventions and the new verifier contract.
+Use `exact-2` followed by `exact-3` with the same seed to retain the ambiguous predecessor and add the resolving elevation. The prescribed native input fixes the occupancy decisions. The official tool handles each box, camera, PDF, crop, label and choice shuffle. For the audited lower-bound counterexample, `{"profile":"competing-peaks"}` with `min-3` first retains the original failed minimum question and independent witnesses. Revise with `max-3` using the same seed and profile to draw a maximum question on the identical stack. Keep the failed original and accepted revision together.
+
+## Check the actual views
+
+Open the final PNG with its public question and answer choices. Confirm that every occupied square has a closed outline and the Front, Top and optional Left panels fit their labels. Check whether the exact count is unique over all compatible models. For a possible-count question, test each listed number individually. The independent solver decodes the printed square interiors, enumerates compatible row heights and retains one witness per attainable total. The native model is checked separately against those pixels. After verification and visual review, the installed `accept` command prepares the question for publication.
+
+[Official item inventory and audit](references/official-audit.md) · [Coverage table](references/coverage.md) · [Native construction and evidence](references/design.md)

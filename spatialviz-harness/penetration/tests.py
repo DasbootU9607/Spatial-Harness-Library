@@ -1,32 +1,48 @@
-"""Domain-specific observable regressions. Run one family independently."""
+"""Exercise the official-pixel contract through the same verifier the installed entry uses."""
 import copy
+import json
+from pathlib import Path
 import sys
-from engine import generate,verify,domain
 
-kind=sys.argv[1]
-d=domain(kind)
+from engine import FAMILIES, HERE, METHOD, checked_sources, verify
+
+kind = sys.argv[1]
+root = HERE.parents[1]
+catalog = json.loads((root / "catalog/cases.json").read_text("utf-8"))
+prefix = root / "spatialviz-harness/site"
+checked_sources(kind)
+native = {}
+for case in catalog["cases"]:
+    if case["harnessId"]!="spatialviz-harness" or kind not in case.get("skillIds",[]):
+        continue
+    record = json.loads((prefix / case["taskArtifact"]).read_text("utf-8"))
+    if record["provenance"].get("generationMethod")==METHOD:
+        assert verify(kind,record)["verdict"]=="passed",case["id"]
+        native[record["contract"]["mechanism"]]=record
+if not native:
+    raise RuntimeError("Missing reviewed native task fixtures for "+kind)
+
+example=next(iter(native.values()))
+corrupt=copy.deepcopy(example)
+corrupt["provenance"]["officialTools"]["compositeSha256"]="0"*64
+assert verify(kind,corrupt)["verdict"]=="failed","The stored PNG must match the observed official compositor output"
+corrupt=copy.deepcopy(example)
+corrupt["answer"]["index"]=(example["answer"]["index"]+1)%4
+assert verify(kind,corrupt)["verdict"]=="failed","Reject a changed answer"
 if kind=="cross-sections":
-    s=generate(kind,14,{"mechanism":"marked"})
-    assert verify(kind,s)["verdict"]=="passed"
-    index=s["answer"]["index"]
-    s["options"][index]["regions"]=[[(-x,y) for x,y in ring] for ring in s["options"][index]["regions"]]
-    assert verify(kind,s)["verdict"]=="failed", "A reversed front view must fail"
-    for m in ["parallel","three-tiers","oblique","mixed","point-contact","joined-rims"]:
-        assert verify(kind,generate(kind,17,{"mechanism":m}))["verdict"]=="passed",m
+    positive=next(x for x in (json.loads((prefix / c["taskArtifact"]).read_text("utf-8")) for c in catalog["cases"]
+        if kind in c.get("skillIds",[]) and c.get("harnessId")=="spatialviz-harness" and not c.get("supersededBy"))
+        if x.get("contract",{}).get("mechanism")=="marked" and x["geometry"]["offset"]==0)
+    reversed_view=copy.deepcopy(positive)
+    reversed_view["geometry"]["side"]="north" if positive["geometry"]["side"]=="south" else "south"
+    assert verify(kind,reversed_view)["verdict"]=="failed","Reject a reversed viewing arrow"
 elif kind=="cube-assembly":
-    p=[(0,0,0),(1,0,0),(1,1,0),(1,1,1)]
-    mirror=[(-x,y,z) for x,y,z in p]
-    assert d.pack(p,[mirror],True)==(0,None)
-    assert d.pack(p,[[(z,x,y) for x,y,z in p]],True)[0]>0
-    for mode in ["two-parts","three-parts","interface","relocated","equal-three","changed-view"]:
-        for none in [False,True]:
-            assert verify(kind,generate(kind,47,{"mechanism":mode,"none":none}))["verdict"]=="passed",mode
-else:
-    s=generate(kind,19,{"mechanism":"exact-2"})
-    result=verify(kind,s)
-    assert result["verdict"]=="failed" and result["geometryEvidence"]["feasibleTotals"]==[4,5]
-    assert verify(kind,generate(kind,19,{"mechanism":"exact-3"}))["geometryEvidence"]["feasibleTotals"]==[4]
-    for mode in ["min","max","possible"]:
-        for n in (2,3):
-            assert verify(kind,generate(kind,19,{"mechanism":f"{mode}-{n}","none":True}))["verdict"]=="passed"
-print(kind,"regressions passed")
+    from assembly_native import solver
+    d=solver()
+    hand=[(0,0,0),(1,0,0),(1,1,0),(1,1,1)]
+    assert d.pack(hand,[[(-x,y,z) for x,y,z in hand]],True)==(0,None)
+    assert d.pack(hand,[[(z,x,y) for x,y,z in hand]],True)[0]>0
+elif kind=="cube-counting":
+    import runpy
+    runpy.run_path(str(HERE/"test_count_native.py"),run_name="__main__")
+print(kind,"native artifact and domain checks passed")

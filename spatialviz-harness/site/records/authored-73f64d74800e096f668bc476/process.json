@@ -1,0 +1,706 @@
+{
+  "schemaVersion": 1,
+  "manifest": {
+    "sealed": true,
+    "id": "build-00d88378-07d7-4444-a46e-0fce909e2dbe",
+    "title": "Author cube-assembly",
+    "runKind": "[private value omitted]",
+    "harness": "spatialviz-harness",
+    "benchmark": "SpatialViz-Bench",
+    "category": "VisualPenetration",
+    "taskType": "cube-assembly",
+    "skill": {
+      "id": "spatialviz-cube-assembly",
+      "sha256": "33e6690c45568cd8589f9ba00dcb488b1aa2884371ba00793047d389abe6af7c"
+    },
+    "status": "accepted",
+    "finalCandidateId": "v001",
+    "limitations": [
+      "Only recorder-mediated deliveries, commands and saved boundaries are observed; direct function calls, unwrapped commands and unsaved editor states are excluded.",
+      "Design notes are explicit author annotations, not internal reasoning."
+    ],
+    "captureGaps": []
+  },
+  "events": [
+    {
+      "id": "e000001",
+      "seq": 1,
+      "runId": "build-00d88378-07d7-4444-a46e-0fce909e2dbe",
+      "type": "run.created",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": null,
+      "details": {},
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000002",
+      "seq": 2,
+      "runId": "build-00d88378-07d7-4444-a46e-0fce909e2dbe",
+      "type": "collector.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": null,
+      "details": {},
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000003",
+      "seq": 3,
+      "runId": "build-00d88378-07d7-4444-a46e-0fce909e2dbe",
+      "type": "skill.attached",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": null,
+      "details": {
+        "sha256": "33e6690c45568cd8589f9ba00dcb488b1aa2884371ba00793047d389abe6af7c",
+        "skill": "spatialviz-cube-assembly"
+      },
+      "evidenceRefs": [
+        {
+          "id": "8e68f2b20f96613e",
+          "sha256": "33e6690c45568cd8589f9ba00dcb488b1aa2884371ba00793047d389abe6af7c",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000004",
+      "seq": 4,
+      "runId": "build-00d88378-07d7-4444-a46e-0fce909e2dbe",
+      "type": "resource.read",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "f65b2a8c-c3f3-4d36-8a64-0f4d114c7c7b",
+      "candidateId": null,
+      "details": {
+        "outcome": "delivered",
+        "label": "design.md",
+        "start": 1,
+        "end": 16,
+        "sha256": "d6ef700940406d9403d52e1ce67df0d2995453a3af62c2d0bda448e4d86d0d03",
+        "sourceSha256": "d6ef700940406d9403d52e1ce67df0d2995453a3af62c2d0bda448e4d86d0d03"
+      },
+      "evidenceRefs": [
+        {
+          "id": "c3686610ce218cd3",
+          "sha256": "d6ef700940406d9403d52e1ce67df0d2995453a3af62c2d0bda448e4d86d0d03",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000005",
+      "seq": 5,
+      "runId": "build-00d88378-07d7-4444-a46e-0fce909e2dbe",
+      "type": "design.note",
+      "actor": "author",
+      "origin": "agent_statement",
+      "actionId": null,
+      "candidateId": null,
+      "details": {
+        "goal": "Generate a new cube-assembly question",
+        "sources": [
+          "Official inventory and design notes"
+        ],
+        "change": "Construct relocated",
+        "reason": null,
+        "expectedChecks": [
+          "Independent geometry",
+          "Media review"
+        ]
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000006",
+      "seq": 6,
+      "runId": "build-00d88378-07d7-4444-a46e-0fce909e2dbe",
+      "type": "resource.read",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "0d363f5a-289a-4fd1-be94-7e338c0f6645",
+      "candidateId": null,
+      "details": {
+        "outcome": "delivered",
+        "label": "create_cube_assembly.py",
+        "start": 1,
+        "end": 337,
+        "sha256": "ecf3a7f62b4c96b4a864e061908020b2770c8980796410aab579597134774fc2",
+        "sourceSha256": "ecf3a7f62b4c96b4a864e061908020b2770c8980796410aab579597134774fc2"
+      },
+      "evidenceRefs": [
+        {
+          "id": "0b05c4574e3d506f",
+          "sha256": "ecf3a7f62b4c96b4a864e061908020b2770c8980796410aab579597134774fc2",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000007",
+      "seq": 7,
+      "runId": "build-00d88378-07d7-4444-a46e-0fce909e2dbe",
+      "type": "resource.read",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "b9187f49-b3bb-4bea-b8c5-c73ff9222ca0",
+      "candidateId": null,
+      "details": {
+        "outcome": "delivered",
+        "label": "visual_penetration_tasks_utils.py",
+        "start": 1,
+        "end": 537,
+        "sha256": "77b1895b1a2622c982034e82b381f0a9d58e6dc84ab487401b09a3458ae2f27a",
+        "sourceSha256": "77b1895b1a2622c982034e82b381f0a9d58e6dc84ab487401b09a3458ae2f27a"
+      },
+      "evidenceRefs": [
+        {
+          "id": "fb6d9f03f13963ee",
+          "sha256": "77b1895b1a2622c982034e82b381f0a9d58e6dc84ab487401b09a3458ae2f27a",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000008",
+      "seq": 8,
+      "runId": "build-00d88378-07d7-4444-a46e-0fce909e2dbe",
+      "type": "resource.read",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "94212423-2abf-4ae2-8c5f-8fb65a431f2e",
+      "candidateId": null,
+      "details": {
+        "outcome": "delivered",
+        "label": "utils.py",
+        "start": 1,
+        "end": 237,
+        "sha256": "0cbea9458b251e44609590de9fb011c7f2f6d7e74d31f2b76a9b0f3f75952e15",
+        "sourceSha256": "0cbea9458b251e44609590de9fb011c7f2f6d7e74d31f2b76a9b0f3f75952e15"
+      },
+      "evidenceRefs": [
+        {
+          "id": "a166c9283b889161",
+          "sha256": "0cbea9458b251e44609590de9fb011c7f2f6d7e74d31f2b76a9b0f3f75952e15",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000009",
+      "seq": 9,
+      "runId": "build-00d88378-07d7-4444-a46e-0fce909e2dbe",
+      "type": "command.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "6e283f6f-36d9-4b85-8011-600d25c61ba5",
+      "candidateId": null,
+      "details": {
+        "label": "python",
+        "kind": "FreeCAD create_cube_assembly.py and SpatialViz official option composition"
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000010",
+      "seq": 10,
+      "runId": "build-00d88378-07d7-4444-a46e-0fce909e2dbe",
+      "type": "command.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "6e283f6f-36d9-4b85-8011-600d25c61ba5",
+      "candidateId": null,
+      "details": {
+        "commandEventId": "e000009",
+        "kind": "FreeCAD create_cube_assembly.py and SpatialViz official option composition",
+        "exitCode": 0,
+        "signal": null
+      },
+      "evidenceRefs": [
+        {
+          "id": "d0b397278a76bd79",
+          "sha256": "752f704aa51729cd2bc3f3eeff7f8dd8cb81f52d8526bca4b65f116fb16f2a6d",
+          "availability": "local evidence; hash published"
+        },
+        {
+          "id": "13951ab894923768",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000011",
+      "seq": 11,
+      "runId": "build-00d88378-07d7-4444-a46e-0fce909e2dbe",
+      "type": "design.note",
+      "actor": "author",
+      "origin": "agent_statement",
+      "actionId": null,
+      "candidateId": null,
+      "details": {
+        "goal": "Bind the published pixels to the official tool execution",
+        "sources": [
+          "create_cube_assembly.py",
+          "visual_penetration_tasks_utils.py",
+          "create_composite_image_CubeAssembly"
+        ],
+        "change": "Observed 1 FreeCAD launch(es); saved 1 native document(s).",
+        "reason": "The PNG SHA-256 at the official compositor return was 58932921b4e0e465b58a7c6af86b45ffc9d5f30c81c2fd34d0753bf48d86c577.",
+        "expectedChecks": [
+          "Native artifact digests and observed functions are in the task provenance."
+        ]
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000012",
+      "seq": 12,
+      "runId": "build-00d88378-07d7-4444-a46e-0fce909e2dbe",
+      "type": "candidate.saved",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "5414728a-98df-48de-8af3-7b0ef56a1fcc",
+      "candidateId": "v001",
+      "details": {
+        "sha256": "73f64d74800e096f668bc47612cbc82791f42f5a0eef293209b3d8e9af09dbe8",
+        "parentId": null,
+        "parentBasis": null,
+        "changes": [
+          "specification",
+          "geometry",
+          "question",
+          "options",
+          "answer",
+          "contract",
+          "rendering",
+          "generator"
+        ],
+        "fingerprints": {
+          "specification": "73f64d74800e096f668bc47612cbc82791f42f5a0eef293209b3d8e9af09dbe8",
+          "geometry": "d974dcf621c50583e1548be8d8b21da286728bf1c5bc475fe47c9c2763380c31",
+          "question": "2ae3c803edf7284a2c744543520ae9c7206e7e8ea51887e236a213c3cb40bceb",
+          "options": "41e005feb8c12cf710cb15d8810088a818f0252f2077316831f9ed4081632b79",
+          "answer": "1323c4ac7194e730b033783417e323850bf9eb5793ea6815e03796b878fcb98c",
+          "contract": "829632caa4a3ba1ddba501fe77c81e5601bac6b753a96b8dc71f45aea23eda5d",
+          "rendering": "978d2b2abb1be9942eb075ee48468c9eff5ff4ac9b94468e43ae6f919d730173",
+          "generator": "c5101a4d5c790b6d6a4e368dcce3b106356d5cd11638e275ef2885a6105564a5"
+        },
+        "previewUnavailable": null
+      },
+      "evidenceRefs": [
+        {
+          "id": "fb74030f9644ece4",
+          "sha256": "73f64d74800e096f668bc47612cbc82791f42f5a0eef293209b3d8e9af09dbe8",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000013",
+      "seq": 13,
+      "runId": "build-00d88378-07d7-4444-a46e-0fce909e2dbe",
+      "type": "build.saved",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": "v001",
+      "details": {},
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000014",
+      "seq": 14,
+      "runId": "build-00d88378-07d7-4444-a46e-0fce909e2dbe",
+      "type": "render.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "6d78806f-07d7-4444-9589-48a8d0adb277",
+      "candidateId": "v001",
+      "details": {
+        "renderer": {
+          "id": "penetration-cube-assembly",
+          "revision": "bab375271d1dfe3f840c790da88a5a00caf95638417620ebda9adbca6fed35a0"
+        }
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000015",
+      "seq": 15,
+      "runId": "build-00d88378-07d7-4444-a46e-0fce909e2dbe",
+      "type": "render.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "6d78806f-07d7-4444-9589-48a8d0adb277",
+      "candidateId": "v001",
+      "details": {
+        "sha256": "58932921b4e0e465b58a7c6af86b45ffc9d5f30c81c2fd34d0753bf48d86c577",
+        "renderer": {
+          "id": "penetration-cube-assembly",
+          "revision": "bab375271d1dfe3f840c790da88a5a00caf95638417620ebda9adbca6fed35a0"
+        },
+        "specification": "73f64d74800e096f668bc47612cbc82791f42f5a0eef293209b3d8e9af09dbe8",
+        "rendering": "978d2b2abb1be9942eb075ee48468c9eff5ff4ac9b94468e43ae6f919d730173"
+      },
+      "evidenceRefs": [
+        {
+          "id": "634ba571c5f70719",
+          "sha256": "58932921b4e0e465b58a7c6af86b45ffc9d5f30c81c2fd34d0753bf48d86c577",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000016",
+      "seq": 16,
+      "runId": "build-00d88378-07d7-4444-a46e-0fce909e2dbe",
+      "type": "command.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "0d68a2a8-5ce3-4949-8150-9182d6ab4aea",
+      "candidateId": "v001",
+      "details": {
+        "label": "node.exe",
+        "kind": "verification"
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000017",
+      "seq": 17,
+      "runId": "build-00d88378-07d7-4444-a46e-0fce909e2dbe",
+      "type": "command.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "0d68a2a8-5ce3-4949-8150-9182d6ab4aea",
+      "candidateId": "v001",
+      "details": {
+        "commandEventId": "e000016",
+        "kind": "verification",
+        "exitCode": 0,
+        "signal": null
+      },
+      "evidenceRefs": [
+        {
+          "id": "2312abaea003e6f6",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "availability": "local evidence; hash published"
+        },
+        {
+          "id": "277a716eafccda30",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000018",
+      "seq": 18,
+      "runId": "build-00d88378-07d7-4444-a46e-0fce909e2dbe",
+      "type": "test.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "0d68a2a8-5ce3-4949-8150-9182d6ab4aea",
+      "candidateId": "v001",
+      "details": {
+        "commandEventId": "e000016",
+        "completedEventId": "e000017",
+        "verdict": "passed",
+        "status": "passed",
+        "checks": [
+          {
+            "name": "Official composite PNG and dimensions",
+            "verdict": "passed"
+          },
+          {
+            "name": "Every native cropped panel occurs at its official label position",
+            "verdict": "passed"
+          },
+          {
+            "name": "All three displayed candidates have distinct native images",
+            "verdict": "passed"
+          },
+          {
+            "name": "Target and every choice match cells measured from native OCCT unit solids",
+            "verdict": "passed"
+          },
+          {
+            "name": "FreeCAD camera contract agrees with the native views",
+            "verdict": "passed"
+          },
+          {
+            "name": "Specified motion rule and official stem",
+            "verdict": "passed"
+          },
+          {
+            "name": "Unique exact packing option and official writer agree",
+            "verdict": "passed"
+          },
+          {
+            "name": "Checked per-choice geometric explanations",
+            "verdict": "passed"
+          },
+          {
+            "name": "FreeCAD file and upstream entry signatures recorded",
+            "verdict": "passed"
+          },
+          {
+            "name": "Unmodified official source fingerprints",
+            "verdict": "passed"
+          },
+          {
+            "name": "FreeCAD launch and native document recorded",
+            "verdict": "passed"
+          },
+          {
+            "name": "Pinned compositor emitted the delivered PNG",
+            "verdict": "passed"
+          },
+          {
+            "name": "Official method and task identity",
+            "verdict": "passed"
+          },
+          {
+            "name": "Current official-tool adapter and verifier revisions",
+            "verdict": "passed"
+          }
+        ],
+        "scope": "Native FreeCAD evidence, original compositor output, per-option geometry and final media.",
+        "binding": "exact",
+        "bindingBasis": "exact candidate and full input fingerprints",
+        "testedFingerprints": {
+          "specification": "73f64d74800e096f668bc47612cbc82791f42f5a0eef293209b3d8e9af09dbe8",
+          "geometry": "d974dcf621c50583e1548be8d8b21da286728bf1c5bc475fe47c9c2763380c31",
+          "question": "2ae3c803edf7284a2c744543520ae9c7206e7e8ea51887e236a213c3cb40bceb",
+          "options": "41e005feb8c12cf710cb15d8810088a818f0252f2077316831f9ed4081632b79",
+          "answer": "1323c4ac7194e730b033783417e323850bf9eb5793ea6815e03796b878fcb98c",
+          "contract": "829632caa4a3ba1ddba501fe77c81e5601bac6b753a96b8dc71f45aea23eda5d",
+          "rendering": "978d2b2abb1be9942eb075ee48468c9eff5ff4ac9b94468e43ae6f919d730173",
+          "generator": "c5101a4d5c790b6d6a4e368dcce3b106356d5cd11638e275ef2885a6105564a5"
+        },
+        "verifier": {
+          "id": "penetration-cube-assembly",
+          "revision": "bab375271d1dfe3f840c790da88a5a00caf95638417620ebda9adbca6fed35a0"
+        },
+        "reportSha256": "be950a3d55666e37b9baecc3f2a6c337dd9b745204beb259d787e31da2bd5466"
+      },
+      "evidenceRefs": [
+        {
+          "id": "4d2ae24374744dbd",
+          "sha256": "be950a3d55666e37b9baecc3f2a6c337dd9b745204beb259d787e31da2bd5466",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000019",
+      "seq": 19,
+      "runId": "build-00d88378-07d7-4444-a46e-0fce909e2dbe",
+      "type": "visual.review",
+      "actor": "author",
+      "origin": "agent_statement",
+      "actionId": null,
+      "candidateId": "v001",
+      "details": {
+        "outcome": "passed",
+        "review": "Fit the four-cube rail along the front of the target with its turn and upright on the right. The highest remaining cube rises at the left-hand end of the three-cell elbow, directly behind the start of the rail. A supplies this riser. B moves it to the elbow's opposite tip and C puts it centrally."
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000020",
+      "seq": 20,
+      "runId": "build-00d88378-07d7-4444-a46e-0fce909e2dbe",
+      "type": "run.finished",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": "v001",
+      "details": {
+        "outcome": "accepted",
+        "finalCandidateId": "v001"
+      },
+      "evidenceRefs": []
+    }
+  ],
+  "candidates": [
+    {
+      "id": "v001",
+      "parentId": null,
+      "parentBasis": null,
+      "sha256": "73f64d74800e096f668bc47612cbc82791f42f5a0eef293209b3d8e9af09dbe8",
+      "fingerprints": {
+        "specification": "73f64d74800e096f668bc47612cbc82791f42f5a0eef293209b3d8e9af09dbe8",
+        "geometry": "d974dcf621c50583e1548be8d8b21da286728bf1c5bc475fe47c9c2763380c31",
+        "question": "2ae3c803edf7284a2c744543520ae9c7206e7e8ea51887e236a213c3cb40bceb",
+        "options": "41e005feb8c12cf710cb15d8810088a818f0252f2077316831f9ed4081632b79",
+        "answer": "1323c4ac7194e730b033783417e323850bf9eb5793ea6815e03796b878fcb98c",
+        "contract": "829632caa4a3ba1ddba501fe77c81e5601bac6b753a96b8dc71f45aea23eda5d",
+        "rendering": "978d2b2abb1be9942eb075ee48468c9eff5ff4ac9b94468e43ae6f919d730173",
+        "generator": "c5101a4d5c790b6d6a4e368dcce3b106356d5cd11638e275ef2885a6105564a5"
+      },
+      "previewUnavailable": null,
+      "changes": [
+        "specification",
+        "geometry",
+        "question",
+        "options",
+        "answer",
+        "contract",
+        "rendering",
+        "generator"
+      ],
+      "preview": {
+        "candidateId": "v001",
+        "specification": "73f64d74800e096f668bc47612cbc82791f42f5a0eef293209b3d8e9af09dbe8",
+        "rendering": "978d2b2abb1be9942eb075ee48468c9eff5ff4ac9b94468e43ae6f919d730173",
+        "renderer": {
+          "id": "penetration-cube-assembly",
+          "revision": "bab375271d1dfe3f840c790da88a5a00caf95638417620ebda9adbca6fed35a0"
+        },
+        "sha256": "58932921b4e0e465b58a7c6af86b45ffc9d5f30c81c2fd34d0753bf48d86c577",
+        "path": "records/authored-73f64d74800e096f668bc476/v001-58932921b4e0e465.png",
+        "origin": "recorded-render"
+      }
+    }
+  ],
+  "tests": [
+    {
+      "id": "t001",
+      "actionId": "0d68a2a8-5ce3-4949-8150-9182d6ab4aea",
+      "candidateId": "v001",
+      "testedFingerprints": {
+        "specification": "73f64d74800e096f668bc47612cbc82791f42f5a0eef293209b3d8e9af09dbe8",
+        "geometry": "d974dcf621c50583e1548be8d8b21da286728bf1c5bc475fe47c9c2763380c31",
+        "question": "2ae3c803edf7284a2c744543520ae9c7206e7e8ea51887e236a213c3cb40bceb",
+        "options": "41e005feb8c12cf710cb15d8810088a818f0252f2077316831f9ed4081632b79",
+        "answer": "1323c4ac7194e730b033783417e323850bf9eb5793ea6815e03796b878fcb98c",
+        "contract": "829632caa4a3ba1ddba501fe77c81e5601bac6b753a96b8dc71f45aea23eda5d",
+        "rendering": "978d2b2abb1be9942eb075ee48468c9eff5ff4ac9b94468e43ae6f919d730173",
+        "generator": "c5101a4d5c790b6d6a4e368dcce3b106356d5cd11638e275ef2885a6105564a5"
+      },
+      "verifier": {
+        "id": "penetration-cube-assembly",
+        "revision": "bab375271d1dfe3f840c790da88a5a00caf95638417620ebda9adbca6fed35a0"
+      },
+      "reportSha256": "be950a3d55666e37b9baecc3f2a6c337dd9b745204beb259d787e31da2bd5466",
+      "verdict": "passed",
+      "status": "passed",
+      "checks": [
+        {
+          "name": "Official composite PNG and dimensions",
+          "verdict": "passed"
+        },
+        {
+          "name": "Every native cropped panel occurs at its official label position",
+          "verdict": "passed"
+        },
+        {
+          "name": "All three displayed candidates have distinct native images",
+          "verdict": "passed"
+        },
+        {
+          "name": "Target and every choice match cells measured from native OCCT unit solids",
+          "verdict": "passed"
+        },
+        {
+          "name": "FreeCAD camera contract agrees with the native views",
+          "verdict": "passed"
+        },
+        {
+          "name": "Specified motion rule and official stem",
+          "verdict": "passed"
+        },
+        {
+          "name": "Unique exact packing option and official writer agree",
+          "verdict": "passed"
+        },
+        {
+          "name": "Checked per-choice geometric explanations",
+          "verdict": "passed"
+        },
+        {
+          "name": "FreeCAD file and upstream entry signatures recorded",
+          "verdict": "passed"
+        },
+        {
+          "name": "Unmodified official source fingerprints",
+          "verdict": "passed"
+        },
+        {
+          "name": "FreeCAD launch and native document recorded",
+          "verdict": "passed"
+        },
+        {
+          "name": "Pinned compositor emitted the delivered PNG",
+          "verdict": "passed"
+        },
+        {
+          "name": "Official method and task identity",
+          "verdict": "passed"
+        },
+        {
+          "name": "Current official-tool adapter and verifier revisions",
+          "verdict": "passed"
+        }
+      ],
+      "scope": "Native FreeCAD evidence, original compositor output, per-option geometry and final media.",
+      "commandExitStatus": 0,
+      "binding": "exact",
+      "bindingBasis": "exact candidate and full input fingerprints",
+      "commandEventId": "e000016"
+    }
+  ],
+  "usage": {
+    "schemaVersion": 2,
+    "runId": "build-00d88378-07d7-4444-a46e-0fce909e2dbe",
+    "source": "codex",
+    "runtime": "Codex Desktop",
+    "status": "measured",
+    "elapsedMs": 331989,
+    "elapsedKind": "wall-clock",
+    "scope": "Runtime-reported usage between the start baseline and finish snapshot of this session. In-flight or delayed usage, earlier conversation, other agents and later delivery are excluded. This is an observed interval, not a complete billed task total.",
+    "scopeComplete": false,
+    "observedTokens": {
+      "input_tokens": 2888681,
+      "cached_input_tokens": 2850176,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 5393,
+      "reasoning_output_tokens": 435,
+      "total_tokens": 2894074
+    },
+    "tokens": {
+      "input_tokens": null,
+      "cached_input_tokens": null,
+      "cache_write_input_tokens": null,
+      "output_tokens": null,
+      "reasoning_output_tokens": null,
+      "total_tokens": null
+    },
+    "models": [
+      {
+        "provider": "openai",
+        "model": "gpt-6.2-astra",
+        "reasoningEffort": "xhigh",
+        "tokens": {
+          "input_tokens": 2888681,
+          "cached_input_tokens": 2850176,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 5393,
+          "reasoning_output_tokens": 435,
+          "total_tokens": 2894074
+        },
+        "observations": 17
+      }
+    ],
+    "missingFields": [],
+    "issues": [],
+    "observations": 17
+  },
+  "caseId": "authored-73f64d74800e096f668bc476"
+}

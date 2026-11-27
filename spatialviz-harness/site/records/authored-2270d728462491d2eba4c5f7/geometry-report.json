@@ -1,0 +1,201 @@
+{
+  "verdict": "passed",
+  "geometryEvidence": {
+    "decodedViews": {
+      "Front": [
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          0
+        ],
+        [
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "Top": [
+        [
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ]
+      ],
+      "Left": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          1,
+          0,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          1
+        ]
+      ]
+    },
+    "feasibleTotals": [
+      14,
+      15
+    ],
+    "heightWitnesses": {
+      "14": [
+        [
+          2,
+          4,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          0,
+          0,
+          3,
+          0
+        ]
+      ],
+      "15": [
+        [
+          2,
+          4,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          0,
+          0,
+          3,
+          0
+        ]
+      ]
+    }
+  },
+  "checks": [
+    {
+      "name": "Final image is the official compositor output",
+      "verdict": "passed"
+    },
+    {
+      "name": "Prompt, choices and key agree with upstream annotation",
+      "verdict": "passed"
+    },
+    {
+      "name": "Published projection cells agree with the native model",
+      "verdict": "passed"
+    },
+    {
+      "name": "Visible constraints yield exactly one qualifying choice",
+      "verdict": "passed"
+    },
+    {
+      "name": "Per-option explanations agree with the independent solver",
+      "verdict": "passed"
+    },
+    {
+      "name": "Unmodified official source fingerprints",
+      "verdict": "passed"
+    },
+    {
+      "name": "FreeCAD launch and native document recorded",
+      "verdict": "passed"
+    },
+    {
+      "name": "Pinned compositor emitted the delivered PNG",
+      "verdict": "passed"
+    },
+    {
+      "name": "Official method and task identity",
+      "verdict": "passed"
+    },
+    {
+      "name": "Current official-tool adapter and verifier revisions",
+      "verdict": "passed"
+    }
+  ],
+  "candidateId": "v001",
+  "testedFingerprints": {
+    "specification": "2270d728462491d2eba4c5f71ae902febb3daa4295525c10839d6c9246ece7c2",
+    "geometry": "3dcf111a7f2cbfeabe5f33b533c116f8ff55531a9af274fa0ee1a5556125a70d",
+    "question": "ccf801dc8685ede7491c51344f646332acabcaa2fceed3e0fcd95dd698b85dfa",
+    "options": "66fcd0a54ed937f96c93e017b8188860708879e4df11a54a04ef97545dcbd87d",
+    "answer": "65f7690b835d653fed06ffdc714c1dc0ca368f1ea0a7ee095afb6948a4a217a5",
+    "contract": "e756f5319e51e549055b912ed0c627db894f8c8920c65a78e15e62796756b77a",
+    "rendering": "6c68e1a3c31fde6c2d9192082be89cf114ffbc17e21bb8cf81de0313481fed03",
+    "generator": "4e96173c0419e72c47287e1202744a904d09b749ec3ea74205217053c93d9eae"
+  },
+  "verifier": {
+    "id": "penetration-cube-counting",
+    "revision": "b7c2479878cb457923f5c3ae989f1089af3a488ca979c9d2a9fbbe4d68c1acba"
+  },
+  "scope": "Native FreeCAD evidence, original compositor output, per-option geometry and final media."
+}

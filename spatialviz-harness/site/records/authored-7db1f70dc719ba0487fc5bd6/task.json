@@ -1,0 +1,237 @@
+{
+  "schemaVersion": 1,
+  "title": "Cube Counting | max-3",
+  "description": "Given 3 views, how many cubes are at most needed to satisfy the constraints shown? Please choose from options A, B, C, or D. Each occupied top square is a solid vertical column standing on the floor. Front columns align with top columns. Left-view columns, from left to right, correspond to top-view rows from top to bottom.",
+  "question": "Given 3 views, how many cubes are at most needed to satisfy the constraints shown? Please choose from options A, B, C, or D. Each occupied top square is a solid vertical column standing on the floor. Front columns align with top columns. Left-view columns, from left to right, correspond to top-view rows from top to bottom.",
+  "category": "VisualPenetration",
+  "taskType": "CubeCounting",
+  "contract": {
+    "mechanism": "max-3",
+    "uniqueAnswerRequired": true
+  },
+  "geometry": {
+    "sense": "max",
+    "cells": [
+      [
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        2,
+        0
+      ],
+      [
+        1,
+        0,
+        0
+      ],
+      [
+        1,
+        2,
+        0
+      ],
+      [
+        1,
+        2,
+        1
+      ],
+      [
+        1,
+        2,
+        2
+      ],
+      [
+        2,
+        0,
+        0
+      ],
+      [
+        2,
+        0,
+        1
+      ]
+    ],
+    "camera": "First Angle Front, Top and optional Left"
+  },
+  "options": [
+    {
+      "type": "text",
+      "text": "6"
+    },
+    {
+      "type": "text",
+      "text": "10"
+    },
+    {
+      "type": "text",
+      "text": "8"
+    },
+    {
+      "type": "text",
+      "text": "9"
+    }
+  ],
+  "answer": {
+    "index": 3,
+    "explanation": "The footprint has 5 occupied cells. Match the front peaks [1, 3, 2] and the left peaks [3, 1, 2]. Rows [[1, 3, 0], [1, 0, 0], [0, 2, 2]] attain 9. The full feasible range is 8 to 9.",
+    "options": [
+      {
+        "label": "A",
+        "explanation": "The footprint has 5 occupied cells. Match the front peaks [1, 3, 2] and the left peaks [3, 1, 2]. 6 is outside the attainable totals 8 through 9."
+      },
+      {
+        "label": "B",
+        "explanation": "The footprint has 5 occupied cells. Match the front peaks [1, 3, 2] and the left peaks [3, 1, 2]. 10 is outside the attainable totals 8 through 9."
+      },
+      {
+        "label": "C",
+        "explanation": "The footprint has 5 occupied cells. Match the front peaks [1, 3, 2] and the left peaks [3, 1, 2]. 8 is attainable but misses the required endpoint 9."
+      },
+      {
+        "label": "D",
+        "explanation": "The footprint has 5 occupied cells. Match the front peaks [1, 3, 2] and the left peaks [3, 1, 2]. Rows [[1, 3, 0], [1, 0, 0], [0, 2, 2]] attain 9. The full feasible range is 8 to 9."
+      }
+    ]
+  },
+  "generator": {
+    "seed": 64315,
+    "parameters": {
+      "mechanism": "max-3"
+    },
+    "id": "penetration-cube-counting",
+    "revision": "b7c2479878cb457923f5c3ae989f1089af3a488ca979c9d2a9fbbe4d68c1acba"
+  },
+  "rendering": {
+    "width": 1845,
+    "height": 762,
+    "sha256": "0b74ab7afed086dd29c937b2f7233facfd43d07aa8abe7a51f9ffa19e8a547ad",
+    "pngBase64": "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vmhAZWVlwuYbN24cNmxYz549J02atHPnzjQPum/fvvnz559zzjl9+vR58cUXCzJt9erVp5566rhx47Zv354wbM+ePRMmTOjVq9f69eszPgcAsk12rlmLFi06/vjjJ02a9MknnyQM27Zt249+9KN+/fpt2LAh43MAIMT7778/evTo4447buLEiVu3bk1zq7Kysp/97Gddu3a99957k0/WgAZIn4Xcc8cdd1x11VV79+5NGJOw5M+YMeOkk07661//WuOXBS+//HK/fv1uueWW/fv3F2TIkiVL+vbt+9prr6U5fu3atV//+tc3bdqUqQkAkIWyc816+OGHv/3tbyd/m/Z/W7p06emnn75q1apMTQCAKAsXLjzxxBPvv//+ffv21WDzHTt2XHPNNSUlJTt27KiD2QG5Sp+FHPPQQw+NGzeuymFfdB47YcKEYcOGffjhh7Wcxv79+8ePH3/xxRcn36s+TS+88EJJSUl1Z7Vp06Yf/OAHtT86ANkpO9esefPmXXbZZdU9LS8rKxs0aNDmzZtrPwEAojz44IODBw9+5513armfBQsW9O/f/913383QvICcp89CLlm9evXVV1+dzsiD9tl77rln7NixGfw0zaxZsy699NJa7vDtt98eOnTorl27arDtE088MWPGjNocHYDslJ1r1tq1a4cPH16za6Y2btx4+eWX1+boAAR6+OGHR40aVbMl4EArV64cPHjwRx99lJG9AblOn4VcMmfOnPLy8nRGHnj+uWTJkhtuuCHjU5o+ffrEiRNrs4cZM2ak/xHRA91zzz21OToAWShr16xZs2bV5nrep5566k9/+lNtJgBAiNLS0iuuuCKz94199dVXfRwQ+Jw+CzWxbNmyVPX17Nmz3mb4Py8d9uzZc+mll3766ad1caxx48atXr26IMjzzz8feHQAMi6P16yCgoIbb7zx/fffD5wAANW1b9++Sy65JPn7P1Kp1AUXXDB79uyysrK9e/du37796aefvvTSSw85JKm6TJs27ZFHHqmDKQM5Rp+FXFVYWDhixIiZM2e+/fbbu3bt2rlz55o1a5599tm777777LPPLioq+u/Bd9111/r166vc57nnnjtr1qyNGzfu2bNn69atS5Ysufbaa/9nVweqqKi4+eabCzLhG9/4xvTp0z+fwMaNG++7774jjzyyyq0WLlyYkaMDkA1yZc266KKLHn/88c2bN+/du3fz5s3z5s27+OKLq9zqgw8+cAktQG75wx/+8PrrrycMaNu27aJFi2bOnDl06NAjjzyyqKioTZs2Z5xxxpQpUxYsWFBcXJyw7c0335ypeyYAOawSOMDtt99eF79uJ598cpWHbtGiRZq7eu2119L8cfbu3du+ffvkHTZp0uSRRx456OavvfZa586dkzdPpVJvvPFGLX+ou++++8Btt23b1q1bt+QNR44cWeU/QvIebr311jT/MQGorKxcsWJFlX/VN27cWIM958Sa1bRp07lz5x5087lz5zZp0iR5865du+7fv78G/zgApHm+1rdv30wda9++fV26dEleFJYtW5awh1mzZiXPdvr06clzGD58eMLmxx13XLV+ouTJODOCEK6fhdzTs2fPxYsXn3DCCWmOnzt37pYtW5LHPPTQQ+edd95BHzrhhBP+/ve/N2vWLGHzysrKyZMnF9TCz3/+8+uvv/7A/962bdsq91xaWlqbQwOQPXJizZoyZcqQIUMO+tCQIUP++Mc/Jm++du3aJUuW1GYCANSb+fPnb9iwIWHAT37ykz59+iQMOP/88wcOHJgwoJarEpAH9FnIMUVFRX/5y18OO+yw9DeZPXt28oDBgwcnfySze/fuY8aMSd7JnDlz0p/SgfsfN27cFz3ar1+/5Guptm3bVuNDA5BVsn/NGjRoUPIEhg8fPmDAgOSdPPvsszWeAAD1Kfnq16KionS+0HLUqFEJjz7zzDMffPBBjWYH5Al9FnLMyJEj079y9nPPPPNM8oDrrruuyp388Ic/LCwsTBiwbt26srKyghq58cYbk3d+0kknJTzq1QxA3sj+Neuaa66pcszVV1+dPGDp0qU1OzoA9Wzx4sUJjw4cODCdS2dOP/30hEf37dv34osv1mh2QJ7QZyHHJL/1eqAtW7Ykn4K2atUq+eM2nzviiCP69euXPOaf//xnQfU1atTowgsvTB7TsWPHhEd37dpVR1/zDUB9yv41q3nz5t/61reqHHbOOeckB+Jly5bV4OgA1LOtW7cmf2Vl375909lPhw4d6mJVAvKGPgu55NBDD+3Vq1e1Nlm7dm3ygB49eiSfQ/7HKaeckjxg3bp1BdXXrVu3Kt9zbtWqVfKAioqKGhwagKyS/WvWV77ylaKioiqHNW/e/Nhjj00Y8P7773/88cc1mAAAWbUw3Xrrrak0VLl2vPXWWxmdOJBj9FmoiZp9H+irr75ay+P26tUrlUpVa5MqP7953HHHpbmr7t271/JYB3XiiSdWOabK78IGIA9k/5qV/gS6deuWPGDHjh01mAAA9WnTpk31c6DNmzfXz4GA7KTPQi456qijqrvJRx99lDygdevWae6qypFVHuug2rRpU+WYxo0b12DPAOSW7F+zMjgBfRYg+9VssaiBXbt21c+BgOykz0IuSf+08D/27t2bPKB58+Zp7qpFixbJA/bs2VNQfS1btqxyzCGH+GMFkP+yf81q1qxZmiOrnGq9nfMDUHcLU84dCMhOkgfkkvRPC9O/M0B5eXmm3tRt2rRpQfU1atSoyjH6LEBDkP1r1u7du9McWeVU03l7EoBY9XabtcrKyvo5EJCdJA/Ic1We/n344Ydp7qrKkcXFxWnPCwByb83K4ASq/G5MAMJ5Lw2oH/os5LlOnTolD1i9enWau6pyZA1ujwsAObRmrVmzJlMj9VmA7FflYjFt2rTKTHj55Zfr62cCspE+C3numGOOSR7wr3/9a9++fensqrS0NHnAl7/85epMDQBybM1auXJlRUVFlcPKy8vffPPNhAFt2rTxoROA7Ne1a9fkAa+//np9zQXIZ/os5LkOHTokX460c+fORYsWVbmfbdu2LVmyJHnMV7/61YJslXyX208//bQe5wJArq5Z5eXlTz75ZJXDHn/88eSO3Ldv3xocHYB61q5du86dOycMeOqppwpyjTMjyEL6LOS/b3zjG8kD7rnnnip3ct999yWfah5zzDFVfi41UPJlSlu2bKnHuQCQw2vWvffem84EkgecdtppNTs6AFm1MC1btiz9W99kCWdGkIX0Wch/5513XvKAefPmzZo1K2HAmjVr7rzzzuSdDB06tCCLtWrVKuHRJ5988pNPPqnH6QCQq2vWggULkicwbdq0xYsXJ+9kwIABNZ4AAPXpggsuSHi0srJyzJgxNd75+vXrr7zyyqVLlxbUI2dGkIX0Wch/55xzTvv27ZPHXHLJJY899thBH1q1atVZZ51VXl6esHkqlbryyisLsljHjh0THt2wYcPZZ5/91FNPbd26Nc07GwLQYNesESNGzJ8//6APzZ8//4orrkjevGvXrv3796/NBACoNyUlJckfuZgzZ86ECROqu9tXXnllxIgRxx577IMPPljPJyDOjCAL6bOQ/4qKiq677rrkMXv27PnOd75z3nnnzZkzp6ys7JNPPnnvvfeef/7566+/vmfPnhs2bEjefMiQIccff3xBFuvZs2fygIULFw4aNKh9+/aNGzdO/f8mT55cX9MEaOhyYs3avXt3SUnJsGHDnnjiiXfffbeiomLLli3z58//3ve+V1JSsmfPnuTNR48enUqlajMBAJItW7YsVVOjR4/+7101btz4pptuSj7c2LFjR48e/dFHH1U5sQ0bNvzud7/r9ZmpU6em852TGefMCLJQYfQEgPpwww03TJo0af369cnD5nymujtv3Ljxr371q4Ls1rt370mTJkXPAoD8WbP++pnqbtW6deuRI0dmZAIA1I9rrrlm0qRJq1atShhz//33T5s2bcSIEWeeeeYpp5xy+OGHN2vWbMeOHdu3b9+2bdvy5cuXfebNN98siObMCLKQ62ehQWjWrNmUKVMOOaROfuXHjx/fvXv3guw2dOjQoqKi6FkA0NDXrIkTJ7Zp0yZwAgBUV+PGjadOndqkSZPkYTt37rz33nvPP//8L33pS61atWrcuHG7du2OP/74/v37X3vttVOnTs2GOOvMCLKTPgsNxYABA+66666M73bYsGFVft4nG7Rt2/bCCy+MngUAub1mXXDBBa1bt67x5meeeWaW364dgIPq1avX5MmT6+i9w3rmzAiyUD78cQHSdN11191xxx0Z3OH555//0EMP5cpN9H7zm9+0bds2ehYA5PCa1bVr16lTpxYW1uQWYUcdddSUKVNqc3QAAl1yySUPPvhg48aNC3KfMyPINvosNCxjx46dPn16ba79+dwhhxzy05/+9G9/+1sOvUDp2LHjzJkzDz/88OiJAJDDa9aQIUP+/Oc/VzfRduzY8cknn0z+BnAAstxll122cOHCzp07F+Q4Z0aQbfRZaHC++93vrlix4qKLLqrxNUS9evVasmTJ+PHjc+4DPgMGDCgtLb3oootqdukTAPUsO9es4cOHz5s3L/3T2j59+vzjH/844YQTMjUBAKL0799/5cqVN954Y9OmTWu5q0MPPfTKK69ctGjR6aefXlDvnBlBVsmxtgJkROfOnWfMmFFaWjpq1KhWrVqluVVhYeHgwYMfe+yxl1566Wtf+1pBLv/s//73v3//+99fdtllJ598cqdOnYqLi3PlLg0ADU12rlmDBg16/fXXR44cmXxNbtu2bX/7298+//zzRx99dMbnAECIVq1aTZw48a233vrFL37RtWvXam2bSqV69Ohx/fXXz507d8uWLZMnT/7mN78ZddWLMyPIHqnKysroOQCRKioqnnvuuRdeeOHVV1996623ysrKPv7447179xYWFjZv3rxDhw5dunTp0aNHnz59zjrrrEMPPTR6vgA0XPWwZhUXF+/ateuLHh0zZsydd9753/+lrKxs5syZTz/99MqVK7ds2bJnz54WLVp06dLl1FNPLSkpGTp0aJXf9w1ATluzZs3ixYtLS0tXrVpVVla2bdu23bt379u3r7i4uGXLlsXFxR07duzWrdtxnznttNPcVQA4kD4LAAA17LMAAFBL7m8AAAAAABBDnwUAAAAAiKHPAgAAAADE0GcBAAAAAGLoswAAAAAAMfRZAAAAAIAY+iwAAAAAQAx9FgAAAAAghj4LAAAAABBDnwUAAAAAiKHPAgAAAADESFVWVgYdGgAAAACgQXP9LAAAAABADH0WAAAAACCGPgsAAAAAEEOfBQAAAACIoc8CAAAAAMTQZwEAAAAAYuizAAAAAAAx9FkAAAAAgBj6LAAAAABADH0WAAAAACBGYdBxAYBgqVQqegpATVRWVkZPAQCAjEl5eQfpUDEaAn8PaVD8WYOcZs2iQbFm5T1/04AGzv0NAAAgx8hVNBz+b28IPMtAA6fPAvw/XhcCAAAA9cz9ZwGgofOhwjx+t8mTm0+8jwgAkJf0Wag257r5xLkuAECu8Do8z3gpDvA59zcAAAAAAIihzwIAAAAAxNBnAQAAAABi6LMAAAAAADH0WQAAAACAGPosAAAAAEAMfRYAAAAAIIY+CwAAAAAQQ58FAAAAAIihzwIAAAAAxNBnAQAAAABi6LMAAAAAADH0WQAAAACAGPosAAAAAEAMfRYAAAAAIIY+CwAAAAAQQ58FAAAAAIihzwIAAAAAxNBnAQAAAABi6LMAAAAAADH0WQAAAACAGPosAAAAAEAMfRYAAAAAIIY+CwAAAAAQQ58FAAAAAIihzwIAAAAAxNBnAQAAAABi6LMAAAAAADH0WQAAAACAGPosAAAAAEAMfRYAAAAAIIY+CwAAAAAQQ58FAAAAAIihzwIAAAAAxNBnAQAAAABi6LMAAAAAADH0WQAAAACAGPosAAAAAEAMfRYAAAAAIIY+CwAAAAAQQ58FAAAAAIihzwIAAAAAxNBnAQAAAABi6LMAAAAAADH0WQAAAACAGPosAAAAAEAMfRYAAAAAIIY+CwAAAAAQQ58FAAAAAIihzwIAAAAAxNBnAQAAAABi6LMAAAAAADH0WQAAAACAGPosAAAAAEAMfRYAAAAAIIY+CwAAAAAQQ58FAAAAAIihzwIAAAAAxNBnAQAAAABi6LMAAAAAADH0WQAAAACAGPosAAAAAEAMfRYAAAAAIIY+CwAAAAAQQ58FAAAAAIihzwIAAAAAxNBnAQAAAABi6LMAAAAAADH0WQAAAACAGPosAAAAAEAMfRYAAAAAIIY+CwAAAAAQQ58FAAAAAIihzwIAAAAAxNBnAQAAAABi6LMAAAAAADH0WQAAAACAGPosAAAAAEAMfRYAAAAAIIY+CwAAAAAQQ58FAAAAAIihzwIAAAAAxNBnAQAAAABi6LMAAAAAADH0WQAAAACAGPosAAAAAEAMfRYAAAAAIIY+CwAAAAAQQ58FAAAAAIihzwIAAAAAxNBnAQAAAABi6LMAAAAAADH0WQAAAACAGPosAAAAAEAMfRYAAAAAIIY+CwAAAAAQQ58FAAAAAIihzwIAAAAAxNBnAQAAAABi6LMAAAAAADH0WQAAAACAGPosAAAAAEAMfRYAAAAAIIY+CwAAAAAQQ58FAAAAAIihzwIAAAAAxNBnAQAAAABi6LMAAAAAADH0WQAAAACAGPosAAAAAEAMfRYAAAAAIIY+CwAAAAAQQ58FAAAAAIihzwIAAAAAxNBnAQAAAABi6LMAAAAAADH0WQAAAACAGPosAAAAAEAMfRYAAAAAIIY+CwAAAAAQQ58FAAAAAIihzwIAAAAAxNBnAQAAAABi6LMAAAAAADH0WQAAAACAGPosAAAAAEAMfRYAAAAAIIY+CwAAAAAQQ58FAAAAAIihzwIAAAAAxNBnAQAAAABi6LMAAAAAADH0WQAAAACAGPosAAAAAEAMfRYAAAAAIIY+CwAAAAAQQ58FAAAAAIihzwIAAAAAxNBnAQAAAABi6LMAAAAAADH0WQAAAACAGPosAAAAAEAMfRYAAAAAIIY+CwAAAAAQQ58FAAAAAIihzwIAAAAAxNBnAQAAAABi6LMAAAAAADH0WQAAAACAGPosAAAAAEAMfRYAAAAAIIY+CwAAAAAQQ58FAAAAAIhRGHRcACBbpFKp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",
+    "id": "penetration-cube-counting",
+    "revision": "b7c2479878cb457923f5c3ae989f1089af3a488ca979c9d2a9fbbe4d68c1acba"
+  },
+  "provenance": {
+    "sourceKind": "agent-authored",
+    "sourceRevision": "c27f9111a2674f2ea03e2ca1f5833326cf1eec1a",
+    "generationMethod": "SpatialViz-Bench official FreeCAD + OpenCV/Pillow pipeline",
+    "nativeEvidence": {
+      "entrypoints": [
+        "create_visual_penetration/create_cube_counting.py:main",
+        "utils.py:detect_subfigures",
+        "visual_penetration_tasks_utils.py:prepare_composite_image_CubeCounting",
+        "visual_penetration_tasks_utils.py:create_composite_image_CubeCounting",
+        "utils.py:save_json"
+      ],
+      "sourceFiles": {
+        "create_visual_penetration/create_cube_counting.py": "42f0fb2e3cc5ec26baa64e4c43903e45a061c256a9d50bbbe0d9cff9a9d80a8c",
+        "visual_penetration_tasks_utils.py": "77b1895b1a2622c982034e82b381f0a9d58e6dc84ab487401b09a3458ae2f27a",
+        "utils.py": "0cbea9458b251e44609590de9fb011c7f2f6d7e74d31f2b76a9b0f3f75952e15"
+      },
+      "freecadVersion": "1.0.2",
+      "artifactSha256": {
+        "2-3-3-3-8.png": "0b74ab7afed086dd29c937b2f7233facfd43d07aa8abe7a51f9ffa19e8a547ad",
+        "2-3-3-3-8_3View.pdf": "b6648f9203e0acbfe8b014b47852a44235e728db90abfb973126b3ed48eec790",
+        "2-3-3-3-8_Isometric.png": "ddf3c3580a1c89775d127f4565fd9119b13796c8ffbda34c2b1ec7feddb3a435",
+        "data.json": "014cb1c6d65f13b5de1a37b5c5abdc6f2a39a7946fc826032f224c8d34e99d7c",
+        "Front.png": "9535bc78f45cba1e3407607258930fd6ff34c10c7f7dde7d8f0ac81f9bde2c94",
+        "Left.png": "e93057d411ed81f77ee0ca0066573f3124afae1cff6471cea37b68fbb246bf40",
+        "model.FCStd": "66851197d8aa032982c1b1046d2ba72e2ab8bb8f007e5fee8473af9069d44761",
+        "Top.png": "b201348b8d43aaa5f6e675ee987026b348958e441f03f5bdf58ca0a3f007795c"
+      },
+      "annotation": {
+        "Category": "VisualPenetration",
+        "Task": "CubeCounting",
+        "Level": "Level1",
+        "Image_id": "2-3-3-3-8",
+        "Question": "Given 3 views, how many cubes are at most needed to satisfy the constraints shown? Please choose from options A, B, C, or D.",
+        "Choices": [
+          "6",
+          "10",
+          "8",
+          "9"
+        ],
+        "Answer": "D",
+        "Explanation": {
+          "ABCD": "Given 3 views, a minimum of 8 cubes and a maximum of 9 cubes are required."
+        }
+      },
+      "modelSeed": 64315,
+      "acceptedCompositionSeed": 64315,
+      "rejectedOptionDraws": 0,
+      "inputKind": "official seeded occupancy sampler",
+      "hostAdaptations": [
+        "Bind the active FreeCAD document for the upstream cube helper and assign complete unit placements.",
+        "Allow GUI events to settle before the upstream TechDraw PDF export; save the accepted document as FCStd.",
+        "Normalize light gray paper to white on the three official PDF crops before upstream grid detection.",
+        "Resolve the official label font with the bundled DejaVu Sans Bold file."
+      ]
+    },
+    "officialTools": {
+      "revision": "c27f9111a2674f2ea03e2ca1f5833326cf1eec1a",
+      "sourceFiles": {
+        "create_visual_penetration/create_cube_counting.py": "42f0fb2e3cc5ec26baa64e4c43903e45a061c256a9d50bbbe0d9cff9a9d80a8c",
+        "visual_penetration_tasks_utils.py": "77b1895b1a2622c982034e82b381f0a9d58e6dc84ab487401b09a3458ae2f27a",
+        "utils.py": "0cbea9458b251e44609590de9fb011c7f2f6d7e74d31f2b76a9b0f3f75952e15"
+      },
+      "modelEntry": "create_visual_penetration/create_cube_counting.py",
+      "freecadLaunches": [
+        "freecad.exe"
+      ],
+      "observedFunctions": {
+        "prepare_composite_image_CubeCounting": 1,
+        "create_composite_image_CubeCounting": 1,
+        "detect_grid": 3,
+        "get_cube_ans": 1
+      },
+      "compositor": "create_composite_image_CubeCounting",
+      "compositeSha256": "0b74ab7afed086dd29c937b2f7233facfd43d07aa8abe7a51f9ffa19e8a547ad",
+      "nativeFiles": [
+        {
+          "file": "question.png",
+          "sha256": "0b74ab7afed086dd29c937b2f7233facfd43d07aa8abe7a51f9ffa19e8a547ad",
+          "bytes": 10877
+        },
+        {
+          "file": "VisualPenetration/CubeCounting/Level1/2-3-3-3-8/2-3-3-3-8.png",
+          "sha256": "0b74ab7afed086dd29c937b2f7233facfd43d07aa8abe7a51f9ffa19e8a547ad",
+          "bytes": 10877
+        },
+        {
+          "file": "VisualPenetration/CubeCounting/Level1/2-3-3-3-8/2-3-3-3-8_3View.pdf",
+          "sha256": "b6648f9203e0acbfe8b014b47852a44235e728db90abfb973126b3ed48eec790",
+          "bytes": 6492
+        },
+        {
+          "file": "VisualPenetration/CubeCounting/Level1/2-3-3-3-8/2-3-3-3-8_Isometric.png",
+          "sha256": "ddf3c3580a1c89775d127f4565fd9119b13796c8ffbda34c2b1ec7feddb3a435",
+          "bytes": 13411
+        },
+        {
+          "file": "VisualPenetration/CubeCounting/Level1/2-3-3-3-8/Front.png",
+          "sha256": "9535bc78f45cba1e3407607258930fd6ff34c10c7f7dde7d8f0ac81f9bde2c94",
+          "bytes": 1952
+        },
+        {
+          "file": "VisualPenetration/CubeCounting/Level1/2-3-3-3-8/Left.png",
+          "sha256": "e93057d411ed81f77ee0ca0066573f3124afae1cff6471cea37b68fbb246bf40",
+          "bytes": 1957
+        },
+        {
+          "file": "VisualPenetration/CubeCounting/Level1/2-3-3-3-8/model.FCStd",
+          "sha256": "66851197d8aa032982c1b1046d2ba72e2ab8bb8f007e5fee8473af9069d44761",
+          "bytes": 23952
+        },
+        {
+          "file": "VisualPenetration/CubeCounting/Level1/2-3-3-3-8/Top.png",
+          "sha256": "b201348b8d43aaa5f6e675ee987026b348958e441f03f5bdf58ca0a3f007795c",
+          "bytes": 1969
+        }
+      ]
+    }
+  },
+  "verifier": {
+    "id": "penetration-cube-counting",
+    "revision": "b7c2479878cb457923f5c3ae989f1089af3a488ca979c9d2a9fbbe4d68c1acba"
+  }
+}

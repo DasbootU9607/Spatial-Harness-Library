@@ -1,0 +1,674 @@
+{
+  "schemaVersion": 1,
+  "manifest": {
+    "sealed": true,
+    "id": "build-49cb8f66-3c24-4617-9068-2d3dd21bfe9e",
+    "title": "Author cross-sections",
+    "runKind": "[private value omitted]",
+    "harness": "spatialviz-harness",
+    "benchmark": "SpatialViz-Bench",
+    "category": "VisualPenetration",
+    "taskType": "cross-sections",
+    "skill": {
+      "id": "spatialviz-cross-sections",
+      "sha256": "3071023abb1ce87e90084b51c4ecc8f1294bdd738eab73938d498007caf7fe08"
+    },
+    "status": "accepted",
+    "finalCandidateId": "v001",
+    "limitations": [
+      "Only recorder-mediated deliveries, commands and saved boundaries are observed; direct function calls, unwrapped commands and unsaved editor states are excluded.",
+      "Design notes are explicit author annotations, not internal reasoning."
+    ],
+    "captureGaps": []
+  },
+  "events": [
+    {
+      "id": "e000001",
+      "seq": 1,
+      "runId": "build-49cb8f66-3c24-4617-9068-2d3dd21bfe9e",
+      "type": "run.created",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": null,
+      "details": {},
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000002",
+      "seq": 2,
+      "runId": "build-49cb8f66-3c24-4617-9068-2d3dd21bfe9e",
+      "type": "collector.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": null,
+      "details": {},
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000003",
+      "seq": 3,
+      "runId": "build-49cb8f66-3c24-4617-9068-2d3dd21bfe9e",
+      "type": "skill.attached",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": null,
+      "details": {
+        "sha256": "3071023abb1ce87e90084b51c4ecc8f1294bdd738eab73938d498007caf7fe08",
+        "skill": "spatialviz-cross-sections"
+      },
+      "evidenceRefs": [
+        {
+          "id": "4f333f306f1556e4",
+          "sha256": "3071023abb1ce87e90084b51c4ecc8f1294bdd738eab73938d498007caf7fe08",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000004",
+      "seq": 4,
+      "runId": "build-49cb8f66-3c24-4617-9068-2d3dd21bfe9e",
+      "type": "resource.read",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "aca66754-8e31-452d-96cd-5420c60707d7",
+      "candidateId": null,
+      "details": {
+        "outcome": "delivered",
+        "label": "design.md",
+        "start": 1,
+        "end": 19,
+        "sha256": "54ae2f145c29b9f96651b0d9b8155c0611ab2ca6f1684826fd5c13613e43006a",
+        "sourceSha256": "54ae2f145c29b9f96651b0d9b8155c0611ab2ca6f1684826fd5c13613e43006a"
+      },
+      "evidenceRefs": [
+        {
+          "id": "68dc1b8600b712f4",
+          "sha256": "54ae2f145c29b9f96651b0d9b8155c0611ab2ca6f1684826fd5c13613e43006a",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000005",
+      "seq": 5,
+      "runId": "build-49cb8f66-3c24-4617-9068-2d3dd21bfe9e",
+      "type": "design.note",
+      "actor": "author",
+      "origin": "agent_statement",
+      "actionId": null,
+      "candidateId": null,
+      "details": {
+        "goal": "Generate a new cross-sections question",
+        "sources": [
+          "Official inventory and design notes"
+        ],
+        "change": "Construct mixed",
+        "reason": null,
+        "expectedChecks": [
+          "Independent geometry",
+          "Media review"
+        ]
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000006",
+      "seq": 6,
+      "runId": "build-49cb8f66-3c24-4617-9068-2d3dd21bfe9e",
+      "type": "resource.read",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "71f23fc7-df4f-45b0-a1ec-bb2db88d415c",
+      "candidateId": null,
+      "details": {
+        "outcome": "delivered",
+        "label": "create_cross_section.py",
+        "start": 1,
+        "end": 707,
+        "sha256": "dd0a7a7ca7ec194db62d1692de9b8f1330c34d3e2df13dae42eb7c1da4529df0",
+        "sourceSha256": "dd0a7a7ca7ec194db62d1692de9b8f1330c34d3e2df13dae42eb7c1da4529df0"
+      },
+      "evidenceRefs": [
+        {
+          "id": "8992ce56abc3d5f3",
+          "sha256": "dd0a7a7ca7ec194db62d1692de9b8f1330c34d3e2df13dae42eb7c1da4529df0",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000007",
+      "seq": 7,
+      "runId": "build-49cb8f66-3c24-4617-9068-2d3dd21bfe9e",
+      "type": "resource.read",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "395ba189-0e56-43c5-a51d-fd439286dcb4",
+      "candidateId": null,
+      "details": {
+        "outcome": "delivered",
+        "label": "visual_penetration_tasks_utils.py",
+        "start": 1,
+        "end": 537,
+        "sha256": "77b1895b1a2622c982034e82b381f0a9d58e6dc84ab487401b09a3458ae2f27a",
+        "sourceSha256": "77b1895b1a2622c982034e82b381f0a9d58e6dc84ab487401b09a3458ae2f27a"
+      },
+      "evidenceRefs": [
+        {
+          "id": "d351eff9617b6f5f",
+          "sha256": "77b1895b1a2622c982034e82b381f0a9d58e6dc84ab487401b09a3458ae2f27a",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000008",
+      "seq": 8,
+      "runId": "build-49cb8f66-3c24-4617-9068-2d3dd21bfe9e",
+      "type": "resource.read",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "8050933a-d4cd-4fee-8733-056211000567",
+      "candidateId": null,
+      "details": {
+        "outcome": "delivered",
+        "label": "utils.py",
+        "start": 1,
+        "end": 237,
+        "sha256": "0cbea9458b251e44609590de9fb011c7f2f6d7e74d31f2b76a9b0f3f75952e15",
+        "sourceSha256": "0cbea9458b251e44609590de9fb011c7f2f6d7e74d31f2b76a9b0f3f75952e15"
+      },
+      "evidenceRefs": [
+        {
+          "id": "e1874bb7342df045",
+          "sha256": "0cbea9458b251e44609590de9fb011c7f2f6d7e74d31f2b76a9b0f3f75952e15",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000009",
+      "seq": 9,
+      "runId": "build-49cb8f66-3c24-4617-9068-2d3dd21bfe9e",
+      "type": "command.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "cba2c1e1-f1bc-4bf2-9112-487d6c88c34e",
+      "candidateId": null,
+      "details": {
+        "label": "python",
+        "kind": "FreeCAD create_cross_section.py and SpatialViz official option composition"
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000010",
+      "seq": 10,
+      "runId": "build-49cb8f66-3c24-4617-9068-2d3dd21bfe9e",
+      "type": "command.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "cba2c1e1-f1bc-4bf2-9112-487d6c88c34e",
+      "candidateId": null,
+      "details": {
+        "commandEventId": "e000009",
+        "kind": "FreeCAD create_cross_section.py and SpatialViz official option composition",
+        "exitCode": 0,
+        "signal": null
+      },
+      "evidenceRefs": [
+        {
+          "id": "2e2f386b66b82a42",
+          "sha256": "fe9a45cf6e294fa3571ac6f26be94032b9736959590c6d66305ee0780121c828",
+          "availability": "local evidence; hash published"
+        },
+        {
+          "id": "953fcad2991c08b9",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000011",
+      "seq": 11,
+      "runId": "build-49cb8f66-3c24-4617-9068-2d3dd21bfe9e",
+      "type": "design.note",
+      "actor": "author",
+      "origin": "agent_statement",
+      "actionId": null,
+      "candidateId": null,
+      "details": {
+        "goal": "Bind the published pixels to the official tool execution",
+        "sources": [
+          "create_cross_section.py",
+          "visual_penetration_tasks_utils.py",
+          "create_composite_image_CrossSection"
+        ],
+        "change": "Observed 1 FreeCAD launch(es); saved 1 native document(s).",
+        "reason": "The PNG SHA-256 at the official compositor return was bbb15ae2f6211ac9492ad8c2d632aa53f4eb853163ce325f989af533c3c906b0.",
+        "expectedChecks": [
+          "Native artifact digests and observed functions are in the task provenance."
+        ]
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000012",
+      "seq": 12,
+      "runId": "build-49cb8f66-3c24-4617-9068-2d3dd21bfe9e",
+      "type": "candidate.saved",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "eac773aa-5783-48a8-9b9d-610046e58b21",
+      "candidateId": "v001",
+      "details": {
+        "sha256": "bd86aebea9833b7ea9312e80138575287d9dbb84142e82fce570893f7b5b8066",
+        "parentId": null,
+        "parentBasis": null,
+        "changes": [
+          "specification",
+          "geometry",
+          "question",
+          "options",
+          "answer",
+          "contract",
+          "rendering",
+          "generator"
+        ],
+        "fingerprints": {
+          "specification": "bd86aebea9833b7ea9312e80138575287d9dbb84142e82fce570893f7b5b8066",
+          "geometry": "42e361c841b375e61bc04a6029c3af4bd46b10a40203ab56b5486775072f29f3",
+          "question": "31e5faa15290f33ad3fc577ce2600332861928e8c57b688cea3599e34e2b24ec",
+          "options": "df567dbeff573256f4f2fe6018c4b20d85e63d18429d0307fa771f1e45b19e80",
+          "answer": "940fe95be1af3b7aa5169b78c9f811c82da048a6496e2d8d8cb4c30ec7d859b1",
+          "contract": "ae0538de42eca6697f8dfd7d0b25fdcaeb73a1935671da6d0f7c2f9c652e1fd5",
+          "rendering": "1dd2e1f9b5593d67fc6fcb8cf397642fdcfaf03bc243122b2db3429b4afc44b3",
+          "generator": "41dffd580a6bb5fbe86aa3222ed4f895e518b8aa1d9cf3b351145cb58a32f48a"
+        },
+        "previewUnavailable": null
+      },
+      "evidenceRefs": [
+        {
+          "id": "af06339dc4f90fed",
+          "sha256": "bd86aebea9833b7ea9312e80138575287d9dbb84142e82fce570893f7b5b8066",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000013",
+      "seq": 13,
+      "runId": "build-49cb8f66-3c24-4617-9068-2d3dd21bfe9e",
+      "type": "build.saved",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": "v001",
+      "details": {},
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000014",
+      "seq": 14,
+      "runId": "build-49cb8f66-3c24-4617-9068-2d3dd21bfe9e",
+      "type": "render.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "e427395c-c710-4060-9f3b-9ec00a249274",
+      "candidateId": "v001",
+      "details": {
+        "renderer": {
+          "id": "penetration-cross-sections",
+          "revision": "da7994ee59b4420debb892d9b5276661676eb8740007e064d4e0eab371cece0f"
+        }
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000015",
+      "seq": 15,
+      "runId": "build-49cb8f66-3c24-4617-9068-2d3dd21bfe9e",
+      "type": "render.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "e427395c-c710-4060-9f3b-9ec00a249274",
+      "candidateId": "v001",
+      "details": {
+        "sha256": "bbb15ae2f6211ac9492ad8c2d632aa53f4eb853163ce325f989af533c3c906b0",
+        "renderer": {
+          "id": "penetration-cross-sections",
+          "revision": "da7994ee59b4420debb892d9b5276661676eb8740007e064d4e0eab371cece0f"
+        },
+        "specification": "bd86aebea9833b7ea9312e80138575287d9dbb84142e82fce570893f7b5b8066",
+        "rendering": "1dd2e1f9b5593d67fc6fcb8cf397642fdcfaf03bc243122b2db3429b4afc44b3"
+      },
+      "evidenceRefs": [
+        {
+          "id": "6d59ed3425a4b710",
+          "sha256": "bbb15ae2f6211ac9492ad8c2d632aa53f4eb853163ce325f989af533c3c906b0",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000016",
+      "seq": 16,
+      "runId": "build-49cb8f66-3c24-4617-9068-2d3dd21bfe9e",
+      "type": "command.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "c2e18d69-fe39-478a-b5f9-c62ae7206dc6",
+      "candidateId": "v001",
+      "details": {
+        "label": "node.exe",
+        "kind": "verification"
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000017",
+      "seq": 17,
+      "runId": "build-49cb8f66-3c24-4617-9068-2d3dd21bfe9e",
+      "type": "command.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "c2e18d69-fe39-478a-b5f9-c62ae7206dc6",
+      "candidateId": "v001",
+      "details": {
+        "commandEventId": "e000016",
+        "kind": "verification",
+        "exitCode": 0,
+        "signal": null
+      },
+      "evidenceRefs": [
+        {
+          "id": "d139d0cc3a972132",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "availability": "local evidence; hash published"
+        },
+        {
+          "id": "15be2d2ab0063c52",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000018",
+      "seq": 18,
+      "runId": "build-49cb8f66-3c24-4617-9068-2d3dd21bfe9e",
+      "type": "test.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "c2e18d69-fe39-478a-b5f9-c62ae7206dc6",
+      "candidateId": "v001",
+      "details": {
+        "commandEventId": "e000016",
+        "completedEventId": "e000017",
+        "verdict": "passed",
+        "status": "passed",
+        "checks": [
+          {
+            "name": "Final official composite and native panel order",
+            "verdict": "passed"
+          },
+          {
+            "name": "Final visible wire pixels match oriented native section geometry",
+            "verdict": "passed"
+          },
+          {
+            "name": "Exactly one answer under independent plane clipping or global seam containment",
+            "verdict": "passed"
+          },
+          {
+            "name": "Four distinct outlines",
+            "verdict": "passed"
+          },
+          {
+            "name": "Per-option explanations",
+            "verdict": "passed"
+          },
+          {
+            "name": "Unmodified official source fingerprints",
+            "verdict": "passed"
+          },
+          {
+            "name": "FreeCAD launch and native document recorded",
+            "verdict": "passed"
+          },
+          {
+            "name": "Pinned compositor emitted the delivered PNG",
+            "verdict": "passed"
+          },
+          {
+            "name": "Official method and task identity",
+            "verdict": "passed"
+          },
+          {
+            "name": "Current official-tool adapter and verifier revisions",
+            "verdict": "passed"
+          }
+        ],
+        "scope": "Native FreeCAD evidence, original compositor output, per-option geometry and final media.",
+        "binding": "exact",
+        "bindingBasis": "exact candidate and full input fingerprints",
+        "testedFingerprints": {
+          "specification": "bd86aebea9833b7ea9312e80138575287d9dbb84142e82fce570893f7b5b8066",
+          "geometry": "42e361c841b375e61bc04a6029c3af4bd46b10a40203ab56b5486775072f29f3",
+          "question": "31e5faa15290f33ad3fc577ce2600332861928e8c57b688cea3599e34e2b24ec",
+          "options": "df567dbeff573256f4f2fe6018c4b20d85e63d18429d0307fa771f1e45b19e80",
+          "answer": "940fe95be1af3b7aa5169b78c9f811c82da048a6496e2d8d8cb4c30ec7d859b1",
+          "contract": "ae0538de42eca6697f8dfd7d0b25fdcaeb73a1935671da6d0f7c2f9c652e1fd5",
+          "rendering": "1dd2e1f9b5593d67fc6fcb8cf397642fdcfaf03bc243122b2db3429b4afc44b3",
+          "generator": "41dffd580a6bb5fbe86aa3222ed4f895e518b8aa1d9cf3b351145cb58a32f48a"
+        },
+        "verifier": {
+          "id": "penetration-cross-sections",
+          "revision": "da7994ee59b4420debb892d9b5276661676eb8740007e064d4e0eab371cece0f"
+        },
+        "reportSha256": "3354aaa425b16500dc85a29dba11b588deb9bf12c70059cf91744f719ab557c1"
+      },
+      "evidenceRefs": [
+        {
+          "id": "29983b5e1e40c97d",
+          "sha256": "3354aaa425b16500dc85a29dba11b588deb9bf12c70059cf91744f719ab557c1",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000019",
+      "seq": 19,
+      "runId": "build-49cb8f66-3c24-4617-9068-2d3dd21bfe9e",
+      "type": "visual.review",
+      "actor": "author",
+      "origin": "agent_statement",
+      "actionId": null,
+      "candidateId": "v001",
+      "details": {
+        "outcome": "passed",
+        "review": "The triangular frustum stands well inside the square support in both views. D extends its lower rim past both edges of the support in the same cutting plane. B is a circle through the cylinder alone. A and C retain the narrowing middle and the thin top rectangle."
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000020",
+      "seq": 20,
+      "runId": "build-49cb8f66-3c24-4617-9068-2d3dd21bfe9e",
+      "type": "run.finished",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": "v001",
+      "details": {
+        "outcome": "accepted",
+        "finalCandidateId": "v001"
+      },
+      "evidenceRefs": []
+    }
+  ],
+  "candidates": [
+    {
+      "id": "v001",
+      "parentId": null,
+      "parentBasis": null,
+      "sha256": "bd86aebea9833b7ea9312e80138575287d9dbb84142e82fce570893f7b5b8066",
+      "fingerprints": {
+        "specification": "bd86aebea9833b7ea9312e80138575287d9dbb84142e82fce570893f7b5b8066",
+        "geometry": "42e361c841b375e61bc04a6029c3af4bd46b10a40203ab56b5486775072f29f3",
+        "question": "31e5faa15290f33ad3fc577ce2600332861928e8c57b688cea3599e34e2b24ec",
+        "options": "df567dbeff573256f4f2fe6018c4b20d85e63d18429d0307fa771f1e45b19e80",
+        "answer": "940fe95be1af3b7aa5169b78c9f811c82da048a6496e2d8d8cb4c30ec7d859b1",
+        "contract": "ae0538de42eca6697f8dfd7d0b25fdcaeb73a1935671da6d0f7c2f9c652e1fd5",
+        "rendering": "1dd2e1f9b5593d67fc6fcb8cf397642fdcfaf03bc243122b2db3429b4afc44b3",
+        "generator": "41dffd580a6bb5fbe86aa3222ed4f895e518b8aa1d9cf3b351145cb58a32f48a"
+      },
+      "previewUnavailable": null,
+      "changes": [
+        "specification",
+        "geometry",
+        "question",
+        "options",
+        "answer",
+        "contract",
+        "rendering",
+        "generator"
+      ],
+      "preview": {
+        "candidateId": "v001",
+        "specification": "bd86aebea9833b7ea9312e80138575287d9dbb84142e82fce570893f7b5b8066",
+        "rendering": "1dd2e1f9b5593d67fc6fcb8cf397642fdcfaf03bc243122b2db3429b4afc44b3",
+        "renderer": {
+          "id": "penetration-cross-sections",
+          "revision": "da7994ee59b4420debb892d9b5276661676eb8740007e064d4e0eab371cece0f"
+        },
+        "sha256": "bbb15ae2f6211ac9492ad8c2d632aa53f4eb853163ce325f989af533c3c906b0",
+        "path": "records/authored-bd86aebea9833b7ea9312e80/v001-bbb15ae2f6211ac9.png",
+        "origin": "recorded-render"
+      }
+    }
+  ],
+  "tests": [
+    {
+      "id": "t001",
+      "actionId": "c2e18d69-fe39-478a-b5f9-c62ae7206dc6",
+      "candidateId": "v001",
+      "testedFingerprints": {
+        "specification": "bd86aebea9833b7ea9312e80138575287d9dbb84142e82fce570893f7b5b8066",
+        "geometry": "42e361c841b375e61bc04a6029c3af4bd46b10a40203ab56b5486775072f29f3",
+        "question": "31e5faa15290f33ad3fc577ce2600332861928e8c57b688cea3599e34e2b24ec",
+        "options": "df567dbeff573256f4f2fe6018c4b20d85e63d18429d0307fa771f1e45b19e80",
+        "answer": "940fe95be1af3b7aa5169b78c9f811c82da048a6496e2d8d8cb4c30ec7d859b1",
+        "contract": "ae0538de42eca6697f8dfd7d0b25fdcaeb73a1935671da6d0f7c2f9c652e1fd5",
+        "rendering": "1dd2e1f9b5593d67fc6fcb8cf397642fdcfaf03bc243122b2db3429b4afc44b3",
+        "generator": "41dffd580a6bb5fbe86aa3222ed4f895e518b8aa1d9cf3b351145cb58a32f48a"
+      },
+      "verifier": {
+        "id": "penetration-cross-sections",
+        "revision": "da7994ee59b4420debb892d9b5276661676eb8740007e064d4e0eab371cece0f"
+      },
+      "reportSha256": "3354aaa425b16500dc85a29dba11b588deb9bf12c70059cf91744f719ab557c1",
+      "verdict": "passed",
+      "status": "passed",
+      "checks": [
+        {
+          "name": "Final official composite and native panel order",
+          "verdict": "passed"
+        },
+        {
+          "name": "Final visible wire pixels match oriented native section geometry",
+          "verdict": "passed"
+        },
+        {
+          "name": "Exactly one answer under independent plane clipping or global seam containment",
+          "verdict": "passed"
+        },
+        {
+          "name": "Four distinct outlines",
+          "verdict": "passed"
+        },
+        {
+          "name": "Per-option explanations",
+          "verdict": "passed"
+        },
+        {
+          "name": "Unmodified official source fingerprints",
+          "verdict": "passed"
+        },
+        {
+          "name": "FreeCAD launch and native document recorded",
+          "verdict": "passed"
+        },
+        {
+          "name": "Pinned compositor emitted the delivered PNG",
+          "verdict": "passed"
+        },
+        {
+          "name": "Official method and task identity",
+          "verdict": "passed"
+        },
+        {
+          "name": "Current official-tool adapter and verifier revisions",
+          "verdict": "passed"
+        }
+      ],
+      "scope": "Native FreeCAD evidence, original compositor output, per-option geometry and final media.",
+      "commandExitStatus": 0,
+      "binding": "exact",
+      "bindingBasis": "exact candidate and full input fingerprints",
+      "commandEventId": "e000016"
+    }
+  ],
+  "usage": {
+    "schemaVersion": 2,
+    "runId": "build-49cb8f66-3c24-4617-9068-2d3dd21bfe9e",
+    "source": "codex",
+    "runtime": "Codex Desktop",
+    "status": "measured",
+    "elapsedMs": 425060,
+    "elapsedKind": "wall-clock",
+    "scope": "Runtime-reported usage between the start baseline and finish snapshot of this session. In-flight or delayed usage, earlier conversation, other agents and later delivery are excluded. This is an observed interval, not a complete billed task total.",
+    "scopeComplete": false,
+    "observedTokens": {
+      "input_tokens": 4029975,
+      "cached_input_tokens": 3988864,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 7248,
+      "reasoning_output_tokens": 1006,
+      "total_tokens": 4037223
+    },
+    "tokens": {
+      "input_tokens": null,
+      "cached_input_tokens": null,
+      "cache_write_input_tokens": null,
+      "output_tokens": null,
+      "reasoning_output_tokens": null,
+      "total_tokens": null
+    },
+    "models": [
+      {
+        "provider": "openai",
+        "model": "gpt-6.2-astra",
+        "reasoningEffort": "xhigh",
+        "tokens": {
+          "input_tokens": 4029975,
+          "cached_input_tokens": 3988864,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 7248,
+          "reasoning_output_tokens": 1006,
+          "total_tokens": 4037223
+        },
+        "observations": 22
+      }
+    ],
+    "missingFields": [],
+    "issues": [],
+    "observations": 22
+  },
+  "caseId": "authored-bd86aebea9833b7ea9312e80"
+}

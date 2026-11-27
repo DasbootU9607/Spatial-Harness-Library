@@ -1,0 +1,69 @@
+{
+  "id": "t001",
+  "actionId": "1d0f868d-dacb-4708-acf0-143887e0f15c",
+  "candidateId": "v001",
+  "testedFingerprints": {
+    "specification": "c2a053d8f9a1a8bf9282617be147e141fcff0f127df221e09500fd51c64dd814",
+    "geometry": "7c3aeb3145cc7b07e1fa514b4feb7f8d0fd87eefce73dbfb3209558f217a21ca",
+    "question": "72385af9e66a2832047c06d63b4fb4894382aaef9371301c3ddffa164e668928",
+    "options": "b44161971c6b67cb92a4b53a396cb1954ed57fcf8490688bd9018d2976a0fa3b",
+    "answer": "036fba1950a6d959a97b351a32141f2d49a3657546424339765dd173c2365684",
+    "contract": "7a3b9e23c9e7350daeb2fda9513b1932ecee8ac65842c6646ef0eacd81ade8b7",
+    "rendering": "45113c9e407fe0e93a8ead8ee7780bb4611e4fcaee4d81d0f1c7a70af2a6d202",
+    "generator": "97ed6068bf61c01e07d757698a36a7f7781d371978aa8e499bccd0c819cc8466"
+  },
+  "verifier": {
+    "id": "penetration-cube-counting",
+    "revision": "b7c2479878cb457923f5c3ae989f1089af3a488ca979c9d2a9fbbe4d68c1acba"
+  },
+  "reportSha256": "18c205e175d4bbba18d16f3a832692c0224fe65aca75413e8463136a8d4b559f",
+  "verdict": "passed",
+  "status": "passed",
+  "checks": [
+    {
+      "name": "Final image is the official compositor output",
+      "verdict": "passed"
+    },
+    {
+      "name": "Prompt, choices and key agree with upstream annotation",
+      "verdict": "passed"
+    },
+    {
+      "name": "Published projection cells agree with the native model",
+      "verdict": "passed"
+    },
+    {
+      "name": "Visible constraints yield exactly one qualifying choice",
+      "verdict": "passed"
+    },
+    {
+      "name": "Per-option explanations agree with the independent solver",
+      "verdict": "passed"
+    },
+    {
+      "name": "Unmodified official source fingerprints",
+      "verdict": "passed"
+    },
+    {
+      "name": "FreeCAD launch and native document recorded",
+      "verdict": "passed"
+    },
+    {
+      "name": "Pinned compositor emitted the delivered PNG",
+      "verdict": "passed"
+    },
+    {
+      "name": "Official method and task identity",
+      "verdict": "passed"
+    },
+    {
+      "name": "Current official-tool adapter and verifier revisions",
+      "verdict": "passed"
+    }
+  ],
+  "scope": "Native FreeCAD evidence, original compositor output, per-option geometry and final media.",
+  "commandExitStatus": 0,
+  "binding": "exact",
+  "bindingBasis": "exact candidate and full input fingerprints",
+  "commandEventId": "e000016"
+}

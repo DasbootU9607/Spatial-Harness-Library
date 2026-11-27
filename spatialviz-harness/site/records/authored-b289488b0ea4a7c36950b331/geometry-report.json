@@ -1,0 +1,122 @@
+{
+  "checks": [
+    {
+      "name": "Final official composite and native panel order",
+      "verdict": "passed"
+    },
+    {
+      "name": "Final visible wire pixels match oriented native section geometry",
+      "verdict": "passed"
+    },
+    {
+      "name": "Exactly one answer under independent plane clipping or global seam containment",
+      "verdict": "passed"
+    },
+    {
+      "name": "Four distinct outlines",
+      "verdict": "passed"
+    },
+    {
+      "name": "Per-option explanations",
+      "verdict": "passed"
+    },
+    {
+      "name": "Unmodified official source fingerprints",
+      "verdict": "passed"
+    },
+    {
+      "name": "FreeCAD launch and native document recorded",
+      "verdict": "passed"
+    },
+    {
+      "name": "Pinned compositor emitted the delivered PNG",
+      "verdict": "passed"
+    },
+    {
+      "name": "Official method and task identity",
+      "verdict": "passed"
+    },
+    {
+      "name": "Current official-tool adapter and verifier revisions",
+      "verdict": "passed"
+    }
+  ],
+  "verdict": "passed",
+  "geometryEvidence": {
+    "optionCertificates": [
+      {
+        "planeNormal": [
+          0,
+          1,
+          0
+        ],
+        "planeDistance": -2.220446049250313e-16,
+        "nativeComponents": 2,
+        "matchesIndependentClip": true
+      },
+      {
+        "planeNormal": [
+          0,
+          0.7071067811865476,
+          0.7071067811865476
+        ],
+        "planeDistance": 1.414213562373095,
+        "nativeComponents": 2,
+        "matchesIndependentClip": true
+      },
+      {
+        "planeNormal": [
+          0,
+          1,
+          0
+        ],
+        "planeDistance": -2.220446049250313e-16,
+        "nativeComponents": 2,
+        "matchesIndependentClip": false,
+        "upperFootprintContained": true,
+        "interfaceIntervals": [
+          [
+            -2,
+            2
+          ],
+          [
+            -5.8,
+            5.8
+          ]
+        ]
+      },
+      {
+        "planeNormal": [
+          0,
+          0,
+          1
+        ],
+        "planeDistance": 3,
+        "nativeComponents": 1,
+        "matchesIndependentClip": true
+      }
+    ],
+    "visibleWireMatches": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  "candidateId": "v001",
+  "testedFingerprints": {
+    "specification": "b289488b0ea4a7c36950b3313f27899db07d6bf4774f271107f33b49647c7d87",
+    "geometry": "dc4c66ad711df29fdcb94b09546b225f74550c44cd0aba7129fc92a35882acd1",
+    "question": "a1e4d614845d8a02ce9691ef0d1bb86d893ae3b62a0042ed880340aa49164fc5",
+    "options": "5e5a3f9cacd868b07197e6862c88b3d89d537b9eb5f8d54bd6652618732db4a8",
+    "answer": "eaaca327307f0600e6f24c9a49433dacca414949e125a7e89d1fa5020049d826",
+    "contract": "ec532511ad9af43362da77462319f2e7985a1834498445c32f74caf9d069bdb7",
+    "rendering": "900b80a69cbd44d12ec844069bf9d16c20c4026f0d065d673c01a8ea78a299ed",
+    "generator": "e24de0fe6a39935c6fcc52bf589c9c17c160355826fdcdc71f8dbcf6b2d6a9ae"
+  },
+  "verifier": {
+    "id": "penetration-cross-sections",
+    "revision": "da7994ee59b4420debb892d9b5276661676eb8740007e064d4e0eab371cece0f"
+  },
+  "scope": "Native FreeCAD evidence, original compositor output, per-option geometry and final media."
+}

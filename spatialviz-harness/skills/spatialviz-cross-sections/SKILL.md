@@ -1,30 +1,28 @@
 ---
 name: spatialviz-cross-sections
-description: Design SpatialViz plane-section puzzles for stacked solids, draw oriented cuts and certify which sectional outlines are possible.
+description: Author SpatialViz cross-section questions with the original FreeCAD modeling and slicing tools and the benchmark compositor. Verify possible and impossible plane sections.
 ---
 
 # Cross-Sections
 
-The released CrossSection asks which of four outlines cannot occur. The two pictures of the stack are object views. The answer pictures are planar cuts. The released stem does not specify a viewing arrow. Three-dimensional silhouettes seen from the side can include material outside the plane. Section only the material intersected by the plane.
+The released CrossSection asks which of four wires cannot occur. Two CAD views establish the component order, the footprint and the contact between tiers. Treat each answer as a cut in its own plane. Retain the visible common boundary of two component sections. Eliminate hidden surface edges, which can appear in an object view but do not intersect the cutting plane. See the [official audit and original figures](references/official-audit.md) and [coverage and solved examples](references/coverage.md).
 
-To design backwards, start with a rectangle carrying a narrower, right-shifted trapezoid. Use a 6 by 6 square prism with bottom at z=0 and height 2. Center a square frustum at (1,0.5) on its top. Its half-width narrows from 1.35 to 0.70 over a rise of 2. For the cut y=0, both the base and the cap intersect the plane throughout their height. Looking north from the south, horizontal paper coordinates increase with x. Draw the base from x=-3 to 3, then the cap from x=-0.35 to 2.35 at the contact and from 0.30 to 1.70 at the top. The cap's right shoulder on the base is shorter. The source compound keeps distinct component boundaries, so the horizontal contact line remains. Suppress hidden object edges, diagonal triangulation lines and boundaries between faces of one flat cut surface. A fused single-material extension would remove the shared interior contact.
+## Design a marked pair
 
-Move the plane to y=-2. The base retains its full width. The cap starts at y=-0.85 and entirely misses this plane. Its three exposed sides disappear and the base top becomes one uninterrupted edge. Draw the cut in plan and an arrow parallel to its normal. Reverse the viewing side by reversing the paper's horizontal basis. Draw a left-right mirror, the base alone and a horizontal cap section as the alternative choices. Keep the solid, view scale and options identical in the paired items.
+Work backwards from a broad rectangular section with a narrower trapezoidal cap and unequal shoulders. Choose a square prism 6 units wide and 2 high. Center a square frustum at (1, 0.5) on the top face. Give it a base half-width of 1.35 and top half-width of 0.70 over a rise of 2. Cut at y=0 and look north from the south. The prism section runs from x=-3 to 3. The cap runs from x=-0.35 to 2.35 at the join and 0.30 to 1.70 at its top. Preserve the contact line. The resulting shorter shoulder on the right distinguishes this view from the opposite-side drawing.
 
-For the released negative question, give three actual plane witnesses. Generate a fourth profile by widening one component until its diameter exceeds the longest chord of every component. Print a scale in the choice area. This supplies a global impossibility proof even for planes the generator has never sampled. Use two and three tiers, face contact, point contact and rotated planes. Compare each valid witness to an independent paper-plane half-space clip. Circular boundaries use a 96-segment display approximation; for radius 3 its chord sagitta is below 0.002 units, well below one output pixel. Reject a candidate if two options look identical at the delivery scale.
+For the control, move the plane to y=-2. The same base is cut through its full width. The cap begins at y=-0.85, so moving the plane removes both sloping edges and the top of the trapezoid. The base's upper edge becomes continuous. Keep the seed and the complete list of answer panels fixed. The red wire and sight arrow in the CAD plan identify the changed plane and viewing side. The official square-prism and frustum constructors build the stack, and the official XZ slicer supplies its cut profiles. A rear CAD camera supplies the reflected-looking foil. The benchmark compositor prints both views and all four choices. Marked-plane selection is an original extension.
 
-## Author and verify
+## Design a release-format question
 
-Use `joined-rims` for the equal-diameter cone and cylinder. Their common face forces identical seam chords for every cutting plane. Use `parallel`, `three-tiers`, `point-contact` or `oblique` for the released negative question, `mixed` for off-axis components, and `marked` for the directed positive question. JSON parameters include `height` (2, 2.5 or 3), `offset` (0 or -2), `side` (south or north), and for oblique planes `axis` (x/y/z) and `angle` (45/135). Supply optional `tiers` from the bottom upwards as [centerX,centerY,bottomZ,height,bottomRadius,topRadius,footprint]. Square radii are half-widths. Supported footprints are square, triangle and round. The common-scale base is a 6 by 6 square prism. For new stacks check that adjacent footprints touch and the final image stays within the panels.
+Choose `parallel`, `three-tiers`, `mixed`, `point-contact`, `joined-rims` or `oblique`. Give each attainable wire a real plane witness. For the impossible wire, change the width of an upper tier at a nested contact and use the archived slicer on the changed compound. On the actual stack its upper footprint fits inside the supporting face. Intersecting both with any plane preserves this containment on the common chord. An upper chord that extends past a supporting chord is impossible at every angle. Use the surviving interface, a point-contact gap, or an inclined cut across a curved side to distinguish the valid options. The independently cropped panels have different apparent scales; relationships within each option provide the evidence.
 
-From this package directory with Node 20+, Python 3 and Pillow installed, run the following commands. An installation made with the library installer keeps a local binding to the checkout.
+From an installed package, using the library binding, run:
 
 ```sh
-node scripts/author.cjs generate --mechanism marked --seed 93177 --out new-question
+node scripts/author.cjs generate --mechanism marked --seed 64231 --out new-question
 node scripts/author.cjs solve --out new-question
 node scripts/author.cjs test
 ```
 
-Pass `--params parameters.json` to set the design parameters. Generation starts a recorder, writes the native geometry to task.json, exports question.png and runs the independent checker. Open the final image, solve it from the visible information, and inspect verification.json. After review, use `node scripts/author.cjs accept --out new-question --review "Your concrete observations"` for library publication.
-
-Read the [official audit](references/official-audit.md) for the source images, construction history and observed exceptions. The [coverage table](references/coverage.md) connects mechanisms to verified tasks. The [design record](references/design.md) identifies the distinction between release conventions and the new verifier contract.
+Pass `--params parameters.json` to specify the plane, stack and sight direction. [Design parameters and native evidence](references/design.md) documents the supported combinations. Open the final image before accepting a candidate. Check the small shoulder or chord endpoints, unit component order, sight arrow, shuffled labels and bracketed plane witnesses. Use `node scripts/author.cjs accept --out new-question --review "Concrete observations from the final figure"` to publish a reviewed item.

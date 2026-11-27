@@ -1,100 +1,170 @@
-"""Generate or independently check one public task. A checker never receives the random oracle."""
-import argparse
+"""Run the pinned SpatialViz tools and bind their unmodified output PNG to the task."""
 import base64
+from collections import Counter
 import hashlib
-import importlib.util
+import importlib
 import io
 import json
+import shlex
 from pathlib import Path
-import random
 import sys
+import zipfile
+
 from PIL import Image
 
-ROOT=Path(__file__).resolve().parents[1]
-KINDS={"cross-sections":"CrossSection","cube-assembly":"CubeAssembly","cube-counting":"CubeCounting"}
-DEFAULTS={"cross-sections":"marked","cube-assembly":"interface","cube-counting":"min-3"}
+HERE = Path(__file__).resolve().parent
+MANIFEST = json.loads((HERE / "official-source.json").read_text("utf-8"))
+SOURCE = HERE.parent / "vendor" / ("SpatialViz-Bench-" + MANIFEST["revision"][:12]) / "create_freecad"
+METHOD = "SpatialViz-Bench official FreeCAD + OpenCV/Pillow pipeline"
+FAMILIES = {
+    "cross-sections": ("cross_native", "CrossSection", "create_cross_section.py"),
+    "cube-assembly": ("assembly_native", "CubeAssembly", "create_cube_assembly.py"),
+    "cube-counting": ("count_native", "CubeCounting", "create_cube_counting.py"),
+}
 
 
-def domain(kind):
-    path=ROOT/"skills"/("spatialviz-"+kind)/"scripts/domain.py"
-    spec=importlib.util.spec_from_file_location("penetration_domain",path)
-    module=importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(module)
-    return module
+def digest(data):
+    return hashlib.sha256(data).hexdigest()
 
 
-def encode(image):
-    buffer=io.BytesIO()
-    image.save(buffer,format="PNG")
-    return buffer.getvalue()
+def read(path):
+    return json.loads(path.read_text("utf-8-sig"))
 
 
-def wording(kind,g):
-    if kind=="cross-sections":
-        if g["mode"]=="marked":
-            return "Which section lies on the marked plane when viewed from the indicated side?"
-        return "Two views show the same stack. Which image cannot be a plane section? Use the common scale and retain component boundaries."
-    if kind=="cube-assembly":
-        return "Which option, together with the given pieces, exactly covers the target? "+("Rotations and translations are allowed." if g["turn"] else "Keep the shown orientations.")
-    return {"min":"What is the minimum number of cubes?", "max":"What is the maximum number of cubes?",
-            "possible":"Which listed number of cubes is possible?", "exact":"How many cubes are in the stack?"}[g["sense"]]
+def checked_sources(kind):
+    files = ["create_visual_penetration/" + FAMILIES[kind][2], "visual_penetration_tasks_utils.py", "utils.py"]
+    result = {}
+    for name in files:
+        actual = digest((SOURCE / name).read_bytes())
+        if actual != MANIFEST["files"][name]:
+            raise ValueError("Pinned SpatialViz source differs: " + name)
+        result[name] = actual
+    return result
 
 
-def generate(kind,seed,params):
-    allowed={"cross-sections":{"height","offset","side","axis","angle","tiers"},"cube-assembly":{"arm","none"},"cube-counting":{"size","none","profile"}}[kind]|{"mechanism"}
-    if set(params)-allowed:
-        raise ValueError(f"Unknown parameters: {set(params)-allowed}")
-    if "none" in params and type(params["none"]) is not bool:
-        raise ValueError("none must be a JSON boolean")
-    mod=domain(kind)
-    mode=params.get("mechanism",DEFAULTS[kind])
-    g,opts,key=mod.build(random.Random(seed),mode,params)
-    im=mod.draw(g,opts)
-    data=encode(im)
-    valid,notes,proof=mod.solve(g,opts,im)
-    question=wording(kind,g)
-    return {"schemaVersion":1,"title":KINDS[kind]+" | "+mode,"category":"VisualPenetration","taskType":KINDS[kind],
-      "description":question,"question":question,"geometry":g,"options":opts,
-      "answer":{"index":key,"explanation":notes[key],"options":[{"label":chr(65+i),"explanation":n} for i,n in enumerate(notes)]},
-      "contract":{"mechanism":mode,"uniqueAnswerRequired":True},
-      "generator":{"seed":seed,"parameters":params},"rendering":{"width":im.width,"height":im.height,
-      "sha256":hashlib.sha256(data).hexdigest(),"pngBase64":base64.b64encode(data).decode()},
-      "provenance":{"sourceKind":"agent-authored","sourceRevision":"c27f9111a2674f2ea03e2ca1f5833326cf1eec1a",
-        "generationMethod":"Visual Penetration parametric geometry and Pillow","note":"New construction informed by the released Visual Penetration task."}}
+class NativeTrace:
+    """Observe actual process launches and bytes at the upstream compositor return boundary."""
+    def __init__(self, function):
+        self.function = function
+        self.compositor = str((SOURCE / "visual_penetration_tasks_utils.py").resolve()).casefold()
+        self.calls = Counter()
+        self.executables = []
+        self.outputs = set()
+        self.recording = True
+
+    def audit(self, event, args):
+        if self.recording and event == "subprocess.Popen":
+            command = args[1]
+            first = shlex.split(command,posix=False)[0].strip('"') if isinstance(command,str) else command[0]
+            name = Path(str(args[0] or first)).name
+            if name.lower() in ("freecad", "freecad.exe"):
+                self.executables.append(name)
+
+    def profile(self, frame, event, arg):
+        fn = frame.f_code.co_name
+        if not fn.startswith(("create_composite_image_", "prepare_composite_image_", "detect_grid", "get_cube_ans")):
+            return
+        if str(Path(frame.f_code.co_filename).resolve()).casefold() != self.compositor:
+            return
+        if event == "call":
+            self.calls[fn] += 1
+        elif event == "return" and fn == self.function:
+            path = Path(frame.f_locals["output_path"])
+            if path.is_file():
+                self.outputs.add(digest(path.read_bytes()))
 
 
-def verify(kind,s):
-    mod=domain(kind)
-    img=s["rendering"]; data=base64.b64decode(img["pngBase64"],validate=True)
-    im=Image.open(io.BytesIO(data)).convert("RGB")
-    g,opts=s["geometry"],s["options"]
-    valid,notes,proof=mod.solve(g,opts,im)
-    results={}
-    results["Final PNG agrees with the public drawing primitives, panel labels and option order"]=(
-        im.size==(img["width"],img["height"]) and hashlib.sha256(data).hexdigest()==img["sha256"] and
-        mod.draw(g,opts).tobytes()==im.tobytes())
-    results["Question matches the displayed task and contract"]=s["question"]==wording(kind,g) and s["taskType"]==KINDS[kind]
-    results["Exactly one displayed option satisfies the independent solver"]=sum(valid)==1 and valid[s["answer"]["index"]]
-    results["Per-option explanations match the solver"]=s["answer"]["options"]==[{"label":chr(65+i),"explanation":n} for i,n in enumerate(notes)]
-    results["Four distinct choices"]=len(opts)==4 and len({json.dumps(o,sort_keys=True) for o in opts})==4
-    if kind=="cross-sections":
-        results["No pair of section drawings is identical"]=all(not mod.same(o["regions"],p["regions"]) for i,o in enumerate(opts) for p in opts[i+1:])
-    return {"checks":[{"name":k,"verdict":"passed" if v else "failed"} for k,v in results.items()],
-            "verdict":"passed" if all(results.values()) else "failed","geometryEvidence":proof}
+def file_evidence(folder):
+    assets=[]
+    for path in sorted(folder.rglob("*")):
+        ext=path.suffix.lower()
+        if ext not in (".fcstd", ".pdf", ".png") or not path.is_file():
+            continue
+        if ext == ".fcstd":
+            with zipfile.ZipFile(path) as doc:
+                if "Document.xml" not in doc.namelist():
+                    raise ValueError("Invalid FreeCAD document")
+        if ext == ".pdf" and not path.read_bytes().startswith(b"%PDF-"):
+            raise ValueError("Invalid TechDraw PDF")
+        assets.append({"file":path.relative_to(folder).as_posix(),"sha256":digest(path.read_bytes()),"bytes":path.stat().st_size})
+    return assets
 
 
-def main():
-    op,kind=sys.argv[1:3]
-    if kind not in KINDS:
-        raise ValueError("Unknown task family")
-    if op=="generate":
-        result=generate(kind,int(sys.argv[3]),json.loads(Path(sys.argv[4]).read_text("utf-8")))
-    elif op=="verify":
-        result=verify(kind,json.loads(Path(sys.argv[3]).read_text("utf-8")))
-    else:
-        raise ValueError("Choose generate or verify")
-    Path(sys.argv[-1]).write_text(json.dumps(result,indent=2),encoding="utf-8")
+def generate(kind, seed, params, folder):
+    sources = checked_sources(kind)
+    module_name, task_type, model_script = FAMILIES[kind]
+    module = importlib.import_module(module_name)
+    compositor = "create_composite_image_" + task_type
+    trace = NativeTrace(compositor)
+    sys.addaudithook(trace.audit)
+    previous = sys.getprofile()
+    sys.setprofile(trace.profile)
+    try:
+        spec = module.generate(seed, params, folder, SOURCE)
+    finally:
+        sys.setprofile(previous)
+        trace.recording = False
+    data = (folder / "question.png").read_bytes()
+    sha = digest(data)
+    if not trace.executables or not trace.calls[compositor] or sha not in trace.outputs:
+        raise RuntimeError(f"Unbound official build: FreeCAD launches {trace.executables}, calls {dict(trace.calls)}, observed composites {trace.outputs}, delivered {sha}")
+    if base64.b64decode(spec["rendering"]["pngBase64"],validate=True) != data:
+        raise ValueError("Delivered task differs from the official composite")
+    files = file_evidence(folder)
+    native = [a for a in files if a["file"].lower().endswith(".fcstd")]
+    if not native or (kind=="cube-counting" and not any(a["file"].lower().endswith(".pdf") for a in files)):
+        raise ValueError("Native model or counting projection PDF missing")
+    receipt = {"revision":MANIFEST["revision"],"sourceFiles":sources,
+        "modelEntry":"create_visual_penetration/"+model_script,"freecadLaunches":trace.executables,
+        "observedFunctions":dict(trace.calls),"compositor":compositor,"compositeSha256":sha,"nativeFiles":files}
+    (folder / "official-tools.json").write_text(json.dumps(receipt,indent=2),"utf-8")
+    spec.setdefault("schemaVersion",1)
+    spec["category"]="VisualPenetration"
+    spec["taskType"]=task_type
+    spec.setdefault("description",spec["question"])
+    spec.setdefault("generator",{}).update(seed=seed,parameters=params)
+    spec.setdefault("contract",{}).setdefault("mechanism",params.get("mechanism","default"))
+    spec.setdefault("provenance",{}).update(sourceKind="agent-authored",sourceRevision=MANIFEST["revision"],
+        generationMethod=METHOD,officialTools=receipt)
+    with Image.open(io.BytesIO(data)) as im:
+        spec["rendering"].update(width=im.width,height=im.height,sha256=sha)
+    return spec
+
+
+def verify(kind,spec):
+    provenance=spec.get("provenance",{})
+    if provenance.get("generationMethod")=="Visual Penetration parametric geometry and Pillow":
+        from legacy_verify import verify as old_verify
+        return old_verify(kind,spec)
+    module_name,task_type,script=FAMILIES[kind]
+    report=importlib.import_module(module_name).verify(spec)
+    receipt=provenance.get("officialTools",{})
+    files=receipt.get("nativeFiles",[])
+    data=base64.b64decode(spec["rendering"]["pngBase64"],validate=True)
+    composite=digest(data)
+    function="create_composite_image_"+task_type
+    checks={
+        "Unmodified official source fingerprints": receipt.get("sourceFiles")==checked_sources(kind) and provenance.get("sourceRevision")==MANIFEST["revision"],
+        "FreeCAD launch and native document recorded": bool(receipt.get("freecadLaunches")) and any(p["file"].lower().endswith(".fcstd") for p in files),
+        "Pinned compositor emitted the delivered PNG": receipt.get("observedFunctions",{}).get(function,0)>0 and
+          receipt.get("compositor")==function and receipt.get("compositeSha256")==spec["rendering"].get("sha256")==composite and
+          any(f["file"]=="question.png" and f["sha256"]==composite for f in files),
+        "Official method and task identity": provenance.get("generationMethod")==METHOD and spec.get("taskType")==task_type,
+    }
+    report["checks"].extend({"name":k,"verdict":"passed" if v else "failed"} for k,v in checks.items())
+    if not all(checks.values()) or any(c["verdict"]!="passed" for c in report["checks"]):
+        report["verdict"]="failed"
+    return report
 
 
 if __name__=="__main__":
-    main()
+    action,kind=sys.argv[1:3]
+    if action=="generate":
+        out=Path(sys.argv[5]).resolve()
+        result=generate(kind,int(sys.argv[3]),read(Path(sys.argv[4])),out.parent)
+    elif action=="verify":
+        out=Path(sys.argv[4]).resolve()
+        result=verify(kind,read(Path(sys.argv[3])))
+    else:
+        raise ValueError("Choose generate or verify")
+    out.write_text(json.dumps(result,indent=2),"utf-8")

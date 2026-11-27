@@ -1,0 +1,193 @@
+{
+  "verdict": "failed",
+  "geometryEvidence": {
+    "decodedViews": {
+      "Front": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          1
+        ]
+      ],
+      "Top": [
+        [
+          1,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          1
+        ],
+        [
+          1,
+          0,
+          0
+        ]
+      ]
+    },
+    "feasibleTotals": [
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "heightWitnesses": {
+      "7": [
+        [
+          3,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          1
+        ],
+        [
+          1,
+          0,
+          0
+        ]
+      ],
+      "8": [
+        [
+          3,
+          1,
+          0
+        ],
+        [
+          2,
+          0,
+          1
+        ],
+        [
+          1,
+          0,
+          0
+        ]
+      ],
+      "9": [
+        [
+          3,
+          1,
+          0
+        ],
+        [
+          3,
+          0,
+          1
+        ],
+        [
+          1,
+          0,
+          0
+        ]
+      ],
+      "10": [
+        [
+          3,
+          1,
+          0
+        ],
+        [
+          3,
+          0,
+          1
+        ],
+        [
+          2,
+          0,
+          0
+        ]
+      ],
+      "11": [
+        [
+          3,
+          1,
+          0
+        ],
+        [
+          3,
+          0,
+          1
+        ],
+        [
+          3,
+          0,
+          0
+        ]
+      ]
+    }
+  },
+  "checks": [
+    {
+      "name": "Final image is the official compositor output",
+      "verdict": "passed"
+    },
+    {
+      "name": "Prompt, choices and key agree with upstream annotation",
+      "verdict": "passed"
+    },
+    {
+      "name": "Published projection cells agree with the native model",
+      "verdict": "passed"
+    },
+    {
+      "name": "Visible constraints yield exactly one qualifying choice",
+      "verdict": "failed"
+    },
+    {
+      "name": "Per-option explanations agree with the independent solver",
+      "verdict": "passed"
+    },
+    {
+      "name": "Unmodified official source fingerprints",
+      "verdict": "passed"
+    },
+    {
+      "name": "FreeCAD launch and native document recorded",
+      "verdict": "passed"
+    },
+    {
+      "name": "Pinned compositor emitted the delivered PNG",
+      "verdict": "passed"
+    },
+    {
+      "name": "Official method and task identity",
+      "verdict": "passed"
+    },
+    {
+      "name": "Current official-tool adapter and verifier revisions",
+      "verdict": "passed"
+    }
+  ],
+  "candidateId": "v001",
+  "testedFingerprints": {
+    "specification": "dd122f61e7a30d9f148f69c955bea3e184572a0509ecea6abf1a221f10e7a533",
+    "geometry": "1856c354de24b36b2273bee3350cf79c0fbab877260142ca2faaba95b32b5bdf",
+    "question": "bce82f8ac33d0efbbc675048279988cc19e2ccd7ca7d19fa961bbb0abf86d569",
+    "options": "5dd29c5910227ee155bc6488d7dc16ad3628e6a80491bc181ea63f684d53539a",
+    "answer": "30173db35fba727b8fc65d70af285d64f10bfafb785afc596e77fe2f2540c65d",
+    "contract": "1f439ba8e72841b1cd5994ce7a28e0313f8e9a4b42b4ed1d8101f05a3646f642",
+    "rendering": "a06b0459f3a80e272cf8b01ae8508d20c7507f14ccf23b37f41857702d553b92",
+    "generator": "9658ee82584b6b235c96c9b1d5bdc0df571c69876c7f5666ed5d6112f7391ccb"
+  },
+  "verifier": {
+    "id": "penetration-cube-counting",
+    "revision": "b7c2479878cb457923f5c3ae989f1089af3a488ca979c9d2a9fbbe4d68c1acba"
+  },
+  "scope": "Native FreeCAD evidence, original compositor output, per-option geometry and final media."
+}

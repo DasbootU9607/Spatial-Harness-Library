@@ -52,7 +52,7 @@ module.exports=function author(skill,args) {
     R.active(prior.run);
     const archive=path.join(out,prior.id);
     fs.mkdirSync(archive);
-    for (const filename of ['task.json','question.png','record.json','verification.json'])
+    for (const filename of ['task.json','question.png','question.txt','record.json','verification.json'])
       fs.copyFileSync(path.join(out,filename),path.join(archive,filename));
   } else if (fs.existsSync(out) && fs.readdirSync(out).length) throw Error('Choose an empty output folder');
   fs.mkdirSync(out,{recursive:true});
@@ -64,8 +64,11 @@ module.exports=function author(skill,args) {
   if (flags.includes('--mechanism')) params.mechanism=arg('mechanism');
   R.note(run,{goal:'Generate a new '+kind+' question',change:'Construct '+(params.mechanism||'the default mechanism'),
     sources:['Official inventory and design notes'],expectedChecks:['Independent geometry','Media review']});
-  const spec=adapter.generate(Number(arg('seed')) ,params,{run});
+  const nativeFolder=path.join(out,'native-'+(prior?'after-'+prior.id:'v001'));
+  const spec=adapter.generate(Number(arg('seed')),params,{run,nativeFolder});
   R.atomic(task,spec);
+  fs.writeFileSync(path.join(out,'question.txt'),[spec.question,'',...spec.options.map((o,i)=>
+    String.fromCharCode(65+i)+'. '+(o.type==='text'?o.text:'See the corresponding diagram.'))].join('\n')+'\n');
   const candidate=R.save(run,task,prior?{parentId:prior.id,parentBasis:arg('basis')} : {});
   R.event(run,'build.saved',{generator:adapter.identity},{candidateId:candidate.id});
   const preview=R.render(run,candidate.id,adapter);
@@ -76,7 +79,7 @@ module.exports=function author(skill,args) {
     path.join(run,candidate.specPath),candidate.id,fp,report],
     {candidateId:candidate.id,kind:'verification',report,verifier:adapter.identity});
   fs.copyFileSync(report,path.join(out,'verification.json'));
-  R.atomic(receipt,{run,id:candidate.id,verdict:result.verdict,seed:spec.generator.seed,parameters:params});
+  R.atomic(receipt,{run,id:candidate.id,verdict:result.verdict,seed:spec.generator.seed,parameters:params,nativeFolder});
   console.log(kind, candidate.id,result.verdict,out);
   process.exitCode=result.verdict==='passed'?0:1;
 };
