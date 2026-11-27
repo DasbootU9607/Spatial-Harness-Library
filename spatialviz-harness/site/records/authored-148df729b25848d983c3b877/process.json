@@ -1,0 +1,802 @@
+{
+  "schemaVersion": 1,
+  "manifest": {
+    "sealed": true,
+    "id": "build-d5dd5770-aaf9-4a59-b1e4-4daef7e83333",
+    "title": "paper-folding / parallel",
+    "runKind": "[private value omitted]",
+    "harness": "spatialviz-harness",
+    "benchmark": null,
+    "category": null,
+    "taskType": null,
+    "skill": {
+      "id": "spatialviz-paper-folding",
+      "sha256": "79cf5ee1685b1d28e443ca2f52438329c90ed3c46c62949f6b23eda24b1a7634"
+    },
+    "status": "accepted",
+    "finalCandidateId": "v001",
+    "limitations": [
+      "Only recorder-mediated deliveries, commands and saved boundaries are observed; direct function calls, unwrapped commands and unsaved editor states are excluded.",
+      "Design notes are explicit author annotations, not internal reasoning."
+    ],
+    "captureGaps": []
+  },
+  "events": [
+    {
+      "id": "e000001",
+      "seq": 1,
+      "runId": "build-d5dd5770-aaf9-4a59-b1e4-4daef7e83333",
+      "type": "run.created",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": null,
+      "details": {},
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000002",
+      "seq": 2,
+      "runId": "build-d5dd5770-aaf9-4a59-b1e4-4daef7e83333",
+      "type": "collector.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": null,
+      "details": {},
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000003",
+      "seq": 3,
+      "runId": "build-d5dd5770-aaf9-4a59-b1e4-4daef7e83333",
+      "type": "skill.attached",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": null,
+      "details": {
+        "sha256": "79cf5ee1685b1d28e443ca2f52438329c90ed3c46c62949f6b23eda24b1a7634",
+        "skill": "spatialviz-paper-folding"
+      },
+      "evidenceRefs": [
+        {
+          "id": "218aa0deef77f242",
+          "sha256": "79cf5ee1685b1d28e443ca2f52438329c90ed3c46c62949f6b23eda24b1a7634",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000004",
+      "seq": 4,
+      "runId": "build-d5dd5770-aaf9-4a59-b1e4-4daef7e83333",
+      "type": "choice.selected",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": null,
+      "details": {
+        "eligible": [
+          "strip",
+          "parallel",
+          "crossed"
+        ],
+        "selection": "parallel",
+        "selectionMode": "specified"
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000005",
+      "seq": 5,
+      "runId": "build-d5dd5770-aaf9-4a59-b1e4-4daef7e83333",
+      "type": "resource.read",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "87ae7ee8-6d30-4ded-a30a-72c418dcd957",
+      "candidateId": null,
+      "details": {
+        "delivery": "author",
+        "outcome": "delivered",
+        "label": "patterns.json",
+        "start": 27,
+        "end": 48,
+        "sha256": "1a6dc44f094702cbe3cc5c977a6b7476ea71e7aa02e99600825832c78db6c8a1",
+        "sourceSha256": "39ce4f9870f079bcbada9d8a89faf89b8ea036472a411ac26eb544305a3aa2b2"
+      },
+      "evidenceRefs": [
+        {
+          "id": "df751866327aa63b",
+          "sha256": "1a6dc44f094702cbe3cc5c977a6b7476ea71e7aa02e99600825832c78db6c8a1",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000006",
+      "seq": 6,
+      "runId": "build-d5dd5770-aaf9-4a59-b1e4-4daef7e83333",
+      "type": "reference.delivered",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": null,
+      "details": {
+        "sourceId": "MentalFolding/PaperFolding/Level2/0-5-5-3-3",
+        "label": "Official question, choices, answer and explanation",
+        "sha256": "dff299233bafd33197598e709eb569b1e567dfd4343c513ec768de7ebfb92bde"
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000007",
+      "seq": 7,
+      "runId": "build-d5dd5770-aaf9-4a59-b1e4-4daef7e83333",
+      "type": "reference.viewed",
+      "actor": "author",
+      "origin": "agent_statement",
+      "actionId": null,
+      "candidateId": null,
+      "details": {
+        "sourceId": "MentalFolding/PaperFolding/Level2/0-5-5-3-3",
+        "observation": "Both straight crease marks are vertical and the final diagonal folds the lower corner before the three right-edge punches.",
+        "sourceSha256": "4a4b641ea993a3051bf7ce3a6dd0064f09409f40062198cbb3b02d6a95f5982f"
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000008",
+      "seq": 8,
+      "runId": "build-d5dd5770-aaf9-4a59-b1e4-4daef7e83333",
+      "type": "design.note",
+      "actor": "author",
+      "origin": "agent_statement",
+      "actionId": null,
+      "candidateId": null,
+      "details": {
+        "design": {
+          "inference": "Recover the separated original rows underneath the same folded strip.",
+          "condition": "Two horizontal folds overlay parallel bands before a finite diagonal flap is punched.",
+          "foil": "Omitting one band loses a row of holes when the paper is opened.",
+          "evidence": "Reverse each fold for each hole and compare all four printed hole sets.",
+          "target": "fold-layers",
+          "sourceIds": [
+            "MentalFolding/PaperFolding/Level2/0-5-5-3-3"
+          ]
+        },
+        "goal": "Recover the separated original rows underneath the same folded strip.",
+        "change": "Omitting one band loses a row of holes when the paper is opened.",
+        "reason": "Two horizontal folds overlay parallel bands before a finite diagonal flap is punched.",
+        "expectedChecks": [
+          "Reverse each fold for each hole and compare all four printed hole sets."
+        ]
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000009",
+      "seq": 9,
+      "runId": "build-d5dd5770-aaf9-4a59-b1e4-4daef7e83333",
+      "type": "command.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "48794014-ced2-4d3f-bb62-3a262245c5e7",
+      "candidateId": null,
+      "details": {
+        "label": "python",
+        "kind": "official-paper-folding-generation"
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000010",
+      "seq": 10,
+      "runId": "build-d5dd5770-aaf9-4a59-b1e4-4daef7e83333",
+      "type": "command.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "48794014-ced2-4d3f-bb62-3a262245c5e7",
+      "candidateId": null,
+      "details": {
+        "commandEventId": "e000009",
+        "kind": "official-paper-folding-generation",
+        "exitCode": 0,
+        "signal": null
+      },
+      "evidenceRefs": [
+        {
+          "id": "2d3d98a644a29aac",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "availability": "local evidence; hash published"
+        },
+        {
+          "id": "2cb7a2df28f667ac",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000011",
+      "seq": 11,
+      "runId": "build-d5dd5770-aaf9-4a59-b1e4-4daef7e83333",
+      "type": "candidate.saved",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "b444ebad-293b-409c-b441-670604697d04",
+      "candidateId": "v001",
+      "details": {
+        "designId": "e000008",
+        "sha256": "148df729b25848d983c3b8778d33db6c35ebcdc6da77b290ca2bd2bf7566b1ca",
+        "parentId": null,
+        "parentBasis": null,
+        "changes": [
+          "specification",
+          "geometry",
+          "question",
+          "options",
+          "answer",
+          "rendering",
+          "generator"
+        ],
+        "fingerprints": {
+          "specification": "148df729b25848d983c3b8778d33db6c35ebcdc6da77b290ca2bd2bf7566b1ca",
+          "geometry": "5f66dc62a1f94b063dc439b361a960c73710409339917e8e4ace67e46deae735",
+          "question": "58de11a280153fba650fa30a3707ad6c1990f601e6d65f0d48bb9cb8feecd90e",
+          "options": "2a02ee37206c0089bd193ad678330e2d408634d0befda3fcfdf1fc7c1b232c15",
+          "answer": "c58f513f71692e328a1971067b37714672bd720495e3e5f777ab437cdca7c951",
+          "contract": null,
+          "rendering": "9ae9ec3b6190ddcc07f9905c5951e7ba9eb97aab99e99f8533e1b858023a5cf9",
+          "generator": "96818bee9a2f6699ede038d914ac2f009247ba69c90b3ae151b1dc5994a417e5"
+        },
+        "previewUnavailable": null
+      },
+      "evidenceRefs": [
+        {
+          "id": "7d7df19c657a39c6",
+          "sha256": "148df729b25848d983c3b8778d33db6c35ebcdc6da77b290ca2bd2bf7566b1ca",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000012",
+      "seq": 12,
+      "runId": "build-d5dd5770-aaf9-4a59-b1e4-4daef7e83333",
+      "type": "build.saved",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "b444ebad-293b-409c-b441-670604697d04",
+      "candidateId": "v001",
+      "details": {},
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000013",
+      "seq": 13,
+      "runId": "build-d5dd5770-aaf9-4a59-b1e4-4daef7e83333",
+      "type": "render.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "b0a8fe28-ef41-47f3-af2d-0aadff0e84c0",
+      "candidateId": "v001",
+      "details": {
+        "renderer": {
+          "id": "official-paper-folding",
+          "revision": "dd94c970d78c923bcd54eb0b6e03d50d81e6d0876f70829dcb3ec533b55c86be"
+        }
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000014",
+      "seq": 14,
+      "runId": "build-d5dd5770-aaf9-4a59-b1e4-4daef7e83333",
+      "type": "render.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "b0a8fe28-ef41-47f3-af2d-0aadff0e84c0",
+      "candidateId": "v001",
+      "details": {
+        "sha256": "9ce0dc822cb261d97479382e81ebb05b350e16629a7acadea59a1dd4fbcb3689",
+        "renderer": {
+          "id": "official-paper-folding",
+          "revision": "dd94c970d78c923bcd54eb0b6e03d50d81e6d0876f70829dcb3ec533b55c86be"
+        },
+        "specification": "148df729b25848d983c3b8778d33db6c35ebcdc6da77b290ca2bd2bf7566b1ca",
+        "rendering": "9ae9ec3b6190ddcc07f9905c5951e7ba9eb97aab99e99f8533e1b858023a5cf9"
+      },
+      "evidenceRefs": [
+        {
+          "id": "56f7f6e22f445d0a",
+          "sha256": "9ce0dc822cb261d97479382e81ebb05b350e16629a7acadea59a1dd4fbcb3689",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000015",
+      "seq": 15,
+      "runId": "build-d5dd5770-aaf9-4a59-b1e4-4daef7e83333",
+      "type": "command.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "ca6c0072-c2be-443e-941f-1c5fcac0676e",
+      "candidateId": "v001",
+      "details": {
+        "label": "node.exe",
+        "kind": "verification"
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000016",
+      "seq": 16,
+      "runId": "build-d5dd5770-aaf9-4a59-b1e4-4daef7e83333",
+      "type": "command.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "ca6c0072-c2be-443e-941f-1c5fcac0676e",
+      "candidateId": "v001",
+      "details": {
+        "commandEventId": "e000015",
+        "kind": "verification",
+        "exitCode": 0,
+        "signal": null
+      },
+      "evidenceRefs": [
+        {
+          "id": "e4ad77e4fbe6ede0",
+          "sha256": "63b8ced5ef54783c11c6ff9148511ae8dedea76d50955e74e436ddd2df9a4996",
+          "availability": "local evidence; hash published"
+        },
+        {
+          "id": "6ff1ca12b840e1f4",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000017",
+      "seq": 17,
+      "runId": "build-d5dd5770-aaf9-4a59-b1e4-4daef7e83333",
+      "type": "test.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "ca6c0072-c2be-443e-941f-1c5fcac0676e",
+      "candidateId": "v001",
+      "details": {
+        "commandEventId": "e000015",
+        "completedEventId": "e000016",
+        "verdict": "passed",
+        "status": "passed",
+        "checks": [
+          {
+            "name": "Independent image-only reconstruction, unique physical history and unique printed choice",
+            "verdict": "passed"
+          },
+          {
+            "name": "Original cell transport, local creases, changing offsets, punch layers and physical novelty",
+            "verdict": "passed"
+          },
+          {
+            "name": "Four visibly distinct options with row or column deletion, duplication and relocation",
+            "verdict": "passed"
+          },
+          {
+            "name": "Pinned native panel sequence, hole locations, option letters, font labels and printed prompt",
+            "verdict": "passed"
+          },
+          {
+            "name": "Pinned modeling, drawing, dispatch, assets and verification source",
+            "verdict": "passed"
+          },
+          {
+            "name": "Declared reasoning: fold-layers",
+            "designId": "e000008",
+            "verdict": "passed",
+            "evidence": {
+              "answer": "A",
+              "closestFoil": "B",
+              "differingCells": [
+                [
+                  1,
+                  3
+                ],
+                [
+                  2,
+                  3
+                ],
+                [
+                  3,
+                  3
+                ],
+                [
+                  4,
+                  3
+                ]
+              ],
+              "punches": [
+                [
+                  0,
+                  4
+                ],
+                [
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  1
+                ]
+              ],
+              "step": 1,
+              "crease": {
+                "axis": "horizontal",
+                "line": 3,
+                "movingSide": "bottom"
+              },
+              "mergedAt": [
+                2,
+                0
+              ],
+              "punch": [
+                1,
+                0
+              ],
+              "originalCells": [
+                [
+                  2,
+                  0
+                ],
+                [
+                  3,
+                  0
+                ]
+              ],
+              "paths": [
+                [
+                  [
+                    2,
+                    0
+                  ],
+                  [
+                    2,
+                    0
+                  ],
+                  [
+                    1,
+                    0
+                  ],
+                  [
+                    1,
+                    0
+                  ]
+                ],
+                [
+                  [
+                    3,
+                    0
+                  ],
+                  [
+                    2,
+                    0
+                  ],
+                  [
+                    1,
+                    0
+                  ],
+                  [
+                    1,
+                    0
+                  ]
+                ]
+              ]
+            },
+            "feedback": ""
+          }
+        ],
+        "scope": "Visible blue fold outlines, red punch centers, unfolded answer pixels, prompt and labels.",
+        "binding": "exact",
+        "bindingBasis": "exact candidate and full input fingerprints",
+        "testedFingerprints": {
+          "specification": "148df729b25848d983c3b8778d33db6c35ebcdc6da77b290ca2bd2bf7566b1ca",
+          "geometry": "5f66dc62a1f94b063dc439b361a960c73710409339917e8e4ace67e46deae735",
+          "question": "58de11a280153fba650fa30a3707ad6c1990f601e6d65f0d48bb9cb8feecd90e",
+          "options": "2a02ee37206c0089bd193ad678330e2d408634d0befda3fcfdf1fc7c1b232c15",
+          "answer": "c58f513f71692e328a1971067b37714672bd720495e3e5f777ab437cdca7c951",
+          "contract": null,
+          "rendering": "9ae9ec3b6190ddcc07f9905c5951e7ba9eb97aab99e99f8533e1b858023a5cf9",
+          "generator": "96818bee9a2f6699ede038d914ac2f009247ba69c90b3ae151b1dc5994a417e5"
+        },
+        "verifier": {
+          "id": "official-paper-folding",
+          "revision": "dd94c970d78c923bcd54eb0b6e03d50d81e6d0876f70829dcb3ec533b55c86be"
+        },
+        "reportSha256": "028c50733fd78aa82453d6e2a6c8f06f6b2294d6d1e62ec5212a58f32b4631c9"
+      },
+      "evidenceRefs": [
+        {
+          "id": "16701f7f6109ab7c",
+          "sha256": "028c50733fd78aa82453d6e2a6c8f06f6b2294d6d1e62ec5212a58f32b4631c9",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000018",
+      "seq": 18,
+      "runId": "build-d5dd5770-aaf9-4a59-b1e4-4daef7e83333",
+      "type": "visual.review",
+      "actor": "author",
+      "origin": "agent_statement",
+      "actionId": null,
+      "candidateId": "v001",
+      "details": {
+        "outcome": "passed",
+        "review": "The first two blue creases are horizontal. Two punches near the left edge open into two adjacent columns of four holes, and the far-right crease punch stays single in the top row. Only A shows all nine."
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000019",
+      "seq": 19,
+      "runId": "build-d5dd5770-aaf9-4a59-b1e4-4daef7e83333",
+      "type": "run.finished",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": "v001",
+      "details": {
+        "outcome": "accepted",
+        "finalCandidateId": "v001"
+      },
+      "evidenceRefs": []
+    }
+  ],
+  "candidates": [
+    {
+      "id": "v001",
+      "designId": "e000008",
+      "parentId": null,
+      "parentBasis": null,
+      "sha256": "148df729b25848d983c3b8778d33db6c35ebcdc6da77b290ca2bd2bf7566b1ca",
+      "fingerprints": {
+        "specification": "148df729b25848d983c3b8778d33db6c35ebcdc6da77b290ca2bd2bf7566b1ca",
+        "geometry": "5f66dc62a1f94b063dc439b361a960c73710409339917e8e4ace67e46deae735",
+        "question": "58de11a280153fba650fa30a3707ad6c1990f601e6d65f0d48bb9cb8feecd90e",
+        "options": "2a02ee37206c0089bd193ad678330e2d408634d0befda3fcfdf1fc7c1b232c15",
+        "answer": "c58f513f71692e328a1971067b37714672bd720495e3e5f777ab437cdca7c951",
+        "contract": null,
+        "rendering": "9ae9ec3b6190ddcc07f9905c5951e7ba9eb97aab99e99f8533e1b858023a5cf9",
+        "generator": "96818bee9a2f6699ede038d914ac2f009247ba69c90b3ae151b1dc5994a417e5"
+      },
+      "previewUnavailable": null,
+      "changes": [
+        "specification",
+        "geometry",
+        "question",
+        "options",
+        "answer",
+        "rendering",
+        "generator"
+      ],
+      "preview": {
+        "candidateId": "v001",
+        "specification": "148df729b25848d983c3b8778d33db6c35ebcdc6da77b290ca2bd2bf7566b1ca",
+        "rendering": "9ae9ec3b6190ddcc07f9905c5951e7ba9eb97aab99e99f8533e1b858023a5cf9",
+        "renderer": {
+          "id": "official-paper-folding",
+          "revision": "dd94c970d78c923bcd54eb0b6e03d50d81e6d0876f70829dcb3ec533b55c86be"
+        },
+        "sha256": "9ce0dc822cb261d97479382e81ebb05b350e16629a7acadea59a1dd4fbcb3689",
+        "path": "records/authored-148df729b25848d983c3b877/v001-9ce0dc822cb261d9.png",
+        "origin": "recorded-render"
+      }
+    }
+  ],
+  "tests": [
+    {
+      "id": "t001",
+      "actionId": "ca6c0072-c2be-443e-941f-1c5fcac0676e",
+      "candidateId": "v001",
+      "testedFingerprints": {
+        "specification": "148df729b25848d983c3b8778d33db6c35ebcdc6da77b290ca2bd2bf7566b1ca",
+        "geometry": "5f66dc62a1f94b063dc439b361a960c73710409339917e8e4ace67e46deae735",
+        "question": "58de11a280153fba650fa30a3707ad6c1990f601e6d65f0d48bb9cb8feecd90e",
+        "options": "2a02ee37206c0089bd193ad678330e2d408634d0befda3fcfdf1fc7c1b232c15",
+        "answer": "c58f513f71692e328a1971067b37714672bd720495e3e5f777ab437cdca7c951",
+        "contract": null,
+        "rendering": "9ae9ec3b6190ddcc07f9905c5951e7ba9eb97aab99e99f8533e1b858023a5cf9",
+        "generator": "96818bee9a2f6699ede038d914ac2f009247ba69c90b3ae151b1dc5994a417e5"
+      },
+      "verifier": {
+        "id": "official-paper-folding",
+        "revision": "dd94c970d78c923bcd54eb0b6e03d50d81e6d0876f70829dcb3ec533b55c86be"
+      },
+      "reportSha256": "028c50733fd78aa82453d6e2a6c8f06f6b2294d6d1e62ec5212a58f32b4631c9",
+      "verdict": "passed",
+      "status": "passed",
+      "checks": [
+        {
+          "name": "Independent image-only reconstruction, unique physical history and unique printed choice",
+          "verdict": "passed"
+        },
+        {
+          "name": "Original cell transport, local creases, changing offsets, punch layers and physical novelty",
+          "verdict": "passed"
+        },
+        {
+          "name": "Four visibly distinct options with row or column deletion, duplication and relocation",
+          "verdict": "passed"
+        },
+        {
+          "name": "Pinned native panel sequence, hole locations, option letters, font labels and printed prompt",
+          "verdict": "passed"
+        },
+        {
+          "name": "Pinned modeling, drawing, dispatch, assets and verification source",
+          "verdict": "passed"
+        },
+        {
+          "name": "Declared reasoning: fold-layers",
+          "designId": "e000008",
+          "verdict": "passed",
+          "evidence": {
+            "answer": "A",
+            "closestFoil": "B",
+            "differingCells": [
+              [
+                1,
+                3
+              ],
+              [
+                2,
+                3
+              ],
+              [
+                3,
+                3
+              ],
+              [
+                4,
+                3
+              ]
+            ],
+            "punches": [
+              [
+                0,
+                4
+              ],
+              [
+                1,
+                0
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "step": 1,
+            "crease": {
+              "axis": "horizontal",
+              "line": 3,
+              "movingSide": "bottom"
+            },
+            "mergedAt": [
+              2,
+              0
+            ],
+            "punch": [
+              1,
+              0
+            ],
+            "originalCells": [
+              [
+                2,
+                0
+              ],
+              [
+                3,
+                0
+              ]
+            ],
+            "paths": [
+              [
+                [
+                  2,
+                  0
+                ],
+                [
+                  2,
+                  0
+                ],
+                [
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  0
+                ]
+              ],
+              [
+                [
+                  3,
+                  0
+                ],
+                [
+                  2,
+                  0
+                ],
+                [
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  0
+                ]
+              ]
+            ]
+          },
+          "feedback": ""
+        }
+      ],
+      "scope": "Visible blue fold outlines, red punch centers, unfolded answer pixels, prompt and labels.",
+      "commandExitStatus": 0,
+      "binding": "exact",
+      "bindingBasis": "exact candidate and full input fingerprints",
+      "commandEventId": "e000015"
+    }
+  ],
+  "usage": {
+    "schemaVersion": 2,
+    "runId": "build-d5dd5770-aaf9-4a59-b1e4-4daef7e83333",
+    "source": "codex",
+    "runtime": "Codex Desktop",
+    "status": "measured",
+    "elapsedMs": 377535,
+    "elapsedKind": "wall-clock",
+    "scope": "Runtime-reported usage between the start baseline and finish snapshot of this session. In-flight or delayed usage, earlier conversation, other agents and later delivery are excluded. This is an observed interval, not a complete billed task total.",
+    "scopeComplete": false,
+    "observedTokens": {
+      "input_tokens": 4659612,
+      "cached_input_tokens": 4622464,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 7313,
+      "reasoning_output_tokens": 1985,
+      "total_tokens": 4666925
+    },
+    "tokens": {
+      "input_tokens": null,
+      "cached_input_tokens": null,
+      "cache_write_input_tokens": null,
+      "output_tokens": null,
+      "reasoning_output_tokens": null,
+      "total_tokens": null
+    },
+    "models": [
+      {
+        "provider": "openai",
+        "model": "gpt-6.2-astra",
+        "reasoningEffort": "xhigh",
+        "tokens": {
+          "input_tokens": 4659612,
+          "cached_input_tokens": 4622464,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 7313,
+          "reasoning_output_tokens": 1985,
+          "total_tokens": 4666925
+        },
+        "observations": 21
+      }
+    ],
+    "missingFields": [],
+    "issues": [],
+    "observations": 21
+  },
+  "caseId": "authored-148df729b25848d983c3b877"
+}

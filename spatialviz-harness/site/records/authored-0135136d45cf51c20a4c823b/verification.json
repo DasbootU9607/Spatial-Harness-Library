@@ -1,0 +1,95 @@
+{
+  "id": "t001",
+  "actionId": "78057d6a-7709-4888-82fc-a0e0f58d3d02",
+  "candidateId": "v001",
+  "testedFingerprints": {
+    "specification": "0135136d45cf51c20a4c823b30e8f4853ca0b19c0d43e315d4e65ca4d80d7b21",
+    "geometry": "fc0d9b3cdb1d657d95af0fce6ea5d4e575d31b7d58368990e1e6e776ca42c893",
+    "question": "22d807feffe387ee243ee284dc9c82fff536916bff1d42343dfffb750feed8ac",
+    "options": "f783b7c738f1dcdd461e5713302a7496ba21ce274a26a1f465d68f9f732ec676",
+    "answer": "940556d79c9e72e3b816f118844e5e21c09009f6b90dd3f0ec9c2d4aaffb25df",
+    "contract": null,
+    "rendering": "44d1553ab22cbf884f8d76548217cbb2c5ea44376edac1daf853d00268556f76",
+    "generator": "b9ada5210ec1852204bb3fe0ddb8b4169f60907d20abe5d5f6439beeef2be3e5"
+  },
+  "verifier": {
+    "id": "block-movement",
+    "revision": "05facdd03f40c6c217c8a41766fb64bced7395ba6306c594bb2ee7e9ca956fc0"
+  },
+  "reportSha256": "f73926a7e9ca9faccd42e8847b87b54ef10ad068f79898eb12aafd9c27ffbfa2",
+  "verdict": "passed",
+  "status": "passed",
+  "checks": [
+    {
+      "name": "Printed coordinate key, question and four option labels match the final sheet",
+      "verdict": "passed"
+    },
+    {
+      "name": "Option A",
+      "detail": "magenta (2, 0, 1) to (2, 0, 0), exchanging with magenta. Then green (0, 1, 0) to (1, 1, 0), blue falls from (0, 1, 1) to (0, 1, 0), green falls from (0, 1, 2) to (0, 1, 1). Then green (1, 1, 0) to (1, 2, 0). Every displayed constraint matches.",
+      "verdict": "passed"
+    },
+    {
+      "name": "Option B",
+      "detail": "red (2, 2, 1) to (2, 2, 2), red falls from (2, 2, 2) to (2, 2, 1). Then green (0, 1, 0) to (1, 1, 0), blue falls from (0, 1, 1) to (0, 1, 0), green falls from (0, 1, 2) to (0, 1, 1). Then magenta (2, 0, 1) to (2, 0, 0), exchanging with magenta. Step 3, cell (1, 1, 0) contains green. The panel requires empty.",
+      "verdict": "passed"
+    },
+    {
+      "name": "Option C",
+      "detail": "magenta (2, 0, 1) to (2, 0, 0), exchanging with magenta. Then green (0, 1, 0) to (1, 1, 0), blue falls from (0, 1, 1) to (0, 1, 0), green falls from (0, 1, 2) to (0, 1, 1). Then green (1, 1, 0) to (1, 0, 0). Step 3, cell (1, 0, 0) contains green. The panel requires empty.",
+      "verdict": "passed"
+    },
+    {
+      "name": "Option D",
+      "detail": "green (0, 1, 0) to (0, 1, 1), exchanging with blue. Then green (0, 1, 1) to (0, 1, 2), exchanging with green. Then green (0, 1, 2) to (0, 1, 1), exchanging with green. Step 3, cell (0, 1, 2) contains green. The panel requires empty.",
+      "verdict": "passed"
+    },
+    {
+      "name": "Declared reasoning: support-drop",
+      "designId": "e000008",
+      "verdict": "passed",
+      "evidence": {
+        "answer": "A",
+        "closestFoil": "B",
+        "foilMismatch": {
+          "step": 3,
+          "cell": [
+            1,
+            1,
+            0
+          ],
+          "observed": [
+            "green"
+          ],
+          "required": null
+        },
+        "commands": [
+          "(2,0,1) z-",
+          "(0,1,0) x+",
+          "(1,1,0) y+"
+        ],
+        "stepsReplayed": 3,
+        "changedStep": 2,
+        "changedRule": "leave displaced support column (0, 1) unsettled after (0,1,0) x+",
+        "counterfactual": {
+          "step": 3,
+          "cell": [
+            0,
+            1,
+            0
+          ],
+          "observed": null,
+          "required": [
+            "blue"
+          ]
+        }
+      },
+      "feedback": ""
+    }
+  ],
+  "scope": "Printed state keys, commands, labeled diagrams and all four alternatives.",
+  "commandExitStatus": 0,
+  "binding": "exact",
+  "bindingBasis": "exact candidate and full input fingerprints",
+  "commandEventId": "e000015"
+}

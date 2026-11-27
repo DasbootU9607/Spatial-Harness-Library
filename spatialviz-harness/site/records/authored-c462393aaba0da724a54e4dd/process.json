@@ -1,0 +1,675 @@
+{
+  "schemaVersion": 1,
+  "manifest": {
+    "sealed": true,
+    "id": "build-c817e11a-8ecd-4314-84f5-b3f834890b65",
+    "title": "block-movement / checkpoint",
+    "runKind": "[private value omitted]",
+    "harness": "spatialviz-harness",
+    "benchmark": null,
+    "category": null,
+    "taskType": null,
+    "skill": {
+      "id": "spatialviz-block-movement",
+      "sha256": "7169103c391a5b4c6ce2049892219fb1d1ae6b012f61efb630973067ed21d16c"
+    },
+    "status": "accepted",
+    "finalCandidateId": "v001",
+    "limitations": [
+      "Only recorder-mediated deliveries, commands and saved boundaries are observed; direct function calls, unwrapped commands and unsaved editor states are excluded.",
+      "Design notes are explicit author annotations, not internal reasoning."
+    ],
+    "captureGaps": []
+  },
+  "events": [
+    {
+      "id": "e000001",
+      "seq": 1,
+      "runId": "build-c817e11a-8ecd-4314-84f5-b3f834890b65",
+      "type": "run.created",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": null,
+      "details": {},
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000002",
+      "seq": 2,
+      "runId": "build-c817e11a-8ecd-4314-84f5-b3f834890b65",
+      "type": "collector.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": null,
+      "details": {},
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000003",
+      "seq": 3,
+      "runId": "build-c817e11a-8ecd-4314-84f5-b3f834890b65",
+      "type": "skill.attached",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": null,
+      "details": {
+        "sha256": "7169103c391a5b4c6ce2049892219fb1d1ae6b012f61efb630973067ed21d16c",
+        "skill": "spatialviz-block-movement"
+      },
+      "evidenceRefs": [
+        {
+          "id": "4b18af647b24b615",
+          "sha256": "7169103c391a5b4c6ce2049892219fb1d1ae6b012f61efb630973067ed21d16c",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000004",
+      "seq": 4,
+      "runId": "build-c817e11a-8ecd-4314-84f5-b3f834890b65",
+      "type": "choice.selected",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": null,
+      "details": {
+        "eligible": [
+          "flat",
+          "stack",
+          "checkpoint",
+          "missing"
+        ],
+        "selection": "checkpoint",
+        "selectionMode": "specified"
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000005",
+      "seq": 5,
+      "runId": "build-c817e11a-8ecd-4314-84f5-b3f834890b65",
+      "type": "resource.read",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "f2b29cff-180a-41e8-8d09-ff5b5ec9231b",
+      "candidateId": null,
+      "details": {
+        "delivery": "author",
+        "outcome": "delivered",
+        "label": "patterns.json",
+        "start": 41,
+        "end": 59,
+        "sha256": "fb45a1203fcdd6bf6c17ba7a8a4da95eb1b478684e312ed1d5c3a9191d2de725",
+        "sourceSha256": "62e2f83a7bf0ad928c0b50ed31468c87bd9eb1b4e3040958ea0779a20588a0b1"
+      },
+      "evidenceRefs": [
+        {
+          "id": "e714d8b7417c0a2b",
+          "sha256": "fb45a1203fcdd6bf6c17ba7a8a4da95eb1b478684e312ed1d5c3a9191d2de725",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000006",
+      "seq": 6,
+      "runId": "build-c817e11a-8ecd-4314-84f5-b3f834890b65",
+      "type": "reference.delivered",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": null,
+      "details": {
+        "sourceId": "MentalAnimation/BlockMoving/Level1/39-3-2-3-4",
+        "label": "Official question, choices, answer and explanation",
+        "sha256": "3c716edf4e5d666eb6ca8975b4d56ce95e7a8cc8cab8f286e45b50258b819f52"
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000007",
+      "seq": 7,
+      "runId": "build-c817e11a-8ecd-4314-84f5-b3f834890b65",
+      "type": "reference.viewed",
+      "actor": "author",
+      "origin": "agent_statement",
+      "actionId": null,
+      "candidateId": null,
+      "details": {
+        "sourceId": "MentalAnimation/BlockMoving/Level1/39-3-2-3-4",
+        "observation": "The reference shows opposing views of a green-yellow-green column and a cyan cube that changes level.",
+        "sourceSha256": "055162801ad5c183dd062af84cbe0d7d045d68645e6fdfc78ebbb58689c90ba5"
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000008",
+      "seq": 8,
+      "runId": "build-c817e11a-8ecd-4314-84f5-b3f834890b65",
+      "type": "design.note",
+      "actor": "author",
+      "origin": "agent_statement",
+      "actionId": null,
+      "candidateId": null,
+      "details": {
+        "design": {
+          "inference": "Use the intermediate stack to identify a route among routes with the same endpoint.",
+          "condition": "At least two legal paths reach the final board, but their settled first states differ.",
+          "foil": "Checking only the final diagram leaves another printed program admissible.",
+          "evidence": "Remove the checkpoint, enumerate surviving programs, then restore it and compare.",
+          "target": "checkpoint",
+          "sourceIds": [
+            "MentalAnimation/BlockMoving/Level1/39-3-2-3-4"
+          ]
+        },
+        "goal": "Use the intermediate stack to identify a route among routes with the same endpoint.",
+        "change": "Checking only the final diagram leaves another printed program admissible.",
+        "reason": "At least two legal paths reach the final board, but their settled first states differ.",
+        "expectedChecks": [
+          "Remove the checkpoint, enumerate surviving programs, then restore it and compare."
+        ]
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000009",
+      "seq": 9,
+      "runId": "build-c817e11a-8ecd-4314-84f5-b3f834890b65",
+      "type": "command.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "b7d02b00-f363-4102-8998-c2060ed342e5",
+      "candidateId": null,
+      "details": {
+        "label": "python",
+        "kind": "mental-animation-generation"
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000010",
+      "seq": 10,
+      "runId": "build-c817e11a-8ecd-4314-84f5-b3f834890b65",
+      "type": "command.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "b7d02b00-f363-4102-8998-c2060ed342e5",
+      "candidateId": null,
+      "details": {
+        "commandEventId": "e000009",
+        "kind": "mental-animation-generation",
+        "exitCode": 0,
+        "signal": null
+      },
+      "evidenceRefs": [
+        {
+          "id": "c5caec6e4bdb8e62",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "availability": "local evidence; hash published"
+        },
+        {
+          "id": "75b674c12b26515d",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000011",
+      "seq": 11,
+      "runId": "build-c817e11a-8ecd-4314-84f5-b3f834890b65",
+      "type": "candidate.saved",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "d4b0878e-01e2-4813-a0e1-5b7fe920c8c6",
+      "candidateId": "v001",
+      "details": {
+        "designId": "e000008",
+        "sha256": "c462393aaba0da724a54e4ddddecdd4d90c441d36fc973e592f9d6ca54726d30",
+        "parentId": null,
+        "parentBasis": null,
+        "changes": [
+          "specification",
+          "geometry",
+          "question",
+          "options",
+          "answer",
+          "rendering",
+          "generator"
+        ],
+        "fingerprints": {
+          "specification": "c462393aaba0da724a54e4ddddecdd4d90c441d36fc973e592f9d6ca54726d30",
+          "geometry": "3a7e9847e346f84901b17e0896b6bc46f0fcc418024ddbb371b0c6819d5aea97",
+          "question": "ba3674bdfab3f81c367f61a90844f17f185cf9ba5ccc091035dc86de00436ff4",
+          "options": "68020288b1238c11343b021d5e2d8babbc8a05c41de65bde922efd588a290a73",
+          "answer": "ef9716179b6d77b357e75ae2239b19670eb42aa1f4df5b0b792a040c393f6f14",
+          "contract": null,
+          "rendering": "3708f506ac3e8439b4019970495f1c81127e041d81202e707470b8e375726955",
+          "generator": "3a7bb9c3dc92dd7d446a06c491b35e4ffa13c3cda916fa9e36c372e3d4db20d4"
+        },
+        "previewUnavailable": null
+      },
+      "evidenceRefs": [
+        {
+          "id": "6311321da38effe7",
+          "sha256": "c462393aaba0da724a54e4ddddecdd4d90c441d36fc973e592f9d6ca54726d30",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000012",
+      "seq": 12,
+      "runId": "build-c817e11a-8ecd-4314-84f5-b3f834890b65",
+      "type": "build.saved",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "d4b0878e-01e2-4813-a0e1-5b7fe920c8c6",
+      "candidateId": "v001",
+      "details": {},
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000013",
+      "seq": 13,
+      "runId": "build-c817e11a-8ecd-4314-84f5-b3f834890b65",
+      "type": "render.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "beac3817-5fab-4f7d-b99a-a35e6ce5aa6d",
+      "candidateId": "v001",
+      "details": {
+        "renderer": {
+          "id": "block-movement",
+          "revision": "05facdd03f40c6c217c8a41766fb64bced7395ba6306c594bb2ee7e9ca956fc0"
+        }
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000014",
+      "seq": 14,
+      "runId": "build-c817e11a-8ecd-4314-84f5-b3f834890b65",
+      "type": "render.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "beac3817-5fab-4f7d-b99a-a35e6ce5aa6d",
+      "candidateId": "v001",
+      "details": {
+        "sha256": "5f1d0610dd37b6dbeb6b33f7afaa573ee5275e57f6f99cc8c85e832e9d1fb289",
+        "renderer": {
+          "id": "block-movement",
+          "revision": "05facdd03f40c6c217c8a41766fb64bced7395ba6306c594bb2ee7e9ca956fc0"
+        },
+        "specification": "c462393aaba0da724a54e4ddddecdd4d90c441d36fc973e592f9d6ca54726d30",
+        "rendering": "3708f506ac3e8439b4019970495f1c81127e041d81202e707470b8e375726955"
+      },
+      "evidenceRefs": [
+        {
+          "id": "3ea2213eac880821",
+          "sha256": "5f1d0610dd37b6dbeb6b33f7afaa573ee5275e57f6f99cc8c85e832e9d1fb289",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000015",
+      "seq": 15,
+      "runId": "build-c817e11a-8ecd-4314-84f5-b3f834890b65",
+      "type": "command.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "b7e11146-75ad-4ccd-8ade-bba4ebd4b818",
+      "candidateId": "v001",
+      "details": {
+        "label": "node.exe",
+        "kind": "verification"
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000016",
+      "seq": 16,
+      "runId": "build-c817e11a-8ecd-4314-84f5-b3f834890b65",
+      "type": "command.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "b7e11146-75ad-4ccd-8ade-bba4ebd4b818",
+      "candidateId": "v001",
+      "details": {
+        "commandEventId": "e000015",
+        "kind": "verification",
+        "exitCode": 0,
+        "signal": null
+      },
+      "evidenceRefs": [
+        {
+          "id": "e612df7685c4d3a1",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "availability": "local evidence; hash published"
+        },
+        {
+          "id": "14cc0dfc417d7111",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000017",
+      "seq": 17,
+      "runId": "build-c817e11a-8ecd-4314-84f5-b3f834890b65",
+      "type": "test.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "b7e11146-75ad-4ccd-8ade-bba4ebd4b818",
+      "candidateId": "v001",
+      "details": {
+        "commandEventId": "e000015",
+        "completedEventId": "e000016",
+        "verdict": "passed",
+        "status": "passed",
+        "checks": [
+          {
+            "name": "Printed coordinate key, question and four option labels match the final sheet",
+            "verdict": "passed"
+          },
+          {
+            "name": "Option A",
+            "detail": "magenta (2, 1, 0) to (1, 1, 0), exchanging with blue. Then blue (2, 1, 0) to (1, 1, 0), exchanging with magenta. Then red (0, 1, 0) to (0, 1, 1), red falls from (0, 1, 1) to (0, 1, 0). Step 1, cell (1, 0, 0) contains gold. The panel requires blue.",
+            "verdict": "passed"
+          },
+          {
+            "name": "Option B",
+            "detail": "gold (1, 0, 0) to (1, 1, 0), exchanging with blue. Then magenta (2, 1, 0) to (2, 1, 1), exchanging with magenta. Then gold (1, 1, 0) to (1, 0, 0), exchanging with blue. Every displayed constraint matches.",
+            "verdict": "passed"
+          },
+          {
+            "name": "Option C",
+            "detail": "blue (1, 1, 0) to (0, 1, 0), exchanging with red. Then red (1, 1, 0) to (0, 1, 0), exchanging with blue. Then red (0, 1, 0) to (0, 1, 1), red falls from (0, 1, 1) to (0, 1, 0). Step 1, cell (0, 1, 0) contains blue. The panel requires red.",
+            "verdict": "passed"
+          },
+          {
+            "name": "Option D",
+            "detail": "magenta (2, 1, 0) to (2, 1, 1), exchanging with magenta. Then magenta (2, 1, 0) to (2, 1, 1), exchanging with magenta. Then magenta (2, 1, 1) to (2, 1, 0), exchanging with magenta. Step 1, cell (1, 0, 0) contains gold. The panel requires blue.",
+            "verdict": "passed"
+          },
+          {
+            "name": "Declared reasoning: checkpoint",
+            "designId": "e000008",
+            "verdict": "passed",
+            "evidence": {
+              "answer": "B",
+              "closestFoil": "D",
+              "foilMismatch": {
+                "step": 1,
+                "cell": [
+                  1,
+                  0,
+                  0
+                ],
+                "observed": [
+                  "gold"
+                ],
+                "required": [
+                  "blue"
+                ]
+              },
+              "commands": [
+                "(1,0,0) y+",
+                "(2,1,0) z+",
+                "(1,1,0) y-"
+              ],
+              "stepsReplayed": 3,
+              "matchesWithoutCheckpoint": [
+                "A",
+                "B",
+                "C",
+                "D"
+              ]
+            },
+            "feedback": ""
+          }
+        ],
+        "scope": "Printed state keys, commands, labeled diagrams and all four alternatives.",
+        "binding": "exact",
+        "bindingBasis": "exact candidate and full input fingerprints",
+        "testedFingerprints": {
+          "specification": "c462393aaba0da724a54e4ddddecdd4d90c441d36fc973e592f9d6ca54726d30",
+          "geometry": "3a7e9847e346f84901b17e0896b6bc46f0fcc418024ddbb371b0c6819d5aea97",
+          "question": "ba3674bdfab3f81c367f61a90844f17f185cf9ba5ccc091035dc86de00436ff4",
+          "options": "68020288b1238c11343b021d5e2d8babbc8a05c41de65bde922efd588a290a73",
+          "answer": "ef9716179b6d77b357e75ae2239b19670eb42aa1f4df5b0b792a040c393f6f14",
+          "contract": null,
+          "rendering": "3708f506ac3e8439b4019970495f1c81127e041d81202e707470b8e375726955",
+          "generator": "3a7bb9c3dc92dd7d446a06c491b35e4ffa13c3cda916fa9e36c372e3d4db20d4"
+        },
+        "verifier": {
+          "id": "block-movement",
+          "revision": "05facdd03f40c6c217c8a41766fb64bced7395ba6306c594bb2ee7e9ca956fc0"
+        },
+        "reportSha256": "2933df5161382bb56c4ac5a9ca6a270af5d87289ac526d82c3fb06c5899c147e"
+      },
+      "evidenceRefs": [
+        {
+          "id": "bd727461665752f0",
+          "sha256": "2933df5161382bb56c4ac5a9ca6a270af5d87289ac526d82c3fb06c5899c147e",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000018",
+      "seq": 18,
+      "runId": "build-c817e11a-8ecd-4314-84f5-b3f834890b65",
+      "type": "visual.review",
+      "actor": "author",
+      "origin": "agent_statement",
+      "actionId": null,
+      "candidateId": "v001",
+      "details": {
+        "outcome": "passed",
+        "review": "Initial and Final display the same stacks. In the intermediate pair gold and blue exchange floor positions while the two magenta cubes stay stacked. B reproduces this intermediate state and restores the endpoints."
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000019",
+      "seq": 19,
+      "runId": "build-c817e11a-8ecd-4314-84f5-b3f834890b65",
+      "type": "run.finished",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": "v001",
+      "details": {
+        "outcome": "accepted",
+        "finalCandidateId": "v001"
+      },
+      "evidenceRefs": []
+    }
+  ],
+  "candidates": [
+    {
+      "id": "v001",
+      "designId": "e000008",
+      "parentId": null,
+      "parentBasis": null,
+      "sha256": "c462393aaba0da724a54e4ddddecdd4d90c441d36fc973e592f9d6ca54726d30",
+      "fingerprints": {
+        "specification": "c462393aaba0da724a54e4ddddecdd4d90c441d36fc973e592f9d6ca54726d30",
+        "geometry": "3a7e9847e346f84901b17e0896b6bc46f0fcc418024ddbb371b0c6819d5aea97",
+        "question": "ba3674bdfab3f81c367f61a90844f17f185cf9ba5ccc091035dc86de00436ff4",
+        "options": "68020288b1238c11343b021d5e2d8babbc8a05c41de65bde922efd588a290a73",
+        "answer": "ef9716179b6d77b357e75ae2239b19670eb42aa1f4df5b0b792a040c393f6f14",
+        "contract": null,
+        "rendering": "3708f506ac3e8439b4019970495f1c81127e041d81202e707470b8e375726955",
+        "generator": "3a7bb9c3dc92dd7d446a06c491b35e4ffa13c3cda916fa9e36c372e3d4db20d4"
+      },
+      "previewUnavailable": null,
+      "changes": [
+        "specification",
+        "geometry",
+        "question",
+        "options",
+        "answer",
+        "rendering",
+        "generator"
+      ],
+      "preview": {
+        "candidateId": "v001",
+        "specification": "c462393aaba0da724a54e4ddddecdd4d90c441d36fc973e592f9d6ca54726d30",
+        "rendering": "3708f506ac3e8439b4019970495f1c81127e041d81202e707470b8e375726955",
+        "renderer": {
+          "id": "block-movement",
+          "revision": "05facdd03f40c6c217c8a41766fb64bced7395ba6306c594bb2ee7e9ca956fc0"
+        },
+        "sha256": "5f1d0610dd37b6dbeb6b33f7afaa573ee5275e57f6f99cc8c85e832e9d1fb289",
+        "path": "records/authored-c462393aaba0da724a54e4dd/v001-5f1d0610dd37b6db.png",
+        "origin": "recorded-render"
+      }
+    }
+  ],
+  "tests": [
+    {
+      "id": "t001",
+      "actionId": "b7e11146-75ad-4ccd-8ade-bba4ebd4b818",
+      "candidateId": "v001",
+      "testedFingerprints": {
+        "specification": "c462393aaba0da724a54e4ddddecdd4d90c441d36fc973e592f9d6ca54726d30",
+        "geometry": "3a7e9847e346f84901b17e0896b6bc46f0fcc418024ddbb371b0c6819d5aea97",
+        "question": "ba3674bdfab3f81c367f61a90844f17f185cf9ba5ccc091035dc86de00436ff4",
+        "options": "68020288b1238c11343b021d5e2d8babbc8a05c41de65bde922efd588a290a73",
+        "answer": "ef9716179b6d77b357e75ae2239b19670eb42aa1f4df5b0b792a040c393f6f14",
+        "contract": null,
+        "rendering": "3708f506ac3e8439b4019970495f1c81127e041d81202e707470b8e375726955",
+        "generator": "3a7bb9c3dc92dd7d446a06c491b35e4ffa13c3cda916fa9e36c372e3d4db20d4"
+      },
+      "verifier": {
+        "id": "block-movement",
+        "revision": "05facdd03f40c6c217c8a41766fb64bced7395ba6306c594bb2ee7e9ca956fc0"
+      },
+      "reportSha256": "2933df5161382bb56c4ac5a9ca6a270af5d87289ac526d82c3fb06c5899c147e",
+      "verdict": "passed",
+      "status": "passed",
+      "checks": [
+        {
+          "name": "Printed coordinate key, question and four option labels match the final sheet",
+          "verdict": "passed"
+        },
+        {
+          "name": "Option A",
+          "detail": "magenta (2, 1, 0) to (1, 1, 0), exchanging with blue. Then blue (2, 1, 0) to (1, 1, 0), exchanging with magenta. Then red (0, 1, 0) to (0, 1, 1), red falls from (0, 1, 1) to (0, 1, 0). Step 1, cell (1, 0, 0) contains gold. The panel requires blue.",
+          "verdict": "passed"
+        },
+        {
+          "name": "Option B",
+          "detail": "gold (1, 0, 0) to (1, 1, 0), exchanging with blue. Then magenta (2, 1, 0) to (2, 1, 1), exchanging with magenta. Then gold (1, 1, 0) to (1, 0, 0), exchanging with blue. Every displayed constraint matches.",
+          "verdict": "passed"
+        },
+        {
+          "name": "Option C",
+          "detail": "blue (1, 1, 0) to (0, 1, 0), exchanging with red. Then red (1, 1, 0) to (0, 1, 0), exchanging with blue. Then red (0, 1, 0) to (0, 1, 1), red falls from (0, 1, 1) to (0, 1, 0). Step 1, cell (0, 1, 0) contains blue. The panel requires red.",
+          "verdict": "passed"
+        },
+        {
+          "name": "Option D",
+          "detail": "magenta (2, 1, 0) to (2, 1, 1), exchanging with magenta. Then magenta (2, 1, 0) to (2, 1, 1), exchanging with magenta. Then magenta (2, 1, 1) to (2, 1, 0), exchanging with magenta. Step 1, cell (1, 0, 0) contains gold. The panel requires blue.",
+          "verdict": "passed"
+        },
+        {
+          "name": "Declared reasoning: checkpoint",
+          "designId": "e000008",
+          "verdict": "passed",
+          "evidence": {
+            "answer": "B",
+            "closestFoil": "D",
+            "foilMismatch": {
+              "step": 1,
+              "cell": [
+                1,
+                0,
+                0
+              ],
+              "observed": [
+                "gold"
+              ],
+              "required": [
+                "blue"
+              ]
+            },
+            "commands": [
+              "(1,0,0) y+",
+              "(2,1,0) z+",
+              "(1,1,0) y-"
+            ],
+            "stepsReplayed": 3,
+            "matchesWithoutCheckpoint": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ]
+          },
+          "feedback": ""
+        }
+      ],
+      "scope": "Printed state keys, commands, labeled diagrams and all four alternatives.",
+      "commandExitStatus": 0,
+      "binding": "exact",
+      "bindingBasis": "exact candidate and full input fingerprints",
+      "commandEventId": "e000015"
+    }
+  ],
+  "usage": {
+    "schemaVersion": 2,
+    "runId": "build-c817e11a-8ecd-4314-84f5-b3f834890b65",
+    "source": "codex",
+    "runtime": "Codex Desktop",
+    "status": "measured",
+    "elapsedMs": 356631,
+    "elapsedKind": "wall-clock",
+    "scope": "Runtime-reported usage between the start baseline and finish snapshot of this session. In-flight or delayed usage, earlier conversation, other agents and later delivery are excluded. This is an observed interval, not a complete billed task total.",
+    "scopeComplete": false,
+    "observedTokens": {
+      "input_tokens": 4260192,
+      "cached_input_tokens": 4226944,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 6884,
+      "reasoning_output_tokens": 1985,
+      "total_tokens": 4267076
+    },
+    "tokens": {
+      "input_tokens": null,
+      "cached_input_tokens": null,
+      "cache_write_input_tokens": null,
+      "output_tokens": null,
+      "reasoning_output_tokens": null,
+      "total_tokens": null
+    },
+    "models": [
+      {
+        "provider": "openai",
+        "model": "gpt-6.2-astra",
+        "reasoningEffort": "xhigh",
+        "tokens": {
+          "input_tokens": 4260192,
+          "cached_input_tokens": 4226944,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 6884,
+          "reasoning_output_tokens": 1985,
+          "total_tokens": 4267076
+        },
+        "observations": 19
+      }
+    ],
+    "missingFields": [],
+    "issues": [],
+    "observations": 19
+  },
+  "caseId": "authored-c462393aaba0da724a54e4dd"
+}

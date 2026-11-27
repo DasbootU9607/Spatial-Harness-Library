@@ -1,0 +1,64 @@
+{
+  "id": "t001",
+  "actionId": "e52cff61-3770-4109-99de-8907af5d8ff6",
+  "candidateId": "v001",
+  "testedFingerprints": {
+    "specification": "dda5273a086bf547ebe554954270b02fd1a0d8001ee96bfdfdf06dcde7ed7f71",
+    "geometry": "d84326def6f16d40dd9d99751debb8c08787dde0b1f73601c56a3bfcf47ded8c",
+    "question": "93cb94c8db62399b9668738e5e0ab6dc308e3790d790a62ca9b590596bc0b0f9",
+    "options": "884fd32b53d57f0d59c10148508f191e6119117a3d170442019143574543a1e3",
+    "answer": "132bbccba06a0c2cf954d306b74bb1c2ccab91e652a38fee73981d9be0de3fb3",
+    "contract": "9b0a82fd6cc23e047ae2753865ee290e773e48d911276235e388d97e1aa426db",
+    "rendering": "0883384f5f1a09b52129030357886ec0e0d2c5ed7922936e3a3151b01c6f38b7",
+    "generator": "49e0428faede106cfa5eaf2723d539370ec7f73b77e19dc0a92004fc8b624824"
+  },
+  "verifier": {
+    "id": "official-projection",
+    "revision": "ace70cd91ed55fb6bb2da245ac6fbdc8890dfdc71ecdbaab330a47d99bee356e"
+  },
+  "reportSha256": "ffa76673ae73307d4c8139fa5c8961ca16faf48c71b01a848a78a71b53048197",
+  "verdict": "passed",
+  "status": "passed",
+  "checks": [
+    {
+      "name": "World geometry, construction parameters, viewing contract and question",
+      "verdict": "passed"
+    },
+    {
+      "name": "Independent projected answer, released choice semantics and per-option explanations",
+      "verdict": "passed"
+    },
+    {
+      "name": "Visible surfaces, occlusion, distinctive options, crop and final labeled composition",
+      "verdict": "passed"
+    },
+    {
+      "name": "Current projection adapter and pinned upstream manifest",
+      "verdict": "passed"
+    },
+    {
+      "name": "Declared reasoning: cad-view",
+      "designId": "e000008",
+      "verdict": "passed",
+      "evidence": {
+        "fullMatches": [
+          "A"
+        ],
+        "givenView": "Top",
+        "targetView": "Front",
+        "givenTargetDistance": 128,
+        "optionEdgeDistances": {
+          "A": 1,
+          "B": 47,
+          "C": 143
+        }
+      },
+      "feedback": ""
+    }
+  ],
+  "scope": "Discrete nearest-surface projection or face-mesh depth testing, displayed option uniqueness and exact composite replay.",
+  "commandExitStatus": 0,
+  "binding": "exact",
+  "bindingBasis": "exact candidate and full input fingerprints",
+  "commandEventId": "e000015"
+}

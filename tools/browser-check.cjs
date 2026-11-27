@@ -43,6 +43,7 @@ const server=http.createServer((req,res)=>{try{const u=new URL(req.url,'http://l
   await page.locator('#harness-slides').evaluate(el=>el.blur());await page.screenshot({path:path.join(output,`library-${width}.png`),fullPage:true});
   results.push({page:'library carousel, mouse drag, keyboard, natural image proportions and benchmark links',width,passed:true});
  }
+ results.push(...await require('./spatialviz-flow-browser.cjs')({page,origin,catalog,output}));
  results.push(...await require('./spatialviz-showcase-browser.cjs')({page,origin,catalog,selection:R.read(path.join(R.ROOT,'catalog/spatialviz-showcase.json'))}));
  // Simulate an unviewed example and an alternate viewed original without changing any published build.
  const demo=structuredClone(catalog);

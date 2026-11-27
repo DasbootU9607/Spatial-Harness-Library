@@ -1,0 +1,100 @@
+{
+  "title": "The offset planet on its carrier",
+  "intent": "Track the gear body and the supported axle in the front frame.",
+  "references": [
+    "MentalAnimation/MechanicalSystem/Level0/16"
+  ],
+  "cad": {
+    "moduleMm": 2,
+    "tiltDeg": 31
+  },
+  "members": {
+    "S": {
+      "kind": "gear",
+      "at": [
+        0,
+        0,
+        0
+      ],
+      "teeth": 30
+    },
+    "P": {
+      "kind": "gear",
+      "at": [
+        0,
+        -24,
+        0
+      ],
+      "teeth": 18
+    },
+    "H": {
+      "kind": "carrier",
+      "at": [
+        0,
+        0,
+        1
+      ]
+    }
+  },
+  "connections": [
+    {
+      "kind": "mesh",
+      "ports": [
+        "S",
+        "P"
+      ],
+      "arm": "H"
+    },
+    {
+      "kind": "ground",
+      "ports": [
+        "S"
+      ]
+    }
+  ],
+  "input": {
+    "member": "H",
+    "motion": "CW"
+  },
+  "interval": "instant",
+  "targets": [
+    {
+      "name": "P",
+      "kind": "spin"
+    },
+    {
+      "name": "H",
+      "kind": "orbit"
+    }
+  ],
+  "choices": [
+    {
+      "motions": [
+        "CW",
+        "CW"
+      ],
+      "reason": "In the carrier frame the fixed sun turns counterclockwise, so the planet turns clockwise relative to the arm. Adding the clockwise arm motion preserves clockwise spin."
+    },
+    {
+      "motions": [
+        "CCW",
+        "CW"
+      ],
+      "reason": "Using the external-mesh sign directly in the stationary frame reverses the predicted spin."
+    },
+    {
+      "motions": [
+        "stationary",
+        "CW"
+      ],
+      "reason": "The tooth at contact is instantaneously at rest, but the entire planet gear is not."
+    },
+    {
+      "motions": [
+        "CW",
+        "CCW"
+      ],
+      "reason": "The axle is supported by the clockwise arm and follows its orbit."
+    }
+  ]
+}

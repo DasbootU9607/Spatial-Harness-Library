@@ -1,0 +1,636 @@
+{
+  "schemaVersion": 1,
+  "manifest": {
+    "sealed": true,
+    "id": "build-4583ede8-8c46-40f0-bdbd-dd26cd80d6b1",
+    "title": "cube-reconstruction / color-view",
+    "runKind": "[private value omitted]",
+    "harness": "spatialviz-harness",
+    "benchmark": null,
+    "category": null,
+    "taskType": null,
+    "skill": {
+      "id": "spatialviz-cube-reconstruction",
+      "sha256": "7c888574a061c7385eb2163e667147bf9e38b54300bf960245d2b4bef9fe6555"
+    },
+    "status": "accepted",
+    "finalCandidateId": "v001",
+    "limitations": [
+      "Only recorder-mediated deliveries, commands and saved boundaries are observed; direct function calls, unwrapped commands and unsaved editor states are excluded.",
+      "Design notes are explicit author annotations, not internal reasoning."
+    ],
+    "captureGaps": []
+  },
+  "events": [
+    {
+      "id": "e000001",
+      "seq": 1,
+      "runId": "build-4583ede8-8c46-40f0-bdbd-dd26cd80d6b1",
+      "type": "run.created",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": null,
+      "details": {},
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000002",
+      "seq": 2,
+      "runId": "build-4583ede8-8c46-40f0-bdbd-dd26cd80d6b1",
+      "type": "collector.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": null,
+      "details": {},
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000003",
+      "seq": 3,
+      "runId": "build-4583ede8-8c46-40f0-bdbd-dd26cd80d6b1",
+      "type": "skill.attached",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": null,
+      "details": {
+        "sha256": "7c888574a061c7385eb2163e667147bf9e38b54300bf960245d2b4bef9fe6555",
+        "skill": "spatialviz-cube-reconstruction"
+      },
+      "evidenceRefs": [
+        {
+          "id": "01cf4889b19fdafc",
+          "sha256": "7c888574a061c7385eb2163e667147bf9e38b54300bf960245d2b4bef9fe6555",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000004",
+      "seq": 4,
+      "runId": "build-4583ede8-8c46-40f0-bdbd-dd26cd80d6b1",
+      "type": "choice.selected",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": null,
+      "details": {
+        "eligible": [
+          "opposite",
+          "color-view",
+          "pips",
+          "lines",
+          "mosaic"
+        ],
+        "selection": "color-view",
+        "selectionMode": "specified"
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000005",
+      "seq": 5,
+      "runId": "build-4583ede8-8c46-40f0-bdbd-dd26cd80d6b1",
+      "type": "resource.read",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "b20f8857-3115-4975-bd54-d5560d851741",
+      "candidateId": null,
+      "details": {
+        "delivery": "author",
+        "outcome": "delivered",
+        "label": "patterns.json",
+        "start": 25,
+        "end": 45,
+        "sha256": "c160e27132635189575480c3ef3397986951ccf85679748ddb557bebe423b970",
+        "sourceSha256": "5cc361e9c74f82b174c79116a2cf48d0d4e6eba4100e4300bf2eec3a04bb1664"
+      },
+      "evidenceRefs": [
+        {
+          "id": "ad3e7200a0913d74",
+          "sha256": "c160e27132635189575480c3ef3397986951ccf85679748ddb557bebe423b970",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000006",
+      "seq": 6,
+      "runId": "build-4583ede8-8c46-40f0-bdbd-dd26cd80d6b1",
+      "type": "reference.delivered",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": null,
+      "details": {
+        "sourceId": "MentalFolding/CubeReconstruction/Level0/0",
+        "label": "Official question, choices, answer and explanation",
+        "sha256": "4db91f76a5df020eaabc2b310f3037a44acd9b84297125afa27821fbf2ed775c"
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000007",
+      "seq": 7,
+      "runId": "build-4583ede8-8c46-40f0-bdbd-dd26cd80d6b1",
+      "type": "reference.viewed",
+      "actor": "author",
+      "origin": "agent_statement",
+      "actionId": null,
+      "candidateId": null,
+      "details": {
+        "sourceId": "MentalFolding/CubeReconstruction/Level0/0",
+        "observation": "In the net, magenta separates red and cyan while yellow leads toward blue and green.",
+        "sourceSha256": "e507298c559ed59996944e7eb41e3f4a8a7db4cd5b8365edde26a507b793cdef"
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000008",
+      "seq": 8,
+      "runId": "build-4583ede8-8c46-40f0-bdbd-dd26cd80d6b1",
+      "type": "design.note",
+      "actor": "author",
+      "origin": "agent_statement",
+      "actionId": null,
+      "candidateId": null,
+      "details": {
+        "design": {
+          "inference": "Identify an impossible ordering of colored faces if the question excludes a corner, or a realizable ordered vertex when it asks for one.",
+          "condition": "Fix six distinct faces to a bent net with offset wings.",
+          "foil": "Three colors can all appear on the net without meeting in the proposed order.",
+          "evidence": "Transport all six normals and enumerate the ordered visible triples under proper cube poses.",
+          "target": "visible-corner",
+          "sourceIds": [
+            "MentalFolding/CubeReconstruction/Level0/0"
+          ]
+        },
+        "goal": "Identify an impossible ordering of colored faces if the question excludes a corner, or a realizable ordered vertex when it asks for one.",
+        "change": "Three colors can all appear on the net without meeting in the proposed order.",
+        "reason": "Fix six distinct faces to a bent net with offset wings.",
+        "expectedChecks": [
+          "Transport all six normals and enumerate the ordered visible triples under proper cube poses."
+        ]
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000009",
+      "seq": 9,
+      "runId": "build-4583ede8-8c46-40f0-bdbd-dd26cd80d6b1",
+      "type": "command.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "bd5f6cae-d799-42e0-94a4-f5e0db5e91db",
+      "candidateId": null,
+      "details": {
+        "label": "python",
+        "kind": "official-freecad-generation"
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000010",
+      "seq": 10,
+      "runId": "build-4583ede8-8c46-40f0-bdbd-dd26cd80d6b1",
+      "type": "command.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "bd5f6cae-d799-42e0-94a4-f5e0db5e91db",
+      "candidateId": null,
+      "details": {
+        "commandEventId": "e000009",
+        "kind": "official-freecad-generation",
+        "exitCode": 0,
+        "signal": null
+      },
+      "evidenceRefs": [
+        {
+          "id": "90619c80b60691ec",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "availability": "local evidence; hash published"
+        },
+        {
+          "id": "90588dcdfa51d63b",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000011",
+      "seq": 11,
+      "runId": "build-4583ede8-8c46-40f0-bdbd-dd26cd80d6b1",
+      "type": "candidate.saved",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "fedb5f12-221e-41a6-8cd7-9fcc257ac523",
+      "candidateId": "v001",
+      "details": {
+        "designId": "e000008",
+        "sha256": "81b00dd167cef5cf323a18d77e395b42677484db3cf02391e68c8411d581bb5b",
+        "parentId": null,
+        "parentBasis": null,
+        "changes": [
+          "specification",
+          "geometry",
+          "question",
+          "options",
+          "answer",
+          "contract",
+          "rendering",
+          "generator"
+        ],
+        "fingerprints": {
+          "specification": "81b00dd167cef5cf323a18d77e395b42677484db3cf02391e68c8411d581bb5b",
+          "geometry": "f042379a037c289c0a591fb49b9555a8b1d6d06017468da81674729b40232c19",
+          "question": "c1b9eb1abea1451519f50ee2d24ad76f21b7d31dbed4d174e947cbef57cba7b3",
+          "options": "b0486aed23f5231897b16b8c377e0d82d9b141a8e0e0f270fbc285d7996226f6",
+          "answer": "42f65af80b0b56646543566d235605e8d3d3e519365da839f3472de1e2fbae90",
+          "contract": "a242a71078e1915731e799821e2eaf246c47567d5fd5b7e0661b516e7bd551e9",
+          "rendering": "595d3437313170c3ef0bb293f4d4530aab8611e77b9878107215ecb3ffb1dece",
+          "generator": "d424c7f0d4770d49c616e88dde001e1c5cdf67216310db5b55119b49cef5eb7c"
+        },
+        "previewUnavailable": null
+      },
+      "evidenceRefs": [
+        {
+          "id": "84a0919a92293763",
+          "sha256": "81b00dd167cef5cf323a18d77e395b42677484db3cf02391e68c8411d581bb5b",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000012",
+      "seq": 12,
+      "runId": "build-4583ede8-8c46-40f0-bdbd-dd26cd80d6b1",
+      "type": "build.saved",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "fedb5f12-221e-41a6-8cd7-9fcc257ac523",
+      "candidateId": "v001",
+      "details": {},
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000013",
+      "seq": 13,
+      "runId": "build-4583ede8-8c46-40f0-bdbd-dd26cd80d6b1",
+      "type": "render.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "99a00275-2979-4e50-a6fa-0e112782af2a",
+      "candidateId": "v001",
+      "details": {
+        "renderer": {
+          "id": "official-cube-reconstruction",
+          "revision": "8bcf8520ca1f04013a7dff694d4cee862ceab3375a1db0548b3e78882af5b76b"
+        }
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000014",
+      "seq": 14,
+      "runId": "build-4583ede8-8c46-40f0-bdbd-dd26cd80d6b1",
+      "type": "render.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "99a00275-2979-4e50-a6fa-0e112782af2a",
+      "candidateId": "v001",
+      "details": {
+        "sha256": "2c0c1e538fc4b2c860a4acd94c242bfeee0faf5daad77618d209fc7daffea37e",
+        "renderer": {
+          "id": "official-cube-reconstruction",
+          "revision": "8bcf8520ca1f04013a7dff694d4cee862ceab3375a1db0548b3e78882af5b76b"
+        },
+        "specification": "81b00dd167cef5cf323a18d77e395b42677484db3cf02391e68c8411d581bb5b",
+        "rendering": "595d3437313170c3ef0bb293f4d4530aab8611e77b9878107215ecb3ffb1dece"
+      },
+      "evidenceRefs": [
+        {
+          "id": "2262ce7a795057e1",
+          "sha256": "2c0c1e538fc4b2c860a4acd94c242bfeee0faf5daad77618d209fc7daffea37e",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000015",
+      "seq": 15,
+      "runId": "build-4583ede8-8c46-40f0-bdbd-dd26cd80d6b1",
+      "type": "command.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "0f534209-cf88-4edb-8ba4-547abc0c15d1",
+      "candidateId": "v001",
+      "details": {
+        "label": "node.exe",
+        "kind": "verification"
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000016",
+      "seq": 16,
+      "runId": "build-4583ede8-8c46-40f0-bdbd-dd26cd80d6b1",
+      "type": "command.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "0f534209-cf88-4edb-8ba4-547abc0c15d1",
+      "candidateId": "v001",
+      "details": {
+        "commandEventId": "e000015",
+        "kind": "verification",
+        "exitCode": 0,
+        "signal": null
+      },
+      "evidenceRefs": [
+        {
+          "id": "c1c803b352c1f73e",
+          "sha256": "b054cb07f37f0aa8ae23a3737c2043d80cecd28c934bb41176d3a1576f8dfdfe",
+          "availability": "local evidence; hash published"
+        },
+        {
+          "id": "868f86bf4bd91257",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000017",
+      "seq": 17,
+      "runId": "build-4583ede8-8c46-40f0-bdbd-dd26cd80d6b1",
+      "type": "test.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "0f534209-cf88-4edb-8ba4-547abc0c15d1",
+      "candidateId": "v001",
+      "details": {
+        "commandEventId": "e000015",
+        "completedEventId": "e000016",
+        "verdict": "passed",
+        "status": "passed",
+        "checks": [
+          {
+            "name": "Hinge consistency, six normals, proper rotations and exact unique answer",
+            "verdict": "passed"
+          },
+          {
+            "name": "Published prompt, polarity, upstream answer and ordered figure/text options",
+            "verdict": "passed"
+          },
+          {
+            "name": "Rectified CAD faces, rotations, reflections, grid occupancy and visually distinct panels",
+            "verdict": "passed"
+          },
+          {
+            "name": "Pixel-exact labeled composition and complete question PNG",
+            "verdict": "passed"
+          },
+          {
+            "name": "Current domain adapter and pinned source bytes",
+            "verdict": "passed"
+          },
+          {
+            "name": "Declared reasoning: visible-corner",
+            "designId": "e000008",
+            "verdict": "passed",
+            "evidence": {
+              "fullMatches": [
+                "C"
+              ],
+              "ignoringFaceTurns": [
+                "C"
+              ],
+              "foldedCornerWitnesses": {
+                "A": "The three faces meet, but cyan (column 2, row 1 from the upper left), red (column 1, row 1 from the upper left), green (column 4, row 2 from the upper left) in top/left/right order reverses their order around the vertex.",
+                "B": "The three faces meet, but green (column 4, row 2 from the upper left), red (column 1, row 1 from the upper left), blue (column 2, row 3 from the upper left) in top/left/right order reverses their order around the vertex.",
+                "C": "Reading the net from its upper left, the top, left and right faces come from cyan (column 2, row 1 from the upper left), then pink (column 2, row 2 from the upper left), then yellow (column 3, row 2 from the upper left). All three markings retain the pictured orientation."
+              }
+            },
+            "feedback": ""
+          }
+        ],
+        "scope": "Exact exterior folding and rectified panel matching under the declared camera.",
+        "binding": "exact",
+        "bindingBasis": "exact candidate and full input fingerprints",
+        "testedFingerprints": {
+          "specification": "81b00dd167cef5cf323a18d77e395b42677484db3cf02391e68c8411d581bb5b",
+          "geometry": "f042379a037c289c0a591fb49b9555a8b1d6d06017468da81674729b40232c19",
+          "question": "c1b9eb1abea1451519f50ee2d24ad76f21b7d31dbed4d174e947cbef57cba7b3",
+          "options": "b0486aed23f5231897b16b8c377e0d82d9b141a8e0e0f270fbc285d7996226f6",
+          "answer": "42f65af80b0b56646543566d235605e8d3d3e519365da839f3472de1e2fbae90",
+          "contract": "a242a71078e1915731e799821e2eaf246c47567d5fd5b7e0661b516e7bd551e9",
+          "rendering": "595d3437313170c3ef0bb293f4d4530aab8611e77b9878107215ecb3ffb1dece",
+          "generator": "d424c7f0d4770d49c616e88dde001e1c5cdf67216310db5b55119b49cef5eb7c"
+        },
+        "verifier": {
+          "id": "official-cube-reconstruction",
+          "revision": "8bcf8520ca1f04013a7dff694d4cee862ceab3375a1db0548b3e78882af5b76b"
+        },
+        "reportSha256": "853d8afd5ab7aef1dbb97fc0c917c51c62c753ddf7878a8b59cf2cfc4a703633"
+      },
+      "evidenceRefs": [
+        {
+          "id": "a9492911322c428e",
+          "sha256": "853d8afd5ab7aef1dbb97fc0c917c51c62c753ddf7878a8b59cf2cfc4a703633",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000018",
+      "seq": 18,
+      "runId": "build-4583ede8-8c46-40f0-bdbd-dd26cd80d6b1",
+      "type": "visual.review",
+      "actor": "author",
+      "origin": "agent_statement",
+      "actionId": null,
+      "candidateId": "v001",
+      "details": {
+        "outcome": "passed",
+        "review": "The folded corner C places cyan above pink and yellow. These tiles touch around the bend in the printed net. A has the same top but places different colors on the sides."
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000019",
+      "seq": 19,
+      "runId": "build-4583ede8-8c46-40f0-bdbd-dd26cd80d6b1",
+      "type": "run.finished",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": "v001",
+      "details": {
+        "outcome": "accepted",
+        "finalCandidateId": "v001"
+      },
+      "evidenceRefs": []
+    }
+  ],
+  "candidates": [
+    {
+      "id": "v001",
+      "designId": "e000008",
+      "parentId": null,
+      "parentBasis": null,
+      "sha256": "81b00dd167cef5cf323a18d77e395b42677484db3cf02391e68c8411d581bb5b",
+      "fingerprints": {
+        "specification": "81b00dd167cef5cf323a18d77e395b42677484db3cf02391e68c8411d581bb5b",
+        "geometry": "f042379a037c289c0a591fb49b9555a8b1d6d06017468da81674729b40232c19",
+        "question": "c1b9eb1abea1451519f50ee2d24ad76f21b7d31dbed4d174e947cbef57cba7b3",
+        "options": "b0486aed23f5231897b16b8c377e0d82d9b141a8e0e0f270fbc285d7996226f6",
+        "answer": "42f65af80b0b56646543566d235605e8d3d3e519365da839f3472de1e2fbae90",
+        "contract": "a242a71078e1915731e799821e2eaf246c47567d5fd5b7e0661b516e7bd551e9",
+        "rendering": "595d3437313170c3ef0bb293f4d4530aab8611e77b9878107215ecb3ffb1dece",
+        "generator": "d424c7f0d4770d49c616e88dde001e1c5cdf67216310db5b55119b49cef5eb7c"
+      },
+      "previewUnavailable": null,
+      "changes": [
+        "specification",
+        "geometry",
+        "question",
+        "options",
+        "answer",
+        "contract",
+        "rendering",
+        "generator"
+      ],
+      "preview": {
+        "candidateId": "v001",
+        "specification": "81b00dd167cef5cf323a18d77e395b42677484db3cf02391e68c8411d581bb5b",
+        "rendering": "595d3437313170c3ef0bb293f4d4530aab8611e77b9878107215ecb3ffb1dece",
+        "renderer": {
+          "id": "official-cube-reconstruction",
+          "revision": "8bcf8520ca1f04013a7dff694d4cee862ceab3375a1db0548b3e78882af5b76b"
+        },
+        "sha256": "2c0c1e538fc4b2c860a4acd94c242bfeee0faf5daad77618d209fc7daffea37e",
+        "path": "records/authored-81b00dd167cef5cf323a18d7/v001-2c0c1e538fc4b2c8.png",
+        "origin": "recorded-render"
+      }
+    }
+  ],
+  "tests": [
+    {
+      "id": "t001",
+      "actionId": "0f534209-cf88-4edb-8ba4-547abc0c15d1",
+      "candidateId": "v001",
+      "testedFingerprints": {
+        "specification": "81b00dd167cef5cf323a18d77e395b42677484db3cf02391e68c8411d581bb5b",
+        "geometry": "f042379a037c289c0a591fb49b9555a8b1d6d06017468da81674729b40232c19",
+        "question": "c1b9eb1abea1451519f50ee2d24ad76f21b7d31dbed4d174e947cbef57cba7b3",
+        "options": "b0486aed23f5231897b16b8c377e0d82d9b141a8e0e0f270fbc285d7996226f6",
+        "answer": "42f65af80b0b56646543566d235605e8d3d3e519365da839f3472de1e2fbae90",
+        "contract": "a242a71078e1915731e799821e2eaf246c47567d5fd5b7e0661b516e7bd551e9",
+        "rendering": "595d3437313170c3ef0bb293f4d4530aab8611e77b9878107215ecb3ffb1dece",
+        "generator": "d424c7f0d4770d49c616e88dde001e1c5cdf67216310db5b55119b49cef5eb7c"
+      },
+      "verifier": {
+        "id": "official-cube-reconstruction",
+        "revision": "8bcf8520ca1f04013a7dff694d4cee862ceab3375a1db0548b3e78882af5b76b"
+      },
+      "reportSha256": "853d8afd5ab7aef1dbb97fc0c917c51c62c753ddf7878a8b59cf2cfc4a703633",
+      "verdict": "passed",
+      "status": "passed",
+      "checks": [
+        {
+          "name": "Hinge consistency, six normals, proper rotations and exact unique answer",
+          "verdict": "passed"
+        },
+        {
+          "name": "Published prompt, polarity, upstream answer and ordered figure/text options",
+          "verdict": "passed"
+        },
+        {
+          "name": "Rectified CAD faces, rotations, reflections, grid occupancy and visually distinct panels",
+          "verdict": "passed"
+        },
+        {
+          "name": "Pixel-exact labeled composition and complete question PNG",
+          "verdict": "passed"
+        },
+        {
+          "name": "Current domain adapter and pinned source bytes",
+          "verdict": "passed"
+        },
+        {
+          "name": "Declared reasoning: visible-corner",
+          "designId": "e000008",
+          "verdict": "passed",
+          "evidence": {
+            "fullMatches": [
+              "C"
+            ],
+            "ignoringFaceTurns": [
+              "C"
+            ],
+            "foldedCornerWitnesses": {
+              "A": "The three faces meet, but cyan (column 2, row 1 from the upper left), red (column 1, row 1 from the upper left), green (column 4, row 2 from the upper left) in top/left/right order reverses their order around the vertex.",
+              "B": "The three faces meet, but green (column 4, row 2 from the upper left), red (column 1, row 1 from the upper left), blue (column 2, row 3 from the upper left) in top/left/right order reverses their order around the vertex.",
+              "C": "Reading the net from its upper left, the top, left and right faces come from cyan (column 2, row 1 from the upper left), then pink (column 2, row 2 from the upper left), then yellow (column 3, row 2 from the upper left). All three markings retain the pictured orientation."
+            }
+          },
+          "feedback": ""
+        }
+      ],
+      "scope": "Exact exterior folding and rectified panel matching under the declared camera.",
+      "commandExitStatus": 0,
+      "binding": "exact",
+      "bindingBasis": "exact candidate and full input fingerprints",
+      "commandEventId": "e000015"
+    }
+  ],
+  "usage": {
+    "schemaVersion": 2,
+    "runId": "build-4583ede8-8c46-40f0-bdbd-dd26cd80d6b1",
+    "source": "codex",
+    "runtime": "Codex Desktop",
+    "status": "measured",
+    "elapsedMs": 375605,
+    "elapsedKind": "wall-clock",
+    "scope": "Runtime-reported usage between the start baseline and finish snapshot of this session. In-flight or delayed usage, earlier conversation, other agents and later delivery are excluded. This is an observed interval, not a complete billed task total.",
+    "scopeComplete": false,
+    "observedTokens": {
+      "input_tokens": 4659612,
+      "cached_input_tokens": 4622464,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 7313,
+      "reasoning_output_tokens": 1985,
+      "total_tokens": 4666925
+    },
+    "tokens": {
+      "input_tokens": null,
+      "cached_input_tokens": null,
+      "cache_write_input_tokens": null,
+      "output_tokens": null,
+      "reasoning_output_tokens": null,
+      "total_tokens": null
+    },
+    "models": [
+      {
+        "provider": "openai",
+        "model": "gpt-6.2-astra",
+        "reasoningEffort": "xhigh",
+        "tokens": {
+          "input_tokens": 4659612,
+          "cached_input_tokens": 4622464,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 7313,
+          "reasoning_output_tokens": 1985,
+          "total_tokens": 4666925
+        },
+        "observations": 21
+      }
+    ],
+    "missingFields": [],
+    "issues": [],
+    "observations": 21
+  },
+  "caseId": "authored-81b00dd167cef5cf323a18d7"
+}

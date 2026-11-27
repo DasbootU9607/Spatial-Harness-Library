@@ -262,7 +262,7 @@ def compose(source,leaf,folder,seed,sense,count,require_none,profile):
 def generate(seed,params,folder,source):
     folder=Path(folder).resolve();source=Path(source).resolve()
     folder.mkdir(parents=True,exist_ok=True)
-    unknown=set(params)-{"mechanism","size","none","profile"}
+    unknown=set(params)-{"mechanism","size","none","profile","heights"}
     if unknown:raise ValueError(f"Unknown CubeCounting parameters: {unknown}")
     mechanism=params.get("mechanism","min-3")
     if not re.fullmatch(r"(min|max|possible|exact)-[23]",mechanism):raise ValueError("Unsupported CubeCounting mechanism")
@@ -273,7 +273,13 @@ def generate(seed,params,folder,source):
     if profile not in (None,"competing-peaks"):raise ValueError("Unknown stack profile")
     heights=None
     if sense=="exact":
-        heights=[[1,0,0],[1,0,1],[3,1,0]]
+        heights=params.get("heights",[[1,0,0],[1,0,1],[3,1,0]])
+        if (not isinstance(heights,list) or len(heights)!=size or
+            any(not isinstance(row,list) or len(row)!=size or any(type(h) is not int or not 0<=h<=size for h in row) for row in heights)
+            or max(max(row) for row in heights)!=size):
+            raise ValueError("Exact totals need a square height map with a full-height column")
+    elif "heights" in params:
+        raise ValueError("Specify heights only for an exact-count model")
     if profile=="competing-peaks":
         if mechanism not in ("min-3","max-3"):raise ValueError("The competing-peaks pair uses three-view minimum and maximum questions")
         heights=[[2,2,3],[0,1,3],[1,0,3]]

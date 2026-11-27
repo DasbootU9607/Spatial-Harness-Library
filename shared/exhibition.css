@@ -94,3 +94,51 @@ body[data-page=task] #header{position:static}
 .reference-comparisons .paired-task { display: block; border: 0; overflow: visible; background: transparent; }
 .paired-task h3 { margin: 8px 0 6px; font-size: 16px; }
 .paired-task .actions { column-gap: 14px; row-gap: 4px; font-size: 13px; }
+
+/* SpatialViz invocation guide */
+#how-to-use { scroll-margin-top: 85px; }
+#how-to-use h2 { margin-bottom: 20px; }
+#how-to-use h3 { font-size: 16px; margin: 0 0 8px; }
+#how-to-use h4 { font-size: 14px; margin: 0 0 4px; }
+.flow-categories, .flow-paths, .flow-finish { display: grid; gap: 12px; }
+.flow-categories { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.flow-categories > div { border-left: 2px solid #bbb; padding-left: 12px; }
+.flow-categories a { display: block; width: fit-content; font-size: 13px; }
+.flow-invoke { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin: 16px 0; padding: 10px 14px; background: var(--surface); border: 1px solid var(--line); border-radius: 5px; }
+.flow-invoke label { font-weight: 650; }
+.flow-invoke code { font-size: 13px; }
+#how-to-use :is(button,select,textarea) { font: inherit; font-size: 13px; max-width: 100%; }
+.flow-paths { grid-template-columns: repeat(3,minmax(0,1fr)); }
+.flow-paths > div, .flow-finish > div { min-width: 0; border: 1px solid var(--line); border-radius: 5px; padding: 12px 16px; }
+.flow-paths > div { position: relative; }
+.flow-paths > div::after { content: ''; position: absolute; height: 10px; width: 1px; background: #aaa; bottom: -11px; left: 50%; }
+#how-to-use p { font-size: 13px; margin: 0 0 8px; }
+.flow-paths label, .flow-finish label { display: block; font-size: 13px; }
+.flow-paths select { display: block; margin-top: 4px; width: 100%; }
+#flow-menu { display: flex; flex-wrap: wrap; gap: 4px; }
+#flow-menu button { min-height: 32px; padding: 4px 8px; }
+#flow-menu button[aria-pressed=true] { background: var(--ink); color: white; }
+#flow-pool { padding: 0; margin: 7px 0 0; border: 0; font-size: 13px; }
+#flow-pool label, .flow-mode label { display: flex; align-items: center; gap: 6px; }
+#how-to-use input { width: 16px; height: 16px; min-height: 0; padding: 0; margin: 0; accent-color: var(--ink); }
+#how-to-use .flow-selected { margin: 10px 0; padding-top: 8px; border-top: 1px solid #aaa; text-align: center; font-weight: 600; }
+.flow-finish { grid-template-columns: minmax(0, 1.65fr) minmax(0, 1fr); }
+.flow-mode { border: 0; margin: 0 0 8px; padding: 0; display: flex; gap: 16px; }
+.flow-mode legend { position: absolute; clip-path: inset(50%); height: 1px; width: 1px; overflow: hidden; }
+#how-to-use textarea { width: 100%; display: block; padding: 8px; margin: 4px 0 8px; border: 1px solid #b0b0b0; border-radius: 4px; color: var(--ink); resize: vertical; }
+#flow-request { font-family: GeistMono, monospace !important; }
+#flow-feedback { padding-left: 8px; font-size: 12px; }
+.flow-result { background: var(--surface); }
+#how-to-use .flow-caption { margin: 16px 0 4px; color: #555; }
+.flow-result a { display: inline-block; margin: 0 16px 5px 0; font-size: 14px; }
+.paired-task .source-basis { font-size: 12px; padding: 0; margin: 10px 0; border: 0; }
+.source-basis p { margin: 5px 0; }
+@media (max-width: 680px) {
+  .flow-categories { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .flow-paths, .flow-finish { grid-template-columns: 1fr; }
+  .flow-paths { padding-left: 12px; border-left: 1px solid #aaa; }
+  .flow-paths > div::after { left: -13px; top: 20px; width: 12px; height: 1px; }
+  .flow-invoke { gap: 7px; }
+  .flow-invoke code { flex-basis: 100%; }
+  .flow-mode { flex-wrap: wrap; }
+}

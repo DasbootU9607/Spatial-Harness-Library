@@ -1,0 +1,640 @@
+{
+  "schemaVersion": 1,
+  "manifest": {
+    "sealed": true,
+    "id": "build-2f622123-a153-4f38-90ad-17a7de5374dc",
+    "title": "cube-reconstruction / lines",
+    "runKind": "[private value omitted]",
+    "harness": "spatialviz-harness",
+    "benchmark": null,
+    "category": null,
+    "taskType": null,
+    "skill": {
+      "id": "spatialviz-cube-reconstruction",
+      "sha256": "7c888574a061c7385eb2163e667147bf9e38b54300bf960245d2b4bef9fe6555"
+    },
+    "status": "accepted",
+    "finalCandidateId": "v001",
+    "limitations": [
+      "Only recorder-mediated deliveries, commands and saved boundaries are observed; direct function calls, unwrapped commands and unsaved editor states are excluded.",
+      "Design notes are explicit author annotations, not internal reasoning."
+    ],
+    "captureGaps": []
+  },
+  "events": [
+    {
+      "id": "e000001",
+      "seq": 1,
+      "runId": "build-2f622123-a153-4f38-90ad-17a7de5374dc",
+      "type": "run.created",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": null,
+      "details": {},
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000002",
+      "seq": 2,
+      "runId": "build-2f622123-a153-4f38-90ad-17a7de5374dc",
+      "type": "collector.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": null,
+      "details": {},
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000003",
+      "seq": 3,
+      "runId": "build-2f622123-a153-4f38-90ad-17a7de5374dc",
+      "type": "skill.attached",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": null,
+      "details": {
+        "sha256": "7c888574a061c7385eb2163e667147bf9e38b54300bf960245d2b4bef9fe6555",
+        "skill": "spatialviz-cube-reconstruction"
+      },
+      "evidenceRefs": [
+        {
+          "id": "01cf4889b19fdafc",
+          "sha256": "7c888574a061c7385eb2163e667147bf9e38b54300bf960245d2b4bef9fe6555",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000004",
+      "seq": 4,
+      "runId": "build-2f622123-a153-4f38-90ad-17a7de5374dc",
+      "type": "choice.selected",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": null,
+      "details": {
+        "eligible": [
+          "opposite",
+          "color-view",
+          "pips",
+          "lines",
+          "mosaic"
+        ],
+        "selection": "lines",
+        "selectionMode": "specified"
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000005",
+      "seq": 5,
+      "runId": "build-2f622123-a153-4f38-90ad-17a7de5374dc",
+      "type": "resource.read",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "63fe57a0-30db-4864-970b-0f2550ff1ade",
+      "candidateId": null,
+      "details": {
+        "delivery": "author",
+        "outcome": "delivered",
+        "label": "patterns.json",
+        "start": 68,
+        "end": 89,
+        "sha256": "035c8b66f54bfcb8b2dea6901b5dc8cc39ff241ce90ff02e054f8a6448101d56",
+        "sourceSha256": "5cc361e9c74f82b174c79116a2cf48d0d4e6eba4100e4300bf2eec3a04bb1664"
+      },
+      "evidenceRefs": [
+        {
+          "id": "4447a13c483decf7",
+          "sha256": "035c8b66f54bfcb8b2dea6901b5dc8cc39ff241ce90ff02e054f8a6448101d56",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000006",
+      "seq": 6,
+      "runId": "build-2f622123-a153-4f38-90ad-17a7de5374dc",
+      "type": "reference.delivered",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": null,
+      "details": {
+        "sourceId": "MentalFolding/CubeReconstruction/Level1/20",
+        "label": "Official question, choices, answer and explanation",
+        "sha256": "0e18c3220a2f0699042d60a3def01490c8f511eaf6451a43da6fe5b75608e098"
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000007",
+      "seq": 7,
+      "runId": "build-2f622123-a153-4f38-90ad-17a7de5374dc",
+      "type": "reference.viewed",
+      "actor": "author",
+      "origin": "agent_statement",
+      "actionId": null,
+      "candidateId": null,
+      "details": {
+        "sourceId": "MentalFolding/CubeReconstruction/Level1/20",
+        "observation": "A and D both show a diagonal and parallel strokes, while the T meets a different face edge.",
+        "sourceSha256": "ba68229437db500f5c8344341f1365c86a40b2f81db504788816e740181c1791"
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000008",
+      "seq": 8,
+      "runId": "build-2f622123-a153-4f38-90ad-17a7de5374dc",
+      "type": "design.note",
+      "actor": "author",
+      "origin": "agent_statement",
+      "actionId": null,
+      "candidateId": null,
+      "details": {
+        "design": {
+          "inference": "Decide which corner preserves the directions of its printed strokes.",
+          "condition": "A face with oriented strokes is hinge-linked to a different visible face.",
+          "foil": "Treating stripes as an unordered face name admits a rotated motif.",
+          "evidence": "Compare full rigid poses against poses that ignore in-plane stroke direction.",
+          "target": "face-orientation",
+          "sourceIds": [
+            "MentalFolding/CubeReconstruction/Level1/20"
+          ]
+        },
+        "goal": "Decide which corner preserves the directions of its printed strokes.",
+        "change": "Treating stripes as an unordered face name admits a rotated motif.",
+        "reason": "A face with oriented strokes is hinge-linked to a different visible face.",
+        "expectedChecks": [
+          "Compare full rigid poses against poses that ignore in-plane stroke direction."
+        ]
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000009",
+      "seq": 9,
+      "runId": "build-2f622123-a153-4f38-90ad-17a7de5374dc",
+      "type": "command.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "92585a54-75ed-4ba5-9a86-0033a7e9b3c9",
+      "candidateId": null,
+      "details": {
+        "label": "python",
+        "kind": "official-freecad-generation"
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000010",
+      "seq": 10,
+      "runId": "build-2f622123-a153-4f38-90ad-17a7de5374dc",
+      "type": "command.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "92585a54-75ed-4ba5-9a86-0033a7e9b3c9",
+      "candidateId": null,
+      "details": {
+        "commandEventId": "e000009",
+        "kind": "official-freecad-generation",
+        "exitCode": 0,
+        "signal": null
+      },
+      "evidenceRefs": [
+        {
+          "id": "a61e42d18d3821ec",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "availability": "local evidence; hash published"
+        },
+        {
+          "id": "0afb1798197654ae",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000011",
+      "seq": 11,
+      "runId": "build-2f622123-a153-4f38-90ad-17a7de5374dc",
+      "type": "candidate.saved",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "19cfd61c-8f09-4e39-b372-204b601757dc",
+      "candidateId": "v001",
+      "details": {
+        "designId": "e000008",
+        "sha256": "ed7fe61e117556933a66b8c69b31bc33ada0b439f8758d899157faf7c0e85c54",
+        "parentId": null,
+        "parentBasis": null,
+        "changes": [
+          "specification",
+          "geometry",
+          "question",
+          "options",
+          "answer",
+          "contract",
+          "rendering",
+          "generator"
+        ],
+        "fingerprints": {
+          "specification": "ed7fe61e117556933a66b8c69b31bc33ada0b439f8758d899157faf7c0e85c54",
+          "geometry": "0670e95c7ec2ca615c8392a590a0bf45601f00409aa4172be7d075c228647775",
+          "question": "235c0be46ccc519f2e4ec6865a65729e9e3c1f11503afd95824345584bd257c2",
+          "options": "9a7e4f89a3fb23827280c341572fdb5b64ae3ab48b572d660a54a2c08329ce0e",
+          "answer": "0402c4098c4c63f41e820b692618a2ac632a8b91a0a110562f85110e14d057cf",
+          "contract": "a242a71078e1915731e799821e2eaf246c47567d5fd5b7e0661b516e7bd551e9",
+          "rendering": "7d44bd4ef9288937e5ffef847728787c7f9e04792f718fee040686bf95c0ea56",
+          "generator": "367eeb981c2de55083afc5323b10075fc22d8dbf47ef64470f35725a819ddb63"
+        },
+        "previewUnavailable": null
+      },
+      "evidenceRefs": [
+        {
+          "id": "ec15635a23f19d70",
+          "sha256": "ed7fe61e117556933a66b8c69b31bc33ada0b439f8758d899157faf7c0e85c54",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000012",
+      "seq": 12,
+      "runId": "build-2f622123-a153-4f38-90ad-17a7de5374dc",
+      "type": "build.saved",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "19cfd61c-8f09-4e39-b372-204b601757dc",
+      "candidateId": "v001",
+      "details": {},
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000013",
+      "seq": 13,
+      "runId": "build-2f622123-a153-4f38-90ad-17a7de5374dc",
+      "type": "render.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "d6f1c2b2-6c09-4368-a647-3e35bda6413d",
+      "candidateId": "v001",
+      "details": {
+        "renderer": {
+          "id": "official-cube-reconstruction",
+          "revision": "8bcf8520ca1f04013a7dff694d4cee862ceab3375a1db0548b3e78882af5b76b"
+        }
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000014",
+      "seq": 14,
+      "runId": "build-2f622123-a153-4f38-90ad-17a7de5374dc",
+      "type": "render.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "d6f1c2b2-6c09-4368-a647-3e35bda6413d",
+      "candidateId": "v001",
+      "details": {
+        "sha256": "ecefdf16437a8e0c02834d1f60759085cf88eb6a4c57d310a2cb7138bf8b5b7a",
+        "renderer": {
+          "id": "official-cube-reconstruction",
+          "revision": "8bcf8520ca1f04013a7dff694d4cee862ceab3375a1db0548b3e78882af5b76b"
+        },
+        "specification": "ed7fe61e117556933a66b8c69b31bc33ada0b439f8758d899157faf7c0e85c54",
+        "rendering": "7d44bd4ef9288937e5ffef847728787c7f9e04792f718fee040686bf95c0ea56"
+      },
+      "evidenceRefs": [
+        {
+          "id": "8d4cf8469c1f837b",
+          "sha256": "ecefdf16437a8e0c02834d1f60759085cf88eb6a4c57d310a2cb7138bf8b5b7a",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000015",
+      "seq": 15,
+      "runId": "build-2f622123-a153-4f38-90ad-17a7de5374dc",
+      "type": "command.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "65538cfe-5cc3-481d-96a6-0087f6cc9cb1",
+      "candidateId": "v001",
+      "details": {
+        "label": "node.exe",
+        "kind": "verification"
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000016",
+      "seq": 16,
+      "runId": "build-2f622123-a153-4f38-90ad-17a7de5374dc",
+      "type": "command.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "65538cfe-5cc3-481d-96a6-0087f6cc9cb1",
+      "candidateId": "v001",
+      "details": {
+        "commandEventId": "e000015",
+        "kind": "verification",
+        "exitCode": 0,
+        "signal": null
+      },
+      "evidenceRefs": [
+        {
+          "id": "dfa035a39df656d0",
+          "sha256": "b054cb07f37f0aa8ae23a3737c2043d80cecd28c934bb41176d3a1576f8dfdfe",
+          "availability": "local evidence; hash published"
+        },
+        {
+          "id": "45e9653458366a27",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000017",
+      "seq": 17,
+      "runId": "build-2f622123-a153-4f38-90ad-17a7de5374dc",
+      "type": "test.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "65538cfe-5cc3-481d-96a6-0087f6cc9cb1",
+      "candidateId": "v001",
+      "details": {
+        "commandEventId": "e000015",
+        "completedEventId": "e000016",
+        "verdict": "passed",
+        "status": "passed",
+        "checks": [
+          {
+            "name": "Hinge consistency, six normals, proper rotations and exact unique answer",
+            "verdict": "passed"
+          },
+          {
+            "name": "Published prompt, polarity, upstream answer and ordered figure/text options",
+            "verdict": "passed"
+          },
+          {
+            "name": "Rectified CAD faces, rotations, reflections, grid occupancy and visually distinct panels",
+            "verdict": "passed"
+          },
+          {
+            "name": "Pixel-exact labeled composition and complete question PNG",
+            "verdict": "passed"
+          },
+          {
+            "name": "Current domain adapter and pinned source bytes",
+            "verdict": "passed"
+          },
+          {
+            "name": "Declared reasoning: face-orientation",
+            "designId": "e000008",
+            "verdict": "passed",
+            "evidence": {
+              "fullMatches": [
+                "D"
+              ],
+              "ignoringFaceTurns": [
+                "A",
+                "D"
+              ],
+              "foldedCornerWitnesses": {
+                "A": "The face order matches. The top face from diagonal (column 1, row 2 from the upper left) would need an extra 90 degree counterclockwise turn to reproduce the view.",
+                "B": "The three faces meet, but tee (column 3, row 2 from the upper left), cross (column 4, row 2 from the upper left), fork (column 4, row 3 from the upper left) in top/left/right order reverses their order around the vertex.",
+                "C": "The three faces meet, but ring (column 2, row 2 from the upper left), tee (column 3, row 2 from the upper left), fork (column 4, row 3 from the upper left) in top/left/right order reverses their order around the vertex.",
+                "D": "Reading the net from its upper left, the top, left and right faces come from diagonal (column 1, row 2 from the upper left), then parallel (column 1, row 1 from the upper left), then cross (column 4, row 2 from the upper left). All three markings retain the pictured orientation."
+              }
+            },
+            "feedback": ""
+          }
+        ],
+        "scope": "Exact exterior folding and rectified panel matching under the declared camera.",
+        "binding": "exact",
+        "bindingBasis": "exact candidate and full input fingerprints",
+        "testedFingerprints": {
+          "specification": "ed7fe61e117556933a66b8c69b31bc33ada0b439f8758d899157faf7c0e85c54",
+          "geometry": "0670e95c7ec2ca615c8392a590a0bf45601f00409aa4172be7d075c228647775",
+          "question": "235c0be46ccc519f2e4ec6865a65729e9e3c1f11503afd95824345584bd257c2",
+          "options": "9a7e4f89a3fb23827280c341572fdb5b64ae3ab48b572d660a54a2c08329ce0e",
+          "answer": "0402c4098c4c63f41e820b692618a2ac632a8b91a0a110562f85110e14d057cf",
+          "contract": "a242a71078e1915731e799821e2eaf246c47567d5fd5b7e0661b516e7bd551e9",
+          "rendering": "7d44bd4ef9288937e5ffef847728787c7f9e04792f718fee040686bf95c0ea56",
+          "generator": "367eeb981c2de55083afc5323b10075fc22d8dbf47ef64470f35725a819ddb63"
+        },
+        "verifier": {
+          "id": "official-cube-reconstruction",
+          "revision": "8bcf8520ca1f04013a7dff694d4cee862ceab3375a1db0548b3e78882af5b76b"
+        },
+        "reportSha256": "2284eb51b66db2be37d84cf25abf3cff07e0216db914b32f0ef808f48458d924"
+      },
+      "evidenceRefs": [
+        {
+          "id": "4113d0d4252d52a5",
+          "sha256": "2284eb51b66db2be37d84cf25abf3cff07e0216db914b32f0ef808f48458d924",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000018",
+      "seq": 18,
+      "runId": "build-2f622123-a153-4f38-90ad-17a7de5374dc",
+      "type": "visual.review",
+      "actor": "author",
+      "origin": "agent_statement",
+      "actionId": null,
+      "candidateId": "v001",
+      "details": {
+        "outcome": "passed",
+        "review": "The ring and T in the net locate the band. D shows a single line above the two parallel strokes on the left and the X on the right; their orientations can be followed from the printed face edges."
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000019",
+      "seq": 19,
+      "runId": "build-2f622123-a153-4f38-90ad-17a7de5374dc",
+      "type": "run.finished",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": "v001",
+      "details": {
+        "outcome": "accepted",
+        "finalCandidateId": "v001"
+      },
+      "evidenceRefs": []
+    }
+  ],
+  "candidates": [
+    {
+      "id": "v001",
+      "designId": "e000008",
+      "parentId": null,
+      "parentBasis": null,
+      "sha256": "ed7fe61e117556933a66b8c69b31bc33ada0b439f8758d899157faf7c0e85c54",
+      "fingerprints": {
+        "specification": "ed7fe61e117556933a66b8c69b31bc33ada0b439f8758d899157faf7c0e85c54",
+        "geometry": "0670e95c7ec2ca615c8392a590a0bf45601f00409aa4172be7d075c228647775",
+        "question": "235c0be46ccc519f2e4ec6865a65729e9e3c1f11503afd95824345584bd257c2",
+        "options": "9a7e4f89a3fb23827280c341572fdb5b64ae3ab48b572d660a54a2c08329ce0e",
+        "answer": "0402c4098c4c63f41e820b692618a2ac632a8b91a0a110562f85110e14d057cf",
+        "contract": "a242a71078e1915731e799821e2eaf246c47567d5fd5b7e0661b516e7bd551e9",
+        "rendering": "7d44bd4ef9288937e5ffef847728787c7f9e04792f718fee040686bf95c0ea56",
+        "generator": "367eeb981c2de55083afc5323b10075fc22d8dbf47ef64470f35725a819ddb63"
+      },
+      "previewUnavailable": null,
+      "changes": [
+        "specification",
+        "geometry",
+        "question",
+        "options",
+        "answer",
+        "contract",
+        "rendering",
+        "generator"
+      ],
+      "preview": {
+        "candidateId": "v001",
+        "specification": "ed7fe61e117556933a66b8c69b31bc33ada0b439f8758d899157faf7c0e85c54",
+        "rendering": "7d44bd4ef9288937e5ffef847728787c7f9e04792f718fee040686bf95c0ea56",
+        "renderer": {
+          "id": "official-cube-reconstruction",
+          "revision": "8bcf8520ca1f04013a7dff694d4cee862ceab3375a1db0548b3e78882af5b76b"
+        },
+        "sha256": "ecefdf16437a8e0c02834d1f60759085cf88eb6a4c57d310a2cb7138bf8b5b7a",
+        "path": "records/authored-ed7fe61e117556933a66b8c6/v001-ecefdf16437a8e0c.png",
+        "origin": "recorded-render"
+      }
+    }
+  ],
+  "tests": [
+    {
+      "id": "t001",
+      "actionId": "65538cfe-5cc3-481d-96a6-0087f6cc9cb1",
+      "candidateId": "v001",
+      "testedFingerprints": {
+        "specification": "ed7fe61e117556933a66b8c69b31bc33ada0b439f8758d899157faf7c0e85c54",
+        "geometry": "0670e95c7ec2ca615c8392a590a0bf45601f00409aa4172be7d075c228647775",
+        "question": "235c0be46ccc519f2e4ec6865a65729e9e3c1f11503afd95824345584bd257c2",
+        "options": "9a7e4f89a3fb23827280c341572fdb5b64ae3ab48b572d660a54a2c08329ce0e",
+        "answer": "0402c4098c4c63f41e820b692618a2ac632a8b91a0a110562f85110e14d057cf",
+        "contract": "a242a71078e1915731e799821e2eaf246c47567d5fd5b7e0661b516e7bd551e9",
+        "rendering": "7d44bd4ef9288937e5ffef847728787c7f9e04792f718fee040686bf95c0ea56",
+        "generator": "367eeb981c2de55083afc5323b10075fc22d8dbf47ef64470f35725a819ddb63"
+      },
+      "verifier": {
+        "id": "official-cube-reconstruction",
+        "revision": "8bcf8520ca1f04013a7dff694d4cee862ceab3375a1db0548b3e78882af5b76b"
+      },
+      "reportSha256": "2284eb51b66db2be37d84cf25abf3cff07e0216db914b32f0ef808f48458d924",
+      "verdict": "passed",
+      "status": "passed",
+      "checks": [
+        {
+          "name": "Hinge consistency, six normals, proper rotations and exact unique answer",
+          "verdict": "passed"
+        },
+        {
+          "name": "Published prompt, polarity, upstream answer and ordered figure/text options",
+          "verdict": "passed"
+        },
+        {
+          "name": "Rectified CAD faces, rotations, reflections, grid occupancy and visually distinct panels",
+          "verdict": "passed"
+        },
+        {
+          "name": "Pixel-exact labeled composition and complete question PNG",
+          "verdict": "passed"
+        },
+        {
+          "name": "Current domain adapter and pinned source bytes",
+          "verdict": "passed"
+        },
+        {
+          "name": "Declared reasoning: face-orientation",
+          "designId": "e000008",
+          "verdict": "passed",
+          "evidence": {
+            "fullMatches": [
+              "D"
+            ],
+            "ignoringFaceTurns": [
+              "A",
+              "D"
+            ],
+            "foldedCornerWitnesses": {
+              "A": "The face order matches. The top face from diagonal (column 1, row 2 from the upper left) would need an extra 90 degree counterclockwise turn to reproduce the view.",
+              "B": "The three faces meet, but tee (column 3, row 2 from the upper left), cross (column 4, row 2 from the upper left), fork (column 4, row 3 from the upper left) in top/left/right order reverses their order around the vertex.",
+              "C": "The three faces meet, but ring (column 2, row 2 from the upper left), tee (column 3, row 2 from the upper left), fork (column 4, row 3 from the upper left) in top/left/right order reverses their order around the vertex.",
+              "D": "Reading the net from its upper left, the top, left and right faces come from diagonal (column 1, row 2 from the upper left), then parallel (column 1, row 1 from the upper left), then cross (column 4, row 2 from the upper left). All three markings retain the pictured orientation."
+            }
+          },
+          "feedback": ""
+        }
+      ],
+      "scope": "Exact exterior folding and rectified panel matching under the declared camera.",
+      "commandExitStatus": 0,
+      "binding": "exact",
+      "bindingBasis": "exact candidate and full input fingerprints",
+      "commandEventId": "e000015"
+    }
+  ],
+  "usage": {
+    "schemaVersion": 2,
+    "runId": "build-2f622123-a153-4f38-90ad-17a7de5374dc",
+    "source": "codex",
+    "runtime": "Codex Desktop",
+    "status": "measured",
+    "elapsedMs": 371470,
+    "elapsedKind": "wall-clock",
+    "scope": "Runtime-reported usage between the start baseline and finish snapshot of this session. In-flight or delayed usage, earlier conversation, other agents and later delivery are excluded. This is an observed interval, not a complete billed task total.",
+    "scopeComplete": false,
+    "observedTokens": {
+      "input_tokens": 4461782,
+      "cached_input_tokens": 4424960,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 6936,
+      "reasoning_output_tokens": 1985,
+      "total_tokens": 4468718
+    },
+    "tokens": {
+      "input_tokens": null,
+      "cached_input_tokens": null,
+      "cache_write_input_tokens": null,
+      "output_tokens": null,
+      "reasoning_output_tokens": null,
+      "total_tokens": null
+    },
+    "models": [
+      {
+        "provider": "openai",
+        "model": "gpt-6.2-astra",
+        "reasoningEffort": "xhigh",
+        "tokens": {
+          "input_tokens": 4461782,
+          "cached_input_tokens": 4424960,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 6936,
+          "reasoning_output_tokens": 1985,
+          "total_tokens": 4468718
+        },
+        "observations": 20
+      }
+    ],
+    "missingFields": [],
+    "issues": [],
+    "observations": 20
+  },
+  "caseId": "authored-ed7fe61e117556933a66b8c6"
+}

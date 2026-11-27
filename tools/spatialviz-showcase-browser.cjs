@@ -29,6 +29,7 @@ module.exports = async function checkShowcase({page, origin, catalog, selection}
     for (const [skill, ids] of Object.entries(selected)) {
       await page.goto(base + 'skill.html?id=' + skill);
       await page.waitForSelector('#authored .card');
+      assert.equal(await page.locator('#how-to-use').count(), 0);
       assert.deepEqual(await idsIn(page.locator('#authored .card')), [...ids].sort());
       assert.equal(await page.locator('.skill-layout .chips a, #ladder td a').count(), 0);
       assert(await hasNoOverflow());
@@ -104,6 +105,7 @@ module.exports = async function checkShowcase({page, origin, catalog, selection}
         for (const detail of [goal.inference, goal.condition, goal.foil, goal.evidence, ...goal.sourceIds, review.details.review]) assert(evidence.includes(detail), item.title + ': ' + detail);
         const observed = processData.events.filter(event => event.type === 'reference.viewed').map(event => event.details.sourceId);
         const group = selection[skill].find(group => group.cases.includes(item.id));
+        assert.equal(processData.events.findLast(e => e.type === 'choice.selected')?.details.selection, group.pattern);
         const ref = groupLinks[selection[skill].indexOf(group)].ref;
         if (group.cases.length === 1 && observed.length) assert(observed.includes(ref.sourceId), 'Prefer the original viewed in this build');
         assert.equal(review.details.outcome, 'passed');

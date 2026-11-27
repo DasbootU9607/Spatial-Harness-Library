@@ -1,0 +1,134 @@
+{
+  "id": "t001",
+  "actionId": "e53d2051-a734-4c46-b696-cf2e473e1a6c",
+  "candidateId": "v001",
+  "testedFingerprints": {
+    "specification": "3ddd9ca8b75a0d1253d277bef9233c22340533f249547fddefd9a934606a1435",
+    "geometry": "19ba5d168c7e8ae867958cae2cfc4b45f8bb08dc9caea99a875f0e470ca4fe52",
+    "question": "de05f397a63fce88a4312b353f19763f6f6381dbee5e8ce725f8a84be391a7b1",
+    "options": "0893a63ec5c7d9d6963cde3551d190380be982fafd430d956808a410457c577d",
+    "answer": "4b2d02363b903ca2ffd2df287e1ac5e167d7ac931ad4f15e64c8244f1980a934",
+    "contract": "d5a7281ad4d899ed21fdc136eab216af0e50d0a3272c4698f04204dbc37e8bd7",
+    "rendering": "2cb7c1f52fd377f98bd68f720bd82cd70746d404b039a501b9dc8cfd7f35ea76",
+    "generator": "6c397a91fca846dd7f7445fbd6d5e98a48e9058a593de3619d706cac71cfd6ff"
+  },
+  "verifier": {
+    "id": "penetration-cube-counting",
+    "revision": "f13b1884c3b100075e374dd0d1a6f8b1f7bd2302e2be312c7dd7a915aa097e8a"
+  },
+  "reportSha256": "541a941e75e6b17d55585383c23c9250dc8c0457e363620b0fad1dfed7f38e52",
+  "verdict": "passed",
+  "status": "passed",
+  "checks": [
+    {
+      "name": "Final image is the official compositor output",
+      "verdict": "passed"
+    },
+    {
+      "name": "Prompt, choices and key agree with upstream annotation",
+      "verdict": "passed"
+    },
+    {
+      "name": "Published projection cells agree with the native model",
+      "verdict": "passed"
+    },
+    {
+      "name": "Visible constraints yield exactly one qualifying choice",
+      "verdict": "passed"
+    },
+    {
+      "name": "Per-option explanations agree with the independent solver",
+      "verdict": "passed"
+    },
+    {
+      "name": "Unmodified official source fingerprints",
+      "verdict": "passed"
+    },
+    {
+      "name": "FreeCAD launch and native document recorded",
+      "verdict": "passed"
+    },
+    {
+      "name": "Pinned compositor emitted the delivered PNG",
+      "verdict": "passed"
+    },
+    {
+      "name": "Official method and task identity",
+      "verdict": "passed"
+    },
+    {
+      "name": "Current official-tool adapter and verifier revisions",
+      "verdict": "passed"
+    },
+    {
+      "name": "Declared reasoning: third-view-essential",
+      "designId": "e000008",
+      "verdict": "passed",
+      "evidence": {
+        "sense": "exact",
+        "withViews": [
+          "Front",
+          "Top",
+          "Left"
+        ],
+        "totals": [
+          8
+        ],
+        "choices": [
+          "D"
+        ],
+        "heightWitnesses": {
+          "8": [
+            [
+              0,
+              0,
+              3
+            ],
+            [
+              0,
+              1,
+              1
+            ],
+            [
+              2,
+              1,
+              0
+            ]
+          ]
+        },
+        "withoutLeft": [
+          8,
+          9,
+          10
+        ],
+        "choicesWithoutLeft": [],
+        "excludedExample": {
+          "total": 9,
+          "heights": [
+            [
+              0,
+              0,
+              3
+            ],
+            [
+              0,
+              1,
+              2
+            ],
+            [
+              2,
+              1,
+              0
+            ]
+          ]
+        }
+      },
+      "feedback": ""
+    }
+  ],
+  "scope": "Native FreeCAD evidence, original compositor output, per-option geometry and final media.",
+  "commandExitStatus": 0,
+  "binding": "exact",
+  "bindingBasis": "exact candidate and full input fingerprints",
+  "commandEventId": "e000019"
+}

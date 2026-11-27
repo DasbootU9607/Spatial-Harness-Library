@@ -60,25 +60,39 @@ function discover(){
    if (size < 1 || size > 5 || new Set(groups.map(group => group.pattern)).size !== groups.length)
      throw Error('Expected one to five exhibits grouped by distinct patterns for ' + skill.name);
    const patterns = R.read(path.join(root, skill.harnessId, 'skills', skill.packageName, 'references/patterns.json'));
+   if (Object.keys(patterns.choices).some(key => !groups.some(group => group.pattern === key)))
+     throw Error('Unexhibited pattern in ' + skill.packageName);
    skill.showcaseGroups = groups.map(group => {
      const pattern = patterns.choices[group.pattern];
      const representative = sources.get(pattern?.reference);
      if (!representative || representative.taskType !== patterns.type || !group.label?.trim() || !group.cases?.length)
        throw Error('Missing representative or label for ' + skill.id + '/' + group.pattern);
+     if (skill.officialCategory && skill.officialCategory !== representative.category)
+       throw Error('Inconsistent official category for ' + skill.id);
+     skill.officialCategory = representative.category;
+     let condition;
      for (const id of group.cases) {
        const item = cases.find(c => c.id === id && c.harnessId === skill.harnessId);
        if (!item?.exhibit || !item.skillIds.includes(skill.id) || selected.has(id) || !item.build?.runId || runs.has(item.build.runId))
          throw Error('Invalid showcase case or repeated construction run: ' + id);
        const record = R.read(path.join(root, skill.harnessId, 'site', item.process));
        const choice = record.events.findLast(event => event.type === 'choice.selected');
-       if (record.caseId !== id || record.manifest.id !== item.build.runId || (choice && choice.details.selection !== group.pattern))
+       if (record.caseId !== id || record.manifest.id !== item.build.runId || choice?.details.selection !== group.pattern)
          throw Error('Recorded build or pattern mismatch for ' + id);
+       const final = record.candidates.find(candidate => candidate.id === record.manifest.finalCandidateId);
+       const design = record.events.find(event => event.id === final?.designId)?.details.design;
+       if (!design?.condition) throw Error('Missing published design for ' + id);
+       condition ??= design.condition;
        item.viewedReferenceIds = [...new Set(record.events.filter(event => event.type === 'reference.viewed')
          .map(event => sources.get(event.details.sourceId)).filter(ref => ref?.taskType === patterns.type).map(ref => ref.id))];
        selected.add(id);
        runs.add(item.build.runId);
      }
-     return {...group, representativeId: representative.id};
+     const exampleRequirement = skill.id === '2d-rotation' && group.pattern === 'patterned'
+       ? 'Give two options the same corner mark and pip counts so only the pip directions distinguish them.'
+       : condition;
+     return {...group, representativeId: representative.id, choiceLabel: pattern.label, exampleRequirement,
+       ...(pattern.extension ? {officialMechanism: pattern.observed, extension: pattern.extension} : {})};
    });
  }
  for(const c of cases.filter(c=>c.harnessId==='spatialviz-harness'))c.exhibit=selected.has(c.id);
@@ -91,9 +105,9 @@ function discover(){
 function build(out){
  const data=discover(),shared=path.join(out,'shared');fs.cpSync(path.join(root,'shared'),shared,{recursive:true});
  fs.cpSync(path.join(root,'maze-harness/site/assets/fonts'),path.join(shared,'fonts'),{recursive:true});
- const revision=R.sha(JSON.stringify(data)+['exhibition.css','exhibition.js','process.js','process.css','process-model.js','build-summary.js','question-shell.js'].map(f=>fs.readFileSync(path.join(root,'shared',f))).join('')+['process-orbit.js','process-orbit.css','process.css'].map(f=>fs.readFileSync(path.join(root,'maze-harness/site',f))).join('')+['index.html','app.js','reader.css'].map(f=>fs.readFileSync(path.join(root,'questions',f))).join('')).slice(0,16);
+ const revision=R.sha(JSON.stringify(data)+['exhibition.css','exhibition.js','skill-flow.js','process.js','process.css','process-model.js','build-summary.js','question-shell.js'].map(f=>fs.readFileSync(path.join(root,'shared',f))).join('')+['process-orbit.js','process-orbit.css','process.css'].map(f=>fs.readFileSync(path.join(root,'maze-harness/site',f))).join('')+['index.html','app.js','reader.css'].map(f=>fs.readFileSync(path.join(root,'questions',f))).join('')).slice(0,16);
  fs.writeFileSync(path.join(shared,`process.${revision}.js`),fs.readFileSync(path.join(shared,'process.js'),'utf8').replace("'./process-model.js'",`'./process-model.js?v=${revision}'`).replace("'../maze-harness/process-orbit.js'",`'../maze-harness/process-orbit.js?v=${revision}'`));
- fs.writeFileSync(path.join(shared,'exhibition.js'),fs.readFileSync(path.join(shared,'exhibition.js'),'utf8').replace("'./process.js'",`'./process.${revision}.js'`).replace("'../shared/catalog.json'",`'../shared/catalog.json?v=${revision}'`));
+ fs.writeFileSync(path.join(shared,'exhibition.js'),fs.readFileSync(path.join(shared,'exhibition.js'),'utf8').replace("'./skill-flow.js'",`'./skill-flow.js?v=${revision}'`).replace("'./process.js'",`'./process.${revision}.js'`).replace("'../shared/catalog.json'",`'../shared/catalog.json?v=${revision}'`));
  R.atomic(path.join(shared,'catalog.json'),data);
  const html=(h,page)=>`<!doctype html>\n<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="${h.description}"><title>${h.name} · Spatial Harness Library</title><link rel="stylesheet" href="../shared/exhibition.css?v=${revision}">${page==='process'?`<link rel="stylesheet" href="../maze-harness/process.css?v=${revision}"><link rel="stylesheet" href="../maze-harness/process-orbit.css?v=${revision}"><link rel="stylesheet" href="../shared/process.css?v=${revision}">`:''}<script type="module" src="../shared/exhibition.js?v=${revision}"></script></head><body data-harness="${h.id}" data-page="${page}"><a class="skip" href="#main">Skip to content</a><header id="header"></header><main id="main" tabindex="-1"><p role="status">Loading the exhibition…</p></main><footer id="footer"></footer><div id="notice" role="status"></div></body></html>\n`;
  for(const h of data.harnesses){const dir=path.join(out,h.id);for(const [file,page] of [['index.html','home'],['skill.html','skill'],['task.html','task'],['build.html','process']])fs.writeFileSync(path.join(dir,file),html(h,page));if(!h.legacy)fs.writeFileSync(path.join(dir,'process.html'),html(h,'process'));}
