@@ -1,0 +1,12 @@
+'use strict';
+const fs=require('node:fs'),path=require('node:path'),{execFileSync}=require('node:child_process');
+const [seed,id,...args]=process.argv.slice(2);
+if(!/^-?\d+$/.test(seed)||!id||args.length>1)throw Error('Usage: node build.cjs SEED MECHANISM [PARAMETERS.json]');
+const params={...(args[0]?JSON.parse(fs.readFileSync(args[0],'utf8')):{}),mechanism:id};
+const bridge=(...argv)=>execFileSync(process.execPath,[path.join(__dirname,'construct.cjs'),...argv],{encoding:'utf8',windowsHide:true,maxBuffer:8*1024*1024}).trim();
+const run=bridge('start','--task',id+' '+seed+' '+JSON.stringify(params),'--title','Mechanical System / '+id,'--no-viewer');
+const config=path.join(run,'parameters.json'),task=path.join(run,'delivery.json');fs.writeFileSync(config,JSON.stringify(params,null,2));
+bridge('read','--run',run,'--file',path.join(__dirname,'../references/coverage.md'));
+const c=JSON.parse(bridge('generate','--run',run,'--task',task,'--seed',seed,'--params',config));
+const a=['--run',run,'--candidate',c.id];const preview=JSON.parse(bridge('render',...a));bridge('verify',...a);
+console.log(JSON.stringify({run,task,candidate:c.id,media:path.join(run,preview.artifactPath),verdict:'passed'},null,2));

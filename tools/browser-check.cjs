@@ -94,7 +94,7 @@ const server=http.createServer((req,res)=>{try{const u=new URL(req.url,'http://l
     assert.equal(await page.locator(`#case-gallery [data-case="${previous.id}"]`).count(),0);
     assert.equal(await page.locator(`#case-gallery [data-case="${previous.supersededBy}"]`).count(),1);
    }
-   assert.equal(await page.locator('#case-gallery img').evaluateAll(imgs=>imgs.every(i=>i.src.endsWith('.png'))),true);
+   for(const example of all){const image=page.locator('[data-case="'+example.id+'"] img').first();assert((await image.getAttribute('src')).endsWith(example.skillIds.includes('mechanical-system')?'.svg':'.png'));}
    await page.locator('[data-filter="2d-rotation"]').click();await page.reload();await page.waitForSelector('#case-gallery .card');assert.equal(await page.locator('#case-gallery .card').count(),all.filter(c=>c.skillIds.includes('2d-rotation')).length);await page.locator('[data-filter="all"]').click();
   }
 assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false,harness+' overflows');

@@ -20,6 +20,12 @@ function prepare({run,task,skill}){
   if(meta.requiresVisualReview){const review=checked.run.events.findLast(e=>e.type==='visual.review'&&e.candidateId===c.id);if(review?.details?.outcome!=='passed')throw Error('This skill requires a passed visual review of the exact final candidate');}
   const spec=R.read(task);
   if(JSON.stringify(P.safe(spec))!==JSON.stringify(spec))throw Error('Task contains private fields; fix the public specification before authoring');
+  let sourceCaseIds=meta.officialReferences||[];
+  if(meta.referenceMode==='per-task'){
+    const collection=R.read(path.join(R.ROOT,'catalog/harnesses.json')).harnesses.find(h=>h.id===harness).collection;
+    const records=R.read(path.join(R.ROOT,'questions/data',collection+'.json'));
+    sourceCaseIds=spec.provenance.references.map(ref=>{const record=records.find(q=>q.sourceId===ref);if(!record||!meta.officialReferences.includes(record.id))throw Error('Unregistered task reference '+ref);return record.id;});
+  }
   const adapter=require('./observatory/adapters/'+meta.adapter+'.cjs');
   if(checked.test.verifier.revision!==adapter.identity.revision)throw Error('Verifier revision changed; run fresh verification');
   const id='authored-'+c.sha256.slice(0,24),relative=`${harness}/site/records/${id}`,dir=path.join(R.ROOT,relative);
@@ -45,7 +51,7 @@ function prepare({run,task,skill}){
     R.atomic(path.join(dir,'process.json'),process);fs.writeFileSync(path.join(dir,'events.csv'),P.csv(process));
     R.atomic(path.join(dir,'verification.json'),process.tests.find(x=>x.id===checked.test.id));
     R.atomic(path.join(dir,'delivery.json'),{schemaVersion:1,runId:m.id,caseId:id,kind:'prepared-public-export',previews,taskSha256:c.sha256,processSha256:R.sha(fs.readFileSync(path.join(dir,'process.json')))});
-    const item={schemaVersion:1,id,harnessId:harness,skillIds:[meta.id],sourceKind:spec.provenance?.sourceKind||'agent-authored',sourceCaseIds:meta.officialReferences||[],category:spec.category,taskType:spec.taskType,difficulty:spec.difficulty||null,title:spec.title,description:spec.description,contentSha256:c.sha256,thumbnail:previews.find(x=>x.candidateId===c.id).path,taskArtifact:`records/${id}/task.json`,verification:{verdict:'passed',candidateId:c.id,fingerprints:c.fingerprints,report:`records/${id}/verification.json`},build:{runId:m.id,candidateId:c.id,usage:process.usage},process:`records/${id}/process.json`,eventsCsv:`records/${id}/events.csv`};
+    const item={schemaVersion:1,id,harnessId:harness,skillIds:[meta.id],sourceKind:spec.provenance?.sourceKind||'agent-authored',sourceCaseIds,category:spec.category,taskType:spec.taskType,difficulty:spec.difficulty||null,title:spec.title,description:spec.description,contentSha256:c.sha256,thumbnail:previews.find(x=>x.candidateId===c.id).path,taskArtifact:`records/${id}/task.json`,verification:{verdict:'passed',candidateId:c.id,fingerprints:c.fingerprints,report:`records/${id}/verification.json`},build:{runId:m.id,candidateId:c.id,usage:process.usage},process:`records/${id}/process.json`,eventsCsv:`records/${id}/events.csv`};
     catalog.cases.push(item);R.atomic(catalogFile,catalog);
     return {case:item,urls,run,prepared:true,repeated:false,paths:['catalog/cases.json',relative,path.relative(R.ROOT,skillDir).replaceAll('\\','/')]};
   });
