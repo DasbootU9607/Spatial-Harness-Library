@@ -43,13 +43,19 @@ def propose(seed, count, need_chiral):
 
 
 def parameters(dimension, supplied):
-    allowed = {'rows', 'cols', 'mode', 'matrix'} if dimension == 2 else {'count', 'polarity', 'cubes', 'spaceSize', 'cubeRange', 'sourceMode'}
+    allowed = {'rows', 'cols', 'mode', 'matrix', 'patternMatrix'} if dimension == 2 else {'count', 'polarity', 'cubes', 'spaceSize', 'cubeRange', 'sourceMode'}
     if set(supplied) - allowed:
         raise ValueError('Unsupported official-pipeline parameters: ' + str(set(supplied) - allowed))
     if dimension == 2:
         p = {'rows': 3, 'cols': 2, 'mode': 'colored', **supplied}
         assert all(isinstance(p[k], int) and 1 <= p[k] <= 8 for k in ('rows', 'cols')) and p['rows'] * p['cols'] >= 4
-        assert p['mode'] in ('colored', 'patterned')
+        assert p['mode'] in ('colored', 'patterned', 'geometric')
+        if 'patternMatrix' in p:
+            assert p['mode'] != 'colored'
+            assert len(p['patternMatrix']) == p['rows'] and all(len(row) == p['cols'] and all(v is None or v in ('1','2','3','4','5','6') for v in row) for row in p['patternMatrix'])
+            mask = [[int(v is not None) for v in row] for row in p['patternMatrix']]
+            assert 'matrix' not in p or p['matrix'] == mask, 'matrix and patternMatrix disagree'
+            p['matrix'] = mask
         if 'matrix' in p:
             assert len(p['matrix']) == p['rows'] and all(len(row) == p['cols'] and all(x in (0, 1) for x in row) for row in p['matrix'])
     else:
@@ -90,7 +96,7 @@ def generate(dimension, seed, supplied, directory):
                 composition = build(raw_dir / 'raw', metadata, dimension, p.get('polarity', 'can'), selection_seed,
                                     directory / ('composition-%02d-%02d' % (attempt, selection)))
                 question = composition['annotation']['Question']
-                if dimension == 2 and p['mode'] == 'patterned':
+                if dimension == 2 and p['mode'] in ('patterned', 'geometric'):
                     question = question.replace('colored grid paper', 'patterned grid paper')
                 if dimension == 3:
                     question += ' Every cube has at least one fully visible face in the displayed view.'

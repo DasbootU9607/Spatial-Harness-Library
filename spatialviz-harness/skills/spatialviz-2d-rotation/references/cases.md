@@ -33,3 +33,7 @@ The default now uses the actual official FreeCAD and composition pipeline. See `
 ## Provenance boundary
 
 All five source fields (sourceId, original annotation, annotation hash, dataset revision, code revision) remain in each JSON. The earlier JS/SVG adapter proposed its own seeded palette/motif generator, bounds and SVG layout. Those historical implementation choices are not official-generator facts. The current official pipeline and its separately documented local patches are described in `official-pipeline.md`. Official Level0/Level1 are source metadata only.
+
+## Full family audit
+
+Read [coverage.md](coverage.md) and its per-record inventory for the complete pinned official family, added original examples, current authoring controls and remaining limits.

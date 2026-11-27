@@ -823,7 +823,8 @@
         }
       },
       "process": "records/authored-1ffc3acd58a1ff99886e687d/process.json",
-      "eventsCsv": "records/authored-1ffc3acd58a1ff99886e687d/events.csv"
+      "eventsCsv": "records/authored-1ffc3acd58a1ff99886e687d/events.csv",
+      "supersededBy": "authored-f3e2bb897cc215f0aba5f0a0"
     },
     {
       "schemaVersion": 1,
@@ -2705,6 +2706,194 @@
       },
       "process": "records/authored-20b5e1226e98d04ee3747a6f/process.json",
       "eventsCsv": "records/authored-20b5e1226e98d04ee3747a6f/events.csv"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "authored-f3e2bb897cc215f0aba5f0a0",
+      "harnessId": "spatialviz-harness",
+      "skillIds": [
+        "2d-rotation"
+      ],
+      "sourceKind": "agent-authored",
+      "sourceCaseIds": [
+        "spatialviz-bench:vqa:MentalRotation:2DRotation:Level0:0-2-3",
+        "spatialviz-bench:vqa:MentalRotation:2DRotation:Level1:0-2-3",
+        "spatialviz-bench:vqa:MentalRotation:2DRotation:Level1:1-2-3",
+        "spatialviz-bench:vqa:MentalRotation:2DRotation:Level1:29-3-3",
+        "spatialviz-bench:vqa:MentalRotation:2DRotation:Level0:38-3-4"
+      ],
+      "category": "MentalRotation",
+      "taskType": "2d-rotation",
+      "difficulty": {
+        "label": "Unranked",
+        "basis": "No human calibration; official difficulty levels are not inherited."
+      },
+      "title": "2D rotation / patterned / official FreeCAD",
+      "description": "New construction through the pinned official FreeCAD modeling and image-composition pipeline.",
+      "contentSha256": "f3e2bb897cc215f0aba5f0a038b9c7372a83996cef93d51f29215b6259790acf",
+      "thumbnail": "records/authored-f3e2bb897cc215f0aba5f0a0/v001-9e27be58ec1322f8.png",
+      "taskArtifact": "records/authored-f3e2bb897cc215f0aba5f0a0/task.json",
+      "verification": {
+        "verdict": "passed",
+        "candidateId": "v001",
+        "fingerprints": {
+          "specification": "f3e2bb897cc215f0aba5f0a038b9c7372a83996cef93d51f29215b6259790acf",
+          "geometry": "0770f37b69ea7eb2bdce6bb3d14ee4fca9c4b65fc200f97df828159483419a42",
+          "question": "b56a8cafd9cfbec8237b784847e877aa859b1e676eb3b5250a05177816c6655b",
+          "options": "55b747e0e2cc746b897fad5a98ecb5cf4c7ee4832e7397b228adb4a0d0478b12",
+          "answer": "a67f52840143e057438ddb0b742279d90ad662afa0d0a5b59327549f8307800b",
+          "contract": "58655f62a41d60bfdccfb2bb87b2b8ed2334e7ce074c54ec4da5f989253d5b4d",
+          "rendering": "0611e9966766e8ead2f3d9ed6ef570a02dfd5892fd0a58e78f9235bb7731a97d",
+          "generator": "52773567928310069400ede4a9c6894af83f7c3658f7df62b1da569a1d72a5ab"
+        },
+        "report": "records/authored-f3e2bb897cc215f0aba5f0a0/verification.json"
+      },
+      "build": {
+        "runId": "build-c64f3b68-0792-4690-a476-228f351fe393",
+        "candidateId": "v001",
+        "usage": {
+          "schemaVersion": 2,
+          "runId": "build-c64f3b68-0792-4690-a476-228f351fe393",
+          "source": "codex",
+          "runtime": "Codex Desktop",
+          "status": "measured",
+          "elapsedMs": 70323,
+          "elapsedKind": "wall-clock",
+          "scope": "Runtime-reported usage between the start baseline and finish snapshot of this session. In-flight or delayed usage, earlier conversation, other agents and later delivery are excluded. This is an observed interval, not a complete billed task total.",
+          "scopeComplete": false,
+          "observedTokens": {
+            "input_tokens": 822220,
+            "cached_input_tokens": 818688,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 1029,
+            "reasoning_output_tokens": 244,
+            "total_tokens": 823249
+          },
+          "tokens": {
+            "input_tokens": null,
+            "cached_input_tokens": null,
+            "cache_write_input_tokens": null,
+            "output_tokens": null,
+            "reasoning_output_tokens": null,
+            "total_tokens": null
+          },
+          "models": [
+            {
+              "provider": "openai",
+              "model": "gpt-6.2-astra",
+              "reasoningEffort": "xhigh",
+              "tokens": {
+                "input_tokens": 822220,
+                "cached_input_tokens": 818688,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 1029,
+                "reasoning_output_tokens": 244,
+                "total_tokens": 823249
+              },
+              "observations": 5
+            }
+          ],
+          "missingFields": [],
+          "issues": [],
+          "observations": 5
+        }
+      },
+      "process": "records/authored-f3e2bb897cc215f0aba5f0a0/process.json",
+      "eventsCsv": "records/authored-f3e2bb897cc215f0aba5f0a0/events.csv"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "authored-90f81f5fd0a46f44ce653394",
+      "harnessId": "spatialviz-harness",
+      "skillIds": [
+        "2d-rotation"
+      ],
+      "sourceKind": "agent-authored",
+      "sourceCaseIds": [
+        "spatialviz-bench:vqa:MentalRotation:2DRotation:Level0:0-2-3",
+        "spatialviz-bench:vqa:MentalRotation:2DRotation:Level1:0-2-3",
+        "spatialviz-bench:vqa:MentalRotation:2DRotation:Level1:1-2-3",
+        "spatialviz-bench:vqa:MentalRotation:2DRotation:Level1:29-3-3",
+        "spatialviz-bench:vqa:MentalRotation:2DRotation:Level0:38-3-4"
+      ],
+      "category": "MentalRotation",
+      "taskType": "2d-rotation",
+      "difficulty": {
+        "label": "Unranked",
+        "basis": "No human calibration; official difficulty levels are not inherited."
+      },
+      "title": "2D rotation / geometric / official FreeCAD",
+      "description": "New construction through the pinned official FreeCAD modeling and image-composition pipeline.",
+      "contentSha256": "90f81f5fd0a46f44ce6533946d207dfafab44372e2a1c87d43d02e41c43844a7",
+      "thumbnail": "records/authored-90f81f5fd0a46f44ce653394/v001-24e93a14b143003d.png",
+      "taskArtifact": "records/authored-90f81f5fd0a46f44ce653394/task.json",
+      "verification": {
+        "verdict": "passed",
+        "candidateId": "v001",
+        "fingerprints": {
+          "specification": "90f81f5fd0a46f44ce6533946d207dfafab44372e2a1c87d43d02e41c43844a7",
+          "geometry": "a19e5cd8515ac40f21b018e0056ff00e588efdbfbf2dace56406f18ab4a9c385",
+          "question": "b56a8cafd9cfbec8237b784847e877aa859b1e676eb3b5250a05177816c6655b",
+          "options": "2aa6d08ef0fd68b95c892653d87ea83619af0fb527a644e38fe02d3669f42d3b",
+          "answer": "37f330bc978e5bc01b84f2a36f017acfa51dc19d1290f256124e32bd8b87dcc5",
+          "contract": "58655f62a41d60bfdccfb2bb87b2b8ed2334e7ce074c54ec4da5f989253d5b4d",
+          "rendering": "3fddea01b3023c71081e77760f2ac8be1ae736535c28a8b102f1cfe72b9768c4",
+          "generator": "3303679a7b31fb6fd95584f0fc2c73b9073698f7757f75d8cab507d6013ae4f0"
+        },
+        "report": "records/authored-90f81f5fd0a46f44ce653394/verification.json"
+      },
+      "build": {
+        "runId": "build-843dbe7d-91cc-45a4-af9a-7bd3cca2a548",
+        "candidateId": "v001",
+        "usage": {
+          "schemaVersion": 2,
+          "runId": "build-843dbe7d-91cc-45a4-af9a-7bd3cca2a548",
+          "source": "codex",
+          "runtime": "Codex Desktop",
+          "status": "measured",
+          "elapsedMs": 56985,
+          "elapsedKind": "wall-clock",
+          "scope": "Runtime-reported usage between the start baseline and finish snapshot of this session. In-flight or delayed usage, earlier conversation, other agents and later delivery are excluded. This is an observed interval, not a complete billed task total.",
+          "scopeComplete": false,
+          "observedTokens": {
+            "input_tokens": 659454,
+            "cached_input_tokens": 656128,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 916,
+            "reasoning_output_tokens": 244,
+            "total_tokens": 660370
+          },
+          "tokens": {
+            "input_tokens": null,
+            "cached_input_tokens": null,
+            "cache_write_input_tokens": null,
+            "output_tokens": null,
+            "reasoning_output_tokens": null,
+            "total_tokens": null
+          },
+          "models": [
+            {
+              "provider": "openai",
+              "model": "gpt-6.2-astra",
+              "reasoningEffort": "xhigh",
+              "tokens": {
+                "input_tokens": 659454,
+                "cached_input_tokens": 656128,
+                "cache_write_input_tokens": 0,
+                "output_tokens": 916,
+                "reasoning_output_tokens": 244,
+                "total_tokens": 660370
+              },
+              "observations": 4
+            }
+          ],
+          "missingFields": [],
+          "issues": [],
+          "observations": 4
+        }
+      },
+      "process": "records/authored-90f81f5fd0a46f44ce653394/process.json",
+      "eventsCsv": "records/authored-90f81f5fd0a46f44ce653394/events.csv"
     }
   ]
 }

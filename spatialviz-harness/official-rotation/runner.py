@@ -26,8 +26,37 @@ def runtime():
     return exe, data
 
 
-def patterns(folder):
+def patterns(folder, mode='patterned'):
+    # ImagePlane uses MODULATE: a white texel preserves its grey material.
+    # A grey texture would multiply that material again and darken patterned cells.
     folder.mkdir(parents=True, exist_ok=True)
+    if mode == 'geometric':
+        from geometry import transform_motif
+        motifs = {
+            '1': {'segments': [], 'circles': [{'center': [0, 0], 'radius': 2.5}]},
+            '2': {'segments': [[[-3.2, -3.2], [3.2, 3.2]]], 'circles': []},
+            '3': {'segments': [[[-3.2, 3.2], [3.2, -3.2]]], 'circles': []},
+            '4': {'segments': [[[-3.2, y], [3.2, y]] for y in (-1, 1)], 'circles': []},
+            '5': {'segments': [[[x, -3.2], [x, 3.2]] for x in (-1, 1)], 'circles': []},
+            '6': {'segments': [[[-3.2, -3.2], [3.2, 3.2]], [[-3.2, 3.2], [0, 0]]], 'circles': []}}
+        for motif in motifs.values():
+            motif['kind'] = 'geometric'
+        for key in list(motifs):
+            motifs[key + '_0'] = transform_motif(motifs[key], [[0, -1], [1, 0]])
+        for key, motif in motifs.items():
+            img = Image.new('RGB', (256, 256), 'white')
+            draw = ImageDraw.Draw(img)
+            def pixel(p):
+                return tuple(128 + 38*v for v in p)
+            for segment in motif['segments']:
+                draw.line([pixel(p) for p in segment], fill='black', width=3)
+            for circle in motif['circles']:
+                x, y = pixel(circle['center']); r = 38*circle['radius']
+                draw.ellipse((x-r, y-r, x+r, y+r), outline='black', width=3)
+            img.save(folder / (key + '.png'))
+            motif['assetSha256'] = sha(folder / (key + '.png'))
+            motif['textureBackground'] = [255, 255, 255]
+        return motifs
     points = {'1': [[0, 0]], '2': [[-2, 0], [2, 0]], '3': [[-2, -2], [-2, 2], [2, 2]],
               '4': [[-2, -2], [2, -2], [-2, 2], [2, 2]],
               '5': [[-2, -2], [2, -2], [0, 0], [-2, 2], [2, 2]],
@@ -36,13 +65,14 @@ def patterns(folder):
         points[k + '_0'] = [[-y, x] for x, y in points[k]]
     definitions = {}
     for name, dots in points.items():
-        img = Image.new('RGB', (256, 256), '#b0b8c2')
+        img = Image.new('RGB', (256, 256), 'white')
         draw = ImageDraw.Draw(img)
         for x, y in dots:
             cx, cy = 128 + x * 38, 128 + y * 38
             draw.ellipse((cx - 14, cy - 14, cx + 14, cy + 14), fill='black')
         img.save(folder / (name + '.png'))
-        definitions[name] = {'kind': 'dots', 'points': dots, 'assetSha256': sha(folder / (name + '.png'))}
+        definitions[name] = {'kind': 'dots', 'points': dots, 'assetSha256': sha(folder / (name + '.png')),
+                             'textureBackground': [255, 255, 255]}
     return definitions
 
 
@@ -54,7 +84,7 @@ def launch(dimension, seed, parameters, directory):
         if sha(VENDOR / name) != expected:
             raise RuntimeError('Vendored source changed: ' + name)
     image_folder = directory / 'patterns'
-    definitions = patterns(image_folder) if dimension == 2 else {}
+    definitions = patterns(image_folder, parameters.get('mode')) if dimension == 2 else {}
     job = {'dimension': dimension, 'seed': seed, 'parameters': parameters, 'output': str(directory / 'raw'),
            'patternDirectory': str(image_folder), 'patterns': definitions}
     job_file = directory / 'job.json'

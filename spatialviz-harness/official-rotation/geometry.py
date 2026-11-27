@@ -60,12 +60,33 @@ def relation3(a, b):
     return {'equivalent': equivalent, 'witness': best, 'explanation': text}
 
 
+def motif_signature(motif):
+    if motif['kind'] == 'dots':
+        return ('dots', tuple(sorted(map(tuple, motif['points']))))
+    if motif['kind'] != 'geometric':
+        raise ValueError('Unsupported motif geometry')
+    segments = tuple(sorted(tuple(sorted(map(tuple, s))) for s in motif['segments']))
+    circles = tuple(sorted((tuple(c['center']), c['radius']) for c in motif['circles']))
+    return ('geometric', segments, circles)
+
+
+def transform_motif(motif, matrix):
+    def apply(p):
+        return [sum(matrix[i][j] * p[j] for j in range(2)) for i in range(2)]
+    if motif['kind'] == 'dots':
+        return {'kind': 'dots', 'points': [apply(p) for p in motif['points']]}
+    if motif['kind'] != 'geometric':
+        raise ValueError('Unsupported motif geometry')
+    return {'kind': 'geometric', 'segments': [[apply(p) for p in s] for s in motif['segments']],
+            'circles': [{'center': apply(c['center']), 'radius': c['radius']} for c in motif['circles']]}
+
+
 def decorated(grid):
     cells = []
     for cell in grid['cells']:
         motif = cell.get('pattern')
         # An opaque texture covers the underlying FreeCAD plane material.
-        cells.append((None if motif else tuple(cell['color'][:3]), None if not motif else tuple(sorted(map(tuple, motif['points'])))))
+        cells.append((None if motif else tuple(cell['color'][:3]), None if not motif else motif_signature(motif)))
     return grid['rows'], grid['cols'], tuple(grid['marker']), tuple(cells)
 
 
@@ -80,7 +101,7 @@ def transform2(grid, matrix):
     for i, c in enumerate(grid['cells']):
         x, y = [int(a - b) for a, b in zip(apply([i % grid['cols'] + .5, i // grid['cols'] + .5]), low)]
         motif = c.get('pattern')
-        cells[y * cols + x] = {'color': c['color'][:3], 'pattern': None if motif is None else {'kind': 'dots', 'points': [apply(p) for p in motif['points']]}}
+        cells[y * cols + x] = {'color': c['color'][:3], 'pattern': None if motif is None else transform_motif(motif, matrix)}
     return {'rows': rows, 'cols': cols, 'cells': cells, 'marker': [a - b for a, b in zip(apply(grid['marker']), low)]}
 
 

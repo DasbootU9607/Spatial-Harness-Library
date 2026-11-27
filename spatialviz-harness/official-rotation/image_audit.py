@@ -3,6 +3,7 @@ import base64
 import hashlib
 import io
 import itertools
+import math
 import cv2
 import numpy as np
 from PIL import Image, ImageDraw, ImageFont
@@ -50,10 +51,15 @@ def replay(image, operations):
     return image
 
 
-def grid_pixels(raw):
+def grid_pixels(raw, uniform_background=False):
     image = np.array(decode(raw['image']))
     geometry, camera = raw['geometry'], raw['camera']
     errors = []
+    # Versioned by actual texture metadata: keep historical grey-texture builds
+    # verifiable, but require neutral backgrounds for new white-texture builds.
+    uniform_background |= any((c.get('pattern') or {}).get('textureBackground') == [255, 255, 255]
+                              for c in geometry['cells'])
+    backgrounds = []
     unit = geometry['unit']
     scale = image.shape[0] / camera['height']
     for index, cell in enumerate(geometry['cells']):
@@ -72,7 +78,29 @@ def grid_pixels(raw):
             errors.append('Cell is outside the image')
             continue
         motif = cell.get('pattern')
-        if motif:
+        if uniform_background:
+            background = np.median(patch.reshape(-1, 3), axis=0)
+            backgrounds.append(background.tolist())
+            if np.max(np.abs(background - np.array(cell['color'][:3])*255)) > 1:
+                errors.append('Cell %d background differs from the common grey material' % index)
+        if motif and motif['kind'] == 'geometric':
+            expected_mask = np.zeros(patch.shape[:2], np.uint8)
+            def local(p):
+                q = project([center[0]+p[0]*unit*38/256, center[1]-p[1]*unit*38/256, center[2]], camera)
+                return (round(q[0]-x0), round(q[1]-y0))
+            for segment in motif['segments']:
+                cv2.line(expected_mask, local(segment[0]), local(segment[1]), 1, 1)
+            for circle in motif['circles']:
+                points = [local([circle['center'][0]+circle['radius']*math.cos(t*math.pi/128),
+                                 circle['center'][1]+circle['radius']*math.sin(t*math.pi/128)]) for t in range(256)]
+                cv2.polylines(expected_mask, [np.array(points, np.int32)], True, 1, 1)
+            actual_mask = (np.max(patch, axis=2) < 90).astype(np.uint8)
+            kernel = np.ones((7,7), np.uint8)
+            unexplained = np.count_nonzero(actual_mask & (1-cv2.dilate(expected_mask,kernel)))
+            missing = np.count_nonzero(expected_mask & (1-cv2.dilate(actual_mask,kernel)))
+            if not np.any(expected_mask) or not np.any(actual_mask) or unexplained/max(1,np.count_nonzero(actual_mask)) > .03 or missing/max(1,np.count_nonzero(expected_mask)) > .03:
+                errors.append('Cell %d line/circle geometry differs from rendered texture' % index)
+        elif motif:
             mask = (np.max(patch, axis=2) < 90).astype(np.uint8)
             count, _, stats, centroids = cv2.connectedComponentsWithStats(mask)
             actual = [centroids[i] + [x0, y0] for i in range(1, count) if stats[i, cv2.CC_STAT_AREA] > 8]
@@ -92,7 +120,10 @@ def grid_pixels(raw):
     color = image[y, x]
     if not (color[0] > 200 and color[1] < 50 and color[2] < 50):
         errors.append('Recorded marker is not red at its projected location')
-    return {'passed': not errors, 'errors': errors, 'minimumCellPixels': unit * scale}
+    if backgrounds and np.max(np.ptp(np.array(backgrounds), axis=0)) > 1:
+        errors.append('Patterned and empty cells have different background colors')
+    return {'passed': not errors, 'errors': errors, 'minimumCellPixels': unit * scale,
+            'uniformBackgroundChecked': bool(uniform_background), 'backgroundColors': backgrounds}
 
 
 def cube_pixels(raw):

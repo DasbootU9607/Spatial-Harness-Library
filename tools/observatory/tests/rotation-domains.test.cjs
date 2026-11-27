@@ -75,7 +75,30 @@ test('Renderer configuration drift and malformed task input cannot produce a pas
 });
 test('Packaged official evidence retains exact source annotations and original image bytes',()=>{
  const root=path.resolve(__dirname,'../../..'),official=JSON.parse(fs.readFileSync(path.join(root,'questions/data/spatialviz.json'),'utf8'));
- for(const dim of [2,3]){const dir=path.join(root,`spatialviz-harness/skills/spatialviz-${dim}d-rotation/references`);for(const file of fs.readdirSync(dir).filter(f=>f.endsWith('.json'))){const q=JSON.parse(fs.readFileSync(path.join(dir,file),'utf8')),source=official.find(x=>x.sourceId===q.sourceId);for(const key of Object.keys(source))assert.deepEqual(q[key],source[key]);const img=fs.readFileSync(path.join(dir,path.basename(q.packagedImage)));assert.equal(crypto.createHash('sha256').update(img).digest('hex'),q.imageSha256);assert.deepEqual(img,fs.readFileSync(path.join(root,'questions',source.image)));}}
+ for(const dim of [2,3]){
+  const dir=path.join(root,`spatialviz-harness/skills/spatialviz-${dim}d-rotation/references`);
+  for(const file of fs.readdirSync(dir).filter(f=>f.endsWith('.json'))){
+   const q=JSON.parse(fs.readFileSync(path.join(dir,file),'utf8'));
+   if(file==='coverage.json'){
+    const family=official.filter(s=>s.type===`${dim}DRotation`);
+    assert.deepEqual(q.records.map(s=>s.sourceId).sort(),family.map(s=>s.sourceId).sort());
+    for(const entry of q.records){
+     const source=family.find(s=>s.sourceId===entry.sourceId);
+     assert.equal(entry.image,source.image);assert.equal(entry.answer,source.answer);
+     assert.equal(entry.polarity,source.question.toLowerCase().includes('cannot')?'cannot':'can');
+     assert.equal(q.datasetRevision,source.provenance.dataset_revision);
+     assert.equal(q.annotationSha256,source.provenance.annotation_sha256);
+     assert.equal(crypto.createHash('sha256').update(fs.readFileSync(path.join(root,'questions',source.image))).digest('hex'),entry.imageSha256);
+    }
+    continue;
+   }
+   const source=official.find(x=>x.sourceId===q.sourceId);assert.ok(source,file);
+   for(const key of Object.keys(source))assert.deepEqual(q[key],source[key]);
+   const img=fs.readFileSync(path.join(dir,path.basename(q.packagedImage)));
+   assert.equal(crypto.createHash('sha256').update(img).digest('hex'),q.imageSha256);
+   assert.deepEqual(img,fs.readFileSync(path.join(root,'questions',source.image)));
+  }
+ }
 });
 test('Formal skill publication refuses missing or superseded visual approval',()=>{
  const R=require('../runtime.cjs'),P=require('../../publish.cjs'),tmp=path.join(R.ROOT,'.harness/tests');fs.mkdirSync(tmp,{recursive:true});

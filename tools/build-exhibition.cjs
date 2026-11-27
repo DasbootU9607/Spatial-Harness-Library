@@ -14,6 +14,11 @@ function discover(){
   c.generationMethod=task.provenance?.generationMethod||'Legacy JavaScript/SVG generator';
   c.exhibit=c.verification?.verdict==='passed'&&(c.generationMethod==='SpatialViz-Bench official FreeCAD + OpenCV/Pillow pipeline'||(task.taskType==='PaperFolding'&&c.generationMethod==='SpatialViz-Bench official Paper Folding Matplotlib/Pillow pipeline'))&&Boolean(task.provenance?.sourceRevision);
  }
+ for(const archived of cases.filter(c=>c.supersededBy)){
+   const replacement=cases.find(c=>c.harnessId===archived.harnessId&&c.id===archived.supersededBy);
+   if(!replacement?.exhibit || replacement.supersededBy || replacement.id===archived.id || replacement.taskType!==archived.taskType) throw Error('Invalid replacement for '+archived.id);
+   archived.exhibit=false;
+ }
  const maze=R.read(path.join(root,'maze-harness/site/data/catalog.json'));
  for(const s of maze.skills)if(!skills.some(x=>x.id===s.id&&x.harnessId==='maze-harness'))skills.push({...s,harnessId:'maze-harness',status:'complete',officialReferences:s.officialCases,install:'node tools/install.cjs --harness maze-harness --destination YOUR_SKILLS_DIRECTORY'});
  for(const c of maze.cases){const item={...c,harnessId:'maze-harness',skillIds:[c.skill],sourceKind:c.kind==='official'?'official':'agent-authored',taskType:'maze',taskUrl:`player.html?world=${c.world}&room=${c.room}`,processUrl:c.process?`process.html?case=${c.id}`:null,taskArtifact:c.map,solution:c.witness,legacy:true};if(c.kind==='official')official.push(item);else cases.push(item);}

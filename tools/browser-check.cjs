@@ -89,7 +89,11 @@ const server=http.createServer((req,res)=>{try{const u=new URL(req.url,'http://l
   }
   await page.locator('[data-filter="all"]').click();
   if(harness==='spatialviz-harness'){
-   assert(all.length>=4);assert.equal(catalog.cases.filter(c=>c.harnessId===harness&&c.exhibit===false).length,5);
+   assert(all.length>=4);assert.equal(catalog.cases.filter(c=>c.harnessId===harness&&c.exhibit===false&&!c.supersededBy).length,5);
+   for(const previous of catalog.cases.filter(c=>c.harnessId===harness&&c.supersededBy)){
+    assert.equal(await page.locator(`#case-gallery [data-case="${previous.id}"]`).count(),0);
+    assert.equal(await page.locator(`#case-gallery [data-case="${previous.supersededBy}"]`).count(),1);
+   }
    assert.equal(await page.locator('#case-gallery img').evaluateAll(imgs=>imgs.every(i=>i.src.endsWith('.png'))),true);
    await page.locator('[data-filter="2d-rotation"]').click();await page.reload();await page.waitForSelector('#case-gallery .card');assert.equal(await page.locator('#case-gallery .card').count(),all.filter(c=>c.skillIds.includes('2d-rotation')).length);await page.locator('[data-filter="all"]').click();
   }

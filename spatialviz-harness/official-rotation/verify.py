@@ -9,7 +9,7 @@ import sys
 from pathlib import Path
 import numpy as np
 from geometry import (PLANAR, ROTATIONS, connected, normalized, decorated, transform2,
-                      transform3, relation2, relation3, reflect_screen, visibility)
+                      transform3, relation2, relation3, reflect_screen, visibility, motif_signature)
 from image_audit import decode, replay, crop_box, grid_pixels, cube_pixels, composition_image
 
 HERE = Path(__file__).resolve().parent
@@ -20,7 +20,7 @@ def expected_question(dimension, polarity, mode):
     if dimension == 2:
         return ('The left image shows a %s grid paper, with one corner marked by a red square. '
                 'Which of the grid papers in the options can be obtained by only rotating the grid paper on the left? '
-                'Please choose from options A, B, C, or D.') % ('patterned' if mode == 'patterned' else 'colored')
+                'Please choose from options A, B, C, or D.') % ('patterned' if mode in ('patterned', 'geometric') else 'colored')
     return ('The left image is the original cube stack, made of identical cubes. '
             'Which of the cube stacks in the options %s be obtained by only rotating the original cube stack? '
             'Please choose from options A, B, C, or D. '
@@ -71,6 +71,19 @@ def audit(payload, include_images=True):
             valid &= 1 <= g['rows'] <= 8 and 1 <= g['cols'] <= 8 and len(g['cells']) == g['rows'] * g['cols']
             valid &= len(g['marker']) == 2 and g['marker'][0] in (0, g['cols']) and g['marker'][1] in (0, g['rows'])
     check('Valid decorated grids or unique face-connected unit cubes', valid)
+    params = payload['parameters']
+    original = views[0]['geometry']
+    if dimension == 2:
+        check('Requested grid dimensions match rendered original', (original['rows'],original['cols']) == (params['rows'],params['cols']))
+        kinds = {c['pattern']['kind'] for c in original['cells'] if c.get('pattern')}
+        check('Requested motif family matches actual geometry', kinds <= ({'geometric'} if params['mode']=='geometric' else {'dots'} if params['mode']=='patterned' else set()))
+        if 'patternMatrix' in params:
+            ids = [v for row in params['patternMatrix'] for v in row]
+            matches = len(ids) == len(original['cells'])
+            for key, cell in zip(ids, original['cells']):
+                motif = cell.get('pattern')
+                matches &= (motif is None if key is None else motif is not None and motif_signature(motif) == motif_signature(pipeline['patternAssets'][key]))
+            check('Requested per-cell motifs match actual rendered geometry', matches)
     computed = answer_for(views, dimension, polarity)
     check('Independent rotation group yields exactly one A-C answer', len(computed['eligible']) == 1, computed['eligible'])
     check('Official output label agrees with independent answer', pipeline['annotation']['Answer'] == 'ABCD'[computed['index']])

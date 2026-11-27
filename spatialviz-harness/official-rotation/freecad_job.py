@@ -110,7 +110,7 @@ def run(job_file):
         common = [('view.saveImage(image_path, 1280, 1024)', 'capture(view, image_path, doc)',
                    'Export actual document geometry and settled camera at each official saveImage boundary')]
         if job['dimension'] == 2:
-            complex_mode = params['mode'] == 'patterned'
+            complex_mode = params['mode'] in ('patterned', 'geometric')
             file = 'create_freecad/create_mental_rotation/create_2D_rotation' + ('_complex' if complex_mode else '') + '.py'
             replacements = common + [('red_obj.ViewObject.DiffuseColor = (1.0, 0.0, 0.0)',
                                       'red_obj.ViewObject.DiffuseColor = [(1.0, 0.0, 0.0)]',
@@ -121,15 +121,24 @@ def run(job_file):
                                      ('plane.ImageFile = image_paths[f"{image_name}_0"]',
                                       'plane.ImageFile = image_paths[f"{image_name}_0"]; plane.addProperty("App::PropertyString", "PatternKey"); plane.PatternKey = f"{image_name}_0"',
                                       'Retain the rotated texture identity')] if complex_mode else common
-            module, receipt = load(file, {'App': App, 'capture': capture}, replacements)
+            if complex_mode:
+                replacements.append(('plane.XSize = unit_size',
+                                     'plane.ViewObject.ShapeColor = obj.ViewObject.ShapeColor\n                plane.XSize = unit_size',
+                                     'Match image-plane and empty-cell materials; white texture backgrounds preserve the common grey under MODULATE'))
+            if complex_mode and 'patternMatrix' in params:
+                replacements.append(('image_name = str(random.randint(1, 6))',
+                                     'image_name = pattern_matrix[row][col]',
+                                     'Allow explicit per-cell texture IDs; retain upstream image planes and local rotation errors'))
+            module, receipt = load(file, {'App': App, 'capture': capture, 'pattern_matrix': params.get('patternMatrix')}, replacements)
             adaptations.append(receipt)
             matrix = params.get('matrix') or [[random.randint(0, 1) for _ in range(params['cols'])] for _ in range(params['rows'])]
             if complex_mode:
                 paths = {k: str(Path(job['patternDirectory']) / (k + '.png')) for k in job['patterns']}
                 record = []
-                module.create_squares(matrix, str(output), paths, unit_size=12, marker_size=3, save_name='grid', record=record)
-                if set(record) & {'2', '3', '6'}:
-                    module.create_squares(matrix, str(output), paths, unit_size=12, marker_size=3, save_name='grid', mode=1, record=record.copy())
+                asymmetric = ['2', '3', '4', '5', '6'] if params['mode'] == 'geometric' else ['2', '3', '6']
+                module.create_squares(matrix, str(output), paths, unit_size=12, marker_size=3, save_name='grid', record=record, asymmetric=asymmetric)
+                if set(record) & set(asymmetric):
+                    module.create_squares(matrix, str(output), paths, unit_size=12, marker_size=3, save_name='grid', mode=1, record=record.copy(), asymmetric=asymmetric)
             else:
                 module.create_squares(matrix, str(output), unit_size=12, marker_size=3, save_name='grid')
         else:

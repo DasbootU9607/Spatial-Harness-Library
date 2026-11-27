@@ -47,6 +47,7 @@ async function taskPage(){
  document.title=`${title} · ${h.name}`;
  main.innerHTML=`<nav class="task-crumb" aria-label="Task navigation">
   ${skill?`<a class="button" href="skill.html?id=${e(encodeURIComponent(skill.id))}">← Back to ${e(skill.name)} skill</a>`:''}
+  ${c.supersededBy?`<a class="button" href="task.html?id=${e(encodeURIComponent(c.supersededBy))}">Open updated task</a>`:''}
   ${buildProcess?`<a class="button" href="${e(buildProcess)}">View build process</a>`:''}
  </nav>
  <header class="task-heading"><div><p class="task-eyebrow">Agent-built practice</p><h1>${e(title)}</h1></div><span class="task-format">Single choice · ${s.options.length} options</span></header>
