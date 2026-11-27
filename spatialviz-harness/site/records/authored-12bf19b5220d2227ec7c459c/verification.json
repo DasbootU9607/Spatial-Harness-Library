@@ -1,0 +1,325 @@
+{
+  "id": "t037",
+  "actionId": "1daa010d-4d61-456c-a810-d090e3fb8b44",
+  "candidateId": "v037",
+  "testedFingerprints": {
+    "specification": "12bf19b5220d2227ec7c459c8de6ce02b145cd2e7b509ab4e78a16f73fe183f3",
+    "geometry": "8bec96f2a6834387a1817385c37cd65b1f909a89a162076fb86caa28ae5652c9",
+    "question": "e74665088b8af5cfe63420b6c84020a97deee40f195082e891f88650056c4c9e",
+    "options": "a02b653f6abf9bed0f43a23aaa8b8b203ceb2b5dd10936b909c93c81c7f76ada",
+    "answer": "6f705336a1309e4d0e658f16dc806139d24c543ca4b324156f7e7c4c6933f2ff",
+    "contract": "3afca890523207fdcc3ae4e2c90f4b5e5b7ef8733c884d618d753fa8add5d029",
+    "rendering": "1b66e92e7ef04806830a6139c1d967cebec8d0479a49cf059789ceec8118cdd9",
+    "generator": "c4a6b8985ece7ff3d208b7f4c7ba158bfabe8a8f8a87a3055e02e357d2fad7b4"
+  },
+  "verifier": {
+    "id": "spatialviz-official-3d-rotation",
+    "revision": "03b667ab694b02be287db8e69bc74ff9ca5a4f54f3c1b754e686e1e3c1f53fcf"
+  },
+  "reportSha256": "41d703180a31a0bbf5292ac97968d1fb6900f814b59fd3e19d6ca0785df7e473",
+  "verdict": "passed",
+  "status": "passed",
+  "checks": [
+    {
+      "name": "Supported dimensionality and polarity",
+      "verdict": "passed"
+    },
+    {
+      "name": "Original and A-C in final compositor order",
+      "verdict": "passed"
+    },
+    {
+      "name": "Official annotation has A-C plus requested text D",
+      "verdict": "passed"
+    },
+    {
+      "name": "Exact supported question and single-view contract",
+      "verdict": "passed"
+    },
+    {
+      "name": "Official dispatch wording agrees with the delivered question",
+      "verdict": "passed"
+    },
+    {
+      "name": "Pinned official source and actual FreeCAD version are recorded",
+      "verdict": "passed"
+    },
+    {
+      "name": "Model, utilities and official dispatch adaptation receipts",
+      "verdict": "passed"
+    },
+    {
+      "name": "Question wording agrees with polarity",
+      "verdict": "passed"
+    },
+    {
+      "name": "Valid decorated grids or unique face-connected unit cubes",
+      "verdict": "passed"
+    },
+    {
+      "name": "Independent rotation group yields exactly one A-C answer",
+      "verdict": "passed",
+      "detail": "[1]"
+    },
+    {
+      "name": "Official output label agrees with independent answer",
+      "verdict": "passed"
+    },
+    {
+      "name": "Final answer and all explanations are independently reproducible",
+      "verdict": "passed"
+    },
+    {
+      "name": "No duplicate displayed structural options",
+      "verdict": "passed"
+    },
+    {
+      "name": "Original supported settled orthographic camera",
+      "verdict": "passed"
+    },
+    {
+      "name": "Original only traced official image operations",
+      "verdict": "passed"
+    },
+    {
+      "name": "Original structure follows actual image transforms",
+      "verdict": "passed"
+    },
+    {
+      "name": "Original pixels exactly replay official crop/rotation/reflection",
+      "verdict": "passed"
+    },
+    {
+      "name": "Original every cube has a fully visible face in its single view",
+      "verdict": "passed",
+      "detail": "[[1, 2], [2], [0, 1, 2], [0, 2], [0, 2], [0], [0, 1, 2]]"
+    },
+    {
+      "name": "A supported settled orthographic camera",
+      "verdict": "passed"
+    },
+    {
+      "name": "A only traced official image operations",
+      "verdict": "passed"
+    },
+    {
+      "name": "A structure follows actual image transforms",
+      "verdict": "passed"
+    },
+    {
+      "name": "A pixels exactly replay official crop/rotation/reflection",
+      "verdict": "passed"
+    },
+    {
+      "name": "A every cube has a fully visible face in its single view",
+      "verdict": "passed",
+      "detail": "[[1], [0, 1, 2], [1, 2], [2], [0, 2], [1, 2], [0, 1, 2]]"
+    },
+    {
+      "name": "A difference changes visible face evidence under every proper rotation",
+      "verdict": "passed"
+    },
+    {
+      "name": "B supported settled orthographic camera",
+      "verdict": "passed"
+    },
+    {
+      "name": "B only traced official image operations",
+      "verdict": "passed"
+    },
+    {
+      "name": "B structure follows actual image transforms",
+      "verdict": "passed"
+    },
+    {
+      "name": "B pixels exactly replay official crop/rotation/reflection",
+      "verdict": "passed"
+    },
+    {
+      "name": "B every cube has a fully visible face in its single view",
+      "verdict": "passed",
+      "detail": "[[1, 2], [2], [0, 2], [0, 2], [0, 2], [0, 1, 2], [0, 1]]"
+    },
+    {
+      "name": "C supported settled orthographic camera",
+      "verdict": "passed"
+    },
+    {
+      "name": "C only traced official image operations",
+      "verdict": "passed"
+    },
+    {
+      "name": "C structure follows actual image transforms",
+      "verdict": "passed"
+    },
+    {
+      "name": "C pixels exactly replay official crop/rotation/reflection",
+      "verdict": "passed"
+    },
+    {
+      "name": "C every cube has a fully visible face in its single view",
+      "verdict": "passed",
+      "detail": "[[1, 2], [2], [0, 1, 2], [0, 2], [0, 2], [0, 2]]"
+    },
+    {
+      "name": "C difference changes visible face evidence under every proper rotation",
+      "verdict": "passed"
+    },
+    {
+      "name": "FreeCAD model-to-pixel correspondence: x-180.png",
+      "verdict": "passed",
+      "detail": "{'passed': True, 'allProjectedVerticesInsideImage': True, 'silhouetteMismatchFraction': 0.0, 'missingVisibleEdgeSamples': 0, 'visibleEdgeSamples': 280, 'projectedUnitPixels': 190.15203007625746}"
+    },
+    {
+      "name": "FreeCAD model-to-pixel correspondence: original.png",
+      "verdict": "passed",
+      "detail": "{'passed': True, 'allProjectedVerticesInsideImage': True, 'silhouetteMismatchFraction': 0.0, 'missingVisibleEdgeSamples': 0, 'visibleEdgeSamples': 280, 'projectedUnitPixels': 190.15203007625746}"
+    },
+    {
+      "name": "FreeCAD model-to-pixel correspondence: y-0-remove.png",
+      "verdict": "passed",
+      "detail": "{'passed': True, 'allProjectedVerticesInsideImage': True, 'silhouetteMismatchFraction': 0.0, 'missingVisibleEdgeSamples': 0, 'visibleEdgeSamples': 240, 'projectedUnitPixels': 200.82292291684706}"
+    },
+    {
+      "name": "A-C panels have distinct pixel arrays",
+      "verdict": "passed"
+    },
+    {
+      "name": "Final PNG exactly matches independent reconstruction of official layout and labels",
+      "verdict": "passed"
+    },
+    {
+      "name": "Delivered labels, structure and final rendering agree",
+      "verdict": "passed"
+    },
+    {
+      "name": "Exact current official adapter revision and dimension",
+      "verdict": "passed"
+    },
+    {
+      "name": "Declared reasoning: proper-rotation",
+      "designId": "e000008",
+      "verdict": "passed",
+      "evidence": {
+        "fullMatches": [
+          "B"
+        ],
+        "originalCount": 7,
+        "cubeCounts": {
+          "A": 7,
+          "B": 7,
+          "C": 6
+        },
+        "alignments": {
+          "A": {
+            "matrix": [
+              [
+                0,
+                1,
+                0
+              ],
+              [
+                -1,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                1
+              ]
+            ],
+            "missing": [
+              [
+                2,
+                1,
+                0
+              ],
+              [
+                2,
+                2,
+                0
+              ],
+              [
+                3,
+                0,
+                1
+              ]
+            ],
+            "extra": [
+              [
+                0,
+                0,
+                1
+              ],
+              [
+                1,
+                1,
+                0
+              ],
+              [
+                1,
+                2,
+                0
+              ]
+            ]
+          },
+          "B": {
+            "matrix": [
+              [
+                1,
+                0,
+                0
+              ],
+              [
+                0,
+                -1,
+                0
+              ],
+              [
+                0,
+                0,
+                -1
+              ]
+            ],
+            "missing": [],
+            "extra": []
+          },
+          "C": {
+            "matrix": [
+              [
+                1,
+                0,
+                0
+              ],
+              [
+                0,
+                1,
+                0
+              ],
+              [
+                0,
+                0,
+                1
+              ]
+            ],
+            "missing": [
+              [
+                2,
+                3,
+                1
+              ]
+            ],
+            "extra": []
+          }
+        }
+      },
+      "feedback": ""
+    }
+  ],
+  "scope": "Independent four/24-rotation geometry, label/polarity uniqueness, connectivity, FreeCAD geometry-to-pixel correspondence, exact image-operation and compositor replay, full-face visibility and visible non-equivalence. Human visual review is additionally required; no universal single-view reconstruction or difficulty claim.",
+  "commandExitStatus": 0,
+  "binding": "exact",
+  "bindingBasis": "exact candidate and full input fingerprints",
+  "commandEventId": "e000232"
+}

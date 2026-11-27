@@ -1,0 +1,88 @@
+{
+  "id": "t001",
+  "actionId": "08cb2e38-8255-4767-8d17-26b874beb4ca",
+  "candidateId": "v001",
+  "testedFingerprints": {
+    "specification": "370c847b6e7bb75349cda2b60bd05c904a44ccc03245075fcb92019641f394d2",
+    "geometry": "bc92b0693b12cb48decf231ea4dc6037b11feaa0141bbe4d73f3ce888f0406c9",
+    "question": "4d87a6d3bfa3b1992e668f763b74d54f5ed1dbb16ce7d4f2f1e20ae69e889663",
+    "options": "5eaafe0e53103a3c7e3cd9871d156061837560b4f8b540934b622b0bb0526bd6",
+    "answer": "fa2fe5c217c47db0364833d9dd4612b9d78abce7592543e8590a20c4640560fc",
+    "contract": null,
+    "rendering": "0361898c6a260373888989757829dabe6f4864a8398aed8b234cb4119b9534eb",
+    "generator": "2760dcb6c63cf7333e2f0c25bd4caaf907284a99eecdc717df251ce471a1cd8e"
+  },
+  "verifier": {
+    "id": "arrow-movement",
+    "revision": "b53464c5a44f95977a83184de30510f7ab2e083e56e84db3d21f44b324645c93"
+  },
+  "reportSha256": "656fc39653fecbf0fea17ad9a18ab09f12ffffe6f1ee0c9cacbbcfab3faf2a2c",
+  "verdict": "passed",
+  "status": "passed",
+  "checks": [
+    {
+      "name": "Printed coordinate key, question and four option labels match the final sheet",
+      "verdict": "passed"
+    },
+    {
+      "name": "Option A",
+      "detail": "red (1, 2) to (1, 1) facing S. Then red (1, 1) to (2, 1) facing E. Then red (2, 1) to (2, 2) facing N. Then red (2, 2) to (2, 1) facing S. Every displayed constraint matches.",
+      "verdict": "passed"
+    },
+    {
+      "name": "Option B",
+      "detail": "red (1, 2) to (1, 0) facing S. Then red (1, 0) to (2, 0) facing E. Then red (2, 0) to (2, 2) facing N. Then red (2, 2) to (2, 1) facing S. Step 1, cell (1, 0) contains red S. The panel requires empty.",
+      "verdict": "passed"
+    },
+    {
+      "name": "Option C",
+      "detail": "red (1, 2) to (2, 2) facing E. Then red (2, 2) to (2, 1) facing S. Then red (2, 1) to (2, 2) facing N. Then red (2, 2) to (2, 1) facing S. Step 1, cell (1, 1) contains empty. The panel requires red S.",
+      "verdict": "passed"
+    },
+    {
+      "name": "Option D",
+      "detail": "red (1, 2) to (0, 2) facing W. Then red (0, 2) to (1, 2) facing E. Then red (1, 2) to (2, 2) facing E. Then red (2, 2) to (2, 1) facing S. Step 1, cell (0, 2) contains red W. The panel requires empty.",
+      "verdict": "passed"
+    },
+    {
+      "name": "Declared reasoning: checkpoint",
+      "designId": "e000008",
+      "verdict": "passed",
+      "evidence": {
+        "answer": "A",
+        "closestFoil": "B",
+        "foilMismatch": {
+          "step": 1,
+          "cell": [
+            1,
+            0
+          ],
+          "observed": [
+            "red",
+            "S"
+          ],
+          "required": null
+        },
+        "commands": [
+          "Forward 1",
+          "Left 1",
+          "Left 1",
+          "Backward 1"
+        ],
+        "stepsReplayed": 4,
+        "matchesWithoutCheckpoint": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ]
+      },
+      "feedback": ""
+    }
+  ],
+  "scope": "Printed state keys, commands, labeled diagrams and all four alternatives.",
+  "commandExitStatus": 0,
+  "binding": "exact",
+  "bindingBasis": "exact candidate and full input fingerprints",
+  "commandEventId": "e000015"
+}

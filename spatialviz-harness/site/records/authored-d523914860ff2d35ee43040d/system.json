@@ -1,0 +1,125 @@
+{
+  "title": "A winding drum driven through an idler",
+  "intent": "Trace the two gear meshes to a keyed drum and predict vertical load travel.",
+  "cad": {
+    "moduleMm": 2,
+    "tiltDeg": 24
+  },
+  "members": {
+    "A": {
+      "kind": "gear",
+      "at": [
+        0,
+        0,
+        0
+      ],
+      "teeth": 18
+    },
+    "B": {
+      "kind": "gear",
+      "at": [
+        46,
+        0,
+        0
+      ],
+      "teeth": 30
+    },
+    "D": {
+      "kind": "drum",
+      "at": [
+        46,
+        0,
+        1
+      ],
+      "radius": 7
+    },
+    "W": {
+      "kind": "weight",
+      "at": [
+        null,
+        24,
+        1
+      ]
+    },
+    "I": {
+      "kind": "gear",
+      "at": [
+        20,
+        0,
+        0
+      ],
+      "teeth": 22
+    }
+  },
+  "connections": [
+    {
+      "kind": "mesh",
+      "ports": [
+        "A",
+        "I"
+      ]
+    },
+    {
+      "kind": "mesh",
+      "ports": [
+        "I",
+        "B"
+      ]
+    },
+    {
+      "kind": "key",
+      "ports": [
+        "B",
+        "D"
+      ]
+    },
+    {
+      "kind": "cord",
+      "ports": [
+        "D",
+        "W"
+      ],
+      "side": "right"
+    }
+  ],
+  "input": {
+    "member": "A",
+    "motion": "CW"
+  },
+  "interval": "instant",
+  "targets": [
+    {
+      "name": "W",
+      "kind": "vertical"
+    }
+  ],
+  "choices": [
+    {
+      "motions": [
+        "up"
+      ],
+      "reason": "This follows a left-side takeoff or misses the second external contact."
+    },
+    {
+      "motions": [
+        "down"
+      ],
+      "reason": "Two external contacts leave the drum clockwise, carrying its right tangent downward."
+    },
+    {
+      "motions": [
+        "stationary"
+      ],
+      "reason": "The keyed hub couples the drum to B and the line is taut."
+    },
+    {
+      "motions": [
+        "rotates"
+      ],
+      "reason": "The drum turns about its axle. The suspended load travels on the straight line."
+    }
+  ],
+  "references": [
+    "MentalAnimation/MechanicalSystem/Level1/32"
+  ]
+}

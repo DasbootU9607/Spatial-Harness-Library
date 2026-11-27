@@ -1,0 +1,164 @@
+{
+  "id": "t001",
+  "actionId": "6ad348e0-15bf-495d-af9e-9aea8ae22fe9",
+  "candidateId": "v001",
+  "testedFingerprints": {
+    "specification": "0e00f0eef7d529d92a90508ab050ba1cd345fdf00c06b758c18ef24252982ad1",
+    "geometry": "07f7c9a037a791ff016af74d341ba3a57d6dc476a563c53e17f5ad257224f789",
+    "question": "5c1def863acd768f5d42d35c09bd121142121aaef55323612b9273de381676e8",
+    "options": "2a02ee37206c0089bd193ad678330e2d408634d0befda3fcfdf1fc7c1b232c15",
+    "answer": "a78b43146eff83edecbd1acb158f5e2c4e1b2706f81b8e19f91a093d0ec1e9ec",
+    "contract": "692ead6dbb48f2495f17965d52c5199610428afd6407ef40162db56af7672f37",
+    "rendering": "6f5dd7ffd13fba316b7f57de1e626cad0c1e1e3433f990ec9e4ae0b7cf1e388f",
+    "generator": "010d4bf986e16335181897498d310b392bbd5388d3b29371340f8d6e5f3a2e00"
+  },
+  "verifier": {
+    "id": "official-projection",
+    "revision": "ace70cd91ed55fb6bb2da245ac6fbdc8890dfdc71ecdbaab330a47d99bee356e"
+  },
+  "reportSha256": "cb5e5404dc38966d74c926b3a471498295d346676b8cce920df458e8218ef864",
+  "verdict": "passed",
+  "status": "passed",
+  "checks": [
+    {
+      "name": "World geometry, construction parameters, viewing contract and question",
+      "verdict": "passed"
+    },
+    {
+      "name": "Independent projected answer, released choice semantics and per-option explanations",
+      "verdict": "passed"
+    },
+    {
+      "name": "Visible surfaces, occlusion, distinctive options, crop and final labeled composition",
+      "verdict": "passed"
+    },
+    {
+      "name": "Current projection adapter and pinned upstream manifest",
+      "verdict": "passed"
+    },
+    {
+      "name": "Declared reasoning: nearest-surface",
+      "designId": "e000008",
+      "verdict": "passed",
+      "evidence": {
+        "fullMatches": [
+          "D"
+        ],
+        "leftView": [
+          "RGG",
+          "GRG"
+        ],
+        "sameOutlineDifferentColor": {
+          "A": [
+            [
+              1,
+              1,
+              "R",
+              "G"
+            ],
+            [
+              2,
+              2,
+              "R",
+              "G"
+            ],
+            [
+              2,
+              3,
+              "G",
+              "R"
+            ]
+          ],
+          "B": [
+            [
+              1,
+              1,
+              "R",
+              "G"
+            ],
+            [
+              1,
+              3,
+              "G",
+              "R"
+            ],
+            [
+              2,
+              2,
+              "R",
+              "G"
+            ]
+          ],
+          "C": [
+            [
+              2,
+              1,
+              "G",
+              "R"
+            ],
+            [
+              2,
+              2,
+              "R",
+              "G"
+            ]
+          ]
+        },
+        "occludingRays": {
+          "A": [
+            {
+              "row": 2,
+              "column": 2,
+              "nearX": 0,
+              "hiddenX": [
+                1
+              ],
+              "nearColor": "R",
+              "foilColor": "G"
+            }
+          ],
+          "B": [
+            {
+              "row": 2,
+              "column": 2,
+              "nearX": 0,
+              "hiddenX": [
+                1
+              ],
+              "nearColor": "R",
+              "foilColor": "G"
+            }
+          ],
+          "C": [
+            {
+              "row": 2,
+              "column": 1,
+              "nearX": 0,
+              "hiddenX": [
+                1
+              ],
+              "nearColor": "G",
+              "foilColor": "R"
+            },
+            {
+              "row": 2,
+              "column": 2,
+              "nearX": 0,
+              "hiddenX": [
+                1
+              ],
+              "nearColor": "R",
+              "foilColor": "G"
+            }
+          ]
+        }
+      },
+      "feedback": ""
+    }
+  ],
+  "scope": "Discrete nearest-surface projection or face-mesh depth testing, displayed option uniqueness and exact composite replay.",
+  "commandExitStatus": 0,
+  "binding": "exact",
+  "bindingBasis": "exact candidate and full input fingerprints",
+  "commandEventId": "e000015"
+}

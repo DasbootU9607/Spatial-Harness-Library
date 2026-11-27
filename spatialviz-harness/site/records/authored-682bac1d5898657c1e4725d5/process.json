@@ -1,0 +1,1708 @@
+{
+  "schemaVersion": 1,
+  "manifest": {
+    "sealed": true,
+    "id": "build-f40057c0-8d08-4213-8581-78a1d42fa777",
+    "title": "2d-rotation / patterned showcase construction",
+    "runKind": "[private value omitted]",
+    "harness": "spatialviz-harness",
+    "benchmark": null,
+    "category": null,
+    "taskType": null,
+    "skill": {
+      "id": "spatialviz-2d-rotation",
+      "sha256": "027c2d85bb420c0ad01b25d6bf7fb1e290c3d8305b3871e04fcbcff43f59e5f4"
+    },
+    "status": "accepted",
+    "finalCandidateId": "v002",
+    "limitations": [
+      "Only recorder-mediated deliveries, commands and saved boundaries are observed; direct function calls, unwrapped commands and unsaved editor states are excluded.",
+      "Design notes are explicit author annotations, not internal reasoning."
+    ],
+    "captureGaps": []
+  },
+  "events": [
+    {
+      "id": "e000001",
+      "seq": 1,
+      "runId": "build-f40057c0-8d08-4213-8581-78a1d42fa777",
+      "type": "run.created",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": null,
+      "details": {},
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000002",
+      "seq": 2,
+      "runId": "build-f40057c0-8d08-4213-8581-78a1d42fa777",
+      "type": "collector.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": null,
+      "details": {},
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000003",
+      "seq": 3,
+      "runId": "build-f40057c0-8d08-4213-8581-78a1d42fa777",
+      "type": "skill.attached",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": null,
+      "details": {
+        "sha256": "027c2d85bb420c0ad01b25d6bf7fb1e290c3d8305b3871e04fcbcff43f59e5f4",
+        "skill": "spatialviz-2d-rotation"
+      },
+      "evidenceRefs": [
+        {
+          "id": "e9907a65488da390",
+          "sha256": "027c2d85bb420c0ad01b25d6bf7fb1e290c3d8305b3871e04fcbcff43f59e5f4",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000004",
+      "seq": 4,
+      "runId": "build-f40057c0-8d08-4213-8581-78a1d42fa777",
+      "type": "choice.selected",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": null,
+      "details": {
+        "eligible": [
+          "colored",
+          "patterned",
+          "geometric"
+        ],
+        "selection": "patterned",
+        "selectionMode": "specified"
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000005",
+      "seq": 5,
+      "runId": "build-f40057c0-8d08-4213-8581-78a1d42fa777",
+      "type": "resource.read",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "4da9e5df-2de8-42ce-a71f-373fae0871d4",
+      "candidateId": null,
+      "details": {
+        "delivery": "author",
+        "outcome": "delivered",
+        "label": "patterns.json",
+        "start": 21,
+        "end": 38,
+        "sha256": "6cf17c07135f0c5e452a3226005193625b0b5c205e14f31f3d6809b99503f2be",
+        "sourceSha256": "82c2aacdae45a584c6db9467d3ce0a806d69f6e311913ab270a5fbb855725699"
+      },
+      "evidenceRefs": [
+        {
+          "id": "40fea55e8c325d3a",
+          "sha256": "6cf17c07135f0c5e452a3226005193625b0b5c205e14f31f3d6809b99503f2be",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000006",
+      "seq": 6,
+      "runId": "build-f40057c0-8d08-4213-8581-78a1d42fa777",
+      "type": "reference.delivered",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": null,
+      "details": {
+        "sourceId": "MentalRotation/2DRotation/Level1/1-2-3",
+        "label": "Official question, choices, answer and explanation",
+        "sha256": "44d2d92fb096953f2c03f7ffa00d71ae65e9341d2359fd345e1bfeb837f491dc"
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000007",
+      "seq": 7,
+      "runId": "build-f40057c0-8d08-4213-8581-78a1d42fa777",
+      "type": "reference.viewed",
+      "actor": "author",
+      "origin": "agent_statement",
+      "actionId": null,
+      "candidateId": null,
+      "details": {
+        "sourceId": "MentalRotation/2DRotation/Level1/1-2-3",
+        "observation": "The source upper-left pair is horizontal; C keeps that cell and turns the pair vertical.",
+        "sourceSha256": "f6b2ecbc760525bb109103058156e66cbb1b44b2e560550b210ec8526c86930a"
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000008",
+      "seq": 8,
+      "runId": "build-f40057c0-8d08-4213-8581-78a1d42fa777",
+      "type": "design.note",
+      "actor": "author",
+      "origin": "agent_statement",
+      "actionId": null,
+      "candidateId": null,
+      "details": {
+        "design": {
+          "inference": "Decide whether pip rows travel and turn with their cells.",
+          "condition": "Several directional tiles share counts with their locally reoriented copies.",
+          "foil": "Keeping the right counts while rotating individual groups separately looks nearly legal.",
+          "evidence": "Ignore pip axes and require at least two matches, then restore axes to isolate one.",
+          "target": "motif-orientation",
+          "sourceIds": [
+            "MentalRotation/2DRotation/Level1/1-2-3"
+          ]
+        },
+        "goal": "Decide whether pip rows travel and turn with their cells.",
+        "change": "Keeping the right counts while rotating individual groups separately looks nearly legal.",
+        "reason": "Several directional tiles share counts with their locally reoriented copies.",
+        "expectedChecks": [
+          "Ignore pip axes and require at least two matches, then restore axes to isolate one."
+        ]
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000009",
+      "seq": 9,
+      "runId": "build-f40057c0-8d08-4213-8581-78a1d42fa777",
+      "type": "command.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "39219e56-db3d-495c-88cb-82ad43a9b386",
+      "candidateId": null,
+      "details": {
+        "label": "python",
+        "kind": "official-freecad-generation"
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000010",
+      "seq": 10,
+      "runId": "build-f40057c0-8d08-4213-8581-78a1d42fa777",
+      "type": "command.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "39219e56-db3d-495c-88cb-82ad43a9b386",
+      "candidateId": null,
+      "details": {
+        "commandEventId": "e000009",
+        "kind": "official-freecad-generation",
+        "exitCode": 0,
+        "signal": null
+      },
+      "evidenceRefs": [
+        {
+          "id": "4c4f0b37bcdef3e4",
+          "sha256": "f4894ca7b543b8cbff9b8e0968bca1eaa00e96f0066be9d62e4346105d1daca6",
+          "availability": "local evidence; hash published"
+        },
+        {
+          "id": "b7e59d15e40a565a",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000011",
+      "seq": 11,
+      "runId": "build-f40057c0-8d08-4213-8581-78a1d42fa777",
+      "type": "design.note",
+      "actor": "author",
+      "origin": "agent_statement",
+      "actionId": null,
+      "candidateId": null,
+      "details": {
+        "goal": "Accept an official single-view rotation question",
+        "sources": null,
+        "change": "Ran the official FreeCAD application and generate_data dispatch with recorded source patches.",
+        "reason": "First construction passed independent checks.",
+        "expectedChecks": "Independent geometry, source-to-image correspondence, exact composition and separate visual review."
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000012",
+      "seq": 12,
+      "runId": "build-f40057c0-8d08-4213-8581-78a1d42fa777",
+      "type": "candidate.saved",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "41708471-5313-4ce1-9624-c1fffd251c85",
+      "candidateId": "v001",
+      "details": {
+        "designId": "e000008",
+        "sha256": "8101c4f03be3e4114cca2335dce08f86b780e20b9d9931dea2ec65970946bfeb",
+        "parentId": null,
+        "parentBasis": null,
+        "changes": [
+          "specification",
+          "geometry",
+          "question",
+          "options",
+          "answer",
+          "contract",
+          "rendering",
+          "generator"
+        ],
+        "fingerprints": {
+          "specification": "8101c4f03be3e4114cca2335dce08f86b780e20b9d9931dea2ec65970946bfeb",
+          "geometry": "94d7cb5f90dbe6a5ef63a22b8d045c5b07c013fb50180bcbf963ea5f4503a8ba",
+          "question": "b56a8cafd9cfbec8237b784847e877aa859b1e676eb3b5250a05177816c6655b",
+          "options": "de4bd5dcebc4e3b8fda824a3ab8668fbfb5bef50a81b88e9071aa2f7f4c35cc0",
+          "answer": "083a9ed136308b1022447636ade63c59859f1ca2c7cb798c39d2dad31fdb9bbd",
+          "contract": "58655f62a41d60bfdccfb2bb87b2b8ed2334e7ce074c54ec4da5f989253d5b4d",
+          "rendering": "d24e883fbf5c79a489d93df9865534ffae39d5c5b47e59cdbc181d6604a970e0",
+          "generator": "3b1c215455cb22b97bb6f66cb951fd2a53af15b82ff173528a6d71ad815510e3"
+        },
+        "previewUnavailable": null
+      },
+      "evidenceRefs": [
+        {
+          "id": "182a3da73c820374",
+          "sha256": "8101c4f03be3e4114cca2335dce08f86b780e20b9d9931dea2ec65970946bfeb",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000013",
+      "seq": 13,
+      "runId": "build-f40057c0-8d08-4213-8581-78a1d42fa777",
+      "type": "build.saved",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "41708471-5313-4ce1-9624-c1fffd251c85",
+      "candidateId": "v001",
+      "details": {},
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000014",
+      "seq": 14,
+      "runId": "build-f40057c0-8d08-4213-8581-78a1d42fa777",
+      "type": "render.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "72fc5d4f-ba2a-4c7b-990d-0e08c3d6c71d",
+      "candidateId": "v001",
+      "details": {
+        "renderer": {
+          "id": "spatialviz-official-2d-rotation",
+          "revision": "03b667ab694b02be287db8e69bc74ff9ca5a4f54f3c1b754e686e1e3c1f53fcf"
+        }
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000015",
+      "seq": 15,
+      "runId": "build-f40057c0-8d08-4213-8581-78a1d42fa777",
+      "type": "render.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "72fc5d4f-ba2a-4c7b-990d-0e08c3d6c71d",
+      "candidateId": "v001",
+      "details": {
+        "sha256": "683b4047f3931f89b02232cf3e908574bc26994e83cd82c32179e65a304c0bdc",
+        "renderer": {
+          "id": "spatialviz-official-2d-rotation",
+          "revision": "03b667ab694b02be287db8e69bc74ff9ca5a4f54f3c1b754e686e1e3c1f53fcf"
+        },
+        "specification": "8101c4f03be3e4114cca2335dce08f86b780e20b9d9931dea2ec65970946bfeb",
+        "rendering": "d24e883fbf5c79a489d93df9865534ffae39d5c5b47e59cdbc181d6604a970e0"
+      },
+      "evidenceRefs": [
+        {
+          "id": "c82795f920c1a4f6",
+          "sha256": "683b4047f3931f89b02232cf3e908574bc26994e83cd82c32179e65a304c0bdc",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000016",
+      "seq": 16,
+      "runId": "build-f40057c0-8d08-4213-8581-78a1d42fa777",
+      "type": "command.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "44b87f99-91fe-4a55-bfe5-2fbf049441ea",
+      "candidateId": "v001",
+      "details": {
+        "label": "node.exe",
+        "kind": "verification"
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000017",
+      "seq": 17,
+      "runId": "build-f40057c0-8d08-4213-8581-78a1d42fa777",
+      "type": "command.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "44b87f99-91fe-4a55-bfe5-2fbf049441ea",
+      "candidateId": "v001",
+      "details": {
+        "commandEventId": "e000016",
+        "kind": "verification",
+        "exitCode": 0,
+        "signal": null
+      },
+      "evidenceRefs": [
+        {
+          "id": "80cb8cba73c96380",
+          "sha256": "55799c066671a9e31c36c0d50fbd3ac516089ecc57b9c0a42e0da79e36fd42a6",
+          "availability": "local evidence; hash published"
+        },
+        {
+          "id": "6da443ea4e31f1f5",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000018",
+      "seq": 18,
+      "runId": "build-f40057c0-8d08-4213-8581-78a1d42fa777",
+      "type": "test.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "44b87f99-91fe-4a55-bfe5-2fbf049441ea",
+      "candidateId": "v001",
+      "details": {
+        "commandEventId": "e000016",
+        "completedEventId": "e000017",
+        "verdict": "failed",
+        "status": "failed",
+        "checks": [
+          {
+            "name": "Supported dimensionality and polarity",
+            "verdict": "passed"
+          },
+          {
+            "name": "Original and A-C in final compositor order",
+            "verdict": "passed"
+          },
+          {
+            "name": "Official annotation has A-C plus requested text D",
+            "verdict": "passed"
+          },
+          {
+            "name": "Exact supported question and single-view contract",
+            "verdict": "passed"
+          },
+          {
+            "name": "Official dispatch wording agrees with the delivered question",
+            "verdict": "passed"
+          },
+          {
+            "name": "Pinned official source and actual FreeCAD version are recorded",
+            "verdict": "passed"
+          },
+          {
+            "name": "Model, utilities and official dispatch adaptation receipts",
+            "verdict": "passed"
+          },
+          {
+            "name": "Question wording agrees with polarity",
+            "verdict": "passed"
+          },
+          {
+            "name": "Valid decorated grids or unique face-connected unit cubes",
+            "verdict": "passed"
+          },
+          {
+            "name": "Requested grid dimensions match rendered original",
+            "verdict": "passed"
+          },
+          {
+            "name": "Requested motif family matches actual geometry",
+            "verdict": "passed"
+          },
+          {
+            "name": "Requested per-cell motifs match actual rendered geometry",
+            "verdict": "passed"
+          },
+          {
+            "name": "Independent rotation group yields exactly one A-C answer",
+            "verdict": "passed",
+            "detail": "[0]"
+          },
+          {
+            "name": "Official output label agrees with independent answer",
+            "verdict": "passed"
+          },
+          {
+            "name": "Final answer and all explanations are independently reproducible",
+            "verdict": "passed"
+          },
+          {
+            "name": "No duplicate displayed structural options",
+            "verdict": "passed"
+          },
+          {
+            "name": "Original supported settled orthographic camera",
+            "verdict": "passed"
+          },
+          {
+            "name": "Original only traced official image operations",
+            "verdict": "passed"
+          },
+          {
+            "name": "Original structure follows actual image transforms",
+            "verdict": "passed"
+          },
+          {
+            "name": "Original pixels exactly replay official crop/rotation/reflection",
+            "verdict": "passed"
+          },
+          {
+            "name": "A supported settled orthographic camera",
+            "verdict": "passed"
+          },
+          {
+            "name": "A only traced official image operations",
+            "verdict": "passed"
+          },
+          {
+            "name": "A structure follows actual image transforms",
+            "verdict": "passed"
+          },
+          {
+            "name": "A pixels exactly replay official crop/rotation/reflection",
+            "verdict": "passed"
+          },
+          {
+            "name": "B supported settled orthographic camera",
+            "verdict": "passed"
+          },
+          {
+            "name": "B only traced official image operations",
+            "verdict": "passed"
+          },
+          {
+            "name": "B structure follows actual image transforms",
+            "verdict": "passed"
+          },
+          {
+            "name": "B pixels exactly replay official crop/rotation/reflection",
+            "verdict": "passed"
+          },
+          {
+            "name": "C supported settled orthographic camera",
+            "verdict": "passed"
+          },
+          {
+            "name": "C only traced official image operations",
+            "verdict": "passed"
+          },
+          {
+            "name": "C structure follows actual image transforms",
+            "verdict": "passed"
+          },
+          {
+            "name": "C pixels exactly replay official crop/rotation/reflection",
+            "verdict": "passed"
+          },
+          {
+            "name": "FreeCAD model-to-pixel correspondence: grid_bottom_right.png",
+            "verdict": "passed",
+            "detail": "{'passed': True, 'errors': [], 'minimumCellPixels': 222.79303670952237, 'uniformBackgroundChecked': True, 'backgroundColors': [[173.0, 181.0, 189.0], [173.0, 181.0, 189.0], [173.0, 181.0, 189.0], [173.0, 181.0, 189.0], [173.0, 181.0, 189.0], [173.0, 181.0, 189.0], [173.0, 181.0, 189.0], [173.0, 181.0, 189.0], [173.0, 181.0, 189.0]]}"
+          },
+          {
+            "name": "A-C panels have distinct pixel arrays",
+            "verdict": "passed"
+          },
+          {
+            "name": "Final PNG exactly matches independent reconstruction of official layout and labels",
+            "verdict": "passed"
+          },
+          {
+            "name": "Delivered labels, structure and final rendering agree",
+            "verdict": "passed"
+          },
+          {
+            "name": "Exact current official adapter revision and dimension",
+            "verdict": "passed"
+          },
+          {
+            "name": "Declared reasoning: motif-orientation",
+            "designId": "e000008",
+            "verdict": "failed",
+            "evidence": {
+              "fullMatches": [
+                "A"
+              ],
+              "ignoringMotifOrientation": [
+                "A"
+              ],
+              "cornerAndSizeOnly": [
+                "A",
+                "B",
+                "C"
+              ],
+              "orientationDifferences": {}
+            },
+            "feedback": "The corner and size admit A, B, C, but the motif identities or positions finish the selection. Keep the grid and corner. Build one foil with the same motif in each cell and turn an asymmetric dot or line pattern; a circle's turn leaves no visible error."
+          }
+        ],
+        "scope": "Independent four/24-rotation geometry, label/polarity uniqueness, connectivity, FreeCAD geometry-to-pixel correspondence, exact image-operation and compositor replay, full-face visibility and visible non-equivalence. Human visual review is additionally required; no universal single-view reconstruction or difficulty claim.",
+        "binding": "exact",
+        "bindingBasis": "exact candidate and full input fingerprints",
+        "testedFingerprints": {
+          "specification": "8101c4f03be3e4114cca2335dce08f86b780e20b9d9931dea2ec65970946bfeb",
+          "geometry": "94d7cb5f90dbe6a5ef63a22b8d045c5b07c013fb50180bcbf963ea5f4503a8ba",
+          "question": "b56a8cafd9cfbec8237b784847e877aa859b1e676eb3b5250a05177816c6655b",
+          "options": "de4bd5dcebc4e3b8fda824a3ab8668fbfb5bef50a81b88e9071aa2f7f4c35cc0",
+          "answer": "083a9ed136308b1022447636ade63c59859f1ca2c7cb798c39d2dad31fdb9bbd",
+          "contract": "58655f62a41d60bfdccfb2bb87b2b8ed2334e7ce074c54ec4da5f989253d5b4d",
+          "rendering": "d24e883fbf5c79a489d93df9865534ffae39d5c5b47e59cdbc181d6604a970e0",
+          "generator": "3b1c215455cb22b97bb6f66cb951fd2a53af15b82ff173528a6d71ad815510e3"
+        },
+        "verifier": {
+          "id": "spatialviz-official-2d-rotation",
+          "revision": "03b667ab694b02be287db8e69bc74ff9ca5a4f54f3c1b754e686e1e3c1f53fcf"
+        },
+        "reportSha256": "36f6774e2817314f3a0827b54b353aa27119bd6c99a9a86a8205ac06866080e3"
+      },
+      "evidenceRefs": [
+        {
+          "id": "5627fa0995e1ee1b",
+          "sha256": "36f6774e2817314f3a0827b54b353aa27119bd6c99a9a86a8205ac06866080e3",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000019",
+      "seq": 19,
+      "runId": "build-f40057c0-8d08-4213-8581-78a1d42fa777",
+      "type": "design.note",
+      "actor": "author",
+      "origin": "agent_statement",
+      "actionId": null,
+      "candidateId": "v001",
+      "details": {
+        "design": {
+          "inference": "Decide whether pip rows travel and turn with their cells.",
+          "condition": "Several directional tiles share counts with their locally reoriented copies.",
+          "foil": "Keeping the right counts while rotating individual groups separately looks nearly legal.",
+          "evidence": "Ignore pip axes and require at least two matches, then restore axes to isolate one.",
+          "target": "motif-orientation",
+          "sourceIds": [
+            "MentalRotation/2DRotation/Level1/1-2-3"
+          ]
+        },
+        "goal": "Decide whether pip rows travel and turn with their cells.",
+        "change": "Keeping the right counts while rotating individual groups separately looks nearly legal.",
+        "reason": "Several directional tiles share counts with their locally reoriented copies.",
+        "expectedChecks": [
+          "Ignore pip axes and require at least two matches, then restore axes to isolate one."
+        ]
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000020",
+      "seq": 20,
+      "runId": "build-f40057c0-8d08-4213-8581-78a1d42fa777",
+      "type": "command.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "9592cf91-2c5c-4df7-8a40-db54c6c1027d",
+      "candidateId": null,
+      "details": {
+        "label": "python",
+        "kind": "Recompose the retained native render with an orientation foil"
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000021",
+      "seq": 21,
+      "runId": "build-f40057c0-8d08-4213-8581-78a1d42fa777",
+      "type": "command.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "9592cf91-2c5c-4df7-8a40-db54c6c1027d",
+      "candidateId": null,
+      "details": {
+        "commandEventId": "e000020",
+        "kind": "Recompose the retained native render with an orientation foil",
+        "exitCode": 1,
+        "signal": null
+      },
+      "evidenceRefs": [
+        {
+          "id": "5d4e8860ae1bc400",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "availability": "local evidence; hash published"
+        },
+        {
+          "id": "bec6c4fe6196a88d",
+          "sha256": "72c8e27be8661e520fd5ba34d76126b19c3b032d2f094ef9f10c7586824744c1",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000022",
+      "seq": 22,
+      "runId": "build-f40057c0-8d08-4213-8581-78a1d42fa777",
+      "type": "design.note",
+      "actor": "author",
+      "origin": "agent_statement",
+      "actionId": null,
+      "candidateId": "v001",
+      "details": {
+        "design": {
+          "inference": "Decide whether pip rows travel and turn with their cells.",
+          "condition": "Several directional tiles share counts with their locally reoriented copies.",
+          "foil": "Keeping the right counts while rotating individual groups separately looks nearly legal.",
+          "evidence": "Ignore pip axes and require at least two matches, then restore axes to isolate one.",
+          "target": "motif-orientation",
+          "sourceIds": [
+            "MentalRotation/2DRotation/Level1/1-2-3"
+          ]
+        },
+        "goal": "Decide whether pip rows travel and turn with their cells.",
+        "change": "Keeping the right counts while rotating individual groups separately looks nearly legal.",
+        "reason": "Several directional tiles share counts with their locally reoriented copies.",
+        "expectedChecks": [
+          "Ignore pip axes and require at least two matches, then restore axes to isolate one."
+        ]
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000023",
+      "seq": 23,
+      "runId": "build-f40057c0-8d08-4213-8581-78a1d42fa777",
+      "type": "command.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "44551d34-d4d1-4a68-b7f4-582492dae001",
+      "candidateId": null,
+      "details": {
+        "label": "python",
+        "kind": "Recompose the retained native render with an orientation foil"
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000024",
+      "seq": 24,
+      "runId": "build-f40057c0-8d08-4213-8581-78a1d42fa777",
+      "type": "command.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "44551d34-d4d1-4a68-b7f4-582492dae001",
+      "candidateId": null,
+      "details": {
+        "commandEventId": "e000023",
+        "kind": "Recompose the retained native render with an orientation foil",
+        "exitCode": 0,
+        "signal": null
+      },
+      "evidenceRefs": [
+        {
+          "id": "f4fa9edc84b80be9",
+          "sha256": "5756f968a703d0044d30b3ef512690ad528b0015a29c49d498fb56ee4debcf14",
+          "availability": "local evidence; hash published"
+        },
+        {
+          "id": "864f20fa8e325647",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000025",
+      "seq": 25,
+      "runId": "build-f40057c0-8d08-4213-8581-78a1d42fa777",
+      "type": "candidate.saved",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "81aa93f7-88a7-46bf-9d74-eba2a509f6f2",
+      "candidateId": "v002",
+      "details": {
+        "designId": "e000022",
+        "sha256": "682bac1d5898657c1e4725d5c2bdf4974cfa239a7a85481ebfb3673d23e78add",
+        "parentId": "v001",
+        "parentBasis": "Retain the nine original CAD cells. Replace the position-error foil with an in-cell pip rotation using the official compositor.",
+        "changes": [
+          "specification",
+          "options",
+          "answer",
+          "rendering",
+          "generator"
+        ],
+        "fingerprints": {
+          "specification": "682bac1d5898657c1e4725d5c2bdf4974cfa239a7a85481ebfb3673d23e78add",
+          "geometry": "94d7cb5f90dbe6a5ef63a22b8d045c5b07c013fb50180bcbf963ea5f4503a8ba",
+          "question": "b56a8cafd9cfbec8237b784847e877aa859b1e676eb3b5250a05177816c6655b",
+          "options": "080b0dad928cf8374d3ac6c2b9d67e515b9b0ee921f101761795d2fe50a7dde7",
+          "answer": "a4014a05326dc39c05c16b46f7a0f22ef85b1da9e879c45ac22785bb593f103e",
+          "contract": "58655f62a41d60bfdccfb2bb87b2b8ed2334e7ce074c54ec4da5f989253d5b4d",
+          "rendering": "77e11ad3733e118f52a4987daff7e41da81a8f8be6dbdeb8577b2dca5f890017",
+          "generator": "15ad188cde88034468de5f58d61f677cec3f64b736b51a998f3caff4ab6a2b14"
+        },
+        "previewUnavailable": null
+      },
+      "evidenceRefs": [
+        {
+          "id": "4506f00385b6f103",
+          "sha256": "682bac1d5898657c1e4725d5c2bdf4974cfa239a7a85481ebfb3673d23e78add",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000026",
+      "seq": 26,
+      "runId": "build-f40057c0-8d08-4213-8581-78a1d42fa777",
+      "type": "build.saved",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "81aa93f7-88a7-46bf-9d74-eba2a509f6f2",
+      "candidateId": "v002",
+      "details": {},
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000027",
+      "seq": 27,
+      "runId": "build-f40057c0-8d08-4213-8581-78a1d42fa777",
+      "type": "render.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "77ad810d-df6b-41eb-b7b3-0388a2a64e8c",
+      "candidateId": "v002",
+      "details": {
+        "renderer": {
+          "id": "spatialviz-official-2d-rotation",
+          "revision": "03b667ab694b02be287db8e69bc74ff9ca5a4f54f3c1b754e686e1e3c1f53fcf"
+        }
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000028",
+      "seq": 28,
+      "runId": "build-f40057c0-8d08-4213-8581-78a1d42fa777",
+      "type": "render.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "77ad810d-df6b-41eb-b7b3-0388a2a64e8c",
+      "candidateId": "v002",
+      "details": {
+        "sha256": "8c469f32982f8c8142343ed1306259b4343e223c6907230d30068b66f9fc813c",
+        "renderer": {
+          "id": "spatialviz-official-2d-rotation",
+          "revision": "03b667ab694b02be287db8e69bc74ff9ca5a4f54f3c1b754e686e1e3c1f53fcf"
+        },
+        "specification": "682bac1d5898657c1e4725d5c2bdf4974cfa239a7a85481ebfb3673d23e78add",
+        "rendering": "77e11ad3733e118f52a4987daff7e41da81a8f8be6dbdeb8577b2dca5f890017"
+      },
+      "evidenceRefs": [
+        {
+          "id": "b6d4173b371d12bb",
+          "sha256": "8c469f32982f8c8142343ed1306259b4343e223c6907230d30068b66f9fc813c",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000029",
+      "seq": 29,
+      "runId": "build-f40057c0-8d08-4213-8581-78a1d42fa777",
+      "type": "report.previous",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "f3730dce-a6a0-4a9f-914d-82bf983e9081",
+      "candidateId": null,
+      "details": {
+        "sha256": "36f6774e2817314f3a0827b54b353aa27119bd6c99a9a86a8205ac06866080e3"
+      },
+      "evidenceRefs": [
+        {
+          "id": "9e276a19f392bdbf",
+          "sha256": "36f6774e2817314f3a0827b54b353aa27119bd6c99a9a86a8205ac06866080e3",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000030",
+      "seq": 30,
+      "runId": "build-f40057c0-8d08-4213-8581-78a1d42fa777",
+      "type": "command.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "f3730dce-a6a0-4a9f-914d-82bf983e9081",
+      "candidateId": "v002",
+      "details": {
+        "label": "node.exe",
+        "kind": "verification"
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000031",
+      "seq": 31,
+      "runId": "build-f40057c0-8d08-4213-8581-78a1d42fa777",
+      "type": "command.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "f3730dce-a6a0-4a9f-914d-82bf983e9081",
+      "candidateId": "v002",
+      "details": {
+        "commandEventId": "e000030",
+        "kind": "verification",
+        "exitCode": 0,
+        "signal": null
+      },
+      "evidenceRefs": [
+        {
+          "id": "c058938d69566080",
+          "sha256": "4c5cac441906c2240264dc77c767194eb8abb808797c539e1a6587fcee400dbf",
+          "availability": "local evidence; hash published"
+        },
+        {
+          "id": "89c5c28314c5d0fa",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000032",
+      "seq": 32,
+      "runId": "build-f40057c0-8d08-4213-8581-78a1d42fa777",
+      "type": "test.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "f3730dce-a6a0-4a9f-914d-82bf983e9081",
+      "candidateId": "v002",
+      "details": {
+        "commandEventId": "e000030",
+        "completedEventId": "e000031",
+        "verdict": "passed",
+        "status": "passed",
+        "checks": [
+          {
+            "name": "Supported dimensionality and polarity",
+            "verdict": "passed"
+          },
+          {
+            "name": "Original and A-C in final compositor order",
+            "verdict": "passed"
+          },
+          {
+            "name": "Official annotation has A-C plus requested text D",
+            "verdict": "passed"
+          },
+          {
+            "name": "Exact supported question and single-view contract",
+            "verdict": "passed"
+          },
+          {
+            "name": "Official dispatch wording agrees with the delivered question",
+            "verdict": "passed"
+          },
+          {
+            "name": "Pinned official source and actual FreeCAD version are recorded",
+            "verdict": "passed"
+          },
+          {
+            "name": "Model, utilities and official dispatch adaptation receipts",
+            "verdict": "passed"
+          },
+          {
+            "name": "Question wording agrees with polarity",
+            "verdict": "passed"
+          },
+          {
+            "name": "Valid decorated grids or unique face-connected unit cubes",
+            "verdict": "passed"
+          },
+          {
+            "name": "Requested grid dimensions match rendered original",
+            "verdict": "passed"
+          },
+          {
+            "name": "Requested motif family matches actual geometry",
+            "verdict": "passed"
+          },
+          {
+            "name": "Requested per-cell motifs match actual rendered geometry",
+            "verdict": "passed"
+          },
+          {
+            "name": "Independent rotation group yields exactly one A-C answer",
+            "verdict": "passed",
+            "detail": "[0]"
+          },
+          {
+            "name": "Official output label agrees with independent answer",
+            "verdict": "passed"
+          },
+          {
+            "name": "Final answer and all explanations are independently reproducible",
+            "verdict": "passed"
+          },
+          {
+            "name": "No duplicate displayed structural options",
+            "verdict": "passed"
+          },
+          {
+            "name": "Original supported settled orthographic camera",
+            "verdict": "passed"
+          },
+          {
+            "name": "Original only traced official image operations",
+            "verdict": "passed"
+          },
+          {
+            "name": "Original structure follows actual image transforms",
+            "verdict": "passed"
+          },
+          {
+            "name": "Original pixels exactly replay official crop/rotation/reflection",
+            "verdict": "passed"
+          },
+          {
+            "name": "A supported settled orthographic camera",
+            "verdict": "passed"
+          },
+          {
+            "name": "A only traced official image operations",
+            "verdict": "passed"
+          },
+          {
+            "name": "A structure follows actual image transforms",
+            "verdict": "passed"
+          },
+          {
+            "name": "A pixels exactly replay official crop/rotation/reflection",
+            "verdict": "passed"
+          },
+          {
+            "name": "B supported settled orthographic camera",
+            "verdict": "passed"
+          },
+          {
+            "name": "B only traced official image operations",
+            "verdict": "passed"
+          },
+          {
+            "name": "B structure follows actual image transforms",
+            "verdict": "passed"
+          },
+          {
+            "name": "B pixels exactly replay official crop/rotation/reflection",
+            "verdict": "passed"
+          },
+          {
+            "name": "C supported settled orthographic camera",
+            "verdict": "passed"
+          },
+          {
+            "name": "C only traced official image operations",
+            "verdict": "passed"
+          },
+          {
+            "name": "C structure follows actual image transforms",
+            "verdict": "passed"
+          },
+          {
+            "name": "C pixels exactly replay official crop/rotation/reflection",
+            "verdict": "passed"
+          },
+          {
+            "name": "FreeCAD model-to-pixel correspondence: grid_bottom_right.png",
+            "verdict": "passed",
+            "detail": "{'passed': True, 'errors': [], 'minimumCellPixels': 222.79303670952237, 'uniformBackgroundChecked': True, 'backgroundColors': [[173.0, 181.0, 189.0], [173.0, 181.0, 189.0], [173.0, 181.0, 189.0], [173.0, 181.0, 189.0], [173.0, 181.0, 189.0], [173.0, 181.0, 189.0], [173.0, 181.0, 189.0], [173.0, 181.0, 189.0], [173.0, 181.0, 189.0]]}"
+          },
+          {
+            "name": "FreeCAD model-to-pixel correspondence: grid_bottom_right_incorrect_transform.png",
+            "verdict": "passed",
+            "detail": "{'passed': True, 'errors': [], 'minimumCellPixels': 222.79303670952237, 'uniformBackgroundChecked': True, 'backgroundColors': [[173.0, 181.0, 189.0], [173.0, 181.0, 189.0], [173.0, 181.0, 189.0], [173.0, 181.0, 189.0], [173.0, 181.0, 189.0], [173.0, 181.0, 189.0], [173.0, 181.0, 189.0], [173.0, 181.0, 189.0], [173.0, 181.0, 189.0]]}"
+          },
+          {
+            "name": "A-C panels have distinct pixel arrays",
+            "verdict": "passed"
+          },
+          {
+            "name": "Final PNG exactly matches independent reconstruction of official layout and labels",
+            "verdict": "passed"
+          },
+          {
+            "name": "Delivered labels, structure and final rendering agree",
+            "verdict": "passed"
+          },
+          {
+            "name": "Exact current official adapter revision and dimension",
+            "verdict": "passed"
+          },
+          {
+            "name": "Declared reasoning: motif-orientation",
+            "designId": "e000022",
+            "verdict": "passed",
+            "evidence": {
+              "fullMatches": [
+                "A"
+              ],
+              "ignoringMotifOrientation": [
+                "A",
+                "B"
+              ],
+              "cornerAndSizeOnly": [
+                "A",
+                "B",
+                "C"
+              ],
+              "orientationDifferences": {
+                "B": [
+                  [
+                    1,
+                    1
+                  ],
+                  [
+                    2,
+                    1
+                  ],
+                  [
+                    2,
+                    3
+                  ]
+                ]
+              }
+            },
+            "feedback": ""
+          }
+        ],
+        "scope": "Independent four/24-rotation geometry, label/polarity uniqueness, connectivity, FreeCAD geometry-to-pixel correspondence, exact image-operation and compositor replay, full-face visibility and visible non-equivalence. Human visual review is additionally required; no universal single-view reconstruction or difficulty claim.",
+        "binding": "exact",
+        "bindingBasis": "exact candidate and full input fingerprints",
+        "testedFingerprints": {
+          "specification": "682bac1d5898657c1e4725d5c2bdf4974cfa239a7a85481ebfb3673d23e78add",
+          "geometry": "94d7cb5f90dbe6a5ef63a22b8d045c5b07c013fb50180bcbf963ea5f4503a8ba",
+          "question": "b56a8cafd9cfbec8237b784847e877aa859b1e676eb3b5250a05177816c6655b",
+          "options": "080b0dad928cf8374d3ac6c2b9d67e515b9b0ee921f101761795d2fe50a7dde7",
+          "answer": "a4014a05326dc39c05c16b46f7a0f22ef85b1da9e879c45ac22785bb593f103e",
+          "contract": "58655f62a41d60bfdccfb2bb87b2b8ed2334e7ce074c54ec4da5f989253d5b4d",
+          "rendering": "77e11ad3733e118f52a4987daff7e41da81a8f8be6dbdeb8577b2dca5f890017",
+          "generator": "15ad188cde88034468de5f58d61f677cec3f64b736b51a998f3caff4ab6a2b14"
+        },
+        "verifier": {
+          "id": "spatialviz-official-2d-rotation",
+          "revision": "03b667ab694b02be287db8e69bc74ff9ca5a4f54f3c1b754e686e1e3c1f53fcf"
+        },
+        "reportSha256": "08cdc565a1058619862579d16ce2302ef42c2db121c7267fd1596475b6a2e2f4"
+      },
+      "evidenceRefs": [
+        {
+          "id": "0ce6e6e426d687a4",
+          "sha256": "08cdc565a1058619862579d16ce2302ef42c2db121c7267fd1596475b6a2e2f4",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000033",
+      "seq": 33,
+      "runId": "build-f40057c0-8d08-4213-8581-78a1d42fa777",
+      "type": "visual.review",
+      "actor": "author",
+      "origin": "agent_statement",
+      "actionId": null,
+      "candidateId": "v002",
+      "details": {
+        "outcome": "passed",
+        "review": "The pip groups and red corner are visible at normal resolution. Two alignments survive a count-only comparison. Following the direction of the asymmetric pip pairs selects A."
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000034",
+      "seq": 34,
+      "runId": "build-f40057c0-8d08-4213-8581-78a1d42fa777",
+      "type": "run.finished",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": "v002",
+      "details": {
+        "outcome": "accepted",
+        "finalCandidateId": "v002"
+      },
+      "evidenceRefs": []
+    }
+  ],
+  "candidates": [
+    {
+      "id": "v001",
+      "designId": "e000008",
+      "parentId": null,
+      "parentBasis": null,
+      "sha256": "8101c4f03be3e4114cca2335dce08f86b780e20b9d9931dea2ec65970946bfeb",
+      "fingerprints": {
+        "specification": "8101c4f03be3e4114cca2335dce08f86b780e20b9d9931dea2ec65970946bfeb",
+        "geometry": "94d7cb5f90dbe6a5ef63a22b8d045c5b07c013fb50180bcbf963ea5f4503a8ba",
+        "question": "b56a8cafd9cfbec8237b784847e877aa859b1e676eb3b5250a05177816c6655b",
+        "options": "de4bd5dcebc4e3b8fda824a3ab8668fbfb5bef50a81b88e9071aa2f7f4c35cc0",
+        "answer": "083a9ed136308b1022447636ade63c59859f1ca2c7cb798c39d2dad31fdb9bbd",
+        "contract": "58655f62a41d60bfdccfb2bb87b2b8ed2334e7ce074c54ec4da5f989253d5b4d",
+        "rendering": "d24e883fbf5c79a489d93df9865534ffae39d5c5b47e59cdbc181d6604a970e0",
+        "generator": "3b1c215455cb22b97bb6f66cb951fd2a53af15b82ff173528a6d71ad815510e3"
+      },
+      "previewUnavailable": null,
+      "changes": [
+        "specification",
+        "geometry",
+        "question",
+        "options",
+        "answer",
+        "contract",
+        "rendering",
+        "generator"
+      ],
+      "preview": {
+        "candidateId": "v001",
+        "specification": "8101c4f03be3e4114cca2335dce08f86b780e20b9d9931dea2ec65970946bfeb",
+        "rendering": "d24e883fbf5c79a489d93df9865534ffae39d5c5b47e59cdbc181d6604a970e0",
+        "renderer": {
+          "id": "spatialviz-official-2d-rotation",
+          "revision": "03b667ab694b02be287db8e69bc74ff9ca5a4f54f3c1b754e686e1e3c1f53fcf"
+        },
+        "sha256": "683b4047f3931f89b02232cf3e908574bc26994e83cd82c32179e65a304c0bdc",
+        "path": "records/authored-682bac1d5898657c1e4725d5/v001-683b4047f3931f89.png",
+        "origin": "recorded-render"
+      }
+    },
+    {
+      "id": "v002",
+      "designId": "e000022",
+      "parentId": "v001",
+      "parentBasis": "Retain the nine original CAD cells. Replace the position-error foil with an in-cell pip rotation using the official compositor.",
+      "sha256": "682bac1d5898657c1e4725d5c2bdf4974cfa239a7a85481ebfb3673d23e78add",
+      "fingerprints": {
+        "specification": "682bac1d5898657c1e4725d5c2bdf4974cfa239a7a85481ebfb3673d23e78add",
+        "geometry": "94d7cb5f90dbe6a5ef63a22b8d045c5b07c013fb50180bcbf963ea5f4503a8ba",
+        "question": "b56a8cafd9cfbec8237b784847e877aa859b1e676eb3b5250a05177816c6655b",
+        "options": "080b0dad928cf8374d3ac6c2b9d67e515b9b0ee921f101761795d2fe50a7dde7",
+        "answer": "a4014a05326dc39c05c16b46f7a0f22ef85b1da9e879c45ac22785bb593f103e",
+        "contract": "58655f62a41d60bfdccfb2bb87b2b8ed2334e7ce074c54ec4da5f989253d5b4d",
+        "rendering": "77e11ad3733e118f52a4987daff7e41da81a8f8be6dbdeb8577b2dca5f890017",
+        "generator": "15ad188cde88034468de5f58d61f677cec3f64b736b51a998f3caff4ab6a2b14"
+      },
+      "previewUnavailable": null,
+      "changes": [
+        "specification",
+        "options",
+        "answer",
+        "rendering",
+        "generator"
+      ],
+      "preview": {
+        "candidateId": "v002",
+        "specification": "682bac1d5898657c1e4725d5c2bdf4974cfa239a7a85481ebfb3673d23e78add",
+        "rendering": "77e11ad3733e118f52a4987daff7e41da81a8f8be6dbdeb8577b2dca5f890017",
+        "renderer": {
+          "id": "spatialviz-official-2d-rotation",
+          "revision": "03b667ab694b02be287db8e69bc74ff9ca5a4f54f3c1b754e686e1e3c1f53fcf"
+        },
+        "sha256": "8c469f32982f8c8142343ed1306259b4343e223c6907230d30068b66f9fc813c",
+        "path": "records/authored-682bac1d5898657c1e4725d5/v002-8c469f32982f8c81.png",
+        "origin": "recorded-render"
+      }
+    }
+  ],
+  "tests": [
+    {
+      "id": "t001",
+      "actionId": "44b87f99-91fe-4a55-bfe5-2fbf049441ea",
+      "candidateId": "v001",
+      "testedFingerprints": {
+        "specification": "8101c4f03be3e4114cca2335dce08f86b780e20b9d9931dea2ec65970946bfeb",
+        "geometry": "94d7cb5f90dbe6a5ef63a22b8d045c5b07c013fb50180bcbf963ea5f4503a8ba",
+        "question": "b56a8cafd9cfbec8237b784847e877aa859b1e676eb3b5250a05177816c6655b",
+        "options": "de4bd5dcebc4e3b8fda824a3ab8668fbfb5bef50a81b88e9071aa2f7f4c35cc0",
+        "answer": "083a9ed136308b1022447636ade63c59859f1ca2c7cb798c39d2dad31fdb9bbd",
+        "contract": "58655f62a41d60bfdccfb2bb87b2b8ed2334e7ce074c54ec4da5f989253d5b4d",
+        "rendering": "d24e883fbf5c79a489d93df9865534ffae39d5c5b47e59cdbc181d6604a970e0",
+        "generator": "3b1c215455cb22b97bb6f66cb951fd2a53af15b82ff173528a6d71ad815510e3"
+      },
+      "verifier": {
+        "id": "spatialviz-official-2d-rotation",
+        "revision": "03b667ab694b02be287db8e69bc74ff9ca5a4f54f3c1b754e686e1e3c1f53fcf"
+      },
+      "reportSha256": "36f6774e2817314f3a0827b54b353aa27119bd6c99a9a86a8205ac06866080e3",
+      "verdict": "failed",
+      "status": "failed",
+      "checks": [
+        {
+          "name": "Supported dimensionality and polarity",
+          "verdict": "passed"
+        },
+        {
+          "name": "Original and A-C in final compositor order",
+          "verdict": "passed"
+        },
+        {
+          "name": "Official annotation has A-C plus requested text D",
+          "verdict": "passed"
+        },
+        {
+          "name": "Exact supported question and single-view contract",
+          "verdict": "passed"
+        },
+        {
+          "name": "Official dispatch wording agrees with the delivered question",
+          "verdict": "passed"
+        },
+        {
+          "name": "Pinned official source and actual FreeCAD version are recorded",
+          "verdict": "passed"
+        },
+        {
+          "name": "Model, utilities and official dispatch adaptation receipts",
+          "verdict": "passed"
+        },
+        {
+          "name": "Question wording agrees with polarity",
+          "verdict": "passed"
+        },
+        {
+          "name": "Valid decorated grids or unique face-connected unit cubes",
+          "verdict": "passed"
+        },
+        {
+          "name": "Requested grid dimensions match rendered original",
+          "verdict": "passed"
+        },
+        {
+          "name": "Requested motif family matches actual geometry",
+          "verdict": "passed"
+        },
+        {
+          "name": "Requested per-cell motifs match actual rendered geometry",
+          "verdict": "passed"
+        },
+        {
+          "name": "Independent rotation group yields exactly one A-C answer",
+          "verdict": "passed",
+          "detail": "[0]"
+        },
+        {
+          "name": "Official output label agrees with independent answer",
+          "verdict": "passed"
+        },
+        {
+          "name": "Final answer and all explanations are independently reproducible",
+          "verdict": "passed"
+        },
+        {
+          "name": "No duplicate displayed structural options",
+          "verdict": "passed"
+        },
+        {
+          "name": "Original supported settled orthographic camera",
+          "verdict": "passed"
+        },
+        {
+          "name": "Original only traced official image operations",
+          "verdict": "passed"
+        },
+        {
+          "name": "Original structure follows actual image transforms",
+          "verdict": "passed"
+        },
+        {
+          "name": "Original pixels exactly replay official crop/rotation/reflection",
+          "verdict": "passed"
+        },
+        {
+          "name": "A supported settled orthographic camera",
+          "verdict": "passed"
+        },
+        {
+          "name": "A only traced official image operations",
+          "verdict": "passed"
+        },
+        {
+          "name": "A structure follows actual image transforms",
+          "verdict": "passed"
+        },
+        {
+          "name": "A pixels exactly replay official crop/rotation/reflection",
+          "verdict": "passed"
+        },
+        {
+          "name": "B supported settled orthographic camera",
+          "verdict": "passed"
+        },
+        {
+          "name": "B only traced official image operations",
+          "verdict": "passed"
+        },
+        {
+          "name": "B structure follows actual image transforms",
+          "verdict": "passed"
+        },
+        {
+          "name": "B pixels exactly replay official crop/rotation/reflection",
+          "verdict": "passed"
+        },
+        {
+          "name": "C supported settled orthographic camera",
+          "verdict": "passed"
+        },
+        {
+          "name": "C only traced official image operations",
+          "verdict": "passed"
+        },
+        {
+          "name": "C structure follows actual image transforms",
+          "verdict": "passed"
+        },
+        {
+          "name": "C pixels exactly replay official crop/rotation/reflection",
+          "verdict": "passed"
+        },
+        {
+          "name": "FreeCAD model-to-pixel correspondence: grid_bottom_right.png",
+          "verdict": "passed",
+          "detail": "{'passed': True, 'errors': [], 'minimumCellPixels': 222.79303670952237, 'uniformBackgroundChecked': True, 'backgroundColors': [[173.0, 181.0, 189.0], [173.0, 181.0, 189.0], [173.0, 181.0, 189.0], [173.0, 181.0, 189.0], [173.0, 181.0, 189.0], [173.0, 181.0, 189.0], [173.0, 181.0, 189.0], [173.0, 181.0, 189.0], [173.0, 181.0, 189.0]]}"
+        },
+        {
+          "name": "A-C panels have distinct pixel arrays",
+          "verdict": "passed"
+        },
+        {
+          "name": "Final PNG exactly matches independent reconstruction of official layout and labels",
+          "verdict": "passed"
+        },
+        {
+          "name": "Delivered labels, structure and final rendering agree",
+          "verdict": "passed"
+        },
+        {
+          "name": "Exact current official adapter revision and dimension",
+          "verdict": "passed"
+        },
+        {
+          "name": "Declared reasoning: motif-orientation",
+          "designId": "e000008",
+          "verdict": "failed",
+          "evidence": {
+            "fullMatches": [
+              "A"
+            ],
+            "ignoringMotifOrientation": [
+              "A"
+            ],
+            "cornerAndSizeOnly": [
+              "A",
+              "B",
+              "C"
+            ],
+            "orientationDifferences": {}
+          },
+          "feedback": "The corner and size admit A, B, C, but the motif identities or positions finish the selection. Keep the grid and corner. Build one foil with the same motif in each cell and turn an asymmetric dot or line pattern; a circle's turn leaves no visible error."
+        }
+      ],
+      "scope": "Independent four/24-rotation geometry, label/polarity uniqueness, connectivity, FreeCAD geometry-to-pixel correspondence, exact image-operation and compositor replay, full-face visibility and visible non-equivalence. Human visual review is additionally required; no universal single-view reconstruction or difficulty claim.",
+      "commandExitStatus": 0,
+      "binding": "exact",
+      "bindingBasis": "exact candidate and full input fingerprints",
+      "commandEventId": "e000016"
+    },
+    {
+      "id": "t002",
+      "actionId": "f3730dce-a6a0-4a9f-914d-82bf983e9081",
+      "candidateId": "v002",
+      "testedFingerprints": {
+        "specification": "682bac1d5898657c1e4725d5c2bdf4974cfa239a7a85481ebfb3673d23e78add",
+        "geometry": "94d7cb5f90dbe6a5ef63a22b8d045c5b07c013fb50180bcbf963ea5f4503a8ba",
+        "question": "b56a8cafd9cfbec8237b784847e877aa859b1e676eb3b5250a05177816c6655b",
+        "options": "080b0dad928cf8374d3ac6c2b9d67e515b9b0ee921f101761795d2fe50a7dde7",
+        "answer": "a4014a05326dc39c05c16b46f7a0f22ef85b1da9e879c45ac22785bb593f103e",
+        "contract": "58655f62a41d60bfdccfb2bb87b2b8ed2334e7ce074c54ec4da5f989253d5b4d",
+        "rendering": "77e11ad3733e118f52a4987daff7e41da81a8f8be6dbdeb8577b2dca5f890017",
+        "generator": "15ad188cde88034468de5f58d61f677cec3f64b736b51a998f3caff4ab6a2b14"
+      },
+      "verifier": {
+        "id": "spatialviz-official-2d-rotation",
+        "revision": "03b667ab694b02be287db8e69bc74ff9ca5a4f54f3c1b754e686e1e3c1f53fcf"
+      },
+      "reportSha256": "08cdc565a1058619862579d16ce2302ef42c2db121c7267fd1596475b6a2e2f4",
+      "verdict": "passed",
+      "status": "passed",
+      "checks": [
+        {
+          "name": "Supported dimensionality and polarity",
+          "verdict": "passed"
+        },
+        {
+          "name": "Original and A-C in final compositor order",
+          "verdict": "passed"
+        },
+        {
+          "name": "Official annotation has A-C plus requested text D",
+          "verdict": "passed"
+        },
+        {
+          "name": "Exact supported question and single-view contract",
+          "verdict": "passed"
+        },
+        {
+          "name": "Official dispatch wording agrees with the delivered question",
+          "verdict": "passed"
+        },
+        {
+          "name": "Pinned official source and actual FreeCAD version are recorded",
+          "verdict": "passed"
+        },
+        {
+          "name": "Model, utilities and official dispatch adaptation receipts",
+          "verdict": "passed"
+        },
+        {
+          "name": "Question wording agrees with polarity",
+          "verdict": "passed"
+        },
+        {
+          "name": "Valid decorated grids or unique face-connected unit cubes",
+          "verdict": "passed"
+        },
+        {
+          "name": "Requested grid dimensions match rendered original",
+          "verdict": "passed"
+        },
+        {
+          "name": "Requested motif family matches actual geometry",
+          "verdict": "passed"
+        },
+        {
+          "name": "Requested per-cell motifs match actual rendered geometry",
+          "verdict": "passed"
+        },
+        {
+          "name": "Independent rotation group yields exactly one A-C answer",
+          "verdict": "passed",
+          "detail": "[0]"
+        },
+        {
+          "name": "Official output label agrees with independent answer",
+          "verdict": "passed"
+        },
+        {
+          "name": "Final answer and all explanations are independently reproducible",
+          "verdict": "passed"
+        },
+        {
+          "name": "No duplicate displayed structural options",
+          "verdict": "passed"
+        },
+        {
+          "name": "Original supported settled orthographic camera",
+          "verdict": "passed"
+        },
+        {
+          "name": "Original only traced official image operations",
+          "verdict": "passed"
+        },
+        {
+          "name": "Original structure follows actual image transforms",
+          "verdict": "passed"
+        },
+        {
+          "name": "Original pixels exactly replay official crop/rotation/reflection",
+          "verdict": "passed"
+        },
+        {
+          "name": "A supported settled orthographic camera",
+          "verdict": "passed"
+        },
+        {
+          "name": "A only traced official image operations",
+          "verdict": "passed"
+        },
+        {
+          "name": "A structure follows actual image transforms",
+          "verdict": "passed"
+        },
+        {
+          "name": "A pixels exactly replay official crop/rotation/reflection",
+          "verdict": "passed"
+        },
+        {
+          "name": "B supported settled orthographic camera",
+          "verdict": "passed"
+        },
+        {
+          "name": "B only traced official image operations",
+          "verdict": "passed"
+        },
+        {
+          "name": "B structure follows actual image transforms",
+          "verdict": "passed"
+        },
+        {
+          "name": "B pixels exactly replay official crop/rotation/reflection",
+          "verdict": "passed"
+        },
+        {
+          "name": "C supported settled orthographic camera",
+          "verdict": "passed"
+        },
+        {
+          "name": "C only traced official image operations",
+          "verdict": "passed"
+        },
+        {
+          "name": "C structure follows actual image transforms",
+          "verdict": "passed"
+        },
+        {
+          "name": "C pixels exactly replay official crop/rotation/reflection",
+          "verdict": "passed"
+        },
+        {
+          "name": "FreeCAD model-to-pixel correspondence: grid_bottom_right.png",
+          "verdict": "passed",
+          "detail": "{'passed': True, 'errors': [], 'minimumCellPixels': 222.79303670952237, 'uniformBackgroundChecked': True, 'backgroundColors': [[173.0, 181.0, 189.0], [173.0, 181.0, 189.0], [173.0, 181.0, 189.0], [173.0, 181.0, 189.0], [173.0, 181.0, 189.0], [173.0, 181.0, 189.0], [173.0, 181.0, 189.0], [173.0, 181.0, 189.0], [173.0, 181.0, 189.0]]}"
+        },
+        {
+          "name": "FreeCAD model-to-pixel correspondence: grid_bottom_right_incorrect_transform.png",
+          "verdict": "passed",
+          "detail": "{'passed': True, 'errors': [], 'minimumCellPixels': 222.79303670952237, 'uniformBackgroundChecked': True, 'backgroundColors': [[173.0, 181.0, 189.0], [173.0, 181.0, 189.0], [173.0, 181.0, 189.0], [173.0, 181.0, 189.0], [173.0, 181.0, 189.0], [173.0, 181.0, 189.0], [173.0, 181.0, 189.0], [173.0, 181.0, 189.0], [173.0, 181.0, 189.0]]}"
+        },
+        {
+          "name": "A-C panels have distinct pixel arrays",
+          "verdict": "passed"
+        },
+        {
+          "name": "Final PNG exactly matches independent reconstruction of official layout and labels",
+          "verdict": "passed"
+        },
+        {
+          "name": "Delivered labels, structure and final rendering agree",
+          "verdict": "passed"
+        },
+        {
+          "name": "Exact current official adapter revision and dimension",
+          "verdict": "passed"
+        },
+        {
+          "name": "Declared reasoning: motif-orientation",
+          "designId": "e000022",
+          "verdict": "passed",
+          "evidence": {
+            "fullMatches": [
+              "A"
+            ],
+            "ignoringMotifOrientation": [
+              "A",
+              "B"
+            ],
+            "cornerAndSizeOnly": [
+              "A",
+              "B",
+              "C"
+            ],
+            "orientationDifferences": {
+              "B": [
+                [
+                  1,
+                  1
+                ],
+                [
+                  2,
+                  1
+                ],
+                [
+                  2,
+                  3
+                ]
+              ]
+            }
+          },
+          "feedback": ""
+        }
+      ],
+      "scope": "Independent four/24-rotation geometry, label/polarity uniqueness, connectivity, FreeCAD geometry-to-pixel correspondence, exact image-operation and compositor replay, full-face visibility and visible non-equivalence. Human visual review is additionally required; no universal single-view reconstruction or difficulty claim.",
+      "commandExitStatus": 0,
+      "binding": "exact",
+      "bindingBasis": "exact candidate and full input fingerprints",
+      "commandEventId": "e000030"
+    }
+  ],
+  "usage": {
+    "schemaVersion": 2,
+    "runId": "build-f40057c0-8d08-4213-8581-78a1d42fa777",
+    "source": "codex",
+    "runtime": "Codex Desktop",
+    "status": "measured",
+    "elapsedMs": 835370,
+    "elapsedKind": "wall-clock",
+    "scope": "Runtime-reported usage between the start baseline and finish snapshot of this session. In-flight or delayed usage, earlier conversation, other agents and later delivery are excluded. This is an observed interval, not a complete billed task total.",
+    "scopeComplete": false,
+    "observedTokens": {
+      "input_tokens": 7719434,
+      "cached_input_tokens": 7582208,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 19699,
+      "reasoning_output_tokens": 3209,
+      "total_tokens": 7739133
+    },
+    "tokens": {
+      "input_tokens": null,
+      "cached_input_tokens": null,
+      "cache_write_input_tokens": null,
+      "output_tokens": null,
+      "reasoning_output_tokens": null,
+      "total_tokens": null
+    },
+    "models": [
+      {
+        "provider": "openai",
+        "model": "gpt-6.2-astra",
+        "reasoningEffort": "xhigh",
+        "tokens": {
+          "input_tokens": 7719434,
+          "cached_input_tokens": 7582208,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 19699,
+          "reasoning_output_tokens": 3209,
+          "total_tokens": 7739133
+        },
+        "observations": 43
+      }
+    ],
+    "missingFields": [],
+    "issues": [],
+    "observations": 43
+  },
+  "caseId": "authored-682bac1d5898657c1e4725d5"
+}

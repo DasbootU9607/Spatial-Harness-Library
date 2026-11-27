@@ -9,6 +9,23 @@ export function usageOverview(u){
  const tokens=u.observedTokens||{},metric=(name,value)=>`<div class="usage-metric"><dt>${e(name)}</dt><dd>${e(value)}</dd></div>`;
  return `<section class="build-usage" aria-label="Recorded model usage and build time"><div class="usage-heading"><h2>Recorded build usage</h2><span class="usage-status">${e(u.status||'Unavailable')}</span></div><dl class="usage-metrics">${metric('Model / reasoning',(u.models||[]).map(m=>`${m.model||'Unknown'} / ${m.reasoningEffort||'Not recorded'}`).join(', ')||'Not recorded')}${metric('Observed time',u.elapsedMs==null?'Not recorded':(u.elapsedMs/60000).toFixed(1)+' min')}${metric('Total tokens',number(tokens.total_tokens))}${metric('Input tokens',number(tokens.input_tokens))}${metric('Output tokens',number(tokens.output_tokens))}</dl><details class="usage-details"><summary>Measurement scope and token breakdown</summary><p>${e(u.scope||'Only recorded intervals are included; this is not complete billed usage.')}</p><pre>${pretty(u)}</pre></details></section>`;
 }
+function spatialDesign(record){
+ if(record.manifest?.harness!=='spatialviz-harness')return '';
+ const version=record.candidates.find(c=>c.id===record.manifest.finalCandidateId);
+ const design=record.events.find(ev=>ev.id===version?.designId)?.details.design;
+ if(!design)return '';
+ const choice=record.events.find(ev=>ev.type==='choice.selected')?.details.selection;
+ const views=record.events.filter(ev=>ev.type==='reference.viewed'&&design.sourceIds.includes(ev.details.sourceId));
+ const test=record.tests.findLast(t=>t.candidateId===version.id);
+ const check=test?.checks?.find(c=>c.designId===version.designId);
+ const review=record.events.findLast(ev=>ev.type==='visual.review'&&ev.candidateId===version.id);
+ return `<details class="action-overview" data-spatial-design open><summary>Question design and checks</summary>
+ <p>Pattern: <strong>${e(choice)}</strong> · ${e(design.target)}</p>
+ ${[['Intended inference',design.inference],['Condition',design.condition],['Closest distractor',design.foil],['Distinguishing evidence',design.evidence]].map(([label,value])=>`<p><strong>${e(label)}</strong> — ${e(value)}</p>`).join('')}
+ ${views.map(({details:d})=>`<p><a href="../questions/#/spatialviz?case=${encodeURIComponent('spatialviz-bench:vqa:'+d.sourceId.replaceAll('/',':'))}">${e(d.sourceId)}</a> · ${e(d.observation)}</p>`).join('')}
+ ${check?`<p><strong>Target check</strong> · ${e(check.verdict)}</p>`:''}
+ ${review?`<p><strong>Final image review</strong> · ${e(review.details.review)}</p>`:''}</details>`;
+}
 export async function renderProcess(target,p,links={}){
  target._dispose?.();
  const {createOrbitTimeline}=await import('../maze-harness/process-orbit.js');
@@ -17,7 +34,8 @@ export async function renderProcess(target,p,links={}){
  const initial=byId.get(new URLSearchParams(location.search).get('node'))||events.find(event=>event.type==='candidate.saved'&&event.candidateId===manifest.finalCandidateId)||events[0];
  let selectedId=initial?.id,page=0,orbit;
  target.classList.add('shared-process');
- target.innerHTML=`<div class="process-record-line"><span class="record-mode">SAVED RECORD</span><span>${events.length} records · ${candidates.length} saved versions · ${e(manifest.status||'Status unknown')}</span></div>${usageOverview(p.usage)}
+ target.innerHTML=`<div class="process-record-line"><span class="record-mode">SAVED RECORD</span><span>${events.length} records · ${candidates.length} saved versions · ${e(manifest.status||'Status unknown')}</span></div>
+ ${spatialDesign(p)}${usageOverview(p.usage)}
  <details class="action-overview"><summary>Recorded activity breakdown</summary><dl class="action-stats">${[['Reference reads',count('resource.read')],['Saved versions',candidates.length],['Verification reports',count('test.completed')],['Visual reviews',count('visual.review')],['Command starts',count('command.started')],['Design notes',count('design.note')]].map(([name,value])=>`<div class="action-stat"><dt>${name}</dt><dd>${value}</dd></div>`).join('')}</dl><p class="projection-note">Counts describe saved evidence. A command start, command completion and test report are separate records. Missing activity remains unknown.</p></details>
  <div class="process-workspace"><aside class="timeline-column" aria-label="Recorded production timeline"><nav class="process-view-tabs" aria-label="Process view">${[['actions','Build timeline'],['versions',`Versions (${candidates.length})`],['evidence',`Evidence (${events.length})`]].map(([key,name])=>`<button type="button" data-view="${key}" aria-controls="process-${key}" aria-pressed="${key==='actions'}">${e(name)}</button>`).join('')}</nav>
  <section id="process-actions" class="process-timeline"></section>

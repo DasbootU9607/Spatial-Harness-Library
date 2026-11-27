@@ -1,0 +1,639 @@
+{
+  "schemaVersion": 1,
+  "manifest": {
+    "sealed": true,
+    "id": "build-37f9172d-85fa-47a2-80b4-5a8654a3968c",
+    "title": "cube-unfolding / lines showcase construction",
+    "runKind": "[private value omitted]",
+    "harness": "spatialviz-harness",
+    "benchmark": null,
+    "category": null,
+    "taskType": null,
+    "skill": {
+      "id": "spatialviz-cube-unfolding",
+      "sha256": "fea01a27f1df231565e5be3fda85aa6a4d268edfc0b2bf6d7d1655ef9e5d15d4"
+    },
+    "status": "accepted",
+    "finalCandidateId": "v001",
+    "limitations": [
+      "Only recorder-mediated deliveries, commands and saved boundaries are observed; direct function calls, unwrapped commands and unsaved editor states are excluded.",
+      "Design notes are explicit author annotations, not internal reasoning."
+    ],
+    "captureGaps": []
+  },
+  "events": [
+    {
+      "id": "e000001",
+      "seq": 1,
+      "runId": "build-37f9172d-85fa-47a2-80b4-5a8654a3968c",
+      "type": "run.created",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": null,
+      "details": {},
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000002",
+      "seq": 2,
+      "runId": "build-37f9172d-85fa-47a2-80b4-5a8654a3968c",
+      "type": "collector.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": null,
+      "details": {},
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000003",
+      "seq": 3,
+      "runId": "build-37f9172d-85fa-47a2-80b4-5a8654a3968c",
+      "type": "skill.attached",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": null,
+      "details": {
+        "sha256": "fea01a27f1df231565e5be3fda85aa6a4d268edfc0b2bf6d7d1655ef9e5d15d4",
+        "skill": "spatialviz-cube-unfolding"
+      },
+      "evidenceRefs": [
+        {
+          "id": "00792163ff59a4a8",
+          "sha256": "fea01a27f1df231565e5be3fda85aa6a4d268edfc0b2bf6d7d1655ef9e5d15d4",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000004",
+      "seq": 4,
+      "runId": "build-37f9172d-85fa-47a2-80b4-5a8654a3968c",
+      "type": "choice.selected",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": null,
+      "details": {
+        "eligible": [
+          "color",
+          "pips",
+          "lines",
+          "mosaic"
+        ],
+        "selection": "lines",
+        "selectionMode": "specified"
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000005",
+      "seq": 5,
+      "runId": "build-37f9172d-85fa-47a2-80b4-5a8654a3968c",
+      "type": "resource.read",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "b32c82d4-72ad-45ab-ab6f-39e7351829fe",
+      "candidateId": null,
+      "details": {
+        "delivery": "author",
+        "outcome": "delivered",
+        "label": "patterns.json",
+        "start": 48,
+        "end": 70,
+        "sha256": "05348369ed1f5bcdc2a6516dd023965dbb3db17fe05926f90c609b352654ad8f",
+        "sourceSha256": "5791dd144703e55a75628e6bb4d4b6fb3d947b31585fbcfc9adf1ff587759021"
+      },
+      "evidenceRefs": [
+        {
+          "id": "a8e9f5b6be846af3",
+          "sha256": "05348369ed1f5bcdc2a6516dd023965dbb3db17fe05926f90c609b352654ad8f",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000006",
+      "seq": 6,
+      "runId": "build-37f9172d-85fa-47a2-80b4-5a8654a3968c",
+      "type": "reference.delivered",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": null,
+      "details": {
+        "sourceId": "MentalFolding/CubeUnfolding/Level1/20",
+        "label": "Official question, choices, answer and explanation",
+        "sha256": "138935d877eeea81f12f3db774290445237b7f8a0968ce48dd003536f213d1f1"
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000007",
+      "seq": 7,
+      "runId": "build-37f9172d-85fa-47a2-80b4-5a8654a3968c",
+      "type": "reference.viewed",
+      "actor": "author",
+      "origin": "agent_statement",
+      "actionId": null,
+      "candidateId": null,
+      "details": {
+        "sourceId": "MentalFolding/CubeUnfolding/Level1/20",
+        "observation": "The two nets B and C put a circle at the same end; the adjoining stripes turn differently.",
+        "sourceSha256": "74ac554eec76806d594e0f95a72871320c0a59d379ed1bfcc025b514c17f0e77"
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000008",
+      "seq": 8,
+      "runId": "build-37f9172d-85fa-47a2-80b4-5a8654a3968c",
+      "type": "design.note",
+      "actor": "author",
+      "origin": "agent_statement",
+      "actionId": null,
+      "candidateId": null,
+      "details": {
+        "design": {
+          "inference": "Choose the net that preserves both the visible face order and stroke direction.",
+          "condition": "Use oriented strokes on a visible face and introduce a foil with the same face identities.",
+          "foil": "Treating a line tile like a plain named face admits an extra net.",
+          "evidence": "Re-evaluate every net after erasing face turns and compare the survivors.",
+          "target": "face-orientation",
+          "sourceIds": [
+            "MentalFolding/CubeUnfolding/Level1/20"
+          ]
+        },
+        "goal": "Choose the net that preserves both the visible face order and stroke direction.",
+        "change": "Treating a line tile like a plain named face admits an extra net.",
+        "reason": "Use oriented strokes on a visible face and introduce a foil with the same face identities.",
+        "expectedChecks": [
+          "Re-evaluate every net after erasing face turns and compare the survivors."
+        ]
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000009",
+      "seq": 9,
+      "runId": "build-37f9172d-85fa-47a2-80b4-5a8654a3968c",
+      "type": "command.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "7a6a0d03-4c13-420e-8311-c48e845a0eff",
+      "candidateId": null,
+      "details": {
+        "label": "python",
+        "kind": "official-freecad-generation"
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000010",
+      "seq": 10,
+      "runId": "build-37f9172d-85fa-47a2-80b4-5a8654a3968c",
+      "type": "command.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "7a6a0d03-4c13-420e-8311-c48e845a0eff",
+      "candidateId": null,
+      "details": {
+        "commandEventId": "e000009",
+        "kind": "official-freecad-generation",
+        "exitCode": 0,
+        "signal": null
+      },
+      "evidenceRefs": [
+        {
+          "id": "cd5ce19f2c09a954",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "availability": "local evidence; hash published"
+        },
+        {
+          "id": "cefab286ac3db3db",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000011",
+      "seq": 11,
+      "runId": "build-37f9172d-85fa-47a2-80b4-5a8654a3968c",
+      "type": "candidate.saved",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "4af5b70b-5819-4d4f-96a8-6ff130803757",
+      "candidateId": "v001",
+      "details": {
+        "designId": "e000008",
+        "sha256": "0877d5bb5360e4650ead1989821c65eba8c96387744666dfdacd4ab9edd3d0f5",
+        "parentId": null,
+        "parentBasis": null,
+        "changes": [
+          "specification",
+          "geometry",
+          "question",
+          "options",
+          "answer",
+          "contract",
+          "rendering",
+          "generator"
+        ],
+        "fingerprints": {
+          "specification": "0877d5bb5360e4650ead1989821c65eba8c96387744666dfdacd4ab9edd3d0f5",
+          "geometry": "f99ea5bef2e6e91fe298e18201481305d8a2f09273f03704802c7df603bc15ed",
+          "question": "20f710edbc8f42ac1d050f60b9efea44147ca96bcc701a6a29f5e3155604287f",
+          "options": "9a7e4f89a3fb23827280c341572fdb5b64ae3ab48b572d660a54a2c08329ce0e",
+          "answer": "e4f085dd41a03bed619ad739355f332f530222dd20f88772f69130a15fbe2d9e",
+          "contract": "a242a71078e1915731e799821e2eaf246c47567d5fd5b7e0661b516e7bd551e9",
+          "rendering": "d9a9b051f85dae12f88857eec4bc69ee78c407c779e914f9cc603ae165d8cc44",
+          "generator": "5d9c7db247dc78ed0bc41bd295f19ad2ea72a54c0919d171cbfd07ebbf023e1c"
+        },
+        "previewUnavailable": null
+      },
+      "evidenceRefs": [
+        {
+          "id": "ef836dc865258789",
+          "sha256": "0877d5bb5360e4650ead1989821c65eba8c96387744666dfdacd4ab9edd3d0f5",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000012",
+      "seq": 12,
+      "runId": "build-37f9172d-85fa-47a2-80b4-5a8654a3968c",
+      "type": "build.saved",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "4af5b70b-5819-4d4f-96a8-6ff130803757",
+      "candidateId": "v001",
+      "details": {},
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000013",
+      "seq": 13,
+      "runId": "build-37f9172d-85fa-47a2-80b4-5a8654a3968c",
+      "type": "render.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "97cd388e-1846-437e-bfc3-07805206cec7",
+      "candidateId": "v001",
+      "details": {
+        "renderer": {
+          "id": "official-cube-unfolding",
+          "revision": "b3c0fcd03aa53ecd0de74e994ede29378f46c7f2074be4d46ad005eb474d16dd"
+        }
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000014",
+      "seq": 14,
+      "runId": "build-37f9172d-85fa-47a2-80b4-5a8654a3968c",
+      "type": "render.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "97cd388e-1846-437e-bfc3-07805206cec7",
+      "candidateId": "v001",
+      "details": {
+        "sha256": "41dd8baf59e294b5e369a0385c8307198fa8636b57608847ce874481993f0ac2",
+        "renderer": {
+          "id": "official-cube-unfolding",
+          "revision": "b3c0fcd03aa53ecd0de74e994ede29378f46c7f2074be4d46ad005eb474d16dd"
+        },
+        "specification": "0877d5bb5360e4650ead1989821c65eba8c96387744666dfdacd4ab9edd3d0f5",
+        "rendering": "d9a9b051f85dae12f88857eec4bc69ee78c407c779e914f9cc603ae165d8cc44"
+      },
+      "evidenceRefs": [
+        {
+          "id": "ecfe28111f62c590",
+          "sha256": "41dd8baf59e294b5e369a0385c8307198fa8636b57608847ce874481993f0ac2",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000015",
+      "seq": 15,
+      "runId": "build-37f9172d-85fa-47a2-80b4-5a8654a3968c",
+      "type": "command.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "a34095e8-2011-4c16-ba86-6d7ffaa26cb4",
+      "candidateId": "v001",
+      "details": {
+        "label": "node.exe",
+        "kind": "verification"
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000016",
+      "seq": 16,
+      "runId": "build-37f9172d-85fa-47a2-80b4-5a8654a3968c",
+      "type": "command.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "a34095e8-2011-4c16-ba86-6d7ffaa26cb4",
+      "candidateId": "v001",
+      "details": {
+        "commandEventId": "e000015",
+        "kind": "verification",
+        "exitCode": 0,
+        "signal": null
+      },
+      "evidenceRefs": [
+        {
+          "id": "6edf3e37a40a26bb",
+          "sha256": "b054cb07f37f0aa8ae23a3737c2043d80cecd28c934bb41176d3a1576f8dfdfe",
+          "availability": "local evidence; hash published"
+        },
+        {
+          "id": "289214dc86c82952",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000017",
+      "seq": 17,
+      "runId": "build-37f9172d-85fa-47a2-80b4-5a8654a3968c",
+      "type": "test.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "a34095e8-2011-4c16-ba86-6d7ffaa26cb4",
+      "candidateId": "v001",
+      "details": {
+        "commandEventId": "e000015",
+        "completedEventId": "e000016",
+        "verdict": "passed",
+        "status": "passed",
+        "checks": [
+          {
+            "name": "Hinge consistency, six normals, proper rotations and exact unique answer",
+            "verdict": "passed"
+          },
+          {
+            "name": "Published prompt, polarity, upstream answer and ordered figure/text options",
+            "verdict": "passed"
+          },
+          {
+            "name": "Rectified CAD faces, rotations, reflections, grid occupancy and visually distinct panels",
+            "verdict": "passed"
+          },
+          {
+            "name": "Pixel-exact labeled composition and complete question PNG",
+            "verdict": "passed"
+          },
+          {
+            "name": "Current domain adapter and pinned source bytes",
+            "verdict": "passed"
+          },
+          {
+            "name": "Declared reasoning: face-orientation",
+            "designId": "e000008",
+            "verdict": "passed",
+            "evidence": {
+              "fullMatches": [
+                "B"
+              ],
+              "ignoringFaceTurns": [
+                "B",
+                "C"
+              ],
+              "foldedCornerWitnesses": {
+                "A": "The three faces meet, but diagonal (column 1, row 1 from the upper left), tee (column 2, row 1 from the upper left), cross (column 3, row 2 from the upper left) in top/left/right order reverses their order around the vertex.",
+                "B": "Reading the net from its upper left, the top, left and right faces come from diagonal (column 1, row 2 from the upper left), then tee (column 3, row 3 from the upper left), then cross (column 2, row 2 from the upper left). All three markings retain the pictured orientation.",
+                "C": "The face order matches. The top face from diagonal (column 1, row 2 from the upper left) would need an extra 90 degree counterclockwise turn to reproduce the view.",
+                "D": "tee (column 4, row 3 from the upper left) and cross (column 2, row 1 from the upper left) are opposite and cannot meet at the visible corner."
+              }
+            },
+            "feedback": ""
+          }
+        ],
+        "scope": "Exact exterior folding and rectified panel matching under the declared camera.",
+        "binding": "exact",
+        "bindingBasis": "exact candidate and full input fingerprints",
+        "testedFingerprints": {
+          "specification": "0877d5bb5360e4650ead1989821c65eba8c96387744666dfdacd4ab9edd3d0f5",
+          "geometry": "f99ea5bef2e6e91fe298e18201481305d8a2f09273f03704802c7df603bc15ed",
+          "question": "20f710edbc8f42ac1d050f60b9efea44147ca96bcc701a6a29f5e3155604287f",
+          "options": "9a7e4f89a3fb23827280c341572fdb5b64ae3ab48b572d660a54a2c08329ce0e",
+          "answer": "e4f085dd41a03bed619ad739355f332f530222dd20f88772f69130a15fbe2d9e",
+          "contract": "a242a71078e1915731e799821e2eaf246c47567d5fd5b7e0661b516e7bd551e9",
+          "rendering": "d9a9b051f85dae12f88857eec4bc69ee78c407c779e914f9cc603ae165d8cc44",
+          "generator": "5d9c7db247dc78ed0bc41bd295f19ad2ea72a54c0919d171cbfd07ebbf023e1c"
+        },
+        "verifier": {
+          "id": "official-cube-unfolding",
+          "revision": "b3c0fcd03aa53ecd0de74e994ede29378f46c7f2074be4d46ad005eb474d16dd"
+        },
+        "reportSha256": "7f7e4a0224f2fe97f7b7d7923be8bb7e7e8e461956eaad4db5dd2f50bc600e66"
+      },
+      "evidenceRefs": [
+        {
+          "id": "b80cfff7016a1d3d",
+          "sha256": "7f7e4a0224f2fe97f7b7d7923be8bb7e7e8e461956eaad4db5dd2f50bc600e66",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000018",
+      "seq": 18,
+      "runId": "build-37f9172d-85fa-47a2-80b4-5a8654a3968c",
+      "type": "visual.review",
+      "actor": "author",
+      "origin": "agent_statement",
+      "actionId": null,
+      "candidateId": "v001",
+      "details": {
+        "outcome": "passed",
+        "review": "B and C both show a ring above the left column and the same distinctive X and parallel strokes. The single oblique stroke and the T have distinguishable orientations. Following the hinge edges gives B."
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000019",
+      "seq": 19,
+      "runId": "build-37f9172d-85fa-47a2-80b4-5a8654a3968c",
+      "type": "run.finished",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": "v001",
+      "details": {
+        "outcome": "accepted",
+        "finalCandidateId": "v001"
+      },
+      "evidenceRefs": []
+    }
+  ],
+  "candidates": [
+    {
+      "id": "v001",
+      "designId": "e000008",
+      "parentId": null,
+      "parentBasis": null,
+      "sha256": "0877d5bb5360e4650ead1989821c65eba8c96387744666dfdacd4ab9edd3d0f5",
+      "fingerprints": {
+        "specification": "0877d5bb5360e4650ead1989821c65eba8c96387744666dfdacd4ab9edd3d0f5",
+        "geometry": "f99ea5bef2e6e91fe298e18201481305d8a2f09273f03704802c7df603bc15ed",
+        "question": "20f710edbc8f42ac1d050f60b9efea44147ca96bcc701a6a29f5e3155604287f",
+        "options": "9a7e4f89a3fb23827280c341572fdb5b64ae3ab48b572d660a54a2c08329ce0e",
+        "answer": "e4f085dd41a03bed619ad739355f332f530222dd20f88772f69130a15fbe2d9e",
+        "contract": "a242a71078e1915731e799821e2eaf246c47567d5fd5b7e0661b516e7bd551e9",
+        "rendering": "d9a9b051f85dae12f88857eec4bc69ee78c407c779e914f9cc603ae165d8cc44",
+        "generator": "5d9c7db247dc78ed0bc41bd295f19ad2ea72a54c0919d171cbfd07ebbf023e1c"
+      },
+      "previewUnavailable": null,
+      "changes": [
+        "specification",
+        "geometry",
+        "question",
+        "options",
+        "answer",
+        "contract",
+        "rendering",
+        "generator"
+      ],
+      "preview": {
+        "candidateId": "v001",
+        "specification": "0877d5bb5360e4650ead1989821c65eba8c96387744666dfdacd4ab9edd3d0f5",
+        "rendering": "d9a9b051f85dae12f88857eec4bc69ee78c407c779e914f9cc603ae165d8cc44",
+        "renderer": {
+          "id": "official-cube-unfolding",
+          "revision": "b3c0fcd03aa53ecd0de74e994ede29378f46c7f2074be4d46ad005eb474d16dd"
+        },
+        "sha256": "41dd8baf59e294b5e369a0385c8307198fa8636b57608847ce874481993f0ac2",
+        "path": "records/authored-0877d5bb5360e4650ead1989/v001-41dd8baf59e294b5.png",
+        "origin": "recorded-render"
+      }
+    }
+  ],
+  "tests": [
+    {
+      "id": "t001",
+      "actionId": "a34095e8-2011-4c16-ba86-6d7ffaa26cb4",
+      "candidateId": "v001",
+      "testedFingerprints": {
+        "specification": "0877d5bb5360e4650ead1989821c65eba8c96387744666dfdacd4ab9edd3d0f5",
+        "geometry": "f99ea5bef2e6e91fe298e18201481305d8a2f09273f03704802c7df603bc15ed",
+        "question": "20f710edbc8f42ac1d050f60b9efea44147ca96bcc701a6a29f5e3155604287f",
+        "options": "9a7e4f89a3fb23827280c341572fdb5b64ae3ab48b572d660a54a2c08329ce0e",
+        "answer": "e4f085dd41a03bed619ad739355f332f530222dd20f88772f69130a15fbe2d9e",
+        "contract": "a242a71078e1915731e799821e2eaf246c47567d5fd5b7e0661b516e7bd551e9",
+        "rendering": "d9a9b051f85dae12f88857eec4bc69ee78c407c779e914f9cc603ae165d8cc44",
+        "generator": "5d9c7db247dc78ed0bc41bd295f19ad2ea72a54c0919d171cbfd07ebbf023e1c"
+      },
+      "verifier": {
+        "id": "official-cube-unfolding",
+        "revision": "b3c0fcd03aa53ecd0de74e994ede29378f46c7f2074be4d46ad005eb474d16dd"
+      },
+      "reportSha256": "7f7e4a0224f2fe97f7b7d7923be8bb7e7e8e461956eaad4db5dd2f50bc600e66",
+      "verdict": "passed",
+      "status": "passed",
+      "checks": [
+        {
+          "name": "Hinge consistency, six normals, proper rotations and exact unique answer",
+          "verdict": "passed"
+        },
+        {
+          "name": "Published prompt, polarity, upstream answer and ordered figure/text options",
+          "verdict": "passed"
+        },
+        {
+          "name": "Rectified CAD faces, rotations, reflections, grid occupancy and visually distinct panels",
+          "verdict": "passed"
+        },
+        {
+          "name": "Pixel-exact labeled composition and complete question PNG",
+          "verdict": "passed"
+        },
+        {
+          "name": "Current domain adapter and pinned source bytes",
+          "verdict": "passed"
+        },
+        {
+          "name": "Declared reasoning: face-orientation",
+          "designId": "e000008",
+          "verdict": "passed",
+          "evidence": {
+            "fullMatches": [
+              "B"
+            ],
+            "ignoringFaceTurns": [
+              "B",
+              "C"
+            ],
+            "foldedCornerWitnesses": {
+              "A": "The three faces meet, but diagonal (column 1, row 1 from the upper left), tee (column 2, row 1 from the upper left), cross (column 3, row 2 from the upper left) in top/left/right order reverses their order around the vertex.",
+              "B": "Reading the net from its upper left, the top, left and right faces come from diagonal (column 1, row 2 from the upper left), then tee (column 3, row 3 from the upper left), then cross (column 2, row 2 from the upper left). All three markings retain the pictured orientation.",
+              "C": "The face order matches. The top face from diagonal (column 1, row 2 from the upper left) would need an extra 90 degree counterclockwise turn to reproduce the view.",
+              "D": "tee (column 4, row 3 from the upper left) and cross (column 2, row 1 from the upper left) are opposite and cannot meet at the visible corner."
+            }
+          },
+          "feedback": ""
+        }
+      ],
+      "scope": "Exact exterior folding and rectified panel matching under the declared camera.",
+      "commandExitStatus": 0,
+      "binding": "exact",
+      "bindingBasis": "exact candidate and full input fingerprints",
+      "commandEventId": "e000015"
+    }
+  ],
+  "usage": {
+    "schemaVersion": 2,
+    "runId": "build-37f9172d-85fa-47a2-80b4-5a8654a3968c",
+    "source": "codex",
+    "runtime": "Codex Desktop",
+    "status": "measured",
+    "elapsedMs": 818983,
+    "elapsedKind": "wall-clock",
+    "scope": "Runtime-reported usage between the start baseline and finish snapshot of this session. In-flight or delayed usage, earlier conversation, other agents and later delivery are excluded. This is an observed interval, not a complete billed task total.",
+    "scopeComplete": false,
+    "observedTokens": {
+      "input_tokens": 7579902,
+      "cached_input_tokens": 7448448,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 19021,
+      "reasoning_output_tokens": 3041,
+      "total_tokens": 7598923
+    },
+    "tokens": {
+      "input_tokens": null,
+      "cached_input_tokens": null,
+      "cache_write_input_tokens": null,
+      "output_tokens": null,
+      "reasoning_output_tokens": null,
+      "total_tokens": null
+    },
+    "models": [
+      {
+        "provider": "openai",
+        "model": "gpt-6.2-astra",
+        "reasoningEffort": "xhigh",
+        "tokens": {
+          "input_tokens": 7579902,
+          "cached_input_tokens": 7448448,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 19021,
+          "reasoning_output_tokens": 3041,
+          "total_tokens": 7598923
+        },
+        "observations": 42
+      }
+    ],
+    "missingFields": [],
+    "issues": [],
+    "observations": 42
+  },
+  "caseId": "authored-0877d5bb5360e4650ead1989"
+}

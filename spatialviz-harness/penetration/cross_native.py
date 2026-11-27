@@ -213,6 +213,23 @@ def same(regions,model,center=False):
     return all(np.max(abs(a-b))<.028 for a,b in zip(prepare(regions),prepare(model)))
 
 
+def short_shoulder(contours):
+    base, cap = contours
+    # Both contours are already in the reader's directed section plane.
+    seam = min(point[1] for point in cap)
+    intervals = []
+    for contour in (base, cap):
+        edge = [x for x, y in contour if abs(y - seam) < 1e-6]
+        if not edge:
+            return None
+        intervals.append((min(edge), max(edge)))
+    left = intervals[1][0] - intervals[0][0]
+    right = intervals[0][1] - intervals[1][1]
+    if abs(left - right) < 1e-6:
+        return None
+    return "left" if left < right else "right"
+
+
 def classify(s):
     g=s["geometry"];tiers=g["tiers"];positive=g["mode"]=="marked"
     front={"normal":[0,1,0],"right":[1 if g["side"]=="south" else -1,0,0],"up":[0,0,1],"distance":g["offset"]}
@@ -225,7 +242,13 @@ def classify(s):
         info={"planeNormal":w["normal"],"planeDistance":w["distance"],"nativeComponents":len(actual),"matchesIndependentClip":realized}
         if positive:
             match=same(actual,target,center=True)
-            if match:note="The line crosses both tiers; the cap has its short shoulder on the "+("right." if g["side"]=="south" else "left.") if len(target)==2 else "The red trace misses the cap, leaving just the rectangular base section."
+            if match:
+                if len(target) == 2:
+                    direction = short_shoulder(target)
+                    note = ("The line crosses both tiers; the cap has its short shoulder on the "+direction+"."
+                            if direction else "The two clipped profiles match in the indicated viewing direction.")
+                else:
+                    note = "The red trace misses the cap, leaving just the rectangular base section."
             elif len(actual)>len(target):note="The drawing includes a cap although the red trace misses its footprint."
             elif len(actual)<len(target):note="The line traverses both tiers, but this drawing omits one component."
             else:note="The outline has the wrong footprint or the two shoulders are reversed relative to the arrow."

@@ -203,7 +203,9 @@ async function navigate(){
     const data=await cache.get(page);
     if(number!==requestNo)return;
     rows=data;
-    const requested=new URLSearchParams(query).get('case');
+    const params=new URLSearchParams(query);
+    const requested=params.get('case'), type=params.get('type');
+    if(page==='spatialviz'&&!requested&&type&&rows.some(r=>r.type===type))states.set(page,{...newState(),type});
     if(requested&&rows.some(r=>r.id===requested)&&requested!==state().id){states.set(page,{...newState(),id:requested});}
     el('reader').hidden=false;el('archive-controls').hidden=false;el('archive-status').textContent='';
     refreshFilters();

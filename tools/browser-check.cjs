@@ -43,6 +43,7 @@ const server=http.createServer((req,res)=>{try{const u=new URL(req.url,'http://l
   await page.locator('#harness-slides').evaluate(el=>el.blur());await page.screenshot({path:path.join(output,`library-${width}.png`),fullPage:true});
   results.push({page:'library carousel, mouse drag, keyboard, natural image proportions and benchmark links',width,passed:true});
  }
+ results.push(...await require('./spatialviz-showcase-browser.cjs')({page,origin,catalog,selection:R.read(path.join(R.ROOT,'catalog/spatialviz-showcase.json'))}));
  // Every harness must fit without vertical scrolling at ordinary desktop and phone sizes.
  for(const [width,height] of [[1440,900],[1366,768],[1280,720],[390,844],[375,667],[320,568],[844,390]]){
   await page.setViewportSize({width,height});await page.goto(origin);await page.waitForSelector('.harness-slide');
@@ -89,10 +90,20 @@ const server=http.createServer((req,res)=>{try{const u=new URL(req.url,'http://l
   }
   await page.locator('[data-filter="all"]').click();
   if(harness==='spatialviz-harness'){
-   assert(all.length>=4);assert.equal(catalog.cases.filter(c=>c.harnessId===harness&&c.exhibit===false&&c.taskType!=='MechanicalSystem'&&!c.supersededBy).length,5);
+   const selected=R.read(path.join(R.ROOT,'catalog/spatialviz-showcase.json'));
+   assert.deepEqual(all.map(c=>c.id).sort(),Object.values(selected).flat().sort());
+   assert.equal(await page.locator('#skills .chips a, #leaderboard tbody td a').count(),0);
+   for(const skill of harnessSkills){
+    await page.goto(origin+harness+'/skill.html?id='+skill.id);await page.waitForSelector('#authored .card');
+    assert.deepEqual((await page.locator('#authored [data-case]').evaluateAll(a=>a.map(el=>el.dataset.case))).sort(),[...selected[skill.id]].sort());
+    assert.equal(await page.locator('.skill-layout .chips a, #ladder tbody td a').count(),0);
+    assert.equal(await page.locator('#authored .card a').filter({hasText:'Build process'}).count(),selected[skill.id].length);
+    assert.equal(await page.getByRole('link',{name:'View references',exact:true}).count(),1);
+   }
+   await page.goto(origin+harness+'/');await page.waitForSelector('#case-gallery .card');
    for(const previous of catalog.cases.filter(c=>c.harnessId===harness&&c.supersededBy)){
     assert.equal(await page.locator(`#case-gallery [data-case="${previous.id}"]`).count(),0);
-    assert.equal(await page.locator(`#case-gallery [data-case="${previous.supersededBy}"]`).count(),1);
+    assert(catalog.cases.some(c=>c.harnessId===harness&&c.id===previous.supersededBy),'Historical replacement remains addressable');
    }
    for(const example of all){const image=page.locator('[data-case="'+example.id+'"] img').first();assert((await image.getAttribute('src')).endsWith('.png'));}
    await page.locator('[data-filter="2d-rotation"]').click();await page.reload();await page.waitForSelector('#case-gallery .card');assert.equal(await page.locator('#case-gallery .card').count(),all.filter(c=>c.skillIds.includes('2d-rotation')).length);await page.locator('[data-filter="all"]').click();
@@ -149,7 +160,8 @@ assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerW
     await page.waitForSelector('.process-checks li');
     assert.equal(await page.locator('.process-checks li').count(),accepted.details.checks.length);
    }
-   if(process.events.filter(e=>e.type==='test.completed').length>30){await page.locator('[data-page-step="1"]').click();assert.match(await page.locator('.evidence-count').innerText(),/31–60/);}
+   const reportCount=process.events.filter(e=>e.type==='test.completed').length;
+   if(reportCount>30){await page.locator('[aria-label="Evidence type"]').selectOption('test.completed');await page.locator('[data-page-step="1"]').click();assert((await page.locator('.evidence-count').innerText()).endsWith('31–'+Math.min(60,reportCount)));}
    await page.locator('[data-view="actions"]').click();
    assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false,'Process overflow');
    await page.evaluate(()=>window.scrollTo({top:0,behavior:'instant'}));await page.screenshot({path:path.join(output,`process-${example.id}-${width}.png`),fullPage:true});

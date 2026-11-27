@@ -1,0 +1,70 @@
+{
+  "id": "t001",
+  "actionId": "a34095e8-2011-4c16-ba86-6d7ffaa26cb4",
+  "candidateId": "v001",
+  "testedFingerprints": {
+    "specification": "0877d5bb5360e4650ead1989821c65eba8c96387744666dfdacd4ab9edd3d0f5",
+    "geometry": "f99ea5bef2e6e91fe298e18201481305d8a2f09273f03704802c7df603bc15ed",
+    "question": "20f710edbc8f42ac1d050f60b9efea44147ca96bcc701a6a29f5e3155604287f",
+    "options": "9a7e4f89a3fb23827280c341572fdb5b64ae3ab48b572d660a54a2c08329ce0e",
+    "answer": "e4f085dd41a03bed619ad739355f332f530222dd20f88772f69130a15fbe2d9e",
+    "contract": "a242a71078e1915731e799821e2eaf246c47567d5fd5b7e0661b516e7bd551e9",
+    "rendering": "d9a9b051f85dae12f88857eec4bc69ee78c407c779e914f9cc603ae165d8cc44",
+    "generator": "5d9c7db247dc78ed0bc41bd295f19ad2ea72a54c0919d171cbfd07ebbf023e1c"
+  },
+  "verifier": {
+    "id": "official-cube-unfolding",
+    "revision": "b3c0fcd03aa53ecd0de74e994ede29378f46c7f2074be4d46ad005eb474d16dd"
+  },
+  "reportSha256": "7f7e4a0224f2fe97f7b7d7923be8bb7e7e8e461956eaad4db5dd2f50bc600e66",
+  "verdict": "passed",
+  "status": "passed",
+  "checks": [
+    {
+      "name": "Hinge consistency, six normals, proper rotations and exact unique answer",
+      "verdict": "passed"
+    },
+    {
+      "name": "Published prompt, polarity, upstream answer and ordered figure/text options",
+      "verdict": "passed"
+    },
+    {
+      "name": "Rectified CAD faces, rotations, reflections, grid occupancy and visually distinct panels",
+      "verdict": "passed"
+    },
+    {
+      "name": "Pixel-exact labeled composition and complete question PNG",
+      "verdict": "passed"
+    },
+    {
+      "name": "Current domain adapter and pinned source bytes",
+      "verdict": "passed"
+    },
+    {
+      "name": "Declared reasoning: face-orientation",
+      "designId": "e000008",
+      "verdict": "passed",
+      "evidence": {
+        "fullMatches": [
+          "B"
+        ],
+        "ignoringFaceTurns": [
+          "B",
+          "C"
+        ],
+        "foldedCornerWitnesses": {
+          "A": "The three faces meet, but diagonal (column 1, row 1 from the upper left), tee (column 2, row 1 from the upper left), cross (column 3, row 2 from the upper left) in top/left/right order reverses their order around the vertex.",
+          "B": "Reading the net from its upper left, the top, left and right faces come from diagonal (column 1, row 2 from the upper left), then tee (column 3, row 3 from the upper left), then cross (column 2, row 2 from the upper left). All three markings retain the pictured orientation.",
+          "C": "The face order matches. The top face from diagonal (column 1, row 2 from the upper left) would need an extra 90 degree counterclockwise turn to reproduce the view.",
+          "D": "tee (column 4, row 3 from the upper left) and cross (column 2, row 1 from the upper left) are opposite and cannot meet at the visible corner."
+        }
+      },
+      "feedback": ""
+    }
+  ],
+  "scope": "Exact exterior folding and rectified panel matching under the declared camera.",
+  "commandExitStatus": 0,
+  "binding": "exact",
+  "bindingBasis": "exact candidate and full input fingerprints",
+  "commandEventId": "e000015"
+}

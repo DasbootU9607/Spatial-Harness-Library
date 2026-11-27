@@ -1,0 +1,133 @@
+{
+  "id": "t001",
+  "actionId": "43a50b4a-274e-4549-9193-70d683a72e2f",
+  "candidateId": "v001",
+  "testedFingerprints": {
+    "specification": "02d7577aeac7f6ef39ee4889c071d4fb67b26ead7ecfe3ccc9c81999198a2ad3",
+    "geometry": "1b9d8c61381b2625d1ea8929134156cd93a030b806b05faf85d0654e72fbb03d",
+    "question": "eedb93654c0d3d7b0577b6e8da64147e70cc15f41c7537be102c870d3eebe640",
+    "options": "49be092bc217213083027828f422734e1a5dad6314423be7e4f551f3ba3c7fbf",
+    "answer": "e38e639d9e32660019608a0bb27f053689db413423c26574405c4278b3f03b41",
+    "contract": "ae0538de42eca6697f8dfd7d0b25fdcaeb73a1935671da6d0f7c2f9c652e1fd5",
+    "rendering": "9d7d02fa11db26c24cbf7f34afdc45486e96d079097c5d1221d46d1eb6b3e79c",
+    "generator": "348c7f2576d496f5c2f87d5bbc93291e83a5850ab8b41f01122d876c8bc196ab"
+  },
+  "verifier": {
+    "id": "penetration-cross-sections",
+    "revision": "da7994ee59b4420debb892d9b5276661676eb8740007e064d4e0eab371cece0f"
+  },
+  "reportSha256": "65eaa28da93a20731366019893e18d9d78f41c85ab69d0d9304ee423cfaa9c71",
+  "verdict": "passed",
+  "status": "passed",
+  "checks": [
+    {
+      "name": "Final official composite and native panel order",
+      "verdict": "passed"
+    },
+    {
+      "name": "Final visible wire pixels match oriented native section geometry",
+      "verdict": "passed"
+    },
+    {
+      "name": "Exactly one answer under independent plane clipping or global seam containment",
+      "verdict": "passed"
+    },
+    {
+      "name": "Four distinct outlines",
+      "verdict": "passed"
+    },
+    {
+      "name": "Per-option explanations",
+      "verdict": "passed"
+    },
+    {
+      "name": "Unmodified official source fingerprints",
+      "verdict": "passed"
+    },
+    {
+      "name": "FreeCAD launch and native document recorded",
+      "verdict": "passed"
+    },
+    {
+      "name": "Pinned compositor emitted the delivered PNG",
+      "verdict": "passed"
+    },
+    {
+      "name": "Official method and task identity",
+      "verdict": "passed"
+    },
+    {
+      "name": "Current official-tool adapter and verifier revisions",
+      "verdict": "passed"
+    },
+    {
+      "name": "Declared reasoning: seam-containment",
+      "designId": "e000008",
+      "verdict": "passed",
+      "evidence": {
+        "choices": [
+          "D"
+        ],
+        "planes": [
+          {
+            "planeNormal": [
+              1,
+              0,
+              0
+            ],
+            "planeDistance": 0,
+            "nativeComponents": 3,
+            "matchesIndependentClip": true
+          },
+          {
+            "planeNormal": [
+              0,
+              0,
+              1
+            ],
+            "planeDistance": 4.2749999999999995,
+            "nativeComponents": 1,
+            "matchesIndependentClip": true
+          },
+          {
+            "planeNormal": [
+              0,
+              1,
+              0
+            ],
+            "planeDistance": 0,
+            "nativeComponents": 3,
+            "matchesIndependentClip": true
+          },
+          {
+            "planeNormal": [
+              0,
+              1,
+              0
+            ],
+            "planeDistance": 0,
+            "nativeComponents": 3,
+            "matchesIndependentClip": false,
+            "upperFootprintContained": true,
+            "interfaceIntervals": [
+              [
+                -3,
+                3
+              ],
+              [
+                -3.348632,
+                3.348632
+              ]
+            ]
+          }
+        ]
+      },
+      "feedback": ""
+    }
+  ],
+  "scope": "Native FreeCAD evidence, original compositor output, per-option geometry and final media.",
+  "commandExitStatus": 0,
+  "binding": "exact",
+  "bindingBasis": "exact candidate and full input fingerprints",
+  "commandEventId": "e000019"
+}

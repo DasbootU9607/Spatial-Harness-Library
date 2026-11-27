@@ -1,0 +1,735 @@
+{
+  "schemaVersion": 1,
+  "manifest": {
+    "sealed": true,
+    "id": "build-f6a4d9e3-fb61-46f8-8463-eebeb185e300",
+    "title": "block-movement / flat showcase construction",
+    "runKind": "[private value omitted]",
+    "harness": "spatialviz-harness",
+    "benchmark": null,
+    "category": null,
+    "taskType": null,
+    "skill": {
+      "id": "spatialviz-block-movement",
+      "sha256": "7169103c391a5b4c6ce2049892219fb1d1ae6b012f61efb630973067ed21d16c"
+    },
+    "status": "accepted",
+    "finalCandidateId": "v001",
+    "limitations": [
+      "Only recorder-mediated deliveries, commands and saved boundaries are observed; direct function calls, unwrapped commands and unsaved editor states are excluded.",
+      "Design notes are explicit author annotations, not internal reasoning."
+    ],
+    "captureGaps": []
+  },
+  "events": [
+    {
+      "id": "e000001",
+      "seq": 1,
+      "runId": "build-f6a4d9e3-fb61-46f8-8463-eebeb185e300",
+      "type": "run.created",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": null,
+      "details": {},
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000002",
+      "seq": 2,
+      "runId": "build-f6a4d9e3-fb61-46f8-8463-eebeb185e300",
+      "type": "collector.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": null,
+      "details": {},
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000003",
+      "seq": 3,
+      "runId": "build-f6a4d9e3-fb61-46f8-8463-eebeb185e300",
+      "type": "skill.attached",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": null,
+      "details": {
+        "sha256": "7169103c391a5b4c6ce2049892219fb1d1ae6b012f61efb630973067ed21d16c",
+        "skill": "spatialviz-block-movement"
+      },
+      "evidenceRefs": [
+        {
+          "id": "4b18af647b24b615",
+          "sha256": "7169103c391a5b4c6ce2049892219fb1d1ae6b012f61efb630973067ed21d16c",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000004",
+      "seq": 4,
+      "runId": "build-f6a4d9e3-fb61-46f8-8463-eebeb185e300",
+      "type": "choice.selected",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": null,
+      "details": {
+        "eligible": [
+          "flat",
+          "stack",
+          "checkpoint",
+          "missing"
+        ],
+        "selection": "flat",
+        "selectionMode": "specified"
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000005",
+      "seq": 5,
+      "runId": "build-f6a4d9e3-fb61-46f8-8463-eebeb185e300",
+      "type": "resource.read",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "6d7da7d9-2021-4b95-b8f8-f4b8f01e87ac",
+      "candidateId": null,
+      "details": {
+        "delivery": "author",
+        "outcome": "delivered",
+        "label": "patterns.json",
+        "start": 4,
+        "end": 21,
+        "sha256": "d8c45dfb3f2f32c9632b14dd43953082b260173bf2cac56c6b2178147dde434e",
+        "sourceSha256": "62e2f83a7bf0ad928c0b50ed31468c87bd9eb1b4e3040958ea0779a20588a0b1"
+      },
+      "evidenceRefs": [
+        {
+          "id": "f57f2c3cde9dcbdd",
+          "sha256": "d8c45dfb3f2f32c9632b14dd43953082b260173bf2cac56c6b2178147dde434e",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000006",
+      "seq": 6,
+      "runId": "build-f6a4d9e3-fb61-46f8-8463-eebeb185e300",
+      "type": "reference.delivered",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": null,
+      "details": {
+        "sourceId": "MentalAnimation/BlockMoving/Level0/22-3-3-1-2",
+        "label": "Official question, choices, answer and explanation",
+        "sha256": "284b25898700859e18abb53bdf8e728b0376cf28817ce185adf28cf1d5f184fb"
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000007",
+      "seq": 7,
+      "runId": "build-f6a4d9e3-fb61-46f8-8463-eebeb185e300",
+      "type": "reference.viewed",
+      "actor": "author",
+      "origin": "agent_statement",
+      "actionId": null,
+      "candidateId": null,
+      "details": {
+        "sourceId": "MentalAnimation/BlockMoving/Level0/22-3-3-1-2",
+        "observation": "The green cube stays at its corner in both views while yellow and blue exchange places.",
+        "sourceSha256": "9ca79b32c914e69b04c67230f1c6cdc58f41a0719db881a5e6c42b9ae0486b10"
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000008",
+      "seq": 8,
+      "runId": "build-f6a4d9e3-fb61-46f8-8463-eebeb185e300",
+      "type": "design.note",
+      "actor": "author",
+      "origin": "agent_statement",
+      "actionId": null,
+      "candidateId": null,
+      "details": {
+        "design": {
+          "inference": "Select the sequence that swaps the right floor occupants.",
+          "condition": "A flat rectangular board preserves world axes when the camera rotates.",
+          "foil": "Matching a visible destination while misreading the rotated horizontal axis selects the wrong sequence.",
+          "evidence": "Replay each printed program and compare occupancies using fixed board coordinates.",
+          "target": "state-replay",
+          "sourceIds": [
+            "MentalAnimation/BlockMoving/Level0/22-3-3-1-2"
+          ]
+        },
+        "goal": "Select the sequence that swaps the right floor occupants.",
+        "change": "Matching a visible destination while misreading the rotated horizontal axis selects the wrong sequence.",
+        "reason": "A flat rectangular board preserves world axes when the camera rotates.",
+        "expectedChecks": [
+          "Replay each printed program and compare occupancies using fixed board coordinates."
+        ]
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000009",
+      "seq": 9,
+      "runId": "build-f6a4d9e3-fb61-46f8-8463-eebeb185e300",
+      "type": "command.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "86a745d1-fd65-49ea-b118-1caa928b7dd2",
+      "candidateId": null,
+      "details": {
+        "label": "python",
+        "kind": "mental-animation-generation"
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000010",
+      "seq": 10,
+      "runId": "build-f6a4d9e3-fb61-46f8-8463-eebeb185e300",
+      "type": "command.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "86a745d1-fd65-49ea-b118-1caa928b7dd2",
+      "candidateId": null,
+      "details": {
+        "commandEventId": "e000009",
+        "kind": "mental-animation-generation",
+        "exitCode": 0,
+        "signal": null
+      },
+      "evidenceRefs": [
+        {
+          "id": "1f47875476794ae9",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "availability": "local evidence; hash published"
+        },
+        {
+          "id": "410d9fc3ad5e8f35",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000011",
+      "seq": 11,
+      "runId": "build-f6a4d9e3-fb61-46f8-8463-eebeb185e300",
+      "type": "candidate.saved",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "fd325ea6-86fa-455d-8119-15dc83d94661",
+      "candidateId": "v001",
+      "details": {
+        "designId": "e000008",
+        "sha256": "186ee09368e41a91cfd284416870da3833894f1dea7723d42f610d6290e0e73b",
+        "parentId": null,
+        "parentBasis": null,
+        "changes": [
+          "specification",
+          "geometry",
+          "question",
+          "options",
+          "answer",
+          "rendering",
+          "generator"
+        ],
+        "fingerprints": {
+          "specification": "186ee09368e41a91cfd284416870da3833894f1dea7723d42f610d6290e0e73b",
+          "geometry": "a57654811b3becbf9003c60a990a57a010fc85c2461cf0899197a9c6f079fde5",
+          "question": "41cd7fb5c5b0177de5c03445d418be4c633cf053d35d95bda28cc0dfe52aa028",
+          "options": "4e5b8ba66e5af984bfa46c534c7433446515f06ef10ad6042034c30e6a9e89cb",
+          "answer": "1be587f756448eae4e8ebf725fa6f89aec92b6f26c0c7c1ee662be02a1299b3c",
+          "contract": null,
+          "rendering": "6380932d90da8c59711f4a20edb065cae50041b4d0478f6349fd74e4fbc6c834",
+          "generator": "01c84f9cd3ceb7a24888ccfa30d36bbf02c0a938a31994bb54d7004e88ad2685"
+        },
+        "previewUnavailable": null
+      },
+      "evidenceRefs": [
+        {
+          "id": "0944247aea149a98",
+          "sha256": "186ee09368e41a91cfd284416870da3833894f1dea7723d42f610d6290e0e73b",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000012",
+      "seq": 12,
+      "runId": "build-f6a4d9e3-fb61-46f8-8463-eebeb185e300",
+      "type": "build.saved",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "fd325ea6-86fa-455d-8119-15dc83d94661",
+      "candidateId": "v001",
+      "details": {},
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000013",
+      "seq": 13,
+      "runId": "build-f6a4d9e3-fb61-46f8-8463-eebeb185e300",
+      "type": "render.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "72d966bd-1283-410f-913a-dbd587669a1f",
+      "candidateId": "v001",
+      "details": {
+        "renderer": {
+          "id": "block-movement",
+          "revision": "05facdd03f40c6c217c8a41766fb64bced7395ba6306c594bb2ee7e9ca956fc0"
+        }
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000014",
+      "seq": 14,
+      "runId": "build-f6a4d9e3-fb61-46f8-8463-eebeb185e300",
+      "type": "render.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "72d966bd-1283-410f-913a-dbd587669a1f",
+      "candidateId": "v001",
+      "details": {
+        "sha256": "4cd17abfbed215ec7d9b641e0e478cca0e319b748ee91bf2653076b35a3715d5",
+        "renderer": {
+          "id": "block-movement",
+          "revision": "05facdd03f40c6c217c8a41766fb64bced7395ba6306c594bb2ee7e9ca956fc0"
+        },
+        "specification": "186ee09368e41a91cfd284416870da3833894f1dea7723d42f610d6290e0e73b",
+        "rendering": "6380932d90da8c59711f4a20edb065cae50041b4d0478f6349fd74e4fbc6c834"
+      },
+      "evidenceRefs": [
+        {
+          "id": "e5de1485e8e52436",
+          "sha256": "4cd17abfbed215ec7d9b641e0e478cca0e319b748ee91bf2653076b35a3715d5",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000015",
+      "seq": 15,
+      "runId": "build-f6a4d9e3-fb61-46f8-8463-eebeb185e300",
+      "type": "command.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "f25c0cff-ef6b-4b88-b5d9-5d9651c5b469",
+      "candidateId": "v001",
+      "details": {
+        "label": "node.exe",
+        "kind": "verification"
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000016",
+      "seq": 16,
+      "runId": "build-f6a4d9e3-fb61-46f8-8463-eebeb185e300",
+      "type": "command.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "f25c0cff-ef6b-4b88-b5d9-5d9651c5b469",
+      "candidateId": "v001",
+      "details": {
+        "commandEventId": "e000015",
+        "kind": "verification",
+        "exitCode": 0,
+        "signal": null
+      },
+      "evidenceRefs": [
+        {
+          "id": "2d4fac62e5667b10",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "availability": "local evidence; hash published"
+        },
+        {
+          "id": "a4202490790cf874",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000017",
+      "seq": 17,
+      "runId": "build-f6a4d9e3-fb61-46f8-8463-eebeb185e300",
+      "type": "test.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "f25c0cff-ef6b-4b88-b5d9-5d9651c5b469",
+      "candidateId": "v001",
+      "details": {
+        "commandEventId": "e000015",
+        "completedEventId": "e000016",
+        "verdict": "passed",
+        "status": "passed",
+        "checks": [
+          {
+            "name": "Printed coordinate key, question and four option labels match the final sheet",
+            "verdict": "passed"
+          },
+          {
+            "name": "Option A",
+            "detail": "red (1, 0, 0) to (2, 0, 0), exchanging with cyan. Then cyan (2, 1, 0) to (2, 0, 0), exchanging with red. Then blue (3, 2, 0) to (2, 2, 0). Step 3, cell (2, 2, 0) contains blue. The panel requires empty.",
+            "verdict": "passed"
+          },
+          {
+            "name": "Option B",
+            "detail": "cyan (2, 0, 0) to (1, 0, 0), exchanging with red. Then cyan (2, 1, 0) to (2, 0, 0), exchanging with red. Then gold (0, 1, 0) to (1, 1, 0). Step 3, cell (0, 1, 0) contains empty. The panel requires gold.",
+            "verdict": "passed"
+          },
+          {
+            "name": "Option C",
+            "detail": "red (1, 0, 0) to (2, 0, 0), exchanging with cyan. Then cyan (2, 1, 0) to (2, 0, 0), exchanging with red. Then cyan (2, 0, 0) to (3, 0, 0), exchanging with cyan. Every displayed constraint matches.",
+            "verdict": "passed"
+          },
+          {
+            "name": "Option D",
+            "detail": "red (1, 0, 0) to (2, 0, 0), exchanging with cyan. Then cyan (1, 0, 0) to (0, 0, 0). Then red (2, 0, 0) to (2, 1, 0), exchanging with cyan. Step 3, cell (0, 0, 0) contains cyan. The panel requires empty.",
+            "verdict": "passed"
+          },
+          {
+            "name": "Declared reasoning: state-replay",
+            "designId": "e000008",
+            "verdict": "passed",
+            "evidence": {
+              "answer": "C",
+              "closestFoil": "A",
+              "foilMismatch": {
+                "step": 3,
+                "cell": [
+                  2,
+                  2,
+                  0
+                ],
+                "observed": [
+                  "blue"
+                ],
+                "required": null
+              },
+              "commands": [
+                "(1,0,0) x+",
+                "(2,1,0) y-",
+                "(2,0,0) x+"
+              ],
+              "stepsReplayed": 3,
+              "foilWitnesses": {
+                "A": {
+                  "step": 3,
+                  "cell": [
+                    2,
+                    2,
+                    0
+                  ],
+                  "observed": [
+                    "blue"
+                  ],
+                  "required": null
+                },
+                "B": {
+                  "step": 3,
+                  "cell": [
+                    0,
+                    1,
+                    0
+                  ],
+                  "observed": null,
+                  "required": [
+                    "gold"
+                  ]
+                },
+                "D": {
+                  "step": 3,
+                  "cell": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "observed": [
+                    "cyan"
+                  ],
+                  "required": null
+                }
+              }
+            },
+            "feedback": ""
+          }
+        ],
+        "scope": "Printed state keys, commands, labeled diagrams and all four alternatives.",
+        "binding": "exact",
+        "bindingBasis": "exact candidate and full input fingerprints",
+        "testedFingerprints": {
+          "specification": "186ee09368e41a91cfd284416870da3833894f1dea7723d42f610d6290e0e73b",
+          "geometry": "a57654811b3becbf9003c60a990a57a010fc85c2461cf0899197a9c6f079fde5",
+          "question": "41cd7fb5c5b0177de5c03445d418be4c633cf053d35d95bda28cc0dfe52aa028",
+          "options": "4e5b8ba66e5af984bfa46c534c7433446515f06ef10ad6042034c30e6a9e89cb",
+          "answer": "1be587f756448eae4e8ebf725fa6f89aec92b6f26c0c7c1ee662be02a1299b3c",
+          "contract": null,
+          "rendering": "6380932d90da8c59711f4a20edb065cae50041b4d0478f6349fd74e4fbc6c834",
+          "generator": "01c84f9cd3ceb7a24888ccfa30d36bbf02c0a938a31994bb54d7004e88ad2685"
+        },
+        "verifier": {
+          "id": "block-movement",
+          "revision": "05facdd03f40c6c217c8a41766fb64bced7395ba6306c594bb2ee7e9ca956fc0"
+        },
+        "reportSha256": "2806747d3497f8a9355032868b420c782c8bdad040968c06e9eab1131e99df2d"
+      },
+      "evidenceRefs": [
+        {
+          "id": "6204f2e3fab8c668",
+          "sha256": "2806747d3497f8a9355032868b420c782c8bdad040968c06e9eab1131e99df2d",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000018",
+      "seq": 18,
+      "runId": "build-f6a4d9e3-fb61-46f8-8463-eebeb185e300",
+      "type": "visual.review",
+      "actor": "author",
+      "origin": "agent_statement",
+      "actionId": null,
+      "candidateId": "v001",
+      "details": {
+        "outcome": "passed",
+        "review": "The cyan front run of three and the red block just behind it distinguish C. The opposite view makes the front/back direction of the final move visible."
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000019",
+      "seq": 19,
+      "runId": "build-f6a4d9e3-fb61-46f8-8463-eebeb185e300",
+      "type": "run.finished",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": "v001",
+      "details": {
+        "outcome": "accepted",
+        "finalCandidateId": "v001"
+      },
+      "evidenceRefs": []
+    }
+  ],
+  "candidates": [
+    {
+      "id": "v001",
+      "designId": "e000008",
+      "parentId": null,
+      "parentBasis": null,
+      "sha256": "186ee09368e41a91cfd284416870da3833894f1dea7723d42f610d6290e0e73b",
+      "fingerprints": {
+        "specification": "186ee09368e41a91cfd284416870da3833894f1dea7723d42f610d6290e0e73b",
+        "geometry": "a57654811b3becbf9003c60a990a57a010fc85c2461cf0899197a9c6f079fde5",
+        "question": "41cd7fb5c5b0177de5c03445d418be4c633cf053d35d95bda28cc0dfe52aa028",
+        "options": "4e5b8ba66e5af984bfa46c534c7433446515f06ef10ad6042034c30e6a9e89cb",
+        "answer": "1be587f756448eae4e8ebf725fa6f89aec92b6f26c0c7c1ee662be02a1299b3c",
+        "contract": null,
+        "rendering": "6380932d90da8c59711f4a20edb065cae50041b4d0478f6349fd74e4fbc6c834",
+        "generator": "01c84f9cd3ceb7a24888ccfa30d36bbf02c0a938a31994bb54d7004e88ad2685"
+      },
+      "previewUnavailable": null,
+      "changes": [
+        "specification",
+        "geometry",
+        "question",
+        "options",
+        "answer",
+        "rendering",
+        "generator"
+      ],
+      "preview": {
+        "candidateId": "v001",
+        "specification": "186ee09368e41a91cfd284416870da3833894f1dea7723d42f610d6290e0e73b",
+        "rendering": "6380932d90da8c59711f4a20edb065cae50041b4d0478f6349fd74e4fbc6c834",
+        "renderer": {
+          "id": "block-movement",
+          "revision": "05facdd03f40c6c217c8a41766fb64bced7395ba6306c594bb2ee7e9ca956fc0"
+        },
+        "sha256": "4cd17abfbed215ec7d9b641e0e478cca0e319b748ee91bf2653076b35a3715d5",
+        "path": "records/authored-186ee09368e41a91cfd28441/v001-4cd17abfbed215ec.png",
+        "origin": "recorded-render"
+      }
+    }
+  ],
+  "tests": [
+    {
+      "id": "t001",
+      "actionId": "f25c0cff-ef6b-4b88-b5d9-5d9651c5b469",
+      "candidateId": "v001",
+      "testedFingerprints": {
+        "specification": "186ee09368e41a91cfd284416870da3833894f1dea7723d42f610d6290e0e73b",
+        "geometry": "a57654811b3becbf9003c60a990a57a010fc85c2461cf0899197a9c6f079fde5",
+        "question": "41cd7fb5c5b0177de5c03445d418be4c633cf053d35d95bda28cc0dfe52aa028",
+        "options": "4e5b8ba66e5af984bfa46c534c7433446515f06ef10ad6042034c30e6a9e89cb",
+        "answer": "1be587f756448eae4e8ebf725fa6f89aec92b6f26c0c7c1ee662be02a1299b3c",
+        "contract": null,
+        "rendering": "6380932d90da8c59711f4a20edb065cae50041b4d0478f6349fd74e4fbc6c834",
+        "generator": "01c84f9cd3ceb7a24888ccfa30d36bbf02c0a938a31994bb54d7004e88ad2685"
+      },
+      "verifier": {
+        "id": "block-movement",
+        "revision": "05facdd03f40c6c217c8a41766fb64bced7395ba6306c594bb2ee7e9ca956fc0"
+      },
+      "reportSha256": "2806747d3497f8a9355032868b420c782c8bdad040968c06e9eab1131e99df2d",
+      "verdict": "passed",
+      "status": "passed",
+      "checks": [
+        {
+          "name": "Printed coordinate key, question and four option labels match the final sheet",
+          "verdict": "passed"
+        },
+        {
+          "name": "Option A",
+          "detail": "red (1, 0, 0) to (2, 0, 0), exchanging with cyan. Then cyan (2, 1, 0) to (2, 0, 0), exchanging with red. Then blue (3, 2, 0) to (2, 2, 0). Step 3, cell (2, 2, 0) contains blue. The panel requires empty.",
+          "verdict": "passed"
+        },
+        {
+          "name": "Option B",
+          "detail": "cyan (2, 0, 0) to (1, 0, 0), exchanging with red. Then cyan (2, 1, 0) to (2, 0, 0), exchanging with red. Then gold (0, 1, 0) to (1, 1, 0). Step 3, cell (0, 1, 0) contains empty. The panel requires gold.",
+          "verdict": "passed"
+        },
+        {
+          "name": "Option C",
+          "detail": "red (1, 0, 0) to (2, 0, 0), exchanging with cyan. Then cyan (2, 1, 0) to (2, 0, 0), exchanging with red. Then cyan (2, 0, 0) to (3, 0, 0), exchanging with cyan. Every displayed constraint matches.",
+          "verdict": "passed"
+        },
+        {
+          "name": "Option D",
+          "detail": "red (1, 0, 0) to (2, 0, 0), exchanging with cyan. Then cyan (1, 0, 0) to (0, 0, 0). Then red (2, 0, 0) to (2, 1, 0), exchanging with cyan. Step 3, cell (0, 0, 0) contains cyan. The panel requires empty.",
+          "verdict": "passed"
+        },
+        {
+          "name": "Declared reasoning: state-replay",
+          "designId": "e000008",
+          "verdict": "passed",
+          "evidence": {
+            "answer": "C",
+            "closestFoil": "A",
+            "foilMismatch": {
+              "step": 3,
+              "cell": [
+                2,
+                2,
+                0
+              ],
+              "observed": [
+                "blue"
+              ],
+              "required": null
+            },
+            "commands": [
+              "(1,0,0) x+",
+              "(2,1,0) y-",
+              "(2,0,0) x+"
+            ],
+            "stepsReplayed": 3,
+            "foilWitnesses": {
+              "A": {
+                "step": 3,
+                "cell": [
+                  2,
+                  2,
+                  0
+                ],
+                "observed": [
+                  "blue"
+                ],
+                "required": null
+              },
+              "B": {
+                "step": 3,
+                "cell": [
+                  0,
+                  1,
+                  0
+                ],
+                "observed": null,
+                "required": [
+                  "gold"
+                ]
+              },
+              "D": {
+                "step": 3,
+                "cell": [
+                  0,
+                  0,
+                  0
+                ],
+                "observed": [
+                  "cyan"
+                ],
+                "required": null
+              }
+            }
+          },
+          "feedback": ""
+        }
+      ],
+      "scope": "Printed state keys, commands, labeled diagrams and all four alternatives.",
+      "commandExitStatus": 0,
+      "binding": "exact",
+      "bindingBasis": "exact candidate and full input fingerprints",
+      "commandEventId": "e000015"
+    }
+  ],
+  "usage": {
+    "schemaVersion": 2,
+    "runId": "build-f6a4d9e3-fb61-46f8-8463-eebeb185e300",
+    "source": "codex",
+    "runtime": "Codex Desktop",
+    "status": "measured",
+    "elapsedMs": 799068,
+    "elapsedKind": "wall-clock",
+    "scope": "Runtime-reported usage between the start baseline and finish snapshot of this session. In-flight or delayed usage, earlier conversation, other agents and later delivery are excluded. This is an observed interval, not a complete billed task total.",
+    "scopeComplete": false,
+    "observedTokens": {
+      "input_tokens": 7289305,
+      "cached_input_tokens": 7167616,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 18281,
+      "reasoning_output_tokens": 2813,
+      "total_tokens": 7307586
+    },
+    "tokens": {
+      "input_tokens": null,
+      "cached_input_tokens": null,
+      "cache_write_input_tokens": null,
+      "output_tokens": null,
+      "reasoning_output_tokens": null,
+      "total_tokens": null
+    },
+    "models": [
+      {
+        "provider": "openai",
+        "model": "gpt-6.2-astra",
+        "reasoningEffort": "xhigh",
+        "tokens": {
+          "input_tokens": 7289305,
+          "cached_input_tokens": 7167616,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 18281,
+          "reasoning_output_tokens": 2813,
+          "total_tokens": 7307586
+        },
+        "observations": 40
+      }
+    ],
+    "missingFields": [],
+    "issues": [],
+    "observations": 40
+  },
+  "caseId": "authored-186ee09368e41a91cfd28441"
+}

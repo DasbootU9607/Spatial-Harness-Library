@@ -1,0 +1,125 @@
+{
+  "title": "The idler and the slotted slide",
+  "intent": "Find the instantaneous slide direction after transmission through two external meshes.",
+  "cad": {
+    "moduleMm": 2,
+    "tiltDeg": 24
+  },
+  "members": {
+    "A": {
+      "kind": "gear",
+      "at": [
+        0,
+        0,
+        0
+      ],
+      "teeth": 18
+    },
+    "B": {
+      "kind": "gear",
+      "at": [
+        46,
+        0,
+        0
+      ],
+      "teeth": 30
+    },
+    "K": {
+      "kind": "crank",
+      "at": [
+        46,
+        0,
+        1
+      ],
+      "radius": 7
+    },
+    "Y": {
+      "kind": "slider",
+      "at": [
+        46,
+        -7,
+        2
+      ]
+    },
+    "I": {
+      "kind": "gear",
+      "at": [
+        20,
+        0,
+        0
+      ],
+      "teeth": 22
+    }
+  },
+  "connections": [
+    {
+      "kind": "mesh",
+      "ports": [
+        "A",
+        "I"
+      ]
+    },
+    {
+      "kind": "mesh",
+      "ports": [
+        "I",
+        "B"
+      ]
+    },
+    {
+      "kind": "key",
+      "ports": [
+        "B",
+        "K"
+      ]
+    },
+    {
+      "kind": "yoke",
+      "ports": [
+        "K",
+        "Y"
+      ],
+      "radius": 7
+    }
+  ],
+  "input": {
+    "member": "A",
+    "motion": "CCW"
+  },
+  "interval": "instant",
+  "targets": [
+    {
+      "name": "Y",
+      "kind": "horizontal"
+    }
+  ],
+  "choices": [
+    {
+      "motions": [
+        "left"
+      ],
+      "reason": "Two external meshes keep the keyed crank counterclockwise; its top pin travels left across the vertical slot."
+    },
+    {
+      "motions": [
+        "right"
+      ],
+      "reason": "Following the idler alone drops the second reversal between I and B."
+    },
+    {
+      "motions": [
+        "stationary"
+      ],
+      "reason": "The pin has zero vertical speed here and nonzero horizontal speed across the slot."
+    },
+    {
+      "motions": [
+        "rotates"
+      ],
+      "reason": "The two frame guides constrain the yoke to translation."
+    }
+  ],
+  "references": [
+    "MentalAnimation/MechanicalSystem/Level0/34"
+  ]
+}

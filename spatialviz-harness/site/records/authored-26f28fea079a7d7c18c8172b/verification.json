@@ -1,0 +1,128 @@
+{
+  "id": "t001",
+  "actionId": "dc170992-d6f5-4198-bc42-9df526bdf900",
+  "candidateId": "v001",
+  "testedFingerprints": {
+    "specification": "26f28fea079a7d7c18c8172b10f90ed2b46851914dfe1248f9c9bff06cd318ad",
+    "geometry": "010627ecf3913958b0bd7b5655ff6399c114e57bdfc6283030b67de4a4a07fa4",
+    "question": "015ba63106e75b9c726405d6682b78bcf9c8044acfe73d991cd0c5d4a668d4fc",
+    "options": "faaec8998152578b6518dc1bab53fde1b152a4a837ded4d6c4ea1fe904932953",
+    "answer": "f175612888fc26f7971066610d26f3d133d1a54268008b80e09662df22ce69b8",
+    "contract": "79954ef021244896fe0e1d3be9fca8110a6882c01d596e60b7578cb4fd45b968",
+    "rendering": "f6d1ff211d4eea6ddbb2d51bdde7943b8eaef03968c192704009dd697007679e",
+    "generator": "732bee0ebd6ee3e8330313928f5990c5a16dff4bea86562406ebf98e8853c924"
+  },
+  "verifier": {
+    "id": "penetration-cross-sections",
+    "revision": "da7994ee59b4420debb892d9b5276661676eb8740007e064d4e0eab371cece0f"
+  },
+  "reportSha256": "a343767a195b0dd693255b737b1830edb74ad61663ca2b8e060e056cd1714cf3",
+  "verdict": "passed",
+  "status": "passed",
+  "checks": [
+    {
+      "name": "Final official composite and native panel order",
+      "verdict": "passed"
+    },
+    {
+      "name": "Final visible wire pixels match oriented native section geometry",
+      "verdict": "passed"
+    },
+    {
+      "name": "Exactly one answer under independent plane clipping or global seam containment",
+      "verdict": "passed"
+    },
+    {
+      "name": "Four distinct outlines",
+      "verdict": "passed"
+    },
+    {
+      "name": "Per-option explanations",
+      "verdict": "passed"
+    },
+    {
+      "name": "Unmodified official source fingerprints",
+      "verdict": "passed"
+    },
+    {
+      "name": "FreeCAD launch and native document recorded",
+      "verdict": "passed"
+    },
+    {
+      "name": "Pinned compositor emitted the delivered PNG",
+      "verdict": "passed"
+    },
+    {
+      "name": "Official method and task identity",
+      "verdict": "passed"
+    },
+    {
+      "name": "Current official-tool adapter and verifier revisions",
+      "verdict": "passed"
+    },
+    {
+      "name": "Declared reasoning: marked-side",
+      "designId": "e000008",
+      "verdict": "passed",
+      "evidence": {
+        "choices": [
+          "B"
+        ],
+        "planes": [
+          {
+            "planeNormal": [
+              0,
+              0,
+              1
+            ],
+            "planeDistance": 3.6750000000000003,
+            "nativeComponents": 1,
+            "matchesIndependentClip": true
+          },
+          {
+            "planeNormal": [
+              0,
+              1,
+              0
+            ],
+            "planeDistance": 0,
+            "nativeComponents": 2,
+            "matchesIndependentClip": true
+          },
+          {
+            "planeNormal": [
+              0,
+              1,
+              0
+            ],
+            "planeDistance": -2,
+            "nativeComponents": 1,
+            "matchesIndependentClip": true
+          },
+          {
+            "planeNormal": [
+              0,
+              1,
+              0
+            ],
+            "planeDistance": 0,
+            "nativeComponents": 2,
+            "matchesIndependentClip": true
+          }
+        ],
+        "control": {
+          "side": "south"
+        },
+        "controlChoices": [
+          "D"
+        ]
+      },
+      "feedback": ""
+    }
+  ],
+  "scope": "Native FreeCAD evidence, original compositor output, per-option geometry and final media.",
+  "commandExitStatus": 0,
+  "binding": "exact",
+  "bindingBasis": "exact candidate and full input fingerprints",
+  "commandEventId": "e000019"
+}

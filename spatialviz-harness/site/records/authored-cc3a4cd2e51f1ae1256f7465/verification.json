@@ -1,0 +1,99 @@
+{
+  "id": "t001",
+  "actionId": "a59375ec-d104-4713-955f-03de86acf419",
+  "candidateId": "v001",
+  "testedFingerprints": {
+    "specification": "cc3a4cd2e51f1ae1256f74656db0fcff5d8827925ebdfbb79382ca47cda63e5c",
+    "geometry": "dd0eee05daadc7b82d9cb3d28fba0675fc2732a9b629d6679a8101e4a50231e5",
+    "question": "949a2e941a0a61b4d6e4fc92c2077093ea0e7c7430139c18b24e8db187cd4789",
+    "options": "2a02ee37206c0089bd193ad678330e2d408634d0befda3fcfdf1fc7c1b232c15",
+    "answer": "807be3fa039caea1f7af8c3e76d6074c760ee9cac971588e1eba1968b125028a",
+    "contract": null,
+    "rendering": "23899c63fb688154683ba742fbf866613f1087d0146ec70dc77ff720618b0154",
+    "generator": "90a0f7dc47340436e33a9d073f7840155978f678c1a602aaf5c185bfbebf57d0"
+  },
+  "verifier": {
+    "id": "arrow-movement",
+    "revision": "b53464c5a44f95977a83184de30510f7ab2e083e56e84db3d21f44b324645c93"
+  },
+  "reportSha256": "68b760fef358ae86f34c3a020930f8ddb93ee7984160ae118e1fe050cfd72b98",
+  "verdict": "passed",
+  "status": "passed",
+  "checks": [
+    {
+      "name": "Printed coordinate key, question and four option labels match the final sheet",
+      "verdict": "passed"
+    },
+    {
+      "name": "Option A",
+      "detail": "purple (3, 2) to (3, 1) facing S, exchanging with purple facing N. Then green (2, 2) to (0, 2) facing W. Then teal (1, 1) to (1, 0) facing S, exchanging with red facing N. Then red (1, 1) to (3, 1) facing E, exchanging with purple facing W. Every displayed constraint matches.",
+      "verdict": "passed"
+    },
+    {
+      "name": "Option B",
+      "detail": "purple (3, 2) to (3, 1) facing S, exchanging with purple facing N. Then green (2, 2) to (0, 2) facing W. Then teal (1, 1) to (1, 0) facing S, exchanging with red facing N. Then red (1, 1) to (3, 1) facing E, exchanging with purple facing W. Step 4, cell (0, 2) contains green W. The panel requires empty.",
+      "verdict": "passed"
+    },
+    {
+      "name": "Option C",
+      "detail": "purple (3, 2) to (3, 1) facing S, exchanging with purple facing N. Then green (2, 2) to (0, 2) facing W. Then teal (1, 1) to (1, 0) facing S, exchanging with red facing N. Then red (1, 1) to (3, 1) facing E, exchanging with purple facing W. Step 4, cell (1, 0) contains teal S. The panel requires empty.",
+      "verdict": "passed"
+    },
+    {
+      "name": "Option D",
+      "detail": "purple (3, 2) to (3, 1) facing S, exchanging with purple facing N. Then green (2, 2) to (0, 2) facing W. Then teal (1, 1) to (1, 0) facing S, exchanging with red facing N. Then red (1, 1) to (3, 1) facing E, exchanging with purple facing W. Step 4, cell (0, 2) contains green W. The panel requires empty.",
+      "verdict": "passed"
+    },
+    {
+      "name": "Declared reasoning: moving-occupant",
+      "designId": "e000008",
+      "verdict": "passed",
+      "evidence": {
+        "answer": "A",
+        "closestFoil": "C",
+        "foilMismatch": {
+          "step": 4,
+          "cell": [
+            1,
+            0
+          ],
+          "observed": [
+            "teal",
+            "S"
+          ],
+          "required": null
+        },
+        "commands": [
+          "(3,2) Right 1",
+          "(2,2) Left 2",
+          "(1,1) Backward 1",
+          "(1,1) Right 2"
+        ],
+        "stepsReplayed": 4,
+        "changedStep": 1,
+        "changedRule": "treat occupied (3, 1) as blocking the exchange from (3, 2)",
+        "counterfactual": {
+          "step": 4,
+          "cell": [
+            3,
+            2
+          ],
+          "observed": [
+            "purple",
+            "E"
+          ],
+          "required": [
+            "purple",
+            "N"
+          ]
+        }
+      },
+      "feedback": ""
+    }
+  ],
+  "scope": "Printed state keys, commands, labeled diagrams and all four alternatives.",
+  "commandExitStatus": 0,
+  "binding": "exact",
+  "bindingBasis": "exact candidate and full input fingerprints",
+  "commandEventId": "e000015"
+}

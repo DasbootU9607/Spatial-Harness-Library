@@ -49,6 +49,20 @@ function discover(){
    if(!replacement?.exhibit || replacement.supersededBy || replacement.id===archived.id || replacement.taskType!==archived.taskType) throw Error('Invalid replacement for '+archived.id);
    archived.exhibit=false;
  }
+ const selection=R.read(path.join(root,'catalog/spatialviz-showcase.json'));
+ const selected=new Set(), runs=new Set();
+ const spatialSkills=skills.filter(s=>s.harnessId==='spatialviz-harness');
+ if(Object.keys(selection).length!==spatialSkills.length)throw Error('The SpatialViz showcase must cover each completed skill.');
+ for(const skill of spatialSkills){
+  const ids=selection[skill.id];
+  if(!Array.isArray(ids)||ids.length<1||ids.length>5)throw Error('Expected one to five exhibits for '+skill.name);
+  for(const id of ids){
+   const item=cases.find(c=>c.id===id&&c.harnessId===skill.harnessId);
+   if(!item?.exhibit||!item.skillIds.includes(skill.id)||selected.has(id)||!item.build?.runId||runs.has(item.build.runId))throw Error('Invalid showcase case or repeated construction run: '+id);
+   selected.add(id);runs.add(item.build.runId);
+  }
+ }
+ for(const c of cases.filter(c=>c.harnessId==='spatialviz-harness'))c.exhibit=selected.has(c.id);
  const maze=R.read(path.join(root,'maze-harness/site/data/catalog.json'));
  for(const s of maze.skills)if(!skills.some(x=>x.id===s.id&&x.harnessId==='maze-harness'))skills.push({...s,harnessId:'maze-harness',status:'complete',officialReferences:s.officialCases,install:'node tools/install.cjs --harness maze-harness --destination YOUR_SKILLS_DIRECTORY'});
  for(const c of maze.cases){const item={...c,harnessId:'maze-harness',skillIds:[c.skill],sourceKind:c.kind==='official'?'official':'agent-authored',taskType:'maze',taskUrl:`player.html?world=${c.world}&room=${c.room}`,processUrl:c.process?`process.html?case=${c.id}`:null,taskArtifact:c.map,solution:c.witness,legacy:true};if(c.kind==='official')official.push(item);else cases.push(item);}

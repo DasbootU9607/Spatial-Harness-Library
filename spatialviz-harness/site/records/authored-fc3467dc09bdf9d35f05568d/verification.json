@@ -1,0 +1,69 @@
+{
+  "id": "t001",
+  "actionId": "c3cba3ed-e951-4096-801b-dccca72a5240",
+  "candidateId": "v001",
+  "testedFingerprints": {
+    "specification": "fc3467dc09bdf9d35f05568ddfb7de0388729a7bea5680171ccf205528d33af1",
+    "geometry": "e49f3627de41175f71500616c43da786350c9ae3f9d7de97f9044d33dac91ac0",
+    "question": "e7c99231ec6290780f44b0505ca5b51dd4417b67a68019394ecd5de670491b70",
+    "options": "9a7e4f89a3fb23827280c341572fdb5b64ae3ab48b572d660a54a2c08329ce0e",
+    "answer": "3c03a5247e19aa3c207012cf37414134e820bada0bd3e1fd9e26e6df771b4006",
+    "contract": "a242a71078e1915731e799821e2eaf246c47567d5fd5b7e0661b516e7bd551e9",
+    "rendering": "294dc9848ea82cb4a84cf9447f73994762348684ebc64e79a912bd6f23a0c4d5",
+    "generator": "236847673f3afb14db9b2dd168addec09bd5335ec26006a722c68182c89a6787"
+  },
+  "verifier": {
+    "id": "official-cube-unfolding",
+    "revision": "b3c0fcd03aa53ecd0de74e994ede29378f46c7f2074be4d46ad005eb474d16dd"
+  },
+  "reportSha256": "106af70f92b25c941d8b1ec866d5cbaa33152c9a152c9a4c083dc4cf0d0672e3",
+  "verdict": "passed",
+  "status": "passed",
+  "checks": [
+    {
+      "name": "Hinge consistency, six normals, proper rotations and exact unique answer",
+      "verdict": "passed"
+    },
+    {
+      "name": "Published prompt, polarity, upstream answer and ordered figure/text options",
+      "verdict": "passed"
+    },
+    {
+      "name": "Rectified CAD faces, rotations, reflections, grid occupancy and visually distinct panels",
+      "verdict": "passed"
+    },
+    {
+      "name": "Pixel-exact labeled composition and complete question PNG",
+      "verdict": "passed"
+    },
+    {
+      "name": "Current domain adapter and pinned source bytes",
+      "verdict": "passed"
+    },
+    {
+      "name": "Declared reasoning: visible-corner",
+      "designId": "e000008",
+      "verdict": "passed",
+      "evidence": {
+        "fullMatches": [
+          "D"
+        ],
+        "ignoringFaceTurns": [
+          "D"
+        ],
+        "foldedCornerWitnesses": {
+          "A": "Reading the net from its upper left, the top, left and right faces come from blue (column 1, row 1 from the upper left), then red (column 2, row 2 from the upper left), then green (column 2, row 1 from the upper left). All three markings retain the pictured orientation.",
+          "B": "Reading the net from its upper left, the top, left and right faces come from blue (column 1, row 1 from the upper left), then red (column 2, row 2 from the upper left), then green (column 2, row 1 from the upper left). All three markings retain the pictured orientation.",
+          "C": "Reading the net from its upper left, the top, left and right faces come from blue (column 1, row 2 from the upper left), then red (column 2, row 3 from the upper left), then green (column 2, row 2 from the upper left). All three markings retain the pictured orientation.",
+          "D": "red (column 2, row 3 from the upper left) and green (column 2, row 1 from the upper left) are opposite and cannot meet at the visible corner."
+        }
+      },
+      "feedback": ""
+    }
+  ],
+  "scope": "Exact exterior folding and rectified panel matching under the declared camera.",
+  "commandExitStatus": 0,
+  "binding": "exact",
+  "bindingBasis": "exact candidate and full input fingerprints",
+  "commandEventId": "e000015"
+}

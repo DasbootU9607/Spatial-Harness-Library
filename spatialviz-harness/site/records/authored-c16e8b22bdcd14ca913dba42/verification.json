@@ -1,0 +1,148 @@
+{
+  "id": "t001",
+  "actionId": "dd0039a9-1da4-4bd4-854a-34baea0c92dd",
+  "candidateId": "v001",
+  "testedFingerprints": {
+    "specification": "c16e8b22bdcd14ca913dba420299b20528a689a40f7a693b358fbb63dc309b6f",
+    "geometry": "bc886ee7c48e77717c819f4853888a36efc4278cbf2bf894ad68da36a00bda03",
+    "question": "58de11a280153fba650fa30a3707ad6c1990f601e6d65f0d48bb9cb8feecd90e",
+    "options": "2a02ee37206c0089bd193ad678330e2d408634d0befda3fcfdf1fc7c1b232c15",
+    "answer": "6faf6a00d2ce61a4239807edd95e649981388b1c8a5212e7dd4fa1221493ab69",
+    "contract": null,
+    "rendering": "f18195c050a7179adca31b7f66b5b79811683e520ddf46bdc8befac880f420be",
+    "generator": "7c34c765bdf7e9514f6b232189ec9f66e1af969c907bc55cc78b4fe18922dcd7"
+  },
+  "verifier": {
+    "id": "official-paper-folding",
+    "revision": "dd94c970d78c923bcd54eb0b6e03d50d81e6d0876f70829dcb3ec533b55c86be"
+  },
+  "reportSha256": "55193883b2ee1596ebceb4b70a4e8887e299a3c39b15f5d41e45544ea7ff2ef9",
+  "verdict": "passed",
+  "status": "passed",
+  "checks": [
+    {
+      "name": "Independent image-only reconstruction, unique physical history and unique printed choice",
+      "verdict": "passed"
+    },
+    {
+      "name": "Original cell transport, local creases, changing offsets, punch layers and physical novelty",
+      "verdict": "passed"
+    },
+    {
+      "name": "Four visibly distinct options with row or column deletion, duplication and relocation",
+      "verdict": "passed"
+    },
+    {
+      "name": "Pinned native panel sequence, hole locations, option letters, font labels and printed prompt",
+      "verdict": "passed"
+    },
+    {
+      "name": "Pinned modeling, drawing, dispatch, assets and verification source",
+      "verdict": "passed"
+    },
+    {
+      "name": "Declared reasoning: diagonal-partner",
+      "designId": "e000008",
+      "verdict": "passed",
+      "evidence": {
+        "answer": "D",
+        "closestFoil": "B",
+        "differingCells": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            4
+          ]
+        ],
+        "punches": [
+          [
+            1,
+            4
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ]
+        ],
+        "omittedStep": 3,
+        "crease": {
+          "axis": "diagonal",
+          "endpoints": [
+            [
+              4,
+              2
+            ],
+            [
+              1,
+              5
+            ]
+          ],
+          "movingCorner": [
+            1,
+            2
+          ]
+        },
+        "changedHoles": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            3
+          ]
+        ],
+        "matchesWithoutFold": []
+      },
+      "feedback": ""
+    }
+  ],
+  "scope": "Visible blue fold outlines, red punch centers, unfolded answer pixels, prompt and labels.",
+  "commandExitStatus": 0,
+  "binding": "exact",
+  "bindingBasis": "exact candidate and full input fingerprints",
+  "commandEventId": "e000015"
+}

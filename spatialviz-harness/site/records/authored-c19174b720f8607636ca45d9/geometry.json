@@ -1,0 +1,66 @@
+{
+  "checks": [
+    "Valid positive-volume solid: A  |  gear",
+    "Valid positive-volume solid: B  |  gear",
+    "Valid positive-volume solid: K  |  crank",
+    "Valid positive-volume solid: Y  |  slider",
+    "Valid positive-volume solid: I  |  gear",
+    "Valid positive-volume solid: Fixed rear mounting plate",
+    "Valid positive-volume solid: Axle at A",
+    "Valid positive-volume solid: Frame bearing at A",
+    "Valid positive-volume solid: Axle at B, K",
+    "Valid positive-volume solid: Frame bearing at B, K",
+    "Valid positive-volume solid: Axle at I",
+    "Valid positive-volume solid: Frame bearing at I",
+    "Valid positive-volume solid: Feather key B / K",
+    "Valid positive-volume solid: Crank pin captured in Y",
+    "Valid positive-volume solid: Twin frame guides for Y",
+    "Counted 36 physical flank crossings for 18 teeth on A",
+    "Counted 60 physical flank crossings for 30 teeth on B",
+    "Counted 44 physical flank crossings for 22 teeth on I",
+    "Native pitch distance 40.000 mm at A/I",
+    "Working tooth faces overlap axially",
+    "Meshed B-reps at the displayed pose have 0.000000 cubic mm interference",
+    "A physical frame bearing locates a fixed mesh axle at A / I",
+    "A physical frame bearing locates a fixed mesh axle at A / I",
+    "Native pitch distance 52.000 mm at I/B",
+    "Working tooth faces overlap axially",
+    "Meshed B-reps at the displayed pose have 0.000005 cubic mm interference",
+    "A physical frame bearing locates a fixed mesh axle at I / B",
+    "A physical frame bearing locates a fixed mesh axle at I / B",
+    "Keyed hubs have a common axis",
+    "Solid key sits in the keyway of B",
+    "Solid key sits in the keyway of K",
+    "Upper pin bears on the crank",
+    "Pin fits between the working slot faces",
+    "Vertical retaining walls on both sides of the upper pin",
+    "Slide rod fits the two horizontal frame guides"
+  ],
+  "facts": [
+    "A 18T / I 22T : external mesh on frame.",
+    "I 22T / B 30T : external mesh on frame.",
+    "B and K are keyed to one shaft.",
+    "Top pin on K runs in the vertical slot of Y.",
+    "Two horizontal frame guides locate Y."
+  ],
+  "meshMeasurements": [
+    {
+      "members": [
+        "A",
+        "I"
+      ],
+      "pitchDistanceMm": 40.0,
+      "overlapMm3": 0.0
+    },
+    {
+      "members": [
+        "I",
+        "B"
+      ],
+      "pitchDistanceMm": 52.0,
+      "overlapMm3": 4.8e-06
+    }
+  ],
+  "scope": "Reopened B-reps and mounted interfaces at the displayed pose. Tooth phasing is a pose check. Motion signs are derived separately from the printed problem.",
+  "freecadVersion": "1.0.2"
+}
