@@ -1,0 +1,155 @@
+{
+  "schemaVersion": 1,
+  "title": "Compound gear and transverse worm between wheels",
+  "description": "ordered direct and worm-transmitted outputs",
+  "category": "MentalAnimation",
+  "taskType": "MechanicalSystem",
+  "difficulty": {
+    "label": "Unranked",
+    "basis": "Authored schematic exercise"
+  },
+  "geometry": {
+    "components": {
+      "A": "wheel",
+      "B": "wheel",
+      "K": "wheel",
+      "I": "wheel",
+      "C": "wheel"
+    },
+    "joints": [
+      {
+        "kind": "key",
+        "ports": [
+          "A",
+          "K"
+        ],
+        "settings": {}
+      },
+      {
+        "kind": "mesh",
+        "ports": [
+          "A",
+          "B"
+        ],
+        "settings": {
+          "teeth": [
+            28,
+            112
+          ],
+          "contact": "outside",
+          "arm": "frame"
+        }
+      },
+      {
+        "kind": "helix",
+        "ports": [
+          "K",
+          "I"
+        ],
+        "settings": {
+          "lead": "opposed"
+        }
+      },
+      {
+        "kind": "helix",
+        "ports": [
+          "I",
+          "C"
+        ],
+        "settings": {
+          "lead": "opposed"
+        }
+      }
+    ],
+    "driver": "A",
+    "input": "CW",
+    "targets": [
+      {
+        "name": "B",
+        "kind": "spin"
+      },
+      {
+        "name": "C",
+        "kind": "spin"
+      }
+    ],
+    "scope": "at the shown instant"
+  },
+  "question": "Drive A CW. Determine the motion of B (spin) and C (spin) at the shown instant. Use the labeled contact views.",
+  "polarity": "positive",
+  "options": [
+    {
+      "label": "A",
+      "type": "text",
+      "text": "B CCW / C CCW"
+    },
+    {
+      "label": "B",
+      "type": "text",
+      "text": "B CW / C CCW"
+    },
+    {
+      "label": "C",
+      "type": "text",
+      "text": "B CCW / C CW"
+    },
+    {
+      "label": "D",
+      "type": "text",
+      "text": "B CW / C CW"
+    }
+  ],
+  "answer": {
+    "index": 2,
+    "explanation": "Drive A CW. The solid key makes A and K rotate together. A positive, K positive. External mesh A/B (28/112 teeth) has fixed centers. A positive, B negative. Equal flank-normal speeds on the two unwrapped pitch surfaces require opposite rotation, since their CW motions cross a tooth in opposite senses. K positive, I negative. Equal flank-normal speeds on the two unwrapped pitch surfaces require opposite rotation, since their CW motions cross a tooth in opposite senses. I negative, C positive. The requested motion is CCW / CW (in listed output order).",
+    "options": [
+      {
+        "label": "A",
+        "explanation": "C must be CW. Equal flank-normal speeds on the two unwrapped pitch surfaces require opposite rotation, since their CW motions cross a tooth in opposite senses. I negative, C positive.."
+      },
+      {
+        "label": "B",
+        "explanation": "B must be CCW. External mesh A/B (28/112 teeth) has fixed centers. A positive, B negative.. C must be CW. Equal flank-normal speeds on the two unwrapped pitch surfaces require opposite rotation, since their CW motions cross a tooth in opposite senses. I negative, C positive.."
+      },
+      {
+        "label": "C",
+        "explanation": "All requested motions agree with the contact constraints."
+      },
+      {
+        "label": "D",
+        "explanation": "B must be CCW. External mesh A/B (28/112 teeth) has fixed centers. A positive, B negative.."
+      }
+    ]
+  },
+  "contract": {
+    "answerUnique": true,
+    "scope": "at the shown instant"
+  },
+  "provenance": {
+    "sourceKind": "agent-authored",
+    "generationMethod": "Spatial Harness mechanical contact schematics",
+    "sourceRevision": "c27f9111a2674f2ea03e2ca1f5833326cf1eec1a",
+    "mechanism": "worm-relay",
+    "series": "coverage",
+    "references": [
+      "MentalAnimation/MechanicalSystem/Level1/8"
+    ]
+  },
+  "generator": {
+    "id": "mechanical-system",
+    "revision": "32105d9c96819400f070bf36f759c226e8f80ba23558686c2500c4db6dbbee17",
+    "seed": 181,
+    "parameters": {
+      "mechanism": "worm-relay"
+    }
+  },
+  "rendering": {
+    "id": "mechanical-system",
+    "revision": "32105d9c96819400f070bf36f759c226e8f80ba23558686c2500c4db6dbbee17",
+    "format": "svg"
+  },
+  "verifier": {
+    "id": "mechanical-system",
+    "revision": "32105d9c96819400f070bf36f759c226e8f80ba23558686c2500c4db6dbbee17"
+  }
+}

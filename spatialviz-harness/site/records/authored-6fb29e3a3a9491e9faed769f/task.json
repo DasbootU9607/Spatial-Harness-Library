@@ -1,0 +1,148 @@
+{
+  "schemaVersion": 1,
+  "title": "Equal separated planets in one moving ring",
+  "description": "second planet spin and orbit",
+  "category": "MentalAnimation",
+  "taskType": "MechanicalSystem",
+  "difficulty": {
+    "label": "Unranked",
+    "basis": "Authored schematic exercise"
+  },
+  "geometry": {
+    "components": {
+      "A": "wheel",
+      "B": "wheel",
+      "C": "wheel",
+      "H": "carrier"
+    },
+    "joints": [
+      {
+        "kind": "mesh",
+        "ports": [
+          "A",
+          "B"
+        ],
+        "settings": {
+          "teeth": [
+            12,
+            48
+          ],
+          "contact": "inside",
+          "arm": "H"
+        }
+      },
+      {
+        "kind": "mesh",
+        "ports": [
+          "C",
+          "B"
+        ],
+        "settings": {
+          "teeth": [
+            12,
+            48
+          ],
+          "contact": "inside",
+          "arm": "H"
+        }
+      },
+      {
+        "kind": "parallel-guide",
+        "ports": [
+          "A"
+        ],
+        "settings": {}
+      }
+    ],
+    "driver": "B",
+    "input": "CW",
+    "targets": [
+      {
+        "name": "C",
+        "kind": "spin"
+      },
+      {
+        "name": "H",
+        "kind": "orbit"
+      }
+    ],
+    "scope": "at the shown instant"
+  },
+  "question": "Drive B CW. Determine the motion of C (spin) and H (orbit) at the shown instant. Use the labeled contact views.",
+  "polarity": "positive",
+  "options": [
+    {
+      "label": "A",
+      "type": "text",
+      "text": "C CW / H CW"
+    },
+    {
+      "label": "B",
+      "type": "text",
+      "text": "C CW / H CCW"
+    },
+    {
+      "label": "C",
+      "type": "text",
+      "text": "C stationary / H CW"
+    },
+    {
+      "label": "D",
+      "type": "text",
+      "text": "C stationary / H CCW"
+    }
+  ],
+  "answer": {
+    "index": 2,
+    "explanation": "Drive B CW. Internal mesh A/B (12/48 teeth) uses spins relative to carrier H. A held, B positive. Internal mesh C/B (12/48 teeth) uses spins relative to carrier H. C held, B positive. The parallel linkage holds the orientation of A while its center travels on the arm. A held. 12 × (A − H) − 48 × (B − H) = 0. 12 × (C − H) − 48 × (B − H) = 0. The requested motion is stationary / CW (in listed output order).",
+    "options": [
+      {
+        "label": "A",
+        "explanation": "C must be stationary. Internal mesh C/B (12/48 teeth) uses spins relative to carrier H. C held, B positive.."
+      },
+      {
+        "label": "B",
+        "explanation": "C must be stationary. Internal mesh C/B (12/48 teeth) uses spins relative to carrier H. C held, B positive.. H must be CW. Internal mesh A/B (12/48 teeth) uses spins relative to carrier H. A held, B positive. Internal mesh C/B (12/48 teeth) uses spins relative to carrier H. C held, B positive.."
+      },
+      {
+        "label": "C",
+        "explanation": "All requested motions agree with the contact constraints."
+      },
+      {
+        "label": "D",
+        "explanation": "H must be CW. Internal mesh A/B (12/48 teeth) uses spins relative to carrier H. A held, B positive. Internal mesh C/B (12/48 teeth) uses spins relative to carrier H. C held, B positive.."
+      }
+    ]
+  },
+  "contract": {
+    "answerUnique": true,
+    "scope": "at the shown instant"
+  },
+  "provenance": {
+    "sourceKind": "agent-authored",
+    "generationMethod": "Spatial Harness mechanical contact schematics",
+    "sourceRevision": "c27f9111a2674f2ea03e2ca1f5833326cf1eec1a",
+    "mechanism": "twin-planets",
+    "series": "coverage",
+    "references": [
+      "MentalAnimation/MechanicalSystem/Level0/6"
+    ]
+  },
+  "generator": {
+    "id": "mechanical-system",
+    "revision": "32105d9c96819400f070bf36f759c226e8f80ba23558686c2500c4db6dbbee17",
+    "seed": 163,
+    "parameters": {
+      "mechanism": "twin-planets"
+    }
+  },
+  "rendering": {
+    "id": "mechanical-system",
+    "revision": "32105d9c96819400f070bf36f759c226e8f80ba23558686c2500c4db6dbbee17",
+    "format": "svg"
+  },
+  "verifier": {
+    "id": "mechanical-system",
+    "revision": "32105d9c96819400f070bf36f759c226e8f80ba23558686c2500c4db6dbbee17"
+  }
+}

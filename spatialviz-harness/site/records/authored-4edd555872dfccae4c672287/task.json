@@ -1,0 +1,132 @@
+{
+  "schemaVersion": 1,
+  "title": "Arm presented to second lug after a half-turn",
+  "description": "continue or reverse",
+  "category": "MentalAnimation",
+  "taskType": "MechanicalSystem",
+  "difficulty": {
+    "label": "Unranked",
+    "basis": "Authored schematic exercise"
+  },
+  "geometry": {
+    "components": {
+      "A": "sweep arm",
+      "B": "wheel",
+      "C": "wheel"
+    },
+    "joints": [
+      {
+        "kind": "mesh",
+        "ports": [
+          "B",
+          "C"
+        ],
+        "settings": {
+          "teeth": [
+            22,
+            44
+          ],
+          "contact": "outside",
+          "arm": "frame"
+        }
+      },
+      {
+        "kind": "lug",
+        "ports": [
+          "A",
+          "C"
+        ],
+        "settings": {
+          "phase": 180,
+          "flank": "CCW"
+        }
+      }
+    ],
+    "driver": "A",
+    "input": "CW",
+    "targets": [
+      {
+        "name": "C",
+        "kind": "spin"
+      }
+    ],
+    "scope": "at the shown instant"
+  },
+  "question": "Drive A CW. Determine the motion of C (spin) at the shown instant. Use the labeled contact views.",
+  "polarity": "positive",
+  "options": [
+    {
+      "label": "A",
+      "type": "text",
+      "text": "CW"
+    },
+    {
+      "label": "B",
+      "type": "text",
+      "text": "translates"
+    },
+    {
+      "label": "C",
+      "type": "text",
+      "text": "CCW"
+    },
+    {
+      "label": "D",
+      "type": "text",
+      "text": "stationary"
+    }
+  ],
+  "answer": {
+    "index": 3,
+    "explanation": "Drive A CW. External mesh B/C (22/44 teeth) has fixed centers. B held, C held. At the displayed phase only C presents a lug. CCW pushes its square face; CW retreats and the detent holds. A positive, C held. The requested motion is stationary (in listed output order).",
+    "options": [
+      {
+        "label": "A",
+        "explanation": "C must be stationary. External mesh B/C (22/44 teeth) has fixed centers. B held, C held. At the displayed phase only C presents a lug. CCW pushes its square face; CW retreats and the detent holds. A positive, C held.."
+      },
+      {
+        "label": "B",
+        "explanation": "C must be stationary. External mesh B/C (22/44 teeth) has fixed centers. B held, C held. At the displayed phase only C presents a lug. CCW pushes its square face; CW retreats and the detent holds. A positive, C held.."
+      },
+      {
+        "label": "C",
+        "explanation": "C must be stationary. External mesh B/C (22/44 teeth) has fixed centers. B held, C held. At the displayed phase only C presents a lug. CCW pushes its square face; CW retreats and the detent holds. A positive, C held.."
+      },
+      {
+        "label": "D",
+        "explanation": "All requested motions agree with the contact constraints."
+      }
+    ]
+  },
+  "contract": {
+    "answerUnique": true,
+    "scope": "at the shown instant"
+  },
+  "provenance": {
+    "sourceKind": "agent-authored",
+    "generationMethod": "Spatial Harness mechanical contact schematics",
+    "sourceRevision": "c27f9111a2674f2ea03e2ca1f5833326cf1eec1a",
+    "mechanism": "lug-half",
+    "series": "coverage",
+    "references": [
+      "MentalAnimation/MechanicalSystem/Level1/30"
+    ]
+  },
+  "generator": {
+    "id": "mechanical-system",
+    "revision": "32105d9c96819400f070bf36f759c226e8f80ba23558686c2500c4db6dbbee17",
+    "seed": 189,
+    "parameters": {
+      "mechanism": "lug-half"
+    }
+  },
+  "rendering": {
+    "id": "mechanical-system",
+    "revision": "32105d9c96819400f070bf36f759c226e8f80ba23558686c2500c4db6dbbee17",
+    "format": "svg"
+  },
+  "verifier": {
+    "id": "mechanical-system",
+    "revision": "32105d9c96819400f070bf36f759c226e8f80ba23558686c2500c4db6dbbee17"
+  }
+}

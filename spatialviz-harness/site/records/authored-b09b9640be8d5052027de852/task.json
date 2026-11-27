@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 1,
+  "title": "Crank pin in a transverse slot",
+  "description": "instantaneous guide travel",
+  "category": "MentalAnimation",
+  "taskType": "MechanicalSystem",
+  "difficulty": {
+    "label": "Unranked",
+    "basis": "Authored schematic exercise"
+  },
+  "geometry": {
+    "components": {
+      "A": "crank",
+      "B": "slider"
+    },
+    "joints": [
+      {
+        "kind": "yoke",
+        "ports": [
+          "A",
+          "B"
+        ],
+        "settings": {
+          "pin": "top",
+          "radius": 12
+        }
+      }
+    ],
+    "driver": "A",
+    "input": "CW",
+    "targets": [
+      {
+        "name": "B",
+        "kind": "horizontal"
+      }
+    ],
+    "scope": "at the shown instant"
+  },
+  "question": "Drive A CW. Determine the motion of B (horizontal) at the shown instant. Use the labeled contact views.",
+  "polarity": "positive",
+  "options": [
+    {
+      "label": "A",
+      "type": "text",
+      "text": "rotates"
+    },
+    {
+      "label": "B",
+      "type": "text",
+      "text": "stationary"
+    },
+    {
+      "label": "C",
+      "type": "text",
+      "text": "left"
+    },
+    {
+      "label": "D",
+      "type": "text",
+      "text": "right"
+    }
+  ],
+  "answer": {
+    "index": 3,
+    "explanation": "Drive A CW. The top crank pin sweeps right under CW drive. The slot takes the transverse component along the horizontal slide. A positive, B positive. The requested motion is right (in listed output order).",
+    "options": [
+      {
+        "label": "A",
+        "explanation": "B must be right. The top crank pin sweeps right under CW drive. The slot takes the transverse component along the horizontal slide. A positive, B positive.."
+      },
+      {
+        "label": "B",
+        "explanation": "B must be right. The top crank pin sweeps right under CW drive. The slot takes the transverse component along the horizontal slide. A positive, B positive.."
+      },
+      {
+        "label": "C",
+        "explanation": "B must be right. The top crank pin sweeps right under CW drive. The slot takes the transverse component along the horizontal slide. A positive, B positive.."
+      },
+      {
+        "label": "D",
+        "explanation": "All requested motions agree with the contact constraints."
+      }
+    ]
+  },
+  "contract": {
+    "answerUnique": true,
+    "scope": "at the shown instant"
+  },
+  "provenance": {
+    "sourceKind": "agent-authored",
+    "generationMethod": "Spatial Harness mechanical contact schematics",
+    "sourceRevision": "c27f9111a2674f2ea03e2ca1f5833326cf1eec1a",
+    "mechanism": "yoke",
+    "series": "coverage",
+    "references": [
+      "MentalAnimation/MechanicalSystem/Level0/34"
+    ]
+  },
+  "generator": {
+    "id": "mechanical-system",
+    "revision": "32105d9c96819400f070bf36f759c226e8f80ba23558686c2500c4db6dbbee17",
+    "seed": 174,
+    "parameters": {
+      "mechanism": "yoke"
+    }
+  },
+  "rendering": {
+    "id": "mechanical-system",
+    "revision": "32105d9c96819400f070bf36f759c226e8f80ba23558686c2500c4db6dbbee17",
+    "format": "svg"
+  },
+  "verifier": {
+    "id": "mechanical-system",
+    "revision": "32105d9c96819400f070bf36f759c226e8f80ba23558686c2500c4db6dbbee17"
+  }
+}

@@ -1,0 +1,1620 @@
+{
+  "schemaVersion": 1,
+  "manifest": {
+    "sealed": true,
+    "id": "build-b825c5d9-59db-4f7a-94e0-9c115fe8f228",
+    "title": "Mechanical System / inside",
+    "runKind": "[private value omitted]",
+    "harness": "spatialviz-harness",
+    "benchmark": "SpatialViz-Bench",
+    "category": "MentalAnimation",
+    "taskType": "MechanicalSystem",
+    "skill": {
+      "id": "spatialviz-mechanical-system",
+      "sha256": "c5fc59a69f3173da434e37d4689c026787d905abe1ade649eb9458ec42eee6e2"
+    },
+    "status": "accepted",
+    "finalCandidateId": "v004",
+    "limitations": [
+      "Only recorder-mediated deliveries, commands and saved boundaries are observed; direct function calls, unwrapped commands and unsaved editor states are excluded.",
+      "Design notes are explicit author annotations, not internal reasoning."
+    ],
+    "captureGaps": []
+  },
+  "events": [
+    {
+      "id": "e000001",
+      "seq": 1,
+      "runId": "build-b825c5d9-59db-4f7a-94e0-9c115fe8f228",
+      "type": "run.created",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": null,
+      "details": {},
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000002",
+      "seq": 2,
+      "runId": "build-b825c5d9-59db-4f7a-94e0-9c115fe8f228",
+      "type": "collector.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": null,
+      "details": {},
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000003",
+      "seq": 3,
+      "runId": "build-b825c5d9-59db-4f7a-94e0-9c115fe8f228",
+      "type": "skill.attached",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": null,
+      "details": {
+        "sha256": "c5fc59a69f3173da434e37d4689c026787d905abe1ade649eb9458ec42eee6e2",
+        "skill": "spatialviz-mechanical-system"
+      },
+      "evidenceRefs": [
+        {
+          "id": "c0ac99bb4cbaf8ab",
+          "sha256": "c5fc59a69f3173da434e37d4689c026787d905abe1ade649eb9458ec42eee6e2",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000004",
+      "seq": 4,
+      "runId": "build-b825c5d9-59db-4f7a-94e0-9c115fe8f228",
+      "type": "resource.read",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "5e274433-b49f-4e70-8daf-bff64ccc1e66",
+      "candidateId": null,
+      "details": {
+        "outcome": "delivered",
+        "label": "coverage.md",
+        "start": 1,
+        "end": 67,
+        "sha256": "900a3c2efe6ed3751cdefd53c56c079b57123fafdbbc4b4c73423675f79b9f69",
+        "sourceSha256": "900a3c2efe6ed3751cdefd53c56c079b57123fafdbbc4b4c73423675f79b9f69"
+      },
+      "evidenceRefs": [
+        {
+          "id": "520cfeb88e80f43e",
+          "sha256": "900a3c2efe6ed3751cdefd53c56c079b57123fafdbbc4b4c73423675f79b9f69",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000005",
+      "seq": 5,
+      "runId": "build-b825c5d9-59db-4f7a-94e0-9c115fe8f228",
+      "type": "design.note",
+      "actor": "author",
+      "origin": "agent_statement",
+      "actionId": null,
+      "candidateId": null,
+      "details": {
+        "goal": "Recover inside from visible contact conditions.",
+        "sources": "MechanicalSystem source audit",
+        "change": null,
+        "reason": null,
+        "expectedChecks": "Determine all requested outputs and compare four visible options."
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000006",
+      "seq": 6,
+      "runId": "build-b825c5d9-59db-4f7a-94e0-9c115fe8f228",
+      "type": "candidate.saved",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "5daf1038-811b-48a2-b9ec-518669401e06",
+      "candidateId": "v001",
+      "details": {
+        "sha256": "52c22487d87cef44d7a946134a9d11843e5dd4abc4f7c44f5f1b1d2296007d72",
+        "parentId": null,
+        "parentBasis": null,
+        "changes": [
+          "specification",
+          "geometry",
+          "question",
+          "options",
+          "answer",
+          "contract",
+          "rendering",
+          "generator"
+        ],
+        "fingerprints": {
+          "specification": "52c22487d87cef44d7a946134a9d11843e5dd4abc4f7c44f5f1b1d2296007d72",
+          "geometry": "c373a9f1f498a15caabf581019ba96f6f1f3d6d0b03a861f526f3e5b2056f0bd",
+          "question": "86fc021a536f8fda63b6f6be8b5a24a0f321307c69281e364a752e4da648da8b",
+          "options": "a6c72b28988919e7ddb5a9fa6bdad6454bc770651aea1efb815496252493887a",
+          "answer": "abc7f71f942477e84c1805ba1543b25757cdbe71526df3174265f3f3d6a579da",
+          "contract": "d16e2f83f7844bc78d3f0520c99c8000cd5bba7d4a8d5c64b1d276d93f241b7a",
+          "rendering": "f69eff4e0f13d54c589cc2483bf0fc634602813d79701a63bc3e9e416e6f1063",
+          "generator": "5d55d33bbae467857907a38e22ef3973a81dbcf4447ce605105cb18064061d87"
+        },
+        "previewUnavailable": null
+      },
+      "evidenceRefs": [
+        {
+          "id": "daec0d57a3d0c996",
+          "sha256": "52c22487d87cef44d7a946134a9d11843e5dd4abc4f7c44f5f1b1d2296007d72",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000007",
+      "seq": 7,
+      "runId": "build-b825c5d9-59db-4f7a-94e0-9c115fe8f228",
+      "type": "build.saved",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": "v001",
+      "details": {},
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000008",
+      "seq": 8,
+      "runId": "build-b825c5d9-59db-4f7a-94e0-9c115fe8f228",
+      "type": "render.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "05eb4ffa-3013-4bbd-a1c4-29d7e23e0dfc",
+      "candidateId": "v001",
+      "details": {
+        "renderer": {
+          "id": "mechanical-system",
+          "revision": "a1407757aab9be95e87c5cf712419968772bf4f0f664383ff6933c519a6ef0e2"
+        }
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000009",
+      "seq": 9,
+      "runId": "build-b825c5d9-59db-4f7a-94e0-9c115fe8f228",
+      "type": "render.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "05eb4ffa-3013-4bbd-a1c4-29d7e23e0dfc",
+      "candidateId": "v001",
+      "details": {
+        "sha256": "6599eec9b02ade98a1e44a7246aefee71c83a0bb83620b7f841d8c43e347123c",
+        "renderer": {
+          "id": "mechanical-system",
+          "revision": "a1407757aab9be95e87c5cf712419968772bf4f0f664383ff6933c519a6ef0e2"
+        },
+        "specification": "52c22487d87cef44d7a946134a9d11843e5dd4abc4f7c44f5f1b1d2296007d72",
+        "rendering": "f69eff4e0f13d54c589cc2483bf0fc634602813d79701a63bc3e9e416e6f1063"
+      },
+      "evidenceRefs": [
+        {
+          "id": "9148437a1a0a10a4",
+          "sha256": "6599eec9b02ade98a1e44a7246aefee71c83a0bb83620b7f841d8c43e347123c",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000010",
+      "seq": 10,
+      "runId": "build-b825c5d9-59db-4f7a-94e0-9c115fe8f228",
+      "type": "command.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "465a9624-35aa-43f5-b07c-5880392bbf2e",
+      "candidateId": "v001",
+      "details": {
+        "label": "node.exe",
+        "kind": "verification"
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000011",
+      "seq": 11,
+      "runId": "build-b825c5d9-59db-4f7a-94e0-9c115fe8f228",
+      "type": "command.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "465a9624-35aa-43f5-b07c-5880392bbf2e",
+      "candidateId": "v001",
+      "details": {
+        "commandEventId": "e000010",
+        "kind": "verification",
+        "exitCode": 0,
+        "signal": null
+      },
+      "evidenceRefs": [
+        {
+          "id": "ee555c5ff4217a12",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "availability": "local evidence; hash published"
+        },
+        {
+          "id": "8a15fd17a5d84b0c",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000012",
+      "seq": 12,
+      "runId": "build-b825c5d9-59db-4f7a-94e0-9c115fe8f228",
+      "type": "test.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "465a9624-35aa-43f5-b07c-5880392bbf2e",
+      "candidateId": "v001",
+      "details": {
+        "commandEventId": "e000010",
+        "completedEventId": "e000011",
+        "verdict": "passed",
+        "status": "passed",
+        "checks": [
+          {
+            "name": "All four printed choices are distinct",
+            "verdict": "passed"
+          },
+          {
+            "name": "Option A translates — violates the derived motion CW",
+            "verdict": "passed"
+          },
+          {
+            "name": "Option B CW — satisfies the derived motion CW",
+            "verdict": "passed"
+          },
+          {
+            "name": "Option C stationary — violates the derived motion CW",
+            "verdict": "passed"
+          },
+          {
+            "name": "Option D CCW — violates the derived motion CW",
+            "verdict": "passed"
+          },
+          {
+            "name": "Exactly one visible option satisfies every output",
+            "verdict": "passed"
+          },
+          {
+            "name": "Task question, structural constraints and options rebuild from the recorded seed",
+            "verdict": "passed"
+          },
+          {
+            "name": "Bound renderer and solver revisions",
+            "verdict": "passed"
+          }
+        ],
+        "scope": "Visible SVG text and shaft-end glyphs, contact constraint solution, option order, unique output and parameter replay.",
+        "binding": "exact",
+        "bindingBasis": "exact candidate and full input fingerprints",
+        "testedFingerprints": {
+          "specification": "52c22487d87cef44d7a946134a9d11843e5dd4abc4f7c44f5f1b1d2296007d72",
+          "geometry": "c373a9f1f498a15caabf581019ba96f6f1f3d6d0b03a861f526f3e5b2056f0bd",
+          "question": "86fc021a536f8fda63b6f6be8b5a24a0f321307c69281e364a752e4da648da8b",
+          "options": "a6c72b28988919e7ddb5a9fa6bdad6454bc770651aea1efb815496252493887a",
+          "answer": "abc7f71f942477e84c1805ba1543b25757cdbe71526df3174265f3f3d6a579da",
+          "contract": "d16e2f83f7844bc78d3f0520c99c8000cd5bba7d4a8d5c64b1d276d93f241b7a",
+          "rendering": "f69eff4e0f13d54c589cc2483bf0fc634602813d79701a63bc3e9e416e6f1063",
+          "generator": "5d55d33bbae467857907a38e22ef3973a81dbcf4447ce605105cb18064061d87"
+        },
+        "verifier": {
+          "id": "mechanical-system",
+          "revision": "a1407757aab9be95e87c5cf712419968772bf4f0f664383ff6933c519a6ef0e2"
+        },
+        "reportSha256": "f44f5358398b92197e7e6633d79580d2945e82560f6c14b8d233e63408ee4eaf"
+      },
+      "evidenceRefs": [
+        {
+          "id": "c661a1b0c91c4804",
+          "sha256": "f44f5358398b92197e7e6633d79580d2945e82560f6c14b8d233e63408ee4eaf",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000013",
+      "seq": 13,
+      "runId": "build-b825c5d9-59db-4f7a-94e0-9c115fe8f228",
+      "type": "resource.read",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "d916d8fb-632d-4e84-bcae-9c33844fccd9",
+      "candidateId": null,
+      "details": {
+        "outcome": "delivered",
+        "label": "coverage.md",
+        "start": 1,
+        "end": 67,
+        "sha256": "900a3c2efe6ed3751cdefd53c56c079b57123fafdbbc4b4c73423675f79b9f69",
+        "sourceSha256": "900a3c2efe6ed3751cdefd53c56c079b57123fafdbbc4b4c73423675f79b9f69"
+      },
+      "evidenceRefs": [
+        {
+          "id": "06bf4eee3b3e749f",
+          "sha256": "900a3c2efe6ed3751cdefd53c56c079b57123fafdbbc4b4c73423675f79b9f69",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000014",
+      "seq": 14,
+      "runId": "build-b825c5d9-59db-4f7a-94e0-9c115fe8f228",
+      "type": "design.note",
+      "actor": "author",
+      "origin": "agent_statement",
+      "actionId": null,
+      "candidateId": null,
+      "details": {
+        "goal": "Recover inside from visible contact conditions.",
+        "sources": "MechanicalSystem source audit",
+        "change": null,
+        "reason": null,
+        "expectedChecks": "Determine all requested outputs and compare four visible options."
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000015",
+      "seq": 15,
+      "runId": "build-b825c5d9-59db-4f7a-94e0-9c115fe8f228",
+      "type": "candidate.saved",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "58cf005f-495d-497e-a0df-21c417f9b5bf",
+      "candidateId": "v002",
+      "details": {
+        "sha256": "ab3731a36b492a3066e4dd37a46c93231b7c8cd2ae560d5a0f7b55ed05bc44d6",
+        "parentId": "v001",
+        "parentBasis": "Clarify carrier orbit and explain option-specific contact errors.",
+        "changes": [
+          "specification",
+          "answer",
+          "rendering",
+          "generator"
+        ],
+        "fingerprints": {
+          "specification": "ab3731a36b492a3066e4dd37a46c93231b7c8cd2ae560d5a0f7b55ed05bc44d6",
+          "geometry": "c373a9f1f498a15caabf581019ba96f6f1f3d6d0b03a861f526f3e5b2056f0bd",
+          "question": "86fc021a536f8fda63b6f6be8b5a24a0f321307c69281e364a752e4da648da8b",
+          "options": "a6c72b28988919e7ddb5a9fa6bdad6454bc770651aea1efb815496252493887a",
+          "answer": "01009b28ee9de351e84a7e63ad3510f10af1a71db5909746cba26fa46f0cfeb4",
+          "contract": "d16e2f83f7844bc78d3f0520c99c8000cd5bba7d4a8d5c64b1d276d93f241b7a",
+          "rendering": "1e9745aea0a07b9b12cac3c3fd8ae7837cc3ba651320d82e9c756d80e8cdbe1d",
+          "generator": "4ad2c29dea08f1956d553643bd1fd6d55665601f1f2b982608f37dab02a498f3"
+        },
+        "previewUnavailable": null
+      },
+      "evidenceRefs": [
+        {
+          "id": "1336dc0f6fa7c731",
+          "sha256": "ab3731a36b492a3066e4dd37a46c93231b7c8cd2ae560d5a0f7b55ed05bc44d6",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000016",
+      "seq": 16,
+      "runId": "build-b825c5d9-59db-4f7a-94e0-9c115fe8f228",
+      "type": "build.saved",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": "v002",
+      "details": {},
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000017",
+      "seq": 17,
+      "runId": "build-b825c5d9-59db-4f7a-94e0-9c115fe8f228",
+      "type": "render.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "4d162299-2b21-4b07-b723-2b2d81db2cfb",
+      "candidateId": "v002",
+      "details": {
+        "renderer": {
+          "id": "mechanical-system",
+          "revision": "79ec040e4340225d3bfdcbe34884a776b83b543b1de91e71b1ada9aa6ae1d609"
+        }
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000018",
+      "seq": 18,
+      "runId": "build-b825c5d9-59db-4f7a-94e0-9c115fe8f228",
+      "type": "render.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "4d162299-2b21-4b07-b723-2b2d81db2cfb",
+      "candidateId": "v002",
+      "details": {
+        "sha256": "6599eec9b02ade98a1e44a7246aefee71c83a0bb83620b7f841d8c43e347123c",
+        "renderer": {
+          "id": "mechanical-system",
+          "revision": "79ec040e4340225d3bfdcbe34884a776b83b543b1de91e71b1ada9aa6ae1d609"
+        },
+        "specification": "ab3731a36b492a3066e4dd37a46c93231b7c8cd2ae560d5a0f7b55ed05bc44d6",
+        "rendering": "1e9745aea0a07b9b12cac3c3fd8ae7837cc3ba651320d82e9c756d80e8cdbe1d"
+      },
+      "evidenceRefs": [
+        {
+          "id": "bb21519d4a2afb6c",
+          "sha256": "6599eec9b02ade98a1e44a7246aefee71c83a0bb83620b7f841d8c43e347123c",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000019",
+      "seq": 19,
+      "runId": "build-b825c5d9-59db-4f7a-94e0-9c115fe8f228",
+      "type": "report.previous",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "c2676a12-455f-48da-a0ca-a04cb6ca4cdd",
+      "candidateId": null,
+      "details": {
+        "sha256": "f44f5358398b92197e7e6633d79580d2945e82560f6c14b8d233e63408ee4eaf"
+      },
+      "evidenceRefs": [
+        {
+          "id": "f9fbdf91ccd78ebf",
+          "sha256": "f44f5358398b92197e7e6633d79580d2945e82560f6c14b8d233e63408ee4eaf",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000020",
+      "seq": 20,
+      "runId": "build-b825c5d9-59db-4f7a-94e0-9c115fe8f228",
+      "type": "command.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "c2676a12-455f-48da-a0ca-a04cb6ca4cdd",
+      "candidateId": "v002",
+      "details": {
+        "label": "node.exe",
+        "kind": "verification"
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000021",
+      "seq": 21,
+      "runId": "build-b825c5d9-59db-4f7a-94e0-9c115fe8f228",
+      "type": "command.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "c2676a12-455f-48da-a0ca-a04cb6ca4cdd",
+      "candidateId": "v002",
+      "details": {
+        "commandEventId": "e000020",
+        "kind": "verification",
+        "exitCode": 0,
+        "signal": null
+      },
+      "evidenceRefs": [
+        {
+          "id": "0415737e53a001d0",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "availability": "local evidence; hash published"
+        },
+        {
+          "id": "1f976fcf01383773",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000022",
+      "seq": 22,
+      "runId": "build-b825c5d9-59db-4f7a-94e0-9c115fe8f228",
+      "type": "test.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "c2676a12-455f-48da-a0ca-a04cb6ca4cdd",
+      "candidateId": "v002",
+      "details": {
+        "commandEventId": "e000020",
+        "completedEventId": "e000021",
+        "verdict": "passed",
+        "status": "passed",
+        "checks": [
+          {
+            "name": "All four printed choices are distinct",
+            "verdict": "passed"
+          },
+          {
+            "name": "Option A translates — violates the derived motion CW",
+            "verdict": "passed"
+          },
+          {
+            "name": "Option B CW — satisfies the derived motion CW",
+            "verdict": "passed"
+          },
+          {
+            "name": "Option C stationary — violates the derived motion CW",
+            "verdict": "passed"
+          },
+          {
+            "name": "Option D CCW — violates the derived motion CW",
+            "verdict": "passed"
+          },
+          {
+            "name": "Exactly one visible option satisfies every output",
+            "verdict": "passed"
+          },
+          {
+            "name": "Task question, structural constraints and options rebuild from the recorded seed",
+            "verdict": "passed"
+          },
+          {
+            "name": "Bound renderer and solver revisions",
+            "verdict": "passed"
+          }
+        ],
+        "scope": "Visible SVG text and shaft-end glyphs, contact constraint solution, option order, unique output and parameter replay.",
+        "binding": "exact",
+        "bindingBasis": "exact candidate and full input fingerprints",
+        "testedFingerprints": {
+          "specification": "ab3731a36b492a3066e4dd37a46c93231b7c8cd2ae560d5a0f7b55ed05bc44d6",
+          "geometry": "c373a9f1f498a15caabf581019ba96f6f1f3d6d0b03a861f526f3e5b2056f0bd",
+          "question": "86fc021a536f8fda63b6f6be8b5a24a0f321307c69281e364a752e4da648da8b",
+          "options": "a6c72b28988919e7ddb5a9fa6bdad6454bc770651aea1efb815496252493887a",
+          "answer": "01009b28ee9de351e84a7e63ad3510f10af1a71db5909746cba26fa46f0cfeb4",
+          "contract": "d16e2f83f7844bc78d3f0520c99c8000cd5bba7d4a8d5c64b1d276d93f241b7a",
+          "rendering": "1e9745aea0a07b9b12cac3c3fd8ae7837cc3ba651320d82e9c756d80e8cdbe1d",
+          "generator": "4ad2c29dea08f1956d553643bd1fd6d55665601f1f2b982608f37dab02a498f3"
+        },
+        "verifier": {
+          "id": "mechanical-system",
+          "revision": "79ec040e4340225d3bfdcbe34884a776b83b543b1de91e71b1ada9aa6ae1d609"
+        },
+        "reportSha256": "456ccceca70f9eb18a023d6133e848353a4e9c98ec6ec6b25718c120723056c3"
+      },
+      "evidenceRefs": [
+        {
+          "id": "8a4b090e2a06be43",
+          "sha256": "456ccceca70f9eb18a023d6133e848353a4e9c98ec6ec6b25718c120723056c3",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000023",
+      "seq": 23,
+      "runId": "build-b825c5d9-59db-4f7a-94e0-9c115fe8f228",
+      "type": "resource.read",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "3f5a040c-4f5c-4bed-a36f-9986d9e76cf1",
+      "candidateId": null,
+      "details": {
+        "outcome": "delivered",
+        "label": "coverage.md",
+        "start": 1,
+        "end": 67,
+        "sha256": "900a3c2efe6ed3751cdefd53c56c079b57123fafdbbc4b4c73423675f79b9f69",
+        "sourceSha256": "900a3c2efe6ed3751cdefd53c56c079b57123fafdbbc4b4c73423675f79b9f69"
+      },
+      "evidenceRefs": [
+        {
+          "id": "8c3446b17d2bad16",
+          "sha256": "900a3c2efe6ed3751cdefd53c56c079b57123fafdbbc4b4c73423675f79b9f69",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000024",
+      "seq": 24,
+      "runId": "build-b825c5d9-59db-4f7a-94e0-9c115fe8f228",
+      "type": "design.note",
+      "actor": "author",
+      "origin": "agent_statement",
+      "actionId": null,
+      "candidateId": null,
+      "details": {
+        "goal": "Recover inside from visible contact conditions.",
+        "sources": "MechanicalSystem source audit",
+        "change": null,
+        "reason": null,
+        "expectedChecks": "Determine all requested outputs and compare four visible options."
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000025",
+      "seq": 25,
+      "runId": "build-b825c5d9-59db-4f7a-94e0-9c115fe8f228",
+      "type": "candidate.saved",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "570da940-85fe-40aa-a151-1c5dc4129ce1",
+      "candidateId": "v003",
+      "details": {
+        "sha256": "52ecb97feadaf3347348596cd40cd8f6fab45fca3fb462627edd5d4651a2d9cb",
+        "parentId": "v002",
+        "parentBasis": "Review of the contact views: distinguish guided orientation, tooth form and half-turn phase. Retain the inspected earlier candidate.",
+        "changes": [
+          "specification",
+          "rendering",
+          "generator"
+        ],
+        "fingerprints": {
+          "specification": "52ecb97feadaf3347348596cd40cd8f6fab45fca3fb462627edd5d4651a2d9cb",
+          "geometry": "c373a9f1f498a15caabf581019ba96f6f1f3d6d0b03a861f526f3e5b2056f0bd",
+          "question": "86fc021a536f8fda63b6f6be8b5a24a0f321307c69281e364a752e4da648da8b",
+          "options": "a6c72b28988919e7ddb5a9fa6bdad6454bc770651aea1efb815496252493887a",
+          "answer": "01009b28ee9de351e84a7e63ad3510f10af1a71db5909746cba26fa46f0cfeb4",
+          "contract": "d16e2f83f7844bc78d3f0520c99c8000cd5bba7d4a8d5c64b1d276d93f241b7a",
+          "rendering": "946179aac39d278d1d2aa786134e9e1f731410ad16db9de024cede96a0ea0659",
+          "generator": "db468358e8308ddd38c3628a7d0c22aca8f10b892bea87f75c94b33c65255476"
+        },
+        "previewUnavailable": null
+      },
+      "evidenceRefs": [
+        {
+          "id": "ed643721feedae97",
+          "sha256": "52ecb97feadaf3347348596cd40cd8f6fab45fca3fb462627edd5d4651a2d9cb",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000026",
+      "seq": 26,
+      "runId": "build-b825c5d9-59db-4f7a-94e0-9c115fe8f228",
+      "type": "build.saved",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": "v003",
+      "details": {},
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000027",
+      "seq": 27,
+      "runId": "build-b825c5d9-59db-4f7a-94e0-9c115fe8f228",
+      "type": "render.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "dcf0bff9-193b-4666-b360-389bb89b9bb5",
+      "candidateId": "v003",
+      "details": {
+        "renderer": {
+          "id": "mechanical-system",
+          "revision": "5a35ae6c71962f8ebe00c0ce230a9d4cc51edf551e1145210c139137599370dc"
+        }
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000028",
+      "seq": 28,
+      "runId": "build-b825c5d9-59db-4f7a-94e0-9c115fe8f228",
+      "type": "render.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "dcf0bff9-193b-4666-b360-389bb89b9bb5",
+      "candidateId": "v003",
+      "details": {
+        "sha256": "6599eec9b02ade98a1e44a7246aefee71c83a0bb83620b7f841d8c43e347123c",
+        "renderer": {
+          "id": "mechanical-system",
+          "revision": "5a35ae6c71962f8ebe00c0ce230a9d4cc51edf551e1145210c139137599370dc"
+        },
+        "specification": "52ecb97feadaf3347348596cd40cd8f6fab45fca3fb462627edd5d4651a2d9cb",
+        "rendering": "946179aac39d278d1d2aa786134e9e1f731410ad16db9de024cede96a0ea0659"
+      },
+      "evidenceRefs": [
+        {
+          "id": "6caf05f690e16938",
+          "sha256": "6599eec9b02ade98a1e44a7246aefee71c83a0bb83620b7f841d8c43e347123c",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000029",
+      "seq": 29,
+      "runId": "build-b825c5d9-59db-4f7a-94e0-9c115fe8f228",
+      "type": "report.previous",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "caed48f4-e972-4e03-9720-14040d92595a",
+      "candidateId": null,
+      "details": {
+        "sha256": "456ccceca70f9eb18a023d6133e848353a4e9c98ec6ec6b25718c120723056c3"
+      },
+      "evidenceRefs": [
+        {
+          "id": "18f73f3f30dccba4",
+          "sha256": "456ccceca70f9eb18a023d6133e848353a4e9c98ec6ec6b25718c120723056c3",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000030",
+      "seq": 30,
+      "runId": "build-b825c5d9-59db-4f7a-94e0-9c115fe8f228",
+      "type": "command.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "caed48f4-e972-4e03-9720-14040d92595a",
+      "candidateId": "v003",
+      "details": {
+        "label": "node.exe",
+        "kind": "verification"
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000031",
+      "seq": 31,
+      "runId": "build-b825c5d9-59db-4f7a-94e0-9c115fe8f228",
+      "type": "command.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "caed48f4-e972-4e03-9720-14040d92595a",
+      "candidateId": "v003",
+      "details": {
+        "commandEventId": "e000030",
+        "kind": "verification",
+        "exitCode": 0,
+        "signal": null
+      },
+      "evidenceRefs": [
+        {
+          "id": "ccab7c9f8b304bd7",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "availability": "local evidence; hash published"
+        },
+        {
+          "id": "5c16d5aae325553f",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000032",
+      "seq": 32,
+      "runId": "build-b825c5d9-59db-4f7a-94e0-9c115fe8f228",
+      "type": "test.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "caed48f4-e972-4e03-9720-14040d92595a",
+      "candidateId": "v003",
+      "details": {
+        "commandEventId": "e000030",
+        "completedEventId": "e000031",
+        "verdict": "passed",
+        "status": "passed",
+        "checks": [
+          {
+            "name": "All four printed choices are distinct",
+            "verdict": "passed"
+          },
+          {
+            "name": "Option A translates — violates the derived motion CW",
+            "verdict": "passed"
+          },
+          {
+            "name": "Option B CW — satisfies the derived motion CW",
+            "verdict": "passed"
+          },
+          {
+            "name": "Option C stationary — violates the derived motion CW",
+            "verdict": "passed"
+          },
+          {
+            "name": "Option D CCW — violates the derived motion CW",
+            "verdict": "passed"
+          },
+          {
+            "name": "Exactly one visible option satisfies every output",
+            "verdict": "passed"
+          },
+          {
+            "name": "Task question, structural constraints and options rebuild from the recorded seed",
+            "verdict": "passed"
+          },
+          {
+            "name": "Bound renderer and solver revisions",
+            "verdict": "passed"
+          }
+        ],
+        "scope": "Visible SVG text and shaft-end glyphs, contact constraint solution, option order, unique output and parameter replay.",
+        "binding": "exact",
+        "bindingBasis": "exact candidate and full input fingerprints",
+        "testedFingerprints": {
+          "specification": "52ecb97feadaf3347348596cd40cd8f6fab45fca3fb462627edd5d4651a2d9cb",
+          "geometry": "c373a9f1f498a15caabf581019ba96f6f1f3d6d0b03a861f526f3e5b2056f0bd",
+          "question": "86fc021a536f8fda63b6f6be8b5a24a0f321307c69281e364a752e4da648da8b",
+          "options": "a6c72b28988919e7ddb5a9fa6bdad6454bc770651aea1efb815496252493887a",
+          "answer": "01009b28ee9de351e84a7e63ad3510f10af1a71db5909746cba26fa46f0cfeb4",
+          "contract": "d16e2f83f7844bc78d3f0520c99c8000cd5bba7d4a8d5c64b1d276d93f241b7a",
+          "rendering": "946179aac39d278d1d2aa786134e9e1f731410ad16db9de024cede96a0ea0659",
+          "generator": "db468358e8308ddd38c3628a7d0c22aca8f10b892bea87f75c94b33c65255476"
+        },
+        "verifier": {
+          "id": "mechanical-system",
+          "revision": "5a35ae6c71962f8ebe00c0ce230a9d4cc51edf551e1145210c139137599370dc"
+        },
+        "reportSha256": "09f0e8dc87ae35ddf263065435df4f898c41d3d3426e99a16f592ebdda4765a2"
+      },
+      "evidenceRefs": [
+        {
+          "id": "6a92169ad96914c6",
+          "sha256": "09f0e8dc87ae35ddf263065435df4f898c41d3d3426e99a16f592ebdda4765a2",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000033",
+      "seq": 33,
+      "runId": "build-b825c5d9-59db-4f7a-94e0-9c115fe8f228",
+      "type": "resource.read",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "bd76ef63-3357-4042-89e0-fc671ba3879d",
+      "candidateId": null,
+      "details": {
+        "outcome": "delivered",
+        "label": "coverage.md",
+        "start": 1,
+        "end": 67,
+        "sha256": "900a3c2efe6ed3751cdefd53c56c079b57123fafdbbc4b4c73423675f79b9f69",
+        "sourceSha256": "900a3c2efe6ed3751cdefd53c56c079b57123fafdbbc4b4c73423675f79b9f69"
+      },
+      "evidenceRefs": [
+        {
+          "id": "54f9bde6d8f82703",
+          "sha256": "900a3c2efe6ed3751cdefd53c56c079b57123fafdbbc4b4c73423675f79b9f69",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000034",
+      "seq": 34,
+      "runId": "build-b825c5d9-59db-4f7a-94e0-9c115fe8f228",
+      "type": "design.note",
+      "actor": "author",
+      "origin": "agent_statement",
+      "actionId": null,
+      "candidateId": null,
+      "details": {
+        "goal": "Recover inside from visible contact conditions.",
+        "sources": "MechanicalSystem source audit",
+        "change": null,
+        "reason": null,
+        "expectedChecks": "Determine all requested outputs and compare four visible options."
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000035",
+      "seq": 35,
+      "runId": "build-b825c5d9-59db-4f7a-94e0-9c115fe8f228",
+      "type": "candidate.saved",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "7d035706-b4ca-4a6b-8b1b-5100240c32c5",
+      "candidateId": "v004",
+      "details": {
+        "sha256": "e51a9cd5f4fefc49a96edf1c395f3555a5b8acaa671bda0d5f037d74d8bd848c",
+        "parentId": "v003",
+        "parentBasis": "Review of the contact views: distinguish guided orientation, tooth form and half-turn phase. Retain the inspected earlier candidate.",
+        "changes": [
+          "specification",
+          "rendering",
+          "generator"
+        ],
+        "fingerprints": {
+          "specification": "e51a9cd5f4fefc49a96edf1c395f3555a5b8acaa671bda0d5f037d74d8bd848c",
+          "geometry": "c373a9f1f498a15caabf581019ba96f6f1f3d6d0b03a861f526f3e5b2056f0bd",
+          "question": "86fc021a536f8fda63b6f6be8b5a24a0f321307c69281e364a752e4da648da8b",
+          "options": "a6c72b28988919e7ddb5a9fa6bdad6454bc770651aea1efb815496252493887a",
+          "answer": "01009b28ee9de351e84a7e63ad3510f10af1a71db5909746cba26fa46f0cfeb4",
+          "contract": "d16e2f83f7844bc78d3f0520c99c8000cd5bba7d4a8d5c64b1d276d93f241b7a",
+          "rendering": "6101f1629cf9da325ec4643f8cf8f691e5c54aa9e50c7a8b066d1295b1c8aad5",
+          "generator": "94c844a8285024ac00817d0d727b11f270a3609f26c75306b1e86cfd975c37cd"
+        },
+        "previewUnavailable": null
+      },
+      "evidenceRefs": [
+        {
+          "id": "f9ec788cb590f82d",
+          "sha256": "e51a9cd5f4fefc49a96edf1c395f3555a5b8acaa671bda0d5f037d74d8bd848c",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000036",
+      "seq": 36,
+      "runId": "build-b825c5d9-59db-4f7a-94e0-9c115fe8f228",
+      "type": "build.saved",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": "v004",
+      "details": {},
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000037",
+      "seq": 37,
+      "runId": "build-b825c5d9-59db-4f7a-94e0-9c115fe8f228",
+      "type": "render.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "533752dc-3143-47e2-ae57-41ec72c9965a",
+      "candidateId": "v004",
+      "details": {
+        "renderer": {
+          "id": "mechanical-system",
+          "revision": "32105d9c96819400f070bf36f759c226e8f80ba23558686c2500c4db6dbbee17"
+        }
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000038",
+      "seq": 38,
+      "runId": "build-b825c5d9-59db-4f7a-94e0-9c115fe8f228",
+      "type": "render.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "533752dc-3143-47e2-ae57-41ec72c9965a",
+      "candidateId": "v004",
+      "details": {
+        "sha256": "6599eec9b02ade98a1e44a7246aefee71c83a0bb83620b7f841d8c43e347123c",
+        "renderer": {
+          "id": "mechanical-system",
+          "revision": "32105d9c96819400f070bf36f759c226e8f80ba23558686c2500c4db6dbbee17"
+        },
+        "specification": "e51a9cd5f4fefc49a96edf1c395f3555a5b8acaa671bda0d5f037d74d8bd848c",
+        "rendering": "6101f1629cf9da325ec4643f8cf8f691e5c54aa9e50c7a8b066d1295b1c8aad5"
+      },
+      "evidenceRefs": [
+        {
+          "id": "864496b65a77f556",
+          "sha256": "6599eec9b02ade98a1e44a7246aefee71c83a0bb83620b7f841d8c43e347123c",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000039",
+      "seq": 39,
+      "runId": "build-b825c5d9-59db-4f7a-94e0-9c115fe8f228",
+      "type": "report.previous",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "20954ef4-db60-473e-b664-75fcc0d1486a",
+      "candidateId": null,
+      "details": {
+        "sha256": "09f0e8dc87ae35ddf263065435df4f898c41d3d3426e99a16f592ebdda4765a2"
+      },
+      "evidenceRefs": [
+        {
+          "id": "949592e159dbd081",
+          "sha256": "09f0e8dc87ae35ddf263065435df4f898c41d3d3426e99a16f592ebdda4765a2",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000040",
+      "seq": 40,
+      "runId": "build-b825c5d9-59db-4f7a-94e0-9c115fe8f228",
+      "type": "command.started",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "20954ef4-db60-473e-b664-75fcc0d1486a",
+      "candidateId": "v004",
+      "details": {
+        "label": "node.exe",
+        "kind": "verification"
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000041",
+      "seq": 41,
+      "runId": "build-b825c5d9-59db-4f7a-94e0-9c115fe8f228",
+      "type": "command.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "20954ef4-db60-473e-b664-75fcc0d1486a",
+      "candidateId": "v004",
+      "details": {
+        "commandEventId": "e000040",
+        "kind": "verification",
+        "exitCode": 0,
+        "signal": null
+      },
+      "evidenceRefs": [
+        {
+          "id": "dca879f4e27a9617",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "availability": "local evidence; hash published"
+        },
+        {
+          "id": "bcf07db2756fcdd4",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000042",
+      "seq": 42,
+      "runId": "build-b825c5d9-59db-4f7a-94e0-9c115fe8f228",
+      "type": "test.completed",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": "20954ef4-db60-473e-b664-75fcc0d1486a",
+      "candidateId": "v004",
+      "details": {
+        "commandEventId": "e000040",
+        "completedEventId": "e000041",
+        "verdict": "passed",
+        "status": "passed",
+        "checks": [
+          {
+            "name": "All four printed choices are distinct",
+            "verdict": "passed"
+          },
+          {
+            "name": "Option A translates — violates the derived motion CW",
+            "verdict": "passed"
+          },
+          {
+            "name": "Option B CW — satisfies the derived motion CW",
+            "verdict": "passed"
+          },
+          {
+            "name": "Option C stationary — violates the derived motion CW",
+            "verdict": "passed"
+          },
+          {
+            "name": "Option D CCW — violates the derived motion CW",
+            "verdict": "passed"
+          },
+          {
+            "name": "Exactly one visible option satisfies every output",
+            "verdict": "passed"
+          },
+          {
+            "name": "Task question, structural constraints and options rebuild from the recorded seed",
+            "verdict": "passed"
+          },
+          {
+            "name": "Bound renderer and solver revisions",
+            "verdict": "passed"
+          }
+        ],
+        "scope": "Visible SVG text and shaft-end glyphs, contact constraint solution, option order, unique output and parameter replay.",
+        "binding": "exact",
+        "bindingBasis": "exact candidate and full input fingerprints",
+        "testedFingerprints": {
+          "specification": "e51a9cd5f4fefc49a96edf1c395f3555a5b8acaa671bda0d5f037d74d8bd848c",
+          "geometry": "c373a9f1f498a15caabf581019ba96f6f1f3d6d0b03a861f526f3e5b2056f0bd",
+          "question": "86fc021a536f8fda63b6f6be8b5a24a0f321307c69281e364a752e4da648da8b",
+          "options": "a6c72b28988919e7ddb5a9fa6bdad6454bc770651aea1efb815496252493887a",
+          "answer": "01009b28ee9de351e84a7e63ad3510f10af1a71db5909746cba26fa46f0cfeb4",
+          "contract": "d16e2f83f7844bc78d3f0520c99c8000cd5bba7d4a8d5c64b1d276d93f241b7a",
+          "rendering": "6101f1629cf9da325ec4643f8cf8f691e5c54aa9e50c7a8b066d1295b1c8aad5",
+          "generator": "94c844a8285024ac00817d0d727b11f270a3609f26c75306b1e86cfd975c37cd"
+        },
+        "verifier": {
+          "id": "mechanical-system",
+          "revision": "32105d9c96819400f070bf36f759c226e8f80ba23558686c2500c4db6dbbee17"
+        },
+        "reportSha256": "7f7ad5a6014f954a8bb0b0dd23fc43ed3e9b13476fcffed02a40198c35549b85"
+      },
+      "evidenceRefs": [
+        {
+          "id": "5eecb9eaf2c5e1b7",
+          "sha256": "7f7ad5a6014f954a8bb0b0dd23fc43ed3e9b13476fcffed02a40198c35549b85",
+          "availability": "local evidence; hash published"
+        }
+      ]
+    },
+    {
+      "id": "e000043",
+      "seq": 43,
+      "runId": "build-b825c5d9-59db-4f7a-94e0-9c115fe8f228",
+      "type": "visual.review",
+      "actor": "author",
+      "origin": "agent_statement",
+      "actionId": null,
+      "candidateId": "v004",
+      "details": {
+        "outcome": "passed",
+        "review": "The small wheel contacts the internally toothed boundary, with both axle centers fixed. Input A CW. All four choices are legible. Output CW."
+      },
+      "evidenceRefs": []
+    },
+    {
+      "id": "e000044",
+      "seq": 44,
+      "runId": "build-b825c5d9-59db-4f7a-94e0-9c115fe8f228",
+      "type": "run.finished",
+      "actor": "recorder",
+      "origin": "observed",
+      "actionId": null,
+      "candidateId": "v004",
+      "details": {
+        "outcome": "accepted",
+        "finalCandidateId": "v004"
+      },
+      "evidenceRefs": []
+    }
+  ],
+  "candidates": [
+    {
+      "id": "v001",
+      "parentId": null,
+      "parentBasis": null,
+      "sha256": "52c22487d87cef44d7a946134a9d11843e5dd4abc4f7c44f5f1b1d2296007d72",
+      "fingerprints": {
+        "specification": "52c22487d87cef44d7a946134a9d11843e5dd4abc4f7c44f5f1b1d2296007d72",
+        "geometry": "c373a9f1f498a15caabf581019ba96f6f1f3d6d0b03a861f526f3e5b2056f0bd",
+        "question": "86fc021a536f8fda63b6f6be8b5a24a0f321307c69281e364a752e4da648da8b",
+        "options": "a6c72b28988919e7ddb5a9fa6bdad6454bc770651aea1efb815496252493887a",
+        "answer": "abc7f71f942477e84c1805ba1543b25757cdbe71526df3174265f3f3d6a579da",
+        "contract": "d16e2f83f7844bc78d3f0520c99c8000cd5bba7d4a8d5c64b1d276d93f241b7a",
+        "rendering": "f69eff4e0f13d54c589cc2483bf0fc634602813d79701a63bc3e9e416e6f1063",
+        "generator": "5d55d33bbae467857907a38e22ef3973a81dbcf4447ce605105cb18064061d87"
+      },
+      "previewUnavailable": null,
+      "changes": [
+        "specification",
+        "geometry",
+        "question",
+        "options",
+        "answer",
+        "contract",
+        "rendering",
+        "generator"
+      ],
+      "preview": {
+        "candidateId": "v001",
+        "specification": "52c22487d87cef44d7a946134a9d11843e5dd4abc4f7c44f5f1b1d2296007d72",
+        "rendering": "f69eff4e0f13d54c589cc2483bf0fc634602813d79701a63bc3e9e416e6f1063",
+        "renderer": {
+          "id": "mechanical-system",
+          "revision": "a1407757aab9be95e87c5cf712419968772bf4f0f664383ff6933c519a6ef0e2"
+        },
+        "sha256": "6599eec9b02ade98a1e44a7246aefee71c83a0bb83620b7f841d8c43e347123c",
+        "path": "records/authored-e51a9cd5f4fefc49a96edf1c/v001-6599eec9b02ade98.svg",
+        "origin": "recorded-render"
+      }
+    },
+    {
+      "id": "v002",
+      "parentId": "v001",
+      "parentBasis": "Clarify carrier orbit and explain option-specific contact errors.",
+      "sha256": "ab3731a36b492a3066e4dd37a46c93231b7c8cd2ae560d5a0f7b55ed05bc44d6",
+      "fingerprints": {
+        "specification": "ab3731a36b492a3066e4dd37a46c93231b7c8cd2ae560d5a0f7b55ed05bc44d6",
+        "geometry": "c373a9f1f498a15caabf581019ba96f6f1f3d6d0b03a861f526f3e5b2056f0bd",
+        "question": "86fc021a536f8fda63b6f6be8b5a24a0f321307c69281e364a752e4da648da8b",
+        "options": "a6c72b28988919e7ddb5a9fa6bdad6454bc770651aea1efb815496252493887a",
+        "answer": "01009b28ee9de351e84a7e63ad3510f10af1a71db5909746cba26fa46f0cfeb4",
+        "contract": "d16e2f83f7844bc78d3f0520c99c8000cd5bba7d4a8d5c64b1d276d93f241b7a",
+        "rendering": "1e9745aea0a07b9b12cac3c3fd8ae7837cc3ba651320d82e9c756d80e8cdbe1d",
+        "generator": "4ad2c29dea08f1956d553643bd1fd6d55665601f1f2b982608f37dab02a498f3"
+      },
+      "previewUnavailable": null,
+      "changes": [
+        "specification",
+        "answer",
+        "rendering",
+        "generator"
+      ],
+      "preview": {
+        "candidateId": "v002",
+        "specification": "ab3731a36b492a3066e4dd37a46c93231b7c8cd2ae560d5a0f7b55ed05bc44d6",
+        "rendering": "1e9745aea0a07b9b12cac3c3fd8ae7837cc3ba651320d82e9c756d80e8cdbe1d",
+        "renderer": {
+          "id": "mechanical-system",
+          "revision": "79ec040e4340225d3bfdcbe34884a776b83b543b1de91e71b1ada9aa6ae1d609"
+        },
+        "sha256": "6599eec9b02ade98a1e44a7246aefee71c83a0bb83620b7f841d8c43e347123c",
+        "path": "records/authored-e51a9cd5f4fefc49a96edf1c/v002-6599eec9b02ade98.svg",
+        "origin": "recorded-render"
+      }
+    },
+    {
+      "id": "v003",
+      "parentId": "v002",
+      "parentBasis": "Review of the contact views: distinguish guided orientation, tooth form and half-turn phase. Retain the inspected earlier candidate.",
+      "sha256": "52ecb97feadaf3347348596cd40cd8f6fab45fca3fb462627edd5d4651a2d9cb",
+      "fingerprints": {
+        "specification": "52ecb97feadaf3347348596cd40cd8f6fab45fca3fb462627edd5d4651a2d9cb",
+        "geometry": "c373a9f1f498a15caabf581019ba96f6f1f3d6d0b03a861f526f3e5b2056f0bd",
+        "question": "86fc021a536f8fda63b6f6be8b5a24a0f321307c69281e364a752e4da648da8b",
+        "options": "a6c72b28988919e7ddb5a9fa6bdad6454bc770651aea1efb815496252493887a",
+        "answer": "01009b28ee9de351e84a7e63ad3510f10af1a71db5909746cba26fa46f0cfeb4",
+        "contract": "d16e2f83f7844bc78d3f0520c99c8000cd5bba7d4a8d5c64b1d276d93f241b7a",
+        "rendering": "946179aac39d278d1d2aa786134e9e1f731410ad16db9de024cede96a0ea0659",
+        "generator": "db468358e8308ddd38c3628a7d0c22aca8f10b892bea87f75c94b33c65255476"
+      },
+      "previewUnavailable": null,
+      "changes": [
+        "specification",
+        "rendering",
+        "generator"
+      ],
+      "preview": {
+        "candidateId": "v003",
+        "specification": "52ecb97feadaf3347348596cd40cd8f6fab45fca3fb462627edd5d4651a2d9cb",
+        "rendering": "946179aac39d278d1d2aa786134e9e1f731410ad16db9de024cede96a0ea0659",
+        "renderer": {
+          "id": "mechanical-system",
+          "revision": "5a35ae6c71962f8ebe00c0ce230a9d4cc51edf551e1145210c139137599370dc"
+        },
+        "sha256": "6599eec9b02ade98a1e44a7246aefee71c83a0bb83620b7f841d8c43e347123c",
+        "path": "records/authored-e51a9cd5f4fefc49a96edf1c/v003-6599eec9b02ade98.svg",
+        "origin": "recorded-render"
+      }
+    },
+    {
+      "id": "v004",
+      "parentId": "v003",
+      "parentBasis": "Review of the contact views: distinguish guided orientation, tooth form and half-turn phase. Retain the inspected earlier candidate.",
+      "sha256": "e51a9cd5f4fefc49a96edf1c395f3555a5b8acaa671bda0d5f037d74d8bd848c",
+      "fingerprints": {
+        "specification": "e51a9cd5f4fefc49a96edf1c395f3555a5b8acaa671bda0d5f037d74d8bd848c",
+        "geometry": "c373a9f1f498a15caabf581019ba96f6f1f3d6d0b03a861f526f3e5b2056f0bd",
+        "question": "86fc021a536f8fda63b6f6be8b5a24a0f321307c69281e364a752e4da648da8b",
+        "options": "a6c72b28988919e7ddb5a9fa6bdad6454bc770651aea1efb815496252493887a",
+        "answer": "01009b28ee9de351e84a7e63ad3510f10af1a71db5909746cba26fa46f0cfeb4",
+        "contract": "d16e2f83f7844bc78d3f0520c99c8000cd5bba7d4a8d5c64b1d276d93f241b7a",
+        "rendering": "6101f1629cf9da325ec4643f8cf8f691e5c54aa9e50c7a8b066d1295b1c8aad5",
+        "generator": "94c844a8285024ac00817d0d727b11f270a3609f26c75306b1e86cfd975c37cd"
+      },
+      "previewUnavailable": null,
+      "changes": [
+        "specification",
+        "rendering",
+        "generator"
+      ],
+      "preview": {
+        "candidateId": "v004",
+        "specification": "e51a9cd5f4fefc49a96edf1c395f3555a5b8acaa671bda0d5f037d74d8bd848c",
+        "rendering": "6101f1629cf9da325ec4643f8cf8f691e5c54aa9e50c7a8b066d1295b1c8aad5",
+        "renderer": {
+          "id": "mechanical-system",
+          "revision": "32105d9c96819400f070bf36f759c226e8f80ba23558686c2500c4db6dbbee17"
+        },
+        "sha256": "6599eec9b02ade98a1e44a7246aefee71c83a0bb83620b7f841d8c43e347123c",
+        "path": "records/authored-e51a9cd5f4fefc49a96edf1c/v004-6599eec9b02ade98.svg",
+        "origin": "recorded-render"
+      }
+    }
+  ],
+  "tests": [
+    {
+      "id": "t001",
+      "actionId": "465a9624-35aa-43f5-b07c-5880392bbf2e",
+      "candidateId": "v001",
+      "testedFingerprints": {
+        "specification": "52c22487d87cef44d7a946134a9d11843e5dd4abc4f7c44f5f1b1d2296007d72",
+        "geometry": "c373a9f1f498a15caabf581019ba96f6f1f3d6d0b03a861f526f3e5b2056f0bd",
+        "question": "86fc021a536f8fda63b6f6be8b5a24a0f321307c69281e364a752e4da648da8b",
+        "options": "a6c72b28988919e7ddb5a9fa6bdad6454bc770651aea1efb815496252493887a",
+        "answer": "abc7f71f942477e84c1805ba1543b25757cdbe71526df3174265f3f3d6a579da",
+        "contract": "d16e2f83f7844bc78d3f0520c99c8000cd5bba7d4a8d5c64b1d276d93f241b7a",
+        "rendering": "f69eff4e0f13d54c589cc2483bf0fc634602813d79701a63bc3e9e416e6f1063",
+        "generator": "5d55d33bbae467857907a38e22ef3973a81dbcf4447ce605105cb18064061d87"
+      },
+      "verifier": {
+        "id": "mechanical-system",
+        "revision": "a1407757aab9be95e87c5cf712419968772bf4f0f664383ff6933c519a6ef0e2"
+      },
+      "reportSha256": "f44f5358398b92197e7e6633d79580d2945e82560f6c14b8d233e63408ee4eaf",
+      "verdict": "passed",
+      "status": "passed",
+      "checks": [
+        {
+          "name": "All four printed choices are distinct",
+          "verdict": "passed"
+        },
+        {
+          "name": "Option A translates — violates the derived motion CW",
+          "verdict": "passed"
+        },
+        {
+          "name": "Option B CW — satisfies the derived motion CW",
+          "verdict": "passed"
+        },
+        {
+          "name": "Option C stationary — violates the derived motion CW",
+          "verdict": "passed"
+        },
+        {
+          "name": "Option D CCW — violates the derived motion CW",
+          "verdict": "passed"
+        },
+        {
+          "name": "Exactly one visible option satisfies every output",
+          "verdict": "passed"
+        },
+        {
+          "name": "Task question, structural constraints and options rebuild from the recorded seed",
+          "verdict": "passed"
+        },
+        {
+          "name": "Bound renderer and solver revisions",
+          "verdict": "passed"
+        }
+      ],
+      "scope": "Visible SVG text and shaft-end glyphs, contact constraint solution, option order, unique output and parameter replay.",
+      "commandExitStatus": 0,
+      "binding": "exact",
+      "bindingBasis": "exact candidate and full input fingerprints",
+      "commandEventId": "e000010"
+    },
+    {
+      "id": "t002",
+      "actionId": "c2676a12-455f-48da-a0ca-a04cb6ca4cdd",
+      "candidateId": "v002",
+      "testedFingerprints": {
+        "specification": "ab3731a36b492a3066e4dd37a46c93231b7c8cd2ae560d5a0f7b55ed05bc44d6",
+        "geometry": "c373a9f1f498a15caabf581019ba96f6f1f3d6d0b03a861f526f3e5b2056f0bd",
+        "question": "86fc021a536f8fda63b6f6be8b5a24a0f321307c69281e364a752e4da648da8b",
+        "options": "a6c72b28988919e7ddb5a9fa6bdad6454bc770651aea1efb815496252493887a",
+        "answer": "01009b28ee9de351e84a7e63ad3510f10af1a71db5909746cba26fa46f0cfeb4",
+        "contract": "d16e2f83f7844bc78d3f0520c99c8000cd5bba7d4a8d5c64b1d276d93f241b7a",
+        "rendering": "1e9745aea0a07b9b12cac3c3fd8ae7837cc3ba651320d82e9c756d80e8cdbe1d",
+        "generator": "4ad2c29dea08f1956d553643bd1fd6d55665601f1f2b982608f37dab02a498f3"
+      },
+      "verifier": {
+        "id": "mechanical-system",
+        "revision": "79ec040e4340225d3bfdcbe34884a776b83b543b1de91e71b1ada9aa6ae1d609"
+      },
+      "reportSha256": "456ccceca70f9eb18a023d6133e848353a4e9c98ec6ec6b25718c120723056c3",
+      "verdict": "passed",
+      "status": "passed",
+      "checks": [
+        {
+          "name": "All four printed choices are distinct",
+          "verdict": "passed"
+        },
+        {
+          "name": "Option A translates — violates the derived motion CW",
+          "verdict": "passed"
+        },
+        {
+          "name": "Option B CW — satisfies the derived motion CW",
+          "verdict": "passed"
+        },
+        {
+          "name": "Option C stationary — violates the derived motion CW",
+          "verdict": "passed"
+        },
+        {
+          "name": "Option D CCW — violates the derived motion CW",
+          "verdict": "passed"
+        },
+        {
+          "name": "Exactly one visible option satisfies every output",
+          "verdict": "passed"
+        },
+        {
+          "name": "Task question, structural constraints and options rebuild from the recorded seed",
+          "verdict": "passed"
+        },
+        {
+          "name": "Bound renderer and solver revisions",
+          "verdict": "passed"
+        }
+      ],
+      "scope": "Visible SVG text and shaft-end glyphs, contact constraint solution, option order, unique output and parameter replay.",
+      "commandExitStatus": 0,
+      "binding": "exact",
+      "bindingBasis": "exact candidate and full input fingerprints",
+      "commandEventId": "e000020"
+    },
+    {
+      "id": "t003",
+      "actionId": "caed48f4-e972-4e03-9720-14040d92595a",
+      "candidateId": "v003",
+      "testedFingerprints": {
+        "specification": "52ecb97feadaf3347348596cd40cd8f6fab45fca3fb462627edd5d4651a2d9cb",
+        "geometry": "c373a9f1f498a15caabf581019ba96f6f1f3d6d0b03a861f526f3e5b2056f0bd",
+        "question": "86fc021a536f8fda63b6f6be8b5a24a0f321307c69281e364a752e4da648da8b",
+        "options": "a6c72b28988919e7ddb5a9fa6bdad6454bc770651aea1efb815496252493887a",
+        "answer": "01009b28ee9de351e84a7e63ad3510f10af1a71db5909746cba26fa46f0cfeb4",
+        "contract": "d16e2f83f7844bc78d3f0520c99c8000cd5bba7d4a8d5c64b1d276d93f241b7a",
+        "rendering": "946179aac39d278d1d2aa786134e9e1f731410ad16db9de024cede96a0ea0659",
+        "generator": "db468358e8308ddd38c3628a7d0c22aca8f10b892bea87f75c94b33c65255476"
+      },
+      "verifier": {
+        "id": "mechanical-system",
+        "revision": "5a35ae6c71962f8ebe00c0ce230a9d4cc51edf551e1145210c139137599370dc"
+      },
+      "reportSha256": "09f0e8dc87ae35ddf263065435df4f898c41d3d3426e99a16f592ebdda4765a2",
+      "verdict": "passed",
+      "status": "passed",
+      "checks": [
+        {
+          "name": "All four printed choices are distinct",
+          "verdict": "passed"
+        },
+        {
+          "name": "Option A translates — violates the derived motion CW",
+          "verdict": "passed"
+        },
+        {
+          "name": "Option B CW — satisfies the derived motion CW",
+          "verdict": "passed"
+        },
+        {
+          "name": "Option C stationary — violates the derived motion CW",
+          "verdict": "passed"
+        },
+        {
+          "name": "Option D CCW — violates the derived motion CW",
+          "verdict": "passed"
+        },
+        {
+          "name": "Exactly one visible option satisfies every output",
+          "verdict": "passed"
+        },
+        {
+          "name": "Task question, structural constraints and options rebuild from the recorded seed",
+          "verdict": "passed"
+        },
+        {
+          "name": "Bound renderer and solver revisions",
+          "verdict": "passed"
+        }
+      ],
+      "scope": "Visible SVG text and shaft-end glyphs, contact constraint solution, option order, unique output and parameter replay.",
+      "commandExitStatus": 0,
+      "binding": "exact",
+      "bindingBasis": "exact candidate and full input fingerprints",
+      "commandEventId": "e000030"
+    },
+    {
+      "id": "t004",
+      "actionId": "20954ef4-db60-473e-b664-75fcc0d1486a",
+      "candidateId": "v004",
+      "testedFingerprints": {
+        "specification": "e51a9cd5f4fefc49a96edf1c395f3555a5b8acaa671bda0d5f037d74d8bd848c",
+        "geometry": "c373a9f1f498a15caabf581019ba96f6f1f3d6d0b03a861f526f3e5b2056f0bd",
+        "question": "86fc021a536f8fda63b6f6be8b5a24a0f321307c69281e364a752e4da648da8b",
+        "options": "a6c72b28988919e7ddb5a9fa6bdad6454bc770651aea1efb815496252493887a",
+        "answer": "01009b28ee9de351e84a7e63ad3510f10af1a71db5909746cba26fa46f0cfeb4",
+        "contract": "d16e2f83f7844bc78d3f0520c99c8000cd5bba7d4a8d5c64b1d276d93f241b7a",
+        "rendering": "6101f1629cf9da325ec4643f8cf8f691e5c54aa9e50c7a8b066d1295b1c8aad5",
+        "generator": "94c844a8285024ac00817d0d727b11f270a3609f26c75306b1e86cfd975c37cd"
+      },
+      "verifier": {
+        "id": "mechanical-system",
+        "revision": "32105d9c96819400f070bf36f759c226e8f80ba23558686c2500c4db6dbbee17"
+      },
+      "reportSha256": "7f7ad5a6014f954a8bb0b0dd23fc43ed3e9b13476fcffed02a40198c35549b85",
+      "verdict": "passed",
+      "status": "passed",
+      "checks": [
+        {
+          "name": "All four printed choices are distinct",
+          "verdict": "passed"
+        },
+        {
+          "name": "Option A translates — violates the derived motion CW",
+          "verdict": "passed"
+        },
+        {
+          "name": "Option B CW — satisfies the derived motion CW",
+          "verdict": "passed"
+        },
+        {
+          "name": "Option C stationary — violates the derived motion CW",
+          "verdict": "passed"
+        },
+        {
+          "name": "Option D CCW — violates the derived motion CW",
+          "verdict": "passed"
+        },
+        {
+          "name": "Exactly one visible option satisfies every output",
+          "verdict": "passed"
+        },
+        {
+          "name": "Task question, structural constraints and options rebuild from the recorded seed",
+          "verdict": "passed"
+        },
+        {
+          "name": "Bound renderer and solver revisions",
+          "verdict": "passed"
+        }
+      ],
+      "scope": "Visible SVG text and shaft-end glyphs, contact constraint solution, option order, unique output and parameter replay.",
+      "commandExitStatus": 0,
+      "binding": "exact",
+      "bindingBasis": "exact candidate and full input fingerprints",
+      "commandEventId": "e000040"
+    }
+  ],
+  "usage": {
+    "schemaVersion": 2,
+    "runId": "build-b825c5d9-59db-4f7a-94e0-9c115fe8f228",
+    "source": "codex",
+    "runtime": "Codex Desktop",
+    "status": "measured",
+    "elapsedMs": 500146,
+    "elapsedKind": "wall-clock",
+    "scope": "Runtime-reported usage between the start baseline and finish snapshot of this session. In-flight or delayed usage, earlier conversation, other agents and later delivery are excluded. This is an observed interval, not a complete billed task total.",
+    "scopeComplete": false,
+    "observedTokens": {
+      "input_tokens": 5294922,
+      "cached_input_tokens": 5245312,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 10212,
+      "reasoning_output_tokens": 2210,
+      "total_tokens": 5305134
+    },
+    "tokens": {
+      "input_tokens": null,
+      "cached_input_tokens": null,
+      "cache_write_input_tokens": null,
+      "output_tokens": null,
+      "reasoning_output_tokens": null,
+      "total_tokens": null
+    },
+    "models": [
+      {
+        "provider": "openai",
+        "model": "gpt-6.2-astra",
+        "reasoningEffort": "xhigh",
+        "tokens": {
+          "input_tokens": 5294922,
+          "cached_input_tokens": 5245312,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 10212,
+          "reasoning_output_tokens": 2210,
+          "total_tokens": 5305134
+        },
+        "observations": 32
+      }
+    ],
+    "missingFields": [],
+    "issues": [],
+    "observations": 32
+  },
+  "caseId": "authored-e51a9cd5f4fefc49a96edf1c"
+}

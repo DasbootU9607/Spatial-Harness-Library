@@ -1,0 +1,61 @@
+{
+  "id": "t004",
+  "actionId": "985e866a-98a1-48b2-b02b-c351f3b2933c",
+  "candidateId": "v004",
+  "testedFingerprints": {
+    "specification": "7170df6c852aa77e2b353d0e32c94837801f0d51e83cab6a80024b9baa8a2c16",
+    "geometry": "c8fa915e7ab076aaf590f3fd576b7a8cb82ff55bc710ee867ae8c71e54b752c4",
+    "question": "969839e985610329a29b56937f7232323490b607ed514d47a238ccd03693cb35",
+    "options": "cf9eaa737e49e26fb7cdada72281d122757e728722edc00a02c340ef191216c6",
+    "answer": "09eaf1900f8b76459227c0813e3ce30328512ada42140361dc55837451a581f4",
+    "contract": "f0a00c67958677b5ddc2432023270691695a1a29e9c103e41a0d42a22936f9ea",
+    "rendering": "6101f1629cf9da325ec4643f8cf8f691e5c54aa9e50c7a8b066d1295b1c8aad5",
+    "generator": "848faecc1699dcf94977b0e79404df685985d3171cbb94b43d08d470971575e8"
+  },
+  "verifier": {
+    "id": "mechanical-system",
+    "revision": "32105d9c96819400f070bf36f759c226e8f80ba23558686c2500c4db6dbbee17"
+  },
+  "reportSha256": "e4a5c4edad781e71cfafe5fda6f26af71ab0dbacbc362b086acb78bfee210f69",
+  "verdict": "passed",
+  "status": "passed",
+  "checks": [
+    {
+      "name": "All four printed choices are distinct",
+      "verdict": "passed"
+    },
+    {
+      "name": "Option A horizontal reciprocation — satisfies the derived motion horizontal reciprocation",
+      "verdict": "passed"
+    },
+    {
+      "name": "Option B continuous rotation — violates the derived motion horizontal reciprocation",
+      "verdict": "passed"
+    },
+    {
+      "name": "Option C vertical reciprocation — violates the derived motion horizontal reciprocation",
+      "verdict": "passed"
+    },
+    {
+      "name": "Option D stationary — violates the derived motion horizontal reciprocation",
+      "verdict": "passed"
+    },
+    {
+      "name": "Exactly one visible option satisfies every output",
+      "verdict": "passed"
+    },
+    {
+      "name": "Task question, structural constraints and options rebuild from the recorded seed",
+      "verdict": "passed"
+    },
+    {
+      "name": "Bound renderer and solver revisions",
+      "verdict": "passed"
+    }
+  ],
+  "scope": "Visible SVG text and shaft-end glyphs, contact constraint solution, option order, unique output and parameter replay.",
+  "commandExitStatus": 0,
+  "binding": "exact",
+  "bindingBasis": "exact candidate and full input fingerprints",
+  "commandEventId": "e000040"
+}

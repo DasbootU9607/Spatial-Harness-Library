@@ -1,0 +1,158 @@
+{
+  "schemaVersion": 1,
+  "title": "Orbiting pinion and pin in a radial output slot",
+  "description": "instantaneous indexed rotor direction",
+  "category": "MentalAnimation",
+  "taskType": "MechanicalSystem",
+  "difficulty": {
+    "label": "Unranked",
+    "basis": "Authored schematic exercise"
+  },
+  "geometry": {
+    "components": {
+      "S": "wheel",
+      "P": "wheel",
+      "R": "wheel",
+      "H": "carrier",
+      "J": "slotted rotor"
+    },
+    "joints": [
+      {
+        "kind": "mesh",
+        "ports": [
+          "S",
+          "P"
+        ],
+        "settings": {
+          "teeth": [
+            16,
+            16
+          ],
+          "contact": "outside",
+          "arm": "H"
+        }
+      },
+      {
+        "kind": "mesh",
+        "ports": [
+          "P",
+          "R"
+        ],
+        "settings": {
+          "teeth": [
+            16,
+            48
+          ],
+          "contact": "inside",
+          "arm": "H"
+        }
+      },
+      {
+        "kind": "ground",
+        "ports": [
+          "R"
+        ],
+        "settings": {}
+      },
+      {
+        "kind": "index",
+        "ports": [
+          "P",
+          "H",
+          "J"
+        ],
+        "settings": {
+          "offset": 24,
+          "orbit": 32,
+          "lever": 16
+        }
+      }
+    ],
+    "driver": "H",
+    "input": "CW",
+    "targets": [
+      {
+        "name": "J",
+        "kind": "spin"
+      }
+    ],
+    "scope": "at the shown instant"
+  },
+  "question": "Drive H CW. Determine the motion of J (spin) at the shown instant. Use the labeled contact views.",
+  "polarity": "positive",
+  "options": [
+    {
+      "label": "A",
+      "type": "text",
+      "text": "CCW"
+    },
+    {
+      "label": "B",
+      "type": "text",
+      "text": "translates"
+    },
+    {
+      "label": "C",
+      "type": "text",
+      "text": "CW"
+    },
+    {
+      "label": "D",
+      "type": "text",
+      "text": "stationary"
+    }
+  ],
+  "answer": {
+    "index": 0,
+    "explanation": "Drive H CW. External mesh S/P (16/16 teeth) uses spins relative to carrier H. S positive, P negative. Internal mesh P/R (16/48 teeth) uses spins relative to carrier H. P negative, R held. R is locked to the frame. R held. Add pin spin times its offset (24) to the moving axle speed (carrier rate times 32). The radial output slot takes this tangential sum. P negative, H positive, J negative. 16 × (S − H) + 16 × (P − H) = 0. 16 × (P − H) − 48 × (R − H) = 0. The requested motion is CCW (in listed output order).",
+    "options": [
+      {
+        "label": "A",
+        "explanation": "All requested motions agree with the contact constraints."
+      },
+      {
+        "label": "B",
+        "explanation": "J must be CCW. Add pin spin times its offset (24) to the moving axle speed (carrier rate times 32). The radial output slot takes this tangential sum. P negative, H positive, J negative.."
+      },
+      {
+        "label": "C",
+        "explanation": "J must be CCW. Add pin spin times its offset (24) to the moving axle speed (carrier rate times 32). The radial output slot takes this tangential sum. P negative, H positive, J negative.."
+      },
+      {
+        "label": "D",
+        "explanation": "J must be CCW. Add pin spin times its offset (24) to the moving axle speed (carrier rate times 32). The radial output slot takes this tangential sum. P negative, H positive, J negative.."
+      }
+    ]
+  },
+  "contract": {
+    "answerUnique": true,
+    "scope": "at the shown instant"
+  },
+  "provenance": {
+    "sourceKind": "agent-authored",
+    "generationMethod": "Spatial Harness mechanical contact schematics",
+    "sourceRevision": "c27f9111a2674f2ea03e2ca1f5833326cf1eec1a",
+    "mechanism": "index-arm",
+    "series": "coverage",
+    "references": [
+      "MentalAnimation/MechanicalSystem/Level1/24"
+    ]
+  },
+  "generator": {
+    "id": "mechanical-system",
+    "revision": "32105d9c96819400f070bf36f759c226e8f80ba23558686c2500c4db6dbbee17",
+    "seed": 187,
+    "parameters": {
+      "mechanism": "index-arm"
+    }
+  },
+  "rendering": {
+    "id": "mechanical-system",
+    "revision": "32105d9c96819400f070bf36f759c226e8f80ba23558686c2500c4db6dbbee17",
+    "format": "svg"
+  },
+  "verifier": {
+    "id": "mechanical-system",
+    "revision": "32105d9c96819400f070bf36f759c226e8f80ba23558686c2500c4db6dbbee17"
+  }
+}

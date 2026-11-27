@@ -1,0 +1,144 @@
+{
+  "schemaVersion": 1,
+  "title": "Hoist with a left-hand cord",
+  "description": "Trace the gear mesh, drum coupling and cord tangent.",
+  "category": "MentalAnimation",
+  "taskType": "MechanicalSystem",
+  "difficulty": {
+    "label": "Unranked",
+    "basis": "Authored schematic exercise"
+  },
+  "geometry": {
+    "components": {
+      "A": "wheel",
+      "B": "wheel",
+      "D": "drum",
+      "W": "weight"
+    },
+    "joints": [
+      {
+        "kind": "mesh",
+        "ports": [
+          "A",
+          "B"
+        ],
+        "settings": {
+          "teeth": [
+            16,
+            32
+          ],
+          "contact": "outside",
+          "arm": "frame"
+        }
+      },
+      {
+        "kind": "key",
+        "ports": [
+          "B",
+          "D"
+        ],
+        "settings": {}
+      },
+      {
+        "kind": "cord",
+        "ports": [
+          "D",
+          "W"
+        ],
+        "settings": {
+          "side": "left"
+        }
+      }
+    ],
+    "driver": "A",
+    "input": "CW",
+    "targets": [
+      {
+        "name": "W",
+        "kind": "vertical"
+      }
+    ],
+    "scope": "at the shown instant"
+  },
+  "question": "Drive A CW. Determine the motion of W (vertical) at the shown instant. Use the labeled contact views.",
+  "polarity": "positive",
+  "options": [
+    {
+      "label": "A",
+      "type": "text",
+      "text": "up"
+    },
+    {
+      "label": "B",
+      "type": "text",
+      "text": "rotates"
+    },
+    {
+      "label": "C",
+      "type": "text",
+      "text": "stationary"
+    },
+    {
+      "label": "D",
+      "type": "text",
+      "text": "down"
+    }
+  ],
+  "answer": {
+    "index": 3,
+    "explanation": "Drive A CW. External mesh A/B (16/32 teeth) has fixed centers. A positive, B negative. The solid key makes B and D rotate together. B negative, D negative. The taut line follows the left tangent of drum D; CW there is up. D negative, W negative. The requested motion is down (in listed output order).",
+    "options": [
+      {
+        "label": "A",
+        "explanation": "W must be down. The taut line follows the left tangent of drum D; CW there is up. D negative, W negative.."
+      },
+      {
+        "label": "B",
+        "explanation": "W must be down. The taut line follows the left tangent of drum D; CW there is up. D negative, W negative.."
+      },
+      {
+        "label": "C",
+        "explanation": "W must be down. The taut line follows the left tangent of drum D; CW there is up. D negative, W negative.."
+      },
+      {
+        "label": "D",
+        "explanation": "All requested motions agree with the contact constraints."
+      }
+    ]
+  },
+  "contract": {
+    "answerUnique": true,
+    "scope": "at the shown instant"
+  },
+  "provenance": {
+    "sourceKind": "agent-authored",
+    "generationMethod": "Spatial Harness mechanical contact schematics",
+    "sourceRevision": "c27f9111a2674f2ea03e2ca1f5833326cf1eec1a",
+    "mechanism": "wind-left",
+    "series": "original",
+    "references": [
+      "MentalAnimation/MechanicalSystem/Level0/20",
+      "MentalAnimation/MechanicalSystem/Level1/32"
+    ]
+  },
+  "generator": {
+    "id": "mechanical-system",
+    "revision": "32105d9c96819400f070bf36f759c226e8f80ba23558686c2500c4db6dbbee17",
+    "seed": 184,
+    "parameters": {
+      "mechanism": "wind-left",
+      "direction": "CW",
+      "teeth": 16,
+      "ratio": 2
+    }
+  },
+  "rendering": {
+    "id": "mechanical-system",
+    "revision": "32105d9c96819400f070bf36f759c226e8f80ba23558686c2500c4db6dbbee17",
+    "format": "svg"
+  },
+  "verifier": {
+    "id": "mechanical-system",
+    "revision": "32105d9c96819400f070bf36f759c226e8f80ba23558686c2500c4db6dbbee17"
+  }
+}

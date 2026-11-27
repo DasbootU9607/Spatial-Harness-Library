@@ -1,0 +1,122 @@
+{
+  "schemaVersion": 1,
+  "title": "Common guided pin captured by two spiral slots",
+  "description": "follower rotation",
+  "category": "MentalAnimation",
+  "taskType": "MechanicalSystem",
+  "difficulty": {
+    "label": "Unranked",
+    "basis": "Authored schematic exercise"
+  },
+  "geometry": {
+    "components": {
+      "A": "wheel",
+      "B": "wheel"
+    },
+    "joints": [
+      {
+        "kind": "grooves",
+        "ports": [
+          "A",
+          "B"
+        ],
+        "settings": {
+          "a": [
+            28,
+            30
+          ],
+          "b": [
+            28,
+            26
+          ]
+        }
+      }
+    ],
+    "driver": "A",
+    "input": "CW",
+    "targets": [
+      {
+        "name": "B",
+        "kind": "spin"
+      }
+    ],
+    "scope": "at the shown instant"
+  },
+  "question": "Drive A CW. Determine the motion of B (spin) at the shown instant. Use the labeled contact views.",
+  "polarity": "positive",
+  "options": [
+    {
+      "label": "A",
+      "type": "text",
+      "text": "stationary"
+    },
+    {
+      "label": "B",
+      "type": "text",
+      "text": "CW"
+    },
+    {
+      "label": "C",
+      "type": "text",
+      "text": "CCW"
+    },
+    {
+      "label": "D",
+      "type": "text",
+      "text": "translates"
+    }
+  ],
+  "answer": {
+    "index": 2,
+    "explanation": "Drive A CW. One positive angular increment changes the sampled radii by 2 and -2 mm. Both grooves must reach the same translating pin displacement. A positive, B negative. The requested motion is CCW (in listed output order).",
+    "options": [
+      {
+        "label": "A",
+        "explanation": "B must be CCW. One positive angular increment changes the sampled radii by 2 and -2 mm. Both grooves must reach the same translating pin displacement. A positive, B negative.."
+      },
+      {
+        "label": "B",
+        "explanation": "B must be CCW. One positive angular increment changes the sampled radii by 2 and -2 mm. Both grooves must reach the same translating pin displacement. A positive, B negative.."
+      },
+      {
+        "label": "C",
+        "explanation": "All requested motions agree with the contact constraints."
+      },
+      {
+        "label": "D",
+        "explanation": "B must be CCW. One positive angular increment changes the sampled radii by 2 and -2 mm. Both grooves must reach the same translating pin displacement. A positive, B negative.."
+      }
+    ]
+  },
+  "contract": {
+    "answerUnique": true,
+    "scope": "at the shown instant"
+  },
+  "provenance": {
+    "sourceKind": "agent-authored",
+    "generationMethod": "Spatial Harness mechanical contact schematics",
+    "sourceRevision": "c27f9111a2674f2ea03e2ca1f5833326cf1eec1a",
+    "mechanism": "grooves",
+    "series": "coverage",
+    "references": [
+      "MentalAnimation/MechanicalSystem/Level1/36"
+    ]
+  },
+  "generator": {
+    "id": "mechanical-system",
+    "revision": "32105d9c96819400f070bf36f759c226e8f80ba23558686c2500c4db6dbbee17",
+    "seed": 192,
+    "parameters": {
+      "mechanism": "grooves"
+    }
+  },
+  "rendering": {
+    "id": "mechanical-system",
+    "revision": "32105d9c96819400f070bf36f759c226e8f80ba23558686c2500c4db6dbbee17",
+    "format": "svg"
+  },
+  "verifier": {
+    "id": "mechanical-system",
+    "revision": "32105d9c96819400f070bf36f759c226e8f80ba23558686c2500c4db6dbbee17"
+  }
+}

@@ -1,0 +1,148 @@
+{
+  "schemaVersion": 1,
+  "title": "Fixed sun and driven ring",
+  "description": "planet spin and carrier orbit",
+  "category": "MentalAnimation",
+  "taskType": "MechanicalSystem",
+  "difficulty": {
+    "label": "Unranked",
+    "basis": "Authored schematic exercise"
+  },
+  "geometry": {
+    "components": {
+      "S": "wheel",
+      "P": "wheel",
+      "R": "wheel",
+      "H": "carrier"
+    },
+    "joints": [
+      {
+        "kind": "mesh",
+        "ports": [
+          "S",
+          "P"
+        ],
+        "settings": {
+          "teeth": [
+            32,
+            32
+          ],
+          "contact": "outside",
+          "arm": "H"
+        }
+      },
+      {
+        "kind": "mesh",
+        "ports": [
+          "P",
+          "R"
+        ],
+        "settings": {
+          "teeth": [
+            32,
+            96
+          ],
+          "contact": "inside",
+          "arm": "H"
+        }
+      },
+      {
+        "kind": "ground",
+        "ports": [
+          "S"
+        ],
+        "settings": {}
+      }
+    ],
+    "driver": "R",
+    "input": "CW",
+    "targets": [
+      {
+        "name": "P",
+        "kind": "spin"
+      },
+      {
+        "name": "H",
+        "kind": "orbit"
+      }
+    ],
+    "scope": "at the shown instant"
+  },
+  "question": "Drive R CW. Determine the motion of P (spin) and H (orbit) at the shown instant. Use the labeled contact views.",
+  "polarity": "positive",
+  "options": [
+    {
+      "label": "A",
+      "type": "text",
+      "text": "P CCW / H CW"
+    },
+    {
+      "label": "B",
+      "type": "text",
+      "text": "P CW / H CW"
+    },
+    {
+      "label": "C",
+      "type": "text",
+      "text": "P CCW / H CCW"
+    },
+    {
+      "label": "D",
+      "type": "text",
+      "text": "P CW / H CCW"
+    }
+  ],
+  "answer": {
+    "index": 1,
+    "explanation": "Drive R CW. External mesh S/P (32/32 teeth) uses spins relative to carrier H. S held, P positive. Internal mesh P/R (32/96 teeth) uses spins relative to carrier H. P positive, R positive. S is locked to the frame. S held. 32 × (S − H) + 32 × (P − H) = 0. 32 × (P − H) − 96 × (R − H) = 0. The requested motion is CW / CW (in listed output order).",
+    "options": [
+      {
+        "label": "A",
+        "explanation": "P must be CW. External mesh S/P (32/32 teeth) uses spins relative to carrier H. S held, P positive. Internal mesh P/R (32/96 teeth) uses spins relative to carrier H. P positive, R positive.."
+      },
+      {
+        "label": "B",
+        "explanation": "All requested motions agree with the contact constraints."
+      },
+      {
+        "label": "C",
+        "explanation": "P must be CW. External mesh S/P (32/32 teeth) uses spins relative to carrier H. S held, P positive. Internal mesh P/R (32/96 teeth) uses spins relative to carrier H. P positive, R positive.. H must be CW. External mesh S/P (32/32 teeth) uses spins relative to carrier H. S held, P positive. Internal mesh P/R (32/96 teeth) uses spins relative to carrier H. P positive, R positive.."
+      },
+      {
+        "label": "D",
+        "explanation": "H must be CW. External mesh S/P (32/32 teeth) uses spins relative to carrier H. S held, P positive. Internal mesh P/R (32/96 teeth) uses spins relative to carrier H. P positive, R positive.."
+      }
+    ]
+  },
+  "contract": {
+    "answerUnique": true,
+    "scope": "at the shown instant"
+  },
+  "provenance": {
+    "sourceKind": "agent-authored",
+    "generationMethod": "Spatial Harness mechanical contact schematics",
+    "sourceRevision": "c27f9111a2674f2ea03e2ca1f5833326cf1eec1a",
+    "mechanism": "ring-drive",
+    "series": "coverage",
+    "references": [
+      "MentalAnimation/MechanicalSystem/Level0/2"
+    ]
+  },
+  "generator": {
+    "id": "mechanical-system",
+    "revision": "32105d9c96819400f070bf36f759c226e8f80ba23558686c2500c4db6dbbee17",
+    "seed": 161,
+    "parameters": {
+      "mechanism": "ring-drive"
+    }
+  },
+  "rendering": {
+    "id": "mechanical-system",
+    "revision": "32105d9c96819400f070bf36f759c226e8f80ba23558686c2500c4db6dbbee17",
+    "format": "svg"
+  },
+  "verifier": {
+    "id": "mechanical-system",
+    "revision": "32105d9c96819400f070bf36f759c226e8f80ba23558686c2500c4db6dbbee17"
+  }
+}

@@ -1,0 +1,136 @@
+{
+  "schemaVersion": 1,
+  "title": "Two pinions in separate planes of a rotating annulus",
+  "description": "single driven wheel",
+  "category": "MentalAnimation",
+  "taskType": "MechanicalSystem",
+  "difficulty": {
+    "label": "Unranked",
+    "basis": "Authored schematic exercise"
+  },
+  "geometry": {
+    "components": {
+      "A": "wheel",
+      "B": "wheel",
+      "C": "wheel"
+    },
+    "joints": [
+      {
+        "kind": "mesh",
+        "ports": [
+          "A",
+          "B"
+        ],
+        "settings": {
+          "teeth": [
+            18,
+            36
+          ],
+          "contact": "inside",
+          "arm": "frame"
+        }
+      },
+      {
+        "kind": "mesh",
+        "ports": [
+          "C",
+          "B"
+        ],
+        "settings": {
+          "teeth": [
+            20,
+            36
+          ],
+          "contact": "inside",
+          "arm": "frame"
+        }
+      }
+    ],
+    "driver": "A",
+    "input": "CW",
+    "targets": [
+      {
+        "name": "C",
+        "kind": "spin"
+      }
+    ],
+    "scope": "at the shown instant"
+  },
+  "question": "Drive A CW. Determine the motion of C (spin) at the shown instant. Use the labeled contact views.",
+  "polarity": "positive",
+  "options": [
+    {
+      "label": "A",
+      "type": "text",
+      "text": "translates"
+    },
+    {
+      "label": "B",
+      "type": "text",
+      "text": "stationary"
+    },
+    {
+      "label": "C",
+      "type": "text",
+      "text": "CCW"
+    },
+    {
+      "label": "D",
+      "type": "text",
+      "text": "CW"
+    }
+  ],
+  "answer": {
+    "index": 3,
+    "explanation": "Drive A CW. Internal mesh A/B (18/36 teeth) has fixed centers. A positive, B positive. Internal mesh C/B (20/36 teeth) has fixed centers. C positive, B positive. The requested motion is CW (in listed output order).",
+    "options": [
+      {
+        "label": "A",
+        "explanation": "C must be CW. Internal mesh C/B (20/36 teeth) has fixed centers. C positive, B positive.."
+      },
+      {
+        "label": "B",
+        "explanation": "C must be CW. Internal mesh C/B (20/36 teeth) has fixed centers. C positive, B positive.."
+      },
+      {
+        "label": "C",
+        "explanation": "C must be CW. Internal mesh C/B (20/36 teeth) has fixed centers. C positive, B positive.."
+      },
+      {
+        "label": "D",
+        "explanation": "All requested motions agree with the contact constraints."
+      }
+    ]
+  },
+  "contract": {
+    "answerUnique": true,
+    "scope": "at the shown instant"
+  },
+  "provenance": {
+    "sourceKind": "agent-authored",
+    "generationMethod": "Spatial Harness mechanical contact schematics",
+    "sourceRevision": "c27f9111a2674f2ea03e2ca1f5833326cf1eec1a",
+    "mechanism": "ring-relay",
+    "series": "coverage",
+    "references": [
+      "MentalAnimation/MechanicalSystem/Level1/0"
+    ]
+  },
+  "generator": {
+    "id": "mechanical-system",
+    "revision": "32105d9c96819400f070bf36f759c226e8f80ba23558686c2500c4db6dbbee17",
+    "seed": 177,
+    "parameters": {
+      "mechanism": "ring-relay"
+    }
+  },
+  "rendering": {
+    "id": "mechanical-system",
+    "revision": "32105d9c96819400f070bf36f759c226e8f80ba23558686c2500c4db6dbbee17",
+    "format": "svg"
+  },
+  "verifier": {
+    "id": "mechanical-system",
+    "revision": "32105d9c96819400f070bf36f759c226e8f80ba23558686c2500c4db6dbbee17"
+  }
+}

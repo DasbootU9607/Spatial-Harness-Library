@@ -1,0 +1,132 @@
+{
+  "schemaVersion": 1,
+  "title": "Coaxial bevel outputs viewed from one end",
+  "description": "ordered pair in the same frame",
+  "category": "MentalAnimation",
+  "taskType": "MechanicalSystem",
+  "difficulty": {
+    "label": "Unranked",
+    "basis": "Authored schematic exercise"
+  },
+  "geometry": {
+    "components": {
+      "A": "wheel",
+      "B": "wheel",
+      "C": "wheel"
+    },
+    "joints": [
+      {
+        "kind": "face",
+        "ports": [
+          "A",
+          "B"
+        ],
+        "settings": {
+          "bank": "near",
+          "form": "opposed bevels"
+        }
+      },
+      {
+        "kind": "face",
+        "ports": [
+          "A",
+          "C"
+        ],
+        "settings": {
+          "bank": "far",
+          "form": "opposed bevels"
+        }
+      }
+    ],
+    "driver": "A",
+    "input": "CW",
+    "targets": [
+      {
+        "name": "B",
+        "kind": "spin"
+      },
+      {
+        "name": "C",
+        "kind": "spin"
+      }
+    ],
+    "scope": "at the shown instant"
+  },
+  "question": "Drive A CW. Determine the motion of B (spin) and C (spin) at the shown instant. Use the labeled contact views.",
+  "polarity": "positive",
+  "options": [
+    {
+      "label": "A",
+      "type": "text",
+      "text": "B CCW / C CW"
+    },
+    {
+      "label": "B",
+      "type": "text",
+      "text": "B CW / C CW"
+    },
+    {
+      "label": "C",
+      "type": "text",
+      "text": "B CW / C CCW"
+    },
+    {
+      "label": "D",
+      "type": "text",
+      "text": "B CCW / C CCW"
+    }
+  ],
+  "answer": {
+    "index": 2,
+    "explanation": "Drive A CW. At the tooth section the two rim tangents must coincide. The marked CW tangents agree. A positive, B positive. At the tooth section the two rim tangents must coincide. The marked CW tangents oppose one another. A positive, C negative. The requested motion is CW / CCW (in listed output order).",
+    "options": [
+      {
+        "label": "A",
+        "explanation": "B must be CW. At the tooth section the two rim tangents must coincide. The marked CW tangents agree. A positive, B positive.. C must be CCW. At the tooth section the two rim tangents must coincide. The marked CW tangents oppose one another. A positive, C negative.."
+      },
+      {
+        "label": "B",
+        "explanation": "C must be CCW. At the tooth section the two rim tangents must coincide. The marked CW tangents oppose one another. A positive, C negative.."
+      },
+      {
+        "label": "C",
+        "explanation": "All requested motions agree with the contact constraints."
+      },
+      {
+        "label": "D",
+        "explanation": "B must be CW. At the tooth section the two rim tangents must coincide. The marked CW tangents agree. A positive, B positive.."
+      }
+    ]
+  },
+  "contract": {
+    "answerUnique": true,
+    "scope": "at the shown instant"
+  },
+  "provenance": {
+    "sourceKind": "agent-authored",
+    "generationMethod": "Spatial Harness mechanical contact schematics",
+    "sourceRevision": "c27f9111a2674f2ea03e2ca1f5833326cf1eec1a",
+    "mechanism": "opposed-bevel",
+    "series": "coverage",
+    "references": [
+      "MentalAnimation/MechanicalSystem/Level1/14"
+    ]
+  },
+  "generator": {
+    "id": "mechanical-system",
+    "revision": "32105d9c96819400f070bf36f759c226e8f80ba23558686c2500c4db6dbbee17",
+    "seed": 184,
+    "parameters": {
+      "mechanism": "opposed-bevel"
+    }
+  },
+  "rendering": {
+    "id": "mechanical-system",
+    "revision": "32105d9c96819400f070bf36f759c226e8f80ba23558686c2500c4db6dbbee17",
+    "format": "svg"
+  },
+  "verifier": {
+    "id": "mechanical-system",
+    "revision": "32105d9c96819400f070bf36f759c226e8f80ba23558686c2500c4db6dbbee17"
+  }
+}

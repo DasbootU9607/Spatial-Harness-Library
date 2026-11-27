@@ -1,0 +1,137 @@
+{
+  "schemaVersion": 1,
+  "title": "Planet rolling around a grounded sun",
+  "description": "spin at the keyed pointer",
+  "category": "MentalAnimation",
+  "taskType": "MechanicalSystem",
+  "difficulty": {
+    "label": "Unranked",
+    "basis": "Authored schematic exercise"
+  },
+  "geometry": {
+    "components": {
+      "A": "wheel",
+      "B": "wheel",
+      "H": "carrier",
+      "K": "pointer"
+    },
+    "joints": [
+      {
+        "kind": "mesh",
+        "ports": [
+          "A",
+          "B"
+        ],
+        "settings": {
+          "teeth": [
+            24,
+            96
+          ],
+          "contact": "outside",
+          "arm": "H"
+        }
+      },
+      {
+        "kind": "ground",
+        "ports": [
+          "A"
+        ],
+        "settings": {}
+      },
+      {
+        "kind": "key",
+        "ports": [
+          "B",
+          "K"
+        ],
+        "settings": {}
+      }
+    ],
+    "driver": "H",
+    "input": "CW",
+    "targets": [
+      {
+        "name": "K",
+        "kind": "spin"
+      }
+    ],
+    "scope": "at the shown instant"
+  },
+  "question": "Drive H CW. Determine the motion of K (spin) at the shown instant. Use the labeled contact views.",
+  "polarity": "positive",
+  "options": [
+    {
+      "label": "A",
+      "type": "text",
+      "text": "stationary"
+    },
+    {
+      "label": "B",
+      "type": "text",
+      "text": "CW"
+    },
+    {
+      "label": "C",
+      "type": "text",
+      "text": "CCW"
+    },
+    {
+      "label": "D",
+      "type": "text",
+      "text": "translates"
+    }
+  ],
+  "answer": {
+    "index": 1,
+    "explanation": "Drive H CW. External mesh A/B (24/96 teeth) uses spins relative to carrier H. A held, B positive. A is locked to the frame. A held. The solid key makes B and K rotate together. B positive, K positive. 24 × (A − H) + 96 × (B − H) = 0. The requested motion is CW (in listed output order).",
+    "options": [
+      {
+        "label": "A",
+        "explanation": "K must be CW. The solid key makes B and K rotate together. B positive, K positive.."
+      },
+      {
+        "label": "B",
+        "explanation": "All requested motions agree with the contact constraints."
+      },
+      {
+        "label": "C",
+        "explanation": "K must be CW. The solid key makes B and K rotate together. B positive, K positive.."
+      },
+      {
+        "label": "D",
+        "explanation": "K must be CW. The solid key makes B and K rotate together. B positive, K positive.."
+      }
+    ]
+  },
+  "contract": {
+    "answerUnique": true,
+    "scope": "at the shown instant"
+  },
+  "provenance": {
+    "sourceKind": "agent-authored",
+    "generationMethod": "Spatial Harness mechanical contact schematics",
+    "sourceRevision": "c27f9111a2674f2ea03e2ca1f5833326cf1eec1a",
+    "mechanism": "orbit-shaft",
+    "series": "coverage",
+    "references": [
+      "MentalAnimation/MechanicalSystem/Level0/16"
+    ]
+  },
+  "generator": {
+    "id": "mechanical-system",
+    "revision": "32105d9c96819400f070bf36f759c226e8f80ba23558686c2500c4db6dbbee17",
+    "seed": 168,
+    "parameters": {
+      "mechanism": "orbit-shaft"
+    }
+  },
+  "rendering": {
+    "id": "mechanical-system",
+    "revision": "32105d9c96819400f070bf36f759c226e8f80ba23558686c2500c4db6dbbee17",
+    "format": "svg"
+  },
+  "verifier": {
+    "id": "mechanical-system",
+    "revision": "32105d9c96819400f070bf36f759c226e8f80ba23558686c2500c4db6dbbee17"
+  }
+}

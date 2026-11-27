@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 1,
+  "title": "Accelerated rotors in a free housing",
+  "description": "initial housing acceleration",
+  "category": "MentalAnimation",
+  "taskType": "MechanicalSystem",
+  "difficulty": {
+    "label": "Unranked",
+    "basis": "Authored schematic exercise"
+  },
+  "geometry": {
+    "components": {
+      "A": "rotor pack",
+      "B": "free housing"
+    },
+    "joints": [
+      {
+        "kind": "inertia",
+        "ports": [
+          "A",
+          "B"
+        ],
+        "settings": {
+          "externalTorque": 0
+        }
+      }
+    ],
+    "driver": "A",
+    "input": "CW",
+    "targets": [
+      {
+        "name": "B",
+        "kind": "spin"
+      }
+    ],
+    "scope": "as the balanced rotor pack starts accelerating"
+  },
+  "question": "Drive A CW. Determine the motion of B (spin) as the balanced rotor pack starts accelerating. Use the labeled contact views.",
+  "polarity": "positive",
+  "options": [
+    {
+      "label": "A",
+      "type": "text",
+      "text": "CCW"
+    },
+    {
+      "label": "B",
+      "type": "text",
+      "text": "stationary"
+    },
+    {
+      "label": "C",
+      "type": "text",
+      "text": "translates"
+    },
+    {
+      "label": "D",
+      "type": "text",
+      "text": "CW"
+    }
+  ],
+  "answer": {
+    "index": 0,
+    "explanation": "Drive A CW. With zero applied torque about the free axis, the housing must acquire angular momentum opposite to the driven pack. A positive, B negative. The requested motion is CCW (in listed output order).",
+    "options": [
+      {
+        "label": "A",
+        "explanation": "All requested motions agree with the contact constraints."
+      },
+      {
+        "label": "B",
+        "explanation": "B must be CCW. With zero applied torque about the free axis, the housing must acquire angular momentum opposite to the driven pack. A positive, B negative.."
+      },
+      {
+        "label": "C",
+        "explanation": "B must be CCW. With zero applied torque about the free axis, the housing must acquire angular momentum opposite to the driven pack. A positive, B negative.."
+      },
+      {
+        "label": "D",
+        "explanation": "B must be CCW. With zero applied torque about the free axis, the housing must acquire angular momentum opposite to the driven pack. A positive, B negative.."
+      }
+    ]
+  },
+  "contract": {
+    "answerUnique": true,
+    "scope": "as the balanced rotor pack starts accelerating"
+  },
+  "provenance": {
+    "sourceKind": "agent-authored",
+    "generationMethod": "Spatial Harness mechanical contact schematics",
+    "sourceRevision": "c27f9111a2674f2ea03e2ca1f5833326cf1eec1a",
+    "mechanism": "reaction",
+    "series": "coverage",
+    "references": [
+      "MentalAnimation/MechanicalSystem/Level0/36"
+    ]
+  },
+  "generator": {
+    "id": "mechanical-system",
+    "revision": "32105d9c96819400f070bf36f759c226e8f80ba23558686c2500c4db6dbbee17",
+    "seed": 175,
+    "parameters": {
+      "mechanism": "reaction"
+    }
+  },
+  "rendering": {
+    "id": "mechanical-system",
+    "revision": "32105d9c96819400f070bf36f759c226e8f80ba23558686c2500c4db6dbbee17",
+    "format": "svg"
+  },
+  "verifier": {
+    "id": "mechanical-system",
+    "revision": "32105d9c96819400f070bf36f759c226e8f80ba23558686c2500c4db6dbbee17"
+  }
+}

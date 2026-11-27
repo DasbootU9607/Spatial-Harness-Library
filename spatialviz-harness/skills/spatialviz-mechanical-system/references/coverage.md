@@ -38,6 +38,8 @@ All source IDs begin with `MentalAnimation/MechanicalSystem/`. The two official 
 | cam-unlike | Alternative local cam slopes and loaded drum | weight travel | Level1/34–35 |
 | grooves | Common guided pin captured by two spiral slots | follower rotation | Level1/36–39 |
 
+The [acceptance register](acceptance.md) links each construction to a served plate, worked solution and build record. The three [original assemblies](originals.md) have their own comparison. Read [individual audit notes](cases.md) for the media and the four observations on each item.
+
 ## Uncertain or conflicting references
 
 - Level0/0, Level0/1 — The word fixed describes the orange mounting yet the question drives it. Read the green ring as grounded.

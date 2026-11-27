@@ -1,0 +1,146 @@
+{
+  "schemaVersion": 1,
+  "title": "Meshed slotted arms and inclined guides",
+  "description": "direction along the other guide",
+  "category": "MentalAnimation",
+  "taskType": "MechanicalSystem",
+  "difficulty": {
+    "label": "Unranked",
+    "basis": "Authored schematic exercise"
+  },
+  "geometry": {
+    "components": {
+      "P": "slider",
+      "Q": "slider",
+      "A": "wheel",
+      "B": "wheel"
+    },
+    "joints": [
+      {
+        "kind": "mesh",
+        "ports": [
+          "A",
+          "B"
+        ],
+        "settings": {
+          "teeth": [
+            18,
+            72
+          ],
+          "contact": "outside",
+          "arm": "frame"
+        }
+      },
+      {
+        "kind": "slide-arm",
+        "ports": [
+          "A",
+          "P"
+        ],
+        "settings": {
+          "rail": "SE",
+          "pin": "top"
+        }
+      },
+      {
+        "kind": "slide-arm",
+        "ports": [
+          "B",
+          "Q"
+        ],
+        "settings": {
+          "rail": "SW",
+          "pin": "top"
+        }
+      }
+    ],
+    "driver": "Q",
+    "input": "down-left",
+    "targets": [
+      {
+        "name": "P",
+        "kind": "diagonal"
+      }
+    ],
+    "scope": "at the shown instant"
+  },
+  "question": "Drive Q down-left. Determine the motion of P (diagonal) at the shown instant. Use the labeled contact views.",
+  "polarity": "positive",
+  "options": [
+    {
+      "label": "A",
+      "type": "text",
+      "text": "up-right"
+    },
+    {
+      "label": "B",
+      "type": "text",
+      "text": "up-left"
+    },
+    {
+      "label": "C",
+      "type": "text",
+      "text": "down-right"
+    },
+    {
+      "label": "D",
+      "type": "text",
+      "text": "down-left"
+    }
+  ],
+  "answer": {
+    "index": 2,
+    "explanation": "Drive Q down-left. External mesh A/B (18/72 teeth) has fixed centers. A positive, B negative. At top dead vertical, the radial slot transmits horizontal velocity to the SE guide. A positive, P positive. At top dead vertical, the radial slot transmits horizontal velocity to the SW guide. B negative, Q positive. The requested motion is down-right (in listed output order).",
+    "options": [
+      {
+        "label": "A",
+        "explanation": "P must be down-right. At top dead vertical, the radial slot transmits horizontal velocity to the SE guide. A positive, P positive.."
+      },
+      {
+        "label": "B",
+        "explanation": "P must be down-right. At top dead vertical, the radial slot transmits horizontal velocity to the SE guide. A positive, P positive.."
+      },
+      {
+        "label": "C",
+        "explanation": "All requested motions agree with the contact constraints."
+      },
+      {
+        "label": "D",
+        "explanation": "P must be down-right. At top dead vertical, the radial slot transmits horizontal velocity to the SE guide. A positive, P positive.."
+      }
+    ]
+  },
+  "contract": {
+    "answerUnique": true,
+    "scope": "at the shown instant"
+  },
+  "provenance": {
+    "sourceKind": "agent-authored",
+    "generationMethod": "Spatial Harness mechanical contact schematics",
+    "sourceRevision": "c27f9111a2674f2ea03e2ca1f5833326cf1eec1a",
+    "mechanism": "sliders",
+    "series": "coverage",
+    "references": [
+      "MentalAnimation/MechanicalSystem/Level1/20"
+    ]
+  },
+  "generator": {
+    "id": "mechanical-system",
+    "revision": "32105d9c96819400f070bf36f759c226e8f80ba23558686c2500c4db6dbbee17",
+    "seed": 214,
+    "parameters": {
+      "mechanism": "sliders",
+      "direction": "CW",
+      "drive": "Q"
+    }
+  },
+  "rendering": {
+    "id": "mechanical-system",
+    "revision": "32105d9c96819400f070bf36f759c226e8f80ba23558686c2500c4db6dbbee17",
+    "format": "svg"
+  },
+  "verifier": {
+    "id": "mechanical-system",
+    "revision": "32105d9c96819400f070bf36f759c226e8f80ba23558686c2500c4db6dbbee17"
+  }
+}

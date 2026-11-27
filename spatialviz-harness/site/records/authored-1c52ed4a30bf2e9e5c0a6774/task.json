@@ -1,0 +1,133 @@
+{
+  "schemaVersion": 1,
+  "title": "Arm presented to second lug after a half-turn",
+  "description": "continue or reverse",
+  "category": "MentalAnimation",
+  "taskType": "MechanicalSystem",
+  "difficulty": {
+    "label": "Unranked",
+    "basis": "Authored schematic exercise"
+  },
+  "geometry": {
+    "components": {
+      "A": "sweep arm",
+      "B": "wheel",
+      "C": "wheel"
+    },
+    "joints": [
+      {
+        "kind": "mesh",
+        "ports": [
+          "B",
+          "C"
+        ],
+        "settings": {
+          "teeth": [
+            18,
+            54
+          ],
+          "contact": "outside",
+          "arm": "frame"
+        }
+      },
+      {
+        "kind": "lug",
+        "ports": [
+          "A",
+          "C"
+        ],
+        "settings": {
+          "phase": 180,
+          "flank": "CCW"
+        }
+      }
+    ],
+    "driver": "A",
+    "input": "CCW",
+    "targets": [
+      {
+        "name": "C",
+        "kind": "spin"
+      }
+    ],
+    "scope": "at the shown instant"
+  },
+  "question": "Drive A CCW. Determine the motion of C (spin) at the shown instant. Use the labeled contact views.",
+  "polarity": "positive",
+  "options": [
+    {
+      "label": "A",
+      "type": "text",
+      "text": "CW"
+    },
+    {
+      "label": "B",
+      "type": "text",
+      "text": "stationary"
+    },
+    {
+      "label": "C",
+      "type": "text",
+      "text": "CCW"
+    },
+    {
+      "label": "D",
+      "type": "text",
+      "text": "translates"
+    }
+  ],
+  "answer": {
+    "index": 2,
+    "explanation": "Drive A CCW. External mesh B/C (18/54 teeth) has fixed centers. B positive, C negative. At the displayed phase only C presents a lug. CCW pushes its square face; CW retreats and the detent holds. A negative, C negative. The requested motion is CCW (in listed output order).",
+    "options": [
+      {
+        "label": "A",
+        "explanation": "C must be CCW. External mesh B/C (18/54 teeth) has fixed centers. B positive, C negative. At the displayed phase only C presents a lug. CCW pushes its square face; CW retreats and the detent holds. A negative, C negative.."
+      },
+      {
+        "label": "B",
+        "explanation": "C must be CCW. External mesh B/C (18/54 teeth) has fixed centers. B positive, C negative. At the displayed phase only C presents a lug. CCW pushes its square face; CW retreats and the detent holds. A negative, C negative.."
+      },
+      {
+        "label": "C",
+        "explanation": "All requested motions agree with the contact constraints."
+      },
+      {
+        "label": "D",
+        "explanation": "C must be CCW. External mesh B/C (18/54 teeth) has fixed centers. B positive, C negative. At the displayed phase only C presents a lug. CCW pushes its square face; CW retreats and the detent holds. A negative, C negative.."
+      }
+    ]
+  },
+  "contract": {
+    "answerUnique": true,
+    "scope": "at the shown instant"
+  },
+  "provenance": {
+    "sourceKind": "agent-authored",
+    "generationMethod": "Spatial Harness mechanical contact schematics",
+    "sourceRevision": "c27f9111a2674f2ea03e2ca1f5833326cf1eec1a",
+    "mechanism": "lug-half",
+    "series": "coverage",
+    "references": [
+      "MentalAnimation/MechanicalSystem/Level1/30"
+    ]
+  },
+  "generator": {
+    "id": "mechanical-system",
+    "revision": "32105d9c96819400f070bf36f759c226e8f80ba23558686c2500c4db6dbbee17",
+    "seed": 212,
+    "parameters": {
+      "mechanism": "lug-half",
+      "direction": "CCW"
+    }
+  },
+  "rendering": {
+    "id": "mechanical-system",
+    "revision": "32105d9c96819400f070bf36f759c226e8f80ba23558686c2500c4db6dbbee17",
+    "format": "svg"
+  },
+  "verifier": {
+    "id": "mechanical-system",
+    "revision": "32105d9c96819400f070bf36f759c226e8f80ba23558686c2500c4db6dbbee17"
+  }
+}

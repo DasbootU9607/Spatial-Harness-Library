@@ -1,0 +1,61 @@
+{
+  "id": "t004",
+  "actionId": "e9f5970a-6244-4090-90d7-18c6fb920b04",
+  "candidateId": "v004",
+  "testedFingerprints": {
+    "specification": "6fb29e3a3a9491e9faed769f1b235baa4cc842379e44f7548a2cd50d1f5ff118",
+    "geometry": "ed53b580e8feeebe258150ff44715adcc1cbdb0c49f1c53ab20cffd058ab0ed8",
+    "question": "9a9ab75c83310cd1234bec71f7a1c81953a219d1a31603b35189c868ddb02d99",
+    "options": "3d4be4e2e60290bdf8060cf73bfef110edc6e581e33b78fee0fe845b597ce1e6",
+    "answer": "f337b61b98913496d6561ba834105fc405a5245e0080da33d02a5d98d992ae03",
+    "contract": "d16e2f83f7844bc78d3f0520c99c8000cd5bba7d4a8d5c64b1d276d93f241b7a",
+    "rendering": "6101f1629cf9da325ec4643f8cf8f691e5c54aa9e50c7a8b066d1295b1c8aad5",
+    "generator": "bc17338c94e801db983d9f69a4c44c23791eb9b57336475eb842a4b8d96f4253"
+  },
+  "verifier": {
+    "id": "mechanical-system",
+    "revision": "32105d9c96819400f070bf36f759c226e8f80ba23558686c2500c4db6dbbee17"
+  },
+  "reportSha256": "824b2d37575a22bad6b411c96a0ee68998e885f6fbfc4bdf44a44153594fbef2",
+  "verdict": "passed",
+  "status": "passed",
+  "checks": [
+    {
+      "name": "All four printed choices are distinct",
+      "verdict": "passed"
+    },
+    {
+      "name": "Option A C CW / H CW — violates the derived motion C stationary / H CW",
+      "verdict": "passed"
+    },
+    {
+      "name": "Option B C CW / H CCW — violates the derived motion C stationary / H CW",
+      "verdict": "passed"
+    },
+    {
+      "name": "Option C C stationary / H CW — satisfies the derived motion C stationary / H CW",
+      "verdict": "passed"
+    },
+    {
+      "name": "Option D C stationary / H CCW — violates the derived motion C stationary / H CW",
+      "verdict": "passed"
+    },
+    {
+      "name": "Exactly one visible option satisfies every output",
+      "verdict": "passed"
+    },
+    {
+      "name": "Task question, structural constraints and options rebuild from the recorded seed",
+      "verdict": "passed"
+    },
+    {
+      "name": "Bound renderer and solver revisions",
+      "verdict": "passed"
+    }
+  ],
+  "scope": "Visible SVG text and shaft-end glyphs, contact constraint solution, option order, unique output and parameter replay.",
+  "commandExitStatus": 0,
+  "binding": "exact",
+  "bindingBasis": "exact candidate and full input fingerprints",
+  "commandEventId": "e000041"
+}

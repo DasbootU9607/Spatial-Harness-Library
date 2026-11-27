@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 1,
+  "title": "Index tooth and pocket wheel",
+  "description": "instantaneous wheel rotation during engagement",
+  "category": "MentalAnimation",
+  "taskType": "MechanicalSystem",
+  "difficulty": {
+    "label": "Unranked",
+    "basis": "Authored schematic exercise"
+  },
+  "geometry": {
+    "components": {
+      "A": "wheel",
+      "B": "wheel"
+    },
+    "joints": [
+      {
+        "kind": "index-tooth",
+        "ports": [
+          "A",
+          "B"
+        ],
+        "settings": {
+          "phase": "in pocket"
+        }
+      }
+    ],
+    "driver": "A",
+    "input": "CW",
+    "targets": [
+      {
+        "name": "B",
+        "kind": "spin"
+      }
+    ],
+    "scope": "at the shown instant"
+  },
+  "question": "Drive A CW. Determine the motion of B (spin) at the shown instant. Use the labeled contact views.",
+  "polarity": "positive",
+  "options": [
+    {
+      "label": "A",
+      "type": "text",
+      "text": "translates"
+    },
+    {
+      "label": "B",
+      "type": "text",
+      "text": "CCW"
+    },
+    {
+      "label": "C",
+      "type": "text",
+      "text": "stationary"
+    },
+    {
+      "label": "D",
+      "type": "text",
+      "text": "CW"
+    }
+  ],
+  "answer": {
+    "index": 1,
+    "explanation": "Drive A CW. The driving tooth is inside the follower pocket. The two external pitch arcs roll in opposite senses. A positive, B negative. The requested motion is CCW (in listed output order).",
+    "options": [
+      {
+        "label": "A",
+        "explanation": "B must be CCW. The driving tooth is inside the follower pocket. The two external pitch arcs roll in opposite senses. A positive, B negative.."
+      },
+      {
+        "label": "B",
+        "explanation": "All requested motions agree with the contact constraints."
+      },
+      {
+        "label": "C",
+        "explanation": "B must be CCW. The driving tooth is inside the follower pocket. The two external pitch arcs roll in opposite senses. A positive, B negative.."
+      },
+      {
+        "label": "D",
+        "explanation": "B must be CCW. The driving tooth is inside the follower pocket. The two external pitch arcs roll in opposite senses. A positive, B negative.."
+      }
+    ]
+  },
+  "contract": {
+    "answerUnique": true,
+    "scope": "at the shown instant"
+  },
+  "provenance": {
+    "sourceKind": "agent-authored",
+    "generationMethod": "Spatial Harness mechanical contact schematics",
+    "sourceRevision": "c27f9111a2674f2ea03e2ca1f5833326cf1eec1a",
+    "mechanism": "intermittent",
+    "series": "coverage",
+    "references": [
+      "MentalAnimation/MechanicalSystem/Level0/32"
+    ]
+  },
+  "generator": {
+    "id": "mechanical-system",
+    "revision": "32105d9c96819400f070bf36f759c226e8f80ba23558686c2500c4db6dbbee17",
+    "seed": 173,
+    "parameters": {
+      "mechanism": "intermittent"
+    }
+  },
+  "rendering": {
+    "id": "mechanical-system",
+    "revision": "32105d9c96819400f070bf36f759c226e8f80ba23558686c2500c4db6dbbee17",
+    "format": "svg"
+  },
+  "verifier": {
+    "id": "mechanical-system",
+    "revision": "32105d9c96819400f070bf36f759c226e8f80ba23558686c2500c4db6dbbee17"
+  }
+}

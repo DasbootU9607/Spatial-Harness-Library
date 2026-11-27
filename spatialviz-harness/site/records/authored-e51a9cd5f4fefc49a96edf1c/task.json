@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 1,
+  "title": "Single internal mesh",
+  "description": "single driven wheel",
+  "category": "MentalAnimation",
+  "taskType": "MechanicalSystem",
+  "difficulty": {
+    "label": "Unranked",
+    "basis": "Authored schematic exercise"
+  },
+  "geometry": {
+    "components": {
+      "A": "wheel",
+      "B": "wheel"
+    },
+    "joints": [
+      {
+        "kind": "mesh",
+        "ports": [
+          "A",
+          "B"
+        ],
+        "settings": {
+          "teeth": [
+            24,
+            72
+          ],
+          "contact": "inside",
+          "arm": "frame"
+        }
+      }
+    ],
+    "driver": "A",
+    "input": "CW",
+    "targets": [
+      {
+        "name": "B",
+        "kind": "spin"
+      }
+    ],
+    "scope": "at the shown instant"
+  },
+  "question": "Drive A CW. Determine the motion of B (spin) at the shown instant. Use the labeled contact views.",
+  "polarity": "positive",
+  "options": [
+    {
+      "label": "A",
+      "type": "text",
+      "text": "translates"
+    },
+    {
+      "label": "B",
+      "type": "text",
+      "text": "CW"
+    },
+    {
+      "label": "C",
+      "type": "text",
+      "text": "stationary"
+    },
+    {
+      "label": "D",
+      "type": "text",
+      "text": "CCW"
+    }
+  ],
+  "answer": {
+    "index": 1,
+    "explanation": "Drive A CW. Internal mesh A/B (24/72 teeth) has fixed centers. A positive, B positive. The requested motion is CW (in listed output order).",
+    "options": [
+      {
+        "label": "A",
+        "explanation": "B must be CW. Internal mesh A/B (24/72 teeth) has fixed centers. A positive, B positive.."
+      },
+      {
+        "label": "B",
+        "explanation": "All requested motions agree with the contact constraints."
+      },
+      {
+        "label": "C",
+        "explanation": "B must be CW. Internal mesh A/B (24/72 teeth) has fixed centers. A positive, B positive.."
+      },
+      {
+        "label": "D",
+        "explanation": "B must be CW. Internal mesh A/B (24/72 teeth) has fixed centers. A positive, B positive.."
+      }
+    ]
+  },
+  "contract": {
+    "answerUnique": true,
+    "scope": "at the shown instant"
+  },
+  "provenance": {
+    "sourceKind": "agent-authored",
+    "generationMethod": "Spatial Harness mechanical contact schematics",
+    "sourceRevision": "c27f9111a2674f2ea03e2ca1f5833326cf1eec1a",
+    "mechanism": "inside",
+    "series": "coverage",
+    "references": [
+      "MentalAnimation/MechanicalSystem/Level1/4"
+    ]
+  },
+  "generator": {
+    "id": "mechanical-system",
+    "revision": "32105d9c96819400f070bf36f759c226e8f80ba23558686c2500c4db6dbbee17",
+    "seed": 179,
+    "parameters": {
+      "mechanism": "inside"
+    }
+  },
+  "rendering": {
+    "id": "mechanical-system",
+    "revision": "32105d9c96819400f070bf36f759c226e8f80ba23558686c2500c4db6dbbee17",
+    "format": "svg"
+  },
+  "verifier": {
+    "id": "mechanical-system",
+    "revision": "32105d9c96819400f070bf36f759c226e8f80ba23558686c2500c4db6dbbee17"
+  }
+}

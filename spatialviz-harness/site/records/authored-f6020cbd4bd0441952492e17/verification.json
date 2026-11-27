@@ -1,0 +1,61 @@
+{
+  "id": "t004",
+  "actionId": "ce8dfa94-f119-4f42-b0e7-27ee54c68c3c",
+  "candidateId": "v004",
+  "testedFingerprints": {
+    "specification": "f6020cbd4bd0441952492e17b1e3b3cc7cfb49456d2690692ad0a3685a53d1e5",
+    "geometry": "8dfaaa6e58ef35c2c956deb712d9b045560a9171f72a06b218f7edc8b1fade5d",
+    "question": "8ae30891b9fd1fa35afc914228bf5091ed51487835cdbb7319f2dda7026389c2",
+    "options": "4a5badbc8d7eea9619576526d15f5a0bcb9b954127ee6fdf2ff22931312f5371",
+    "answer": "5cfe8019bd3e8b768887d2d32c5d192f59d6e89317aac1a7474b84ed0b84205c",
+    "contract": "d16e2f83f7844bc78d3f0520c99c8000cd5bba7d4a8d5c64b1d276d93f241b7a",
+    "rendering": "6101f1629cf9da325ec4643f8cf8f691e5c54aa9e50c7a8b066d1295b1c8aad5",
+    "generator": "2ac9a540d00440b3ac315b6a3034acd50aae50e38c2fd9f508d3f39e4b326f82"
+  },
+  "verifier": {
+    "id": "mechanical-system",
+    "revision": "32105d9c96819400f070bf36f759c226e8f80ba23558686c2500c4db6dbbee17"
+  },
+  "reportSha256": "e875a411f939f910f22d8d8c5f0c3f0ecbe8107b53e5237290f7b37d797af157",
+  "verdict": "passed",
+  "status": "passed",
+  "checks": [
+    {
+      "name": "All four printed choices are distinct",
+      "verdict": "passed"
+    },
+    {
+      "name": "Option A stationary — violates the derived motion CCW",
+      "verdict": "passed"
+    },
+    {
+      "name": "Option B translates — violates the derived motion CCW",
+      "verdict": "passed"
+    },
+    {
+      "name": "Option C CW — violates the derived motion CCW",
+      "verdict": "passed"
+    },
+    {
+      "name": "Option D CCW — satisfies the derived motion CCW",
+      "verdict": "passed"
+    },
+    {
+      "name": "Exactly one visible option satisfies every output",
+      "verdict": "passed"
+    },
+    {
+      "name": "Task question, structural constraints and options rebuild from the recorded seed",
+      "verdict": "passed"
+    },
+    {
+      "name": "Bound renderer and solver revisions",
+      "verdict": "passed"
+    }
+  ],
+  "scope": "Visible SVG text and shaft-end glyphs, contact constraint solution, option order, unique output and parameter replay.",
+  "commandExitStatus": 0,
+  "binding": "exact",
+  "bindingBasis": "exact candidate and full input fingerprints",
+  "commandEventId": "e000040"
+}

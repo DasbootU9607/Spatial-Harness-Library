@@ -1,0 +1,133 @@
+{
+  "schemaVersion": 1,
+  "title": "Alternative local cam slopes and loaded drum",
+  "description": "weight travel",
+  "category": "MentalAnimation",
+  "taskType": "MechanicalSystem",
+  "difficulty": {
+    "label": "Unranked",
+    "basis": "Authored schematic exercise"
+  },
+  "geometry": {
+    "components": {
+      "A": "wheel",
+      "B": "wheel",
+      "W": "weight"
+    },
+    "joints": [
+      {
+        "kind": "cams",
+        "ports": [
+          "A",
+          "B"
+        ],
+        "settings": {
+          "a": [
+            26,
+            28
+          ],
+          "b": [
+            31,
+            33
+          ]
+        }
+      },
+      {
+        "kind": "cord",
+        "ports": [
+          "B",
+          "W"
+        ],
+        "settings": {
+          "side": "left"
+        }
+      }
+    ],
+    "driver": "A",
+    "input": "CW",
+    "targets": [
+      {
+        "name": "W",
+        "kind": "vertical"
+      }
+    ],
+    "scope": "at the shown instant"
+  },
+  "question": "Drive A CW. Determine the motion of W (vertical) at the shown instant. Use the labeled contact views.",
+  "polarity": "positive",
+  "options": [
+    {
+      "label": "A",
+      "type": "text",
+      "text": "down"
+    },
+    {
+      "label": "B",
+      "type": "text",
+      "text": "up"
+    },
+    {
+      "label": "C",
+      "type": "text",
+      "text": "rotates"
+    },
+    {
+      "label": "D",
+      "type": "text",
+      "text": "stationary"
+    }
+  ],
+  "answer": {
+    "index": 0,
+    "explanation": "Drive A CW. One positive angular increment changes the sampled radii by 2 and 2 mm. The two radii must sum to the fixed center distance. A positive, B negative. The taut line follows the left tangent of drum B; CW there is up. B negative, W negative. The requested motion is down (in listed output order).",
+    "options": [
+      {
+        "label": "A",
+        "explanation": "All requested motions agree with the contact constraints."
+      },
+      {
+        "label": "B",
+        "explanation": "W must be down. The taut line follows the left tangent of drum B; CW there is up. B negative, W negative.."
+      },
+      {
+        "label": "C",
+        "explanation": "W must be down. The taut line follows the left tangent of drum B; CW there is up. B negative, W negative.."
+      },
+      {
+        "label": "D",
+        "explanation": "W must be down. The taut line follows the left tangent of drum B; CW there is up. B negative, W negative.."
+      }
+    ]
+  },
+  "contract": {
+    "answerUnique": true,
+    "scope": "at the shown instant"
+  },
+  "provenance": {
+    "sourceKind": "agent-authored",
+    "generationMethod": "Spatial Harness mechanical contact schematics",
+    "sourceRevision": "c27f9111a2674f2ea03e2ca1f5833326cf1eec1a",
+    "mechanism": "cam-unlike",
+    "series": "coverage",
+    "references": [
+      "MentalAnimation/MechanicalSystem/Level1/34"
+    ]
+  },
+  "generator": {
+    "id": "mechanical-system",
+    "revision": "32105d9c96819400f070bf36f759c226e8f80ba23558686c2500c4db6dbbee17",
+    "seed": 191,
+    "parameters": {
+      "mechanism": "cam-unlike"
+    }
+  },
+  "rendering": {
+    "id": "mechanical-system",
+    "revision": "32105d9c96819400f070bf36f759c226e8f80ba23558686c2500c4db6dbbee17",
+    "format": "svg"
+  },
+  "verifier": {
+    "id": "mechanical-system",
+    "revision": "32105d9c96819400f070bf36f759c226e8f80ba23558686c2500c4db6dbbee17"
+  }
+}

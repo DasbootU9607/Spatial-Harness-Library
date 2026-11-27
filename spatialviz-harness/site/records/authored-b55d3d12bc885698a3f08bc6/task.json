@@ -1,0 +1,125 @@
+{
+  "schemaVersion": 1,
+  "title": "Sector engages the left pinion",
+  "description": "common shaft direction",
+  "category": "MentalAnimation",
+  "taskType": "MechanicalSystem",
+  "difficulty": {
+    "label": "Unranked",
+    "basis": "Authored schematic exercise"
+  },
+  "geometry": {
+    "components": {
+      "A": "wheel",
+      "B": "wheel",
+      "K": "shaft"
+    },
+    "joints": [
+      {
+        "kind": "face",
+        "ports": [
+          "A",
+          "B"
+        ],
+        "settings": {
+          "bank": "far",
+          "form": "left sector"
+        }
+      },
+      {
+        "kind": "key",
+        "ports": [
+          "B",
+          "K"
+        ],
+        "settings": {}
+      }
+    ],
+    "driver": "A",
+    "input": "CW",
+    "targets": [
+      {
+        "name": "K",
+        "kind": "spin"
+      }
+    ],
+    "scope": "at the shown instant"
+  },
+  "question": "Drive A CW. Determine the motion of K (spin) at the shown instant. Use the labeled contact views.",
+  "polarity": "positive",
+  "options": [
+    {
+      "label": "A",
+      "type": "text",
+      "text": "CW"
+    },
+    {
+      "label": "B",
+      "type": "text",
+      "text": "stationary"
+    },
+    {
+      "label": "C",
+      "type": "text",
+      "text": "CCW"
+    },
+    {
+      "label": "D",
+      "type": "text",
+      "text": "translates"
+    }
+  ],
+  "answer": {
+    "index": 2,
+    "explanation": "Drive A CW. At the tooth section the two rim tangents must coincide. The marked CW tangents oppose one another. A positive, B negative. The solid key makes B and K rotate together. B negative, K negative. The requested motion is CCW (in listed output order).",
+    "options": [
+      {
+        "label": "A",
+        "explanation": "K must be CCW. The solid key makes B and K rotate together. B negative, K negative.."
+      },
+      {
+        "label": "B",
+        "explanation": "K must be CCW. The solid key makes B and K rotate together. B negative, K negative.."
+      },
+      {
+        "label": "C",
+        "explanation": "All requested motions agree with the contact constraints."
+      },
+      {
+        "label": "D",
+        "explanation": "K must be CCW. The solid key makes B and K rotate together. B negative, K negative.."
+      }
+    ]
+  },
+  "contract": {
+    "answerUnique": true,
+    "scope": "at the shown instant"
+  },
+  "provenance": {
+    "sourceKind": "agent-authored",
+    "generationMethod": "Spatial Harness mechanical contact schematics",
+    "sourceRevision": "c27f9111a2674f2ea03e2ca1f5833326cf1eec1a",
+    "mechanism": "face-left",
+    "series": "coverage",
+    "references": [
+      "MentalAnimation/MechanicalSystem/Level0/10"
+    ]
+  },
+  "generator": {
+    "id": "mechanical-system",
+    "revision": "32105d9c96819400f070bf36f759c226e8f80ba23558686c2500c4db6dbbee17",
+    "seed": 165,
+    "parameters": {
+      "mechanism": "face-left"
+    }
+  },
+  "rendering": {
+    "id": "mechanical-system",
+    "revision": "32105d9c96819400f070bf36f759c226e8f80ba23558686c2500c4db6dbbee17",
+    "format": "svg"
+  },
+  "verifier": {
+    "id": "mechanical-system",
+    "revision": "32105d9c96819400f070bf36f759c226e8f80ba23558686c2500c4db6dbbee17"
+  }
+}
