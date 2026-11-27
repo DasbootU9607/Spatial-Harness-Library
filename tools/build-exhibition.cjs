@@ -25,7 +25,7 @@ function discover(){
    for(const c of cases.filter(c=>c.harnessId===h.id)){
     for(const id of c.sourceCaseIds || [])refs.add(id);
    }
-   for(const s of source.filter((s,i)=>i===0||refs.has(s.id)))official.push({id:s.id,harnessId:h.id,sourceKind:'official',title:s.type+' · '+(s.level||s.sourceId),description:s.question,thumbnail:'../questions/'+s.image,taskUrl:'../questions/#/'+h.collection+'?case='+encodeURIComponent(s.id),category:s.category,taskType:s.type,difficulty:s.level,source:s.provenance});
+   for(const s of source.filter((s,i)=>i===0||refs.has(s.id)))official.push({id:s.id,...(h.id==='spatialviz-harness'?{sourceId:s.sourceId}:{}),harnessId:h.id,sourceKind:'official',title:s.type+' · '+(s.level||s.sourceId),description:s.question,thumbnail:'../questions/'+s.image,taskUrl:'../questions/#/'+h.collection+'?case='+encodeURIComponent(s.id),category:s.category,taskType:s.type,difficulty:s.level,source:s.provenance});
   }
  }
  // Keep archived routes intact and expose independently verified mechanical plates.
@@ -49,18 +49,37 @@ function discover(){
    if(!replacement?.exhibit || replacement.supersededBy || replacement.id===archived.id || replacement.taskType!==archived.taskType) throw Error('Invalid replacement for '+archived.id);
    archived.exhibit=false;
  }
- const selection=R.read(path.join(root,'catalog/spatialviz-showcase.json'));
- const selected=new Set(), runs=new Set();
- const spatialSkills=skills.filter(s=>s.harnessId==='spatialviz-harness');
- if(Object.keys(selection).length!==spatialSkills.length)throw Error('The SpatialViz showcase must cover each completed skill.');
- for(const skill of spatialSkills){
-  const ids=selection[skill.id];
-  if(!Array.isArray(ids)||ids.length<1||ids.length>5)throw Error('Expected one to five exhibits for '+skill.name);
-  for(const id of ids){
-   const item=cases.find(c=>c.id===id&&c.harnessId===skill.harnessId);
-   if(!item?.exhibit||!item.skillIds.includes(skill.id)||selected.has(id)||!item.build?.runId||runs.has(item.build.runId))throw Error('Invalid showcase case or repeated construction run: '+id);
-   selected.add(id);runs.add(item.build.runId);
-  }
+ const selection = R.read(path.join(root, 'catalog/spatialviz-showcase.json'));
+ const selected = new Set(), runs = new Set();
+ const spatialSkills = skills.filter(s => s.harnessId === 'spatialviz-harness');
+ const sources = new Map(official.filter(q => q.harnessId === 'spatialviz-harness').map(q => [q.sourceId, q]));
+ if (Object.keys(selection).length !== spatialSkills.length) throw Error('The SpatialViz showcase must cover each completed skill.');
+ for (const skill of spatialSkills) {
+   const groups = selection[skill.id] || [];
+   const size = groups.flatMap(group => group.cases).length;
+   if (size < 1 || size > 5 || new Set(groups.map(group => group.pattern)).size !== groups.length)
+     throw Error('Expected one to five exhibits grouped by distinct patterns for ' + skill.name);
+   const patterns = R.read(path.join(root, skill.harnessId, 'skills', skill.packageName, 'references/patterns.json'));
+   skill.showcaseGroups = groups.map(group => {
+     const pattern = patterns.choices[group.pattern];
+     const representative = sources.get(pattern?.reference);
+     if (!representative || representative.taskType !== patterns.type || !group.label?.trim() || !group.cases?.length)
+       throw Error('Missing representative or label for ' + skill.id + '/' + group.pattern);
+     for (const id of group.cases) {
+       const item = cases.find(c => c.id === id && c.harnessId === skill.harnessId);
+       if (!item?.exhibit || !item.skillIds.includes(skill.id) || selected.has(id) || !item.build?.runId || runs.has(item.build.runId))
+         throw Error('Invalid showcase case or repeated construction run: ' + id);
+       const record = R.read(path.join(root, skill.harnessId, 'site', item.process));
+       const choice = record.events.findLast(event => event.type === 'choice.selected');
+       if (record.caseId !== id || record.manifest.id !== item.build.runId || (choice && choice.details.selection !== group.pattern))
+         throw Error('Recorded build or pattern mismatch for ' + id);
+       item.viewedReferenceIds = [...new Set(record.events.filter(event => event.type === 'reference.viewed')
+         .map(event => sources.get(event.details.sourceId)).filter(ref => ref?.taskType === patterns.type).map(ref => ref.id))];
+       selected.add(id);
+       runs.add(item.build.runId);
+     }
+     return {...group, representativeId: representative.id};
+   });
  }
  for(const c of cases.filter(c=>c.harnessId==='spatialviz-harness'))c.exhibit=selected.has(c.id);
  const maze=R.read(path.join(root,'maze-harness/site/data/catalog.json'));

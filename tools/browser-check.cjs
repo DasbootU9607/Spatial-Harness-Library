@@ -44,6 +44,24 @@ const server=http.createServer((req,res)=>{try{const u=new URL(req.url,'http://l
   results.push({page:'library carousel, mouse drag, keyboard, natural image proportions and benchmark links',width,passed:true});
  }
  results.push(...await require('./spatialviz-showcase-browser.cjs')({page,origin,catalog,selection:R.read(path.join(R.ROOT,'catalog/spatialviz-showcase.json'))}));
+ // Simulate an unviewed example and an alternate viewed original without changing any published build.
+ const demo=structuredClone(catalog);
+ const rotation=demo.skills.find(s=>s.harnessId==='spatialviz-harness'&&s.id==='2d-rotation');
+ const control=rotation.showcaseGroups.find(group=>group.pattern==='colored');
+ const sampleTask=demo.cases.find(c=>c.id===control.cases[0]);
+ const alternate=demo.official.find(s=>s.harnessId==='spatialviz-harness'&&s.taskType==='2DRotation'&&s.difficulty==='Level0'&&s.id!==control.representativeId);
+ const catalogRoute='**/shared/catalog.json*';
+ await page.route(catalogRoute,route=>route.fulfill({json:demo}));
+ try {
+  for(const observed of [[],[alternate.id]]){
+   sampleTask.viewedReferenceIds=observed;
+   await page.goto(origin+'spatialviz-harness/skill.html?id=2d-rotation&fixture='+observed.length+'#official-references');
+   const original=page.locator('[data-pattern="colored"] .official-example');
+   await original.waitFor();
+   assert.equal(await original.getAttribute('data-reference'),observed[0]||control.representativeId);
+   assert.equal(await original.getByText('Similar official example',{exact:true}).count(),observed.length?0:1);
+  }
+ } finally {await page.unroute(catalogRoute);}
  // Every harness must fit without vertical scrolling at ordinary desktop and phone sizes.
  for(const [width,height] of [[1440,900],[1366,768],[1280,720],[390,844],[375,667],[320,568],[844,390]]){
   await page.setViewportSize({width,height});await page.goto(origin);await page.waitForSelector('.harness-slide');
@@ -90,7 +108,8 @@ const server=http.createServer((req,res)=>{try{const u=new URL(req.url,'http://l
   }
   await page.locator('[data-filter="all"]').click();
   if(harness==='spatialviz-harness'){
-   const selected=R.read(path.join(R.ROOT,'catalog/spatialviz-showcase.json'));
+   const groups=R.read(path.join(R.ROOT,'catalog/spatialviz-showcase.json'));
+   const selected=Object.fromEntries(Object.entries(groups).map(([id,rows])=>[id,rows.flatMap(row=>row.cases)]));
    assert.deepEqual(all.map(c=>c.id).sort(),Object.values(selected).flat().sort());
    assert.equal(await page.locator('#skills .chips a, #leaderboard tbody td a').count(),0);
    for(const skill of harnessSkills){
@@ -98,7 +117,7 @@ const server=http.createServer((req,res)=>{try{const u=new URL(req.url,'http://l
     assert.deepEqual((await page.locator('#authored [data-case]').evaluateAll(a=>a.map(el=>el.dataset.case))).sort(),[...selected[skill.id]].sort());
     assert.equal(await page.locator('.skill-layout .chips a, #ladder tbody td a').count(),0);
     assert.equal(await page.locator('#authored .card a').filter({hasText:'Build process'}).count(),selected[skill.id].length);
-    assert.equal(await page.getByRole('link',{name:'View references',exact:true}).count(),1);
+    assert.equal(await page.getByRole('link',{name:'View all references',exact:true}).count(),1);
    }
    await page.goto(origin+harness+'/');await page.waitForSelector('#case-gallery .card');
    for(const previous of catalog.cases.filter(c=>c.harnessId===harness&&c.supersededBy)){

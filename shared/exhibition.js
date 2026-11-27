@@ -21,7 +21,8 @@ function ladder(container,items,skillId){const rows=intervals(items),clients=[..
 function chips(s){
  if(hid==='spatialviz-harness'){
   const ref=official.find(c=>s.officialReferences?.includes(c.id));
-  return ref?`<a class="reference-link" href="../questions/#/spatialviz?type=${encodeURIComponent(ref.taskType)}">View references</a>`:'';
+  if(mode==='home')return `<a class="reference-link" href="skill.html?id=${e(s.id)}#official-references">View references</a>`;
+  return ref?`<a class="reference-link" href="../questions/#/spatialviz?type=${encodeURIComponent(ref.taskType)}">View all references</a>`:'';
  }
  return `<div class="chips">${(s.officialReferences||[]).map(id=>{const c=official.find(x=>x.id===id);return c?`<a href="${e(taskUrl(c))}">${e(c.title)}</a>`:`<span>${e(id)} · unavailable</span>`;}).join('')}</div>`;}
 function home(){const sample=cases.find(c=>c.verification?.verdict==='passed')||cases[0],ref=official.find(c=>sample?.sourceCaseIds?.includes(c.id))||official[0];main.innerHTML=`<section class="hero"><p class="eyebrow">Spatial Harness Library / ${e(h.benchmark)}</p><div class="hero-grid"><h1 class="display">${e(h.title)}</h1><div class="hero-copy"><p>${e(h.description)}</p><div class="actions"><a class="button primary" href="#skills">Explore skills ↗</a><a class="button" href="${e(h.browser)}">${e(h.browserLabel)} ↗</a></div></div></div>${install(skills[0])}<p class="meta">${skills.length} completed skills / ${cases.length} authored tasks / ${h.officialCount??0} packaged official records</p></section><section class="section"><p class="eyebrow">BUILD OBSERVATORY</p>${overview(cases)}</section><section class="section"><div class="section-heading"><h2>From reference to construction.</h2><span class="eyebrow">SOURCE / VERIFIED EXAMPLE</span></div><div class="pair">${ref?card(ref):empty('No official fixed question set is packaged here. Generated spatialbench practice is separate from its official leaderboard set.')}${card(sample)}</div></section><section class="section" id="leaderboard"></section><section class="section" id="skills"><div class="section-heading"><h2>The skill directory.</h2><span class="meta">${skills.length} completed packages</span></div>${skills.length?skills.map(s=>{const c=cases.find(c=>c.skillIds.includes(s.id));return `<div class="directory-row"><div><h3><a href="skill.html?id=${e(s.id)}">${e(s.name)}</a></h3><p>${e(s.description)}</p></div>${chips(s)}<div class="directory-preview">${c?`<img src="${e(c.thumbnail)}" alt=""><a href="${e(taskUrl(c))}">${e(c.title)} ↗</a>${hid==='spatialviz-harness'&&processUrl(c)?`<a href="${e(processUrl(c))}">Build process</a>`:''}`:'<span class="muted">No currently exhibited example</span>'}</div></div>`;}).join(''):empty('No completed construction skill has been registered yet.')}</section><section class="section"><div class="section-heading"><h2>Explore the source collection.</h2><a href="${e(h.browser)}">${e(h.browserLabel)} ↗</a></div><div class="chips">${(h.categories||[]).map(c=>`<a href="${e(h.browser)}">${e(c)}</a>`).join('')}</div><p class="source-note">${h.tracks?Object.entries(h.tracks).map(([k,v])=>`${e(k)}: ${v}`).join(' · '):hid==='spatialb-harness'?'Two ephemeral practice modes. The official 50-question leaderboard set is separate.':'Complete official MazeBench rooms and existing playable routes.'}</p></section><section class="section" id="cases"><div class="section-heading"><h2>Built with the skills.</h2></div><div id="skill-filters" class="skill-filters" role="group" aria-label="Filter tasks by skill"></div><p id="case-count" class="source-note" role="status"></p><div id="case-gallery" class="pair"></div></section><section class="section"><h2>Give your agent a spatial vocabulary.</h2><p>Clone the library, install a completed package, and describe the task. Recording, verification and publication are part of the construction workflow.</p>${install(skills[0])}</section>`;ladder(document.querySelector('#leaderboard'),cases);mountGallery();}
@@ -39,7 +40,58 @@ function mountGallery(){
  filters.addEventListener('click',event=>{const b=event.target.closest('[data-filter]');if(!b)return;selected=b.dataset.filter;const url=new URL(location.href);if(selected==='all')url.searchParams.delete('skill');else url.searchParams.set('skill',selected);history.replaceState(null,'',url);update();});
  update();
 }
-function skillPage(){const s=skills.find(x=>x.id===new URLSearchParams(location.search).get('id'));if(!s){main.innerHTML=empty('Skill not found. Return to the skill directory.');return;}const built=cases.filter(c=>c.skillIds.includes(s.id)),refs=official.filter(c=>(s.officialReferences||[]).includes(c.id));main.innerHTML=`<p class="crumb"><a href="index.html">${e(h.name)}</a> / <a href="index.html#skills">Skills</a> / ${e(s.name)}</p><div class="skill-layout"><aside class="skill-nav" aria-label="Skill navigation">${skills.map(x=>`<a href="skill.html?id=${e(x.id)}" ${x.id===s.id?'aria-current="page"':''}>${e(x.name)}</a>`).join('')}</aside><article><h1>${e(s.name)}</h1><p>${e(s.description)}</p>${chips(s)}<p><a href="${e(s.source)}/SKILL.md">Read the skill ↗</a></p><div class="steps">${(s.steps||[]).map((x,i)=>`<p><span class="mono">0${i+1}</span><br>${e(x)}</p>`).join('')}</div><section class="section" id="ladder"></section><div class="${hid==='spatialviz-harness'?'section':'pair'}">${hid==='spatialviz-harness'?'':`<section><h2>Official references</h2><div class="stack">${refs.length?refs.map(card).join(''):empty('No official reference is declared for this demonstration family.')}</div></section>`}<section><h2>Built with the skill</h2><label>Model <select id="model-filter"><option value="all">All models</option>${[...new Set(built.flatMap(models))].map(x=>`<option>${e(x)}</option>`).join('')}</select></label><div id="authored" class="stack" style="margin-top:20px"></div></section></div><section class="section"><h2>Build your own task.</h2>${install(s)}</section><p><a href="skill.html?id=${e(skills[(skills.indexOf(s)+1)%skills.length].id)}">Next skill →</a></p></article></div>`;ladder(document.querySelector('#ladder'),built,s.id);const filter=document.querySelector('#model-filter'),update=()=>{const items=built.filter(c=>filter.value==='all'||models(c).includes(filter.value));document.querySelector('#authored').innerHTML=items.length?items.map(card).join(''):empty('No verified examples match this model.');};filter.onchange=update;update();}
+function skillPage() {
+ const skill = skills.find(s => s.id === new URLSearchParams(location.search).get('id'));
+ if (!skill) { main.innerHTML = empty('Skill not found. Return to the skill directory.'); return; }
+ const built = cases.filter(c => c.skillIds.includes(skill.id));
+ const refs = official.filter(c => skill.officialReferences?.includes(c.id));
+ const spatial = hid === 'spatialviz-harness';
+ const filterHtml = `<label>Model <select id="model-filter"><option value="all">All models</option>${[...new Set(built.flatMap(models))].map(name => `<option>${e(name)}</option>`).join('')}</select></label>`;
+ const authored = '<div id="authored" class="stack"></div>';
+ const examples = spatial
+   ? `<section class="reference-comparisons" id="official-references" aria-labelledby="reference-heading">
+       <div class="comparison-tools">${chips(skill)}${filterHtml}</div>
+       <div class="comparison-headings"><h2 id="reference-heading">Official references</h2><h2>Built with the skill</h2></div>${authored}
+     </section>`
+   : `<div class="pair"><section><h2>Official references</h2><div class="stack">${refs.length ? refs.map(card).join('') : empty('No official reference is declared for this demonstration family.')}</div></section>
+       <section><h2>Built with the skill</h2>${filterHtml}<div id="authored" class="stack" style="margin-top:20px"></div></section></div>`;
+ main.innerHTML = `<p class="crumb"><a href="index.html">${e(h.name)}</a> / <a href="index.html#skills">Skills</a> / ${e(skill.name)}</p>
+   <div class="skill-layout"><aside class="skill-nav" aria-label="Skill navigation">${skills.map(s => `<a href="skill.html?id=${e(s.id)}" ${s.id===skill.id?'aria-current="page"':''}>${e(s.name)}</a>`).join('')}</aside>
+   <article><h1>${e(skill.name)}</h1><p>${e(skill.description)}</p>${spatial ? '' : chips(skill)}
+   <p><a href="${e(skill.source)}/SKILL.md">Read the skill ↗</a></p>${spatial ? examples : ''}
+   <div class="steps">${(skill.steps||[]).map((step,i) => `<p><span class="mono">0${i+1}</span><br>${e(step)}</p>`).join('')}</div>
+   <section class="section" id="ladder"></section>${spatial ? '' : examples}
+   <section class="section"><h2>Build your own task.</h2>${install(skill)}</section>
+   <p><a href="skill.html?id=${e(skills[(skills.indexOf(skill)+1)%skills.length].id)}">Next skill →</a></p></article></div>`;
+ ladder(document.querySelector('#ladder'), built, skill.id);
+ const filter = document.querySelector('#model-filter');
+ function update() {
+   const items = built.filter(item => filter.value === 'all' || models(item).includes(filter.value));
+   document.querySelector('#authored').innerHTML = !items.length ? empty('No verified examples match this model.')
+     : spatial ? skill.showcaseGroups.map(group => comparisonRow(group, items)).join('') : items.map(card).join('');
+ }
+ filter.onchange = update;
+ update();
+ if (spatial && location.hash === '#official-references') document.getElementById('official-references').scrollIntoView();
+}
+
+function comparisonRow(group, visible) {
+ const items = group.cases.map(id => visible.find(item => item.id === id)).filter(Boolean);
+ if (!items.length) return '';
+ const viewed = items.flatMap(item => item.viewedReferenceIds);
+ const sourceId = viewed.includes(group.representativeId) ? group.representativeId : viewed[0] || group.representativeId;
+ const source = official.find(s => s.id === sourceId);
+ const authored = items.map(item => `<article class="card paired-task" data-case="${e(item.id)}">
+   <a class="comparison-image" href="${e(taskUrl(item))}" aria-label="Open ${e(item.title)}"><img loading="lazy" src="${e(item.thumbnail)}" alt=""></a>
+   <h3><a href="${e(taskUrl(item))}">${e(item.title)}</a></h3>
+   <div class="actions"><a href="${e(taskUrl(item))}">Open task ↗</a><a href="${e(processUrl(item))}">Build process</a></div>
+ </article>`).join('');
+ return `<div class="comparison-row" data-pattern="${e(group.pattern)}">
+   <a class="official-example" data-reference="${e(source.id)}" href="${e(taskUrl(source))}">
+     <span class="comparison-image"><img loading="lazy" src="${e(source.thumbnail)}" alt=""></span>
+     <span class="subtype-name">${e(group.label)}</span>${viewed.length ? '' : '<small>Similar official example</small>'}
+   </a><div class="paired-tasks">${authored}</div></div>`;
+}
 async function taskPage(){
  const c=allCases.find(x=>x.id===new URLSearchParams(location.search).get('id'));
  if(!c){main.innerHTML=empty('Task not found.');return;}
