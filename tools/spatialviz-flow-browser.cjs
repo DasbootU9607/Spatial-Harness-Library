@@ -24,20 +24,38 @@ module.exports = async function checkFlow({page, origin, catalog, output}) {
     assert.equal(await page.locator('#flow-selection').innerText(), 'Specified in the request → Dice dots');
     assert.deepEqual(await page.locator('#flow-menu button').allTextContents(), ['Colored squares','Dice dots','Lines and circles']);
     if (output) await flow.screenshot({path:path.join(output, 'skill-flow-' + width + '.png')});
-    const assigned = flow.locator('nav > div');
+    const picker = flow.getByRole('radiogroup', {name:'Choose a skill'});
+    const assigned = picker.getByRole('group');
+    assert.equal(await page.locator('select#flow-skill').count(), 0);
+    assert(await picker.getByRole('radio', {name:'2D Rotation', exact:true}).isChecked());
     assert.equal(await assigned.count(), 4);
     for (const [category,ids] of Object.entries(categories)) {
-      const links = assigned.filter({has:page.getByRole('heading', {name:category, exact:true})}).locator('a');
-      assert.deepEqual(await links.evaluateAll(list => list.map(a => new URL(a.href).searchParams.get('id')).sort()), [...ids].sort());
+      const choices = picker.getByRole('group', {name:category}).getByRole('radio');
+      assert.deepEqual(await choices.evaluateAll(list => list.map(input => input.value).sort()), [...ids].sort());
     }
+    await picker.getByRole('radio', {name:'2D Rotation', exact:true}).focus();
+    await page.keyboard.press('ArrowRight');
+    assert(await picker.getByRole('radio', {name:'3D Rotation', exact:true}).isChecked());
+    assert.equal(await page.locator('#flow-name').innerText(), '$spatialviz-3d-rotation');
+    await page.keyboard.press('ArrowLeft');
     await page.locator('#flow-copy-name').focus();
     await page.keyboard.press('Enter');
     assert.equal(await page.evaluate(() => navigator.clipboard.readText()), '$spatialviz-2d-rotation');
     const patternIds = new Set();
     for (const skill of skills) {
-      await page.locator('#flow-skill').selectOption(skill.id);
+      const choice = picker.getByRole('radio', {name:skill.name, exact:true});
+      await choice.locator('..').getByText(skill.name, {exact:true}).click();
+      assert(await choice.isChecked());
+      assert.equal(await picker.locator('input:checked').count(), 1);
+      assert.equal(new URL(page.url()).pathname, new URL(base).pathname);
       assert.equal(await page.locator('#flow-name').innerText(), '$' + skill.packageName);
+      const details = flow.getByRole('link', {name:'Skill details for ' + skill.name, exact:true});
+      assert.equal(await details.getAttribute('href'), 'skill.html?id=' + skill.id);
       const groups = skill.showcaseGroups;
+      const initial = groups.find(g => g.pattern === 'patterned') || groups[0];
+      assert.equal(await page.locator('#flow-explicit').inputValue(), initial.pattern);
+      assert.equal(await page.locator('#flow-question').getAttribute('href'), 'task.html?id=' + initial.cases[0]);
+      assert.equal(await page.locator('#flow-process').getAttribute('href'), 'process.html?id=' + initial.cases[0]);
       assert.deepEqual(await page.locator('#flow-menu button').allTextContents(), groups.map(g => g.choiceLabel));
       for (const group of groups) {
         await page.locator('#flow-menu button').filter({hasText:group.choiceLabel}).first().click();
@@ -70,6 +88,9 @@ module.exports = async function checkFlow({page, origin, catalog, output}) {
       assert.equal(await page.evaluate(() => navigator.clipboard.readText()), custom);
       assert(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1));
     }
+    const lastSkill = skills.at(-1);
+    await flow.getByRole('link', {name:'Skill details for ' + lastSkill.name, exact:true}).click();
+    await page.getByRole('heading', {level:1, name:lastSkill.name, exact:true}).waitFor();
     results.push({page:'SpatialViz invocation flow', width, examples:patternIds.size});
   }
   return results;

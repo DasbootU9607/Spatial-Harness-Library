@@ -103,9 +103,12 @@ body[data-page=task] #header{position:static}
 .flow-categories, .flow-paths, .flow-finish { display: grid; gap: 12px; }
 .flow-categories { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 .flow-categories > div { border-left: 2px solid #bbb; padding-left: 12px; }
-.flow-categories a { display: block; width: fit-content; font-size: 13px; }
+.flow-categories label { display: flex; align-items: center; gap: 8px; width: fit-content; max-width: 100%; min-height: 34px; padding: 3px 8px; border-radius: 4px; font-size: 13px; cursor: pointer; }
+.flow-categories label:hover { background: var(--surface); }
+.flow-categories label:has(:checked) { background: #efefef; font-weight: 650; }
+.flow-categories input { flex: none; }
 .flow-invoke { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin: 16px 0; padding: 10px 14px; background: var(--surface); border: 1px solid var(--line); border-radius: 5px; }
-.flow-invoke label { font-weight: 650; }
+.flow-invoke a { font-size: 13px; }
 .flow-invoke code { font-size: 13px; }
 #how-to-use :is(button,select,textarea) { font: inherit; font-size: 13px; max-width: 100%; }
 .flow-paths { grid-template-columns: repeat(3,minmax(0,1fr)); }
@@ -138,6 +141,7 @@ body[data-page=task] #header{position:static}
   .flow-paths, .flow-finish { grid-template-columns: 1fr; }
   .flow-paths { padding-left: 12px; border-left: 1px solid #aaa; }
   .flow-paths > div::after { left: -13px; top: 20px; width: 12px; height: 1px; }
+  .flow-categories label { width: 100%; min-height: 44px; }
   .flow-invoke { gap: 7px; }
   .flow-invoke code { flex-basis: 100%; }
   .flow-mode { flex-wrap: wrap; }

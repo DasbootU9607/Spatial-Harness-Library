@@ -4,14 +4,14 @@ export function mountSkillFlow(root, skills, escape) {
   const groups = categories.map(category => {
     const name = category.replace(/([a-z])([A-Z])/g, '$1 $2');
     const members = skills.filter(skill => skill.officialCategory === category);
-    return '<div><h4>' + e(name) + '</h4>' + members.map(skill =>
-      '<a href="skill.html?id=' + encodeURIComponent(skill.id) + '">' + e(skill.name) + '</a>').join('') + '</div>';
+    const heading = 'flow-category-' + category;
+    return '<div role="group" aria-labelledby="' + heading + '"><h4 id="' + heading + '">' + e(name) + '</h4>' + members.map(skill =>
+      '<label><input type="radio" name="flow-skill" value="' + e(skill.id) + '"><span>' + e(skill.name) + '</span></label>').join('') + '</div>';
   });
   root.innerHTML = '<h2 id="flow-heading">How to use a skill</h2>' +
-    '<h3>Find a skill</h3><nav class="flow-categories" aria-label="Skills by official category">' + groups.join('') + '</nav>' +
-    '<div class="flow-invoke"><label for="flow-skill">Invoke a skill</label><select id="flow-skill">' +
-    skills.map(s => '<option value="' + e(s.id) + '">' + e(s.name) + '</option>').join('') +
-    '</select><code id="flow-name"></code><button type="button" id="flow-copy-name">Copy name</button></div>' +
+    '<h3 id="flow-pick-heading">Choose a skill</h3><div class="flow-categories" role="radiogroup" aria-labelledby="flow-pick-heading">' + groups.join('') + '</div>' +
+    '<div class="flow-invoke"><strong>Invoke this skill</strong><code id="flow-name"></code>' +
+    '<button type="button" id="flow-copy-name">Copy name</button><a id="flow-details">Skill details</a></div>' +
     '<h3>Choose a pattern</h3><div class="flow-paths">' +
       '<div><h4>Already specified</h4><p>Include the pattern in your request to skip the question.</p><label>Use a named pattern<select id="flow-explicit"></select></label></div>' +
       '<div><h4>Skill name only</h4><p>The agent asks which pattern you want.</p><div id="flow-menu" aria-label="Available patterns" role="group"></div></div>' +
@@ -26,6 +26,7 @@ export function mountSkillFlow(root, skills, escape) {
     '<div class="flow-result"><h3>Build and verify</h3><p>Your agent designs a new question, renders it and checks the answer and the final image.</p>' +
       '<p class="flow-caption">Published example for this pattern</p><a id="flow-question">View question</a><a id="flow-process">View build process</a></div></div>';
   const el = id => root.querySelector('#flow-' + id);
+  const picker = root.querySelector('.flow-categories');
   const menu = el('menu'), explicit = el('explicit'), pool = el('pool').querySelector('div');
   const extra = el('extra'), request = el('request');
   let skill, group;
@@ -55,8 +56,11 @@ export function mountSkillFlow(root, skills, escape) {
     if (draft?.request) request.value = draft.request;
     el('feedback').textContent = '';
   }
-  function changeSkill() {
-    skill = skills.find(s => s.id === el('skill').value);
+  function changeSkill(id) {
+    skill = skills.find(s => s.id === id);
+    const details = el('details');
+    details.href = 'skill.html?id=' + encodeURIComponent(id);
+    details.setAttribute('aria-label', 'Skill details for ' + skill.name);
     const choices = skill.showcaseGroups;
     el('name').textContent = '$' + skill.packageName;
     explicit.innerHTML = choices.map(g => '<option value="' + e(g.pattern) + '">' + e(g.choiceLabel) + '</option>').join('');
@@ -71,7 +75,7 @@ export function mountSkillFlow(root, skills, escape) {
     if (!drafts.has(key)) drafts.set(key, {});
     return drafts.get(key);
   }
-  el('skill').onchange = changeSkill;
+  picker.onchange = event => changeSkill(event.target.value);
   explicit.onchange = () => choose(explicit.value, 'explicit');
   menu.onclick = event => {
     const button = event.target.closest('button');
@@ -103,7 +107,8 @@ export function mountSkillFlow(root, skills, escape) {
   }
   el('copy-name').onclick = () => copy(el('name').textContent, el('name'));
   el('copy-request').onclick = () => copy(request.value, request);
-  el('skill').value = '2d-rotation';
-  changeSkill();
+  const initial = picker.querySelector('input[value="2d-rotation"]');
+  initial.checked = true;
+  changeSkill(initial.value);
   if (location.hash === '#how-to-use') root.scrollIntoView();
 }
