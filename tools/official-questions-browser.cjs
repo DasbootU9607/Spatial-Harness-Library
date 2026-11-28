@@ -92,7 +92,10 @@ module.exports=async function checkOfficialQuestions({page,origin,root,output,re
  try{
   await page.reload();await page.waitForSelector('#options input');
   await page.locator('#options [data-answer="0"]').click();assert(await page.locator('#official-answer-status').textContent());
-  assert.equal(await page.locator('.mast nav a').count(),3,'Standalone collection navigation survives an unavailable optional catalogue');
+  const header = page.locator('.sitehead');
+  assert.equal(await header.locator('.brand').innerText(),'SpatialViz Harness');
+  assert.equal(await header.getByRole('link',{name:'Official questions',exact:true}).getAttribute('href'),'../questions/#/spatialviz');
+  assert.equal(await header.getByRole('link',{name:'Library home',exact:true}).getAttribute('href'),'../');
  }finally{await page.unroute('**/shared/catalog.json*');}
  results.push({page:'official written and image-answer formats preserved; narrow phone layout',passed:true});
 };
