@@ -1,38 +1,31 @@
 # Spatial Harness Library
 
-A collection of harnesses for authoring and verifying spatial reasoning tasks. [Open the library on GitHub Pages](https://dasbootu9607.github.io/Spatial-Harness-Library/).
+Use agent skills to build spatial reasoning tasks, check their solutions, and inspect how each example was made. [Explore the library](https://dasbootu9607.github.io/Spatial-Harness-Library/).
 
-| Harness | Source project and repository | Status |
+| Harness | Authoring | What you can explore |
 | --- | --- | --- |
-| [Maze Harness](maze-harness/README.md) | [MazeBench](https://github.com/mazebench/MazeBenchEngine) | Available |
-| [SpatialViz Harness](spatialviz-harness/README.md) | [SpatialViz-Bench](https://github.com/wangst0181/SpatialViz-Bench) | Available |
-| [BabyVision Harness](babyvision-harness/README.md) | [BabyVision](https://github.com/UniPat-AI/BabyVision) | Upcoming |
-| [SpatialB Harness](spatialb-harness/README.md) | [SpatialBench](https://github.com/spicylemonade/spatialbench) | Upcoming |
+| [Maze](maze-harness/) | Available | Play MazeBench rooms and agent-built puzzles in 3D, then replay their solutions. |
+| [SpatialViz](spatialviz-harness/) | Available | 12 skills cover 41 patterns. Each pattern pairs an official reference with a verified new question and its build record. |
+| [BabyVision](babyvision-harness/) | Upcoming | Browse official visual questions and image annotation tasks. |
+| [SpatialB](spatialb-harness/) | Upcoming | Practice 2D path tracing and 3D voxel rotation with generated questions. |
 
-Each harness has its own README and `site/` directory. The Maze directory contains the skills, tools, trials and playable website from the original Maze Harness repository. Its history before the reorganization is available in [the previous layout](https://github.com/DasbootU9607/Spatial-Harness-Library/tree/4e1bd2f). The other harness pages link directly to their question collections.
+## Use a SpatialViz skill
 
-The shared `questions/` site packages 1,848 official records and 1,803 distinct source images, with category filters, search, shareable case URLs, enlarged figures and answer reveals. SpatialBench provides freshly generated practice rounds, separate from its official 50-question leaderboard set. [Browse the collections](https://dasbootu9607.github.io/Spatial-Harness-Library/questions/) or read [sources and credits](questions/SOURCES.txt). All browser assets are local to the site and work under the repository's Pages path.
+[Choose a skill](https://dasbootu9607.github.io/Spatial-Harness-Library/spatialviz-harness/#how-to-use) to see its patterns, copy a request, or open a worked example. On a fresh checkout, install the skill from the repository root, replacing `YOUR_SKILLS_DIRECTORY` with your agent's skills folder.
 
-To preview the same public files as GitHub Pages, run the following commands from the repository root and open the local address printed by Python.
+```sh
+node tools/install.cjs --harness spatialviz-harness --skill spatialviz-2d-rotation --destination "YOUR_SKILLS_DIRECTORY"
+```
+
+Keep the checkout available and ask your agent, for example, `$spatialviz-2d-rotation Create a dice-dot puzzle where the direction of the dots distinguishes two options.` See the [authoring guide](docs/spatialviz-authoring.md) for generation and verification, and [build records](docs/observability.md) for the evidence each run saves.
+
+## Preview locally
+
+From the repository root, build into an empty directory and serve it.
 
 ```sh
 node .github/scripts/build-pages.cjs outputs/pages
 python -m http.server 4173 --bind 127.0.0.1 --directory outputs/pages
 ```
 
-The Pages workflow runs the Maze checks, assembles the four harness sites and shared question collections, and publishes them on pushes to `main`.
-
-Construction now uses a shared build observatory, immutable versions, passive
-current-session usage and an audited publication pipeline. See
-[setup, supported capture and publication](docs/observability.md).
-All four exhibition entrypoints are assembled from shared components and catalogs;
-the original source browser and Maze gameplay routes remain available.
-
-The library landing page previews each benchmark in a swipeable carousel, with
-completed skill counts, observed build tokens and recorded models. Harnesses
-without completed skills are marked Upcoming. All harness exhibitions use the
-shared Maze-style layout and a horizontal skill filter for their authored tasks.
-SpatialViz galleries include verified FreeCAD and Paper Folding constructions. Each Visual Penetration gallery item carries a receipt for the upstream FreeCAD and image-composition run that produced its displayed figure. Earlier JavaScript/SVG and Pillow-only records remain accessible at their historical task and process URLs. Gallery
-visibility is derived from task provenance in `tools/build-exhibition.cjs`, without
-rewriting immutable records. Token summaries deduplicate recorded build intervals
-and explicitly distinguish missing observations from zero usage.
+Open [localhost:4173](http://localhost:4173/). The [question browser](https://dasbootu9607.github.io/Spatial-Harness-Library/questions/) includes the official collections and [source credits](questions/SOURCES.txt).
