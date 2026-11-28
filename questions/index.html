@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#ffffff">
   <meta name="description" content="Browse the official SpatialViz-Bench and BabyVision collections and try interactive spatialbench exercises.">
-  <title>Spatial Index — Visual reasoning archive</title>
+  <title>Questions · Spatial Harness Library</title>
   <link rel="icon" href="icon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="reader.css?v=1">
@@ -13,31 +13,10 @@
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
-  <header class="sitehead">
-    <div class="frame mast">
-      <a class="brand" href="#/" aria-label="Spatial Index home"><img src="icon.svg" width="29" height="29" alt="">Spatial Index<span class="brand-dot">.</span></a>
-      <nav aria-label="Collections"><a href="#/spatialviz">SpatialViz-Bench</a><a href="#/babyvision">BabyVision</a><a href="#/spatialbench">spatialbench</a></nav>
-    </div>
-  </header>
+  <header class="sitehead"></header>
   <main id="main" tabindex="-1">
-    <section id="home" class="frame">
-      <div class="hero">
-        <div class="hero-copy"><p class="eyebrow"><i></i> VISUAL REASONING ARCHIVE</p>
-          <h1>A Spatial Reasoning Atlas.</h1>
-          <p class="hero-sub">Original puzzles and interactive exercises.</p>
-          <a class="textlink" href="#collections">Browse collections <span>↓</span></a>
-        </div>
-        <figure class="hero-art"><div id="specimen" aria-hidden="true"></div><figcaption>FIG. 01 / TOROIDAL STUDY</figcaption></figure>
-      </div>
-      <section id="collections" aria-labelledby="collections-heading">
-        <div class="section-head"><div><p class="eyebrow">COLLECTIONS / 01—03</p><h2 id="collections-heading">Collection index</h2></div><span class="meta">1,848 official records / 2 practice modes</span></div>
-        <div class="collections">
-          <a class="collection" href="#/spatialviz"><div class="plate plate-a"><span>PL. 01</span><div id="cover-cubes"></div></div><div class="collection-meta">01 / OFFICIAL QUESTIONS</div><h3>SpatialViz-Bench</h3><p>Explore rotation, folding, cross-sections, and motion in 1,180 questions organized by task and difficulty.</p><b>Browse questions <span>↗</span></b></a>
-          <a class="collection" href="#/babyvision"><div class="plate plate-b"><span>PL. 02</span><div id="cover-eyes"></div></div><div class="collection-meta">02 / OFFICIAL QUESTIONS</div><h3>BabyVision</h3><p>Browse 388 visual questions or compare each puzzle with its annotated solution in 280 image tasks.</p><b>Browse questions <span>↗</span></b></a>
-          <a class="collection" href="#/spatialbench"><div class="plate plate-c"><span>PL. 03</span><div id="cover-path"></div></div><div class="collection-meta">03 / GENERATED PRACTICE</div><h3>spatialbench</h3><p>Trace a curve to its destination or identify a rotated shape. Each round uses the original spatialbench generator.</p><b>Start practice <span>↗</span></b></a>
-        </div>
-      </section>
-    </section>
+    <p id="entry-status" class="frame" role="status">Loading collection…</p>
+    <noscript>Enable JavaScript to browse the question collection. <a href="../">Return to the library</a>.</noscript>
     <section id="archive" class="frame inner" hidden>
       <div class="topline"><a id="archive-harness" href="../">← Harness library</a><a id="archive-source" target="_blank" rel="noopener">Project website ↗</a></div>
       <div class="section-head intro">
@@ -97,6 +76,6 @@
       <article class="exercise"><div class="casebar"><div><p id="round" class="eyebrow"></p><h2 id="exercise-name"></h2></div><button id="new-round" class="plain">New question ↻</button></div><p id="exercise-prompt"></p><div id="play"></div><p id="feedback" aria-live="polite"></p></article></div>
     </section>
   </main>
-  <footer class="frame foot"><a class="brand" href="#/">Spatial Index.</a><a href="../">Harness library ↗</a><a href="sources.html">Sources and credits ↗</a></footer>
+  <footer class="frame foot"><a href="../">Harness library ↗</a><a href="sources.html">Sources and credits ↗</a></footer>
   <dialog id="lightbox" aria-label="Enlarged question image"><div class="dialog-head"><a id="raw" target="_blank" rel="noopener">Open original image</a><div><button id="zoom-detail" type="button" aria-pressed="false">Zoom in</button><button id="close-dialog" class="plain" type="button" autofocus>Close</button></div></div><div id="image-scroll" tabindex="0" aria-label="Image; scroll to inspect when zoomed"><img id="large-pic" alt="Original image"></div></dialog>
 </body></html>

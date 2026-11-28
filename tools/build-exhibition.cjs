@@ -111,8 +111,25 @@ function build(out){
  R.atomic(path.join(shared,'catalog.json'),data);
  const html=(h,page)=>`<!doctype html>\n<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="${h.description}"><title>${h.name} · Spatial Harness Library</title><link rel="stylesheet" href="../shared/exhibition.css?v=${revision}">${page==='process'?`<link rel="stylesheet" href="../maze-harness/process.css?v=${revision}"><link rel="stylesheet" href="../maze-harness/process-orbit.css?v=${revision}"><link rel="stylesheet" href="../shared/process.css?v=${revision}">`:''}<script type="module" src="../shared/exhibition.js?v=${revision}"></script></head><body data-harness="${h.id}" data-page="${page}"><a class="skip" href="#main">Skip to content</a><header id="header"></header><main id="main" tabindex="-1"><p role="status">Loading the exhibition…</p></main><footer id="footer"></footer><div id="notice" role="status"></div></body></html>\n`;
  for(const h of data.harnesses){const dir=path.join(out,h.id);for(const [file,page] of [['index.html','home'],['skill.html','skill'],['task.html','task'],['build.html','process']])fs.writeFileSync(path.join(dir,file),html(h,page));if(!h.legacy)fs.writeFileSync(path.join(dir,'process.html'),html(h,'process'));}
- // Existing source browsers retain their routes and behavior; share the typography and shell styling.
- for(const file of ['questions/index.html','questions/sources.html']){const full=path.join(out,file);let text=fs.readFileSync(full,'utf8');text=text.replace(/src="app\.js(?:\?[^"]*)?"/,`src="app.js?v=${revision}"`).replace(/href="reader\.css(?:\?[^"]*)?"/,`href="reader.css?v=${revision}"`);text=text.replace('</head>',`<link rel="stylesheet" href="../shared/exhibition.css?v=${revision}"><script type="module" src="../shared/question-shell.js?v=${revision}"></script></head>`);fs.writeFileSync(full,text);}
+ // A hash is only available in the browser. Inline the three navigation records
+ // so the first paint can use the requested harness before the reader module loads.
+ const entries = data.harnesses.filter(h => h.sourceRoute).map(h => ({
+   route: h.sourceRoute, id: h.id, name: h.name, browser: h.browser, browserLabel: h.browserLabel,
+   playground: h.playground, benchmark: h.benchmark, benchmarkUrl: h.benchmarkUrl || h.source, source: h.source
+ }));
+ const entryScript = fs.readFileSync(path.join(shared,'question-shell.js'),'utf8');
+ for (const file of ['questions/index.html','questions/sources.html']) {
+   const full = path.join(out,file);
+   let text = fs.readFileSync(full,'utf8')
+     .replace(/src="app\.js(?:\?[^"]*)?"/, `src="app.js?v=${revision}"`)
+     .replace(/href="reader\.css(?:\?[^"]*)?"/, `href="reader.css?v=${revision}"`)
+     .replace('</head>', `<link rel="stylesheet" href="../shared/exhibition.css?v=${revision}"></head>`);
+   if (file === 'questions/index.html') {
+     const routes = JSON.stringify(entries).replace(/</g,'\\u003c');
+     text = text.replace('</body>', () => `<script>${entryScript}\nmountQuestionShell(${routes});</script></body>`);
+   }
+   fs.writeFileSync(full,text);
+ }
  for(const file of fs.readdirSync(path.join(out,'maze-harness')).filter(x=>x.endsWith('.html')&&!['index.html','skill.html','task.html','build.html','process-player.html'].includes(x))){const full=path.join(out,'maze-harness',file);fs.writeFileSync(full,fs.readFileSync(full,'utf8').replace('</head>',`<link rel="stylesheet" href="../shared/exhibition.css?v=${revision}"></head>`));}
  return data;
 }

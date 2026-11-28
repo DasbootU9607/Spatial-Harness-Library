@@ -1,4 +1,3 @@
-import {drawPlates} from './figures.js';
 import {openPractice} from './practice.js';
 
 const el=id=>document.getElementById(id);
@@ -172,23 +171,16 @@ for(const key of filters)el(key).onchange=e=>{
 };
 el('search').oninput=e=>{state().search=e.target.value;refreshFilters();};
 el('clear').onclick=()=>{states.set(route,newState());refreshFilters();};
-function selectNav(page){
-  document.querySelectorAll('.mast nav a').forEach(a=>{
-    if(a.hash==='#/'+page)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');
-  });
-}
 async function navigate(){
   const number=++requestNo;
   const [path,query='']=location.hash.slice(1).split('?');
   const part=(path||'').replace(/^\//,'');
-  route=(Object.hasOwn(config,part)||part==='spatialbench')?part:'';
+  route=(Object.hasOwn(config,part)||part==='spatialbench')?part:'spatialviz';
   document.body.classList.toggle('archive-page',Object.hasOwn(config,route));
-  selectNav(route);closeZoom();
-  el('home').hidden=Boolean(route);el('archive').hidden=!Object.hasOwn(config,route);el('practice').hidden=route!=='spatialbench';
-  document.title=(config[route]?.name||(route==='spatialbench'?'spatialbench':'Visual reasoning archive'))+' · Spatial Index';
-  if(part==='collections'){requestAnimationFrame(()=>el('collections').scrollIntoView());return;}
+  closeZoom();
+  el('entry-status').hidden=true;el('archive').hidden=!Object.hasOwn(config,route);el('practice').hidden=route!=='spatialbench';
+  document.title=(config[route]?.name || 'spatialbench')+' · Spatial Harness Library';
   window.scrollTo({top:0,behavior:'instant'});
-  if(!route)return;
   if(route==='spatialbench'){openPractice();return;}
   const page=route,c=config[page];
   el('archive-harness').href='../'+(page==='spatialviz'?'spatialviz-harness':'babyvision-harness')+'/';
@@ -212,7 +204,6 @@ async function navigate(){
     if(new URLSearchParams(query).get('answer')==='1')el('answer').open=true;
   }catch{if(number===requestNo)el('archive-status').textContent='The collection could not be loaded. Check your connection and refresh the page.';}
 }
-drawPlates();
 document.querySelector('.skip').onclick=e=>{e.preventDefault();el('main').focus();el('main').scrollIntoView();};
 window.addEventListener('hashchange',navigate);
 navigate();

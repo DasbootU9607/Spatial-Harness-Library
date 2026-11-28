@@ -2,6 +2,7 @@
 const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict');
 
 module.exports=async function checkOfficialQuestions({page,origin,root,output,results,catalog}){
+ await require('./question-entry-browser.cjs')({page,origin,catalog});
  const records=Object.fromEntries(['spatialviz','babyvision'].map(route=>[route,JSON.parse(fs.readFileSync(path.join(root,'Spatial-Harness-Library/questions/data',route+'.json'),'utf8'))]));
  const openCatalogue=async()=>{if(await page.locator('#catalogue-panel').getAttribute('open')===null)await page.locator('#catalogue-panel>summary').click();};
  const waitCase=id=>page.waitForFunction(id=>document.querySelector('#case-id')?.textContent==='ID '+id,id);
