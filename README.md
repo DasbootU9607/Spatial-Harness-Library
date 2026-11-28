@@ -5,9 +5,9 @@ A collection of harnesses for authoring and verifying spatial reasoning tasks. [
 | Harness | Source project and repository | Status |
 | --- | --- | --- |
 | [Maze Harness](maze-harness/README.md) | [MazeBench](https://github.com/mazebench/MazeBenchEngine) | Available |
-| [SpatialViz Harness](spatialviz-harness/README.md) | [SpatialViz-Bench](https://github.com/wangst0181/SpatialViz-Bench) | 1,180 official questions available; authoring in development |
-| [BabyVision Harness](babyvision-harness/README.md) | [BabyVision](https://github.com/UniPat-AI/BabyVision) | 388 visual questions and 280 image tasks available; authoring in development |
-| [SpatialB Harness](spatialb-harness/README.md) | [SpatialBench](https://github.com/spicylemonade/spatialbench) | Two practice modes available; authoring in development |
+| [SpatialViz Harness](spatialviz-harness/README.md) | [SpatialViz-Bench](https://github.com/wangst0181/SpatialViz-Bench) | Available |
+| [BabyVision Harness](babyvision-harness/README.md) | [BabyVision](https://github.com/UniPat-AI/BabyVision) | Upcoming |
+| [SpatialB Harness](spatialb-harness/README.md) | [SpatialBench](https://github.com/spicylemonade/spatialbench) | Upcoming |
 
 Each harness has its own README and `site/` directory. The Maze directory contains the skills, tools, trials and playable website from the original Maze Harness repository. Its history before the reorganization is available in [the previous layout](https://github.com/DasbootU9607/Spatial-Harness-Library/tree/4e1bd2f). The other harness pages link directly to their question collections.
 
