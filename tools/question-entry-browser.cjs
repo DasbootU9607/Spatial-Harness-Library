@@ -2,6 +2,16 @@
 
 const assert = require('node:assert/strict');
 
+async function headerLayout(page) {
+  const links = page.locator('.head a');
+  await links.first().waitFor();
+  await page.evaluate(() => document.fonts.ready);
+  return links.evaluateAll(nodes => nodes.map(link => {
+    const box = link.getBoundingClientRect(), style = getComputedStyle(link);
+    return {text:link.textContent.trim(), x:box.x, y:box.y, width:box.width, height:box.height, font:style.font};
+  }));
+}
+
 module.exports = async function checkQuestionEntry({page, origin, catalog}) {
   const entries = catalog.harnesses.filter(h => h.sourceRoute);
   const spatial = entries.find(h => h.sourceRoute === 'spatialviz');
@@ -14,6 +24,7 @@ module.exports = async function checkQuestionEntry({page, origin, catalog}) {
       const holdReader = new Promise(resolve => {release = resolve;});
       const pattern = '**/questions/app.js*';
       await page.goto(direct === undefined ? origin + h.id + '/' : 'about:blank');
+      const originalHeader = direct === undefined ? await headerLayout(page) : null;
       await page.route(pattern, request => (pending = holdReader.then(() => request.continue())));
       try {
         if (direct === undefined) {
@@ -24,6 +35,7 @@ module.exports = async function checkQuestionEntry({page, origin, catalog}) {
         await page.locator('#entry-status').waitFor();
         await page.locator('.sitehead .brand').filter({hasText:h.name}).waitFor();
         assert.equal(await page.locator('.sitehead .brand').innerText(), h.name);
+        if (originalHeader) assert.deepEqual(await headerLayout(page), originalHeader, 'Header moved on entry at ' + width);
         assert.equal(await page.locator('#entry-status').innerText(), official ? 'Loading questions…' : 'Loading practice…');
         assert.equal(await page.locator('#home,#collections').count(), 0);
         assert.equal(await page.getByText('A Spatial Reasoning Atlas.', {exact:true}).count(), 0);
@@ -34,6 +46,7 @@ module.exports = async function checkQuestionEntry({page, origin, catalog}) {
       }
       await page.locator(official ? '#reader:not([hidden]) #pic[src]' : '#play svg').first().waitFor();
       assert.equal(await page.locator('.sitehead .brand').innerText(), h.name);
+      if (originalHeader) assert.deepEqual(await headerLayout(page), originalHeader, 'Header moved after loading at ' + width);
       assert(await page.locator('#entry-status').isHidden());
       assert(new URL(page.url()).hash.startsWith('#/' + h.sourceRoute));
     }

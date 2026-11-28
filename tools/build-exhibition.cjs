@@ -105,7 +105,7 @@ function discover(){
 function build(out){
  const data=discover(),shared=path.join(out,'shared');fs.cpSync(path.join(root,'shared'),shared,{recursive:true});
  fs.cpSync(path.join(root,'maze-harness/site/assets/fonts'),path.join(shared,'fonts'),{recursive:true});
- const revision=R.sha(JSON.stringify(data)+['exhibition.css','exhibition.js','skill-flow.js','process.js','process.css','process-model.js','build-summary.js','question-shell.js'].map(f=>fs.readFileSync(path.join(root,'shared',f))).join('')+['process-orbit.js','process-orbit.css','process.css'].map(f=>fs.readFileSync(path.join(root,'maze-harness/site',f))).join('')+['index.html','app.js','reader.css'].map(f=>fs.readFileSync(path.join(root,'questions',f))).join('')).slice(0,16);
+ const revision=R.sha(JSON.stringify(data)+['exhibition.css','exhibition.js','skill-flow.js','process.js','process.css','process-model.js','build-summary.js','question-shell.js'].map(f=>fs.readFileSync(path.join(root,'shared',f))).join('')+['process-orbit.js','process-orbit.css','process.css'].map(f=>fs.readFileSync(path.join(root,'maze-harness/site',f))).join('')+['index.html','app.js','reader.css','style.css'].map(f=>fs.readFileSync(path.join(root,'questions',f))).join('')).slice(0,16);
  fs.writeFileSync(path.join(shared,`process.${revision}.js`),fs.readFileSync(path.join(shared,'process.js'),'utf8').replace("'./process-model.js'",`'./process-model.js?v=${revision}'`).replace("'../maze-harness/process-orbit.js'",`'../maze-harness/process-orbit.js?v=${revision}'`));
  fs.writeFileSync(path.join(shared,'exhibition.js'),fs.readFileSync(path.join(shared,'exhibition.js'),'utf8').replace("'./skill-flow.js'",`'./skill-flow.js?v=${revision}'`).replace("'./process.js'",`'./process.${revision}.js'`).replace("'../shared/catalog.json'",`'../shared/catalog.json?v=${revision}'`));
  R.atomic(path.join(shared,'catalog.json'),data);
@@ -122,7 +122,7 @@ function build(out){
    const full = path.join(out,file);
    let text = fs.readFileSync(full,'utf8')
      .replace(/src="app\.js(?:\?[^"]*)?"/, `src="app.js?v=${revision}"`)
-     .replace(/href="reader\.css(?:\?[^"]*)?"/, `href="reader.css?v=${revision}"`)
+     .replace(/href="(reader|style)\.css(?:\?[^"]*)?"/g, (_, name) => `href="${name}.css?v=${revision}"`)
      .replace('</head>', `<link rel="stylesheet" href="../shared/exhibition.css?v=${revision}"></head>`);
    if (file === 'questions/index.html') {
      const routes = JSON.stringify(entries).replace(/</g,'\\u003c');
