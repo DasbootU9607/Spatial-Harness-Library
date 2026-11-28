@@ -1,5 +1,7 @@
 # Authoring a SpatialViz question
 
+Before accepting a candidate, inspect the separate question text and figure. The stem, written conditions and textual options belong in task fields. Keep graphics and short identifying labels in the figure. Review both together at the size used on the question page.
+
 Use the skill's installed `scripts/construct.cjs` for all commands. The bridge locates the library and selects the same generator and independent verifier as the skill's explicit recipes. Read the selected pattern and inspect one representative before writing the design. The guide returns the selected pattern, matched original, and supported inference targets. Each skill includes a filled design example. Configure the native dependencies described in the domain skill.
 
 | Command (arguments after the bridge) | Result |

@@ -55,3 +55,7 @@ Test each candidate together with the given parts. Normalize proper rotated plac
 Open the official composite at readable size with the accompanying question. Check the total cube count, interfaces, movement rule, order of detached pieces and every option label before approving the recorded review. The checker fingerprints each cropped panel against the corresponding rectangle in the final image and tests the target and options against native B-rep coordinates. Finish through the bound publication entry after the visual review.
 
 Read the [official audit](references/official-audit.md) for released examples and annotation exceptions, the [design record](references/design.md) for tool responsibilities and host adaptations, and the [coverage table](references/coverage.md) for verified cases.
+
+## Accept the question text and figure
+
+Deliver the stem, necessary written conditions and every text answer as selectable text in the task data. Deliver a separate figure containing the visual evidence, with only the panel letters, stage or view names, axes, legends and component labels needed to read it. Keep graphical alternatives in the figure. Inspect the diagram at normal size and enlarged. Reject a figure containing the question, text answers, reasoning, or a transcription that gives away the visual state. Solve the delivered text and figure together before acceptance.

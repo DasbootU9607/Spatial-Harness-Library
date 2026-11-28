@@ -114,7 +114,9 @@ def main():
     if spec["taskType"] == "MechanicalSystem":
         folder = LIBRARY / "spatialviz-harness/skills/spatialviz-mechanical-system/scripts"
         sys.path.insert(0, str(folder))
-        from cad_plate import read_pixels
+        from cad_plate import read_pixels, read_question
+        if spec["rendering"].get("presentation") == "diagram-only":
+            return {"printed": read_question(spec)}
         png = base64.b64decode(spec["rendering"]["pngBase64"], validate=True)
         return {"printed": read_pixels(io.BytesIO(png))}
     functions = {"CubeCounting": counting, "CubeAssembly": assembly, "CrossSection": sections}

@@ -47,7 +47,8 @@ def audit(s):
     steps=len(p['axes'])+1
     dims=pipeline['figureDimensions']
     require(3<=size<=5 and size==p['level']+3 and steps==(3 if size==5 else 2),'Level or fold count differs')
-    require(final.width==dims[0] and final.height>dims[1]>0,'Wrong printed figure dimensions')
+    separate = s['rendering'].get('presentation') == 'diagram-only'
+    require((final.size == tuple(dims)) if separate else (final.width==dims[0] and final.height>dims[1]>0),'Wrong printed figure dimensions')
     figure=final.crop((0,0,*dims))
     result=solve_image(figure,size,steps)
     solved=answer(result)
@@ -95,7 +96,8 @@ def audit(s):
     lower=[('unfold_'+('correct_' if k==label else 'incorrect_')+k+'.png',k) for k in 'ABCD']
     verify_composition(figure,(top,lower),hashes)
     require(hashlib.sha256(figure.tobytes()).hexdigest()==pipeline['figureDigest'],'Source composite changed')
-    require(np.array_equal(final,footer(figure,prompt,s['options'])),'Footer or question pixels differ')
+    if not separate:
+        require(np.array_equal(final,footer(figure,prompt,s['options'])),'Archived worksheet footer differs')
     return ['Independent image-only reconstruction, unique physical history and unique printed choice',
             'Original cell transport, local creases, changing offsets, punch layers and physical novelty',
             'Four visibly distinct options with row or column deletion, duplication and relocation',
@@ -106,6 +108,7 @@ if __name__=='__main__':
     file,version,fingerprints,output=sys.argv[1:]
     s=json.loads(Path(file).read_bytes())
     try:
+        require(s['rendering'].get('presentation') == 'diagram-only', 'Output a separate diagram for this candidate')
         checks=[dict(name=c,verdict='passed') for c in audit(s)]
         verdict='passed'
     except Exception as exc:

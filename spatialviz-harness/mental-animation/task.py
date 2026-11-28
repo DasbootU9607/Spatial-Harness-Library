@@ -4,7 +4,7 @@ import json
 import os
 import sys
 from pathlib import Path
-from print_face import HERE, diagram, prompt, sheet
+from print_face import HERE, diagram, prompt
 from solve import solve
 
 sys.path.append(str(HERE.parent/'official-folding'))
@@ -26,30 +26,27 @@ def generate(kind,seed,params,work):
     if answer['index']!=index:
         raise ValueError('Printed solution conflicts with construction')
     artwork=diagram(face,work)
-    final=sheet(face,artwork)
-    final.save(work/'question.png')
+    artwork.save(work/'question.png')
     spec=dict(schemaVersion=1,category='MentalAnimation',taskType=kind.title()+'Moving',
               title=f"{kind.title()} Movement / {face['mode']} / {seed}",
               description=prompt(face).split('. ')[-1],difficulty=dict(label='Uncalibrated',basis='Coordinate replay with four alternatives.'),
               question=prompt(face),options=options(face),geometry=face,answer=answer,
-              rendering=dict(image=record(final),diagramHeight=artwork.height,diagramSha256=hashlib.sha256(artwork.tobytes()).hexdigest()),
+              rendering=dict(image=record(artwork),presentation="diagram-only",diagramHeight=artwork.height,diagramSha256=hashlib.sha256(artwork.tobytes()).hexdigest()),
               provenance=dict(sourceKind='agent-authored',sourceRevision=json.loads((HERE/'source.json').read_bytes())['revision'],generationMethod=METHOD[kind]))
     (work/'task.json').write_text(json.dumps(spec),encoding='utf8')
 
 
 def verify(s,kind):
-    from PIL import ImageChops
     f=s['geometry']
     if (len(f['size'])==3)!=(kind=='block') or s['question']!=prompt(f) or s['options']!=options(f):
         raise ValueError('Public question or option mismatch')
     img=decode(s['rendering']['image'])
-    top=img.crop((0,0,img.width,s['rendering']['diagramHeight']))
-    rebuilt=sheet(f,top)
-    if rebuilt.size!=img.size or ImageChops.difference(img,rebuilt).getbbox() or hashlib.sha256(top.tobytes()).hexdigest()!=s['rendering']['diagramSha256']:
-        raise ValueError('Changed diagram, caption, coordinate key or printed choices')
+    if (s['rendering'].get('presentation') != 'diagram-only' or img.height != s['rendering']['diagramHeight']
+            or hashlib.sha256(img.tobytes()).hexdigest() != s['rendering']['diagramSha256']):
+        raise ValueError('Deliver only the recorded state panels in the figure')
     ans=solve(f)
     if ans!=s['answer']:raise ValueError('Published answer disagrees with visible-state replay')
-    return [dict(name='Printed coordinate key, question and four option labels match the final sheet',verdict='passed')]+[
+    return [dict(name='State panels match the rendered diagram, and replay uses the published question and options',verdict='passed')]+[
         dict(name='Option '+r['label'],detail=r['explanation'],verdict='passed') for r in ans['options']]
 
 

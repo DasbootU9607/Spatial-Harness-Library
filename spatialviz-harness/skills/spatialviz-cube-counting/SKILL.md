@@ -49,3 +49,7 @@ Use `exact-2` followed by `exact-3` with the same seed to retain the ambiguous p
 Open the final PNG with its public question and answer choices. Confirm that every occupied square has a closed outline and the Front, Top and optional Left panels fit their labels. Check whether the exact count is unique over all compatible models. For a possible-count question, test each listed number individually. The independent solver decodes the printed square interiors, enumerates compatible row heights and retains one witness per attainable total. The native model is checked separately against those pixels. After verification and visual review, the installed `accept` command prepares the question for publication.
 
 [Official item inventory and audit](references/official-audit.md) · [Coverage table](references/coverage.md) · [Native construction and evidence](references/design.md)
+
+## Accept the question text and figure
+
+Deliver the stem, necessary written conditions and every text answer as selectable text in the task data. Deliver a separate figure containing the visual evidence, with only the panel letters, stage or view names, axes, legends and component labels needed to read it. Keep graphical alternatives in the figure. Inspect the diagram at normal size and enlarged. Reject a figure containing the question, text answers, reasoning, or a transcription that gives away the visual state. Solve the delivered text and figure together before acceptance.

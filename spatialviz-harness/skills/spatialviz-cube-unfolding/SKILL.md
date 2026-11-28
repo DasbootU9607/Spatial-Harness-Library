@@ -31,3 +31,7 @@ Use [the official audit](references/coverage.md) for additional evidence on the 
 Fold each of A–D. Compare only the three visible markings, their cyclic order and their printed orientation under each proper rotation. Distinct layouts or hidden faces may yield the same visible corner. For can, exactly one matches. For cannot, exactly one fails.
 
 Run the [recorded invocation](MAINTENANCE.md). Inspect the full PNG after verification. Record which visible marks or edges establish the answer before sealing or publishing the candidate.
+
+## Accept the question text and figure
+
+Deliver the stem, necessary written conditions and every text answer as selectable text in the task data. Deliver a separate figure containing the visual evidence, with only the panel letters, stage or view names, axes, legends and component labels needed to read it. Keep graphical alternatives in the figure. Inspect the diagram at normal size and enlarged. Reject a figure containing the question, text answers, reasoning, or a transcription that gives away the visual state. Solve the delivered text and figure together before acceptance.

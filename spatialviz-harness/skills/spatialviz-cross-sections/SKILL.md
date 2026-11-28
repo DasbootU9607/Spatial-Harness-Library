@@ -47,3 +47,7 @@ node scripts/author.cjs test
 ```
 
 Pass `--params parameters.json` to specify the plane, stack and sight direction. [Design parameters and native evidence](references/design.md) documents the supported combinations. Open the final image before accepting a candidate. Check the small shoulder or chord endpoints, unit component order, sight arrow, shuffled labels and bracketed plane witnesses. Use `node scripts/author.cjs accept --out new-question --review "Concrete observations from the final figure"` to publish a reviewed item.
+
+## Accept the question text and figure
+
+Deliver the stem, necessary written conditions and every text answer as selectable text in the task data. Deliver a separate figure containing the visual evidence, with only the panel letters, stage or view names, axes, legends and component labels needed to read it. Keep graphical alternatives in the figure. Inspect the diagram at normal size and enlarged. Reject a figure containing the question, text answers, reasoning, or a transcription that gives away the visual state. Solve the delivered text and figure together before acceptance.

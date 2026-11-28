@@ -39,3 +39,7 @@ The [released mechanisms](references/coverage.md) document the original paper-fo
 
 [Run the generator and recorder](MAINTENANCE.md). For direct evidence consult the [original annotations and PNG filenames](references/official.json), [per-image fold reconstructions](references/observations.json) and [upstream trace](references/source-trace.md).
 
+
+## Accept the question text and figure
+
+Deliver the stem, necessary written conditions and every text answer as selectable text in the task data. Deliver a separate figure containing the visual evidence, with only the panel letters, stage or view names, axes, legends and component labels needed to read it. Keep graphical alternatives in the figure. Inspect the diagram at normal size and enlarged. Reject a figure containing the question, text answers, reasoning, or a transcription that gives away the visual state. Solve the delivered text and figure together before acceptance.

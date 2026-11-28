@@ -90,6 +90,7 @@ jobs:
           node --test tools/observatory/tests/authoring.test.cjs tools/observatory/tests/rotation-folding-reasoning.test.cjs tools/observatory/tests/solids-reasoning.test.cjs tools/observatory/tests/motion-reasoning.test.cjs
           python -m unittest discover -s spatialviz-harness/official-projection
           python -m unittest discover -s spatialviz-harness/official-folding
+          python -B tools/check-spatialviz-figures.py
           python -m unittest discover -s spatialviz-harness/mental-animation
           python -m unittest discover -s spatialviz-harness/paper-folding
       - name: Verify recorded Visual Penetration figures and answer regressions

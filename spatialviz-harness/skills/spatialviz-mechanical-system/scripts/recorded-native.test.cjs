@@ -1,7 +1,7 @@
 'use strict';
 const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto'),{test}=require('node:test'),assert=require('node:assert/strict');
 const {readNative}=require('./read-native.cjs');
-test('Shipped FCStd and viewport bytes match the measured assembly, and each shipped PNG alone gives its published answer',()=>{
+test('Shipped FCStd and viewport bytes match the measured assembly, and the delivered question gives its published answer',()=>{
  const root=path.resolve(__dirname,'../../../..'),cases=require(path.join(root,'catalog/cases.json')).cases;
  let count=0;
  for(const c of cases.filter(c=>c.harnessId==='spatialviz-harness'&&c.taskType==='MechanicalSystem')){
@@ -12,7 +12,7 @@ test('Shipped FCStd and viewport bytes match the measured assembly, and each shi
    if(name.endsWith('FCStd'))assert.equal(bytes.subarray(0,2).toString(),'PK');
   }
   assert.deepEqual(JSON.parse(fs.readFileSync(path.join(dir,'system.json'))),q.generator.parameters.system);
-  const decoded=readNative(path.join(site,c.thumbnail));assert.equal(decoded.index,q.answer.index);assert.equal(decoded.options.filter(o=>o.matches).length,1);
+  const decoded=readNative(q.rendering.presentation==='diagram-only'?file:path.join(site,c.thumbnail));assert.equal(decoded.index,q.answer.index);assert.equal(decoded.options.filter(o=>o.matches).length,1);
  }
  assert.ok(count>=4,'The published representative assemblies must be present');
 });

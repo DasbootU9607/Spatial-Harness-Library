@@ -130,7 +130,7 @@ def audit(s):
         require(sig not in signatures,'Indistinguishable options')
         signatures.add(sig)
     fig=panels['reference'] if text else replay(panels,'Cube' if unfold else 'Cube Net')
-    expected=footer(fig,s['question'],s['options'])
+    expected = fig if s['rendering'].get('presentation') == 'diagram-only' else footer(fig,s['question'],s['options'])
     require(np.array_equal(expected,decode(s['rendering']['image'])),'Final figure, labels or footer differ')
     return ['Hinge consistency, six normals, proper rotations and exact unique answer',
             'Published prompt, polarity, upstream answer and ordered figure/text options',
@@ -141,6 +141,7 @@ if __name__=='__main__':
     spec,id,fp,out=sys.argv[1:]
     s=json.loads(Path(spec).read_text('utf8'))
     try:
+        require(s['rendering'].get('presentation') == 'diagram-only', 'Output a separate diagram for this candidate')
         checks=[dict(name=n,verdict='passed') for n in audit(s)]
         verdict='passed'
     except Exception as e:

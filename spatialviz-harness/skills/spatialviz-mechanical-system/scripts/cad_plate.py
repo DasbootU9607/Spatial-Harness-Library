@@ -51,25 +51,26 @@ def screenshot(panel,folder,name,frame,marks):
             raise ValueError('Component labels overlap in the front view')
         centers.append((px,py));tag(ImageDraw.Draw(panel),(px,py),n)
 
-def compose(folder):
-    q=json.loads((folder/'worksheet.json').read_text('utf8'));report=json.loads((folder/'geometry.json').read_text('utf8'))
-    facts=report['facts'];H=START+(2+len(facts))*ROW+37+4*ROW+24
-    panel=Image.new('RGB',(W,H),PAPER);d=ImageDraw.Draw(panel)
-    d.text((X,17),'MECHANICAL SYSTEM  /  FREECAD LABORATORY',fill=ACCENT,font=font(16))
-    title=q['title'];size=min(30,int(1750/max(1,len(title))))
-    d.text((X,44),title,font=font(size),fill=INK,stroke_width=1,stroke_fill=INK)
-    d.text((X,100),'ASSEMBLY',fill=ACCENT,font=font(15));d.text((657,100),'FRONT  /  ALL DIRECTIONS READ HERE',fill=ACCENT,font=font(15))
-    d.rounded_rectangle((24,133,632,481),8,fill=(239,244,243))
-    d.rounded_rectangle((643,133,W-24,481),8,fill=(242,244,245))
-    screenshot(panel,folder,'assembly-view.png',(40,151,576,312),[])
-    screenshot(panel,folder,'front-view.png',(660,151,460,312),q['members'])
-    d.text((X,499),'OBSERVATION AND WORKING CONNECTIONS',font=font(16),fill=ACCENT)
-    rows=[q['drive'],q['ask'],*facts]
-    for i,text in enumerate(rows):line(panel,START+i*ROW,text)
-    y=START+len(rows)*ROW;d.line((X,y+3,W-X,y+3),fill=(172,196,194),width=1)
-    d.text((X,y+10),'CHOOSE ONE',font=font(15),fill=ACCENT)
-    for i,opt in enumerate(q['options']):line(panel,y+37+i*ROW,opt['label']+'  '+opt['text'])
-    panel.save(folder/'plate.png')
+def compose(folder, output):
+    members=json.loads((folder/'worksheet.json').read_text('utf8'))['members']
+    panel=Image.new('RGB',(W,400),PAPER)
+    d=ImageDraw.Draw(panel)
+    d.text((X,10),'ASSEMBLY',fill=ACCENT,font=font(15))
+    d.text((657,10),'FRONT  /  ALL DIRECTIONS READ HERE',fill=ACCENT,font=font(15))
+    d.rounded_rectangle((24,43,632,391),8,fill=(239,244,243))
+    d.rounded_rectangle((643,43,W-24,391),8,fill=(242,244,245))
+    screenshot(panel,folder,'assembly-view.png',(40,61,576,312),[])
+    screenshot(panel,folder,'front-view.png',(660,61,460,312),members)
+    panel.save(output)
+
+
+def read_question(spec):
+    drive, separator, ask = spec['question'].partition('. ')
+    if not separator or not spec.get('conditions'):
+        raise ValueError('Missing mechanical drive, output or working connections')
+    return {'drive': drive + '.', 'ask': ask, 'facts': spec['conditions'],
+            'options': [o['label'] + '  ' + o['text'] for o in spec['options']]}
+
 
 def read_pixels(file):
     im=Image.open(file).convert('RGB')
@@ -87,6 +88,8 @@ def read_pixels(file):
     return {'drive':lines[0],'ask':lines[1],'facts':lines[2:],'options':[row(START+n*ROW+37+i*ROW) for i in range(4)]}
 
 if __name__=='__main__':
-    if sys.argv[1]=='compose':compose(Path(sys.argv[2]))
+    if sys.argv[1]=='compose':
+        folder=Path(sys.argv[2]);compose(folder,Path(sys.argv[3]) if len(sys.argv)>3 else folder/'plate.png')
+    elif sys.argv[1]=='question':print(json.dumps(read_question(json.loads(Path(sys.argv[2]).read_bytes()))))
     elif sys.argv[1]=='read':print(json.dumps(read_pixels(sys.argv[2])))
     else:raise ValueError('Use compose DIRECTORY or read final.png')

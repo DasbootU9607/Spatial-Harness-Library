@@ -75,7 +75,18 @@ function discover(){
        const item = cases.find(c => c.id === id && c.harnessId === skill.harnessId);
        if (!item?.exhibit || !item.skillIds.includes(skill.id) || selected.has(id) || !item.build?.runId || runs.has(item.build.runId))
          throw Error('Invalid showcase case or repeated construction run: ' + id);
-       const record = R.read(path.join(root, skill.harnessId, 'site', item.process));
+       const site = path.join(root, skill.harnessId, 'site');
+       const spec = R.read(path.join(site, item.taskArtifact));
+       const legacySheet = ['ArrowMoving','BlockMoving','PaperFolding','CubeReconstruction','CubeUnfolding','MechanicalSystem'].includes(spec.taskType)
+         && spec.rendering.presentation !== 'diagram-only';
+       if (legacySheet) {
+         // Preserve the immutable worksheet in its build record; use its original diagram pixels for the exercise.
+         item.thumbnail = 'figures/' + item.id + '.png';
+         if (!fs.existsSync(path.join(site, item.thumbnail))) throw Error('Missing separate diagram for ' + item.id);
+         if (spec.taskType === 'MechanicalSystem')
+           item.conditions = R.read(path.join(site, path.dirname(item.taskArtifact), 'geometry.json')).facts;
+       }
+       const record = R.read(path.join(site, item.process));
        const choice = record.events.findLast(event => event.type === 'choice.selected');
        if (record.caseId !== id || record.manifest.id !== item.build.runId || choice?.details.selection !== group.pattern)
          throw Error('Recorded build or pattern mismatch for ' + id);

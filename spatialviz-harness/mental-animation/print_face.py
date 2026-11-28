@@ -1,9 +1,8 @@
-"""Print diagrams and an exact coordinate key for the same visible states on one problem sheet."""
+"""Draw the visible states and their panel labels."""
 import json
 import os
 import subprocess
 import sys
-import textwrap
 from pathlib import Path
 from types import SimpleNamespace
 from PIL import Image,ImageDraw,ImageFont,ImageChops
@@ -64,6 +63,10 @@ def native_pictures(f,work):
     size=f['size']
     if f['mode']=='single':
         a,b=(rows[0] for rows in f['panels'].values())
+        if a[:2] == b[:2]:
+            # Both headings must remain readable even when their grid positions coincide.
+            panels = {'Initial': [a], 'Final': [[*b[:2], 'green', b[3]]]}
+            return native_pictures({**f, 'mode': 'checkpoint', 'panels': panels}, work)
         obj=SimpleNamespace(x=size[0],y=size[1],positions=[a[:2],b[:2]],orientations=[DIRECTIONS.index(a[3]),DIRECTIONS.index(b[3])],directions=[(0,1),(1,0),(0,-1),(-1,0)])
         p=work/'overlay.png'
         solo.plot_arrow_path(obj,str(p))
@@ -93,34 +96,3 @@ def diagram(f,work):
         pic.thumbnail((cellw-36,cellh-42),Image.Resampling.LANCZOS)
         canvas.paste(pic,(x+(cellw-pic.width)//2,y+35))
     return canvas
-
-
-def sheet(f,diagram):
-    block=len(f['size'])==3
-    labels=['Block Movement' if block else 'Arrow Movement',prompt(f)]
-    for name,board in f['panels'].items():
-        tokens=[]
-        for row in board:
-            coord=','.join(map(str,row[:3 if block else 2]))
-            val=' '.join(row[3 if block else 2:]) if f['mode']!='single' else ('red' if name=='Initial' else 'green')+' '+row[-1]
-            tokens.append('('+coord+') '+val)
-        labels.append(name+'   '+'   |   '.join(tokens))
-    if f['choices']!=list('ABCD'):
-        labels+=['%s.  %s'%(l,v) for l,v in zip('ABCD',f['choices'])]
-    font=ImageFont.truetype(str(FONT),19)
-    lines=[]
-    for entry in labels:
-        line=''
-        for word in entry.split():
-            extended=(line+' '+word).strip()
-            if line and font.getlength(extended)>1140:
-                lines.append(line);line=word
-            else:line=extended
-        lines.append(line);lines.append('')
-    y=diagram.height+12
-    out=Image.new('RGB',(1200,y+27*len(lines)+12),'white')
-    out.paste(diagram);draw=ImageDraw.Draw(out)
-    for line in lines:
-        draw.text((28,y),line,fill='#182331',font=font)
-        y+=27
-    return out

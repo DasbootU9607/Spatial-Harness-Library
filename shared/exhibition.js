@@ -101,6 +101,7 @@ async function taskPage(){
  const skill=skills.find(x=>x.id===c.skillIds[0]);
  const buildProcess=processUrl(c);
  const title=c.title;
+ const conditions=s.conditions || c.conditions || [];
  const label=i=>s.options[i].label||String.fromCharCode(65+i);
  const method=s.provenance?.generationMethod||(['2d-rotation','3d-rotation'].includes(s.taskType)?'Legacy JavaScript/SVG generator':'Recorded construction');
  document.title=`${title} · ${h.name}`;
@@ -111,8 +112,8 @@ async function taskPage(){
  </nav>
  <header class="task-heading"><div><p class="task-eyebrow">Agent-built practice</p><h1>${e(title)}</h1></div><span class="task-format">Single choice · ${s.options.length} options</span></header>
  <div class="task-layout">
-  <section class="task-question" aria-labelledby="question-heading"><h2 id="question-heading" class="task-eyebrow">The question</h2><p class="question-copy">${e(s.question)}</p>
-   <figure class="task-figure"><button type="button" class="diagram-open" aria-label="Enlarge question diagram" aria-haspopup="dialog"><img src="${e(c.thumbnail)}" alt="Original figure and answer options for ${e(title)}"></button><figcaption><span>Compare the original with each option.</span><button type="button" class="diagram-enlarge" aria-haspopup="dialog">Enlarge diagram</button></figcaption></figure>
+  <section class="task-question" aria-labelledby="question-heading"><h2 id="question-heading" class="task-eyebrow">The question</h2><p class="question-copy">${e(s.question)}</p>${conditions.length?`<ul class="question-conditions">${conditions.map(text=>`<li>${e(text)}</li>`).join('')}</ul>`:''}
+   <figure class="task-figure"><button type="button" class="diagram-open" aria-label="Enlarge question diagram" aria-haspopup="dialog"><img src="${e(c.thumbnail)}" alt="Question diagram for ${e(title)}"></button><figcaption><span>Compare the original with each option.</span><button type="button" class="diagram-enlarge" aria-haspopup="dialog">Enlarge diagram</button></figcaption></figure>
   </section>
   <form class="answer-panel" aria-labelledby="answer-heading"><h2 id="answer-heading">Your answer</h2><p id="answer-hint">Select an option to see if it is correct.</p>
    <fieldset class="options" aria-describedby="answer-hint"><legend class="visually-hidden">Answer choices</legend>${s.options.map((option,i)=>`<label class="answer-choice" data-answer="${i}"><input type="radio" name="answer" value="${i}" aria-label="Option ${e(label(i))}${option.type==='text'?`. ${e(option.text)}`:''}" required><span class="choice-letter" aria-hidden="true">${e(label(i))}</span><span class="choice-copy">${option.type==='text'?e(option.text):`Option ${e(label(i))}`}<span class="choice-state"></span></span></label>`).join('')}</fieldset>
@@ -121,7 +122,7 @@ async function taskPage(){
  </div>
  <details id="answer" class="task-solution"><summary>Answer &amp; explanation</summary>${c.supersessionNote?`<p><strong>Correction</strong> · ${e(c.supersessionNote)}</p>`: ''}<p class="solution-verdict"><strong>Correct answer: ${e(label(s.answer.index))}.</strong> ${e(s.answer.explanation)}</p><div class="option-explanations">${(s.answer.options||[]).map(o=>`<p class="option-explanation ${o.label===label(s.answer.index)?'is-correct':''}"><strong>${e(o.label)}${o.label===label(s.answer.index)?' · Correct answer':''}</strong><span>${e(o.explanation)}</span></p>`).join('')}</div></details>
  <details class="task-provenance"><summary>Build details &amp; downloads</summary><p>${e(c.title)}</p><div class="actions"><a href="${e(c.verification.report)}">Verification summary</a><a href="${e(c.taskArtifact)}" download>Download exact task</a>${s.provenance?.native?.backend==='FreeCAD'?`<a href="${e(c.taskArtifact.replace(/task\.json$/,'assembly.FCStd'))}" download>Download FreeCAD model</a><a href="${e(c.taskArtifact.replace(/task\.json$/,'system.json'))}" download>Rebuild parameters</a>`:''}</div><p class="source-note">${e(method)}</p><p class="source-note">Immutable specification SHA-256: <code>${e(c.contentSha256)}</code></p></details>
- <dialog class="diagram-dialog" aria-labelledby="diagram-title"><div class="diagram-toolbar"><h2 id="diagram-title">Question diagram</h2><div><button type="button" class="diagram-zoom" aria-pressed="false">Zoom in</button><button type="button" class="diagram-close" autofocus>Close</button></div></div><div class="diagram-scroll" tabindex="0" aria-label="Question diagram; scroll to inspect when zoomed"><img src="${e(c.thumbnail)}" alt="Enlarged original figure and answer options"></div><p>Zoom in to inspect details. Scroll to move around the image.</p></dialog>`;
+ <dialog class="diagram-dialog" aria-labelledby="diagram-title"><div class="diagram-toolbar"><h2 id="diagram-title">Question diagram</h2><div><button type="button" class="diagram-zoom" aria-pressed="false">Zoom in</button><button type="button" class="diagram-close" autofocus>Close</button></div></div><div class="diagram-scroll" tabindex="0" aria-label="Question diagram; scroll to inspect when zoomed"><img src="${e(c.thumbnail)}" alt="Enlarged question diagram"></div><p>Zoom in to inspect details. Scroll to move around the image.</p></dialog>`;
  const form=main.querySelector('form'),choices=[...form.querySelectorAll('[data-answer]')],retry=form.querySelector('.retry-answer'),status=main.querySelector('#answer-status'),solution=main.querySelector('#answer');
  form.addEventListener('submit',event=>event.preventDefault());
  form.addEventListener('change',()=>{

@@ -39,4 +39,8 @@ For explicit reproduction using the standalone builder, run `node scripts/build.
 
 Use [official coverage](references/coverage.md) for the released scope and [upstream trace](references/upstream-trace.md) for the construction path. [Acceptance records](references/acceptance.md) distinguish reproduced profiles from original variants.
 
-Replay all four choices from the printed state key and commands. Retain an explicit differing cell or illegal step for each foil. Reject multiple matches, equivalent printed choices, illegible stack colors or axes, and a final image whose labels disagree with the public structure. Record visual findings against the exact preview. Keep rejected versions in their original run; save a corrected version with a parent and reason.
+Replay all four choices from the structured states and commands and compare each visible state with its panel. Retain an explicit differing cell or illegal step for each foil. Reject multiple matches, equivalent printed choices, illegible stack colors or axes, and a final image whose labels disagree with the public structure. Record visual findings against the exact preview. Keep rejected versions in their original run; save a corrected version with a parent and reason.
+
+## Accept the question text and figure
+
+Deliver the stem, necessary written conditions and every text answer as selectable text in the task data. Deliver a separate figure containing the visual evidence, with only the panel letters, stage or view names, axes, legends and component labels needed to read it. Keep graphical alternatives in the figure. Inspect the diagram at normal size and enlarged. Reject a figure containing the question, text answers, reasoning, or a transcription that gives away the visual state. Solve the delivered text and figure together before acceptance.

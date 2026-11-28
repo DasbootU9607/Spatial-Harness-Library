@@ -85,6 +85,15 @@ module.exports = async function checkShowcase({page, origin, catalog, selection}
         await page.locator('.task-figure img').evaluate(img => img.decode());
         const spec = await page.evaluate(async url => (await fetch(url)).json(), item.taskArtifact);
         assert.equal(spec.title, item.title);
+        assert.equal(await page.locator('.question-copy').innerText(), spec.question);
+        const conditions = spec.conditions || item.conditions || [];
+        assert.deepEqual(await page.locator('.question-conditions li').allTextContents(), conditions);
+        for (const [index, option] of spec.options.entries()) {
+          if (option.type === 'text') assert.equal(await page.locator('.choice-copy').nth(index).innerText(), option.text);
+        }
+        assert.equal(await page.locator('.task-figure img').getAttribute('src'), item.thumbnail);
+        assert.equal(await page.locator('.diagram-dialog img').getAttribute('src'), item.thumbnail);
+        if (spec.taskType === 'MechanicalSystem') assert(conditions.length > 0);
         await page.locator('[data-answer="' + spec.answer.index + '"]').click();
         assert.match(await page.locator('#answer-status').innerText(), /^Correct\./);
         await page.locator('#answer summary').click();

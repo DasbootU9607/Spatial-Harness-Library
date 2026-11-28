@@ -31,3 +31,7 @@ Use [the official audit](references/coverage.md) for additional evidence on the 
 For an opposite-face question, take the negative of the named face normal and follow the actual text ordering. For a view question, transport the printed right/up axes and compare the ordered corner under proper rotations. The color-view fallback refers to all three pictured choices. Pattern questions have four figures.
 
 Run the [recorded invocation](MAINTENANCE.md). Inspect the full PNG after verification. Record which visible marks or edges establish the answer before sealing or publishing the candidate.
+
+## Accept the question text and figure
+
+Deliver the stem, necessary written conditions and every text answer as selectable text in the task data. Deliver a separate figure containing the visual evidence, with only the panel letters, stage or view names, axes, legends and component labels needed to read it. Keep graphical alternatives in the figure. Inspect the diagram at normal size and enlarged. Reject a figure containing the question, text answers, reasoning, or a transcription that gives away the visual state. Solve the delivered text and figure together before acceptance.

@@ -10,7 +10,7 @@ from PIL import Image
 from evidence import answer, check_native, coverage, original_signatures, physical_signature, solve_image
 from source import HERE, build
 sys.path.insert(0,str(HERE.parent/'official-folding'))
-from artwork import footer, record
+from artwork import record
 
 METHOD='SpatialViz-Bench official Paper Folding Matplotlib/Pillow pipeline'
 
@@ -41,8 +41,7 @@ def generate(seed,params,out):
         raise ValueError('Official answer differs from the image-only result')
     question=annotation['Question']
     options=[dict(label=l,type='figure') for l in 'ABCD']
-    final=footer(figure,question,options)
-    image=record(final)
+    image=record(figure)
     (out/'question.png').write_bytes(base64.b64decode(image['pngBase64']))
     keys=coverage(result,plan['distractor'])
     native=json.loads((folder/'info.json').read_bytes())
@@ -58,7 +57,7 @@ def generate(seed,params,out):
               category='MentalFolding',taskType='PaperFolding',seed=seed,parameters=params,geometry=plan,
               difficulty=dict(label='Uncalibrated',basis=f"Follow {plan['axes']} then a finite diagonal fold. Track {len(plan['punches'])} punch sites through stacks of {history['layersPerPunch']} layers."),
               question=question,options=options,answer=solved,coverage=keys,visualStructure=result,pipeline=receipt,
-              rendering=dict(image=image),provenance=dict(sourceKind='agent-authored',sourceRevision=receipt['revision'],
+              rendering=dict(image=image,presentation="diagram-only"),provenance=dict(sourceKind='agent-authored',sourceRevision=receipt['revision'],
                   generationMethod=METHOD,manifest=json.loads((HERE/'source.json').read_bytes())))
     (out/'task.json').write_text(json.dumps(spec),encoding='utf8')
 
