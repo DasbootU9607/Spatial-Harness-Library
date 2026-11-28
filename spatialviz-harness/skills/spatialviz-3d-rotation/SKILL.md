@@ -1,6 +1,6 @@
 ---
 name: spatialviz-3d-rotation
-description: Author new 3D rotation questions through SpatialViz-Bench's actual FreeCAD modeling and official image-composition pipeline, with independent geometry and pixel validation, recorded revisions and publication.
+description: Author new 3D rotation questions through SpatialViz-Bench's FreeCAD modeling and official image-composition pipeline, with independent geometry and pixel validation, recorded revisions and publication.
 ---
 
 # SpatialViz 3D Rotation
